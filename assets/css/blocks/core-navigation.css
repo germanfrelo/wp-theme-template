@@ -87,9 +87,10 @@ footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__co
  * Menu Buttons
  */
 
-/* Increase the default icon size (24px) */
+/* Increase the default icon size (24px) & avoid shrinking */
 .wp-block-navigation__responsive-container-close svg,
 .wp-block-navigation__responsive-container-open svg {
+	flex-shrink: 0;
 	width: var(--navigation-icon-size, 44px);
 	height: var(--navigation-icon-size, 44px);
 }
