@@ -148,6 +148,7 @@
 	 */
 
 	--icon-min-size: 44px;
+	--site-logo-height: 48px;
 }
 
 /**
@@ -240,12 +241,12 @@ html {
 	min-block-size: 100vh;
 }
 
-.wp-site-blocks:has(> main) > main {
-	flex-grow: 1;
+.wp-site-blocks:has(> main) > * {
+	flex-shrink: 0;
 }
 
-.wp-site-blocks:has(> main) > :not(main) {
-	flex-shrink: 0;
+.wp-site-blocks:has(> main) > main {
+	flex-grow: 1;
 }
 
 /**

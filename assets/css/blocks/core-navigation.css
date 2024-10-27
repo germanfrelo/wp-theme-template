@@ -11,7 +11,7 @@
  * Navigation block
  */
 
-/* Increase the default size (24px) of burger and close icons. */
+/* Increase the default size (24px) of open and close icons. */
 .wp-block-navigation {
 	--navigation-icon-size: 32px;
 }
@@ -33,15 +33,8 @@
 	}
 }
 
-@media (max-width: 959px) {
-	/* Push to the right what's next to the site logo */
-	header.wp-block-template-part .is-content-justification-space-between > .wp-block-site-logo {
-		margin-inline-end: auto;
-	}
-}
-
 /* Add styles at custom breakpoint */
-@media (min-width: 960px) {
+@media (min-width: 782px) {
 	/* Hide menu button */
 	.wp-block-navigation__responsive-container-open:not(.always-shown) {
 		display: none;
@@ -58,29 +51,17 @@
  */
 
 header.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus, [aria-current="page"]) {
-	color: var(--wp--preset--color--accent);
-}
-
-header.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content[aria-current="page"] {
 	text-decoration-line: underline;
 	text-decoration-thickness: 0.1em;
-	text-underline-offset: 0.2em;
+	text-underline-offset: 0.15em;
 }
 
 /**
  * Menu Links (Footer)
  */
 
-footer.wp-block-template-part .wp-block-navigation {
-	color: var(--wp--preset--color--accent);
-}
-
-footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus, [aria-current="page"]) {
-	color: var(--wp--preset--color--contrast);
-}
-
-footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content[aria-current="page"] {
-	text-decoration-line: none;
+footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus) {
+	text-decoration-line: revert;
 }
 
 /**
@@ -106,11 +87,19 @@ footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__co
  */
 
 .wp-block-navigation__responsive-container.is-menu-open {
-	/* --fluid-70-130 = site logo height */
-	padding-block: calc((var(--fluid-70-130, 5rem) - var(--navigation-icon-size, 44px)) / 2);
-	padding-inline: calc(var(--wp--style--root--padding-right, 2rem) + var(--navigation-icon-size, 44px) + 1rem);
+	padding-block: var(--site-logo-height, calc(var(--wp--preset--spacing--m-l) + 0.5em));
+	padding-inline: calc(var(--wp--style--root--padding-right, 2rem) + 1rem);
 }
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	align-items: flex-end;
 	padding-top: calc(var(--navigation-icon-size, 44px) * 2);
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-page-list {
+	row-gap: 2em;
+	align-items: flex-end;
+	text-align: end;
 }
