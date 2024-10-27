@@ -55,7 +55,7 @@ export default {
 			},
 		],
 		"selector-max-class": [
-			3,
+			4,
 			{
 				severity: "warning",
 			},
@@ -79,7 +79,7 @@ export default {
 			},
 		],
 		"selector-max-specificity": [
-			"2,3,3",
+			"2,4,3",
 			{
 				severity: "warning",
 			},

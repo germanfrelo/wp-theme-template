@@ -54,22 +54,18 @@ add_action( 'after_setup_theme', 'themeslug_setup' );
  */
 
 function themeslug_block_style_variations() {
-	register_block_style(
-		'core/button',
-		array(
-			'name'         => 'fill-variant',
-			'label'        => __( 'Fill (variant)', 'themeslug' ),
-			'inline_style' => '
-				.wp-block-button.is-style-fill-variant > :is(.wp-element-button, .wp-block-button__link) {
-					// Write your block styles here...
-				}
-
-				.wp-block-button.is-style-fill-variant > :is(.wp-element-button, .wp-block-button__link):is(:hover, :focus) {
-					// Write your block styles here...
-				}
-			'
-		)
-	);
+	// register_block_style(
+	// 	'core/_____',
+	// 	array(
+	// 		'name'         => '__________',
+	// 		'label'        => __( '__________', 'themeslug' ),
+	// 		'inline_style' => '
+	// 			.wp-block-_____.is-style-__________ {
+	// 				// Your block styles here...
+	// 			}
+	// 		'
+	// 	)
+	// );
 }
 
 add_action( 'init', 'themeslug_block_style_variations' );

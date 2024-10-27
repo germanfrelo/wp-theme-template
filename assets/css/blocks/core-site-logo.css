@@ -8,5 +8,5 @@
 /* Make site logo height responsive. */
 .wp-block-site-logo img {
 	inline-size: auto;
-	block-size: var(--site-logo-block-size, auto);
+	block-size: var(--site-logo-height, auto);
 }
