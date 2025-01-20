@@ -27,8 +27,6 @@ export default {
 		],
 
 		// Unknown
-		"declaration-property-value-no-unknown": true,
-		"media-feature-name-value-no-unknown": true,
 		"no-unknown-animations": true,
 		"no-unknown-custom-media": true,
 
