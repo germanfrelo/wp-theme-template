@@ -1,0 +1,3 @@
+#!/bin/sh
+
+. ./.husky/scripts/check-package-lock.sh
