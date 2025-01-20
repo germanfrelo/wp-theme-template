@@ -1,11 +1,6 @@
-# https://editorconfig.org
-
-# About EditorConfig & Prettier:
-# When using both, since they have some options in common, the best way to avoid conflicts between them is to configure those options only in the .editorconfig file. Prettier will use them instead of its own defaults. More info:
-# - https://prettier.io/docs/en/configuration#editorconfig
-# - https://joepkockelkorn.com/blog/combining-gitattributes-editorconfig-and-prettier
-
-# ----------------------------------------
+# NOTE:
+# EditorConfig and Prettier share some options. To avoid conflicts between them, only configure these options in the .editorconfig file. Prettier will use them instead of its own defaults.
+# Refs. https://prettier.io/docs/en/configuration#editorconfig and https://joepkockelkorn.com/blog/combining-gitattributes-editorconfig-and-prettier
 
 # Stop the editor from looking for .editorconfig files in parent directories
 root = true
@@ -29,24 +24,14 @@ trim_trailing_whitespace = false  # 8
 indent_style = space
 indent_size = 2
 
-# ----------------------------------------
+# ---
 
-# 1. See https://www.w3.org/International/questions/qa-html-encoding-declarations.
-# 2. See https://aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git.
-# 3. See:
-#    - https://stackoverflow.com/a/729795/10015695.
-#    - https://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file.
-# 4. Trailing whitespace has no purpose. Consistent formatting throughout the source code makes it easier to read.
-# 5. See:
-#    - https://gomakethings.com/tabs-are-objectively-better-than-spaces.
-#    - https://alexandersandberg.com/articles/default-to-tabs-instead-of-spaces-for-an-accessible-first-environment.
-#    - https://zwyx.dev/blog/indentation-for-accessibility.
-#    - https://github.com/pointfreeco/swift-composable-architecture/discussions/2340.
-#    - https://lea.verou.me/blog/2012/01/why-tabs-are-clearly-superior.
-# 6. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md010.md.
-# 7. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md007.md.
-# 8. See:
-#    - https://www.markdownguide.org/basic-syntax/#line-breaks.
-#    - https://github.com/DavidAnson/markdownlint/blob/main/doc/md009.md.
-#    - https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks.
-# 9. See https://localheinz.com/articles/2023/02/06/indenting-yaml-files.
+# 1. https://www.w3.org/International/questions/qa-html-encoding-declarations
+# 2. https://aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git
+# 3. https://stackoverflow.com/q/729692/10015695
+# 4. https://softwareengineering.stackexchange.com/q/121555
+# 5. https://gist.github.com/germanfrelo/fc3ac17ff5bd78b7bf0786734f15d8b4
+# 6. https://github.com/DavidAnson/markdownlint/blob/main/doc/md010.md
+# 7. https://github.com/DavidAnson/markdownlint/blob/main/doc/md007.md
+# 8. https://gist.github.com/germanfrelo/513086438cc38a6dadecb4ff49a46af4
+# 9. https://localheinz.com/articles/2023/02/06/indenting-yaml-files
