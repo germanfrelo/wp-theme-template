@@ -30,11 +30,6 @@ export default {
 		/* Enforce conventions
 		(overrides rules from stylelint-config-standard)
 		---------------------------------------- */
-		// Allowed, disallowed & required
-		"property-no-vendor-prefix": [
-			true,
-			{ ignoreProperties: ["text-size-adjust"] }, // Don't report the '-webkit-text-size-adjust' property used in the imported CSS reset
-		],
 		// Empty lines
 		"declaration-empty-line-before": "never",
 		// Notation
