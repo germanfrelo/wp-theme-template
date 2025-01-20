@@ -40,64 +40,6 @@ export default {
 
 		// Empty lines
 		"declaration-empty-line-before": "never",
-
-		// Max & Min
-		"max-nesting-depth": [
-			3,
-			{
-				ignore: ["blockless-at-rules", "pseudo-classes"],
-				severity: "warning",
-			},
-		],
-		"selector-max-attribute": [
-			3,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-class": [
-			4,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-compound-selectors": [
-			3,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-id": [
-			2,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-pseudo-class": [
-			3,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-specificity": [
-			"2,4,3",
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-type": [
-			3,
-			{
-				severity: "warning",
-			},
-		],
-		"selector-max-universal": [
-			2,
-			{
-				severity: "warning",
-			},
-		],
-
 		// Notation
 		"media-feature-range-notation": null, // TODO: Remove when browser support is ~96% (https://caniuse.com/css-media-range-syntax)
 
