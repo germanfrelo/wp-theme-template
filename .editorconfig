@@ -31,22 +31,22 @@ indent_size = 2
 
 # ----------------------------------------
 
-# 1. See https://www.w3.org/International/questions/qa-html-encoding-declarations.
-# 2. See https://aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git.
+# 1. See https://www.w3.org/International/questions/qa-html-encoding-declarations
+# 2. See https://aleksandrhovhannisyan.com/blog/crlf-vs-lf-normalizing-line-endings-in-git
 # 3. See:
-#    - https://stackoverflow.com/a/729795/10015695.
-#    - https://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file.
-# 4. Trailing whitespace has no purpose. Consistent formatting throughout the source code makes it easier to read.
+#    - https://stackoverflow.com/a/729795/10015695
+#    - https://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file
+# 4. Trailing whitespace has no purpose. Consistent formatting throughout the source code makes it easier to read
 # 5. See:
-#    - https://gomakethings.com/tabs-are-objectively-better-than-spaces.
-#    - https://alexandersandberg.com/articles/default-to-tabs-instead-of-spaces-for-an-accessible-first-environment.
-#    - https://zwyx.dev/blog/indentation-for-accessibility.
-#    - https://github.com/pointfreeco/swift-composable-architecture/discussions/2340.
-#    - https://lea.verou.me/blog/2012/01/why-tabs-are-clearly-superior.
-# 6. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md010.md.
-# 7. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md007.md.
+#    - https://gomakethings.com/tabs-are-objectively-better-than-spaces
+#    - https://alexandersandberg.com/articles/default-to-tabs-instead-of-spaces-for-an-accessible-first-environment
+#    - https://zwyx.dev/blog/indentation-for-accessibility
+#    - https://github.com/pointfreeco/swift-composable-architecture/discussions/2340
+#    - https://lea.verou.me/blog/2012/01/why-tabs-are-clearly-superior
+# 6. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md010.md
+# 7. See https://github.com/DavidAnson/markdownlint/blob/main/doc/md007.md
 # 8. See:
-#    - https://www.markdownguide.org/basic-syntax/#line-breaks.
-#    - https://github.com/DavidAnson/markdownlint/blob/main/doc/md009.md.
-#    - https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks.
-# 9. See https://localheinz.com/articles/2023/02/06/indenting-yaml-files.
+#    - https://www.markdownguide.org/basic-syntax/#line-breaks
+#    - https://github.com/DavidAnson/markdownlint/blob/main/doc/md009.md
+#    - https://code.visualstudio.com/docs/languages/markdown#_keep-trailing-whitespace-in-order-to-create-line-breaks
+# 9. See https://localheinz.com/articles/2023/02/06/indenting-yaml-files

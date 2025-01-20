@@ -13,7 +13,7 @@
 	// Useful code actions on save
 	"editor.codeActionsOnSave": {
 		/* As object, "source.fixAll" actions are prioritized and executed first. Ref:
-		https://github.com/microsoft/vscode/blob/1.90.0/src/vs/workbench/contrib/codeEditor/browser/saveParticipants.ts#L300-L332. */
+		https://github.com/microsoft/vscode/blob/1.90.0/src/vs/workbench/contrib/codeEditor/browser/saveParticipants.ts#L300-L332 */
 		"source.addMissingImports": "explicit",
 		"source.fixAll.eslint": "explicit",
 		"source.fixAll.stylelint": "explicit",

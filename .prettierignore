@@ -2,7 +2,7 @@
 # - version control systems directories (".git", ".sl", ".svn" and ".hg")
 # - node_modules
 # Prettier will also follow rules specified in the ".gitignore" file if it exists in the same directory from which it is run.
-# Reference: https://prettier.io/docs/en/ignore.html.
+# Reference: https://prettier.io/docs/en/ignore.html
 
 # Minified files
 **/*.min.*
