@@ -25,13 +25,13 @@
 		"wordpress-theme",
 		"wordpress"
 	],
-	"homepage": "https://github.com/germanfrelo/wordpress-child-theme-starter-template#readme",
+	"homepage": "https://github.com/germanfrelo/wp-theme-template#readme",
 	"bugs": {
-		"url": "https://github.com/germanfrelo/wordpress-child-theme-starter-template/issues"
+		"url": "https://github.com/germanfrelo/wp-theme-template/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/germanfrelo/wordpress-child-theme-starter-template.git"
+		"url": "https://github.com/germanfrelo/wp-theme-template.git"
 	},
 	"license": "GPL-2.0-or-later",
 	"author": "Germán Freixinós",
