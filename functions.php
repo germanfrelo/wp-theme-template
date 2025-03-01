@@ -2,22 +2,22 @@
 
 /* =============================================================================================
 ❗️ IMPORTANT:
-Replace all instances of the word 'themeslug' with your theme name. Then remove this message.
+Replace all instances of the word 'themeslug' with your actual theme slug. Then remove this message.
 ============================================================================================= */
 
 /**
  * Theme's functions and definitions.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
  * @link https://developer.wordpress.org/themes/core-concepts/custom-functionality/
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  */
 
 
 /**
- * Enqueues custom stylesheets on the front end.
+ * Enqueues custom stylesheets on the front end of the website.
  *
- * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#front-end-stylesheets
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+ * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#front-end-stylesheets
  *
  * @return void
  */
@@ -60,10 +60,10 @@ add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
 
 
 /**
- * Enqueues custom stylesheets in the editor.
+ * Enqueues custom stylesheets in the Editor.
  *
- * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#editor-stylesheets
  * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+ * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#editor-stylesheets
  *
  * @return void
  */
@@ -82,12 +82,10 @@ add_action('after_setup_theme', 'themeslug_editor_styles');
 
 
 /**
- * Enqueues custom block stylesheets (on the front end and in the editor).
+ * Enqueues custom block stylesheets (on the front end and in the Editor).
  *
- * @link https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/#theme-scripts-and-styles
- * @link https://developer.wordpress.org/themes/features/block-stylesheets/
- * @link https://developer.wordpress.org/news/2022/12/07/leveraging-theme-json-and-per-block-styles-for-more-performant-themes/
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
+ * @link https://developer.wordpress.org/themes/features/block-stylesheets/
  *
  * @return void
  */
@@ -121,8 +119,10 @@ add_action('init', 'themeslug_block_stylesheets');
 /**
  * Registers custom block style variations.
  *
- * @link https://developer.wordpress.org/themes/features/block-style-variations/
  * @link https://developer.wordpress.org/reference/functions/register_block_style/
+ * @link https://developer.wordpress.org/themes/features/block-style-variations/
+ *
+ * @return void
  */
 function themeslug_block_style_variations() {
 	// register_block_style(
