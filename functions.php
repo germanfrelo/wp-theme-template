@@ -14,6 +14,24 @@ Replace all instances of the word 'themeslug' with your actual theme slug. Then 
 
 
 /**
+ * Gets the paths of some stylesheets.
+ *
+ * @return array An array of stylesheets URIs.
+ */
+function themeslug_get_stylesheets_paths() {
+	return array(
+		// Additional stylesheets.
+		get_parent_theme_file_uri('assets/css/base.css'),
+		get_parent_theme_file_uri('assets/css/layouts.css'),
+		get_parent_theme_file_uri('assets/css/utility-classes.css'),
+		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
+		// Active theme's style.css.
+		get_stylesheet_uri()
+	);
+}
+
+
+/**
  * Enqueues custom stylesheets on the front end of the website.
  *
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
@@ -22,39 +40,16 @@ Replace all instances of the word 'themeslug' with your actual theme slug. Then 
  * @return void
  */
 function themeslug_enqueue_styles() {
-	// Additional stylesheets.
-	wp_enqueue_style(
-		'themeslug-base',
-		get_parent_theme_file_uri('assets/css/base.css'),
-		array(),
-		wp_get_theme()->get('Version')
-	);
-	wp_enqueue_style(
-		'themeslug-layouts',
-		get_parent_theme_file_uri('assets/css/layouts.css'),
-		array(),
-		wp_get_theme()->get('Version')
-	);
-	wp_enqueue_style(
-		'themeslug-utility-classes',
-		get_parent_theme_file_uri('assets/css/utility-classes.css'),
-		array(),
-		wp_get_theme()->get('Version')
-	);
-	wp_enqueue_style(
-		'themeslug-gravity-forms',
-		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
-		array(),
-		wp_get_theme()->get('Version')
-	);
+	$css_paths = themeslug_get_stylesheets_paths();
 
-	// Active theme's style.css.
-	wp_enqueue_style(
-		'themeslug-style',
-		get_stylesheet_uri(),
-		array(),
-		wp_get_theme()->get('Version')
-	);
+	foreach ($css_paths as $path) {
+		wp_enqueue_style(
+			md5($path),
+			$path,
+			array(),
+			wp_get_theme()->get('Version')
+		);
+	}
 }
 add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
 
@@ -68,15 +63,7 @@ add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
  * @return void
  */
 function themeslug_editor_styles() {
-	add_editor_style(array(
-		// Additional stylesheets.
-		get_parent_theme_file_uri('assets/css/base.css'),
-		get_parent_theme_file_uri('assets/css/layouts.css'),
-		get_parent_theme_file_uri('assets/css/utility-classes.css'),
-		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
-		// Active theme's style.css.
-		get_stylesheet_uri()
-	));
+	add_editor_style(themeslug_get_stylesheets_paths());
 }
 add_action('after_setup_theme', 'themeslug_editor_styles');
 
