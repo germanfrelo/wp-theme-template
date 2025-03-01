@@ -1,52 +1,49 @@
-/**
- * A set of base styles for WordPress websites, a best practices CSS foundation as a reliable starting point for your CSS.
- *
- * This stylesheet provides consistent, cross-browser default styling of HTML elements, along with common and useful defaults that adhere to common developer expectations and preferences.
- *
- * Features:
- * - Normalizes styles for a wide range of elements.
- * - Fixes bugs and common browser inconsistencies.
- * - Provides common, useful defaults.
- * - Explains what the code does with detailed comments.
- *
- * Grouped by function based on https://html.spec.whatwg.org/multipage/#toc-semantics.
- */
+/* Global
+================================================== */
 
-/* <html> & all elements
-======================================== */
-
-/**
- * 1. Use the more intuitive alternative box model.
- * 2. Backgrounds images and mask images do not repeat.
- */
+/*
+1. Use the more intuitive and predictable border box sizing by default. (refs. https://github.com/jensimmons/cssremedy/issues/4 and https://wiki.csswg.org/ideas/mistakes).
+2. Don't repeat background images by default (ref. https://github.com/w3c/csswg-drafts/issues/4526).
+3. Don't repeat mask images by default.
+*/
 
 *,
-*::before,
-*::after {
+::before,
+::after {
 	box-sizing: border-box; /* 1 */
 	background-repeat: no-repeat; /* 2 */
-	mask-repeat: no-repeat; /* 2 */
+	-webkit-mask-repeat: no-repeat; /* 3 */
+	mask-repeat: no-repeat; /* 3 */
 }
 
-/**
- * 1. Fill the entire viewport height.
- * 2. Break words to prevent text overflow.
- * 3. Use a more readable and reasonable tab size (default is 8).
- * 4. Prevent WebKit-based browsers on iOS from automatically increasing the default font size when switching from portrait to landscape orientation (see https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/).
- */
+/*
+Revert adding 'background-repeat: no-repeat' to some form elements because it disables their native appearance in WebKit (bug: https://bugs.webkit.org/show_bug.cgi?id=117128#c2).
+*/
+
+:where(button, input, meter, progress, select),
+:where(button, input, meter, progress, select)::before,
+:where(button, input, meter, progress, select)::after {
+	background-repeat: revert;
+}
+
+/*
+1. A prerequisite for the 'body' to be able to fill the viewport height (requires 'body { min-block-size: 100%; }', see 'body' rule below). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
+2. Break words when there is not enough space to prevent text overflow.
+3. Use a shorter, more readable tab size (default is 8).
+4. Prevent WebKit-based browsers on iOS from automatically increasing the default font size in landscape orientation (demo: https://codepen.io/germanfrelo/pen/JoPJVxd).
+*/
 
 html {
 	block-size: 100%; /* 1 */
 	overflow-wrap: break-word; /* 2 */
 	tab-size: 4; /* 3 */
-	/* stylelint-disable-next-line property-no-vendor-prefix -- Intended. */
-	-webkit-text-size-adjust: none; /* 4 */
+	-webkit-text-size-adjust: none; /* 4 */ /* stylelint-disable-line property-no-vendor-prefix -- Intended. */
 }
 
-/**
- * 1. Smooth scrolling, but only when focused in the page to prevent unnaturally scrolling when tabbing though the results of a search.
- * 2. When users prefer reduced motion, remove timed scrolling behaviors.
- */
+/*
+1. Smooth scrolling, but only when focused in the page to prevent unnaturally scrolling when tabbing though the results of a search.
+2. When users prefer reduced motion, remove timed scrolling behaviors.
+*/
 
 /* 1 */
 html:focus-within {
@@ -60,136 +57,233 @@ html:focus-within {
 	}
 }
 
-/* Sections
-======================================== */
+/*
+When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar. Adjust as needed.
+Reference: https://piccalil.li/blog/a-more-modern-css-reset/
+*/
 
-/**
- * Fill the entire viewport height.
- */
+:target {
+	scroll-margin-block-start: 5em;
+}
+
+/* Page
+================================================== */
+
+/*
+Makes 'body' at least as tall as the viewport height (requires 'html { block-size: 100%; }', see 'html' rule above). Reference: https://codepen.io/germanfrelo/pen/jOGNpbj
+*/
 
 body {
 	min-block-size: 100%;
 }
 
-/* Grouping content
-======================================== */
+/* Headings
+================================================== */
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+/*
+Prevent the 'font-size' and 'margin' of 'h1' from decreasing when nested inside sectioning elements ('article', 'aside', 'nav', 'section') (refs. https://github.com/jensimmons/cssremedy/issues/2 and https://github.com/whatwg/html/issues/7867).
+*/
+
+:where(h1) {
+	margin-block: 0.67em;
+	font-size: 2em;
+}
+
+/* Grouping content
+================================================== */
+
+/*
+1. Fix the inheritance and scaling of the font size in all browsers.
+2. Fix the odd 'em' font sizing in all browsers.
+*/
 
 pre {
-	font-family: monospace, monospace; /* 1 */
+	font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names -- See https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966 */
 	font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
-======================================== */
+================================================== */
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+/*
+Keep the default 'font-weight' of 'b' and 'strong' consistent across browsers (Blink and Gecko use 'bolder' as per spec, WebKit uses 'bold'). 🔧
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/*
+1. Fix the inheritance and scaling of the font size in all browsers.
+2. Fix the odd 'em' font sizing in all browsers.
+*/
 
 code,
 kbd,
 samp {
-	font-family: monospace, monospace; /* 1 */
+	font-family: monospace, monospace; /* 1 */ /* stylelint-disable-line font-family-no-duplicate-names -- See https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966 */
 	font-size: 1em; /* 2 */
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height.
+/* Embedded content
+================================================== */
+
+/*
+1. Block by default is usually what we want/the most common use case (default is 'inline').
+2. Responsive by default to prevent them from growing beyond the container.
 */
 
-sub,
-sup {
-	position: relative;
-	font-size: 75%;
-	line-height: 0;
-	vertical-align: baseline;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-sup {
-	top: -0.5em;
-}
-
-/* Embedded content
-======================================== */
-
-/**
- * 1. Make replaced elements `display: block` by default.
- * 2. Responsive by preventing from growing beyond the container.
- */
-
-img,
-svg,
-video,
-canvas,
 audio,
-iframe,
+canvas,
 embed,
-object {
+iframe,
+img,
+object,
+svg,
+video {
 	display: block; /* 1 */
 	max-inline-size: 100%; /* 2 */
 }
 
-/**
- * Maintain intrinsic aspect ratios when `max-inline-size` is applied (`iframe`, `embed`, and `object` are also embedded, but have no intrinsic ratio, so their `block-size` needs to be set explicitly).
- */
+/*
+Revert the display block for 'img' and 'svg' nested in certain elements where they are likely to be used as inline.
+*/
 
+:is(li, p, span) > :is(img, svg) {
+	position: relative;
+	inset-block-end: 0.125em;
+	display: revert;
+	inline-size: 1em;
+	vertical-align: middle;
+}
+
+/*
+Maintain intrinsic aspect ratios when 'max-inline-size' is applied ('embed', 'iframe' and 'object' have no intrinsic ratio, so their 'block-size' needs to be set explicitly).
+*/
+
+canvas,
 img,
 svg,
-video,
-canvas {
+video {
 	block-size: auto;
 }
 
-/**
- * Make SVGs inherit color if they don't have a `fill` attribute.
- */
+/* Tabular data
+================================================== */
 
-svg:where(:not([fill])) {
-	fill: currentcolor;
+/*
+1. Ensure numbers line up (ref: https://github.com/jensimmons/cssremedy/issues/39#issuecomment-473012250)
+2. Prevent double borders.
+3. Fix the default table 'border-color: gray' on Chrome (bug: https://issues.chromium.org/issues/40615503).
+*/
+
+table {
+	font-variant-numeric: tabular-nums; /* 1 */
+	border-collapse: collapse; /* 2 */
+	border-color: currentcolor; /* 3 */
 }
 
-/* Tabular data
-======================================== */
-
-/**
- * Make `th` alignment (default is `center`) consistent with `td` alignment.
- */
+/*
+Make 'th' alignment (default is 'center') consistent with 'td' alignment.
+*/
 
 th {
 	text-align: inherit;
 }
 
-/* Forms
-======================================== */
+/*
+Add paddings and borders to table cells.
+*/
 
-/**
- * Add typography inheritance.
- */
-
-input,
-textarea,
-select,
-button {
-	font: inherit;
-	letter-spacing: inherit;
+:where(th, td) {
+	padding-block: 0.25em;
+	padding-inline: 0.5rem;
+	border: 1px solid;
 }
 
-/**
- * Responsive by preventing from growing beyond the container.
- */
+/* Forms
+================================================== */
 
+/*
+1. Remove the default 2px 'margin-inline' from 'fieldset', which is usually not wanted, in favor of better control in authored CSS.
+2. Change the default 'fieldset' border appearance.
+*/
+
+fieldset {
+	margin-inline: 0; /* 1 */
+	border: 1px solid; /* 2 */
+}
+
+/*
+1. Responsive by default by restricting sizing to the page width.
+2. Add typography inheritance ('line-height' is reverted to avoid removing their native appearance in WebKit).
+3. Add color inheritance.
+*/
+
+button,
 input,
-textarea,
-select {
-	max-inline-size: 100%;
+select,
+textarea {
+	max-inline-size: 100%; /* 1 */
+	font: inherit; /* 2 */
+	line-height: revert; /* 2 */
+	color: inherit; /* 3 */
+	word-spacing: inherit; /* 2 */
+	letter-spacing: inherit; /* 2 */
+}
+
+/*
+Remove Firefox's default 1px 'margin-block' from 'textarea' for consistency across browsers (bug: https://bugzilla.mozilla.org/show_bug.cgi?id=73817).
+*/
+
+textarea {
+	margin-block: 0;
+}
+
+/*
+Remove the default margin from some form elements, which is usually not wanted, in favor of better control in authored CSS.
+*/
+
+input[type="checkbox" i],
+input[type="radio" i],
+input[type="range" i] {
+	margin: 0;
+}
+
+/*
+1. Normalizes the placeholder color with a new default value that is consistent and accessible across browsers (reference: https://codepen.io/germanfrelo/pen/EaYwZdb)
+2. Sets a more modern alternative that provides a value for dark color schemes of browsers that is also accesible across the different background colors for dark themes of browsers.
+*/
+
+::placeholder {
+	color: #757575;
+}
+
+@supports (color: light-dark(black, white)) {
+	::placeholder {
+		color: light-dark(hsl(0deg 0% 46%), hsl(0deg 0% 65%));
+	}
+}
+
+/*
+1. Set a consistent margin across browsers.
+2. Change font properties to 'inherit' in WebKit.
+*/
+
+::file-selector-button {
+	margin-inline-end: 1ch; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Cursor
+================================================== */
+
+/*
+Set the cursor for 'summary' to be the same as buttons by default, so they feel more interactive.
+Use the same default cursor used for buttons to make it feel interactive (default is 'text').
+*/
+
+:where(details > summary:first-of-type) {
+	cursor: default;
 }
