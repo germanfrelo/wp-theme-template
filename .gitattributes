@@ -5,3 +5,4 @@
 
 # Excluded files and directories from GitHub language statistics.
 *.config.js linguist-vendored
+.husky/** linguist-vendored

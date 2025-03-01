@@ -16,12 +16,12 @@ export default {
 		// Descending
 		"no-descending-specificity": [
 			true, // Already enabled in stylelint-config-recommended
-			{ severity: "warning" }, // Default is 'error', but I prefer 'warning'
+			{ severity: "warning" }, // Relax the severity level because this rule has limitations
 		],
 		// Duplicate
 		"font-family-no-duplicate-names": [
 			true, // Already enabled in stylelint-config-recommended
-			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in the CSS reset
+			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in base.css
 		],
 		// Unknown
 		"no-unknown-animations": true,
@@ -30,6 +30,11 @@ export default {
 		/* Enforce conventions
 		(overrides rules from stylelint-config-standard)
 		---------------------------------------- */
+		// Allowed, disallowed & required
+		"property-no-vendor-prefix": [
+			true, // Already enabled in stylelint-config-recommended
+			{ ignoreProperties: ["/^mask-/"] }, // Allow -webkit-mask-* properties
+		],
 		// Empty lines
 		"declaration-empty-line-before": "never",
 		// Notation
@@ -50,9 +55,9 @@ export default {
 			{
 				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
-				"background-repeat": false, // The imported CSS reset already apply 'no-repeat' to all elements
-				"custom-property-fallbacks": false, // Not suitable with WordPress
-				"flex-wrapping": false, // Not suitable with WordPress
+				"background-repeat": false, // base.css already apply 'no-repeat' to all elements
+				"custom-property-fallbacks": true,
+				"flex-wrapping": true,
 				"scroll-chaining": true,
 				"scrollbar-gutter": false, // Enable as needed
 				"vendor-prefix-grouping": true,

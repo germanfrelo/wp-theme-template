@@ -6,3 +6,6 @@
 
 # Minified files
 **/*.min.*
+
+# Build output
+build/
