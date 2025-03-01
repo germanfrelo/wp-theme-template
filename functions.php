@@ -82,24 +82,6 @@ add_action('after_setup_theme', 'themeslug_editor_styles');
 
 
 /**
- * Registers custom block style variations.
- *
- * @link https://developer.wordpress.org/themes/features/block-style-variations/
- * @link https://developer.wordpress.org/reference/functions/register_block_style/
- */
-function themeslug_block_style_variations() {
-	// register_block_style(
-	// 	'core/_____',
-	// 	array(
-	// 		'name'         => '__________',
-	// 		'label'        => __('__________', 'themeslug'),
-	// 	)
-	// );
-}
-add_action('init', 'themeslug_block_style_variations');
-
-
-/**
  * Enqueues custom block stylesheets (on the front end and in the editor).
  *
  * @link https://developer.wordpress.org/block-editor/how-to-guides/enqueueing-assets-in-the-editor/#theme-scripts-and-styles
@@ -134,3 +116,21 @@ function themeslug_block_stylesheets() {
 	}
 }
 add_action('init', 'themeslug_block_stylesheets');
+
+
+/**
+ * Registers custom block style variations.
+ *
+ * @link https://developer.wordpress.org/themes/features/block-style-variations/
+ * @link https://developer.wordpress.org/reference/functions/register_block_style/
+ */
+function themeslug_block_style_variations() {
+	// register_block_style(
+	// 	'core/_____',
+	// 	array(
+	// 		'name'         => '__________',
+	// 		'label'        => __('__________', 'themeslug'),
+	// 	)
+	// );
+}
+add_action('init', 'themeslug_block_style_variations');
