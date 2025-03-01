@@ -72,7 +72,7 @@ function themeslug_editor_styles() {
 		// Additional stylesheets.
 		get_parent_theme_file_uri('assets/css/base.css'),
 		get_parent_theme_file_uri('assets/css/layouts.css'),
-		get_parent_theme_file_uri('assets/css/utilit-classes.css'),
+		get_parent_theme_file_uri('assets/css/utility-classes.css'),
 		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
 		// Active theme's style.css.
 		get_stylesheet_uri()
