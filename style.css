@@ -1,13 +1,18 @@
-/**
- * Theme Name:   ________________________________________
- * Description:  ________________________________________
- * Author:       ________________________________________
- * Author URI:   ________________________________________
- * Version:      1.0.0
- * Tested up to: ________
- * License:      GNU General Public License v2 or later
- * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
- */
+/*
+Theme Name:        Template
+Theme URI:         https://github.com/germanfrelo/wp-theme-template
+Description:       Starter block theme template with a curated and useful set of basic presets.
+Version:           0.0.1
+Author:            Germán Freixinós
+Author URI:        https://germanfrelo.dev/
+Tags:
+Text Domain:       wp-theme-template
+Tested up to:      6.7.2
+Requires at least: 6.7
+Requires PHP:      8.0
+License:           GNU General Public License v2.0 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+*/
 
 /**
  * TABLE OF CONTENTS:
