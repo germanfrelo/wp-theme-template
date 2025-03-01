@@ -35,7 +35,7 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 	/**
 	 * ----------------------------------------------------------------------
 	 * Viewport Widths
-	 * Min:  375px
+	 * Min:  320px
 	 * Max: 1440px
 	 * ----------------------------------------------------------------------
 	 */
@@ -43,105 +43,86 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 	/**
 	 * ----------------------------------------------------------------------
 	 * Fluid Type Scale
-	 * @link https://utopia.fyi/clamp/calculator?a=375,1440,14—15|17—19|20—24|25—30|29—37|35—46|42—58&p=font-size
+	 * @link https://utopia.fyi/clamp/calculator?a=320,1440,14—15|17—19|20—24|25—30|29—37|35—46|42—58&p=font-size
 	 * ----------------------------------------------------------------------
 	 */
 
-	--font-size-14-15: clamp(0.875rem, 0.853rem + 0.0939vw, 0.9375rem);
-	--font-size-17-19: clamp(1.0625rem, 1.0185rem + 0.1878vw, 1.1875rem);
-	--font-size-20-24: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
-	--font-size-25-30: clamp(1.5625rem, 1.4525rem + 0.4695vw, 1.875rem);
-	--font-size-29-37: clamp(1.8125rem, 1.6364rem + 0.7512vw, 2.3125rem);
-	--font-size-35-46: clamp(2.1875rem, 1.9454rem + 1.0329vw, 2.875rem);
-	--font-size-42-58: clamp(2.625rem, 2.2729rem + 1.5023vw, 3.625rem);
+	--font-size-14-15: clamp(0.875rem, 0.8571rem + 0.0893vw, 0.9375rem);
+	--font-size-17-19: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
+	--font-size-20-24: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.5rem);
+	--font-size-25-30: clamp(1.5625rem, 1.4732rem + 0.4464vw, 1.875rem);
+	--font-size-29-37: clamp(1.8125rem, 1.6696rem + 0.7143vw, 2.3125rem);
+	--font-size-35-46: clamp(2.1875rem, 1.9911rem + 0.9821vw, 2.875rem);
+	--font-size-42-58: clamp(2.625rem, 2.3393rem + 1.4286vw, 3.625rem);
 
 	/**
 	 * ----------------------------------------------------------------------
 	 * Fluid Spacing Scale
-	 * @link https://utopia.fyi/space/calculator?c=375,17,1.125,1440,19,1.2,5,2,&s=0.67|0.45|0.29,1.5|2.25|3.38|5.06|7.59,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl&g=s,l,xl,12
+	 * @link https://utopia.fyi/space/calculator?c=320,16,1.125,1440,18,1.2,5,2,&s=0.67|0.45|0.29,1.5|2.25|3.38|5.06|7.59,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl&g=s,l,xl,12
 	 * ----------------------------------------------------------------------
 	 */
 
-	/* Space 3xs: 5px → 6px */
-	--space-3xs: clamp(0.3125rem, 0.2905rem + 0.0939vw, 0.375rem);
+	/* stylelint-disable comment-empty-line-before -- Intended */
 
-	/* Space 2xs: 8px → 9px */
-	--space-2xs: clamp(0.5rem, 0.478rem + 0.0939vw, 0.5625rem);
-
-	/* Space xs: 11px → 13px */
-	--space-xs: clamp(0.6875rem, 0.6435rem + 0.1878vw, 0.8125rem);
-
-	/* Space s: 17px → 19px */
-	--space-s: clamp(1.0625rem, 1.0185rem + 0.1878vw, 1.1875rem);
-
-	/* Space m: 26px → 29px */
-	--space-m: clamp(1.625rem, 1.559rem + 0.2817vw, 1.8125rem);
-
-	/* Space l: 38px → 43px */
-	--space-l: clamp(2.375rem, 2.265rem + 0.4695vw, 2.6875rem);
-
-	/* Space xl: 57px → 64px */
-	--space-xl: clamp(3.5625rem, 3.4085rem + 0.6573vw, 4rem);
-
-	/* Space 2xl: 86px → 96px */
-	--space-2xl: clamp(5.375rem, 5.1549rem + 0.939vw, 6rem);
-
-	/* Space 3xl: 129px → 144px */
-	--space-3xl: clamp(8.0625rem, 7.7324rem + 1.4085vw, 9rem);
+	/* Space 3xs: 5px → 5px */
+	--space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+	/* Space 2xs: 7px → 8px */
+	--space-2xs: clamp(0.4375rem, 0.4196rem + 0.0893vw, 0.5rem);
+	/* Space xs: 11px → 12px */
+	--space-xs: clamp(0.6875rem, 0.6696rem + 0.0893vw, 0.75rem);
+	/* Space s: 16px → 18px */
+	--space-s: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+	/* Space m: 24px → 27px */
+	--space-m: clamp(1.5rem, 1.4464rem + 0.2679vw, 1.6875rem);
+	/* Space l: 36px → 41px */
+	--space-l: clamp(2.25rem, 2.1607rem + 0.4464vw, 2.5625rem);
+	/* Space xl: 54px → 61px */
+	--space-xl: clamp(3.375rem, 3.25rem + 0.625vw, 3.8125rem);
+	/* Space 2xl: 81px → 91px */
+	--space-2xl: clamp(5.0625rem, 4.8839rem + 0.8929vw, 5.6875rem);
+	/* Space 3xl: 121px → 137px */
+	--space-3xl: clamp(7.5625rem, 7.2768rem + 1.4286vw, 8.5625rem);
 
 	/* One-up pairs */
-
-	/* Space 3xs-2xs: 5px → 9px */
-	--space-3xs-2xs: clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem);
-
-	/* Space 2xs-xs: 8px → 13px */
-	--space-2xs-xs: clamp(0.5rem, 0.39rem + 0.4695vw, 0.8125rem);
-
-	/* Space xs-s: 11px → 19px */
-	--space-xs–s: clamp(0.6875rem, 0.5114rem + 0.7512vw, 1.1875rem);
-
-	/* Space s-m: 17px → 29px */
-	--space-s–m: clamp(1.0625rem, 0.7984rem + 1.1268vw, 1.8125rem);
-
-	/* Space m-l: 26px → 43px */
-	--space-m-l: clamp(1.625rem, 1.2509rem + 1.5962vw, 2.6875rem);
-
-	/* Space l-xl: 38px → 64px */
-	--space-l-xl: clamp(2.375rem, 1.8028rem + 2.4413vw, 4rem);
-
-	/* Space xl-2xl: 57px → 96px */
-	--space-xl-2xl: clamp(3.5625rem, 2.7042rem + 3.662vw, 6rem);
-
-	/* Space 2xl-3xl: 86px → 144px */
-	--space-2xl-3xl: clamp(5.375rem, 4.0986rem + 5.446vw, 9rem);
+	/* Space 3xs-2xs: 5px → 8px */
+	--space-3xs-2xs: clamp(0.3125rem, 0.2589rem + 0.2679vw, 0.5rem);
+	/* Space 2xs-xs: 7px → 12px */
+	--space-2xs-xs: clamp(0.4375rem, 0.3482rem + 0.4464vw, 0.75rem);
+	/* Space xs-s: 11px → 18px */
+	--space-xs-s: clamp(0.6875rem, 0.5625rem + 0.625vw, 1.125rem);
+	/* Space s-m: 16px → 27px */
+	--space-s-m: clamp(1rem, 0.8036rem + 0.9821vw, 1.6875rem);
+	/* Space m-l: 24px → 41px */
+	--space-m-l: clamp(1.5rem, 1.1964rem + 1.5179vw, 2.5625rem);
+	/* Space l-xl: 36px → 61px */
+	--space-l-xl: clamp(2.25rem, 1.8036rem + 2.2321vw, 3.8125rem);
+	/* Space xl-2xl: 54px → 91px */
+	--space-xl-2xl: clamp(3.375rem, 2.7143rem + 3.3036vw, 5.6875rem);
+	/* Space 2xl-3xl: 81px → 137px */
+	--space-2xl-3xl: clamp(5.0625rem, 4.0625rem + 5vw, 8.5625rem);
 
 	/* Custom pairs */
+	/* Space 3xs-xs: 5px → 12px */
+	--space-3xs-xs: clamp(0.3125rem, 0.1875rem + 0.625vw, 0.75rem);
+	/* Space 2xs-s: 7px → 18px */
+	--space-2xs-s: clamp(0.4375rem, 0.2411rem + 0.9821vw, 1.125rem);
+	/* Space xs-m: 11px → 27px */
+	--space-xs-m: clamp(0.6875rem, 0.4018rem + 1.4286vw, 1.6875rem);
+	/* Space s-l: 16px → 41px */
+	--space-s-l: clamp(1rem, 0.5536rem + 2.2321vw, 2.5625rem);
+	/* Space m-xl: 24px → 61px */
+	--space-m-xl: clamp(1.5rem, 0.8393rem + 3.3036vw, 3.8125rem);
+	/* Space l-2xl: 36px → 91px */
+	--space-l-2xl: clamp(2.25rem, 1.2679rem + 4.9107vw, 5.6875rem);
+	/* Space xl-3xl: 54px → 137px */
+	--space-xl-3xl: clamp(3.375rem, 1.8929rem + 7.4107vw, 8.5625rem);
 
-	/* Space 3xs-xs: 5px → 13px */
-	--space-3xs-xs: clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem);
-
-	/* Space 2xs-s: 8px → 19px */
-	--space-2xs-s: clamp(0.5rem, 0.2579rem + 1.0329vw, 1.1875rem);
-
-	/* Space xs-m: 11px → 29px */
-	--space-xs-m: clamp(0.6875rem, 0.2914rem + 1.6901vw, 1.8125rem);
-
-	/* Space s-l: 17px → 43px */
-	--space-s-l: clamp(1.0625rem, 0.4903rem + 2.4413vw, 2.6875rem);
-
-	/* Space m-xl: 26px → 64px */
-	--space-m-xl: clamp(1.625rem, 0.7887rem + 3.5681vw, 4rem);
-
-	/* Space l-2xl: 38px → 96px */
-	--space-l-2xl: clamp(2.375rem, 1.0986rem + 5.446vw, 6rem);
-
-	/* Space xl-3xl: 57px → 144px */
-	--space-xl-3xl: clamp(3.5625rem, 1.6479rem + 8.169vw, 9rem);
+	/* stylelint-enable comment-empty-line-before */
 
 	/**
 	 * ----------------------------------------------------------------------
 	 * Custom Fluid Tokens
-	 * @link https://utopia.fyi/clamp/calculator?a=375,1440
+	 * @link https://utopia.fyi/clamp/calculator?a=320,1440
 	 * ----------------------------------------------------------------------
 	 */
 
