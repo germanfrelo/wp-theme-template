@@ -14,7 +14,7 @@ Replace all instances of the word 'themeslug' with your theme name. Then remove 
 
 
 /**
- * Enqueues stylesheets on the front end.
+ * Enqueues custom stylesheets on the front end.
  *
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#front-end-stylesheets
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
@@ -23,19 +23,44 @@ Replace all instances of the word 'themeslug' with your theme name. Then remove 
  */
 function themeslug_enqueue_styles() {
 	// Additional stylesheets.
-	wp_enqueue_style('themeslug-base', get_parent_theme_file_uri('assets/css/base.css'));
-	wp_enqueue_style('themeslug-layouts', get_parent_theme_file_uri('assets/css/layouts.css'));
-	wp_enqueue_style('themeslug-utility-classes', get_parent_theme_file_uri('assets/css/utility-classes.css'));
-	wp_enqueue_style('themeslug-gravity-forms', get_parent_theme_file_uri('assets/css/gravity-forms.css'));
+	wp_enqueue_style(
+		'themeslug-base',
+		get_parent_theme_file_uri('assets/css/base.css'),
+		array(),
+		wp_get_theme()->get('Version')
+	);
+	wp_enqueue_style(
+		'themeslug-layouts',
+		get_parent_theme_file_uri('assets/css/layouts.css'),
+		array(),
+		wp_get_theme()->get('Version')
+	);
+	wp_enqueue_style(
+		'themeslug-utility-classes',
+		get_parent_theme_file_uri('assets/css/utility-classes.css'),
+		array(),
+		wp_get_theme()->get('Version')
+	);
+	wp_enqueue_style(
+		'themeslug-gravity-forms',
+		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
+		array(),
+		wp_get_theme()->get('Version')
+	);
 
 	// Active theme's style.css.
-	wp_enqueue_style('themeslug-style', get_stylesheet_uri());
+	wp_enqueue_style(
+		'themeslug-style',
+		get_stylesheet_uri(),
+		array(),
+		wp_get_theme()->get('Version')
+	);
 }
 add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
 
 
 /**
- * Enqueues stylesheets in the editor.
+ * Enqueues custom stylesheets in the editor.
  *
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#editor-stylesheets
  * @link https://developer.wordpress.org/reference/functions/add_editor_style/
