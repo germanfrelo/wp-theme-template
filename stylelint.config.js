@@ -18,11 +18,6 @@ export default {
 			true, // Already enabled in stylelint-config-recommended
 			{ severity: "warning" }, // Relax the severity level because this rule has limitations
 		],
-		// Duplicate
-		"font-family-no-duplicate-names": [
-			true, // Already enabled in stylelint-config-recommended
-			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in base.css
-		],
 		// Unknown
 		"no-unknown-animations": true,
 		"no-unknown-custom-media": true,
