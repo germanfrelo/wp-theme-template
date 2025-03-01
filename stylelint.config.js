@@ -50,9 +50,9 @@ export default {
 			{
 				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
-				"background-repeat": false, // The imported CSS reset already apply 'no-repeat' to all elements
-				"custom-property-fallbacks": false, // Not suitable with WordPress
-				"flex-wrapping": false, // Not suitable with WordPress
+				"background-repeat": false, // base.css already apply 'no-repeat' to all elements
+				"custom-property-fallbacks": true,
+				"flex-wrapping": true,
 				"scroll-chaining": true,
 				"scrollbar-gutter": false, // Enable as needed
 				"vendor-prefix-grouping": true,
