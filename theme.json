@@ -375,7 +375,6 @@
 				},
 				"typography": {
 					"lineHeight": "var:custom|line-height|small",
-					"textAlign": "center",
 					"textDecoration": "none"
 				},
 				"border": {
