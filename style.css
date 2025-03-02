@@ -137,11 +137,25 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Opt-in the whole page to interpolate sizes to/from keywords */
+/* Opts-in the whole page to interpolate sizes to/from keywords */
 @media (prefers-reduced-motion: no-preference) {
 	html {
 		interpolate-size: allow-keywords;
 	}
+}
+
+/* Reduces typography orphans */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+caption,
+figcaption {
+	text-wrap: pretty;
 }
 
 /* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
