@@ -1,0 +1,10 @@
+/* =======================================================================================
+Tag Cloud
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/tag-cloud
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/tag-cloud
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */

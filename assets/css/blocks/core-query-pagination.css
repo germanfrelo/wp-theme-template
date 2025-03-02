@@ -1,8 +1,13 @@
-/**
- * Pagination
- *
- * @link https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination
- */
+/* =======================================================================================
+Query Pagination
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/query-pagination
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
 
 /* Remove default margin from child blocks of Pagination block */
 .wp-block-query-pagination .wp-block-query-pagination-numbers,

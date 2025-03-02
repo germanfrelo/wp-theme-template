@@ -1,0 +1,10 @@
+/* =======================================================================================
+Post Comments Link
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-comments-link
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-comments-link
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */

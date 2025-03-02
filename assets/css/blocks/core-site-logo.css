@@ -1,9 +1,13 @@
-/**
- * Site Logo
- *
- * @link https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/site-logo
- * @link https://wordpress.org/support/article/site-logo-block/
- */
+/* =======================================================================================
+Site Logo
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/site-logo
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/site-logo
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
 
 /* Make site logo height responsive. */
 .wp-block-site-logo img {
