@@ -169,6 +169,15 @@ figcaption {
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
+Flow Spacing
+---------------------------------------------------------------------- */
+
+/* Removes unwanted top margin from elements that come immediately after any '.visually-hidden' element */
+.visually-hidden + * {
+	margin-block-start: 0;
+}
+
+/* ----------------------------------------------------------------------
 Root Container
 
 https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
