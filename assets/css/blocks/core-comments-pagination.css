@@ -1,0 +1,10 @@
+/* =======================================================================================
+Comments Pagination
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/comments-pagination
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/comments-pagination
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
