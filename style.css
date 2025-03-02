@@ -131,6 +131,13 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Opt-in the whole page to interpolate sizes to/from keywords */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
 /* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
 *:focus-visible {
 	outline: 0.375rem double #000;
