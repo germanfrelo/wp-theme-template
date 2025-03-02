@@ -17,10 +17,10 @@
 	padding: 0 !important;
 	margin: -1px !important;
 	overflow: hidden !important;
-	white-space: nowrap !important;
+	white-space: nowrap;
 	border: 0 !important;
-	clip: rect(0 0 0 0) !important;
-	clip-path: inset(50%) !important;
+	clip: rect(1px, 1px, 1px, 1px); /* For legacy browsers */
+	clip-path: inset(50%); /* For modern browsers */
 }
 
 /* Backgrounds
@@ -126,12 +126,12 @@
  * Flex Shrink
  */
 
-.flex-shrink-0 {
-	flex-shrink: 0 !important;
+.flex-none {
+	flex: none !important;
 }
 
-.no-shrink-children > * {
-	flex-shrink: 0 !important;
+.flex-none-children > * {
+	flex: none !important;
 }
 
 /**
@@ -213,10 +213,10 @@
  * Text Wrap
  */
 
-.text-wrap-balance {
+.text-balance {
 	text-wrap: balance !important;
 }
 
-.text-wrap-pretty {
+.text-pretty {
 	text-wrap: pretty !important;
 }
