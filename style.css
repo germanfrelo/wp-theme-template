@@ -126,6 +126,12 @@ TABLE OF CONTENTS:
 To style the HTML elements, follow this order:
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ====================================================================== */
+
+/* Reverts default margins from WP */
+:where(figure) {
+	margin: revert;
+}
+
 html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
