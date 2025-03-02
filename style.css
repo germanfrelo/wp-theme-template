@@ -128,6 +128,7 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ====================================================================== */
 html {
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
