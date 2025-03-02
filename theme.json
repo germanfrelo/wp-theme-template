@@ -320,6 +320,7 @@
 		"elements": {
 			"heading": {
 				"typography": {
+					"fontFamily": "var:preset|font-family|special",
 					"fontWeight": "var:custom|font-weight|bold",
 					"lineHeight": "var:custom|line-height|small"
 				},
@@ -374,8 +375,14 @@
 					}
 				},
 				"typography": {
+					"fontWeight": "var:custom|font-weight|medium",
 					"lineHeight": "var:custom|line-height|small",
-					"textDecoration": "none"
+					"textDecoration": "none",
+					"letterSpacing": "var:custom|letter-spacing|wide"
+				},
+				"color": {
+					"text": "var:preset|color|base",
+					"background": "var:preset|color|contrast"
 				},
 				"border": {
 					"width": "2px",
