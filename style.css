@@ -14,38 +14,29 @@ License:           GNU General Public License v2.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/**
- * TABLE OF CONTENTS:
- *
- * 1. Global Custom Properties
- * 2. Global Styles
- * 3. Local/Scoped Styles
- *
- * @link https://every-layout.dev/rudiments/global-and-local-styling/
- * @link https://cube.fyi/
- */
+/*
+TABLE OF CONTENTS:
+1. Global Custom Properties
+2. Global Styles
+3. Local/Scoped Styles
+*/
 
-/**
- * ======================================================================
- * 1. Global Custom Properties
- * ======================================================================
- */
+/* ======================================================================
+1. Global Custom Properties
+====================================================================== */
 
 :root {
-	/**
-	 * ----------------------------------------------------------------------
-	 * Viewport Widths
-	 * Min:  320px
-	 * Max: 1440px
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Viewport Widths (in px):
+	* Min:  320
+	* Max: 1440
+	---------------------------------------------------------------------- */
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Fluid Type Scale
-	 * @link https://utopia.fyi/clamp/calculator?a=320,1440,14—15|17—19|20—24|25—30|29—37|35—46|42—58&p=font-size
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Fluid Type Scale
+	---------------------------------------------------------------------- */
+
+	/* @link https://utopia.fyi/clamp/calculator?a=320,1440,14—15|17—19|20—24|25—30|29—37|35—46|42—58&p=font-size */
 
 	--font-size-14-15: clamp(0.875rem, 0.8571rem + 0.0893vw, 0.9375rem);
 	--font-size-17-19: clamp(1.0625rem, 1.0268rem + 0.1786vw, 1.1875rem);
@@ -55,14 +46,13 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 	--font-size-35-46: clamp(2.1875rem, 1.9911rem + 0.9821vw, 2.875rem);
 	--font-size-42-58: clamp(2.625rem, 2.3393rem + 1.4286vw, 3.625rem);
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Fluid Spacing Scale
-	 * @link https://utopia.fyi/space/calculator?c=320,16,1.125,1440,18,1.2,5,2,&s=0.67|0.45|0.29,1.5|2.25|3.38|5.06|7.59,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl&g=s,l,xl,12
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Fluid Space Scale
+	---------------------------------------------------------------------- */
 
 	/* stylelint-disable comment-empty-line-before -- Intended */
+
+	/* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1440,18,1.2,5,2,&s=0.67|0.45|0.29,1.5|2.25|3.38|5.06|7.59,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl&g=s,l,xl,12 */
 
 	/* Space 3xs: 5px → 5px */
 	--space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
@@ -119,39 +109,23 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
 	/* stylelint-enable comment-empty-line-before */
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Custom Fluid Tokens
-	 * @link https://utopia.fyi/clamp/calculator?a=320,1440
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Fluid Custom Tokens
+	---------------------------------------------------------------------- */
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Another Custom Properties
-	 * ----------------------------------------------------------------------
-	 */
+	/* @link https://utopia.fyi/clamp/calculator?a=320,1440 */
 
-	--icon-min-size: 44px;
-	--site-logo-height: 48px;
+	/* ----------------------------------------------------------------------
+	Another Custom Properties
+	---------------------------------------------------------------------- */
 }
 
-/**
- * ======================================================================
- * 2. Global Styles
- *
- * Grouped by function based on
- * https://html.spec.whatwg.org/multipage/#toc-semantics.
- * ======================================================================
- */
+/* ======================================================================
+2. Global Styles
 
-/*
- * ----------------------------------------------------------------------
- * Root & Universal
- * ----------------------------------------------------------------------
- */
-
-/* To match the font smoothing used in Figma design */
+To style the HTML elements, follow this order:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+====================================================================== */
 html {
 	-webkit-font-smoothing: antialiased;
 }
@@ -162,21 +136,22 @@ html {
 	box-shadow: 0 0 0 0.25rem #fff;
 }
 
-/**
- * ======================================================================
- * 3. Local/Scoped Styles
- * ======================================================================
- */
+/* ======================================================================
+3. Local/Scoped Styles
+====================================================================== */
 
-/**
- * ----------------------------------------------------------------------
- * Site Blocks
- * ----------------------------------------------------------------------
- */
+/* ----------------------------------------------------------------------
+Root Container
 
-/**
- * Let `main` fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom.
- */
+https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+---------------------------------------------------------------------- */
+
+/* Removes the spacing between direct child elements of '.wp-site-blocks' */
+.wp-site-blocks > * + * {
+	margin-block-start: 0;
+}
+
+/* Lets 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
 
 .wp-site-blocks:has(> main) {
 	display: flex;
@@ -190,12 +165,4 @@ html {
 
 .wp-site-blocks:has(> main) > main {
 	flex-grow: 1;
-}
-
-/**
- * Remove block spacing between children (header/main/footer)
- */
-
-.wp-site-blocks > * + :is(main, footer) {
-	margin-block-start: 0;
 }
