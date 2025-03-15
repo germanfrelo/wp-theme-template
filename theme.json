@@ -50,14 +50,11 @@
 				"small": "0.125rem"
 			},
 			"fontWeight": {
-				"light": "300",
-				"normal": "400",
-				"medium": "500",
-				"semibold": "600",
-				"bold": "700"
-			},
-			"letterSpacing": {
-				"wide": "0.05ch"
+				"base": {
+					"normal": "400",
+					"bold": "700"
+				},
+				"heading": "900"
 			},
 			"lineHeight": {
 				"flat": "1",
@@ -210,50 +207,101 @@
 				{
 					"name": "Base",
 					"slug": "base",
-					"fontFamily": "______, sans-serif",
+					"fontFamily": "'IBM Plex Sans', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "______",
+							"fontFamily": "'IBM Plex Sans'",
 							"fontWeight": "400",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-400-normal.woff2"]
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-normal.woff2"
+							]
 						},
 						{
-							"fontFamily": "______",
+							"fontFamily": "'IBM Plex Sans'",
 							"fontWeight": "400",
 							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-400-italic.woff2"]
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-italic.woff2"
+							]
 						},
 						{
-							"fontFamily": "______",
+							"fontFamily": "'IBM Plex Sans'",
 							"fontWeight": "700",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-700-normal.woff2"]
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-normal.woff2"
+							]
 						},
 						{
-							"fontFamily": "______",
+							"fontFamily": "'IBM Plex Sans'",
 							"fontWeight": "700",
 							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-700-italic.woff2"]
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-italic.woff2"
+							]
 						}
 					]
 				},
 				{
-					"name": "Special",
-					"slug": "special",
-					"fontFamily": "'______', sans-serif",
+					"name": "Display",
+					"slug": "display",
+					"fontFamily": "Merriweather, serif",
 					"fontFace": [
 						{
-							"fontFamily": "______",
-							"fontWeight": "700",
+							"fontFamily": "Merriweather",
+							"fontWeight": "900",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-700-normal.woff2"]
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
+							]
 						},
 						{
-							"fontFamily": "______",
+							"fontFamily": "Merriweather",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
+							]
+						}
+					]
+				},
+				{
+					"name": "Monospace",
+					"slug": "mono",
+					"fontFamily": "'JetBrains Mono', monospace",
+					"fontFace": [
+						{
+							"fontFamily": "'JetBrains Mono'",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "'JetBrains Mono'",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "'JetBrains Mono'",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "'JetBrains Mono'",
 							"fontWeight": "700",
 							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-700-italic.woff2"]
+							"src": [
+								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-italic.woff2"
+							]
 						}
 					]
 				}
@@ -320,11 +368,9 @@
 		"elements": {
 			"heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|special",
-					"fontWeight": "var:custom|font-weight|bold",
-					"lineHeight": "var:custom|line-height|small"
-				},
-				"css": "& { text-wrap: balance; }"
+					"fontFamily": "var:preset|font-family|display",
+					"fontWeight": "var:custom|font-weight|heading"
+				}
 			},
 			"h1": {
 				"typography": {
@@ -375,7 +421,7 @@
 					}
 				},
 				"typography": {
-					"fontWeight": "var:custom|font-weight|medium",
+					"fontWeight": "var:custom|font-weight|body|bold",
 					"lineHeight": "var:custom|line-height|small",
 					"textDecoration": "none",
 					"letterSpacing": "var:custom|letter-spacing|wide"
@@ -423,7 +469,11 @@
 			"core/buttons": {},
 			"core/calendar": {},
 			"core/categories": {},
-			"core/code": {},
+			"core/code": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|mono"
+				}
+			},
 			"core/column": {},
 			"core/columns": {},
 			"core/comment-author-name": {},
@@ -476,8 +526,11 @@
 			"core/post-template": {},
 			"core/post-terms": {},
 			"core/post-time-to-read": {},
-			"core/post-title": {},
-			"core/preformatted": {},
+			"core/preformatted": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|mono"
+				}
+			},
 			"core/pullquote": {},
 			"core/query": {},
 			"core/query-no-results": {},
