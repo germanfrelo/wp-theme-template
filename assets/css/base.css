@@ -139,11 +139,8 @@ video {
 Revert the display block for 'img' and 'svg' nested in certain elements where they are likely to be used as inline.
 */
 
-:is(li, p, span) > :is(img, svg) {
-	position: relative;
-	inset-block-end: 0.125em;
+:where(a, button, cite, h1, h2, h3, h4, h5, h6, li, p, td, th) > :is(img, svg) {
 	display: revert;
-	inline-size: 1em;
 	vertical-align: middle;
 }
 
