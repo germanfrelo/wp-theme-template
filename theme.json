@@ -72,132 +72,102 @@
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
-					"name": "Auto",
-					"slug": "auto",
-					"size": "auto"
-				},
-				{
-					"name": "Fluid 3XS",
-					"slug": "xxxs",
+					"name": "3XS",
+					"slug": "3-xs",
 					"size": "var(--space-3xs)"
 				},
 				{
-					"name": "Fluid 3XS–2XS",
-					"slug": "xxxs-xxs",
+					"name": "3XS–2XS",
+					"slug": "3-xs-2-xs",
 					"size": "var(--space-3xs-2xs)"
 				},
 				{
-					"name": "Fluid 3XS–XS",
-					"slug": "xxxs-xs",
-					"size": "var(--space-3xs-xs)"
-				},
-				{
-					"name": "Fluid 2XS",
-					"slug": "xxs",
+					"name": "2XS",
+					"slug": "2-xs",
 					"size": "var(--space-2xs)"
 				},
 				{
-					"name": "Fluid 2XS–XS",
-					"slug": "xxs-xs",
+					"name": "2XS–XS",
+					"slug": "2-xs-xs",
 					"size": "var(--space-2xs-xs)"
 				},
 				{
-					"name": "Fluid 2XS–S",
-					"slug": "xxs-s",
-					"size": "var(--space-2xs-s)"
-				},
-				{
-					"name": "Fluid XS",
+					"name": "XS",
 					"slug": "xs",
 					"size": "var(--space-xs)"
 				},
 				{
-					"name": "Fluid XS–S",
+					"name": "XS–S",
 					"slug": "xs-s",
 					"size": "var(--space-xs-s)"
 				},
 				{
-					"name": "Fluid XS–M",
-					"slug": "xs-m",
-					"size": "var(--space-xs-m)"
-				},
-				{
-					"name": "Fluid S",
+					"name": "S",
 					"slug": "s",
 					"size": "var(--space-s)"
 				},
 				{
-					"name": "Fluid S–M",
+					"name": "S–M",
 					"slug": "s-m",
 					"size": "var(--space-s-m)"
 				},
 				{
-					"name": "Fluid S–L",
-					"slug": "s-l",
-					"size": "var(--space-s-l)"
-				},
-				{
-					"name": "Fluid M",
+					"name": "M",
 					"slug": "m",
 					"size": "var(--space-m)"
 				},
 				{
-					"name": "Fluid M–L",
+					"name": "M–L",
 					"slug": "m-l",
 					"size": "var(--space-m-l)"
 				},
 				{
-					"name": "Fluid M–XL",
-					"slug": "m-xl",
-					"size": "var(--space-m-xl)"
-				},
-				{
-					"name": "Fluid L",
+					"name": "L",
 					"slug": "l",
 					"size": "var(--space-l)"
 				},
 				{
-					"name": "Fluid L–XL",
+					"name": "L–XL",
 					"slug": "l-xl",
 					"size": "var(--space-l-xl)"
 				},
 				{
-					"name": "Fluid L–2XL",
-					"slug": "l-xxl",
-					"size": "var(--space-l-2xl)"
-				},
-				{
-					"name": "Fluid XL",
+					"name": "XL",
 					"slug": "xl",
 					"size": "var(--space-xl)"
 				},
 				{
-					"name": "Fluid XL–2XL",
-					"slug": "xl-xxl",
+					"name": "XL–2XL",
+					"slug": "xl-2-xl",
 					"size": "var(--space-xl-2xl)"
 				},
 				{
-					"name": "Fluid XL–3XL",
-					"slug": "xl-xxxl",
-					"size": "var(--space-xl-3xl)"
-				},
-				{
-					"name": "Fluid 2XL",
-					"slug": "xxl",
+					"name": "2XL",
+					"slug": "2-xl",
 					"size": "var(--space-2xl)"
 				},
 				{
-					"name": "Fluid 2XL–3XL",
-					"slug": "xxl-xxxl",
+					"name": "2XL–3XL",
+					"slug": "2-xl-3-xl",
 					"size": "var(--space-2xl-3xl)"
 				},
 				{
-					"name": "Fluid 3XL",
-					"slug": "xxxl",
+					"name": "3XL",
+					"slug": "3-xl",
 					"size": "var(--space-3xl)"
+				},
+				{
+					"name": "3XL–4XL",
+					"slug": "3-xl-4-xl",
+					"size": "var(--space-3xl-4xl)"
+				},
+				{
+					"name": "4XL",
+					"slug": "4-xl",
+					"size": "var(--space-4xl)"
 				}
 			],
-			"units": ["px", "%", "em", "rem", "vw", "vh", "vmin", "vmax", "ch", "ex"]
+			"units": ["%", "ch", "em", "ex", "px", "rem", "vh", "vmax", "vmin", "vw"]
 		},
 		"typography": {
 			"customFontSize": false,
@@ -308,39 +278,54 @@
 			],
 			"fontSizes": [
 				{
-					"name": "4XL",
-					"slug": "xxxx-large",
-					"size": "var(--font-size-42-58)"
-				},
-				{
-					"name": "3XL",
-					"slug": "xxx-large",
-					"size": "var(--font-size-35-46)"
-				},
-				{
-					"name": "2XL",
-					"slug": "xx-large",
-					"size": "var(--font-size-29-37)"
-				},
-				{
-					"name": "XL",
-					"slug": "x-large",
-					"size": "var(--font-size-25-30)"
-				},
-				{
-					"name": "L",
-					"slug": "large",
-					"size": "var(--font-size-20-24)"
-				},
-				{
-					"name": "M",
-					"slug": "medium",
-					"size": "var(--font-size-17-19)"
+					"name": "XS",
+					"slug": "xs",
+					"size": "var(--step--2)"
 				},
 				{
 					"name": "S",
-					"slug": "small",
-					"size": "var(--font-size-14-15)"
+					"slug": "s",
+					"size": "var(--step--1)"
+				},
+				{
+					"name": "M",
+					"slug": "m",
+					"size": "var(--step-0)"
+				},
+				{
+					"name": "L",
+					"slug": "l",
+					"size": "var(--step-1)"
+				},
+				{
+					"name": "XL",
+					"slug": "xl",
+					"size": "var(--step-2)"
+				},
+				{
+					"name": "2XL",
+					"slug": "2-xl",
+					"size": "var(--step-3)"
+				},
+				{
+					"name": "3XL",
+					"slug": "3-xl",
+					"size": "var(--step-4)"
+				},
+				{
+					"name": "4XL",
+					"slug": "4-xl",
+					"size": "var(--step-5)"
+				},
+				{
+					"name": "5XL",
+					"slug": "5-xl",
+					"size": "var(--step-6)"
+				},
+				{
+					"name": "Inherit",
+					"slug": "inherit",
+					"size": "inherit"
 				}
 			]
 		},
@@ -356,8 +341,8 @@
 		},
 		"typography": {
 			"fontFamily": "var:preset|font-family|base",
-			"fontSize": "var:preset|font-size|medium",
-			"fontWeight": "var:custom|font-weight|normal",
+			"fontSize": "var:preset|font-size|m",
+			"fontWeight": "var:custom|font-weight|base|normal",
 			"lineHeight": "var:custom|line-height|base"
 		},
 		"color": {
@@ -374,38 +359,38 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "var:preset|font-size|xxxx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.3)"
+					"fontSize": "var:preset|font-size|5-xl",
+					"lineHeight": "1.1"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var:preset|font-size|xxx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.25)"
+					"fontSize": "var:preset|font-size|4-xl",
+					"lineHeight": "1.15"
 				}
 			},
 			"h3": {
 				"typography": {
-					"fontSize": "var:preset|font-size|xx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.2)"
+					"fontSize": "var:preset|font-size|3-xl",
+					"lineHeight": "1.2"
 				}
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var:preset|font-size|x-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.15)"
+					"fontSize": "var:preset|font-size|2-xl",
+					"lineHeight": "1.25"
 				}
 			},
 			"h5": {
 				"typography": {
-					"fontSize": "var:preset|font-size|large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.1)"
+					"fontSize": "var:preset|font-size|xl",
+					"lineHeight": "1.3"
 				}
 			},
 			"h6": {
 				"typography": {
-					"fontSize": "var:preset|font-size|medium",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.05)"
+					"fontSize": "var:preset|font-size|l",
+					"lineHeight": "1.35"
 				}
 			},
 			"caption": {},
@@ -421,10 +406,11 @@
 					}
 				},
 				"typography": {
+					"fontSize": "var:preset|font-size|s",
 					"fontWeight": "var:custom|font-weight|body|bold",
 					"lineHeight": "var:custom|line-height|small",
 					"textDecoration": "none",
-					"letterSpacing": "var:custom|letter-spacing|wide"
+					"textTransform": "uppercase"
 				},
 				"color": {
 					"text": "var:preset|color|base",
