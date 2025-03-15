@@ -52,6 +52,7 @@
 			"fontWeight": {
 				"base": {
 					"normal": "400",
+					"medium": "500",
 					"bold": "700"
 				},
 				"heading": "900"
@@ -193,6 +194,22 @@
 							"fontStyle": "italic",
 							"src": [
 								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "'IBM Plex Sans'",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "'IBM Plex Sans'",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-italic.woff2"
 							]
 						},
 						{
@@ -407,7 +424,7 @@
 				},
 				"typography": {
 					"fontSize": "var:preset|font-size|s",
-					"fontWeight": "var:custom|font-weight|body|bold",
+					"fontWeight": "var:custom|font-weight|base|medium",
 					"lineHeight": "var:custom|line-height|small",
 					"textDecoration": "none",
 					"textTransform": "uppercase"
