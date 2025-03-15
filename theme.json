@@ -14,8 +14,8 @@
 			"gradients": [],
 			"palette": [
 				{
-					"name": "Base",
-					"slug": "base",
+					"name": "Base 1",
+					"slug": "base-1",
 					"color": "hsl(230deg 10% 100%)"
 				},
 				{
@@ -24,8 +24,8 @@
 					"color": "hsl(230deg 10% 97%)"
 				},
 				{
-					"name": "Contrast",
-					"slug": "contrast",
+					"name": "Contrast 1",
+					"slug": "contrast-1",
 					"color": "hsl(230deg 10% 10%)"
 				},
 				{
@@ -35,7 +35,7 @@
 				},
 				{
 					"name": "Accent",
-					"slug": "accent",
+					"slug": "accent-1",
 					"color": "hsl(230deg 80% 55%)"
 				},
 				{

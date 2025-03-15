@@ -17,8 +17,8 @@
 .gform-theme--api,
 .gform-theme--foundation,
 .gform-theme--framework {
-	--gf-color-danger: var(--wp--preset--color--accent, red);
-	--gf-color-primary: var(--wp--preset--color--accent, inherit);
+	--gf-color-danger: var(--wp--preset--color--accent-1, red);
+	--gf-color-primary: var(--wp--preset--color--accent-1, inherit);
 	--gf-ctrl-desc-color: inherit;
 	--gf-font-size-primary: var(--wp--preset--font-size--xx-small, 1rem);
 	--gf-font-weight-primary: var(--wp--custom--font-weight--light, 300);
@@ -38,7 +38,7 @@
 	font-size: var(--wp--preset--font-size--small, 1rem);
 	font-weight: var(--wp--custom--font-weight--medium, 500);
 	line-height: var(--wp--custom--line-height--default, normal);
-	color: var(--wp--preset--color--base, inherit);
+	color: var(--wp--preset--color--base-1, inherit);
 	letter-spacing: var(--wp--custom--letter-spacing--wide, normal);
 }
 
@@ -48,11 +48,11 @@
 	font-size: var(--wp--preset--font-size--buttons, 1rem);
 	font-weight: var(--wp--custom--font-weight--medium, 500);
 	line-height: var(--wp--custom--line-height--default, normal);
-	color: var(--wp--preset--color--base, inherit);
+	color: var(--wp--preset--color--base-1, inherit);
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: var(--wp--custom--letter-spacing--wide, normal);
-	background-color: var(--wp--preset--color--accent);
+	background-color: var(--wp--preset--color--accent-1);
 	border-radius: 2.5em;
 }
 
