@@ -508,25 +508,7 @@
 					"fontSize": "var:preset|font-size|s"
 				}
 			},
-			"link": {
-				":any-link": {
-					"color": {
-						"text": "var:preset|color|brand-1-medium"
-					}
-				},
-				":hover": {
-					"color": {
-						"text": "var:preset|color|brand-1-darker"
-					}
-				},
-				":focus-visible": {
-					"color": {
-						"text": {
-							"ref": "styles.elements.link.:hover.color.text"
-						}
-					}
-				}
-			},
+			"link": {},
 			"button": {
 				"spacing": {
 					"padding": {
