@@ -26,6 +26,7 @@ Configuration
 
 	/* Details */
 	--details-background-color: transparent;
+	--details-background-color-on-hover: var(--wp--preset--color--background-2, transparent);
 	--details-border-color: var(--wp--preset--color--border-1, inherit);
 	--details-border-style: solid;
 	--details-border-block-start-width: var(--wp--custom--border--width--thin, 1px);
@@ -92,6 +93,10 @@ Details
 	border-inline-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
 	border-inline-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
 	border-radius: var(--details-border-radius, 0);
+}
+
+.wp-block-details:has(> summary:is(:hover, :focus-visible)) {
+	background-color: var(--details-background-color-on-hover, transparent);
 }
 
 /* ----------------------------------------------------------------------

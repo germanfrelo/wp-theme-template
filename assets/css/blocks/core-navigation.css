@@ -27,12 +27,12 @@ nav.wp-block-navigation {
 	--nav-gap-columns: var(--wp--style--block-gap, 1em);
 	--nav-gap-rows: var(--wp--style--block-gap, 1em);
 	--nav-letter-spacing: inherit;
-	--nav-link-color-current-page: var(--wp--preset--color--foreground-1, inherit);
+	--nav-link-color-current-page: inherit;
 	--nav-link-color-hover: var(--wp--preset--color--foreground-1, inherit);
 	--nav-link-background-color-hover: inherit;
 	--nav-link-border-radius: 1px;
 	--nav-link-color: inherit;
-	--nav-link-line-color-current-page: transparent;
+	--nav-link-line-color-current-page: currentcolor;
 	--nav-link-line-color-hover: transparent;
 	--nav-link-line-color: transparent;
 	--nav-link-line-offset-current-page: 0.3em;
