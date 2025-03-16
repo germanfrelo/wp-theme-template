@@ -29,9 +29,12 @@ Configuration
 	--details-border-color: var(--wp--preset--color--border-1, inherit);
 	--details-border-style: solid;
 	--details-border-block-start-width: var(--wp--custom--border--width--thin, 1px);
+	--details-border-inline-start-width: var(--wp--custom--border--width--thin, 1px);
+	--details-border-inline-end-width: var(--wp--custom--border--width--thin, 1px);
 	--details-border-block-end-width: var(--wp--custom--border--width--thin, 1px);
 	--details-padding-block: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
 	--details-padding-inline: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
+	--details-border-radius: var(--wp--custom--border--radius--medium, 0);
 
 	/* Summary */
 	--details-summary-color: var(--wp--preset--color--foreground-1, inherit);
@@ -86,6 +89,9 @@ Details
 	background-color: var(--details-background-color, transparent);
 	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
 	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-inline-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-inline-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-radius: var(--details-border-radius, 0);
 }
 
 /* ----------------------------------------------------------------------

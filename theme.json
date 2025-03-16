@@ -13,14 +13,24 @@
 			"duotone": [],
 			"gradients": [
 				{
-					"name": "Gradient 1 (sRGB)",
-					"slug": "brand-srgb",
-					"gradient": "linear-gradient(170deg, var(--wp--preset--color--accent-medium) 0%, var(--wp--preset--color--accent-darker) 50%, var(--wp--preset--color--accent-medium) 100%)"
+					"name": "Vertical Brand 1–2",
+					"slug": "brand-1-2-vertical",
+					"gradient": "linear-gradient(0deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
 				},
 				{
-					"name": "Gradient 1 (OKLCH)",
-					"slug": "brand-oklch",
-					"gradient": "linear-gradient(170deg in oklch, var(--wp--preset--color--accent-medium) 0%, var(--wp--preset--color--accent-darker) 50%, var(--wp--preset--color--accent-medium) 100%)"
+					"name": "Vertical Brand 2–1",
+					"slug": "brand-2-1-vertical",
+					"gradient": "linear-gradient(180deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+				},
+				{
+					"name": "Horizontal Brand 1–2",
+					"slug": "brand-1-2-horizontal",
+					"gradient": "linear-gradient(90deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
+				},
+				{
+					"name": "Horizontal Brand 2–1",
+					"slug": "brand-2-1-horizontal",
+					"gradient": "linear-gradient(90deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
 				}
 			],
 			"palette": [
@@ -65,14 +75,24 @@
 					"color": "oklch(55% 0.0025 268deg)"
 				},
 				{
-					"name": "Accent medium",
-					"slug": "accent-medium",
+					"name": "Brand 1 medium",
+					"slug": "brand-1-medium",
 					"color": "oklch(53% 0.22 268deg)"
 				},
 				{
-					"name": "Accent darker",
-					"slug": "accent-darker",
+					"name": "Brand 1 darker",
+					"slug": "brand-1-darker",
 					"color": "oklch(45.5% 0.22 268deg)"
+				},
+				{
+					"name": "Brand 2 medium",
+					"slug": "brand-2-medium",
+					"color": "oklch(84% 0.2 150)"
+				},
+				{
+					"name": "Brand 2 darker",
+					"slug": "brand-2-darker",
+					"color": "oklch(76.5% 0.2 150)"
 				},
 				{
 					"name": "Danger medium",
@@ -92,7 +112,7 @@
 				"radius": {
 					"small": "0.1875rem",
 					"medium": "0.375rem",
-					"large": ".375rem",
+					"large": "0.75rem",
 					"full": "9999px"
 				},
 				"width": {
@@ -497,12 +517,12 @@
 			"link": {
 				":any-link": {
 					"color": {
-						"text": "var:preset|color|accent-medium"
+						"text": "var:preset|color|brand-1-medium"
 					}
 				},
 				":hover": {
 					"color": {
-						"text": "var:preset|color|accent-darker"
+						"text": "var:preset|color|brand-1-darker"
 					}
 				},
 				":focus-visible": {
