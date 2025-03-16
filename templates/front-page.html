@@ -70,8 +70,8 @@
 				</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-1"},":hover":{"color":{"text":"var:preset|color|brand-2"}}}}},"textColor":"foreground-2"} -->
-				<p class="has-foreground-2-color has-text-color has-link-color">Breaking up content into paragraphs helps make a page more accessible. Screen-readers and other assistive technology provide shortcuts to let their users skip to the next or previous paragraph, letting them skim content like how white space lets visual users skip around.</p>
+				<!-- wp:paragraph {"style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-1-medium"},":hover":{"color":{"text":"var:preset|color|brand-1-darker"}}}}},"textColor":"foreground-2"} -->
+				<p class="has-foreground-2-color has-text-color has-link-color">Breaking up content into paragraphs helps make a page more accessible. <a href="https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader">Screen-readers</a> and other assistive technology provide shortcuts to let their users skip to the next or previous paragraph, letting them skim content like how white space lets visual users skip around.</p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
@@ -105,6 +105,7 @@
 						<!-- wp:list-item -->
 						<li>
 							List item
+
 							<!-- wp:list -->
 							<ul class="wp-block-list">
 								<!-- wp:list-item {"style":{"layout":{"columnSpan":1,"rowSpan":1}},"backgroundColor":"background-1","textColor":"foreground-1"} -->
@@ -138,6 +139,7 @@
 						<!-- wp:list-item -->
 						<li>
 							List item
+
 							<!-- wp:list {"ordered":true} -->
 							<ol class="wp-block-list">
 								<!-- wp:list-item -->
@@ -181,6 +183,7 @@
 								<!-- wp:list-item -->
 								<li>
 									List item
+
 									<!-- wp:list -->
 									<ul class="wp-block-list">
 										<!-- wp:list-item -->
@@ -224,6 +227,7 @@
 								<!-- wp:list-item -->
 								<li>
 									List item
+
 									<!-- wp:list {"ordered":true} -->
 									<ol class="wp-block-list">
 										<!-- wp:list-item -->
@@ -372,6 +376,10 @@ code {
 
 			<!-- wp:column {"width":"100%","layout":{"type":"default"}} -->
 			<div class="wp-block-column" style="flex-basis: 100%">
+				<!-- wp:heading {"level":4} -->
+				<h4 class="wp-block-heading">Default</h4>
+				<!-- /wp:heading -->
+
 				<!-- wp:details -->
 				<details class="wp-block-details">
 					<summary>Summary</summary>
@@ -380,6 +388,10 @@ code {
 					<!-- /wp:paragraph -->
 				</details>
 				<!-- /wp:details -->
+
+				<!-- wp:heading {"level":4} -->
+				<h4 class="wp-block-heading">Custom Icons</h4>
+				<!-- /wp:heading -->
 
 				<!-- wp:details {"className":"is-style-icon-chevron"} -->
 				<details class="wp-block-details is-style-icon-chevron">
@@ -595,7 +607,7 @@ code {
 			<!-- wp:column {"width":"100%","layout":{"type":"default"}} -->
 			<div class="wp-block-column" style="flex-basis: 100%">
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-				<figure class="wp-block-image size-full"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" class="" /></figure>
+				<figure class="wp-block-image size-full"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" /></figure>
 				<!-- /wp:image -->
 			</div>
 			<!-- /wp:column -->
@@ -617,11 +629,11 @@ code {
 				<!-- wp:gallery {"linkTo":"none","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
 				<figure class="wp-block-gallery has-nested-images columns-default is-cropped">
 					<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
-					<figure class="wp-block-image size-full"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" class="" /></figure>
+					<figure class="wp-block-image size-full"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" /></figure>
 					<!-- /wp:image -->
 
 					<!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-					<figure class="wp-block-image size-large"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" class="" /></figure>
+					<figure class="wp-block-image size-large"><img src="https://theme-template.local/wp-content/uploads/image.jpg" alt="" /></figure>
 					<!-- /wp:image -->
 				</figure>
 				<!-- /wp:gallery -->
@@ -1747,7 +1759,7 @@ code {
 			<!-- /wp:column -->
 
 			<!-- wp:column {"width":"100%","layout":{"type":"default"}} -->
-			<div class="wp-block-column" style="flex-basis: 100%"><!-- wp:navigation {"ref":599} /--></div>
+			<div class="wp-block-column" style="flex-basis: 100%"><!-- wp:navigation /--></div>
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
