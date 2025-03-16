@@ -1,0 +1,23 @@
+/* =======================================================================================
+Woocommerce Mini Cart
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/mini-cart
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+header .wc-block-mini-cart__button {
+	padding: 0;
+}
+
+/* To compensate the negative space to the right created by the badge */
+.wc-block-mini-cart__quantity-badge {
+	margin-inline-end: 0.5em;
+}
+
+.wc-block-mini-cart__button .wc-block-mini-cart__icon {
+	min-inline-size: var(--wp--custom--size--min, 24px);
+	min-block-size: var(--wp--custom--size--min, 24px);
+}

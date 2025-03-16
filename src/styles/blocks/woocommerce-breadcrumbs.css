@@ -1,0 +1,14 @@
+/* =======================================================================================
+Woocommerce Breadcrumbs
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/breadcrumbs
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* Removes default margin */
+.wc-block-breadcrumbs.wp-block-woocommerce-breadcrumbs .woocommerce-breadcrumb {
+	margin: 0;
+}

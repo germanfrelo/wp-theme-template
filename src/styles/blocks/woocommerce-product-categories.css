@@ -1,0 +1,49 @@
+/* =======================================================================================
+Woocommerce Product Categories
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-categories
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ======================================================================
+Display Style: List
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Style Variations: Buttons
+---------------------------------------------------------------------- */
+
+.wc-block-product-categories.is-style-buttons .wc-block-product-categories-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
+	justify-content: center;
+	padding-inline-start: 0;
+	margin-block: 0;
+	list-style-type: none;
+}
+
+.wc-block-product-categories.is-style-buttons .wc-block-product-categories-list > * {
+	margin: 0;
+}
+
+.wc-block-product-categories.is-style-buttons .wc-block-product-categories-list li > a {
+	display: inline-block;
+	padding-block: 0.5em;
+	padding-inline: 1em;
+	line-height: var(--wp--custom--line-height--small, 1.2);
+	color: inherit;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration-line: none;
+	background-color: transparent;
+	border: 1px solid var(--wp--preset--color--brand-3, currentcolor);
+	border-radius: var(--wp--custom--border--radius--small, 1px);
+}
+
+.wc-block-product-categories.is-style-buttons .wc-block-product-categories-list li > a:is(:hover, :focus-visible) {
+	background-color: var(--wp--preset--color--brand-3, currentcolor);
+}
