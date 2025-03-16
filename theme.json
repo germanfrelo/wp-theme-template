@@ -159,23 +159,7 @@
 			"wideSize": "80rem"
 		},
 		"shadow": {
-			"presets": [
-				{
-					"name": "Elevación baja",
-					"slug": "elevation-low",
-					"shadow": "0.3px 0.5px 0.9px hsl(0deg 0% 77% / 0%), 0.4px 0.8px 1.3px hsl(0deg 0% 77% / 13%), 0.8px 1.6px 2.7px hsl(0deg 0% 77% / 27%)"
-				},
-				{
-					"name": "Elevación media",
-					"slug": "elevation-medium",
-					"shadow": "0.3px 0.5px 0.9px hsl(0deg 0% 77% / 0%), 1px 2px 3.4px hsl(0deg 0% 77% / 11%), 2px 4px 6.7px hsl(0deg 0% 77% / 21%), 4px 8px 13.4px hsl(0deg 0% 77% / 32%)"
-				},
-				{
-					"name": "Elevacion alta",
-					"slug": "elevation-high",
-					"shadow": "0.3px 0.5px 0.9px hsl(0deg 0% 77% / 0%), 1.6px 3.3px 5.5px hsl(0deg 0% 77% / 5%), 2.9px 5.7px 9.6px hsl(0deg 0% 77% / 10%), 4.1px 8.2px 13.8px hsl(0deg 0% 77% / 15%), 5.7px 11.4px 19.1px hsl(0deg 0% 77% / 20%), 7.9px 15.8px 26.5px hsl(0deg 0% 77% / 25%), 10.9px 21.8px 36.6px hsl(0deg 0% 77% / 30%), 15px 30px 50.3px hsl(0deg 0% 77% / 34%)"
-				}
-			]
+			"presets": []
 		},
 		"spacing": {
 			"customSpacingSize": true,
