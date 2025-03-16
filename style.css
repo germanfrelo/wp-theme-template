@@ -170,6 +170,7 @@ figcaption {
 }
 
 a {
+	color: var(--wp--preset--color--brand-1-medium, inherit);
 	text-decoration-color: color-mix(in srgb, currentcolor, transparent);
 	text-underline-position: from-font;
 	transition-timing-function: var(--wp--custom--transition--timing-function, initial);
@@ -178,6 +179,7 @@ a {
 }
 
 a:is(:hover, :focus-visible) {
+	color: var(--wp--preset--color--brand-1-darker, inherit);
 	text-decoration-color: currentcolor;
 }
 
