@@ -176,16 +176,6 @@
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
-					"name": "3XS",
-					"slug": "3-xs",
-					"size": "var(--space-3xs)"
-				},
-				{
-					"name": "3XS–2XS",
-					"slug": "3-xs-2-xs",
-					"size": "var(--space-3xs-2xs)"
-				},
-				{
 					"name": "2XS",
 					"slug": "2-xs",
 					"size": "var(--space-2xs)"
@@ -336,10 +326,10 @@
 				{
 					"name": "Display",
 					"slug": "display",
-					"fontFamily": "Merriweather, serif",
+					"fontFamily": "'Merriweather', serif",
 					"fontFace": [
 						{
-							"fontFamily": "Merriweather",
+							"fontFamily": "'Merriweather'",
 							"fontWeight": "900",
 							"fontStyle": "normal",
 							"src": [
@@ -347,7 +337,7 @@
 							]
 						},
 						{
-							"fontFamily": "Merriweather",
+							"fontFamily": "'Merriweather'",
 							"fontWeight": "900",
 							"fontStyle": "italic",
 							"src": [
