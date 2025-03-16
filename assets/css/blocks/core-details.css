@@ -7,4 +7,146 @@ Source:
 ---
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#changing_the_summarys_icon
+- https://www.scottohara.me/blog/2022/09/12/details-summary.html
+- https://nerdy.dev/notebook/accordion.html
+- https://developer.chrome.com/blog/styling-details
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Details
+---------------------------------------------------------------------- */
+
+.wp-block-details {
+	--wp--style--block-gap: 1em;
+
+	/* Config: Details */
+	--details-background-color: transparent;
+	--details-border-color: var(--wp--preset--color--border-1, inherit);
+	--details-border-style: solid;
+	--details-border-block-start-width: var(--wp--custom--border--width--thin, 1px);
+	--details-border-block-end-width: var(--wp--custom--border--width--thin, 1px);
+	--details-padding-block: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
+	--details-padding-inline: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
+
+	/* Config: Summary */
+	--details-summary-color: var(--wp--preset--color--foreground-1, inherit);
+	--details-summary-font-family: inherit;
+	--details-summary-font-size: var(--wp--preset--font-size--m, 1.125rem);
+	--details-summary-font-weight: var(--wp--custom--font-weight--heading, bold);
+	--details-summary-gap: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1rem));
+	--details-summary-letter-spacing: normal;
+	--details-summary-line-height: 1.35;
+
+	/* Config: Summary Icon */
+	--details-icon-color: currentcolor;
+	--details-icon-size: 2rem;
+	--details-icon-image-not-open: url("../../images/icon-more.svg");
+	--details-icon-image-open: url("../../images/icon-less.svg");
+
+	/* Config: Content */
+	--details-content-padding-block-start: var(--details-padding-block, 1em);
+	--details-content-transition-duration-opacity: var(--wp--custom--transition--duration, 0);
+	--details-content-transition-duration-size: var(--wp--custom--transition--duration, 0);
+	--details-content-transition-duration-visibility: var(--wp--custom--transition--duration, 0);
+
+	/* Properties */
+	padding-block: var(--details-padding-block, 1em);
+	padding-inline: var(--details-padding-inline, 1em);
+	background-color: var(--details-background-color, transparent);
+	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+}
+
+/* ----------------------------------------------------------------------
+Summary
+---------------------------------------------------------------------- */
+
+.wp-block-details > summary {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: var(--details-summary-gap, 1rem);
+	align-items: center;
+	font-family: var(--details-summary-font-family, inherit);
+	font-size: var(--details-summary-font-size, inherit);
+	font-weight: var(--details-summary-font-weight, bold);
+	line-height: var(--details-summary-line-height, inherit);
+	color: var(--details-summary-color, inherit);
+	letter-spacing: var(--details-summary-letter-spacing, normal);
+	list-style: none; /* Remove the default icon */
+}
+
+/* ----------------------------------------------------------------------
+Summary Icon
+---------------------------------------------------------------------- */
+
+/* Removes the default icon in WebKit-based browsers */
+details > summary::-webkit-details-marker {
+	display: none;
+}
+
+/*
+Adds a custom icon.
+It's rendered before the summary by default. To render it after, just change '::after' to '::before'
+*/
+.wp-block-details > summary::before {
+	display: inline-block;
+	flex-shrink: 0;
+	inline-size: var(--details-icon-size, 2.5rem);
+	block-size: var(--details-icon-size, 2.5rem);
+	content: "";
+	background-color: var(--details-icon-color, currentcolor);
+	-webkit-mask-image: var(--details-icon-image-not-open, none);
+	mask-image: var(--details-icon-image-not-open, none);
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+}
+
+.wp-block-details[open] > summary::before {
+	-webkit-mask-image: var(--details-icon-image-open, none);
+	mask-image: var(--details-icon-image-open, none);
+}
+
+/* ----------------------------------------------------------------------
+Content
+---------------------------------------------------------------------- */
+
+.wp-block-details > summary ~ * {
+	padding-inline-start: calc(var(--details-icon-size, 2.5rem) + var(--details-summary-gap, 1rem));
+}
+
+.wp-block-details > summary + * {
+	padding-block-start: var(--details-content-padding-block-start, 1em);
+	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+}
+
+/* ----------------------------------------------------------------------
+Open & Close Transitions
+---------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+	.wp-block-details {
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* Don't add margin/padding to this, add it to the actual stuff inside the details content */
+.wp-block-details::details-content {
+	block-size: 0;
+	overflow-y: clip;
+	opacity: 0;
+	transition:
+		content-visibility var(--details-content-transition-duration-visibility, initial),
+		opacity var(--details-content-transition-duration-opacity, initial),
+		block-size var(--details-content-transition-duration-size, initial);
+	transition-behavior: allow-discrete;
+}
+
+.wp-block-details[open]::details-content {
+	block-size: auto;
+	opacity: 1;
+}

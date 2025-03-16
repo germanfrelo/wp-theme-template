@@ -8,3 +8,26 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+.wp-block-pullquote {
+	/* Configuration */
+	--pullquote-gap: 1em;
+	--pullquote-margin-inline: 0;
+	--pullquote-padding-block: 0;
+	--pullquote-padding-inline: 2ch;
+
+	/* Properties */
+	padding-block: var(--pullquote-padding-block, 0);
+	padding-inline: var(--pullquote-padding-inline, 0);
+	margin-inline: var(--pullquote-margin-inline, 0);
+}
+
+.wp-block-pullquote p {
+	margin-block-end: var(--pullquote-gap, 1em);
+}
+
+/* '.wp-block-pullquote__citation' is for the Editor */
+.wp-block-pullquote :is(cite, .wp-block-pullquote__citation) {
+	display: block;
+	color: var(--wp--preset--color--foreground-2, inherit);
+}

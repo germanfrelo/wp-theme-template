@@ -8,3 +8,39 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* ----------------------------------------------------------------------
+Configuration
+---------------------------------------------------------------------- */
+
+.wp-block-quote {
+	--quote-border-inline-start-color: var(--wp--preset--color--border-1, currentcolor);
+	--quote-border-inline-start-style: solid;
+	--quote-border-inline-start-width: var(--wp--custom--border--width--thick, 0.25rem);
+	--quote-margin-inline: 0;
+	--quote-padding-block: 0;
+	--quote-padding-inline: 2ch;
+}
+
+.wp-block-quote.is-style-plain {
+	--quote-border-inline-start-color: transparent;
+	--quote-border-inline-start-style: none;
+	--quote-border-inline-start-width: 0;
+	--quote-margin-inline: 0;
+	--quote-padding-block: 0;
+	--quote-padding-inline: 0;
+}
+
+/* ----------------------------------------------------------------------
+Styles — ⚠️ Don't modify unless you're sure
+---------------------------------------------------------------------- */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+.wp-block-quote {
+	padding-block: var(--quote-padding-block, 0);
+	padding-inline: var(--quote-padding-inline, 0);
+	margin-inline: var(--quote-margin-inline, 0);
+	border-inline-start-color: var(--quote-border-inline-start-color, transparent);
+	border-inline-start-style: var(--quote-border-inline-start-style, none);
+	border-inline-start-width: var(--quote-border-inline-start-width, 0);
+}

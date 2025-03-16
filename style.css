@@ -135,10 +135,6 @@ TABLE OF CONTENTS:
 	---------------------------------------------------------------------- */
 
 	/* @link https://utopia.fyi/clamp/calculator?a=320,1440 */
-
-	/* ----------------------------------------------------------------------
-	Another Custom Properties
-	---------------------------------------------------------------------- */
 }
 
 /* ======================================================================
@@ -148,24 +144,13 @@ To style the HTML elements, follow this order:
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 ====================================================================== */
 
-/* Reverts default margins from WP */
-:where(figure) {
-	margin: revert;
-}
-
-html {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-/* Opts-in the whole page to interpolate sizes to/from keywords */
+/* Opt-in the whole page to interpolate sizes to/from keywords */
 @media (prefers-reduced-motion: no-preference) {
 	html {
 		interpolate-size: allow-keywords;
 	}
 }
 
-/* Reduces typography orphans */
 h1,
 h2,
 h3,
@@ -179,10 +164,31 @@ figcaption {
 	text-wrap: pretty;
 }
 
-/* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
-*:focus-visible {
-	outline: 0.375rem double #000;
-	box-shadow: 0 0 0 0.25rem #fff;
+/* Reverts default margins from WP */
+:where(figure) {
+	margin: 0;
+}
+
+a {
+	text-decoration-color: color-mix(in srgb, currentcolor, transparent);
+	text-underline-position: from-font;
+	transition-timing-function: var(--wp--custom--transition--timing-function, initial);
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: text-decoration-color;
+}
+
+a:is(:hover, :focus-visible) {
+	text-decoration-color: currentcolor;
+}
+
+code {
+	padding-block: 0.0625em;
+	padding-inline: 0.25em;
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: 0.875em;
+	white-space: break-spaces;
+	background-color: color-mix(in srgb, currentcolor, transparent 92.5%);
+	border-radius: 0.125em;
 }
 
 /* ======================================================================
@@ -190,26 +196,17 @@ figcaption {
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
-Flow Spacing
----------------------------------------------------------------------- */
-
-/* Removes unwanted top margin from elements that come immediately after any '.visually-hidden' element */
-.visually-hidden + * {
-	margin-block-start: 0;
-}
-
-/* ----------------------------------------------------------------------
 Root Container
 
 https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
 ---------------------------------------------------------------------- */
 
-/* Removes the spacing between direct child elements of '.wp-site-blocks' */
-.wp-site-blocks > * + * {
+/* Remove the spacing between direct child elements of '.wp-site-blocks' (the :root is needed for the Editor) */
+:root .wp-site-blocks > * + * {
 	margin-block-start: 0;
 }
 
-/* Lets 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
+/* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
 
 .wp-site-blocks:has(> main) {
 	display: flex;
@@ -223,4 +220,13 @@ https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are
 
 .wp-site-blocks:has(> main) > main {
 	flex-grow: 1;
+}
+
+/* ----------------------------------------------------------------------
+Flow Spacing
+---------------------------------------------------------------------- */
+
+/* Remove the top margin from an element that immediately follows a visually hidden element */
+.is-layout-flow > .visually-hidden + * {
+	margin-block-start: 0;
 }

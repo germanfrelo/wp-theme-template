@@ -8,9 +8,3 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
-
-/* Make site logo height responsive. */
-.wp-block-site-logo img {
-	inline-size: auto;
-	block-size: var(--site-logo-height, auto);
-}

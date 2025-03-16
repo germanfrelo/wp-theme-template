@@ -10,6 +10,7 @@
 /* Accessibility
    ======================================== */
 
+/* https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
 .visually-hidden {
 	position: absolute !important;
 	width: 1px !important;
@@ -17,9 +18,9 @@
 	padding: 0 !important;
 	margin: -1px !important;
 	overflow: hidden !important;
-	white-space: nowrap;
+	white-space: nowrap !important; /* To prevent words from being squashed together (since they go on separate lines, and some screen readers do not understand line feeds as spaces) */
 	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px); /* For legacy browsers */
+	clip: rect(0 0 0 0); /* For legacy browsers */
 	clip-path: inset(50%); /* For modern browsers */
 }
 
