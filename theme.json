@@ -149,7 +149,7 @@
 				"min": "24px"
 			},
 			"transition": {
-				"duration": "0.25s",
+				"duration": "0.2s",
 				"timingFunction": "initial"
 			}
 		},
