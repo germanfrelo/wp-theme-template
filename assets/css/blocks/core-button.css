@@ -44,14 +44,24 @@ Configuration
 	--button-color-text: var(--wp--preset--color--foreground-1, inherit);
 }
 
-/* Style: Primary */
-.wp-block-button.is-style-primary > .wp-block-button__link {
+/* Style: Brand 1 */
+.wp-block-button.is-style-brand-1 > .wp-block-button__link {
 	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
 	--button-border-color: var(--button-color-background, currentcolor);
 	--button-color-background-on-hover: var(--wp--preset--color--brand-1-darker, transparent);
 	--button-color-background: var(--wp--preset--color--brand-1-medium, transparent);
-	--button-color-text-on-hover: var(--wp--preset--color--background-2, inherit);
+	--button-color-text-on-hover: var(--button-color-text, inherit);
 	--button-color-text: var(--wp--preset--color--background-1, inherit);
+}
+
+/* Style: Brand 2 */
+.wp-block-button.is-style-brand-2 > .wp-block-button__link {
+	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
+	--button-border-color: var(--button-color-background, currentcolor);
+	--button-color-background-on-hover: var(--wp--preset--color--brand-2-darker, transparent);
+	--button-color-background: var(--wp--preset--color--brand-2-medium, transparent);
+	--button-color-text-on-hover: var(--button-color-text, inherit);
+	--button-color-text: var(--wp--preset--color--foreground-1, inherit);
 }
 
 /* Style: Danger */
@@ -60,7 +70,7 @@ Configuration
 	--button-border-color: var(--button-color-background, currentcolor);
 	--button-color-background-on-hover: var(--wp--preset--color--danger-darker, transparent);
 	--button-color-background: var(--wp--preset--color--danger-medium, transparent);
-	--button-color-text-on-hover: var(--wp--preset--color--background-2, inherit);
+	--button-color-text-on-hover: var(--button-color-text, inherit);
 	--button-color-text: var(--wp--preset--color--background-1, inherit);
 }
 
