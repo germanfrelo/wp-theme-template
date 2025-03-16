@@ -445,8 +445,8 @@
 		"spacing": {
 			"blockGap": "1.5em",
 			"padding": {
-				"left": "var:preset|spacing|m",
-				"right": "var:preset|spacing|m"
+				"left": "var:preset|spacing|m-l",
+				"right": "var:preset|spacing|m-l"
 			}
 		},
 		"typography": {
