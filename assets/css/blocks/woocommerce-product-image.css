@@ -1,0 +1,25 @@
+/* =======================================================================================
+Woocommerce Product Image
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-image
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ----------------------------------------------------------------------
+Product Sale Badge inside Product Image
+---------------------------------------------------------------------- */
+
+.wc-block-components-product-sale-badge,
+.wc-block-components-product-sale-badge.wc-block-grid__product-onsale {
+	padding: 0.75em;
+	font-size: var(--wp--preset--font-size--xs, 0.75em);
+	font-weight: var(--wp--custom--font-weight--body--medium, 500);
+	line-height: 1;
+	color: var(--wp--preset--color--base-1, inherit);
+	background: var(--wp--preset--color--brand-1, transparent);
+	border: none;
+	border-radius: var(--wp--custom--border--radius--large, 999px);
+}
