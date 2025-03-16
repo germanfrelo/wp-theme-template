@@ -82,121 +82,43 @@ add_action('after_setup_theme', 'themeslug_editor_styles');
 
 
 /**
- * Enqueue custom block stylesheets (on the front end and in the Editor).
+ * Enqueue a stylesheet for each block (on the front end and in the editor), if it exists in the theme.
  *
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_block_style/
  * @link https://developer.wordpress.org/themes/features/block-stylesheets/
+ * @link https://markwilkinson.dev/code-snippets/enqueue-stylesheet-for-any-wordpress-block/
  *
  * @return void
  */
 function themeslug_block_stylesheets() {
-	// Add the block name (with namespace prefix) for each style.
-	$blocks = [
-		"core/archives",
-		"core/audio",
-		"core/avatar",
-		"core/button",
-		"core/buttons",
-		"core/calendar",
-		"core/categories",
-		"core/code",
-		"core/column",
-		"core/columns",
-		"core/comment-author-name",
-		"core/comment-content",
-		"core/comment-date",
-		"core/comment-edit-link",
-		"core/comment-reply-link",
-		"core/comment-template",
-		"core/comments",
-		"core/comments-pagination",
-		"core/comments-pagination-next",
-		"core/comments-pagination-numbers",
-		"core/comments-pagination-previous",
-		"core/comments-title",
-		"core/cover",
-		"core/details",
-		"core/embed",
-		"core/file",
-		"core/gallery",
-		"core/group",
-		"core/heading",
-		"core/home-link",
-		"core/html",
-		"core/image",
-		"core/latest-comments",
-		"core/latest-posts",
-		"core/list",
-		"core/list-item",
-		"core/loginout",
-		"core/media-text",
-		"core/more",
-		"core/navigation",
-		"core/navigation-link",
-		"core/navigation-submenu",
-		"core/nextpage",
-		"core/page-list",
-		"core/page-list-item",
-		"core/paragraph",
-		"core/post-author",
-		"core/post-author-biography",
-		"core/post-author-name",
-		"core/post-comments-count",
-		"core/post-comments-form",
-		"core/post-comments-link",
-		"core/post-content",
-		"core/post-date",
-		"core/post-excerpt",
-		"core/post-featured-image",
-		"core/post-navigation-link",
-		"core/post-template",
-		"core/post-terms",
-		"core/post-time-to-read",
-		"core/post-title",
-		"core/preformatted",
-		"core/pullquote",
-		"core/query",
-		"core/query-no-results",
-		"core/query-pagination",
-		"core/query-pagination-next",
-		"core/query-pagination-numbers",
-		"core/query-pagination-previous",
-		"core/query-title",
-		"core/query-total",
-		"core/quote",
-		"core/read-more",
-		"core/rss",
-		"core/search",
-		"core/separator",
-		"core/shortcode",
-		"core/site-logo",
-		"core/site-tagline",
-		"core/site-title",
-		"core/social-link",
-		"core/social-links",
-		"core/spacer",
-		"core/table",
-		"core/table-of-contents",
-		"core/tag-cloud",
-		"core/template-part",
-		"core/term-description",
-		"core/verse",
-		"core/video"
-	];
+	// Get all of the registered blocks
+	$blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
 
-	// Loop through each block and enqueue its styles.
-	foreach ($blocks as $block) {
-		// Replace slash with hyphen for filename.
-		$block_slug = str_replace('/', '-', $block);
+	// If we have block names
+	if (!empty($blocks)) {
+		// Loop through each block and enqueue its styles
+		foreach ($blocks as $block) {
+			// Replace slash with hyphen for filename
+			$block_slug = str_replace('/', '-', $block->name);
 
-		// Relative path of block stylesheets.
-		$blocks_path = "assets/css/blocks/{$block_slug}.css";
+			// Relative path of each block stylesheet
+			$block_path = "assets/css/blocks/{$block_slug}.css";
 
-		wp_enqueue_block_style($block, array(
-			'handle' => "themeslug-{$block_slug}",
-			'src'    => get_theme_file_uri($blocks_path),
-			'path'   => get_theme_file_path($blocks_path)
-		));
+			// If we have no file existing for this block, continue
+			if (!file_exists(get_theme_file_path($block_path))) {
+				continue;
+			}
+
+			// Enqueue the block stylesheet
+			wp_enqueue_block_style(
+				$block->name,
+				[
+					'handle' => "themeslug-{$block_slug}",
+					'src'    => get_theme_file_uri($block_path),
+					'path'   => get_theme_file_path($block_path)
+				]
+			);
+		}
 	}
 }
 add_action('init', 'themeslug_block_stylesheets');
