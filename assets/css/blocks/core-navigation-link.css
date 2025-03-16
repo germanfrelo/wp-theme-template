@@ -10,15 +10,15 @@ Notes:
 ======================================================================================= */
 
 /* ----------------------------------------------------------------------
-Custom Block Style: "external-link"
+Style: "external"
 ---------------------------------------------------------------------- */
 
-.wp-block-navigation-link.is-style-external-link {
-	--nav-link-style-external-link-icon-color: currentcolor;
-	--nav-link-style-external-link-icon-image: url("../../images/icon-external-link.svg");
-	--nav-link-style-external-link-icon-margin: 0.75ch;
-	--nav-link-style-external-link-icon-size: 1em;
-	--nav-link-style-external-link-icon-vertical-align: -0.13em;
+.wp-block-navigation-link.is-style-external {
+	--nav-link-style-external-icon-color: currentcolor;
+	--nav-link-style-external-icon-image: url("../../images/icon-external.svg");
+	--nav-link-style-external-icon-margin: 0.75ch;
+	--nav-link-style-external-icon-size: 1.25em;
+	--nav-link-style-external-icon-vertical-align: -0.2em;
 }
 
 /*
@@ -28,16 +28,16 @@ It's rendered after the text by default. To render it before:
 - Change 'margin-inline-start' to 'margin-inline-end'
 */
 
-.wp-block-navigation-link.is-style-external-link .wp-block-navigation-item__label::after {
+.wp-block-navigation-link.is-style-external .wp-block-navigation-item__label::after {
 	display: inline-block;
-	inline-size: var(--nav-link-style-external-link-icon-size, 1em);
-	block-size: var(--nav-link-style-external-link-icon-size, 1em);
-	margin-inline-start: var(--nav-link-style-external-link-icon-margin, 0.5ch);
-	vertical-align: var(--nav-link-style-external-link-icon-vertical-align, baseline);
+	inline-size: var(--nav-link-style-external-icon-size, 1em);
+	block-size: var(--nav-link-style-external-icon-size, 1em);
+	margin-inline-start: var(--nav-link-style-external-icon-margin, 0.5ch);
+	vertical-align: var(--nav-link-style-external-icon-vertical-align, baseline);
 	content: "";
-	background-color: var(--nav-link-style-external-link-icon-color, currentcolor);
-	-webkit-mask-image: var(--nav-link-style-external-link-icon-image, none);
-	mask-image: var(--nav-link-style-external-link-icon-image, none);
+	background-color: var(--nav-link-style-external-icon-color, currentcolor);
+	-webkit-mask-image: var(--nav-link-style-external-icon-image, none);
+	mask-image: var(--nav-link-style-external-icon-image, none);
 	-webkit-mask-position: center;
 	mask-position: center;
 	-webkit-mask-size: cover;

@@ -215,20 +215,19 @@ function themeslug_block_style_variations() {
 		'core/button', array(
 			'name'         => 'primary', // .wp-block-button.is-style-primary
 			'label'        => __('Primary', 'themeslug'),
-			// Styles are in the block's stylesheet 'core-button.css' file
+			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);
 	register_block_style(
 		'core/button', array(
 			'name'         => 'danger', // .wp-block-button.is-style-danger
 			'label'        => __('Danger', 'themeslug'),
-			// Styles are in the block's stylesheet 'core-button.css' file
+			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);
 	register_block_style(
 		'core/columns', array(
-			'name'         => 'columns-wrap-reverse',
-			'label'        => __('Apilación invertida', 'themeslug'),
+			'name'         => 'columns-wrap-reverse', // .wp-block-columns.is-style-columns-wrap-reverse
 			'inline_style' => '
 				.wp-block-columns:not(.is-not-stacked-on-mobile).is-style-columns-wrap-reverse {
 					--columns-flex-wrap-when-stacked-on-mobile: wrap-reverse;
@@ -238,23 +237,44 @@ function themeslug_block_style_variations() {
 		)
 	);
 	register_block_style(
+		'core/details', array(
+			'name'         => 'icon-chevron', // .wp-block-details.is-style-icon-chevron
+			'label'        => __('Icons Chevron', 'themeslug')
+			// The styles are in the block's stylesheet 'core-columns.css' file
+		)
+	);
+	register_block_style(
+		'core/details', array(
+			'name'         => 'icon-plus-minus', // .wp-block-details.is-style-icon-plus-minus
+			'label'        => __('Icons Plus Minus', 'themeslug')
+			// The styles are in the block's stylesheet 'core-columns.css' file
+		)
+	);
+	register_block_style(
 		'core/group', array(
-			'name'         => 'card',
+			'name'         => 'card', // .wp-block-group.is-style-card
 			'label'        => __('Tarjeta', 'themeslug'),
 			'inline_style' => '
 				.wp-block-group.is-style-card {
 					padding: var(--wp--preset--spacing--l, var(--wp--style--block-gap, 1.5em));
 					background-color: var(--wp--preset--color--background-1, transparent);
 					border: var(--wp--custom--border--width--thin, 1px) solid var(--wp--preset--color--border-1, currentcolor);
-					border-radius: var(--wp--custom--border--radius--small, 1rem);
+					border-radius: var(--wp--custom--border--radius--m, 1rem);
 				}
 			'
 			// The rest of the styles are in the block's stylesheet 'core-group.css' file
 		)
 	);
 	register_block_style(
+		'core/list', array(
+			'name'         => 'checkmark', // .wp-block-list.is-style-checkmark
+			'label'        => __('Checkmark', 'themeslug')
+			// The styles are in the block's stylesheet 'core-list.css' file
+		)
+	);
+	register_block_style(
 		'core/media-text', array(
-			'name'         => 'stacked-on-mobile-text-before',
+			'name'         => 'stacked-on-mobile-text-before', // .wp-block-media-text.is-style-stacked-on-mobile-text-before
 			'label'        => __('Móvil: Texto antes', 'themeslug'),
 			'inline_style' => '
 				.wp-block-media-text.is-style-stacked-on-mobile-text-before {
@@ -266,16 +286,24 @@ function themeslug_block_style_variations() {
 		)
 	);
 	register_block_style(
+		'core/navigation-link', array(
+			'name'         => 'external', // .wp-block-navigation-link.is-style-external
+			'label'        => __('External', 'themeslug')
+			// The styles are in the block's stylesheet 'core-navigation-link.css' file
+		)
+	);
+	register_block_style(
 		'core/search', array(
 			'name'         => 'direction-reversed', // .wp-block-search.is-style-direction-reversed
-			'label'        => __('Reversed direction', 'themeslug'),
-			// Styles are in the block's stylesheet 'core-search.css' file
+			'label'        => __('Reversed direction', 'themeslug')
+			// The styles are in the block's stylesheet 'core-search.css' file
 		)
 	);
 	register_block_style(
 		'core/separator', array(
-			'name'         => 'thick', // .wp-block-separator.is-style-thick-line
+			'name'         => 'thick', // .wp-block-separator.is-style-thick
 			'label'        => __('Thick Line', 'themeslug')
+			// The styles are in the 'theme.json' file
 		)
 	);
 }

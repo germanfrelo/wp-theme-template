@@ -15,14 +15,16 @@ Resources:
 - https://developer.chrome.com/blog/styling-details
 ====================================================================== */
 
-/* ----------------------------------------------------------------------
-Details
----------------------------------------------------------------------- */
+/* ======================================================================
+Configuration
+====================================================================== */
+
+/* Default */
 
 .wp-block-details {
 	--wp--style--block-gap: 1em;
 
-	/* Config: Details */
+	/* Details */
 	--details-background-color: transparent;
 	--details-border-color: var(--wp--preset--color--border-1, inherit);
 	--details-border-style: solid;
@@ -31,7 +33,7 @@ Details
 	--details-padding-block: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
 	--details-padding-inline: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1em));
 
-	/* Config: Summary */
+	/* Summary */
 	--details-summary-color: var(--wp--preset--color--foreground-1, inherit);
 	--details-summary-font-family: inherit;
 	--details-summary-font-size: var(--wp--preset--font-size--m, 1.125rem);
@@ -40,19 +42,45 @@ Details
 	--details-summary-letter-spacing: normal;
 	--details-summary-line-height: 1.35;
 
-	/* Config: Summary Icon */
+	/* Summary Icon */
 	--details-icon-color: currentcolor;
-	--details-icon-size: 2rem;
-	--details-icon-image-not-open: url("../../images/icon-more.svg");
-	--details-icon-image-open: url("../../images/icon-less.svg");
+	--details-icon-size: 0px;
+	--details-icon-image-not-open: none;
+	--details-icon-image-open: none;
 
-	/* Config: Content */
+	/* Content */
 	--details-content-padding-block-start: var(--details-padding-block, 1em);
 	--details-content-transition-duration-opacity: var(--wp--custom--transition--duration, 0);
 	--details-content-transition-duration-size: var(--wp--custom--transition--duration, 0);
 	--details-content-transition-duration-visibility: var(--wp--custom--transition--duration, 0);
+}
 
-	/* Properties */
+/* Style: icon-cheron */
+
+.wp-block-details.is-style-icon-chevron {
+	--details-icon-size: 2rem;
+	--details-icon-image-not-open: url("../../images/icon-chevron-right.svg");
+	--details-icon-image-open: url("../../images/icon-chevron-down.svg");
+}
+
+/* Style: icon-plus-minus */
+
+.wp-block-details.is-style-icon-plus-minus {
+	--details-icon-size: 2rem;
+	--details-icon-image-not-open: url("../../images/icon-plus.svg");
+	--details-icon-image-open: url("../../images/icon-minus.svg");
+}
+
+/* ======================================================================
+Styles — ⚠️ Don't modify unless you're sure
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Details
+---------------------------------------------------------------------- */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+.wp-block-details {
 	padding-block: var(--details-padding-block, 1em);
 	padding-inline: var(--details-padding-inline, 1em);
 	background-color: var(--details-background-color, transparent);
@@ -65,50 +93,12 @@ Summary
 ---------------------------------------------------------------------- */
 
 .wp-block-details > summary {
-	display: flex;
-	flex-wrap: nowrap;
-	gap: var(--details-summary-gap, 1rem);
-	align-items: center;
 	font-family: var(--details-summary-font-family, inherit);
 	font-size: var(--details-summary-font-size, inherit);
 	font-weight: var(--details-summary-font-weight, bold);
 	line-height: var(--details-summary-line-height, inherit);
 	color: var(--details-summary-color, inherit);
 	letter-spacing: var(--details-summary-letter-spacing, normal);
-	list-style: none; /* Remove the default icon */
-}
-
-/* ----------------------------------------------------------------------
-Summary Icon
----------------------------------------------------------------------- */
-
-/* Removes the default icon in WebKit-based browsers */
-details > summary::-webkit-details-marker {
-	display: none;
-}
-
-/*
-Adds a custom icon.
-It's rendered before the summary by default. To render it after, just change '::after' to '::before'
-*/
-.wp-block-details > summary::before {
-	display: inline-block;
-	flex-shrink: 0;
-	inline-size: var(--details-icon-size, 2.5rem);
-	block-size: var(--details-icon-size, 2.5rem);
-	content: "";
-	background-color: var(--details-icon-color, currentcolor);
-	-webkit-mask-image: var(--details-icon-image-not-open, none);
-	mask-image: var(--details-icon-image-not-open, none);
-	-webkit-mask-position: center;
-	mask-position: center;
-	-webkit-mask-size: cover;
-	mask-size: cover;
-}
-
-.wp-block-details[open] > summary::before {
-	-webkit-mask-image: var(--details-icon-image-open, none);
-	mask-image: var(--details-icon-image-open, none);
 }
 
 /* ----------------------------------------------------------------------
@@ -116,7 +106,7 @@ Content
 ---------------------------------------------------------------------- */
 
 .wp-block-details > summary ~ * {
-	padding-inline-start: calc(var(--details-icon-size, 2.5rem) + var(--details-summary-gap, 1rem));
+	padding-inline-start: calc(var(--details-icon-size, 0) + var(--details-summary-gap, 1rem));
 }
 
 .wp-block-details > summary + * {
@@ -149,4 +139,45 @@ Open & Close Transitions
 .wp-block-details[open]::details-content {
 	block-size: auto;
 	opacity: 1;
+}
+
+/* ----------------------------------------------------------------------
+Custom Icon
+---------------------------------------------------------------------- */
+
+.wp-block-details[class*="is-style-"]:not(.is-style-default) > summary {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: var(--details-summary-gap, 1rem);
+	align-items: center;
+	list-style: none;
+}
+
+/* Removes the default icon in WebKit-based browsers */
+.wp-block-details[class*="is-style-"]:not(.is-style-default) > summary::-webkit-details-marker {
+	display: none;
+}
+
+/*
+Adds a custom icon.
+It's rendered before the summary by default. To render it after, just change '::after' to '::before'
+*/
+.wp-block-details[class*="is-style-"]:not(.is-style-default) > summary::before {
+	display: inline-block;
+	flex-shrink: 0;
+	inline-size: var(--details-icon-size, 2.5rem);
+	block-size: var(--details-icon-size, 2.5rem);
+	content: "";
+	background-color: var(--details-icon-color, currentcolor);
+	-webkit-mask-image: var(--details-icon-image-not-open, none);
+	mask-image: var(--details-icon-image-not-open, none);
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+}
+
+.wp-block-details[class*="is-style-"]:not(.is-style-default)[open] > summary::before {
+	-webkit-mask-image: var(--details-icon-image-open, none);
+	mask-image: var(--details-icon-image-open, none);
 }
