@@ -213,8 +213,15 @@ add_action('init', 'themeslug_block_stylesheets');
 function themeslug_block_style_variations() {
 	register_block_style(
 		'core/button', array(
-			'name'         => 'primary', // .wp-block-button.is-style-primary
-			'label'        => __('Primary', 'themeslug'),
+			'name'         => 'brand-1', // .wp-block-button.is-style-brand-1
+			'label'        => __('Brand 1', 'themeslug'),
+			// The styles are in the block's stylesheet 'core-button.css' file
+		)
+	);
+	register_block_style(
+		'core/button', array(
+			'name'         => 'brand-2', // .wp-block-button.is-style-brand-2
+			'label'        => __('Brand 2', 'themeslug'),
 			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);

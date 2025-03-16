@@ -75,14 +75,24 @@
 					"color": "oklch(55% 0.0025 268deg)"
 				},
 				{
+					"name": "Brand 1 darker",
+					"slug": "brand-1-darker",
+					"color": "oklch(45.5% 0.22 268deg)"
+				},
+				{
 					"name": "Brand 1 medium",
 					"slug": "brand-1-medium",
 					"color": "oklch(53% 0.22 268deg)"
 				},
 				{
-					"name": "Brand 1 darker",
-					"slug": "brand-1-darker",
-					"color": "oklch(45.5% 0.22 268deg)"
+					"name": "Brand 1 lightest",
+					"slug": "brand-1-lightest",
+					"color": "oklch(98% 0.009 268deg)"
+				},
+				{
+					"name": "Brand 2 darker",
+					"slug": "brand-2-darker",
+					"color": "oklch(76.5% 0.2 150)"
 				},
 				{
 					"name": "Brand 2 medium",
@@ -90,9 +100,9 @@
 					"color": "oklch(84% 0.2 150)"
 				},
 				{
-					"name": "Brand 2 darker",
-					"slug": "brand-2-darker",
-					"color": "oklch(76.5% 0.2 150)"
+					"name": "Brand 2 lightest",
+					"slug": "brand-2-lightest",
+					"color": "oklch(98% 0.03 150)"
 				},
 				{
 					"name": "Danger medium",
