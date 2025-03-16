@@ -13,23 +13,33 @@
 			"duotone": [],
 			"gradients": [
 				{
-					"name": "Vertical Brand 1–2",
-					"slug": "brand-1-2-vertical",
-					"gradient": "linear-gradient(0deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
+					"name": "Brand 1 to Brand 2 Vertical",
+					"slug": "brand-1-to-brand-2-vertical",
+					"gradient": "linear-gradient(180deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
 				},
 				{
-					"name": "Vertical Brand 2–1",
-					"slug": "brand-2-1-vertical",
-					"gradient": "linear-gradient(180deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+					"name": "Brand 1 to Brand 2 Diagonal",
+					"slug": "brand-1-to-brand-2-diagonal",
+					"gradient": "linear-gradient(135deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
 				},
 				{
-					"name": "Horizontal Brand 1–2",
-					"slug": "brand-1-2-horizontal",
+					"name": "Brand 1 to Brand 2 Horizontal",
+					"slug": "brand-1-to-brand-2-horizontal",
 					"gradient": "linear-gradient(90deg in oklch, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
 				},
 				{
-					"name": "Horizontal Brand 2–1",
-					"slug": "brand-2-1-horizontal",
+					"name": "Brand 2 to Brand 1 Vertical",
+					"slug": "brand-2-to-brand-1-vertical",
+					"gradient": "linear-gradient(180deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+				},
+				{
+					"name": "Brand 2 to Brand 1 Diagonal",
+					"slug": "brand-2-to-brand-1-diagonal",
+					"gradient": "linear-gradient(135deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+				},
+				{
+					"name": "Brand 2 to Brand 1 Horizontal",
+					"slug": "brand-2-to-brand-1-horizontal",
 					"gradient": "linear-gradient(90deg in oklch, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
 				}
 			],
