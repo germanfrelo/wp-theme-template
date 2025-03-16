@@ -46,7 +46,7 @@ nav.wp-block-navigation {
 	--nav-link-transition-duration: var(--wp--custom--transition--duration, 0);
 
 	/* Submenu */
-	--nav-submenu-border-color: var(--wp--preset--color--accent-1, currentcolor);
+	--nav-submenu-border-color: var(--wp--preset--color--accent-medium, currentcolor);
 	--nav-submenu-border-top-width: var(--wp--custom--border--width--medium, 2px);
 	--nav-submenu-border-width: 0;
 	--nav-submenu-box-shadow: var(--wp--preset--shadow--elevation-low, var(--wp--preset--shadow--natural, none));
@@ -61,7 +61,7 @@ nav.wp-block-navigation {
 	--nav-overlay-animation-duration: var(--wp--custom--transition--duration, 0.1s);
 	--nav-overlay-animation-timing-function: ease-out;
 	--nav-overlay-color-background: var(--wp--preset--color--background-2, inherit);
-	--nav-overlay-color-text: var(--wp--preset--color--accent-1, inherit);
+	--nav-overlay-color-text: var(--wp--preset--color--accent-medium, inherit);
 	--nav-overlay-content-padding-block-start: calc(1.5 * var(--nav-button-icon-size, 24px));
 	--nav-overlay-font-size: inherit;
 	--nav-overlay-font-weight: inherit;
@@ -89,7 +89,7 @@ footer nav.wp-block-navigation {
 	--nav-color-text: inherit;
 	--nav-gap-columns: inherit;
 	--nav-gap-rows: inherit;
-	--nav-link-color-hover: var(--wp--preset--color--accent-1, inherit);
+	--nav-link-color-hover: var(--wp--preset--color--accent-medium, inherit);
 	--nav-link-color: inherit;
 	--nav-link-padding-block-end: 0;
 	--nav-link-padding-block-start: 0;
@@ -128,7 +128,7 @@ Submenu
 	--nav-link-padding-block-start: 1em;
 	--nav-link-padding-block-end: 1em;
 	--nav-link-padding-inline: 1.125em;
-	--nav-link-background-color-hover: var(--wp--preset--color--accent-1, inherit);
+	--nav-link-background-color-hover: var(--wp--preset--color--accent-medium, inherit);
 	--nav-link-color-hover: var(--wp--preset--color--background-1, inherit);
 	border-color: var(--nav-submenu-border-color, inherit);
 	border-style: solid;

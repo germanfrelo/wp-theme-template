@@ -64,7 +64,6 @@ Table of contents:
 
 .wp-block-search__button-inside {
 	/* Inside Wrapper */
-	--search-border-radius: var(--wp--custom--border--radius--rounded, 999px);
 	--search-color-background: var(--wp--preset--color--background-1, transparent);
 	--search-gap: 0;
 	--search-padding: 0.25em;
@@ -93,7 +92,6 @@ Table of contents:
 ---------------------------------------------------------------------- */
 
 .wp-block-search__no-button {
-	--search-input-border-radius: var(--wp--custom--border--radius--rounded, 999px);
 	--search-input-padding-inline: 1em;
 }
 
