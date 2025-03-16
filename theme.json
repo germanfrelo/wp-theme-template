@@ -499,10 +499,48 @@
 			"core/template-part": {},
 			"core/term-description": {},
 			"core/verse": {},
-			"core/video": {}
+			"core/video": {},
+			"woocommerce/product-button": {
+				"typography": {
+					"fontSize": {
+						"ref": "styles.elements.button.typography.fontSize"
+					},
+					"lineHeight": {
+						"ref": "styles.elements.button.typography.lineHeight"
+					}
+				},
+				"elements": {
+					"button": {
+						"color": {
+							"text": "var:preset|color|base-1",
+							"background": "var:preset|color|contrast-1"
+						},
+						"border": {
+							"width": {
+								"ref": "styles.elements.button.border.width"
+							},
+							"style": {
+								"ref": "styles.elements.button.border.style"
+							},
+							"color": "var:preset|color|contrast-1"
+						}
+					}
+				}
+			},
+			"woocommerce/product-price": {
+				"typography": {
+					"fontWeight": "bold"
+				}
+			}
 		}
 	},
-	"customTemplates": [],
+	"customTemplates": [
+		{
+			"name": "woocommerce-my-account",
+			"title": "WooCommerce: Mi cuenta",
+			"postTypes": ["page"]
+		}
+	],
 	"templateParts": [
 		{
 			"area": "header",
