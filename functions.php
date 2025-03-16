@@ -326,18 +326,18 @@ add_action('init', 'themeslug_block_style_variations');
  *
  * @return \WP_Theme_JSON_Data
  */
-// add_filter(
-// 	'wp_theme_json_data_default', function($theme_json) {
-// 		$data = $theme_json->get_data();
-// 		$data['settings']['color']['duotone']['default'] = []; // Remove default color duotone
-// 		$data['settings']['color']['gradients']['default'] = []; // Remove default color gradients
-// 		$data['settings']['color']['palette']['default'] = []; // Remove default color palette
-// 		$data['settings']['spacing']['spacingSizes']['default'] = []; // Remove default spacing sizes
-// 		$data['settings']['typography']['fontSizes']['default'] = []; // Remove default font sizes
-// 		$theme_json->update_with($data); // Update the theme data
-// 		return $theme_json;
-// 	}
-// );
+add_filter(
+	'wp_theme_json_data_default', function($theme_json) {
+		$data = $theme_json->get_data();
+		$data['settings']['color']['duotone']['default'] = []; // Remove default color duotone
+		$data['settings']['color']['gradients']['default'] = []; // Remove default color gradients
+		$data['settings']['color']['palette']['default'] = []; // Remove default color palette
+		$data['settings']['spacing']['spacingSizes']['default'] = []; // Remove default spacing sizes
+		$data['settings']['typography']['fontSizes']['default'] = []; // Remove default font sizes
+		$theme_json->update_with($data); // Updates the theme data
+		return $theme_json;
+	}
+);
 
 
 /**
