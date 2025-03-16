@@ -9,32 +9,45 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* Remove default margin from child blocks of Pagination block */
-.wp-block-query-pagination .wp-block-query-pagination-numbers,
-.wp-block-query-pagination .wp-block-query-pagination-previous,
-.wp-block-query-pagination .wp-block-query-pagination-previous-arrow,
-.wp-block-query-pagination .wp-block-query-pagination-next,
+/* ----------------------------------------------------------------------
+Query Pagination
+---------------------------------------------------------------------- */
+
+/**
+ * Using only the `.wp-block-query-pagination` selector will allow these styles to be overridden by the styles set in the Editor.
+ * To make these styles always win, just append `.is-layout-flex` to the selector: `.wp-block-query-pagination.is-layout-flex`.
+ */
+
+.wp-block-query-pagination {
+	--query-pag-align-cross-axis: center;
+	--query-pag-align-main-axis: center;
+	--query-pag-direction: row;
+	--query-pag-gap-columns: var(--wp--preset--spacing--xxs-s);
+	--query-pag-gap-rows: var(--wp--preset--spacing--xxs-s);
+	--query-pag-wrap: wrap;
+	display: flex;
+	flex-direction: var(--query-pag-direction, row);
+	flex-wrap: var(--query-pag-wrap, wrap);
+	row-gap: var(--query-pag-gap-rows, var(--wp--style--block-gap));
+	column-gap: var(--query-pag-gap-columns, var(--wp--style--block-gap));
+	align-items: var(--query-pag-align-cross-axis, center);
+	justify-content: var(--query-pag-align-main-axis, flex-start);
+}
+
+/* ----------------------------------------------------------------------
+Query Pagination: Previous & Next Arrows
+---------------------------------------------------------------------- */
+
+/**
+ * Remove default margin.
+ */
+
+/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L9 */
+.wp-block-query-pagination .wp-block-query-pagination-previous-arrow {
+	margin-right: 0;
+}
+
+/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L16 */
 .wp-block-query-pagination .wp-block-query-pagination-next-arrow {
-	margin: 0;
-}
-
-/* Improve layout of Page Numbers blocks */
-.wp-block-query-pagination .wp-block-query-pagination-numbers {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--wp--style--block-gap, 1em);
-}
-
-/* Improve layout and sizing of blocks Page Numbers, Previous Page, & Next Page */
-.wp-block-query-pagination .wp-block-query-pagination-numbers > *,
-.wp-block-query-pagination .wp-block-query-pagination-previous,
-.wp-block-query-pagination .wp-block-query-pagination-next {
-	display: flex;
-	flex-wrap: nowrap;
-	gap: 0.5em;
-	align-items: center;
-	justify-content: center;
-	min-inline-size: 44px;
-	min-block-size: 44px;
-	line-height: 1;
+	margin-left: 0;
 }

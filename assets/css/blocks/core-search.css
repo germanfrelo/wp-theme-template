@@ -8,3 +8,157 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/*
+Table of contents:
+1. Configuration
+   1.1. Global
+   1.2. Block Variations
+   1.2. Style Variations
+2. Element: Inside Wrapper
+3. Element: Input
+4. Element: Button
+*/
+
+/* ======================================================================
+1. Configuration
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+1.1. Global
+---------------------------------------------------------------------- */
+
+.wp-block-search {
+	/* Inside Wrapper */
+	--search-border-color: var(--wp--preset--color--border-2, currentcolor);
+	--search-border-radius: var(--wp--custom--border--radius--tiny, 0);
+	--search-border-width: var(--wp--custom--border--width--thin, 1px);
+	--search-color-background: transparent;
+	--search-flex-direction: row;
+	--search-flex-justify-content: flex-start;
+	--search-gap: 1ch;
+	--search-padding: 0;
+
+	/* Input */
+	--search-input-border-color: var(--wp--preset--color--border-2, currentcolor);
+	--search-input-border-radius: var(--wp--custom--border--radius--tiny, 0);
+	--search-input-border-width: var(--wp--custom--border--width--thin, 1px);
+	--search-input-color-background: var(--wp--preset--color--background-1, transparent);
+	--search-input-padding-block: 0.75em;
+	--search-input-padding-inline: 0.75em;
+
+	/* Button */
+	--search-button-icon-rotation-y: initial;
+	--search-button-icon-size: auto;
+}
+
+/* ----------------------------------------------------------------------
+1.2. Block Variations
+---------------------------------------------------------------------- */
+
+/* Button Outside
+---------------------------------------------------------------------- */
+
+/* Button Inside
+---------------------------------------------------------------------- */
+
+.wp-block-search__button-inside {
+	/* Inside Wrapper */
+	--search-border-radius: var(--wp--custom--border--radius--rounded, 999px);
+	--search-color-background: var(--wp--preset--color--background-1, transparent);
+	--search-gap: 0;
+	--search-padding: 0.25em;
+
+	/* Input */
+	--search-input-border-radius: var(--search-border-radius, 0);
+	--search-input-border-width: 0;
+	--search-input-color-background: transparent;
+	--search-input-padding-block: 0;
+
+	/* Button */
+	--search-button-icon-size: 2em;
+}
+
+.wp-block-search__button-inside .wp-element-button {
+	--button-border-radius: var(--search-border-radius, 0);
+}
+
+/* Has Icon */
+.wp-block-search__button-inside.wp-block-search__icon-button .wp-element-button {
+	--button-padding-block: 0.5em;
+	--button-padding-inline: 0.5em;
+}
+
+/* No Button
+---------------------------------------------------------------------- */
+
+.wp-block-search__no-button {
+	--search-input-border-radius: var(--wp--custom--border--radius--rounded, 999px);
+	--search-input-padding-inline: 1em;
+}
+
+/* Button Only
+---------------------------------------------------------------------- */
+
+.wp-block-search__button-only.wp-block-search__searchfield-hidden {
+	--search-gap: 0;
+}
+
+/* ----------------------------------------------------------------------
+1.3. Style Variations
+---------------------------------------------------------------------- */
+
+.wp-block-search.is-style-direction-reversed {
+	--search-flex-direction: row-reverse;
+	--search-flex-justify-content: flex-end;
+	--search-button-icon-rotation-y: 180deg;
+}
+
+/* ======================================================================
+2. Element: Inside Wrapper
+====================================================================== */
+
+.wp-block-search__inside-wrapper {
+	flex-direction: var(--search-flex-direction, row);
+	gap: var(--search-gap, 0);
+	justify-content: var(--search-flex-justify-content, flex-start);
+	padding: var(--search-padding, 0);
+	background-color: var(--search-color-background, transparent);
+	border-color: var(--search-border-color, currentcolor);
+	border-width: var(--search-border-width, 1px);
+	border-radius: var(--search-border-radius, 0);
+}
+
+/* ======================================================================
+3. Element: Input
+====================================================================== */
+
+.wp-block-search__input {
+	padding: 0; /* Removes default value */
+	padding-block: var(--search-input-padding-block, 0);
+	padding-inline: var(--search-input-padding-inline, 1ch);
+	background-color: var(--search-input-color-background, 0);
+	border-color: var(--search-input-border-color, currentcolor);
+	border-width: var(--search-input-border-width, 1px);
+	border-radius: var(--search-input-border-radius, 0);
+}
+
+/* ======================================================================
+4. Element: Button
+====================================================================== */
+
+/* Button
+---------------------------------------------------------------------- */
+
+.wp-block-search__button {
+	margin: 0; /* Removes default value */
+}
+
+/* Icon
+---------------------------------------------------------------------- */
+
+.wp-block-search__button svg {
+	inline-size: var(--search-button-icon-size, auto);
+	block-size: var(--search-button-icon-size, auto);
+	transform: rotateY(var(--search-button-icon-rotation-y, 0));
+}

@@ -38,7 +38,7 @@
 	font-size: var(--wp--preset--font-size--small, 1rem);
 	font-weight: var(--wp--custom--font-weight--medium, 500);
 	line-height: var(--wp--custom--line-height--default, normal);
-	color: var(--wp--preset--color--base-1, inherit);
+	color: var(--wp--preset--color--background-1, inherit);
 	letter-spacing: var(--wp--custom--letter-spacing--wide, normal);
 }
 
@@ -48,7 +48,7 @@
 	font-size: var(--wp--preset--font-size--buttons, 1rem);
 	font-weight: var(--wp--custom--font-weight--medium, 500);
 	line-height: var(--wp--custom--line-height--default, normal);
-	color: var(--wp--preset--color--base-1, inherit);
+	color: var(--wp--preset--color--background-1, inherit);
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: var(--wp--custom--letter-spacing--wide, normal);

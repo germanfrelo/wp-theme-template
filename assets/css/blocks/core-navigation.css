@@ -11,22 +11,258 @@ Notes:
 
 /* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors. */
 
-/**
- * Navigation block
- */
+/* ======================================================================
+Custom Properties
+====================================================================== */
 
-/* Increase the default size (24px) of open and close icons. */
-.wp-block-navigation {
-	--navigation-icon-size: 32px;
+nav.wp-block-navigation {
+	/* Menu */
+	--nav-button-color-hover: var(--wp--preset--color--foreground-1, inherit);
+	--nav-button-color: var(--wp--preset--color--foreground-1, inherit);
+	--nav-button-icon-size: 2em;
+	--nav-color-text: inherit;
+	--nav-font-size: inherit;
+	--nav-line-height: inherit;
+	--nav-font-weight: inherit;
+	--nav-gap-columns: var(--wp--style--block-gap, 1em);
+	--nav-gap-rows: var(--wp--style--block-gap, 1em);
+	--nav-letter-spacing: inherit;
+	--nav-link-color-current-page: var(--wp--preset--color--foreground-1, inherit);
+	--nav-link-color-hover: var(--wp--preset--color--foreground-1, inherit);
+	--nav-link-background-color-hover: inherit;
+	--nav-link-border-radius: 1px;
+	--nav-link-color: inherit;
+	--nav-link-line-color-current-page: transparent;
+	--nav-link-line-color-hover: transparent;
+	--nav-link-line-color: transparent;
+	--nav-link-line-offset-current-page: 0.3em;
+	--nav-link-line-offset: 0.3em;
+	--nav-link-line-thickness-current-page: 0.1em;
+	--nav-link-line-thickness: 0.1em;
+	--nav-link-line: underline;
+	--nav-link-padding-block-start: 0.5em;
+	--nav-link-padding-block-end: 0.5em;
+	--nav-link-padding-inline: 0;
+	--nav-link-transition-duration: var(--wp--custom--transition--duration, 0);
+
+	/* Submenu */
+	--nav-submenu-border-color: var(--wp--preset--color--accent-1, currentcolor);
+	--nav-submenu-border-top-width: var(--wp--custom--border--width--medium, 2px);
+	--nav-submenu-border-width: 0;
+	--nav-submenu-box-shadow: var(--wp--preset--shadow--elevation-low, var(--wp--preset--shadow--natural, none));
+	--nav-submenu-gap: 0.5em;
+	--nav-submenu-icon-size: 0.75em;
+	--nav-submenu-inline-size: max-content;
+	--nav-submenu-min-inline-size: 100%;
+	--nav-submenu-separator-color: var(--wp--preset--color--border-1, currentcolor);
+	--nav-submenu-separator-width: 1px;
+
+	/* Overlay Menu */
+	--nav-overlay-animation-duration: var(--wp--custom--transition--duration, 0.1s);
+	--nav-overlay-animation-timing-function: ease-out;
+	--nav-overlay-color-background: var(--wp--preset--color--background-2, inherit);
+	--nav-overlay-color-text: var(--wp--preset--color--accent-1, inherit);
+	--nav-overlay-content-padding-block-start: calc(1.5 * var(--nav-button-icon-size, 24px));
+	--nav-overlay-font-size: inherit;
+	--nav-overlay-font-weight: inherit;
+	--nav-overlay-gap-columns: 0;
+	--nav-overlay-gap-rows: 0;
+	--nav-overlay-letter-spacing: inherit;
+	--nav-overlay-line-height: inherit;
+	--nav-overlay-link-padding-block-start: var(--nav-link-padding-block-start, 1em);
+	--nav-overlay-link-padding-block-end: var(--nav-link-padding-block-end, 1em);
+	--nav-overlay-link-padding-inline: var(--nav-link-padding-inline, 1em);
+	--nav-overlay-padding-block-start: var(--wp--preset--spacing--m, 2rem);
+	--nav-overlay-padding-block-end: 5vb;
+	--nav-overlay-padding-inline-end: var(--wp--style--root--padding-right, 1rem);
+	--nav-overlay-padding-inline-start: var(--wp--style--root--padding-left, 1rem);
+
+	/* Overlay Submenu */
+	--nav-overlay-submenu-gap-columns: 0;
+	--nav-overlay-submenu-gap-rows: 0;
+	--nav-overlay-submenu-padding-top: 0;
+	--nav-overlay-submenu-padding-inline-start: 2em;
+	--nav-overlay-submenu-padding-inline-end: 0;
 }
 
-/**
- * Increase the viewport width at which navigation switches between expanded and collapsed.
- */
+footer nav.wp-block-navigation {
+	--nav-color-text: inherit;
+	--nav-gap-columns: inherit;
+	--nav-gap-rows: inherit;
+	--nav-link-color-hover: var(--wp--preset--color--accent-1, inherit);
+	--nav-link-color: inherit;
+	--nav-link-padding-block-end: 0;
+	--nav-link-padding-block-start: 0;
+	--nav-link-padding-inline: 0;
+}
+
+/* ======================================================================
+Navigation block
+====================================================================== */
+
+.wp-block-navigation {
+	font-size: var(--nav-font-size, inherit);
+	font-weight: var(--nav-font-weight, inherit);
+	line-height: var(--nav-line-height, inherit);
+	color: var(--nav-color-text, inherit);
+	letter-spacing: var(--nav-letter-spacing, inherit);
+}
+
+.wp-block-navigation__container,
+.wp-block-navigation__responsive-container-content {
+	row-gap: var(--nav-gap-rows, var(--wp--style--block-gap, 0));
+	column-gap: var(--nav-gap-columns, var(--wp--style--block-gap, 0));
+}
+
+/* ======================================================================
+Submenu
+====================================================================== */
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation-submenu {
+	/* styles */
+}
+
+/* <ul> */
+
+.wp-block-navigation li.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container {
+	--nav-link-padding-block-start: 1em;
+	--nav-link-padding-block-end: 1em;
+	--nav-link-padding-inline: 1.125em;
+	--nav-link-background-color-hover: var(--wp--preset--color--accent-1, inherit);
+	--nav-link-color-hover: var(--wp--preset--color--background-1, inherit);
+	border-color: var(--nav-submenu-border-color, inherit);
+	border-style: solid;
+	border-width: var(--nav-submenu-border-width, 1px);
+	border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 1px));
+	box-shadow: var(--nav-submenu-box-shadow, inherit);
+}
+
+.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ .wp-block-navigation__submenu-container,
+.wp-block-navigation .has-child:not(.open-on-click):hover > .wp-block-navigation__submenu-container,
+.wp-block-navigation .has-child:not(.open-on-click):not(.open-on-hover-click):focus-within > .wp-block-navigation__submenu-container {
+	inline-size: var(--nav-submenu-inline-size, auto);
+	min-inline-size: var(--nav-submenu-min-inline-size, 200px); /* '200px' is the WP's default value */
+}
+
+/* <li> */
+
+.wp-block-navigation li.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container > * + * {
+	border-block-start-color: var(--nav-submenu-separator-color, currentcolor);
+	border-block-start-style: solid;
+	border-block-start-width: var(--nav-submenu-separator-width, 0);
+}
+
+/* Icon (chevron) */
+
+.wp-block-navigation .wp-block-navigation__submenu-icon {
+	inline-size: auto;
+	block-size: auto;
+	padding-inline-start: var(--nav-submenu-gap, 0.25em);
+	margin-inline: 0; /* Overrides WP's default value */
+}
+
+.wp-block-navigation .wp-block-navigation__submenu-icon svg {
+	inline-size: var(--nav-submenu-icon-size, auto);
+	margin-top: 0; /* Overrides WP's default value '.075em' */
+}
+
+.wp-block-navigation-item.open-on-click .wp-block-navigation-item__content.wp-block-navigation-submenu__toggle {
+	padding-inline-start: 0;
+	padding-inline-end: calc(var(--nav-submenu-gap, 0.25em) + var(--nav-submenu-icon-size, 0.75em));
+}
+
+.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle + .wp-block-navigation__submenu-icon {
+	padding-inline-start: 0;
+	margin-inline: 0; /* Overrides WP's default value */
+	transform: translateX(-100%);
+}
+
+/* ======================================================================
+Links inside Menu Items (<a>)
+====================================================================== */
+
+/* Link */
+
+.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content {
+	padding-block-start: var(--nav-link-padding-block-start, 0);
+	padding-block-end: var(--nav-link-padding-block-end, 0);
+	padding-inline: var(--nav-link-padding-inline, 0);
+	color: var(--nav-link-color, inherit);
+	text-decoration-line: var(--nav-link-line, none);
+	text-decoration-thickness: var(--nav-link-line-thickness, auto);
+	text-decoration-color: var(--nav-link-line-color, currentcolor);
+	text-underline-offset: var(--nav-link-line-offset, auto);
+	border-radius: var(--nav-link-border-radius, 0);
+	transition-duration: var(--nav-link-transition-duration, initial);
+}
+
+/* Link (Pseudo-Classes) */
+
+.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content:hover {
+	color: var(--nav-link-color-hover, inherit);
+	text-decoration-color: var(--nav-link-line-color-hover, currentcolor);
+	background-color: var(--nav-link-background-color-hover, inherit);
+}
+
+/* Link of Current Menu Item */
+
+.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content[aria-current="page"] {
+	color: var(--nav-link-color-current-page, inherit);
+	text-decoration-thickness: var(--nav-link-line-thickness-current-page, auto);
+	text-decoration-color: var(--nav-link-line-color-current-page, currentcolor);
+	text-underline-offset: var(--nav-link-line-offset-current-page, auto);
+}
+
+/* ======================================================================
+Text inside Menu Links (<span>)
+====================================================================== */
+
+.wp-block-navigation .wp-block-navigation-item__label {
+	display: block;
+	align-content: center;
+}
+
+/* ======================================================================
+Menu Buttons: Open and Close
+====================================================================== */
+
+/* Button */
+
+.wp-block-navigation__responsive-container-close,
+.wp-block-navigation__responsive-container-open {
+	color: var(--nav-button-color, inherit);
+}
+
+.wp-block-navigation__responsive-container-close:hover,
+.wp-block-navigation__responsive-container-open:hover {
+	color: var(--nav-button-color-hover, inherit);
+}
+
+/* Icon Button */
+
+.wp-block-navigation__responsive-container-close svg,
+.wp-block-navigation__responsive-container-open svg {
+	flex-shrink: 0;
+	inline-size: var(--nav-button-icon-size, var(--wp--custom--size--min, 40px));
+	min-inline-size: var(--wp--custom--size--min, 24px);
+	block-size: var(--nav-button-icon-size, var(--wp--custom--size--min, 40px));
+	min-block-size: var(--wp--custom--size--min, 24px);
+}
+
+/* ======================================================================
+Overlay Menu
+====================================================================== */
+
+/* Breakpoints
+---------------------------------------------------------------------- */
+
+/*
+Increases the viewport width at which navigation switches between expanded and collapsed.
+*/
 
 /* Override styles at default breakpoint */
 @media (min-width: 600px) {
-	/* Keep showing menu button */
+	/* Keeps showing menu button */
 	.wp-block-navigation__responsive-container-open:not(.always-shown) {
 		display: flex;
 	}
@@ -37,73 +273,110 @@ Notes:
 	}
 }
 
-/* Add styles at custom breakpoint */
-@media (min-width: 782px) {
-	/* Hide menu button */
+/* Adds styles at custom breakpoint */
+@media (min-width: 992px) {
+	/* Hides menu button */
 	.wp-block-navigation__responsive-container-open:not(.always-shown) {
 		display: none;
 	}
 
-	/* Show expanded menu */
+	/* Shows expanded menu */
 	.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
 		display: block;
 	}
 }
 
-/**
- * Menu Links (Header)
- */
-
-header.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus, [aria-current="page"]) {
-	text-decoration-line: underline;
-	text-decoration-thickness: 0.1em;
-	text-underline-offset: 0.15em;
-}
-
-/**
- * Menu Links (Footer)
- */
-
-footer.wp-block-template-part .wp-block-navigation .wp-block-navigation-item__content:is(:hover, :focus) {
-	text-decoration-line: revert;
-}
-
-/**
- * Menu Buttons
- */
-
-/* Increase the default icon size (24px) & avoid shrinking */
-.wp-block-navigation__responsive-container-close svg,
-.wp-block-navigation__responsive-container-open svg {
-	flex-shrink: 0;
-	width: var(--navigation-icon-size, 44px);
-	height: var(--navigation-icon-size, 44px);
-}
-
-/* Style menu buttons on hover & focus */
-.wp-block-navigation__responsive-container-close:is(:hover, :focus),
-.wp-block-navigation__responsive-container-open:is(:hover, :focus) {
-	color: var(--wp--preset--color--accent);
-}
-
-/**
- * Overlay Menu
- */
+/* Responsive Container
+---------------------------------------------------------------------- */
 
 .wp-block-navigation__responsive-container.is-menu-open {
-	padding-block: var(--site-logo-height, calc(var(--wp--preset--spacing--m-l) + 0.5em));
-	padding-inline: calc(var(--wp--style--root--padding-right, 2rem) + 1rem);
+	--nav-color-text: var(--nav-overlay-color-text, inherit);
+	--nav-font-size: var(--nav-overlay-font-size, inherit);
+	--nav-font-weight: var(--nav-overlay-font-weight, inherit);
+	--nav-letter-spacing: var(--nav-overlay-letter-spacing, inherit);
+	--nav-line-height: var(--nav-overlay-line-height, inherit);
+	--nav-submenu-border-width: 0;
+	--nav-submenu-box-shadow: none;
+	--nav-submenu-separator-width: 0;
+	--nav-overlay-link-padding-inline: 1em;
+	--nav-overlay-link-padding-block-start: 1em;
+	--nav-overlay-link-padding-block-end: 1em;
+	--navigation-layout-justification-setting: stretch;
+	padding-block-start: var(--nav-overlay-padding-block-start, 2rem);
+	padding-block-end: var(--nav-overlay-padding-block-end, 2rem);
+	padding-inline-start: var(--nav-overlay-padding-inline-start, 1rem);
+	padding-inline-end: var(--nav-overlay-padding-inline-end, 1rem);
+	animation-name: overlay-menu__custom-animation;
+	animation-duration: var(--nav-overlay-animation-duration, 0);
+	animation-timing-function: var(--nav-overlay-animation-timing-function, initial);
 }
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation {
+	--navigation-layout-justification-setting: stretch;
+}
+
+@keyframes overlay-menu__custom-animation {
+	0% {
+		translate: 100%;
+	}
+
+	100% {
+		translate: 0;
+	}
+}
+
+.wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open {
+	color: var(--nav-overlay-color-text, inherit);
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open {
+	background-color: var(--nav-overlay-color-background, inherit);
+}
+
+/* Responsive Container - Nested Containers
+---------------------------------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-close,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-dialog,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	block-size: 100%;
+}
+
+/* Responsive Container - Content
+---------------------------------------------------------------------- */
 
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
-	align-items: flex-end;
-	padding-top: calc(var(--navigation-icon-size, 44px) * 2);
+	padding-block-start: var(--nav-overlay-content-padding-block-start, calc(2 * var(--nav-button-icon-size, 24px)));
 }
 
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container,
-.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-page-list {
-	row-gap: 2em;
-	align-items: flex-end;
-	text-align: end;
+/* Responsive Container - Content - Menu Items Gap
+---------------------------------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__container {
+	row-gap: var(--nav-overlay-gap-rows, var(--wp--style--block-gap, 0));
+	column-gap: var(--nav-overlay-gap-columns, var(--wp--style--block-gap, 0));
+}
+
+/* Responsive Container - Content - Submenu Items Gap
+---------------------------------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container {
+	row-gap: var(--nav-overlay-submenu-gap-rows, var(--wp--style--block-gap, 0));
+	column-gap: var(--nav-overlay-submenu-gap-columns, var(--wp--style--block-gap, 0));
+	padding-top: var(--nav-overlay-submenu-padding-top, var(--wp--style--block-gap, 2em));
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container {
+	padding-inline-start: var(--nav-overlay-submenu-padding-inline-start, 2rem);
+	padding-inline-end: var(--nav-overlay-submenu-padding-inline-end, 2rem);
+}
+
+/* Responsive Container - Content - Item
+---------------------------------------------------------------------- */
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content {
+	padding-block-start: var(--nav-overlay-link-padding-block-start, var(--nav-link-padding-block-start, 0));
+	padding-block-end: var(--nav-overlay-link-padding-block-end, var(--nav-link-padding-block-end, 0));
+	padding-inline: var(--nav-overlay-link-padding-inline, var(--nav-link-padding-inline, 0));
 }

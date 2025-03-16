@@ -8,3 +8,38 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* ----------------------------------------------------------------------
+Custom Block Style: "external-link"
+---------------------------------------------------------------------- */
+
+.wp-block-navigation-link.is-style-external-link {
+	--nav-link-style-external-link-icon-color: currentcolor;
+	--nav-link-style-external-link-icon-image: url("../../images/icon-external-link.svg");
+	--nav-link-style-external-link-icon-margin: 0.75ch;
+	--nav-link-style-external-link-icon-size: 1em;
+	--nav-link-style-external-link-icon-vertical-align: -0.13em;
+}
+
+/*
+Adds a custom icon.
+It's rendered after the text by default. To render it before:
+- Change '::before' to '::after'
+- Change 'margin-inline-start' to 'margin-inline-end'
+*/
+
+.wp-block-navigation-link.is-style-external-link .wp-block-navigation-item__label::after {
+	display: inline-block;
+	inline-size: var(--nav-link-style-external-link-icon-size, 1em);
+	block-size: var(--nav-link-style-external-link-icon-size, 1em);
+	margin-inline-start: var(--nav-link-style-external-link-icon-margin, 0.5ch);
+	vertical-align: var(--nav-link-style-external-link-icon-vertical-align, baseline);
+	content: "";
+	background-color: var(--nav-link-style-external-link-icon-color, currentcolor);
+	-webkit-mask-image: var(--nav-link-style-external-link-icon-image, none);
+	mask-image: var(--nav-link-style-external-link-icon-image, none);
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: cover;
+	mask-size: cover;
+}
