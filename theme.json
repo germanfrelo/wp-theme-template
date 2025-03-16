@@ -25,21 +25,6 @@
 			],
 			"palette": [
 				{
-					"name": "Accent lighter",
-					"slug": "accent-lighter",
-					"color": "oklch(60.5% 0.22 268deg)"
-				},
-				{
-					"name": "Accent medium",
-					"slug": "accent-medium",
-					"color": "oklch(53% 0.22 268deg)"
-				},
-				{
-					"name": "Accent darker",
-					"slug": "accent-darker",
-					"color": "oklch(45.5% 0.22 268deg)"
-				},
-				{
 					"name": "Background 1",
 					"slug": "background-1",
 					"color": "oklch(100% 0 268deg)"
@@ -78,6 +63,26 @@
 					"name": "Foreground 2",
 					"slug": "foreground-2",
 					"color": "oklch(55% 0.0025 268deg)"
+				},
+				{
+					"name": "Accent medium",
+					"slug": "accent-medium",
+					"color": "oklch(53% 0.22 268deg)"
+				},
+				{
+					"name": "Accent darker",
+					"slug": "accent-darker",
+					"color": "oklch(45.5% 0.22 268deg)"
+				},
+				{
+					"name": "Danger medium",
+					"slug": "danger-medium",
+					"color": "oklch(53% 0.22 28deg)"
+				},
+				{
+					"name": "Danger lighter",
+					"slug": "danger-darker",
+					"color": "oklch(45.5% 0.22 28deg)"
 				}
 			]
 		},
@@ -85,15 +90,15 @@
 			"border": {
 				"color": "var:preset|color|border-1",
 				"radius": {
-					"tiny": "0.1875rem",
-					"small": "0.5rem",
-					"medium": "2rem",
-					"rounded": "999px"
+					"small": "0.1875rem",
+					"medium": "0.375rem",
+					"large": ".375rem",
+					"full": "9999px"
 				},
 				"width": {
 					"thin": "0.0625rem",
 					"medium": "0.125rem",
-					"thick": "0.375rem"
+					"thick": "0.3125rem"
 				}
 			},
 			"fontWeight": {
@@ -568,10 +573,10 @@
 					"fontSize": "var:preset|font-size|s"
 				},
 				"color": {
-					"background": "var:preset|color|background-3"
+					"background": "var:preset|color|background-2"
 				},
 				"border": {
-					"radius": "var:custom|border|radius|tiny"
+					"radius": "var:custom|border|radius|medium"
 				}
 			},
 			"core/column": {},

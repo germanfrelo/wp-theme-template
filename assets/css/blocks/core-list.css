@@ -32,19 +32,19 @@ Configuration
 	--list-item-marker-color: currentcolor;
 }
 
-/* Style: "with-icon-check"
+/* Style: "checkmark"
 ---------------------------------------------------------------------- */
 
-ul.wp-block-list.is-style-with-icon-check {
+ul.wp-block-list.is-style-checkmark {
 	/* List */
-	--list-gap: 2em;
 	--list-indentation: 0;
 	--list-unordered-style-type: none;
 
 	/* List Item */
+	--list-gap: 0.375em;
 	--list-item-indentation: 0;
-	--list-item-custom-marker-image: url("../../images/icon-check-fill.svg");
-	--list-item-custom-marker-margin: 1.5ch;
+	--list-item-custom-marker-image: url("../../images/icon-check.svg");
+	--list-item-custom-marker-margin: 1ch;
 	--list-item-custom-marker-size: 1.5em;
 }
 
@@ -71,7 +71,7 @@ li > .wp-block-list {
 	margin-block-start: var(--list-gap, revert);
 }
 
-ul.wp-block-list.is-style-with-icon-check > li > .wp-block-list {
+ul.wp-block-list.is-style-checkmark > li > .wp-block-list {
 	margin-inline-start: calc(var(--list-item-custom-marker-size, 1em) + var(--list-item-custom-marker-margin, 1ch));
 }
 
@@ -91,32 +91,36 @@ List Items
 	color: var(--list-item-marker-color, revert);
 }
 
-ul.wp-block-list.is-style-with-icon-check > li::before {
+ul.wp-block-list.is-style-checkmark > li::before {
 	display: inline-block;
 	inline-size: var(--list-item-custom-marker-size, 1em);
 	block-size: var(--list-item-custom-marker-size, 1em);
 	margin-inline-end: var(--list-item-custom-marker-margin, 1ch);
 	vertical-align: middle;
 	content: "";
-	background-image: var(--list-item-custom-marker-image, none);
-	background-position: center;
-	background-size: contain;
+	background-color: var(--list-item-marker-color, currentcolor);
+	-webkit-mask-image: var(--list-item-custom-marker-image, none);
+	mask-image: var(--list-item-custom-marker-image, none);
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	mask-size: contain;
 }
 
-ul.wp-block-list.is-style-with-icon-check > li:not(:has(> *)),
-ul.wp-block-list.is-style-with-icon-check > li:has(> :is(div, ol, ul):only-child) {
+ul.wp-block-list.is-style-checkmark > li:not(:has(> *)),
+ul.wp-block-list.is-style-checkmark > li:has(> :is(div, ol, ul):only-child) {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	gap: var(--list-item-custom-marker-margin, 1ch);
+	column-gap: var(--list-item-custom-marker-margin, 1ch);
 	align-items: center;
 }
 
-ul.wp-block-list.is-style-with-icon-check > li:not(:has(> *))::before,
-ul.wp-block-list.is-style-with-icon-check > li:has(> :is(div, ol, ul):only-child)::before {
+ul.wp-block-list.is-style-checkmark > li:not(:has(> *))::before,
+ul.wp-block-list.is-style-checkmark > li:has(> :is(div, ol, ul):only-child)::before {
 	margin-inline-end: 0;
 }
 
-ul.wp-block-list.is-style-with-icon-check > li > :is(div, ol, ul):only-child {
+ul.wp-block-list.is-style-checkmark > li > :is(div, ol, ul):only-child {
 	grid-column-start: 2;
 	margin-inline-start: 0;
 }
