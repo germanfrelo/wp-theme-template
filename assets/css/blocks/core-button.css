@@ -48,8 +48,8 @@ Configuration
 .wp-block-button.is-style-primary > .wp-block-button__link {
 	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
 	--button-border-color: var(--button-color-background, currentcolor);
-	--button-color-background-on-hover: var(--wp--preset--color--accent-2, transparent);
-	--button-color-background: var(--wp--preset--color--accent-1, transparent);
+	--button-color-background-on-hover: var(--wp--preset--color--accent-darker, transparent);
+	--button-color-background: var(--wp--preset--color--accent-medium, transparent);
 	--button-color-text-on-hover: var(--wp--preset--color--background-2, inherit);
 	--button-color-text: var(--wp--preset--color--background-1, inherit);
 }
