@@ -93,7 +93,7 @@
 				"width": {
 					"thin": "0.0625rem",
 					"medium": "0.125rem",
-					"thick": "0.25rem"
+					"thick": "0.375rem"
 				}
 			},
 			"fontWeight": {

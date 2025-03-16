@@ -219,6 +219,13 @@ function themeslug_block_style_variations() {
 		)
 	);
 	register_block_style(
+		'core/button', array(
+			'name'         => 'danger', // .wp-block-button.is-style-danger
+			'label'        => __('Danger', 'themeslug'),
+			// Styles are in the block's stylesheet 'core-button.css' file
+		)
+	);
+	register_block_style(
 		'core/columns', array(
 			'name'         => 'columns-wrap-reverse',
 			'label'        => __('Apilación invertida', 'themeslug'),

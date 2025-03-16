@@ -32,7 +32,7 @@ Table of contents:
 	/* Inside Wrapper */
 	--search-border-color: var(--wp--preset--color--border-2, currentcolor);
 	--search-border-radius: var(--wp--custom--border--radius--tiny, 0);
-	--search-border-width: var(--wp--custom--border--width--thin, 1px);
+	--search-border-width: var(--wp--custom--border--width--medium, 2px);
 	--search-color-background: transparent;
 	--search-flex-direction: row;
 	--search-flex-justify-content: flex-start;
@@ -42,7 +42,7 @@ Table of contents:
 	/* Input */
 	--search-input-border-color: var(--wp--preset--color--border-2, currentcolor);
 	--search-input-border-radius: var(--wp--custom--border--radius--tiny, 0);
-	--search-input-border-width: var(--wp--custom--border--width--thin, 1px);
+	--search-input-border-width: var(--wp--custom--border--width--medium, 2px);
 	--search-input-color-background: var(--wp--preset--color--background-1, transparent);
 	--search-input-padding-block: 0.75em;
 	--search-input-padding-inline: 0.75em;
