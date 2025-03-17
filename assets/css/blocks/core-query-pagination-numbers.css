@@ -9,23 +9,24 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* ----------------------------------------------------------------------
-Query Pagination Numbers
----------------------------------------------------------------------- */
+/* ======================================================================
+Configuration
+====================================================================== */
 
 .wp-block-query-pagination-numbers {
 	/* Numbers Container */
 	--query-pag-numbers-align-cross-axis: center;
 	--query-pag-numbers-align-main-axis: center;
 	--query-pag-numbers-flex-wrap: wrap;
-	--query-pag-numbers-gap: var(--wp--preset--spacing--xxs-xs);
+	--query-pag-numbers-gap: 1em;
 
 	/* Any Number */
-	--query-pag-number-border-color-hover: var(--query-pag-number-color-background-hover);
+	--query-pag-number-border-color-hover: var(--query-pag-number-color-background-hover, transparent);
 	--query-pag-number-border-color: currentcolor;
-	--query-pag-number-border-radius: var(--wp--custom--border-radius--min);
+	--query-pag-number-border-radius: var(--wp--custom--border-radius--small, 0);
 	--query-pag-number-border-style: solid;
-	--query-pag-number-border-width: var(--wp--custom--border--width--thin);
+	--query-pag-number-border-width: var(--wp--custom--border--width--thin, 0);
+	--query-pag-number-border-block-end-width: var(--wp--custom--border--width--thin, 0);
 	--query-pag-number-color-background-hover: var(--wp--preset--color--foreground-1, transparent);
 	--query-pag-number-color-background: transparent;
 	--query-pag-number-color-text-hover: var(--wp--preset--color--background-1, inherit);
@@ -35,16 +36,24 @@ Query Pagination Numbers
 	--query-pag-number-padding-inline: 0.5em;
 
 	/* Current Number */
-	--query-pag-number-current-border-color: var(--query-pag-number-current-color-background);
+	--query-pag-number-current-border-color: var(--query-pag-number-current-color-background, transparent);
 	--query-pag-number-current-color-background: var(--wp--preset--color--foreground-1, transparent);
 	--query-pag-number-current-color-text: var(--wp--preset--color--background-1, inherit);
 
 	/* Dots */
 	--query-pag-number-dots-border-width: 0;
 	--query-pag-number-dots-border-color: transparent;
-	--query-pag-number-dots-min-size: auto;
+	--query-pag-number-dots-min-size: var(--wp--custom--size--min, 24px);
 	--query-pag-number-dots-padding-block: 0;
 	--query-pag-number-dots-padding-inline: 0;
+}
+
+/* ======================================================================
+Query Pagination Numbers
+====================================================================== */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+.wp-block-query-pagination-numbers {
 	display: flex;
 	flex-wrap: var(--query-pag-numbers-flex-wrap, wrap);
 	gap: var(--query-pag-numbers-gap, 1ch);
@@ -52,9 +61,9 @@ Query Pagination Numbers
 	justify-content: var(--query-pag-numbers-align-main-axis, center);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Any Page Number
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-numbers .page-numbers {
 	display: inline-grid;
@@ -68,12 +77,13 @@ Any Page Number
 	border-color: var(--query-pag-number-border-color, transparent);
 	border-style: var(--query-pag-number-border-style, none);
 	border-width: var(--query-pag-number-border-width, 0);
+	border-block-end-width: var(--query-pag-number-border-block-end-width, 0);
 	border-radius: var(--query-pag-number-border-radius, 0);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Page Number that is a Link (neither Current not Dots)
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-numbers a.page-numbers:is(:hover, :focus-visible) {
 	color: var(--query-pag-number-color-text-hover, inherit);
@@ -81,9 +91,9 @@ Page Number that is a Link (neither Current not Dots)
 	border-color: var(--query-pag-number-border-color-hover, transparent);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Current Page Number
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-numbers .page-numbers.current {
 	color: var(--query-pag-number-current-color-text, inherit);
@@ -91,9 +101,9 @@ Current Page Number
 	border-color: var(--query-pag-number-current-border-color, transparent);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Dots
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-numbers .page-numbers.dots {
 	min-inline-size: var(--query-pag-number-dots-min-size, auto);
