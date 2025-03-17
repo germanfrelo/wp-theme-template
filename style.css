@@ -151,7 +151,6 @@ a {
 	color: var(--wp--preset--color--brand-1-medium, inherit);
 	text-decoration-color: color-mix(in srgb, currentcolor, transparent);
 	text-underline-position: from-font;
-	transition-timing-function: var(--wp--custom--transition--timing-function, initial);
 	transition-duration: var(--wp--custom--transition--duration, 0);
 	transition-property: text-decoration-color;
 }
