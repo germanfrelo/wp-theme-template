@@ -9,17 +9,17 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Query Pagination Previous
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-previous {
 	--query-pag-alignment-main-axis: center;
-	--query-pag-prev-border-color-hover: var(--query-pag-prev-color-background-hover);
+	--query-pag-prev-border-color-hover: var(--query-pag-prev-color-background-hover, transparent);
 	--query-pag-prev-border-color: transparent;
-	--query-pag-prev-border-radius: var(--wp--custom--border-radius--min);
+	--query-pag-prev-border-radius: var(--wp--custom--border-radius--small, 0);
 	--query-pag-prev-border-style: solid;
-	--query-pag-prev-border-width: var(--wp--custom--border--width--thin);
+	--query-pag-prev-border-width: var(--wp--custom--border--width--thin, 0);
 	--query-pag-prev-color-background-hover: var(--wp--preset--color--foreground-1, transparent);
 	--query-pag-prev-color-background: transparent;
 	--query-pag-prev-color-text-hover: var(--wp--preset--color--background-1, inherit);
@@ -51,9 +51,9 @@ Query Pagination Previous
 	border-color: var(--query-pag-prev-border-color-hover, transparent);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Query Pagination Previous Arrow
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-previous-arrow {
 	line-height: 1;

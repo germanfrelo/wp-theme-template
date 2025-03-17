@@ -9,25 +9,25 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Query Pagination Next
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-next {
 	--query-pag-alignment-main-axis: center;
-	--query-pag-next-border-color-hover: var(--query-pag-next-color-background-hover);
+	--query-pag-next-border-color-hover: var(--query-pag-next-color-background-hover, transparent);
 	--query-pag-next-border-color: transparent;
-	--query-pag-next-border-radius: var(--wp--custom--border-radius--min);
+	--query-pag-next-border-radius: var(--wp--custom--border-radius--small, 0);
 	--query-pag-next-border-style: solid;
-	--query-pag-next-border-width: var(--wp--custom--border--width--thin);
+	--query-pag-next-border-width: var(--wp--custom--border--width--thin, 0);
 	--query-pag-next-color-background-hover: var(--wp--preset--color--foreground-1, transparent);
 	--query-pag-next-color-background: transparent;
 	--query-pag-next-color-text-hover: var(--wp--preset--color--background-1, inherit);
 	--query-pag-next-color-text: inherit;
 	--query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
-	--query-pag-next-min-size: var(--wp--custom--size--min);
 	--query-pag-next-gap-columns: 1ch;
 	--query-pag-next-gap-rows: 0.5ch;
+	--query-pag-next-min-size: var(--wp--custom--size--min, 24px);
 	display: inline-flex;
 	flex-wrap: var(--query-pag-next-flex-wrap, wrap);
 	row-gap: var(--query-pag-next-gap-rows, 0.5ch);
@@ -51,9 +51,9 @@ Query Pagination Next
 	border-color: var(--query-pag-next-border-color-hover, transparent);
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Query Pagination Next Arrow
----------------------------------------------------------------------- */
+====================================================================== */
 
 .wp-block-query-pagination-next-arrow {
 	line-height: 1;
