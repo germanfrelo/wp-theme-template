@@ -27,7 +27,7 @@ Query Pagination Previous
 	--query-pag-prev-flex-wrap: wrap;
 	--query-pag-prev-gap-columns: 1ch;
 	--query-pag-prev-gap-rows: 0.5ch;
-	--query-pag-prev-min-size: var(--wp--custom--size--min);
+	--query-pag-prev-min-size: var(--wp--custom--size--min, 24px);
 	display: inline-flex;
 	flex-wrap: var(--query-pag-prev-flex-wrap, wrap);
 	row-gap: var(--query-pag-prev-gap-rows, 0.5ch);
@@ -35,8 +35,8 @@ Query Pagination Previous
 	align-content: center;
 	align-items: center;
 	justify-content: var(--query-pag-alignment-main-axis, center);
-	min-width: var(--query-pag-prev-min-size, 24px);
-	min-height: var(--query-pag-prev-min-size, 24px);
+	min-inline-size: var(--query-pag-prev-min-size, var(--wp--custom--size--min, 24px));
+	min-block-size: var(--query-pag-prev-min-size, var(--wp--custom--size--min, 24px));
 	color: var(--query-pag-prev-color-text, inherit);
 	background-color: var(--query-pag-prev-color-background, transparent);
 	border-color: var(--query-pag-prev-border-color, transparent);
