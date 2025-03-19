@@ -158,14 +158,14 @@ function themeslug_block_style_variations() {
 		'core/details', array(
 			'name'         => 'icon-chevron', // .wp-block-details.is-style-icon-chevron
 			'label'        => __('Icons Chevron', 'themeslug')
-			// The styles are in the block's stylesheet 'core-columns.css' file
+			// The styles are in the block's stylesheet 'core-details.css' file
 		)
 	);
 	register_block_style(
 		'core/details', array(
 			'name'         => 'icon-plus-minus', // .wp-block-details.is-style-icon-plus-minus
 			'label'        => __('Icons Plus Minus', 'themeslug')
-			// The styles are in the block's stylesheet 'core-columns.css' file
+			// The styles are in the block's stylesheet 'core-details.css' file
 		)
 	);
 	register_block_style(
