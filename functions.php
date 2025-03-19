@@ -155,6 +155,13 @@ function themeslug_block_style_variations() {
 		)
 	);
 	register_block_style(
+		'core/cover', array(
+			'name'         => 'custom',
+			'label'        => __('Custom', 'themeslug')
+			// Styles are in the block's stylesheet file
+		)
+	);
+	register_block_style(
 		'core/details', array(
 			'name'         => 'icon-chevron', // .wp-block-details.is-style-icon-chevron
 			'label'        => __('Icons Chevron', 'themeslug')
