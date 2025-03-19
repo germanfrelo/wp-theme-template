@@ -135,23 +135,23 @@ add_action('init', 'themeslug_block_stylesheets');
 function themeslug_block_style_variations() {
 	register_block_style(
 		'core/button', array(
-			'name'         => 'brand-1', // .wp-block-button.is-style-brand-1
+			'name'         => 'brand-1',
 			'label'        => __('Brand 1', 'themeslug')
-			// The styles are in the block's stylesheet 'core-button.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/button', array(
-			'name'         => 'brand-2', // .wp-block-button.is-style-brand-2
+			'name'         => 'brand-2',
 			'label'        => __('Brand 2', 'themeslug')
-			// The styles are in the block's stylesheet 'core-button.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/button', array(
-			'name'         => 'danger', // .wp-block-button.is-style-danger
+			'name'         => 'danger',
 			'label'        => __('Danger', 'themeslug')
-			// The styles are in the block's stylesheet 'core-button.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
@@ -163,65 +163,65 @@ function themeslug_block_style_variations() {
 	);
 	register_block_style(
 		'core/details', array(
-			'name'         => 'icon-chevron', // .wp-block-details.is-style-icon-chevron
+			'name'         => 'icon-chevron',
 			'label'        => __('Icons Chevron', 'themeslug')
-			// The styles are in the block's stylesheet 'core-details.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/details', array(
-			'name'         => 'icon-plus-minus', // .wp-block-details.is-style-icon-plus-minus
+			'name'         => 'icon-plus-minus',
 			'label'        => __('Icons Plus Minus', 'themeslug')
-			// The styles are in the block's stylesheet 'core-details.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'card', // .wp-block-group.is-style-card
+			'name'         => 'card',
 			'label'        => __('Card', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'switcher-2', // .wp-block-group.is-style-switcher-2
+			'name'         => 'switcher-2',
 			'label'        => __('Columns: from 2 to 1', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'switcher-3', // .wp-block-group.is-style-switcher-3
+			'name'         => 'switcher-3',
 			'label'        => __('Columns: from 3 to 1', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'switcher-4', // .wp-block-group.is-style-switcher-4
+			'name'         => 'switcher-4',
 			'label'        => __('Columns: from 4 to 1', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'grid-2', // .wp-block-group.is-style-grid-2
+			'name'         => 'grid-2',
 			'label'        => __('Grid: 2 items', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/group', array(
-			'name'         => 'grid-3', // .wp-block-group.is-style-grid-3
+			'name'         => 'grid-3',
 			'label'        => __('Grid: 3 items', 'themeslug')
-			// The styles are in the block's stylesheet 'core-group.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/list', array(
-			'name'         => 'checkmark', // .wp-block-list.is-style-checkmark
+			'name'         => 'checkmark',
 			'label'        => __('Checkmark', 'themeslug')
-			// The styles are in the block's stylesheet 'core-list.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
@@ -233,30 +233,30 @@ function themeslug_block_style_variations() {
 	);
 	register_block_style(
 		'core/navigation', array(
-			'name'         => 'tabs', // .wp-block-navigation.is-style-tabs
+			'name'         => 'tabs',
 			'label'        => __('Tabs', 'themeslug')
-			// The styles are in the block's stylesheet 'core-navigation.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/navigation-link', array(
-			'name'         => 'external', // .wp-block-navigation-link.is-style-external
+			'name'         => 'external',
 			'label'        => __('External', 'themeslug')
-			// The styles are in the block's stylesheet 'core-navigation-link.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/search', array(
-			'name'         => 'direction-reversed', // .wp-block-search.is-style-direction-reversed
+			'name'         => 'direction-reversed',
 			'label'        => __('Reversed direction', 'themeslug')
-			// The styles are in the block's stylesheet 'core-search.css' file
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
 		'core/separator', array(
-			'name'         => 'thick', // .wp-block-separator.is-style-thick
+			'name'         => 'thick',
 			'label'        => __('Thick Line', 'themeslug')
-			// The styles are in the 'theme.json' file
+			// Styles are in the 'theme.json' file
 		)
 	);
 }
