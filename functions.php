@@ -226,15 +226,9 @@ function themeslug_block_style_variations() {
 	);
 	register_block_style(
 		'core/media-text', array(
-			'name'         => 'stacked-on-mobile-text-before', // .wp-block-media-text.is-style-stacked-on-mobile-text-before
-			'label'        => __('Móvil: Texto antes', 'themeslug'),
-			'inline_style' => '
-				.wp-block-media-text.is-style-stacked-on-mobile-text-before {
-					--media-text-stacked-content-row: 1;
-					--media-text-stacked-media-row: 2;
-				}
-			'
-			// The rest of the styles are in the block's stylesheet 'core-media-text.css' file
+			'name'         => 'stacked-on-mobile-text-before',
+			'label'        => __('Mobile: Text before', 'themeslug')
+			// Styles are in the block's stylesheet file
 		)
 	);
 	register_block_style(
