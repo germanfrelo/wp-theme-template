@@ -155,17 +155,6 @@ function themeslug_block_style_variations() {
 		)
 	);
 	register_block_style(
-		'core/columns', array(
-			'name'         => 'columns-wrap-reverse', // .wp-block-columns.is-style-columns-wrap-reverse
-			'inline_style' => '
-				.wp-block-columns:not(.is-not-stacked-on-mobile).is-style-columns-wrap-reverse {
-					--columns-flex-wrap-when-stacked-on-mobile: wrap-reverse;
-				}
-			'
-			// The rest of the styles are in the block's stylesheet 'core-columns.css' file
-		)
-	);
-	register_block_style(
 		'core/details', array(
 			'name'         => 'icon-chevron', // .wp-block-details.is-style-icon-chevron
 			'label'        => __('Icons Chevron', 'themeslug')
@@ -212,6 +201,12 @@ function themeslug_block_style_variations() {
 				}
 			'
 			// The rest of the styles are in the block's stylesheet 'core-media-text.css' file
+		)
+	);
+	register_block_style(
+		'core/navigation', array(
+			'name'         => 'tabs', // .wp-block-navigation.is-style-tabs
+			'label'        => __('Tabs', 'themeslug'),
 		)
 	);
 	register_block_style(
