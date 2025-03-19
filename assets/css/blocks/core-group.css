@@ -8,3 +8,144 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* ======================================================================
+Custom Style: Card
+====================================================================== */
+
+.wp-block-group.is-style-card {
+	padding: var(--wp--preset--spacing--l, var(--wp--style--block-gap, 1.5em));
+	background-color: var(--wp--preset--color--background-1, transparent);
+	border: var(--wp--custom--border--width--thin, 1px) solid var(--wp--preset--color--border-1, currentcolor);
+	border-radius: var(--wp--custom--border--radius--m, 1rem);
+}
+
+/* ======================================================================
+Custom Style: Switcher
+
+A flexible layout that switches a flexbox context between a horizontal and a vertical layout at a given, container-based breakpoint. That is, if the breakpoint is 30rem, the layout will switch to a vertical configuration when the parent element is less than 30rem wide.
+
+Configuration:
+--switcher-threshold (40rem): A CSS width value (representing the container breakpoint). The container width at which the component switches between a horizontal and vertical layout.
+
+References:
+- https://every-layout.dev/layouts/switcher/
+====================================================================== */
+
+.wp-block-group[class*="is-style-switcher"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--switcher-gap, var(--wp--style--block-gap, 1em));
+}
+
+.wp-block-group[class*="is-style-switcher"] > * {
+	flex-grow: 1;
+	flex-basis: var(--switcher-threshold, 41rem);
+	max-inline-size: 100%;
+	margin: 0;
+}
+
+/* Max. elements in horizontal: 2
+---------------------------------------------------------------------- */
+
+.wp-block-group.is-style-switcher-2 {
+	--switcher-threshold: 41rem;
+}
+
+.wp-block-group.is-style-switcher-2 > * {
+	flex-basis: calc((var(--switcher-threshold, 41rem) - 100%) * 999);
+}
+
+.wp-block-group.is-style-switcher-2 > :nth-last-child(n + 3),
+.wp-block-group.is-style-switcher-2 > :nth-last-child(n + 3) ~ * {
+	flex-basis: 100%;
+}
+
+/* Max. elements in horizontal: 3
+---------------------------------------------------------------------- */
+
+.wp-block-group.is-style-switcher-3 {
+	--switcher-threshold: 41rem;
+}
+
+.wp-block-group.is-style-switcher-3 > * {
+	flex-basis: calc((var(--switcher-threshold, 41rem) - 100%) * 999);
+}
+
+.wp-block-group.is-style-switcher-3 > :nth-last-child(n + 4),
+.wp-block-group.is-style-switcher-3 > :nth-last-child(n + 4) ~ * {
+	flex-basis: 100%;
+}
+
+/* Max. elements in horizontal: 4
+---------------------------------------------------------------------- */
+
+.wp-block-group.is-style-switcher-4 {
+	--switcher-threshold: 41rem;
+}
+
+.wp-block-group.is-style-switcher-4 > * {
+	flex-basis: calc((var(--switcher-threshold, 41rem) - 100%) * 999);
+}
+
+.wp-block-group.is-style-switcher-4 > :nth-last-child(n + 5),
+.wp-block-group.is-style-switcher-4 > :nth-last-child(n + 5) ~ * {
+	flex-basis: 100%;
+}
+
+/* ======================================================================
+Custom Style: Grid
+
+A flexible layout that will create an auto-fill grid with configurable grid item sizes.
+
+Configuration:
+--grid-placement (auto-fill): Set either 'auto-fit' or 'auto-fill' to change how empty grid tracks are handled.
+--grid-min-item-size (20rem): How large each item should be ideally, as a minimum.
+
+References:
+- https://every-layout.dev/layouts/grid/
+- https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+====================================================================== */
+
+.wp-block-group[class*="is-style-grid"] {
+	display: grid;
+	grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(min(100%, var(--grid-min-item-size, 20rem)), 1fr));
+	gap: var(--grid-gap, var(--wp--style--block-gap, 1em));
+	align-items: normal;
+}
+
+/* A split 50/50 layout
+---------------------------------------------------------------------- */
+
+.wp-block-group.is-style-grid-2 {
+	--grid-min-item-size: clamp(16rem, 50vw, 20rem);
+	--grid-placement: auto-fit;
+}
+
+/* Three column grid layout
+---------------------------------------------------------------------- */
+
+.wp-block-group.is-style-grid-3 {
+	--grid-min-item-size: clamp(16rem, 33%, 20rem);
+	--grid-placement: auto-fit;
+}
+
+/* Child images
+---------------------------------------------------------------------- */
+
+.wp-block-group:is([class*="is-style-switcher"], [class*="is-style-grid"]):has(> figure img) {
+	align-items: stretch;
+}
+
+.wp-block-group:is([class*="is-style-switcher"], [class*="is-style-grid"]) > figure img {
+	block-size: 100%;
+	object-fit: cover;
+}
+
+/* Editor-only
+---------------------------------------------------------------------- */
+
+.block-editor-block-list__block.wp-block-group:is([class*="is-style-switcher"], [class*="is-style-grid"]) > figure.wp-block-image > div {
+	block-size: 100% !important;
+}
