@@ -136,21 +136,21 @@ function themeslug_block_style_variations() {
 	register_block_style(
 		'core/button', array(
 			'name'         => 'brand-1', // .wp-block-button.is-style-brand-1
-			'label'        => __('Brand 1', 'themeslug'),
+			'label'        => __('Brand 1', 'themeslug')
 			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);
 	register_block_style(
 		'core/button', array(
 			'name'         => 'brand-2', // .wp-block-button.is-style-brand-2
-			'label'        => __('Brand 2', 'themeslug'),
+			'label'        => __('Brand 2', 'themeslug')
 			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);
 	register_block_style(
 		'core/button', array(
 			'name'         => 'danger', // .wp-block-button.is-style-danger
-			'label'        => __('Danger', 'themeslug'),
+			'label'        => __('Danger', 'themeslug')
 			// The styles are in the block's stylesheet 'core-button.css' file
 		)
 	);
@@ -171,16 +171,43 @@ function themeslug_block_style_variations() {
 	register_block_style(
 		'core/group', array(
 			'name'         => 'card', // .wp-block-group.is-style-card
-			'label'        => __('Tarjeta', 'themeslug'),
-			'inline_style' => '
-				.wp-block-group.is-style-card {
-					padding: var(--wp--preset--spacing--l, var(--wp--style--block-gap, 1.5em));
-					background-color: var(--wp--preset--color--background-1, transparent);
-					border: var(--wp--custom--border--width--thin, 1px) solid var(--wp--preset--color--border-1, currentcolor);
-					border-radius: var(--wp--custom--border--radius--m, 1rem);
-				}
-			'
-			// The rest of the styles are in the block's stylesheet 'core-group.css' file
+			'label'        => __('Card', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
+		)
+	);
+	register_block_style(
+		'core/group', array(
+			'name'         => 'switcher-2', // .wp-block-group.is-style-switcher-2
+			'label'        => __('Columns: from 2 to 1', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
+		)
+	);
+	register_block_style(
+		'core/group', array(
+			'name'         => 'switcher-3', // .wp-block-group.is-style-switcher-3
+			'label'        => __('Columns: from 3 to 1', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
+		)
+	);
+	register_block_style(
+		'core/group', array(
+			'name'         => 'switcher-4', // .wp-block-group.is-style-switcher-4
+			'label'        => __('Columns: from 4 to 1', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
+		)
+	);
+	register_block_style(
+		'core/group', array(
+			'name'         => 'grid-2', // .wp-block-group.is-style-grid-2
+			'label'        => __('Grid: 2 items', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
+		)
+	);
+	register_block_style(
+		'core/group', array(
+			'name'         => 'grid-3', // .wp-block-group.is-style-grid-3
+			'label'        => __('Grid: 3 items', 'themeslug')
+			// The styles are in the block's stylesheet 'core-group.css' file
 		)
 	);
 	register_block_style(
@@ -206,7 +233,8 @@ function themeslug_block_style_variations() {
 	register_block_style(
 		'core/navigation', array(
 			'name'         => 'tabs', // .wp-block-navigation.is-style-tabs
-			'label'        => __('Tabs', 'themeslug'),
+			'label'        => __('Tabs', 'themeslug')
+			// The styles are in the block's stylesheet 'core-navigation.css' file
 		)
 	);
 	register_block_style(
