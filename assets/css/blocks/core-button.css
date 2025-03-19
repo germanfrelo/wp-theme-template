@@ -32,6 +32,7 @@ Configuration
 	--button-padding-inline: 1.5em;
 	--button-transition-duration: var(--wp--custom--transition--duration, 0);
 	--button-transition-properties: color, background-color, border-color;
+	--element-button-cursor: default;
 }
 
 /* Style: Outline */
@@ -96,6 +97,10 @@ Styles — ⚠️ Don't modify unless you're sure
 	border-radius: var(--button-border-radius, 0);
 	transition-duration: var(--button-transition-duration, 0);
 	transition-property: var(--button-transition-properties, initial);
+}
+
+button.wp-element-button {
+	cursor: var(--element-button-cursor, initial);
 }
 
 /* Button has Icon */
