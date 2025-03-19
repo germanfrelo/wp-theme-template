@@ -8,3 +8,10 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height' */
+
+figure.wp-block-image > a:has(> img) {
+	/* Default is inline-block */
+	display: block;
+}
