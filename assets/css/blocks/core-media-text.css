@@ -9,21 +9,44 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
+/* ======================================================================
+Configuration
+====================================================================== */
+
 /* ----------------------------------------------------------------------
-Block
+Default
 ---------------------------------------------------------------------- */
 
-/*
-Custom properties & Layout
-
-By default, media is on the left.
-*/
+/* By default, media is on the left. */
 
 .wp-block-media-text {
 	--media-text-content-size: 0.75fr;
 	--media-text-media-size: 1fr;
 	--media-text-stacked-content-row: 2; /* default value */
 	--media-text-stacked-media-row: 1; /* default value */
+}
+
+/* ----------------------------------------------------------------------
+Custom Style: Text before when stacked on mobile
+---------------------------------------------------------------------- */
+
+.wp-block-media-text.is-style-stacked-on-mobile-text-before {
+	--media-text-stacked-content-row: 1;
+	--media-text-stacked-media-row: 2;
+}
+
+/* ======================================================================
+Styles — ⚠️ Don't modify unless you're sure
+====================================================================== */
+
+/* By default, media is on the left. */
+
+/* ----------------------------------------------------------------------
+Block
+---------------------------------------------------------------------- */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+.wp-block-media-text {
 	grid-template-columns: var(--media-text-media-size, 50%) var(--media-text-content-size, 1fr);
 	row-gap: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1rem));
 	column-gap: var(--wp--preset--spacing--s, var(--wp--style--block-gap, 1rem));
