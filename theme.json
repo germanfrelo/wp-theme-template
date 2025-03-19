@@ -587,7 +587,13 @@
 				}
 			},
 			"core/column": {},
-			"core/columns": {},
+			"core/columns": {
+				"spacing": {
+					"margin": {
+						"bottom": "0"
+					}
+				}
+			},
 			"core/comment-author-name": {},
 			"core/comment-content": {},
 			"core/comment-date": {},
