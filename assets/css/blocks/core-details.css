@@ -39,6 +39,7 @@ Configuration
 
 	/* Summary */
 	--details-summary-color: var(--wp--preset--color--foreground-1, inherit);
+	--details-summary-cursor: default;
 	--details-summary-font-family: inherit;
 	--details-summary-font-size: var(--wp--preset--font-size--m, 1.125rem);
 	--details-summary-font-weight: var(--wp--custom--font-weight--heading, bold);
@@ -110,6 +111,7 @@ Summary
 	line-height: var(--details-summary-line-height, inherit);
 	color: var(--details-summary-color, inherit);
 	letter-spacing: var(--details-summary-letter-spacing, normal);
+	cursor: var(--details-summary-cursor, initial);
 }
 
 /* ----------------------------------------------------------------------
