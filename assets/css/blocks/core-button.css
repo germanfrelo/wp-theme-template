@@ -27,12 +27,14 @@ Configuration
 	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
 	--button-color-text: var(--wp--preset--color--background-1, inherit);
 	--button-gap: 0.5em;
-	--button-icon-size: 1.25em;
 	--button-padding-block: 0.75em;
 	--button-padding-inline: 1.5em;
 	--button-transition-duration: var(--wp--custom--transition--duration, 0);
 	--button-transition-properties: color, background-color, border-color;
 	--element-button-cursor: default;
+
+	/* Button Icon */
+	--button-icon-size: 1.25em;
 }
 
 /* Style: Outline */
@@ -88,8 +90,7 @@ Styles — ⚠️ Don't modify unless you're sure
 	min-inline-size: 48px;
 	min-block-size: 48px;
 	padding-block: var(--button-padding-block, 0.75em);
-	padding-inline-start: var(--button-padding-inline, 1.5em);
-	padding-inline-end: var(--button-padding-inline, 1.5em);
+	padding-inline: var(--button-padding-inline, 1.5em);
 	color: var(--button-color-text, inherit);
 	background-color: var(--button-color-background, transparent);
 	border-color: var(--button-border-color, currentcolor);
