@@ -149,8 +149,9 @@ figcaption {
 
 a {
 	color: var(--wp--preset--color--brand-1-medium, inherit);
-	text-decoration-color: color-mix(in srgb, currentcolor, transparent);
+	text-decoration-color: color-mix(in srgb, currentcolor, transparent 75%);
 	text-underline-position: from-font;
+	text-underline-offset: 1px;
 	transition-duration: var(--wp--custom--transition--duration, 0);
 	transition-property: text-decoration-color;
 }
