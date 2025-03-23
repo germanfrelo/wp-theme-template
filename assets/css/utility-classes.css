@@ -18,10 +18,9 @@
 	padding: 0 !important;
 	margin: -1px !important;
 	overflow: hidden !important;
-	white-space: nowrap !important; /* To prevent words from being squashed together (since they go on separate lines, and some screen readers do not understand line feeds as spaces) */
+	white-space: nowrap !important;
 	border: 0 !important;
-	clip: rect(0 0 0 0); /* For legacy browsers */
-	clip-path: inset(50%); /* For modern browsers */
+	clip-path: inset(50%) !important;
 }
 
 /* Backgrounds
