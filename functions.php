@@ -27,25 +27,25 @@ function themeslug_enqueue_styles() {
 		'themeslug-base',
 		get_parent_theme_file_uri('assets/css/base.css'),
 		array(),
-		wp_get_theme()->get('Version')
+		filemtime(get_parent_theme_file_path('assets/css/base.css'))
 	);
 	wp_enqueue_style(
 		'themeslug-layouts',
 		get_parent_theme_file_uri('assets/css/layouts.css'),
 		array(),
-		wp_get_theme()->get('Version')
+		filemtime(get_parent_theme_file_path('assets/css/layouts.css'))
 	);
 	wp_enqueue_style(
 		'themeslug-utility-classes',
 		get_parent_theme_file_uri('assets/css/utility-classes.css'),
 		array(),
-		wp_get_theme()->get('Version')
+		filemtime(get_parent_theme_file_path('assets/css/utility-classes.css'))
 	);
 	wp_enqueue_style(
 		'themeslug-gravity-forms',
 		get_parent_theme_file_uri('assets/css/gravity-forms.css'),
 		array(),
-		wp_get_theme()->get('Version')
+		filemtime(get_parent_theme_file_path('assets/css/gravity-forms.css'))
 	);
 
 	// Active theme's style.css.
@@ -53,7 +53,7 @@ function themeslug_enqueue_styles() {
 		'themeslug-style',
 		get_stylesheet_uri(),
 		array(),
-		wp_get_theme()->get('Version')
+		filemtime(get_parent_theme_file_path('style.css'))
 	);
 }
 add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
