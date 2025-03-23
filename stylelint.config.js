@@ -18,6 +18,8 @@ export default {
 			true, // Already enabled in stylelint-config-recommended
 			{ severity: "warning" }, // Relax the severity level because this rule has limitations
 		],
+		// Invalid
+		"syntax-string-no-invalid": true,
 		// Unknown
 		"no-unknown-animations": true,
 		"no-unknown-custom-media": true,
