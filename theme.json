@@ -172,7 +172,13 @@
 			"wideSize": "80rem"
 		},
 		"shadow": {
-			"presets": []
+			"presets": [
+				{
+					"name": "Submenu",
+					"slug": "submenu",
+					"shadow": "0px 4px 8px 2px hsl(0deg 0 0 / 10%)"
+				}
+			]
 		},
 		"spacing": {
 			"customSpacingSize": true,
