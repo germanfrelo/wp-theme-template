@@ -39,23 +39,23 @@ nav.wp-block-navigation {
 	--nav-link-line-offset: 0.3em;
 	--nav-link-line-thickness-current-page: 0.1em;
 	--nav-link-line-thickness: 0.1em;
-	--nav-link-line: underline;
+	--nav-link-line: none;
 	--nav-link-padding-block-start: 0.5em;
 	--nav-link-padding-block-end: 0.5em;
 	--nav-link-padding-inline: 0;
-	--nav-link-transition-duration: var(--wp--custom--transition--duration, 0);
+	--nav-link-transition-properties: initial;
 
 	/* Submenu */
-	--nav-submenu-border-color: var(--wp--preset--color--brand-1-medium, currentcolor);
-	--nav-submenu-border-top-width: var(--wp--custom--border--width--medium, 2px);
-	--nav-submenu-border-width: 0;
-	--nav-submenu-box-shadow: var(--wp--preset--shadow--elevation-low, var(--wp--preset--shadow--natural, none));
+	--nav-submenu-border-color: var(--wp--preset--color--border-1, currentcolor);
+	--nav-submenu-border-top-width: var(--wp--custom--border--width--thin, thin);
+	--nav-submenu-border-width: var(--wp--custom--border--width--thin, thin);
+	--nav-submenu-box-shadow: var(--wp--preset--shadow--submenu, none);
 	--nav-submenu-gap: 0.5em;
 	--nav-submenu-icon-size: 0.75em;
 	--nav-submenu-inline-size: max-content;
 	--nav-submenu-min-inline-size: 100%;
 	--nav-submenu-separator-color: var(--wp--preset--color--border-1, currentcolor);
-	--nav-submenu-separator-width: 1px;
+	--nav-submenu-separator-width: var(--wp--custom--border--width--thin, thin);
 
 	/* Overlay Menu */
 	--nav-overlay-animation-duration: var(--wp--custom--transition--duration, 0.1s);
@@ -85,16 +85,17 @@ nav.wp-block-navigation {
 	--nav-overlay-submenu-padding-inline-end: 0;
 }
 
-footer nav.wp-block-navigation {
-	--nav-color-text: inherit;
-	--nav-gap-columns: inherit;
-	--nav-gap-rows: inherit;
-	--nav-link-color-hover: var(--wp--preset--color--brand-1-medium, inherit);
-	--nav-link-color: inherit;
-	--nav-link-padding-block-end: 0;
-	--nav-link-padding-block-start: 0;
-	--nav-link-padding-inline: 0;
-}
+/* In Header
+---------------------------------------------------------------------- */
+
+/* header nav.wp-block-navigation {
+} */
+
+/* In Footer
+---------------------------------------------------------------------- */
+
+/* footer nav.wp-block-navigation {
+} */
 
 /* ======================================================================
 Navigation block
@@ -128,12 +129,12 @@ Submenu
 	--nav-link-padding-block-start: 1em;
 	--nav-link-padding-block-end: 1em;
 	--nav-link-padding-inline: 1.125em;
-	--nav-link-background-color-hover: var(--wp--preset--color--brand-1-medium, inherit);
-	--nav-link-color-hover: var(--wp--preset--color--background-1, inherit);
+	--nav-link-background-color-hover: var(--wp--preset--color--background-2, inherit);
+	--nav-link-color-hover: var(--wp--preset--color--foreground-1, inherit);
 	border-color: var(--nav-submenu-border-color, inherit);
 	border-style: solid;
-	border-width: var(--nav-submenu-border-width, 1px);
-	border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 1px));
+	border-width: var(--nav-submenu-border-width, 0);
+	border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
 	box-shadow: var(--nav-submenu-box-shadow, inherit);
 }
 
@@ -181,7 +182,8 @@ Submenu
 Links inside Menu Items (<a>)
 ====================================================================== */
 
-/* Link */
+/* Link
+---------------------------------------------------------------------- */
 
 .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content {
 	padding-block-start: var(--nav-link-padding-block-start, 0);
@@ -193,10 +195,8 @@ Links inside Menu Items (<a>)
 	text-decoration-color: var(--nav-link-line-color, currentcolor);
 	text-underline-offset: var(--nav-link-line-offset, auto);
 	border-radius: var(--nav-link-border-radius, 0);
-	transition-duration: var(--nav-link-transition-duration, initial);
+	transition-property: var(--nav-link-transition-properties, initial);
 }
-
-/* Link (Pseudo-Classes) */
 
 .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content:hover {
 	color: var(--nav-link-color-hover, inherit);
@@ -204,7 +204,8 @@ Links inside Menu Items (<a>)
 	background-color: var(--nav-link-background-color-hover, inherit);
 }
 
-/* Link of Current Menu Item */
+/* Link of Current Menu Item
+---------------------------------------------------------------------- */
 
 .wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content[aria-current="page"] {
 	color: var(--nav-link-color-current-page, inherit);
