@@ -8,3 +8,49 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* ======================================================================
+Template
+====================================================================== */
+
+/**
+ * The value `minmax(0, 1fr)` is used to override the default `1fr` set by WordPress to prevent the grid column from being wider than expected in some cases.
+ * Example: a query loop of post entries, being the post template block a grid layout, and one of the grid items has a very long URL in the excerpt block (using `overflow-wrap: break-word` doesn't fix it).
+ * References:
+ * 1. https://www.agney.dev/blog/grid-blowout
+ * 2. https://www.bram.us/2021/01/28/the-minimum-content-size-in-css-grid/
+ *
+ * At the time of writing, WordPress only uses the value `1fr` for the `Media Text` and `Post Template` blocks:
+ * https://github.com/search?q=repo%3AWordPress%2Fgutenberg+path%3A%2F%5Epackages%5C%2Fblock-library%5C%2Fsrc%5C%2F%2F+%221fr%22&type=code
+ * However, they use the correct value of `minmax(0, 1fr)` in other parts:
+ * https://github.com/search?q=repo%3AWordPress%2Fgutenberg+%22minmax%280%2C+1fr%29%22&type=code
+ */
+
+@media (max-width: 600px) {
+	.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid.wp-block-post-template-is-layout-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* ======================================================================
+Post
+====================================================================== */
+
+/* Style: Card
+---------------------------------------------------------------------- */
+
+.wp-block-post {
+	/* Configuration */
+	--post-border-color: transparent;
+	--post-border-color-hover: currentcolor;
+	--post-border-style: solid;
+	--post-border-width: 1px;
+	--post-transition-duration: var(--wp--custom--transition--duration, 0);
+
+	/* Properties */
+	border-color: var(--post-border-color, transparent);
+	border-style: var(--post-border-style, solid);
+	border-width: var(--post-border-width, 1px);
+	transition-duration: var(--post-transition-duration, 0);
+	transition-property: border-color;
+}

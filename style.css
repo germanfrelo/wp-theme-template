@@ -14,230 +14,183 @@ License:           GNU General Public License v2.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/**
- * TABLE OF CONTENTS:
- *
- * 1. Global Custom Properties
- * 2. Global Styles
- * 3. Local/Scoped Styles
- *
- * @link https://every-layout.dev/rudiments/global-and-local-styling/
- * @link https://cube.fyi/
- */
+/*
+TABLE OF CONTENTS:
+1. Global Custom Properties
+2. Global Styles
+3. Local/Scoped Styles
+*/
 
-/**
- * ======================================================================
- * 1. Global Custom Properties
- * ======================================================================
- */
+/* ======================================================================
+1. Global Custom Properties
+====================================================================== */
 
 :root {
-	/**
-	 * ----------------------------------------------------------------------
-	 * Viewport Widths
-	 * Min:  375px
-	 * Max: 1440px
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Viewport Widths (in px):
+	* Min:  320
+	* Max: 1440
+	---------------------------------------------------------------------- */
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Fluid Type Scale
-	 * @link https://utopia.fyi/clamp/calculator?a=375,1440,14—15|17—19|20—24|25—30|29—37|35—46|42—58&p=font-size
-	 * ----------------------------------------------------------------------
-	 */
+	/* ----------------------------------------------------------------------
+	Fluid Type Scale
+	---------------------------------------------------------------------- */
 
-	--font-size-14-15: clamp(0.875rem, 0.853rem + 0.0939vw, 0.9375rem);
-	--font-size-17-19: clamp(1.0625rem, 1.0185rem + 0.1878vw, 1.1875rem);
-	--font-size-20-24: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
-	--font-size-25-30: clamp(1.5625rem, 1.4525rem + 0.4695vw, 1.875rem);
-	--font-size-29-37: clamp(1.8125rem, 1.6364rem + 0.7512vw, 2.3125rem);
-	--font-size-35-46: clamp(2.1875rem, 1.9454rem + 1.0329vw, 2.875rem);
-	--font-size-42-58: clamp(2.625rem, 2.2729rem + 1.5023vw, 3.625rem);
+	/* stylelint-disable comment-empty-line-before -- Intended */
 
-	/**
-	 * ----------------------------------------------------------------------
-	 * Fluid Spacing Scale
-	 * @link https://utopia.fyi/space/calculator?c=375,17,1.125,1440,19,1.2,5,2,&s=0.67|0.45|0.29,1.5|2.25|3.38|5.06|7.59,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl&g=s,l,xl,12
-	 * ----------------------------------------------------------------------
-	 */
+	/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1440,18,1.2,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
-	/* Space 3xs: 5px → 6px */
-	--space-3xs: clamp(0.3125rem, 0.2905rem + 0.0939vw, 0.375rem);
+	/* Step -2: 12.642px → 12.5px */
+	--step--2: clamp(0.7813rem, 0.7927rem + -0.0127vw, 0.7901rem);
+	/* Step -1: 14.2222px → 15px */
+	--step--1: clamp(0.8889rem, 0.875rem + 0.0694vw, 0.9375rem);
+	/* Step 0: 16px → 18px */
+	--step-0: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+	/* Step 1: 18px → 21.6px */
+	--step-1: clamp(1.125rem, 1.0607rem + 0.3214vw, 1.35rem);
+	/* Step 2: 20.25px → 25.92px */
+	--step-2: clamp(1.2656rem, 1.1644rem + 0.5063vw, 1.62rem);
+	/* Step 3: 22.7813px → 31.104px */
+	--step-3: clamp(1.4238rem, 1.2752rem + 0.7431vw, 1.944rem);
+	/* Step 4: 25.6289px → 37.3248px */
+	--step-4: clamp(1.6018rem, 1.393rem + 1.0443vw, 2.3328rem);
+	/* Step 5: 28.8325px → 44.7898px */
+	--step-5: clamp(1.802rem, 1.5171rem + 1.4248vw, 2.7994rem);
+	/* Step 6: 32.4366px → 53.7477px */
+	--step-6: clamp(2.0273rem, 1.6467rem + 1.9028vw, 3.3592rem);
 
-	/* Space 2xs: 8px → 9px */
-	--space-2xs: clamp(0.5rem, 0.478rem + 0.0939vw, 0.5625rem);
+	/* stylelint-enable comment-empty-line-before */
 
-	/* Space xs: 11px → 13px */
-	--space-xs: clamp(0.6875rem, 0.6435rem + 0.1878vw, 0.8125rem);
+	/* ----------------------------------------------------------------------
+	Fluid Space Scale
+	---------------------------------------------------------------------- */
 
-	/* Space s: 17px → 19px */
-	--space-s: clamp(1.0625rem, 1.0185rem + 0.1878vw, 1.1875rem);
+	/* stylelint-disable comment-empty-line-before -- Intended */
 
-	/* Space m: 26px → 29px */
-	--space-m: clamp(1.625rem, 1.559rem + 0.2817vw, 1.8125rem);
+	/* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1440,18,1.2,7,2,&s=0.667|0.444,1.5|2.25|3.375|5.0625|7.6|11.4,3xs-xs&g=s,l,xl,12 */
 
-	/* Space l: 38px → 43px */
-	--space-l: clamp(2.375rem, 2.265rem + 0.4695vw, 2.6875rem);
-
-	/* Space xl: 57px → 64px */
-	--space-xl: clamp(3.5625rem, 3.4085rem + 0.6573vw, 4rem);
-
-	/* Space 2xl: 86px → 96px */
-	--space-2xl: clamp(5.375rem, 5.1549rem + 0.939vw, 6rem);
-
-	/* Space 3xl: 129px → 144px */
-	--space-3xl: clamp(8.0625rem, 7.7324rem + 1.4085vw, 9rem);
+	/* Space 2xs: 7px → 8px */
+	--space-2xs: clamp(0.4375rem, 0.4196rem + 0.0893vw, 0.5rem);
+	/* Space xs: 11px → 12px */
+	--space-xs: clamp(0.6875rem, 0.6696rem + 0.0893vw, 0.75rem);
+	/* Space s: 16px → 18px */
+	--space-s: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+	/* Space m: 24px → 27px */
+	--space-m: clamp(1.5rem, 1.4464rem + 0.2679vw, 1.6875rem);
+	/* Space l: 36px → 41px */
+	--space-l: clamp(2.25rem, 2.1607rem + 0.4464vw, 2.5625rem);
+	/* Space xl: 54px → 61px */
+	--space-xl: clamp(3.375rem, 3.25rem + 0.625vw, 3.8125rem);
+	/* Space 2xl: 81px → 91px */
+	--space-2xl: clamp(5.0625rem, 4.8839rem + 0.8929vw, 5.6875rem);
+	/* Space 3xl: 122px → 137px */
+	--space-3xl: clamp(7.625rem, 7.3571rem + 1.3393vw, 8.5625rem);
+	/* Space 4xl: 182px → 205px */
+	--space-4xl: clamp(11.375rem, 10.9643rem + 2.0536vw, 12.8125rem);
 
 	/* One-up pairs */
+	/* Space 2xs-xs: 7px → 12px */
+	--space-2xs-xs: clamp(0.4375rem, 0.3482rem + 0.4464vw, 0.75rem);
+	/* Space xs-s: 11px → 18px */
+	--space-xs-s: clamp(0.6875rem, 0.5625rem + 0.625vw, 1.125rem);
+	/* Space s-m: 16px → 27px */
+	--space-s-m: clamp(1rem, 0.8036rem + 0.9821vw, 1.6875rem);
+	/* Space m-l: 24px → 41px */
+	--space-m-l: clamp(1.5rem, 1.1964rem + 1.5179vw, 2.5625rem);
+	/* Space l-xl: 36px → 61px */
+	--space-l-xl: clamp(2.25rem, 1.8036rem + 2.2321vw, 3.8125rem);
+	/* Space xl-2xl: 54px → 91px */
+	--space-xl-2xl: clamp(3.375rem, 2.7143rem + 3.3036vw, 5.6875rem);
+	/* Space 2xl-3xl: 81px → 137px */
+	--space-2xl-3xl: clamp(5.0625rem, 4.0625rem + 5vw, 8.5625rem);
+	/* Space 3xl-4xl: 122px → 205px */
+	--space-3xl-4xl: clamp(7.625rem, 6.1429rem + 7.4107vw, 12.8125rem);
 
-	/* Space 3xs-2xs: 5px → 9px */
-	--space-3xs-2xs: clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem);
+	/* stylelint-enable comment-empty-line-before */
 
-	/* Space 2xs-xs: 8px → 13px */
-	--space-2xs-xs: clamp(0.5rem, 0.39rem + 0.4695vw, 0.8125rem);
+	/* ----------------------------------------------------------------------
+	Fluid Custom Tokens
+	---------------------------------------------------------------------- */
 
-	/* Space xs-s: 11px → 19px */
-	--space-xs–s: clamp(0.6875rem, 0.5114rem + 0.7512vw, 1.1875rem);
-
-	/* Space s-m: 17px → 29px */
-	--space-s–m: clamp(1.0625rem, 0.7984rem + 1.1268vw, 1.8125rem);
-
-	/* Space m-l: 26px → 43px */
-	--space-m-l: clamp(1.625rem, 1.2509rem + 1.5962vw, 2.6875rem);
-
-	/* Space l-xl: 38px → 64px */
-	--space-l-xl: clamp(2.375rem, 1.8028rem + 2.4413vw, 4rem);
-
-	/* Space xl-2xl: 57px → 96px */
-	--space-xl-2xl: clamp(3.5625rem, 2.7042rem + 3.662vw, 6rem);
-
-	/* Space 2xl-3xl: 86px → 144px */
-	--space-2xl-3xl: clamp(5.375rem, 4.0986rem + 5.446vw, 9rem);
-
-	/* Custom pairs */
-
-	/* Space 3xs-xs: 5px → 13px */
-	--space-3xs-xs: clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem);
-
-	/* Space 2xs-s: 8px → 19px */
-	--space-2xs-s: clamp(0.5rem, 0.2579rem + 1.0329vw, 1.1875rem);
-
-	/* Space xs-m: 11px → 29px */
-	--space-xs-m: clamp(0.6875rem, 0.2914rem + 1.6901vw, 1.8125rem);
-
-	/* Space s-l: 17px → 43px */
-	--space-s-l: clamp(1.0625rem, 0.4903rem + 2.4413vw, 2.6875rem);
-
-	/* Space m-xl: 26px → 64px */
-	--space-m-xl: clamp(1.625rem, 0.7887rem + 3.5681vw, 4rem);
-
-	/* Space l-2xl: 38px → 96px */
-	--space-l-2xl: clamp(2.375rem, 1.0986rem + 5.446vw, 6rem);
-
-	/* Space xl-3xl: 57px → 144px */
-	--space-xl-3xl: clamp(3.5625rem, 1.6479rem + 8.169vw, 9rem);
-
-	/**
-	 * ----------------------------------------------------------------------
-	 * Custom Fluid Tokens
-	 * @link https://utopia.fyi/clamp/calculator?a=375,1440
-	 * ----------------------------------------------------------------------
-	 */
-
-	/**
-	 * ----------------------------------------------------------------------
-	 * Another Custom Properties
-	 * ----------------------------------------------------------------------
-	 */
-
-	--icon-min-size: 44px;
-	--site-logo-height: 48px;
+	/* @link https://utopia.fyi/clamp/calculator?a=320,1440 */
 }
 
-/**
- * ======================================================================
- * 2. Global Styles
- *
- * Grouped by function based on
- * https://html.spec.whatwg.org/multipage/#toc-semantics.
- * ======================================================================
- */
+/* ======================================================================
+2. Global Styles
 
-/*
- * ----------------------------------------------------------------------
- * Root & Universal
- * ----------------------------------------------------------------------
- */
+To style the HTML elements, follow this order:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+====================================================================== */
 
-/* To match the font smoothing used in Figma design */
-html {
-	-webkit-font-smoothing: antialiased;
+/* Opt-in the whole page to interpolate sizes to/from keywords */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
 }
 
-/* Better focus indicators (see https://www.sarasoueidan.com/blog/focus-indicators/) */
-*:focus-visible {
-	outline: 0.375rem double #000;
-	box-shadow: 0 0 0 0.25rem #fff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+caption,
+figcaption {
+	text-wrap: pretty;
 }
 
-/*
- * ----------------------------------------------------------------------
- * Sections
- * ----------------------------------------------------------------------
- */
+/* Reverts default margins from WP */
+:where(figure) {
+	margin: 0;
+}
 
-/*
- * ----------------------------------------------------------------------
- * Grouping content
- * ----------------------------------------------------------------------
- */
+a {
+	color: var(--wp--preset--color--brand-1-medium, inherit);
+	text-decoration-color: color-mix(in srgb, currentcolor, transparent 75%);
+	text-underline-position: from-font;
+	text-underline-offset: 1px;
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: text-decoration-color;
+}
 
-/*
- * ----------------------------------------------------------------------
- * Text-level semantics
- * ----------------------------------------------------------------------
- */
+a:is(:hover, :focus-visible) {
+	color: var(--wp--preset--color--brand-1-darker, inherit);
+	text-decoration-color: currentcolor;
+}
 
-/*
- * ----------------------------------------------------------------------
- * Embedded content
- * ----------------------------------------------------------------------
- */
+code {
+	padding-block: 0.0625em;
+	padding-inline: 0.25em;
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: 0.875em;
+	white-space: break-spaces;
+	background-color: color-mix(in srgb, currentcolor, transparent 92.5%);
+	border-radius: 0.125em;
+}
 
-/*
- * ----------------------------------------------------------------------
- * Tabular data
- * ----------------------------------------------------------------------
- */
+svg:not([fill="currentcolor" i]) {
+	fill: currentcolor;
+}
 
-/*
- * ----------------------------------------------------------------------
- * Forms
- * ----------------------------------------------------------------------
- */
+/* ======================================================================
+3. Local/Scoped Styles
+====================================================================== */
 
-/*
- * ----------------------------------------------------------------------
- * Interactive elements
- * ----------------------------------------------------------------------
- */
+/* ----------------------------------------------------------------------
+Root Container
 
-/**
- * ======================================================================
- * 3. Local/Scoped Styles
- * ======================================================================
- */
+https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+---------------------------------------------------------------------- */
 
-/**
- * ----------------------------------------------------------------------
- * Site Blocks
- * ----------------------------------------------------------------------
- */
+/* Remove the spacing between direct child elements of '.wp-site-blocks' (the :root is needed for the Editor) */
+:root .wp-site-blocks > * + * {
+	margin-block-start: 0;
+}
 
-/**
- * Let `main` fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom.
- */
+/* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
 
 .wp-site-blocks:has(> main) {
 	display: flex;
@@ -253,10 +206,11 @@ html {
 	flex-grow: 1;
 }
 
-/**
- * Remove block spacing between children (header/main/footer)
- */
+/* ----------------------------------------------------------------------
+Flow Spacing
+---------------------------------------------------------------------- */
 
-.wp-site-blocks > * + :is(main, footer) {
+/* Remove the top margin from an element that immediately follows a visually hidden element */
+.is-layout-flow > .visually-hidden + * {
 	margin-block-start: 0;
 }
