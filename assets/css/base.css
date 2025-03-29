@@ -106,15 +106,6 @@ pre {
 ================================================== */
 
 /*
-Keep the default 'font-weight' of 'b' and 'strong' consistent across browsers (Blink and Gecko use 'bolder' as per spec, WebKit uses 'bold'). 🔧
-*/
-
-b,
-strong {
-	font-weight: bolder;
-}
-
-/*
 1. Fix the inheritance and scaling of the font size in all browsers.
 2. Fix the odd 'em' font sizing in all browsers.
 */
