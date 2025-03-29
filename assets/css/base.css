@@ -20,9 +20,7 @@
 Revert adding 'background-repeat: no-repeat' to some form elements because it disables their native appearance in WebKit (bug: https://bugs.webkit.org/show_bug.cgi?id=117128#c2).
 */
 
-:where(button, input, meter, progress, select),
-:where(button, input, meter, progress, select)::before,
-:where(button, input, meter, progress, select)::after {
+:where(button, input, meter, progress, select) {
 	background-repeat: revert;
 }
 
