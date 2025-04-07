@@ -287,6 +287,49 @@ add_filter(
 
 
 /**
+ * Block: Navigation
+ *
+ * Replace the default 3-line hamburger menu button icon with a custom one.
+ */
+function customize_nav_menu_toggle_icon( $output, $block ) {
+	// Variables
+	$viewBox = '0 0 44 44';
+	$width = '44';
+	$height = '44';
+	$open_path_d = 'M7 32V28.6667H37V32H7ZM7 23.6667V20.3333H37V23.6667H7ZM7 15.3333V12H37V15.3333H7Z';
+
+	$tags = new WP_HTML_Tag_Processor( $output );
+
+	// Find the responsive menu toggle button (open)
+	if ( $tags->next_tag( array( 'tag_name' => 'button', 'class' => 'wp-block-navigation__responsive-container-open' ) ) ) {
+		// Find the SVG within the button
+		if ( $tags->next_tag( array( 'tag_name' => 'svg' ) ) ) {
+			// Store the SVG's position
+			$tags->set_bookmark( 'open_svg_start' );
+
+			// Check if the SVG contains a path (indicating the 3-line hamburger)
+			if ( $tags->next_tag( array( 'tag_name' => 'path' ) ) ) {
+				// Reset the processor to the SVG start
+				$tags->seek( 'open_svg_start' );
+
+				// Modify SVG attributes
+				$tags->set_attribute( 'viewBox', $viewBox );
+				$tags->set_attribute( 'width', $width );
+				$tags->set_attribute( 'height', $height );
+
+				// Move to the path element and modify its 'd' attribute (the icon itself)
+				$tags->next_tag( array( 'tag_name' => 'path' ) );
+				$tags->set_attribute( 'd', $open_path_d );
+			}
+		}
+	}
+
+	return $tags->get_updated_html();
+}
+add_filter( 'render_block_core/navigation', 'customize_nav_menu_toggle_icon', 10, 2 );
+
+
+/**
  * Plugin Gravity Forms:
  * Filter the next, previous and submit buttons.
  *
