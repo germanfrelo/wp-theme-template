@@ -1,0 +1,106 @@
+/*
+SIDEBAR
+More info: https://every-layout.dev/layouts/sidebar/
+A layout that allows you to have a flexible main content area
+and a "fixed" width sidebar that sits on the left or right.
+If there is not enough viewport space to fit both the sidebar
+width *and* the main content minimum width, they will stack
+on top of each other
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-size-1)): This defines the space
+between the sidebar and main content.
+
+--sidebar-target-width (20rem): How large the sidebar should be
+
+--sidebar-content-min-width(50%): The minimum size of the main content area
+
+EXCEPTIONS
+.sidebar[data-direction='rtl']: flips the sidebar to be on the right
+*/
+.sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-s-l));
+}
+
+.sidebar:not([data-direction]) > :first-child {
+	flex-grow: 1;
+	flex-basis: var(--sidebar-target-width, 20rem);
+}
+
+.sidebar:not([data-direction]) > :last-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-width: var(--sidebar-content-min-width, 50%);
+}
+
+.sidebar[data-reversed] {
+	flex-direction: row-reverse;
+}
+
+.sidebar[data-direction="rtl"] > :last-child {
+	flex-grow: 1;
+	flex-basis: var(--sidebar-target-width, 20rem);
+}
+
+.sidebar[data-direction="rtl"] > :first-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-width: var(--sidebar-content-min-width, 50%);
+}
+
+/**
+ * The Sidebar
+ *
+ * Available classes for use:
+ * with-sidebar-left
+ * with-sidebar-right
+ * with-sidebar[-left|-right]-[XX%]
+ *
+ * @link https://every-layout.dev/layouts/sidebar/
+ */
+
+[class*="with-sidebar"] {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+[class*="with-sidebar"] > * {
+	flex-grow: 1;
+}
+
+[class*="with-sidebar-left"] > :last-child,
+[class*="with-sidebar-right"] > :first-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-inline-size: var(--non-sidebar-min-size, 66.66%);
+}
+
+[class*="with-sidebar-"][class*="-20\%"] {
+	--non-sidebar-min-size: 20%;
+}
+
+[class*="with-sidebar-"][class*="-25\%"] {
+	--non-sidebar-min-size: 25%;
+}
+
+[class*="with-sidebar-"][class*="-33\%"] {
+	--non-sidebar-min-size: 33.33%;
+}
+
+[class*="with-sidebar-"][class*="-50\%"] {
+	--non-sidebar-min-size: 50%;
+}
+
+[class*="with-sidebar-"][class*="-66\%"] {
+	--non-sidebar-min-size: 66.66%;
+}
+
+[class*="with-sidebar-"][class*="-75\%"] {
+	--non-sidebar-min-size: 75%;
+}
+
+[class*="with-sidebar-"][class*="-80\%"] {
+	--non-sidebar-min-size: 80%;
+}

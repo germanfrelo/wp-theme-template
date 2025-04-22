@@ -1,0 +1,41 @@
+/* ======================================================================
+Site Header
+====================================================================== */
+
+/* Site Header Login
+---------------------------------------------------------------------- */
+
+.site-header-login {
+	padding-block: var(--space-2xs-xs, 1em);
+}
+
+.site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) {
+	--button-color-text-on-hover: var(--wp--preset--color--brand-blue-main, inherit);
+}
+
+.site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) svg path[fill] {
+	fill: currentcolor;
+}
+
+.site-header-login button.wc-block-mini-cart__button:is(:hover, :focus-visible) {
+	color: var(--wp--preset--color--brand-blue-main, inherit);
+}
+
+/* Site Header Menu
+---------------------------------------------------------------------- */
+
+.site-header-menu {
+	padding-block: var(--space-xs-m, 1em);
+}
+
+/*
+Push the site header menu to the right edge of the screen when navigation is not collapsed.
+*/
+
+/* .site-header-menu:has(.wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-search) {
+	overflow-x: clip;
+}
+
+.site-header-menu .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-search {
+	margin-inline-end: calc(-1 * (1.5rem + var(--wp--style--root--padding-right, 0)));
+} */

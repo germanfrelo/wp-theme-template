@@ -4,9 +4,9 @@
 	"settings": {
 		"appearanceTools": true,
 		"color": {
-			"custom": false,
-			"customDuotone": false,
-			"customGradient": false,
+			"custom": true,
+			"customDuotone": true,
+			"customGradient": true,
 			"defaultDuotone": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
@@ -14,285 +14,452 @@
 			"gradients": [],
 			"palette": [
 				{
-					"name": "Base",
-					"slug": "base",
-					"color": "hsl(230deg 10% 100%)"
+					"name": "Blanco",
+					"slug": "background-1",
+					"color": "hsl(180deg 100% 100%)"
 				},
 				{
-					"name": "Base 2",
-					"slug": "base-2",
-					"color": "hsl(230deg 10% 97%)"
+					"name": "Gris claro",
+					"slug": "background-2",
+					"color": "hsl(240deg 7% 97%)"
 				},
 				{
-					"name": "Contrast",
-					"slug": "contrast",
-					"color": "hsl(230deg 10% 10%)"
+					"name": "Negro",
+					"slug": "foreground",
+					"color": "hsl(0deg 100% 1%)"
 				},
 				{
-					"name": "Contrast 2",
-					"slug": "contrast-2",
-					"color": "hsl(230deg 10% 40%)"
+					"name": "Azul principal",
+					"slug": "brand-blue-main",
+					"color": "hsl(198deg 82% 37%)"
 				},
 				{
-					"name": "Accent",
-					"slug": "accent",
-					"color": "hsl(230deg 80% 55%)"
+					"name": "Violeta principal",
+					"slug": "brand-violet-main",
+					"color": "hsl(303deg 31% 50%)"
 				},
 				{
-					"name": "Accent 2",
-					"slug": "accent-2",
-					"color": "hsl(230deg 80% 45%)"
+					"name": "Azul 10%",
+					"slug": "brand-blue-10",
+					"color": "hsl(201deg 81% 94%)"
+				},
+				{
+					"name": "Azul 20%",
+					"slug": "brand-blue-20",
+					"color": "hsl(198deg 80% 86%)"
+				},
+				{
+					"name": "Azul 50%",
+					"slug": "brand-blue-50",
+					"color": "hsl(201deg 63% 62%)"
+				},
+				{
+					"name": "Azul 110%",
+					"slug": "brand-blue-110",
+					"color": "hsl(197deg 100% 31%)"
+				},
+				{
+					"name": "Azul 120%",
+					"slug": "brand-blue-120",
+					"color": "hsl(197deg 100% 32%)"
+				},
+				{
+					"name": "Azul 150%",
+					"slug": "brand-blue-150",
+					"color": "hsl(201deg 50% 20%)"
+				},
+				{
+					"name": "Violeta 10%",
+					"slug": "brand-violet-10",
+					"color": "hsl(295deg 48% 95%)"
+				},
+				{
+					"name": "Violeta 20%",
+					"slug": "brand-violet-20",
+					"color": "hsl(300deg 43% 83%)"
+				},
+				{
+					"name": "Violeta 50%",
+					"slug": "brand-violet-50",
+					"color": "hsl(302deg 38% 61%)"
+				},
+				{
+					"name": "Violeta 110%",
+					"slug": "brand-violet-110",
+					"color": "hsl(304deg 33% 40%)"
+				},
+				{
+					"name": "Violeta 120%",
+					"slug": "brand-violet-120",
+					"color": "hsl(306deg 32% 33%)"
+				},
+				{
+					"name": "Violeta 150%",
+					"slug": "brand-violet-150",
+					"color": "hsl(307deg 29% 28%)"
+				},
+				{
+					"name": "Nuevos",
+					"slug": "course-new",
+					"color": "hsl(125deg 56% 80%)"
+				},
+				{
+					"name": "Destacados",
+					"slug": "course-featured",
+					"color": "hsl(284deg 64% 78%)"
+				},
+				{
+					"name": "Últimas plazas",
+					"slug": "course-last-spots",
+					"color": "hsl(8deg 82% 76%)"
+				},
+				{
+					"name": "Descuento",
+					"slug": "course-discount",
+					"color": "hsl(360deg 100% 43%)"
 				}
 			]
 		},
 		"custom": {
-			"borderRadius": {
-				"small": "0.125rem"
+			"border": {
+				"color": "var:preset|color|foreground",
+				"radius": {
+					"circle": "50%",
+					"pill": "2em"
+				},
+				"width": {
+					"thin": "1px",
+					"medium": "2px",
+					"thick": "5px"
+				}
+			},
+			"color": {
+				"link": {
+					"hover-focus": "var:preset|color|brand-blue-main"
+				}
 			},
 			"fontWeight": {
 				"light": "300",
 				"normal": "400",
 				"medium": "500",
 				"semibold": "600",
-				"bold": "700"
-			},
-			"letterSpacing": {
-				"wide": "0.05ch"
+				"bold": "700",
+				"extrabold": "800"
 			},
 			"lineHeight": {
 				"flat": "1",
-				"small": "1.2",
 				"base": "1.5"
+			},
+			"size": {
+				"min": "24px"
+			},
+			"spacing": {
+				"globalPaddingInline": "var(--space-xl-7xl)"
+			},
+			"transition": {
+				"duration": "0.15s",
+				"timingFunction": "initial"
 			}
 		},
 		"layout": {
 			"allowCustomContentAndWideSize": true,
-			"contentSize": "50rem",
-			"wideSize": "70rem"
+			"contentSize": "62rem",
+			"wideSize": "80rem"
+		},
+		"shadow": {
+			"presets": []
 		},
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
-					"name": "Auto",
-					"slug": "auto",
-					"size": "auto"
-				},
-				{
-					"name": "Fluid 3XS",
-					"slug": "xxxs",
-					"size": "var(--space-3xs)"
-				},
-				{
-					"name": "Fluid 3XS–2XS",
-					"slug": "xxxs-xxs",
-					"size": "var(--space-3xs-2xs)"
-				},
-				{
-					"name": "Fluid 3XS–XS",
-					"slug": "xxxs-xs",
-					"size": "var(--space-3xs-xs)"
-				},
-				{
-					"name": "Fluid 2XS",
-					"slug": "xxs",
+					"name": "2XS",
+					"slug": "2-xs",
 					"size": "var(--space-2xs)"
 				},
 				{
-					"name": "Fluid 2XS–XS",
-					"slug": "xxs-xs",
+					"name": "2XS–XS",
+					"slug": "2-xs-xs",
 					"size": "var(--space-2xs-xs)"
 				},
 				{
-					"name": "Fluid 2XS–S",
-					"slug": "xxs-s",
+					"name": "2XS–S",
+					"slug": "2-xs-s",
 					"size": "var(--space-2xs-s)"
 				},
 				{
-					"name": "Fluid XS",
+					"name": "XS",
 					"slug": "xs",
 					"size": "var(--space-xs)"
 				},
 				{
-					"name": "Fluid XS–S",
+					"name": "XS–S",
 					"slug": "xs-s",
 					"size": "var(--space-xs-s)"
 				},
 				{
-					"name": "Fluid XS–M",
+					"name": "XS–M",
 					"slug": "xs-m",
 					"size": "var(--space-xs-m)"
 				},
 				{
-					"name": "Fluid S",
+					"name": "XS–L",
+					"slug": "xs-l",
+					"size": "var(--space-xs-l)"
+				},
+				{
+					"name": "XS–XL",
+					"slug": "xs-xl",
+					"size": "var(--space-xs-xl)"
+				},
+				{
+					"name": "S",
 					"slug": "s",
 					"size": "var(--space-s)"
 				},
 				{
-					"name": "Fluid S–M",
+					"name": "S–M",
 					"slug": "s-m",
 					"size": "var(--space-s-m)"
 				},
 				{
-					"name": "Fluid S–L",
-					"slug": "s-l",
-					"size": "var(--space-s-l)"
+					"name": "S–XL",
+					"slug": "s-xl",
+					"size": "var(--space-s-xl)"
 				},
 				{
-					"name": "Fluid M",
+					"name": "S–2XL",
+					"slug": "s-2-xl",
+					"size": "var(--space-s-2xl)"
+				},
+				{
+					"name": "M",
 					"slug": "m",
 					"size": "var(--space-m)"
 				},
 				{
-					"name": "Fluid M–L",
+					"name": "M–L",
 					"slug": "m-l",
 					"size": "var(--space-m-l)"
 				},
 				{
-					"name": "Fluid M–XL",
+					"name": "M–XL",
 					"slug": "m-xl",
 					"size": "var(--space-m-xl)"
 				},
 				{
-					"name": "Fluid L",
+					"name": "M–2XL",
+					"slug": "m-2-xl",
+					"size": "var(--space-m-2xl)"
+				},
+				{
+					"name": "M–6XL",
+					"slug": "m-6-xl",
+					"size": "var(--space-m-6xl)"
+				},
+				{
+					"name": "L",
 					"slug": "l",
 					"size": "var(--space-l)"
 				},
 				{
-					"name": "Fluid L–XL",
+					"name": "L–XL",
 					"slug": "l-xl",
 					"size": "var(--space-l-xl)"
 				},
 				{
-					"name": "Fluid L–2XL",
-					"slug": "l-xxl",
-					"size": "var(--space-l-2xl)"
+					"name": "L–3XL",
+					"slug": "l-3-xl",
+					"size": "var(--space-l-3xl)"
 				},
 				{
-					"name": "Fluid XL",
+					"name": "XL",
 					"slug": "xl",
 					"size": "var(--space-xl)"
 				},
 				{
-					"name": "Fluid XL–2XL",
-					"slug": "xl-xxl",
+					"name": "XL–2XL",
+					"slug": "xl-2-xl",
 					"size": "var(--space-xl-2xl)"
 				},
 				{
-					"name": "Fluid XL–3XL",
-					"slug": "xl-xxxl",
-					"size": "var(--space-xl-3xl)"
-				},
-				{
-					"name": "Fluid 2XL",
-					"slug": "xxl",
+					"name": "2XL",
+					"slug": "2-xl",
 					"size": "var(--space-2xl)"
 				},
 				{
-					"name": "Fluid 2XL–3XL",
-					"slug": "xxl-xxxl",
+					"name": "2XL–3XL",
+					"slug": "2-xl-3-xl",
 					"size": "var(--space-2xl-3xl)"
 				},
 				{
-					"name": "Fluid 3XL",
-					"slug": "xxxl",
+					"name": "2XL–4XL",
+					"slug": "2-xl-4-xl",
+					"size": "var(--space-2xl-4xl)"
+				},
+				{
+					"name": "2XL–5XL",
+					"slug": "2-xl-5-xl",
+					"size": "var(--space-2xl-5xl)"
+				},
+				{
+					"name": "2XL–6XL",
+					"slug": "2-xl-6-xl",
+					"size": "var(--space-2xl-6xl)"
+				},
+				{
+					"name": "3XL",
+					"slug": "3-xl",
 					"size": "var(--space-3xl)"
+				},
+				{
+					"name": "3XL–4XL",
+					"slug": "3-xl-4-xl",
+					"size": "var(--space-3xl-4xl)"
+				},
+				{
+					"name": "3XL–5XL",
+					"slug": "3-xl-5-xl",
+					"size": "var(--space-3xl-5xl)"
+				},
+				{
+					"name": "4XL",
+					"slug": "4-xl",
+					"size": "var(--space-4xl)"
+				},
+				{
+					"name": "4XL–7XL",
+					"slug": "4-xl-7-xl",
+					"size": "var(--space-4xl-7xl)"
+				},
+				{
+					"name": "5XL",
+					"slug": "5-xl",
+					"size": "var(--space-5xl)"
+				},
+				{
+					"name": "6XL",
+					"slug": "6-xl",
+					"size": "var(--space-6xl)"
+				},
+				{
+					"name": "6XL–9XL",
+					"slug": "6-xl-9-xl",
+					"size": "var(--space-6xl-9xl)"
+				},
+				{
+					"name": "7XL",
+					"slug": "7-xl",
+					"size": "var(--space-7xl)"
+				},
+				{
+					"name": "8XL",
+					"slug": "8-xl",
+					"size": "var(--space-8xl)"
+				},
+				{
+					"name": "9XL",
+					"slug": "9-xl",
+					"size": "var(--space-9xl)"
+				},
+				{
+					"name": "10XL",
+					"slug": "10-xl",
+					"size": "var(--space-10xl)"
 				}
 			],
-			"units": ["px", "%", "em", "rem", "vw", "vh", "vmin", "vmax", "ch", "ex"]
+			"units": ["%", "ch", "em", "ex", "px", "rem", "vh", "vmax", "vmin", "vw"]
 		},
 		"typography": {
-			"customFontSize": false,
+			"customFontSize": true,
 			"defaultFontSizes": false,
 			"fluid": false,
 			"fontFamilies": [
 				{
 					"name": "Base",
 					"slug": "base",
-					"fontFamily": "______, sans-serif",
+					"fontFamily": "'Poppins', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "______",
+							"fontFamily": "'Poppins'",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": ["file:./assets/fonts/poppins/poppins-300-normal.woff2"]
+						},
+						{
+							"fontFamily": "'Poppins'",
 							"fontWeight": "400",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-400-normal.woff2"]
+							"src": ["file:./assets/fonts/poppins/poppins-400-normal.woff2"]
 						},
 						{
-							"fontFamily": "______",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-400-italic.woff2"]
+							"fontFamily": "'Poppins'",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": ["file:./assets/fonts/poppins/poppins-500-normal.woff2"]
 						},
 						{
-							"fontFamily": "______",
+							"fontFamily": "'Poppins'",
+							"fontWeight": "600",
+							"fontStyle": "normal",
+							"src": ["file:./assets/fonts/poppins/poppins-600-normal.woff2"]
+						},
+						{
+							"fontFamily": "'Poppins'",
 							"fontWeight": "700",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-700-normal.woff2"]
+							"src": ["file:./assets/fonts/poppins/poppins-700-normal.woff2"]
 						},
 						{
-							"fontFamily": "______",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-700-italic.woff2"]
-						}
-					]
-				},
-				{
-					"name": "Special",
-					"slug": "special",
-					"fontFamily": "'______', sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "______",
-							"fontWeight": "700",
+							"fontFamily": "'Poppins'",
+							"fontWeight": "800",
 							"fontStyle": "normal",
-							"src": ["file:./assets/fonts/______/______-700-normal.woff2"]
-						},
-						{
-							"fontFamily": "______",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": ["file:./assets/fonts/______/______-700-italic.woff2"]
+							"src": ["file:./assets/fonts/poppins/poppins-800-normal.woff2"]
 						}
 					]
 				}
 			],
 			"fontSizes": [
 				{
-					"name": "4XL",
-					"slug": "xxxx-large",
-					"size": "var(--font-size-42-58)"
+					"name": "XS (14–16px)",
+					"slug": "xs",
+					"size": "var(--fluid-14-16)"
 				},
 				{
-					"name": "3XL",
-					"slug": "xxx-large",
-					"size": "var(--font-size-35-46)"
+					"name": "S (16px)",
+					"slug": "s",
+					"size": "1rem"
 				},
 				{
-					"name": "2XL",
-					"slug": "xx-large",
-					"size": "var(--font-size-29-37)"
+					"name": "M (16–18px)",
+					"slug": "m",
+					"size": "var(--fluid-16-18)"
 				},
 				{
-					"name": "XL",
-					"slug": "x-large",
-					"size": "var(--font-size-25-30)"
+					"name": "L (16–20px)",
+					"slug": "l",
+					"size": "var(--fluid-16-20)"
 				},
 				{
-					"name": "L",
-					"slug": "large",
-					"size": "var(--font-size-20-24)"
+					"name": "XL (18–22px)",
+					"slug": "xl",
+					"size": "var(--fluid-18-22)"
 				},
 				{
-					"name": "M",
-					"slug": "medium",
-					"size": "var(--font-size-17-19)"
+					"name": "2XL (22–28px)",
+					"slug": "2-xl",
+					"size": "var(--fluid-22-28)"
 				},
 				{
-					"name": "S",
-					"slug": "small",
-					"size": "var(--font-size-14-15)"
+					"name": "2XL–3XL (22–32px)",
+					"slug": "2-xl-3-xl",
+					"size": "var(--fluid-22-32)"
+				},
+				{
+					"name": "3XL (28–32px)",
+					"slug": "3-xl",
+					"size": "var(--fluid-28-32)"
 				}
 			]
 		},
@@ -302,110 +469,44 @@
 		"spacing": {
 			"blockGap": "1.5em",
 			"padding": {
-				"left": "var:preset|spacing|m-l",
-				"right": "var:preset|spacing|m-l"
+				"left": "var:custom|spacing|global-padding-inline",
+				"right": "var:custom|spacing|global-padding-inline"
 			}
 		},
-		"typography": {
-			"fontFamily": "var:preset|font-family|base",
-			"fontSize": "var:preset|font-size|medium",
-			"fontWeight": "var:custom|font-weight|normal",
-			"lineHeight": "var:custom|line-height|base"
-		},
-		"color": {
-			"text": "var:preset|color|contrast",
-			"background": "var:preset|color|base"
-		},
-		"css": "p { text-wrap: pretty; }",
+		"typography": {},
+		"color": {},
 		"elements": {
-			"heading": {
-				"typography": {
-					"fontWeight": "var:custom|font-weight|bold",
-					"lineHeight": "var:custom|line-height|small"
-				},
-				"css": "& { text-wrap: balance; }"
-			},
-			"h1": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xxxx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.3)"
-				}
-			},
-			"h2": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xxx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.25)"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xx-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.2)"
-				}
-			},
-			"h4": {
-				"typography": {
-					"fontSize": "var:preset|font-size|x-large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.15)"
-				}
-			},
-			"h5": {
-				"typography": {
-					"fontSize": "var:preset|font-size|large",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.1)"
-				}
-			},
-			"h6": {
-				"typography": {
-					"fontSize": "var:preset|font-size|medium",
-					"lineHeight": "calc(var(--wp--custom--line-height--base, 1.5) - 0.05)"
-				}
-			},
+			"heading": {},
+			"h1": {},
+			"h2": {},
+			"h3": {},
+			"h4": {},
+			"h5": {},
+			"h6": {},
 			"caption": {},
 			"cite": {},
 			"link": {},
 			"button": {
 				"spacing": {
 					"padding": {
-						"top": "0.75em",
-						"right": "1.25em",
-						"bottom": "0.75em",
-						"left": "1.25em"
+						"top": "",
+						"bottom": "",
+						"left": "",
+						"right": ""
 					}
 				},
 				"typography": {
-					"lineHeight": "var:custom|line-height|small",
-					"textAlign": "center",
-					"textDecoration": "none"
+					"fontFamily": "",
+					"fontSize": "",
+					"lineHeight": "",
+					"textDecoration": ""
+				},
+				"color": {
+					"text": "",
+					"background": ""
 				},
 				"border": {
-					"width": "2px",
-					"style": "solid",
-					"color": {
-						"ref": "styles.elements.button.color.background"
-					},
-					"radius": "var:custom|border-radius|small"
-				},
-				":hover": {
-					"border": {
-						"color": {
-							"ref": "styles.elements.button.:hover.color.background"
-						}
-					}
-				},
-				":focus": {
-					"border": {
-						"color": {
-							"ref": "styles.elements.button.:focus.color.background"
-						}
-					}
-				},
-				":active": {
-					"border": {
-						"color": {
-							"ref": "styles.elements.button.:active.color.background"
-						}
-					}
+					"width": ""
 				}
 			}
 		},
@@ -413,13 +514,41 @@
 			"core/archives": {},
 			"core/audio": {},
 			"core/avatar": {},
-			"core/button": {},
+			"core/button": {
+				"variations": {
+					"outline": {
+						"spacing": {
+							"padding": {
+								"top": "",
+								"bottom": "",
+								"left": "",
+								"right": ""
+							}
+						},
+						"color": {
+							"text": "",
+							"gradient": ""
+						},
+						"border": {
+							"width": "",
+							"style": "",
+							"color": ""
+						}
+					}
+				}
+			},
 			"core/buttons": {},
 			"core/calendar": {},
 			"core/categories": {},
 			"core/code": {},
 			"core/column": {},
-			"core/columns": {},
+			"core/columns": {
+				"spacing": {
+					"margin": {
+						"bottom": "0"
+					}
+				}
+			},
 			"core/comment-author-name": {},
 			"core/comment-content": {},
 			"core/comment-date": {},
@@ -470,7 +599,17 @@
 			"core/post-template": {},
 			"core/post-terms": {},
 			"core/post-time-to-read": {},
-			"core/post-title": {},
+			"core/post-title": {
+				"elements": {
+					"link": {
+						":any-link": {
+							"typography": {
+								"textDecoration": "none"
+							}
+						}
+					}
+				}
+			},
 			"core/preformatted": {},
 			"core/pullquote": {},
 			"core/query": {},
@@ -481,7 +620,17 @@
 			"core/query-pagination-previous": {},
 			"core/query-title": {},
 			"core/query-total": {},
-			"core/quote": {},
+			"core/quote": {
+				"typography": {
+					"textAlign": "start"
+				},
+				"elements": {
+					"cite": {}
+				},
+				"variations": {
+					"plain": {}
+				}
+			},
 			"core/read-more": {},
 			"core/rss": {},
 			"core/search": {},
@@ -490,8 +639,42 @@
 			"core/site-logo": {},
 			"core/site-tagline": {},
 			"core/site-title": {},
-			"core/social-link": {},
-			"core/social-links": {},
+			"core/social-link": {
+				"spacing": {
+					"padding": {
+						"top": "",
+						"bottom": "",
+						"left": "",
+						"right": ""
+					}
+				},
+				"elements": {
+					"link": {
+						"spacing": {
+							"padding": {
+								"top": "",
+								"bottom": "",
+								"left": "",
+								"right": ""
+							}
+						}
+					}
+				}
+			},
+			"core/social-links": {
+				"elements": {
+					"link": {
+						"spacing": {
+							"padding": {
+								"top": "",
+								"bottom": "",
+								"left": "",
+								"right": ""
+							}
+						}
+					}
+				}
+			},
 			"core/spacer": {},
 			"core/table": {},
 			"core/table-of-contents": {},
@@ -502,7 +685,13 @@
 			"core/video": {}
 		}
 	},
-	"customTemplates": [],
+	"customTemplates": [
+		{
+			"name": "cpt-job-offers",
+			"postTypes": ["page", "jobs"],
+			"title": "Ofertas de empleo"
+		}
+	],
 	"templateParts": [
 		{
 			"area": "header",

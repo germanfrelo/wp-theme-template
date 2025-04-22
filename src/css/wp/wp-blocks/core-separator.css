@@ -1,0 +1,43 @@
+/* =======================================================================================
+Separator
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/separator
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/separator
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ======================================================================
+1. Configuration
+====================================================================== */
+
+/* Block Style: Default */
+
+.wp-block-separator {
+	--separator-color: var(--wp--custom--border--color, currentcolor);
+	--separator-height: var(--wp--custom--border--width--medium, 2px);
+	--separator-width: auto;
+}
+
+/* Block Style: Custom */
+
+.wp-block-separator.is-style-custom {
+	--separator-color: var(--wp--preset--color--brand-blue-main, currentcolor);
+	--separator-height: var(--wp--custom--border--width--thick, thick);
+	--separator-width: var(--fluid-68-120, auto);
+}
+
+/* ======================================================================
+2. Styles
+⚠️ Don't modify the unless necessary. Try first the 1. Configuration.
+====================================================================== */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended. */
+.wp-block-separator {
+	inline-size: var(--separator-width, 100%);
+	block-size: var(--separator-height, 2px);
+	color: var(--separator-color, var(--wp--custom--border--color, currentcolor));
+	border-width: 0;
+}

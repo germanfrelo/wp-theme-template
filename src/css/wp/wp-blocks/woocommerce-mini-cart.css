@@ -1,0 +1,30 @@
+/* =======================================================================================
+Woocommerce Mini Cart
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/mini-cart
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+header [data-block-name="woocommerce/mini-cart"] .wc-block-mini-cart__button {
+	padding: 0;
+}
+
+/* Don't squash the cart icon in smallest screens */
+[data-block-name="woocommerce/mini-cart"] .wc-block-mini-cart__button > .wc-block-mini-cart__quantity-badge {
+	flex: none;
+}
+
+/*
+Change mini cart text when empty from "0,00 €" to "Carrito vacío"
+*/
+
+header [data-block-name="woocommerce/mini-cart"][data-cart-items-count="0"] .wc-block-mini-cart__amount {
+	display: none;
+}
+
+header [data-block-name="woocommerce/mini-cart"][data-cart-items-count="0"] .wc-block-mini-cart__button::after {
+	content: "Carrito vacío";
+}

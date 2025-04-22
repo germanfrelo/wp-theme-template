@@ -1,0 +1,126 @@
+/* stylelint-disable selector-not-notation -- Intended. */
+
+/**
+ * ========================================
+ * 	Revert Gravity Forms styles
+ * ========================================
+ */
+
+@media only screen and (max-width: 641px) {
+	.gform_wrapper.gravity-theme input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+		min-height: revert !important;
+		line-height: revert !important;
+	}
+}
+
+/* Hide the required field legend */
+.gform_required_legend {
+	display: none;
+}
+
+/* Hide the required field asterisk in the label */
+.gform-field-label .gfield_required {
+	display: none;
+}
+
+/**
+ * ========================================
+ * 	Set Gravity Forms styles
+ * ========================================
+ */
+
+.gform_wrapper {
+	--color-error: var(--wp--preset--color--course-discount, inherit);
+}
+
+.gfield > * + * {
+	margin-block-start: 0.25em;
+}
+
+.gfield_description,
+.gfield_validation_message {
+	font-size: var(--wp--preset--font-size--s, inherit);
+}
+
+/* Error messages
+---------------------------------------------------------------------- */
+
+.gform_validation_errors {
+	color: var(--color-error, inherit);
+}
+
+.gform_submission_error {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.gform_submission_error:has(> [class*="icon"]) {
+	display: flex;
+	gap: 0.5em;
+	align-items: flex-start;
+}
+
+.gform_submission_error > [class*="icon"] {
+	flex: none;
+	padding-block: 0.25em;
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(label, input, textarea, .validation_message.gfield_validation_message) {
+	color: var(--color-error, inherit);
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(input, textarea) {
+	outline-width: var(--wp--custom--border--width--thin, 1px);
+	outline-style: solid;
+	outline-color: currentcolor;
+	outline-offset: 0;
+}
+
+/* ----------------------------------------------------------------------
+Newsletter Form in Homepage
+---------------------------------------------------------------------- */
+
+body.home main .gform-newsletter .gform_fields {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--wp--preset--spacing--2-xl, 1em);
+}
+
+/* ----------------------------------------------------------------------
+Newsletter Form in Site Footer
+---------------------------------------------------------------------- */
+
+.site-footer .gform-newsletter .gform_fields {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 1em;
+	column-gap: 0.5em;
+	color: var(--wp--preset--color--background-1, inherit);
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--input-type-email {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-inline-size: 60%;
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--type-submit {
+	flex-grow: 1;
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--type-submit > .gform-button {
+	inline-size: 100%;
+}
+
+/* Elements
+---------------------------------------------------------------------- */
+
+/* Submit Button */
+
+.site-footer .has-background-1-color.has-foreground-background-color .gform-newsletter [type="submit"],
+.site-footer .has-background-1-color.has-foreground-background-color .gform-newsletter [type="submit"]:is(:hover, :focus-visible) {
+	font-weight: var(--wp--custom--font-weight--medium, medium) !important;
+	color: var(--wp--preset--color--foreground, inherit) !important;
+	background-color: var(--wp--preset--color--background-1, transparent) !important;
+	border: 1px solid var(--wp--preset--color--background-1, currentcolor) !important;
+}

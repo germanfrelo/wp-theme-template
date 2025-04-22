@@ -1,0 +1,26 @@
+{
+	"title": "Colors",
+	"description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
+	"items": [
+		{
+			"name": "Dark",
+			"value": "#171406"
+		},
+		{
+			"name": "Dark Glare",
+			"value": "#2d2816"
+		},
+		{
+			"name": "Mid",
+			"value": "#ABA9A2"
+		},
+		{
+			"name": "Light",
+			"value": "#ffffff"
+		},
+		{
+			"name": "Primary",
+			"value": "#fccd26"
+		}
+	]
+}

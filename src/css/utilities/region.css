@@ -1,0 +1,8 @@
+/* 
+REGION UTILITY
+Consistent block padding for page sections
+*/
+.region {
+	position: relative;
+	padding-block: var(--region-space, var(--space-m));
+}

@@ -1,0 +1,42 @@
+/* =======================================================================================
+Image
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/image
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/image
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height' */
+
+figure.wp-block-image > a:has(> :is(img, svg)) {
+	display: block; /* Default is inline-block */
+}
+
+/* Don't squash SVG icons in flex contexts when there is no available space */
+
+.is-layout-flex > .wp-block-image:has(> svg) {
+	flex: none;
+}
+
+/* Icon with a fluid size */
+
+.wp-block-image.icon-size-fluid {
+	flex: none;
+	inline-size: var(--space-s-xl, auto);
+	block-size: auto;
+}
+
+/* Images with a fluid size */
+
+.wp-block-image.fluid-size-48-72 :is(img, svg) {
+	inline-size: auto;
+	block-size: var(--space-4xl-7xl, auto);
+}
+
+.wp-block-image.fluid-size-40-55 :is(img, svg) {
+	inline-size: auto;
+	block-size: var(--fluid-40-55, auto);
+}

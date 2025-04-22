@@ -1,0 +1,13 @@
+/* ======================================================================
+Site Footer
+====================================================================== */
+
+.site-footer {
+	--switcher-threshold: 55rem;
+	padding-block: var(--space-2xl-3xl, 1em);
+	padding-inline: var(--space-s-7xl, 1em);
+}
+
+.site-footer .footer-info-cards {
+	--switcher-gap: var(--space-2xs-m, 1em) var(--space-xs-l, 1em);
+}

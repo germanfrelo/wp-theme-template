@@ -1,0 +1,28 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - dev # Trigger deployment only on push to 'dev' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use Ubuntu for faster and cost-effective deployments
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H 178.33.116.125 >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --exclude '.git' --delete ./ idoaabjb@178.33.116.125:/home/idoaabjb/ifis.martatorreprojects.com/wp-content/themes/ifiseducacion/
+
+      - name: Post Checkout repository
+        run: echo "Deployment completed successfully!"

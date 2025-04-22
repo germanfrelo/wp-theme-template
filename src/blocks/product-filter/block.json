@@ -1,0 +1,13 @@
+{
+  "apiVersion": 2,
+  "name": "ifis/product-filter",
+  "title": "Filtro de Productos",
+  "category": "widgets",
+  "icon": "filter",
+  "description": "Bloque para filtrar productos por categoría.",
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:../../build/index.js",
+  "render": "file:./render.php"
+}

@@ -18,6 +18,11 @@ export default {
 			true, // Already enabled in stylelint-config-recommended
 			{ severity: "warning" }, // Relax the severity level because this rule has limitations
 		],
+		// Duplicate
+		"font-family-no-duplicate-names": [
+			true, // Already enabled in stylelint-config-recommended
+			{ ignoreFontFamilyNames: ["monospace"] }, // Don't report the 'font-family: monospace, monospace' declaration used in the CSS reset
+		],
 		// Invalid
 		"syntax-string-no-invalid": true,
 		// Unknown
@@ -54,7 +59,7 @@ export default {
 				"accidental-hover": false, // Enable as needed
 				"background-repeat": false, // base.css already apply 'no-repeat' to all elements
 				"custom-property-fallbacks": true,
-				"flex-wrapping": true,
+				"flex-wrapping": false, // Enable as needed
 				"scroll-chaining": true,
 				"scrollbar-gutter": false, // Enable as needed
 				"vendor-prefix-grouping": true,

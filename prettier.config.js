@@ -8,7 +8,13 @@ const config = {
 	quoteProps: "consistent",
 	overrides: [
 		{
-			files: ["*.css", "*.html"],
+			files: ["*.css"],
+			options: {
+				printWidth: 160,
+			},
+		},
+		{
+			files: ["*.html"],
 			options: {
 				printWidth: 9999,
 			},

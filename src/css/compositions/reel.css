@@ -1,0 +1,25 @@
+/**
+ * Reel
+ *
+ * @link https://every-layout.dev/layouts/reel/
+ */
+
+.reel {
+	display: flex;
+	flex-wrap: nowrap;
+	block-size: auto;
+	overflow-x: auto;
+	overflow-y: hidden;
+	overscroll-behavior: contain;
+}
+
+.reel > * {
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.reel img {
+	flex-basis: auto;
+	inline-size: auto;
+	block-size: 100%;
+}

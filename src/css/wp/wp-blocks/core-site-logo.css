@@ -1,0 +1,20 @@
+/* =======================================================================================
+Site Logo
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/site-logo
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/site-logo
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+header .wp-block-site-logo {
+	flex: none;
+}
+
+header .wp-block-site-logo img {
+	inline-size: 100%;
+	block-size: var(--space-2xl-4xl, auto);
+	object-fit: contain;
+}

@@ -1,0 +1,187 @@
+/**
+ * GLOBAL STYLES
+ *
+ * Low-specificity, global styles that apply to the whole project.
+ * See https://cube.fyi/css.html
+ *
+ * Recommended selectors order:
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
+
+/* ======================================================================
+Global
+====================================================================== */
+
+/* Opt-in the whole page to interpolate sizes to/from keywords */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* To match the font smoothing used in Figma design */
+html {
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-size: var(--wp--preset--font-size--m, 1rem);
+	font-weight: var(--wp--custom--font-weight--light, normal);
+	line-height: var(--wp--custom--line-height--base, 1.5);
+	color: var(--wp--preset--color--foreground, CanvasText);
+	background-color: var(--wp--preset--color--background-1, Canvas);
+}
+
+/* ======================================================================
+Headings
+====================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--wp--custom--font-weight--bold, bold);
+	overflow-wrap: anywhere;
+}
+
+h1 {
+	font-size: var(--wp--preset--font-size--3-xl, 2rem);
+}
+
+h2 {
+	font-size: var(--wp--preset--font-size--3-xl, 1.5rem);
+}
+
+h3 {
+	font-size: var(--wp--preset--font-size--2-xl, 1.17rem);
+}
+
+h4 {
+	font-size: var(--wp--preset--font-size--xl, 1rem);
+}
+
+h5 {
+	font-size: var(--wp--preset--font-size--l, 0.83rem);
+}
+
+h6 {
+	font-size: var(--wp--preset--font-size--m, 0.67rem);
+}
+
+/* ======================================================================
+Grouping content
+====================================================================== */
+
+/* Reverts default margins from WP */
+:where(figure) {
+	margin: 0;
+}
+
+/* ======================================================================
+Text-level semantics
+====================================================================== */
+
+a {
+	color: inherit;
+	overflow-wrap: anywhere;
+	text-decoration-thickness: from-font;
+	text-underline-position: from-font;
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color;
+	text-decoration-skip-ink: none;
+}
+
+a:is(:hover, :focus-visible) {
+	color: var(--wp--custom--color--link--hover-focus, inherit);
+}
+
+code {
+	padding-block: 0.0625em;
+	padding-inline: 0.25em;
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: 0.875em;
+	white-space: break-spaces;
+	background-color: color-mix(in srgb, currentcolor, transparent 92.5%);
+	border-radius: 0.125em;
+}
+
+strong {
+	font-weight: var(--wp--custom--font-weight--medium, bolder);
+}
+
+/* ======================================================================
+Embedded content
+====================================================================== */
+
+/*
+Make SVGs inherit color if:
+- neither 'svg' nor its child elements have a 'fill' attribute
+- 'svg' has 'fill=none' but its child elements don't have a 'fill' or 'stroke-width' attributes
+*/
+svg:where(:not([fill]):has(> *:not([fill])), [fill="none"]:has(> *:not([fill], [stroke-width]))) {
+	fill: currentcolor;
+}
+
+:is(a, button) svg path {
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: fill;
+}
+
+/* ======================================================================
+Forms
+====================================================================== */
+
+label {
+	display: inline-block;
+	font-size: var(--fluid-16-20, inherit);
+	font-weight: var(--wp--custom--font-weight--medium, medium);
+	line-height: 1.25;
+}
+
+label:has(> :is([type="checkbox"], [type="radio"])) {
+	display: inline-flex;
+	gap: 1ch;
+	align-items: center;
+	font-weight: inherit;
+}
+
+input,
+select,
+textarea {
+	padding-block: 0.4375em;
+	padding-inline: 0.5em;
+	font-weight: var(--wp--custom--font-weight--normal, inherit);
+	background-color: var(--wp--preset--color--background-2, transparent);
+	border-color: currentcolor;
+	border-style: solid;
+	border-width: var(--wp--custom--border--width--thin, 1px);
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color, background-color, border-color, border-width;
+}
+
+textarea:not([rows]) {
+	min-block-size: 5em;
+	resize: vertical;
+}
+
+:is(input, select, textarea):is(:hover, :focus) {
+	outline-width: var(--wp--custom--border--width--thin, 1px);
+	outline-style: solid;
+	outline-color: currentcolor;
+	outline-offset: 0;
+}
+
+select {
+	/*     padding: revert;
+    background-color: revert;
+    border: revert;
+    border-radius: revert; */
+}
+
+select:is(:hover, :focus) {
+	/*     background-color: revert;
+    border-color: revert; */
+}

@@ -1,0 +1,16 @@
+/*
+FLOW COMPOSITION
+Like the Every Layout stack: https://every-layout.dev/layouts/stack/
+Info about this implementation: https://piccalil.li/blog/my-favourite-3-lines-of-css/
+*/
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+/* WP's Layout Flow
+---------------------------------------------------------------------- */
+
+/* Remove the top margin from an element that immediately follows a visually hidden element */
+.is-layout-flow > .visually-hidden + * {
+	margin-block-start: 0;
+}
