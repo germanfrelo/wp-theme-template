@@ -19,12 +19,8 @@ Global
 	}
 }
 
-/* To match the font smoothing used in Figma design */
-html {
-	-webkit-font-smoothing: antialiased;
-}
-
 body {
+	-webkit-font-smoothing: antialiased; /* To match the font smoothing used in Figma design */
 	font-family: var(--wp--preset--font-family--base, sans-serif);
 	font-size: var(--wp--preset--font-size--m, 1rem);
 	font-weight: var(--wp--custom--font-weight--light, normal);

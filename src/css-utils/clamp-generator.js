@@ -29,9 +29,9 @@ const clampGenerator = (tokens) => {
 
 		return {
 			name,
-			value: `clamp(${minSize}rem, ${intersection.toFixed(2)}rem + ${(
+			value: `clamp(${minSize.toFixed(4)}rem, ${intersection.toFixed(4)}rem + ${(
 				slope * 100
-			).toFixed(2)}vw, ${maxSize}rem)`,
+			).toFixed(4)}vw, ${maxSize.toFixed(4)}rem)`,
 		};
 	});
 };

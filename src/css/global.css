@@ -3,18 +3,14 @@ This file puts all the CSS together using PostCSS.
 Important: The import order below is intentional, ensuring proper specificity and layering of styles.
 */
 
-/* stylelint-disable at-rule-no-unknown -- Intended. */
-/* stylelint-disable import-notation -- Intended. */
-/* stylelint-disable no-invalid-position-at-import-rule -- Intended. */
-
 /* Tailwind base */
 @import "tailwindcss/base";
 
-/* Reset and Fonts */
+/* Reset */
 @import "global/reset.css";
 
 /* This is where the block of Custom Properties generated in the Tailwind config gets put; everything else that layer does is disabled in config. */
-@import "tailwindcss/components";
+/* @import "tailwindcss/components"; */
 
 /* Variable and Global styles */
 @import "global/variables.css";

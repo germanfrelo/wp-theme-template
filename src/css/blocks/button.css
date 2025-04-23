@@ -11,12 +11,12 @@ Configuration
 .button,
 .wp-block-button,
 .wp-block-read-more {
-	--button-border-color-on-hover: var(--button-color-bg-on-hover, currentcolor);
-	--button-border-color: var(--button-color-bg, currentcolor);
+	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
+	--button-border-color: var(--button-color-background, currentcolor);
 	--button-border-radius: var(--wp--custom--border--radius--pill, 0);
 	--button-border-width: var(--wp--custom--border--width--medium, 2px);
-	--button-color-bg-on-hover: var(--wp--preset--color--foreground, transparent);
-	--button-color-bg: var(--wp--preset--color--brand-violet-main, transparent);
+	--button-color-background-on-hover: var(--wp--preset--color--foreground, transparent);
+	--button-color-background: var(--wp--preset--color--brand-violet-main, transparent);
 	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
 	--button-color-text: var(--wp--preset--color--background-1, inherit);
 	--button-display: inline-block;
@@ -39,26 +39,26 @@ Configuration
 /* Custom style variations */
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-outline {
-	--button-border-color-on-hover: var(--button-color-bg-on-hover, currentcolor);
+	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
 	--button-border-color: var(--button-color-text, currentcolor);
-	--button-color-bg-on-hover: var(--wp--preset--color--foreground, transparent);
-	--button-color-bg: var(--wp--preset--color--background-1, transparent);
+	--button-color-background-on-hover: var(--wp--preset--color--foreground, transparent);
+	--button-color-background: var(--wp--preset--color--background-1, transparent);
 	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
 	--button-color-text: var(--wp--preset--color--brand-violet-main, inherit);
 	--button-padding-inline: 1em;
 }
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-default-inverted {
-	--button-color-bg-on-hover: var(--button-color-bg, transparent);
-	--button-color-bg: var(--wp--preset--color--background-1, transparent);
+	--button-color-background-on-hover: var(--button-color-background, transparent);
+	--button-color-background: var(--wp--preset--color--background-1, transparent);
 	--button-color-text-on-hover: var(--wp--preset--color--foreground, inherit);
 	--button-color-text: var(--wp--preset--color--brand-violet-main, inherit);
 }
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-plain-text {
 	--button-border-width: 0;
-	--button-color-bg-on-hover: transparent;
-	--button-color-bg: transparent;
+	--button-color-background-on-hover: transparent;
+	--button-color-background: transparent;
 	--button-color-text-on-hover: var(--wp--custom--color--link--hover-focus, inherit);
 	--button-color-text: inherit;
 	--button-gap: 0.5em;
@@ -69,8 +69,8 @@ Configuration
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-plain-text-underlined {
 	--button-border-width: 0;
-	--button-color-bg-on-hover: transparent;
-	--button-color-bg: transparent;
+	--button-color-background-on-hover: transparent;
+	--button-color-background: transparent;
 	--button-color-text-on-hover: var(--wp--custom--color--link--hover-focus, inherit);
 	--button-color-text: inherit;
 	--button-font-size: 0.875rem;
@@ -101,7 +101,7 @@ button.wp-element-button {
 	color: var(--button-color-text, inherit);
 	text-align: var(--button-text-align, center);
 	text-decoration-line: var(--button-line, none);
-	background-color: var(--button-color-bg, transparent);
+	background-color: var(--button-color-background, transparent);
 	border-color: var(--button-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--button-border-width, 0);
@@ -133,6 +133,6 @@ button.wp-element-button {
 
 :is(.button, .wp-block-button > .wp-block-button__link, .wp-block-read-more):is(:hover, :focus-visible) {
 	color: var(--button-color-text-on-hover, inherit);
-	background-color: var(--button-color-bg-on-hover, transparent);
+	background-color: var(--button-color-background-on-hover, transparent);
 	border-color: var(--button-border-color-on-hover, transparent);
 }

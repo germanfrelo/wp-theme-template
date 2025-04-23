@@ -1,0 +1,1556 @@
+/*
+This file puts all the CSS together using PostCSS.
+Important: The import order below is intentional, ensuring proper specificity and layering of styles.
+*/
+
+/* Tailwind base */
+
+.filter {
+	--tw-blur:  ;
+	--tw-brightness:  ;
+	--tw-contrast:  ;
+	--tw-grayscale:  ;
+	--tw-hue-rotate:  ;
+	--tw-invert:  ;
+	--tw-saturate:  ;
+	--tw-sepia:  ;
+	--tw-drop-shadow:  ;
+}
+
+/* Reset */
+
+/* Global
+================================================== */
+
+/*
+1. Use the more intuitive and predictable border box sizing by default (refs. https://github.com/jensimmons/cssremedy/issues/4 and https://wiki.csswg.org/ideas/mistakes).
+2. Don't repeat background images by default (ref. https://github.com/w3c/csswg-drafts/issues/4526).
+3. Don't repeat mask images by default.
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box; /* 1 */
+	background-repeat: no-repeat; /* 2 */
+	-webkit-mask-repeat: no-repeat; /* 3 */
+	mask-repeat: no-repeat; /* 3 */
+}
+
+/*
+Revert adding 'background-repeat: no-repeat' to some form elements because it disables their default native appearance in WebKit (bug: https://bugs.webkit.org/show_bug.cgi?id=117128#c2).
+*/
+
+:where(button, input, meter, progress, select) {
+	background-repeat: revert;
+}
+
+/*
+1. A prerequisite for the 'body' to be able to fill the viewport height (requires 'body { min-block-size: 100%; }', see 'body' rule below). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
+2. Use a shorter, more readable tab size (default is 8).
+3. Prevent WebKit-based browsers on iOS from automatically increasing the default font size in landscape orientation (demo: https://codepen.io/germanfrelo/pen/JoPJVxd).
+*/
+
+html {
+	block-size: 100%; /* 1 */
+	tab-size: 4; /* 2 */
+	-webkit-text-size-adjust: none; /* 3 */ /* stylelint-disable-line property-no-vendor-prefix -- Intended. */
+}
+
+/*
+1. Smooth scrolling, but only when focused in the page to prevent unnaturally scrolling when tabbing though the results of a search.
+2. When users prefer reduced motion, remove timed scrolling behaviors.
+*/
+
+/* 1 */
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* 2 */
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+}
+
+/*
+When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar.
+*/
+
+:target {
+	scroll-margin-block-start: 5em;
+}
+
+/* Page
+================================================== */
+
+/*
+Makes 'body' at least as tall as the viewport height (requires 'html { block-size: 100%; }', see 'html' rule above). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
+*/
+
+body {
+	min-block-size: 100%;
+}
+
+/* Headings
+================================================== */
+
+/*
+Ensure consistent 'h1' rendering.
+Ref. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#specifying_a_uniform_font_size_for_h1
+*/
+
+:where(h1) {
+	margin-block: 0.67em;
+	font-size: 2em;
+}
+
+/* Grouping content
+================================================== */
+
+/*
+1. Prevent content from overflowing while preserving its formatting. (ref. https://github.com/jensimmons/cssremedy/issues/81).
+2. Prevent scroll chaining because of 1.
+3. Fix the inheritance and scaling of the font size in all browsers.
+4. Fix the odd 'em' font sizing in all browsers.
+*/
+
+pre {
+	overflow: auto; /* 1 */
+	overscroll-behavior: contain; /* 2 */
+	font-family: monospace, monospace; /* 3 */
+	font-size: 1em; /* 4 */
+}
+
+/* Text-level semantics
+================================================== */
+
+/*
+1. Fix the inheritance and scaling of the font size in all browsers.
+2. Fix the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/* Embedded content
+================================================== */
+
+/*
+1. Block display by default is usually what we want/the most common use case (default is 'inline').
+2. Responsive by default to prevent them from growing beyond the container.
+*/
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+	display: block; /* 1 */
+	max-inline-size: 100%; /* 2 */
+}
+
+/*
+1. Revert the display block for 'img' and 'svg' nested in certain elements where they are likely to be used as inline.
+2. Set a better, reasonable vertical aligment as SVGs are likely to be used as inline icons.
+*/
+
+:where(a, button, cite, h1, h2, h3, h4, h5, h6, li, p, td, th) > :is(img, svg) {
+	display: revert; /* 1 */
+	vertical-align: middle; /* 2 */
+}
+
+/*
+Maintain intrinsic aspect ratios when 'max-inline-size' is applied ('embed', 'iframe' and 'object' have no intrinsic ratio, so their 'block-size' needs to be set explicitly).
+*/
+
+canvas,
+img,
+svg,
+video {
+	block-size: auto;
+}
+
+/*
+There is no good reason 'audio' defaults to 300px width, and audio files are unlikely to come with a 'width' attribute.
+*/
+
+audio {
+	inline-size: 100%;
+}
+
+/* Tabular data
+================================================== */
+
+/*
+1. Ensure numbers line up (ref. https://github.com/jensimmons/cssremedy/issues/39).
+2. Prevent double borders (ref. https://github.com/jensimmons/cssremedy/issues/39).
+3. Fix the default table 'border-color: gray' on Chrome (bug: https://issues.chromium.org/issues/40615503).
+*/
+
+table {
+	font-variant-numeric: tabular-nums; /* 1 */
+	border-collapse: collapse; /* 2 */
+	border-color: currentcolor; /* 3 */
+}
+
+/*
+Make 'th' alignment (default is 'center') consistent with 'td' alignment (ref. https://github.com/jensimmons/cssremedy/issues/39).
+*/
+
+th {
+	text-align: inherit;
+}
+
+/*
+Add padding and border to table cells for a better readability (ref. https://github.com/jensimmons/cssremedy/issues/39).
+*/
+
+:where(th, td) {
+	padding-block: 0.25em;
+	padding-inline: 0.5rem;
+	border: 1px solid;
+}
+
+/* Forms
+================================================== */
+
+/*
+Remove the default 2px inline margin.
+*/
+
+fieldset {
+	margin-inline: 0;
+}
+
+/*
+1. Responsive by default by restricting sizing to the page width.
+2. Add typography inheritance.
+3. Add color inheritance.
+*/
+
+button,
+input,
+select,
+textarea {
+	max-inline-size: 100%; /* 1 */
+	font: inherit; /* 2 */
+	color: inherit; /* 3 */
+	word-spacing: inherit; /* 2 */
+	letter-spacing: inherit; /* 2 */
+}
+
+/*
+Remove Firefox's default 1px 'margin-block' from 'textarea' for consistency across browsers (bug: https://bugzilla.mozilla.org/show_bug.cgi?id=73817).
+*/
+
+textarea {
+	margin-block: 0;
+}
+
+/*
+Normalize the placeholder color with a new default value that is consistent and accessible across browsers, and adapted to browsers native dark color schemes.
+Ref. https://codepen.io/germanfrelo/pen/EaYwZdb
+*/
+
+::placeholder {
+	color: #757575;
+}
+
+@supports (color: light-dark(black, white)) {
+	::placeholder {
+		color: light-dark(hsl(0deg 0% 46%), hsl(0deg 0% 65%));
+	}
+}
+
+/*
+1. Set a consistent margin across browsers.
+2. Change font properties to 'inherit' in WebKit.
+*/
+
+::file-selector-button {
+	margin-inline-end: 1ch; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/* Hidden elements
+================================================== */
+
+/*
+Ensure some elements with the 'hidden' attribute remain hidden, even if a different display value is set (e.g., from the preceding 'display: block' on media element).
+Refs.:
+- https://html.spec.whatwg.org/multipage/rendering.html#hidden-elements
+- https://github.com/jensimmons/cssremedy/pull/72
+- https://github.com/jensimmons/cssremedy/issues/71#issuecomment-771180150
+- https://github.com/tailwindlabs/tailwindcss/commit/b570e2b
+*/
+
+[hidden]:not([hidden="until-found" i], embed) {
+	display: none;
+}
+
+/* Cursor
+================================================== */
+
+/*
+Set the cursor on 'summary' elements to the same as buttons (default is 'text').
+*/
+
+:where(details > summary:first-of-type) {
+	cursor: default;
+}
+
+/* This is where the block of Custom Properties generated in the Tailwind config gets put; everything else that layer does is disabled in config. */
+
+/* @import "tailwindcss/components"; */
+
+/* Variable and Global styles */
+
+:root {
+	/* ----------------------------------------------------------------------
+	Viewport Widths (in px):
+	* Min:  375
+	* Max: 1440
+	---------------------------------------------------------------------- */
+
+	/* ----------------------------------------------------------------------
+	Fluid Type Scale
+	---------------------------------------------------------------------- */
+
+	/* @link https://utopia.fyi/clamp/calculator?a=375,1440,14—16|16—18|16—20|16—22|18—22|22—28|22—32|28—32 */
+
+	--fluid-14-16: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+	--fluid-16-18: clamp(1rem, 0.956rem + 0.1878vw, 1.125rem);
+	--fluid-16-20: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+	--fluid-16-22: clamp(1rem, 0.868rem + 0.5634vw, 1.375rem);
+	--fluid-18-22: clamp(1.125rem, 1.037rem + 0.3756vw, 1.375rem);
+	--fluid-22-28: clamp(1.375rem, 1.243rem + 0.5634vw, 1.75rem);
+	--fluid-22-32: clamp(1.375rem, 1.1549rem + 0.939vw, 2rem);
+	--fluid-28-32: clamp(1.75rem, 1.662rem + 0.3756vw, 2rem);
+
+	/* ----------------------------------------------------------------------
+	Fluid Space Scale
+	---------------------------------------------------------------------- */
+
+	/* stylelint-disable comment-empty-line-before -- Intended */
+
+	/* @link https://utopia.fyi/space/calculator?c=375,16,1.125,1440,16,1.2,7,2,&s=0.75|0.5,1.25|1.5|1.75|2|2.5|3|3.5|4|4.5|5|5.5|6,3xs-xs|2xs-s|2xs-m|xs-m|xs-l|xs-xl|s-l|s-xl|s-2xl|s-7xl|m-xl|m-2xl|m-6xl|l-2xl|l-3xl|xl-3xl|xl-4xl|xl-7xl|2xl-4xl|2xl-5xl|2xl-6xl|3xl-5xl|3xl-6xl|4xl-6xl|4xl-7xl|5xl-7xl|5xl-8xl|5xl-9xl|6xl-8xl|6xl-9xl|7xl-9xl|7xl-10xl|8xl-10xl&g=s,l,xl,12 */
+
+	/* Space 2xs: 8px */
+	--space-2xs: clamp(0.5rem, 0.5rem + 0vw, 0.5rem);
+	/* Space xs: 12px */
+	--space-xs: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+	/* Space s: 16px */
+	--space-s: clamp(1rem, 1rem + 0vw, 1rem);
+	/* Space m: 20px */
+	--space-m: clamp(1.25rem, 1.25rem + 0vw, 1.25rem);
+	/* Space l: 24px */
+	--space-l: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+	/* Space xl: 28px */
+	--space-xl: clamp(1.75rem, 1.75rem + 0vw, 1.75rem);
+	/* Space 2xl: 32px */
+	--space-2xl: clamp(2rem, 2rem + 0vw, 2rem);
+	/* Space 3xl: 40px */
+	--space-3xl: clamp(2.5rem, 2.5rem + 0vw, 2.5rem);
+	/* Space 4xl: 48px */
+	--space-4xl: clamp(3rem, 3rem + 0vw, 3rem);
+	/* Space 5xl: 56px */
+	--space-5xl: clamp(3.5rem, 3.5rem + 0vw, 3.5rem);
+	/* Space 6xl: 64px */
+	--space-6xl: clamp(4rem, 4rem + 0vw, 4rem);
+	/* Space 7xl: 72px */
+	--space-7xl: clamp(4.5rem, 4.5rem + 0vw, 4.5rem);
+	/* Space 8xl: 80px */
+	--space-8xl: clamp(5rem, 5rem + 0vw, 5rem);
+	/* Space 9xl: 88px */
+	--space-9xl: clamp(5.5rem, 5.5rem + 0vw, 5.5rem);
+	/* Space 10xl: 96px */
+	--space-10xl: clamp(6rem, 6rem + 0vw, 6rem);
+
+	/* One-up pairs */
+	/* Space 2xs-xs: 8px → 12px */
+	--space-2xs-xs: clamp(0.5rem, 0.412rem + 0.3756vw, 0.75rem);
+	/* Space xs-s: 12px → 16px */
+	--space-xs-s: clamp(0.75rem, 0.662rem + 0.3756vw, 1rem);
+	/* Space s-m: 16px → 20px */
+	--space-s-m: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+	/* Space m-l: 20px → 24px */
+	--space-m-l: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
+	/* Space l-xl: 24px → 28px */
+	--space-l-xl: clamp(1.5rem, 1.412rem + 0.3756vw, 1.75rem);
+	/* Space xl-2xl: 28px → 32px */
+	--space-xl-2xl: clamp(1.75rem, 1.662rem + 0.3756vw, 2rem);
+	/* Space 2xl-3xl: 32px → 40px */
+	--space-2xl-3xl: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+	/* Space 3xl-4xl: 40px → 48px */
+	--space-3xl-4xl: clamp(2.5rem, 2.3239rem + 0.7512vw, 3rem);
+	/* Space 4xl-5xl: 48px → 56px */
+	--space-4xl-5xl: clamp(3rem, 2.8239rem + 0.7512vw, 3.5rem);
+	/* Space 5xl-6xl: 56px → 64px */
+	--space-5xl-6xl: clamp(3.5rem, 3.3239rem + 0.7512vw, 4rem);
+	/* Space 6xl-7xl: 64px → 72px */
+	--space-6xl-7xl: clamp(4rem, 3.8239rem + 0.7512vw, 4.5rem);
+	/* Space 7xl-8xl: 72px → 80px */
+	--space-7xl-8xl: clamp(4.5rem, 4.3239rem + 0.7512vw, 5rem);
+	/* Space 8xl-9xl: 80px → 88px */
+	--space-8xl-9xl: clamp(5rem, 4.8239rem + 0.7512vw, 5.5rem);
+	/* Space 9xl-10xl: 88px → 96px */
+	--space-9xl-10xl: clamp(5.5rem, 5.3239rem + 0.7512vw, 6rem);
+
+	/* Custom pairs */
+	/* Space 2xs-s: 8px → 16px */
+	--space-2xs-s: clamp(0.5rem, 0.3239rem + 0.7512vw, 1rem);
+	/* Space 2xs-m: 8px → 20px */
+	--space-2xs-m: clamp(0.5rem, 0.2359rem + 1.1268vw, 1.25rem);
+	/* Space xs-m: 12px → 20px */
+	--space-xs-m: clamp(0.75rem, 0.5739rem + 0.7512vw, 1.25rem);
+	/* Space xs-l: 12px → 24px */
+	--space-xs-l: clamp(0.75rem, 0.4859rem + 1.1268vw, 1.5rem);
+	/* Space xs-xl: 12px → 28px */
+	--space-xs-xl: clamp(0.75rem, 0.3979rem + 1.5023vw, 1.75rem);
+	/* Space s-l: 16px → 24px */
+	--space-s-l: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
+	/* Space s-xl: 16px → 28px */
+	--space-s-xl: clamp(1rem, 0.7359rem + 1.1268vw, 1.75rem);
+	/* Space s-2xl: 16px → 32px */
+	--space-s-2xl: clamp(1rem, 0.6479rem + 1.5023vw, 2rem);
+	/* Space s-7xl: 16px → 72px */
+	--space-s-7xl: clamp(1rem, -0.2324rem + 5.2582vw, 4.5rem);
+	/* Space m-xl: 20px → 28px */
+	--space-m-xl: clamp(1.25rem, 1.0739rem + 0.7512vw, 1.75rem);
+	/* Space m-2xl: 20px → 32px */
+	--space-m-2xl: clamp(1.25rem, 0.9859rem + 1.1268vw, 2rem);
+	/* Space m-6xl: 20px → 64px */
+	--space-m-6xl: clamp(1.25rem, 0.2817rem + 4.1315vw, 4rem);
+	/* Space l-2xl: 24px → 32px */
+	--space-l-2xl: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+	/* Space l-3xl: 24px → 40px */
+	--space-l-3xl: clamp(1.5rem, 1.1479rem + 1.5023vw, 2.5rem);
+	/* Space xl-3xl: 28px → 40px */
+	--space-xl-3xl: clamp(1.75rem, 1.4859rem + 1.1268vw, 2.5rem);
+	/* Space xl-4xl: 28px → 48px */
+	--space-xl-4xl: clamp(1.75rem, 1.3099rem + 1.8779vw, 3rem);
+	/* Space xl-7xl: 28px → 72px */
+	--space-xl-7xl: clamp(1.75rem, 0.7817rem + 4.1315vw, 4.5rem);
+	/* Space 2xl-4xl: 32px → 48px */
+	--space-2xl-4xl: clamp(2rem, 1.6479rem + 1.5023vw, 3rem);
+	/* Space 2xl-5xl: 32px → 56px */
+	--space-2xl-5xl: clamp(2rem, 1.4718rem + 2.2535vw, 3.5rem);
+	/* Space 2xl-6xl: 32px → 64px */
+	--space-2xl-6xl: clamp(2rem, 1.2958rem + 3.0047vw, 4rem);
+	/* Space 3xl-5xl: 40px → 56px */
+	--space-3xl-5xl: clamp(2.5rem, 2.1479rem + 1.5023vw, 3.5rem);
+	/* Space 3xl-6xl: 40px → 64px */
+	--space-3xl-6xl: clamp(2.5rem, 1.9718rem + 2.2535vw, 4rem);
+	/* Space 4xl-6xl: 48px → 64px */
+	--space-4xl-6xl: clamp(3rem, 2.6479rem + 1.5023vw, 4rem);
+	/* Space 4xl-7xl: 48px → 72px */
+	--space-4xl-7xl: clamp(3rem, 2.4718rem + 2.2535vw, 4.5rem);
+	/* Space 5xl-7xl: 56px → 72px */
+	--space-5xl-7xl: clamp(3.5rem, 3.1479rem + 1.5023vw, 4.5rem);
+	/* Space 5xl-8xl: 56px → 80px */
+	--space-5xl-8xl: clamp(3.5rem, 2.9718rem + 2.2535vw, 5rem);
+	/* Space 5xl-9xl: 56px → 88px */
+	--space-5xl-9xl: clamp(3.5rem, 2.7958rem + 3.0047vw, 5.5rem);
+	/* Space 6xl-8xl: 64px → 80px */
+	--space-6xl-8xl: clamp(4rem, 3.6479rem + 1.5023vw, 5rem);
+	/* Space 6xl-9xl: 64px → 88px */
+	--space-6xl-9xl: clamp(4rem, 3.4718rem + 2.2535vw, 5.5rem);
+	/* Space 7xl-9xl: 72px → 88px */
+	--space-7xl-9xl: clamp(4.5rem, 4.1479rem + 1.5023vw, 5.5rem);
+	/* Space 7xl-10xl: 72px → 96px */
+	--space-7xl-10xl: clamp(4.5rem, 3.9718rem + 2.2535vw, 6rem);
+	/* Space 8xl-10xl: 80px → 96px */
+	--space-8xl-10xl: clamp(5rem, 4.6479rem + 1.5023vw, 6rem);
+
+	/* stylelint-enable comment-empty-line-before */
+
+	/* ----------------------------------------------------------------------
+	Fluid Custom Tokens
+	---------------------------------------------------------------------- */
+
+	/* @link https://utopia.fyi/clamp/calculator?a=375,1440,40—55|68—120 */
+
+	--fluid-40-55: clamp(2.5rem, 2.1699rem + 1.4085vw, 3.4375rem);
+	--fluid-68-120: clamp(4.25rem, 3.1056rem + 4.8826vw, 7.5rem);
+}
+
+/**
+ * GLOBAL STYLES
+ *
+ * Low-specificity, global styles that apply to the whole project.
+ * See https://cube.fyi/css.html
+ *
+ * Recommended selectors order:
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
+
+/* ======================================================================
+Global
+====================================================================== */
+
+/* Opt-in the whole page to interpolate sizes to/from keywords */
+
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+body {
+	-webkit-font-smoothing: antialiased; /* To match the font smoothing used in Figma design */
+	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-size: var(--wp--preset--font-size--m, 1rem);
+	font-weight: var(--wp--custom--font-weight--light, normal);
+	line-height: var(--wp--custom--line-height--base, 1.5);
+	color: var(--wp--preset--color--foreground, CanvasText);
+	background-color: var(--wp--preset--color--background-1, Canvas);
+}
+
+/* ======================================================================
+Headings
+====================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--wp--custom--font-weight--bold, bold);
+	overflow-wrap: anywhere;
+}
+
+h1 {
+	font-size: var(--wp--preset--font-size--3-xl, 2rem);
+}
+
+h2 {
+	font-size: var(--wp--preset--font-size--3-xl, 1.5rem);
+}
+
+h3 {
+	font-size: var(--wp--preset--font-size--2-xl, 1.17rem);
+}
+
+h4 {
+	font-size: var(--wp--preset--font-size--xl, 1rem);
+}
+
+h5 {
+	font-size: var(--wp--preset--font-size--l, 0.83rem);
+}
+
+h6 {
+	font-size: var(--wp--preset--font-size--m, 0.67rem);
+}
+
+/* ======================================================================
+Grouping content
+====================================================================== */
+
+/* Reverts default margins from WP */
+
+:where(figure) {
+	margin: 0;
+}
+
+/* ======================================================================
+Text-level semantics
+====================================================================== */
+
+a {
+	color: inherit;
+	overflow-wrap: anywhere;
+	text-decoration-thickness: from-font;
+	text-underline-position: from-font;
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color;
+	text-decoration-skip-ink: none;
+}
+
+a:is(:hover, :focus-visible) {
+	color: var(--wp--custom--color--link--hover-focus, inherit);
+}
+
+code {
+	padding-block: 0.0625em;
+	padding-inline: 0.25em;
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: 0.875em;
+	white-space: break-spaces;
+	background-color: color-mix(in srgb, currentcolor, transparent 92.5%);
+	border-radius: 0.125em;
+}
+
+strong {
+	font-weight: var(--wp--custom--font-weight--medium, bolder);
+}
+
+/* ======================================================================
+Embedded content
+====================================================================== */
+
+/*
+Make SVGs inherit color if:
+- neither 'svg' nor its child elements have a 'fill' attribute
+- 'svg' has 'fill=none' but its child elements don't have a 'fill' or 'stroke-width' attributes
+*/
+
+svg:where(:not([fill]):has(> *:not([fill])), [fill="none"]:has(> *:not([fill], [stroke-width]))) {
+	fill: currentcolor;
+}
+
+:is(a, button) svg path {
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: fill;
+}
+
+/* ======================================================================
+Forms
+====================================================================== */
+
+label {
+	display: inline-block;
+	font-size: var(--fluid-16-20, inherit);
+	font-weight: var(--wp--custom--font-weight--medium, medium);
+	line-height: 1.25;
+}
+
+label:has(> :is([type="checkbox"], [type="radio"])) {
+	display: inline-flex;
+	gap: 1ch;
+	align-items: center;
+	font-weight: inherit;
+}
+
+input,
+select,
+textarea {
+	padding-block: 0.4375em;
+	padding-inline: 0.5em;
+	font-weight: var(--wp--custom--font-weight--normal, inherit);
+	background-color: var(--wp--preset--color--background-2, transparent);
+	border-color: currentcolor;
+	border-style: solid;
+	border-width: var(--wp--custom--border--width--thin, 1px);
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color, background-color, border-color, border-width;
+}
+
+textarea:not([rows]) {
+	min-block-size: 5em;
+	resize: vertical;
+}
+
+:is(input, select, textarea):is(:hover, :focus) {
+	outline-width: var(--wp--custom--border--width--thin, 1px);
+	outline-style: solid;
+	outline-color: currentcolor;
+	outline-offset: 0;
+}
+
+select {
+	/*     padding: revert;
+    background-color: revert;
+    border: revert;
+    border-radius: revert; */
+}
+
+select:is(:hover, :focus) {
+	/*     background-color: revert;
+    border-color: revert; */
+}
+
+/* The CUBE parts are all imported using the import-glob PostCSS plugin. This allows new files to be added to directories and imported straight away. */
+
+/* ======================================================================
+BUTTON
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Configuration
+---------------------------------------------------------------------- */
+
+/* Shared configuration */
+
+.button,
+.wp-block-button,
+.wp-block-read-more {
+	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
+	--button-border-color: var(--button-color-background, currentcolor);
+	--button-border-radius: var(--wp--custom--border--radius--pill, 0);
+	--button-border-width: var(--wp--custom--border--width--medium, 2px);
+	--button-color-background-on-hover: var(--wp--preset--color--foreground, transparent);
+	--button-color-background: var(--wp--preset--color--brand-violet-main, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
+	--button-color-text: var(--wp--preset--color--background-1, inherit);
+	--button-display: inline-block;
+	--button-font-size: var(--wp--preset--font-size--l, inherit);
+	--button-font-weight: var(--wp--custom--font-weight--medium, inherit);
+	--button-gap: 0.875em;
+	--button-icon-size: 1.25em;
+	--button-line: none;
+	--button-padding-block: 0.25em;
+	--button-padding-inline: 2em;
+	--button-text-align: center;
+	--button-transition-duration: var(--wp--custom--transition--duration, 0);
+}
+
+.wp-block-read-more {
+	--button-gap: 1em;
+	--button-icon-size: 1em;
+}
+
+/* Custom style variations */
+
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-outline {
+	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
+	--button-border-color: var(--button-color-text, currentcolor);
+	--button-color-background-on-hover: var(--wp--preset--color--foreground, transparent);
+	--button-color-background: var(--wp--preset--color--background-1, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
+	--button-color-text: var(--wp--preset--color--brand-violet-main, inherit);
+	--button-padding-inline: 1em;
+}
+
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-default-inverted {
+	--button-color-background-on-hover: var(--button-color-background, transparent);
+	--button-color-background: var(--wp--preset--color--background-1, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--foreground, inherit);
+	--button-color-text: var(--wp--preset--color--brand-violet-main, inherit);
+}
+
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-plain-text {
+	--button-border-width: 0;
+	--button-color-background-on-hover: transparent;
+	--button-color-background: transparent;
+	--button-color-text-on-hover: var(--wp--custom--color--link--hover-focus, inherit);
+	--button-color-text: inherit;
+	--button-gap: 0.5em;
+	--button-icon-size: 0.875em;
+	--button-padding-block: 0;
+	--button-padding-inline: 0;
+}
+
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-plain-text-underlined {
+	--button-border-width: 0;
+	--button-color-background-on-hover: transparent;
+	--button-color-background: transparent;
+	--button-color-text-on-hover: var(--wp--custom--color--link--hover-focus, inherit);
+	--button-color-text: inherit;
+	--button-font-size: 0.875rem;
+	--button-font-weight: var(--wp--custom--font-weight--light, inherit);
+	--button-line: underline;
+	--button-padding-block: 0;
+	--button-padding-inline: 0;
+}
+
+/* ----------------------------------------------------------------------
+Styles
+---------------------------------------------------------------------- */
+
+button.wp-element-button {
+	cursor: default; /* Override WP's default 'pointer' */
+}
+
+.button,
+.wp-block-button > .wp-block-button__link,
+.wp-block-read-more {
+	display: var(--button-display, inline-block);
+	align-content: center;
+	padding-block: var(--button-padding-block, 0.5em);
+	padding-inline: var(--button-padding-inline, 1em);
+	font-size: var(--button-font-size, inherit);
+	font-weight: var(--button-font-weight, inherit);
+	line-height: var(--wp--custom--line-height--base, inherit);
+	color: var(--button-color-text, inherit);
+	text-align: var(--button-text-align, center);
+	text-decoration-line: var(--button-line, none);
+	background-color: var(--button-color-background, transparent);
+	border-color: var(--button-border-color, currentcolor);
+	border-style: solid;
+	border-width: var(--button-border-width, 0);
+	border-radius: var(--button-border-radius, 0);
+	transition-duration: var(--button-transition-duration, var(--wp--custom--transition--duration, 0));
+	transition-property: color, background-color, border-color;
+}
+
+/* Button with icon */
+
+:is(.button, .wp-block-button > .wp-block-button__link, .wp-block-read-more):has(> :is(img, svg)) {
+	--button-display: flex;
+	display: var(--button-display, flex);
+	flex-wrap: nowrap;
+	gap: var(--button-gap, 0.75em);
+	align-items: center;
+	justify-content: center;
+}
+
+/* Icon */
+
+:is(.button, .wp-block-button > .wp-block-button__link, .wp-block-read-more) > :is(img, svg) {
+	flex: none;
+	inline-size: auto;
+	block-size: var(--button-icon-size, 1.25em);
+}
+
+/* Pseudo-classes */
+
+:is(.button, .wp-block-button > .wp-block-button__link, .wp-block-read-more):is(:hover, :focus-visible) {
+	color: var(--button-color-text-on-hover, inherit);
+	background-color: var(--button-color-background-on-hover, transparent);
+	border-color: var(--button-border-color-on-hover, transparent);
+}
+
+/* stylelint-disable selector-not-notation -- Intended. */
+
+/**
+ * ========================================
+ * 	Revert Gravity Forms styles
+ * ========================================
+ */
+
+@media only screen and (max-width: 641px) {
+	.gform_wrapper.gravity-theme input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+		min-height: revert !important;
+		line-height: revert !important;
+	}
+}
+
+/* Hide the required field legend */
+
+.gform_required_legend {
+	display: none;
+}
+
+/* Hide the required field asterisk in the label */
+
+.gform-field-label .gfield_required {
+	display: none;
+}
+
+/**
+ * ========================================
+ * 	Set Gravity Forms styles
+ * ========================================
+ */
+
+.gform_wrapper {
+	--color-error: var(--wp--preset--color--course-discount, inherit);
+}
+
+.gfield > * + * {
+	margin-block-start: 0.25em;
+}
+
+.gfield_description,
+.gfield_validation_message {
+	font-size: var(--wp--preset--font-size--s, inherit);
+}
+
+/* Error messages
+---------------------------------------------------------------------- */
+
+.gform_validation_errors {
+	color: var(--color-error, inherit);
+}
+
+.gform_submission_error {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.gform_submission_error:has(> [class*="icon"]) {
+	display: flex;
+	gap: 0.5em;
+	align-items: flex-start;
+}
+
+.gform_submission_error > [class*="icon"] {
+	flex: none;
+	padding-block: 0.25em;
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(label, input, textarea, .validation_message.gfield_validation_message) {
+	color: var(--color-error, inherit);
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(input, textarea) {
+	outline-width: var(--wp--custom--border--width--thin, 1px);
+	outline-style: solid;
+	outline-color: currentcolor;
+	outline-offset: 0;
+}
+
+/* ----------------------------------------------------------------------
+Newsletter Form in Homepage
+---------------------------------------------------------------------- */
+
+body.home main .gform-newsletter .gform_fields {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--wp--preset--spacing--2-xl, 1em);
+}
+
+/* ----------------------------------------------------------------------
+Newsletter Form in Site Footer
+---------------------------------------------------------------------- */
+
+.site-footer .gform-newsletter .gform_fields {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 1em;
+	column-gap: 0.5em;
+	color: var(--wp--preset--color--background-1, inherit);
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--input-type-email {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-inline-size: 60%;
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--type-submit {
+	flex-grow: 1;
+}
+
+.site-footer .gform-newsletter .gform_fields > .gfield--type-submit > .gform-button {
+	inline-size: 100%;
+}
+
+/* Elements
+---------------------------------------------------------------------- */
+
+/* Submit Button */
+
+.site-footer .has-background-1-color.has-foreground-background-color .gform-newsletter [type="submit"],
+.site-footer .has-background-1-color.has-foreground-background-color .gform-newsletter [type="submit"]:is(:hover, :focus-visible) {
+	font-weight: var(--wp--custom--font-weight--medium, medium) !important;
+	color: var(--wp--preset--color--foreground, inherit) !important;
+	background-color: var(--wp--preset--color--background-1, transparent) !important;
+	border: 1px solid var(--wp--preset--color--background-1, currentcolor) !important;
+}
+
+/* ======================================================================
+Hero
+====================================================================== */
+
+.hero {
+	--switcher-gap: 0;
+	--switcher-threshold: 62rem;
+}
+
+/* ======================================================================
+Site Footer
+====================================================================== */
+
+.site-footer {
+	--switcher-threshold: 55rem;
+	padding-block: var(--space-2xl-3xl, 1em);
+	padding-inline: var(--space-s-7xl, 1em);
+}
+
+.site-footer .footer-info-cards {
+	--switcher-gap: var(--space-2xs-m, 1em) var(--space-xs-l, 1em);
+}
+
+/* ======================================================================
+Site Header
+====================================================================== */
+
+/* Site Header Login
+---------------------------------------------------------------------- */
+
+.site-header-login {
+	padding-block: var(--space-2xs-xs, 1em);
+}
+
+.site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) {
+	--button-color-text-on-hover: var(--wp--preset--color--brand-blue-main, inherit);
+}
+
+.site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) svg path[fill] {
+	fill: currentcolor;
+}
+
+.site-header-login button.wc-block-mini-cart__button:is(:hover, :focus-visible) {
+	color: var(--wp--preset--color--brand-blue-main, inherit);
+}
+
+/* Site Header Menu
+---------------------------------------------------------------------- */
+
+.site-header-menu {
+	padding-block: var(--space-xs-m, 1em);
+}
+
+/*
+Push the site header menu to the right edge of the screen when navigation is not collapsed.
+*/
+
+/* .site-header-menu:has(.wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-search) {
+	overflow-x: clip;
+}
+
+.site-header-menu .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-search {
+	margin-inline-end: calc(-1 * (1.5rem + var(--wp--style--root--padding-right, 0)));
+} */
+
+/* ======================================================================
+WP SITE BLOCKS
+
+https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+====================================================================== */
+
+/* Remove the spacing between direct child elements of '.wp-site-blocks' (the :root is needed for the Editor) */
+
+:root .wp-site-blocks > * + * {
+	margin-block-start: 0;
+}
+
+/* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
+
+.wp-site-blocks:has(> main) {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+}
+
+.wp-site-blocks:has(> main) > * {
+	flex-shrink: 0;
+}
+
+.wp-site-blocks:has(> main) > main {
+	flex-grow: 1;
+}
+
+/*
+CLUSTER
+More info: https://every-layout.dev/layouts/cluster/
+A layout that lets you distribute items with consitent
+spacing, regardless of their size
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--cluster-horizontal-alignment (flex-start): How items should align
+horizontally. Can be any acceptable flexbox aligmnent value.
+
+--cluster-vertical-alignment (center): How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-m));
+	align-items: var(--cluster-vertical-alignment, center);
+	justify-content: var(--cluster-horizontal-alignment, flex-start);
+}
+
+/*
+FLOW COMPOSITION
+Like the Every Layout stack: https://every-layout.dev/layouts/stack/
+Info about this implementation: https://piccalil.li/blog/my-favourite-3-lines-of-css/
+*/
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+/* WP's Layout Flow
+---------------------------------------------------------------------- */
+
+/* Remove the top margin from an element that immediately follows a visually hidden element */
+
+.is-layout-flow > .visually-hidden + * {
+	margin-block-start: 0;
+}
+
+/* AUTO GRID
+Related Every Layout: https://every-layout.dev/layouts/grid/
+More info on the flexible nature: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+A flexible layout that will create an auto-fill grid with
+configurable grid item sizes
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--grid-min-item-size (14rem): How large each item should be
+ideally, as a minimum.
+
+--grid-placement (auto-fill): Set either auto-fit or auto-fill
+to change how empty grid tracks are handled */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(var(--grid-min-item-size, 16rem), 1fr));
+	gap: var(--gutter, var(--space-l));
+}
+
+/* A split 50/50 layout */
+
+.grid[data-layout="50-50"] {
+	--grid-placement: auto-fit;
+	--grid-min-item-size: clamp(16rem, 50vw, 33rem);
+}
+
+/* Three column grid layout */
+
+.grid[data-layout="thirds"] {
+	--grid-placement: auto-fit;
+	--grid-min-item-size: clamp(16rem, 33%, 20rem);
+}
+
+/**
+ * Reel
+ *
+ * @link https://every-layout.dev/layouts/reel/
+ */
+
+.reel {
+	display: flex;
+	flex-wrap: nowrap;
+	block-size: auto;
+	overflow-x: auto;
+	overflow-y: hidden;
+	overscroll-behavior: contain;
+}
+
+.reel > * {
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.reel img {
+	flex-basis: auto;
+	inline-size: auto;
+	block-size: 100%;
+}
+
+/*
+REPEL
+A little layout that pushes items away from each other where
+there is space in the viewport and stacks on small viewports
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-m)): This defines the space
+between each item.
+
+--repel-vertical-alignment (center): How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.repel {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-m));
+	align-items: var(--repel-vertical-alignment, center);
+	justify-content: space-between;
+}
+
+.repel[data-nowrap] {
+	flex-wrap: nowrap;
+}
+
+/*
+SIDEBAR
+More info: https://every-layout.dev/layouts/sidebar/
+A layout that allows you to have a flexible main content area
+and a "fixed" width sidebar that sits on the left or right.
+If there is not enough viewport space to fit both the sidebar
+width *and* the main content minimum width, they will stack
+on top of each other
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-size-1)): This defines the space
+between the sidebar and main content.
+
+--sidebar-target-width (20rem): How large the sidebar should be
+
+--sidebar-content-min-width(50%): The minimum size of the main content area
+
+EXCEPTIONS
+.sidebar[data-direction='rtl']: flips the sidebar to be on the right
+*/
+
+.sidebar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-s-l));
+}
+
+.sidebar:not([data-direction]) > :first-child {
+	flex-grow: 1;
+	flex-basis: var(--sidebar-target-width, 20rem);
+}
+
+.sidebar:not([data-direction]) > :last-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-width: var(--sidebar-content-min-width, 50%);
+}
+
+.sidebar[data-reversed] {
+	flex-direction: row-reverse;
+}
+
+.sidebar[data-direction="rtl"] > :last-child {
+	flex-grow: 1;
+	flex-basis: var(--sidebar-target-width, 20rem);
+}
+
+.sidebar[data-direction="rtl"] > :first-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-width: var(--sidebar-content-min-width, 50%);
+}
+
+/**
+ * The Sidebar
+ *
+ * Available classes for use:
+ * with-sidebar-left
+ * with-sidebar-right
+ * with-sidebar[-left|-right]-[XX%]
+ *
+ * @link https://every-layout.dev/layouts/sidebar/
+ */
+
+[class*="with-sidebar"] {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+[class*="with-sidebar"] > * {
+	flex-grow: 1;
+}
+
+[class*="with-sidebar-left"] > :last-child,
+[class*="with-sidebar-right"] > :first-child {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-inline-size: var(--non-sidebar-min-size, 66.66%);
+}
+
+[class*="with-sidebar-"][class*="-20\%"] {
+	--non-sidebar-min-size: 20%;
+}
+
+[class*="with-sidebar-"][class*="-25\%"] {
+	--non-sidebar-min-size: 25%;
+}
+
+[class*="with-sidebar-"][class*="-33\%"] {
+	--non-sidebar-min-size: 33.33%;
+}
+
+[class*="with-sidebar-"][class*="-50\%"] {
+	--non-sidebar-min-size: 50%;
+}
+
+[class*="with-sidebar-"][class*="-66\%"] {
+	--non-sidebar-min-size: 66.66%;
+}
+
+[class*="with-sidebar-"][class*="-75\%"] {
+	--non-sidebar-min-size: 75%;
+}
+
+[class*="with-sidebar-"][class*="-80\%"] {
+	--non-sidebar-min-size: 80%;
+}
+
+/*
+SWITCHER
+More info: https://every-layout.dev/layouts/switcher/
+A layout that allows you to lay **2** items next to each other
+until there is not enough horizontal space to allow that.
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-size-1)): This defines the space
+between each item
+
+--switcher-target-container-width (40rem): How large the container
+needs to be to allow items to sit inline with each other
+
+--switcher-vertical-alignment (flex-start): How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.switcher {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-l));
+	align-items: var(--switcher-vertical-alignment, flex-start);
+}
+
+.switcher > * {
+	flex-grow: 1;
+	flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+}
+
+/* Max 2 items,
+so anything greater than 2 is ful width */
+
+.switcher > :nth-child(n + 3) {
+	flex-basis: 100%;
+}
+
+/*
+WRAPPER COMPOSITION
+A common wrapper/container
+*/
+
+.wrapper {
+	position: relative;
+	max-width: var(--wrapper-max-width, 1360px);
+	padding-inline-start: var(--gutter);
+	padding-inline-end: var(--gutter);
+	margin-inline: auto;
+}
+
+/* 
+REGION UTILITY
+Consistent block padding for page sections
+*/
+
+.region {
+	position: relative;
+	padding-block: var(--region-space, var(--space-m));
+}
+
+/* =======================================================================================
+UTILITY CLASSES
+
+Based on https://tailwindcss.com/docs/.
+Sorted by category in alphabetical order.
+======================================================================================= */
+
+/* ======================================================================
+Custom
+====================================================================== */
+
+@media screen and (max-width: 991px) {
+	.center-below-md-lg {
+		text-align: center;
+	}
+
+	.center-below-md-lg.is-layout-flex,
+	.center-below-md-lg .is-layout-flex {
+		justify-content: center;
+	}
+
+	.center-below-md-lg.is-layout-flex.is-vertical,
+	.center-below-md-lg .is-layout-flex.is-vertical {
+		align-items: center;
+	}
+}
+
+/* ======================================================================
+Flexbox & Grid
+====================================================================== */
+
+/* Flex Basis */
+
+.flex-basis-0 {
+	flex-basis: 0 !important;
+}
+
+.flex-basis-25\% {
+	flex-basis: 25% !important;
+}
+
+.flex-basis-33\% {
+	flex-basis: 33.3333% !important;
+}
+
+.flex-basis-50\% {
+	flex-basis: 50% !important;
+}
+
+.flex-basis-66\% {
+	flex-basis: 66.6667% !important;
+}
+
+.flex-basis-75\% {
+	flex-basis: 75% !important;
+}
+
+.flex-basis-100\% {
+	flex-basis: 100% !important;
+}
+
+.flex-basis-4 {
+	flex-basis: 4rem !important;
+}
+
+.flex-basis-8 {
+	flex-basis: 8rem !important;
+}
+
+.flex-basis-12 {
+	flex-basis: 12rem !important;
+}
+
+.flex-basis-16 {
+	flex-basis: 16rem !important;
+}
+
+.flex-basis-20 {
+	flex-basis: 20rem !important;
+}
+
+.flex-basis-24 {
+	flex-basis: 24rem !important;
+}
+
+.flex-basis-28 {
+	flex-basis: 28rem !important;
+}
+
+.flex-basis-32 {
+	flex-basis: 32rem !important;
+}
+
+.flex-basis-36 {
+	flex-basis: 36rem !important;
+}
+
+.flex-basis-40 {
+	flex-basis: 40rem !important;
+}
+
+/* Flex Wrap */
+
+.flex-wrap {
+	flex-wrap: wrap !important;
+}
+
+.flex-wrap-reverse {
+	flex-wrap: wrap-reverse !important;
+}
+
+/* Flex Shrink */
+
+.flex-none {
+	flex: none !important;
+}
+
+.flex-none-children > * {
+	flex: none !important;
+}
+
+/* Gap */
+
+.gap-0 {
+	gap: 0 !important;
+}
+
+/* ======================================================================
+Layout
+====================================================================== */
+
+/* Display */
+
+.hidden {
+	display: none !important;
+}
+
+/* ======================================================================
+Sizing
+====================================================================== */
+
+/* Max Inline Size */
+
+.max-inline-size-min-content {
+	max-inline-size: min-content !important;
+}
+
+/* Min Inline Size */
+
+.min-inline-size\:50\% {
+	min-inline-size: 50% !important;
+}
+
+.min-inline-size\:66\.66\% {
+	min-inline-size: 66.66% !important;
+}
+
+.min-inline-size\:75\% {
+	min-inline-size: 75% !important;
+}
+
+/* ======================================================================
+Typography
+====================================================================== */
+
+/* Text Align */
+
+.text-center {
+	text-align: center !important;
+}
+
+.text-start {
+	text-align: start !important;
+}
+
+/* Text Box */
+
+.text-box-trim-start {
+	text-box: trim-start cap alphabetic !important;
+}
+
+.text-box-trim-both {
+	text-box: trim-both cap alphabetic !important;
+}
+
+/* Text Wrap */
+
+.text-balance {
+	text-wrap: balance !important;
+}
+
+.text-pretty {
+	text-wrap: pretty !important;
+}
+
+/*
+Utility class to hide elements visually.
+Ref. https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+*/
+
+.visually-hidden:not(:focus, :active) {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	clip-path: inset(50%) !important;
+}
+
+/* Tailwind utilities */
+
+.visible {
+	visibility: visible;
+}
+
+.filter {
+	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}

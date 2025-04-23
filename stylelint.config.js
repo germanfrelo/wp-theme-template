@@ -66,4 +66,13 @@ export default {
 			},
 		],
 	},
+	ignoreFiles: [
+		// Stylelint ignores the node_modules directory by default. However, this is overridden if ignoreFiles is set.
+		// See https://stylelint.io/user-guide/configure#ignorefiles
+		"node_modules/",
+		"**/*.min.*",
+		"build/",
+		"build-css/",
+		"src/css/global.css",
+	],
 };

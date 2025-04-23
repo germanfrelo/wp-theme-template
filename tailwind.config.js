@@ -12,19 +12,13 @@ import clampGenerator from "./src/css-utils/clamp-generator.js";
 import tokensToTailwind from "./src/css-utils/tokens-to-tailwind.js";
 
 // Raw design tokens
-import colorTokens from "./src/design-tokens/colors.json" with { type: "json" };
-import fontTokens from "./src/design-tokens/fonts.json" with { type: "json" };
 import spacingTokens from "./src/design-tokens/spacing.json" with { type: "json" };
 import fontLeadingTokens from "./src/design-tokens/text-leading.json" with { type: "json" };
-import textSizeTokens from "./src/design-tokens/text-sizes.json" with { type: "json" };
 import fontWeightTokens from "./src/design-tokens/text-weights.json" with { type: "json" };
 import viewportTokens from "./src/design-tokens/viewports.json" with { type: "json" };
 
 // Process design tokens
-const colors = tokensToTailwind(colorTokens.items);
-const fontFamily = tokensToTailwind(fontTokens.items);
 const fontLeading = tokensToTailwind(fontLeadingTokens.items);
-const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
 const fontWeight = tokensToTailwind(fontWeightTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
 
@@ -41,14 +35,9 @@ export default {
 			lg: `${viewportTokens.large}px`,
 			xl: `${viewportTokens.max}px`,
 		},
-		colors,
 		spacing,
-		fontSize,
 		fontLeading,
-		fontFamily,
 		fontWeight,
-		backgroundColor: ({ theme }) => theme("colors"),
-		textColor: ({ theme }) => theme("colors"),
 		margin: ({ theme }) => ({
 			auto: "auto",
 			...theme("spacing"),
@@ -98,11 +87,8 @@ export default {
 			const currentConfig = config();
 
 			const groups = [
-				{ key: "colors", prefix: "color" },
 				{ key: "spacing", prefix: "space" },
-				{ key: "fontSize", prefix: "size" },
 				{ key: "fontLeading", prefix: "leading" },
-				{ key: "fontFamily", prefix: "font" },
 				{ key: "fontWeight", prefix: "font" },
 			];
 
