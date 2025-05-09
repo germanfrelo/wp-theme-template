@@ -8,3 +8,58 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+.wp-block-post-author {
+	--post-author-padding-block: var(--wp--preset--spacing--2-xs, 0.5rem);
+	--post-author-padding-inline-start: var(--wp--preset--spacing--2-xs, 0.5rem);
+	--post-author-padding-inline-end: var(--wp--preset--spacing--xs, 0.75rem);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	align-items: center;
+	padding-block: var(--post-author-padding-inline, 0.5rem);
+	padding-inline-start: var(--post-author-padding-inline-start, 0.5rem);
+	padding-inline-end: var(--post-author-padding-inline-end, 0.75rem);
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: background-color;
+}
+
+.is-layout-flex > .wp-block-post-author {
+	margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
+}
+
+.wp-block-post-author:has(:any-link:hover) {
+	background-color: var(--wp--preset--color--background-2, transparent);
+}
+
+.wp-block-post-author > * {
+	margin: 0;
+}
+
+.wp-block-post-author > .wp-block-post-author__avatar {
+	flex: none;
+	inline-size: 2.5rem;
+	border-radius: 50%;
+}
+
+.wp-block-post-author > .wp-block-post-author__avatar :is(img, svg) {
+	border-radius: 50%;
+}
+
+.wp-block-post-author > .wp-block-post-author__content {
+	flex-basis: auto;
+}
+
+.wp-block-post-author > .wp-block-post-author__content > * {
+	margin-block: 0;
+	line-height: 1.2;
+}
+
+.wp-block-post-author > .wp-block-post-author__content > * + * {
+	margin-block-start: 0.5em;
+}
+
+.wp-block-post-author > .wp-block-post-author__content > .wp-block-post-author__byline,
+.wp-block-post-author > .wp-block-post-author__content > .wp-block-post-author__bio {
+	font-size: max(12px, 0.875em);
+}

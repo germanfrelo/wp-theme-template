@@ -8,3 +8,8 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* Change default padding when heading has a background */
+:is(h1, h2, h3, h4, h5, h6).has-background {
+	padding: 1em;
+}

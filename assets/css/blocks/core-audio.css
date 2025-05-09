@@ -8,3 +8,8 @@ Source:
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
+
+/* Revert default '300px' value to make it responsive */
+.wp-block-audio audio {
+	min-width: revert;
+}
