@@ -7,4 +7,60 @@ Source:
 ---
 Notes:
 - Use CSS custom properties to customize most of this block and its parts.
+---
+Resources:
+- https://inclusive-components.design/cards/
 ======================================================================================= */
+
+/* ======================================================================
+Custom Style: Custom
+====================================================================== */
+
+/* Configuration */
+
+.wp-block-cover.is-style-custom {
+	--cover-background-background: linear-gradient(45deg, hsl(0deg 0% 0% / 80%) 0%, hsl(0deg 0% 0% / 0%) 100%);
+	--cover-background-opacity-default: 0;
+	--cover-background-opacity-on-hover: 1;
+	--cover-background-transition-duration: var(--wp--custom--transition--duration, 0);
+	--cover-background-transition-property: opacity;
+	--cover-focus-shadow: 0 0 0 0.25rem var(--wp--preset--color--brand-1, currentcolor);
+}
+
+/* Cover background */
+
+.wp-block-cover.is-style-custom > .wp-block-cover__background {
+	background: var(--cover-background-background, initial);
+	opacity: var(--cover-background-opacity, initial);
+	transition-duration: var(--cover-background-transition-duration, var(--wp--custom--transition--duration, 0));
+	transition-property: var(--cover-background-transition-property, initial);
+}
+
+/* Cover background when is hovered or the Post Title link child is focused */
+
+.wp-block-cover.is-style-custom:is(:hover, :focus-within) > .wp-block-cover__background {
+	opacity: var(--cover-background-opacity-on-hover, initial);
+}
+
+/* Make the whole block interactive if it has a Post Title as link */
+
+.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link) {
+	position: relative;
+}
+
+/* Cover when the Post Title link child is focused */
+
+.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link):focus-within {
+	box-shadow: var(--cover-focus-shadow, initial);
+}
+
+.wp-block-cover.is-style-custom .wp-block-post-title > :any-link {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-cover.is-style-custom .wp-block-post-title > :any-link::after {
+	position: absolute;
+	inset: 0;
+	content: "";
+}

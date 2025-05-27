@@ -1,9 +1,41 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","lock":{"move":true,"remove":true}} /-->
+<!-- wp:group {"tagName":"header","metadata":{"name":"Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"blockGap":"0"}},"backgroundColor":"background-1","layout":{"type":"default"}} -->
+<header class="wp-block-group has-background-1-background-color has-background"><!-- wp:template-part {"slug":"header","tagName":"div","area":"header","lock":{"move":true,"remove":true}} /--></header>
+<!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","align":"wide","layout":{"type":"default"}} -->
-<main class="wp-block-group alignwide">
-	<!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /-->
+<!-- wp:group {"tagName":"main","lock":{"move":true,"remove":true},"metadata":{"name":"Main"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|2-xl","bottom":"var:preset|spacing|4-xl"},"blockGap":"var:preset|spacing|2-xl"}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="padding-top: var(--wp--preset--spacing--2-xl); padding-bottom: var(--wp--preset--spacing--4-xl)">
+	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:query-title {"type":"search","textAlign":"center","align":"wide"} /-->
+
+		<!-- wp:search {"label":"Buscar","showLabel":false,"buttonText":"Buscar","buttonPosition":"button-inside"} /-->
+
+		<!-- wp:query {"queryId":36,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"format":[]}} -->
+		<div class="wp-block-query">
+			<!-- wp:post-template -->
+			<!-- wp:post-featured-image /-->
+
+			<!-- wp:post-title /-->
+			<!-- /wp:post-template -->
+
+			<!-- wp:query-no-results -->
+			<!-- wp:paragraph {"placeholder":"Añade texto o bloques que se mostrarán cuando la consulta no devuelva ningún resultado."} -->
+			<p></p>
+			<!-- /wp:paragraph -->
+			<!-- /wp:query-no-results -->
+
+			<!-- wp:query-pagination -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer","lock":{"move":true,"remove":true}} /-->
+<!-- wp:template-part {"slug":"footer","tagName":"footer","area":"footer","lock":{"move":true,"remove":true}} /-->
