@@ -31,7 +31,7 @@ body {
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-normal, normal);
 	line-height: var(--leading-base, 1.5);
-	color: var(--wp--preset--color--foreground, CanvasText);
+	color: var(--wp--preset--color--foreground-1, CanvasText);
 	overflow-wrap: anywhere;
 	accent-color: var(--color-accent, auto);
 	background-color: var(--wp--preset--color--background-1, Canvas);
@@ -416,7 +416,7 @@ details {
 
 	&:not(:only-of-type) {
 		--details-border-block-end-width: 1px;
-		--details-border-color: var(--wp--preset--color--brand-blue-main, currentcolor);
+		--details-border-color: var(--wp--preset--color--brand-1-medium, currentcolor);
 		--details-border-style: solid;
 		--details-padding-block-end: var(--flow-space);
 	}
