@@ -168,7 +168,7 @@ pre {
 }
 
 pre:has(code) {
-	padding: var(--code-block-padding, var(--gutter));
+	padding: var(--code-block-padding, var(--gutter, 1em));
 	background-color: var(--code-block-color-bg, transparent);
 }
 

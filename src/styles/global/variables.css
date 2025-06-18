@@ -156,65 +156,11 @@ Some design tokens are defined in theme.json:
 	--scrollbar-track-radius: 1rem;
 	--scrollbar-width-legacy: 0.5rem;
 
-	/*
-	Spacing Sizes
-	@link https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,m-3xl&g=s,l,xl,12
-	*/
-
-	/* stylelint-disable comment-empty-line-before -- Intended. */
-
-	/* Space 3xs: 5px → 6px */
-	--space-3xs: clamp(0.3125rem, 0.2905rem + 0.0939vw, 0.375rem);
-	/* Space 2xs: 7px → 9px */
-	--space-2xs: clamp(0.4375rem, 0.3935rem + 0.1878vw, 0.5625rem);
-	/* Space xs: 11px → 13px */
-	--space-xs: clamp(0.6875rem, 0.6435rem + 0.1878vw, 0.8125rem);
-	/* Space s: 16px → 20px */
-	--space-s: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
-	/* Space m: 24px → 30px */
-	--space-m: clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem);
-	/* Space l: 36px → 45px */
-	--space-l: clamp(2.25rem, 2.0519rem + 0.8451vw, 2.8125rem);
-	/* Space xl: 54px → 68px */
-	--space-xl: clamp(3.375rem, 3.0669rem + 1.3146vw, 4.25rem);
-	/* Space 2xl: 80px → 100px */
-	--space-2xl: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
-	/* Space 3xl: 122px → 152px */
-	--space-3xl: clamp(7.625rem, 6.9648rem + 2.8169vw, 9.5rem);
-	/* Space 4xl: 182px → 228px */
-	--space-4xl: clamp(11.375rem, 10.3627rem + 4.3192vw, 14.25rem);
-	/* Space 5xl: 272px → 340px */
-	--space-5xl: clamp(17rem, 15.5035rem + 6.385vw, 21.25rem);
-
-	/* One-up pairs */
-	/* Space 3xs-2xs: 5px → 9px */
-	--space-3xs-2xs: clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem);
-	/* Space 2xs-xs: 7px → 13px */
-	--space-2xs-xs: clamp(0.4375rem, 0.3055rem + 0.5634vw, 0.8125rem);
-	/* Space xs-s: 11px → 20px */
-	--space-xs-s: clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem);
-	/* Space s-m: 16px → 30px */
-	--space-s-m: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem);
-	/* Space m-l: 24px → 45px */
-	--space-m-l: clamp(1.5rem, 1.0379rem + 1.9718vw, 2.8125rem);
-	/* Space l-xl: 36px → 68px */
-	--space-l-xl: clamp(2.25rem, 1.5458rem + 3.0047vw, 4.25rem);
-	/* Space xl-2xl: 54px → 100px */
-	--space-xl-2xl: clamp(3.375rem, 2.3627rem + 4.3192vw, 6.25rem);
-	/* Space 2xl-3xl: 80px → 152px */
-	--space-2xl-3xl: clamp(5rem, 3.4155rem + 6.7606vw, 9.5rem);
-	/* Space 3xl-4xl: 122px → 228px */
-	--space-3xl-4xl: clamp(7.625rem, 5.2923rem + 9.9531vw, 14.25rem);
-	/* Space 4xl-5xl: 182px → 340px */
-	--space-4xl-5xl: clamp(11.375rem, 7.8979rem + 14.8357vw, 21.25rem);
-
-	/* Custom pairs */
-	/* Space m-3xl: 24px → 152px */
-	--space-m-3xl: clamp(1.5rem, -1.3169rem + 12.0188vw, 9.5rem);
-
-	/* stylelint-enable comment-empty-line-before */
-
 	/* Tables */
 	--table-cell-padding-block: 0.5em;
 	--table-cell-padding-inline: 1rem;
+
+	/* Transitions */
+	--transition-duration: 0.15s;
+	--transition-timing-function: initial;
 }
