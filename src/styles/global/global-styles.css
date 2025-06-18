@@ -33,7 +33,7 @@ body {
 	line-height: var(--leading-base, 1.5);
 	color: var(--wp--preset--color--foreground-1, CanvasText);
 	overflow-wrap: anywhere;
-	accent-color: var(--color-accent, auto);
+	accent-color: var(--wp--preset--color--brand-1-medium, auto);
 	background-color: var(--wp--preset--color--background-1, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design */
 }
@@ -381,7 +381,7 @@ label:is(.screen-reader-text, .visually-hidden):first-child + * {
 form label ~ p[class*="error-message"] {
 	font-size: var(--form-field-error-message-font-size, inherit);
 	font-weight: var(--font-weight-normal, inherit);
-	color: var(--color-error, inherit);
+	color: var(--color-danger-medium, inherit);
 }
 
 /* ======================================================================

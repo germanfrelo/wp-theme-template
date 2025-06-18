@@ -7,10 +7,6 @@ Some design tokens are defined in theme.json:
 */
 
 :root {
-	/* Global colors */
-	--color-accent: var(--wp--preset--color--brand-1-medium);
-	--color-error: hsl(360deg 100% 43%);
-
 	/* Stroke */
 	--stroke-weight-thin: 1px;
 	--stroke-weight-medium: 3px;
