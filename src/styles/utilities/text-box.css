@@ -1,0 +1,11 @@
+/*
+Text Box
+*/
+
+.text-box-trim-start {
+	text-box: trim-start cap alphabetic !important;
+}
+
+.text-box-trim-both {
+	text-box: trim-both cap alphabetic !important;
+}

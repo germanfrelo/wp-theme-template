@@ -3,6 +3,10 @@
 # Dependency directories
 node_modules/
 
+# Build output directory
+/build/
+/build-css/
+
 # Created by https://www.toptal.com/developers/gitignore/api/git,wordpress
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,wordpress
 

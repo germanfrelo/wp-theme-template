@@ -1,0 +1,44 @@
+name: Deploy to Server (Build in Pipeline)
+
+on:
+  push:
+    branches:
+      - dev # Trigger deployment only on push to 'dev' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use Ubuntu for faster and cost-effective deployments
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+
+      - name: Install dependencies and build
+        run: |
+          # Install project dependencies quickly and reliably using the lock file
+          npm ci
+          # Run the script that compiles theme assets
+          npm run build
+        # The directory where the commands should run (the theme's root)
+        working-directory: ./
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --exclude-from='.rsyncignore' --delete ./ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.USERNAME }}/${{ vars.DOMAIN_PATH }}/wp-content/themes/${{ vars.THEME_NAME }}/
+
+      - name: Build and deployment completed
+        run: echo "✅ Build and deployment completed successfully!"
