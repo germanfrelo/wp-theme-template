@@ -1,0 +1,220 @@
+/*
+Some design tokens are defined in theme.json:
+- Color palette
+- Fonts
+- Font size scale
+- Spacing scale
+*/
+
+:root {
+	/* Global colors */
+	--color-accent: var(--wp--preset--color--brand-primary);
+	--color-error: hsl(360deg 100% 43%);
+
+	/* Stroke */
+	--stroke-weight-thin: 1px;
+	--stroke-weight-medium: 3px;
+	--stroke-weight-thick: 12px;
+	--stroke: var(--stroke-weight-thin, thin) solid var(--stroke-color, currentcolor);
+
+	/* Spacing */
+	--flow-space: 1.5em;
+	--gutter: var(--space-s);
+
+	/* Focus rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
+	/* Code (inline) */
+	--code-border-radius: 0.1875rem;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-padding-block: 0.1875em;
+	--code-padding-inline: 0.375em;
+
+	/* Code (block) */
+	--code-block-color-bg: var(--wp--preset--color--background-2);
+	--code-block-padding: var(--gutter);
+
+	/* Details + Summary */
+	--details-background-color: transparent;
+	--details-border-color: transparent;
+	--details-border-style: none;
+	--details-border-block-start-width: 0;
+	--details-border-inline-start-width: 0;
+	--details-border-inline-end-width: 0;
+	--details-border-block-end-width: 0;
+	--details-padding-block-start: 0;
+	--details-padding-block-end: 0;
+	--details-padding-inline-start: 0;
+	--details-padding-inline-end: 0;
+	--details-border-radius: 0;
+	--details-summary-color: inherit;
+	--details-summary-cursor: pointer;
+	--details-summary-font-family: inherit;
+	--details-summary-font-size: var(--fluid-16-20);
+	--details-summary-font-weight: var(--wp--custom--font-weight--medium);
+	--details-summary-gap: var(--wp--preset--spacing--s);
+	--details-summary-letter-spacing: normal;
+	--details-summary-line-height: inherit;
+	--details-icon-color: var(--wp--preset--color--brand-blue-main);
+	--details-icon-color-on-hover: var(--wp--preset--color--foreground);
+	--details-icon-size: 2.75rem;
+	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
+	--details-content-font-size: var(--wp--preset--font-size--m);
+	--details-content-padding-block-start: var(--wp--preset--spacing--s);
+	--details-content-transition-duration-opacity: var(--wp--custom--transition--duration);
+	--details-content-transition-duration-size: var(--wp--custom--transition--duration);
+	--details-content-transition-duration-visibility: var(--wp--custom--transition--duration);
+
+	/* Keyboard Input */
+	--kbd-border-radius: 0.1875rem;
+	--kbd-color-bg: white;
+	--kbd-color-text: inherit;
+	--kbd-font-size: 0.875em;
+	--kbd-leading: 1;
+	--kbd-padding-block: 0.25em;
+	--kbd-padding-inline: 0.5em;
+	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
+	--kbd-stroke-weight: var(--stroke-weight-thin);
+
+	/* Font Families */
+	--font-base: var(--wp--preset--font-family--base);
+	--font-mono: ui-monospace, monospace;
+
+	/* Font Weights */
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+
+	/* Font Sizes */
+	--font-size-base: var(--wp--preset--font-size--step-0);
+	--font-size-heading-1: var(--wp--preset--font-size--step-5);
+	--font-size-heading-2: var(--wp--preset--font-size--step-2);
+	--font-size-heading-3: var(--wp--preset--font-size--step-1);
+	--font-size-heading-4: var(--wp--preset--font-size--step-0);
+	--font-size-heading-5: var(--wp--preset--font-size--step-00);
+	--font-size-heading-6: var(--wp--preset--font-size--step-00);
+
+	/* Forms */
+	--form-field-error-message-font-size: var;
+	--form-label-input-gap: 0.25em;
+	--input-background-color: var(--wp--preset--color--background-2);
+	--input-border-color: currentcolor;
+	--input-border-radius: 0;
+	--input-border-width: var(--stroke-weight-thin, 1px);
+	--input-checkbox-size: 1.125em;
+	--input-color: var(--wp--preset--color--foreground);
+	--input-font-weight: var(--font-weight-normal, inherit);
+	--input-padding-block: 0.4375em;
+	--input-padding-inline: 0.5em;
+	--input-radio-size: 1.125em;
+	--label-font-size: var(--wp--preset--font-size--step-0, inherit);
+	--label-font-weight: var(--font-weight-medium, medium);
+	--label-leading: inherit;
+	--legend-font-size: var(--wp--preset--font-size--step-0, inherit);
+	--legend-font-weight: var(--font-weight-medium, medium);
+	--legend-leading: inherit;
+
+	/* Leading (line height) */
+	--leading-flat: 1;
+	--leading-slim: 1.2;
+	--leading-base: 1.7;
+
+	/* Links */
+	--link-color: currentcolor;
+	--link-color-on-hover: var(--wp--preset--color--brand-primary);
+	--link-color-on-focus: var(--wp--preset--color--brand-primary);
+
+	/* List */
+	--list-gap: 0.5em;
+	--list-indentation: 1.75ch;
+	--list-item-indentation: 0.5ch;
+	--list-item-marker-color: currentcolor;
+	--list-unordered-style-type: disc;
+
+	/* Logo */
+	--site-logo-width: 10rem;
+
+	/* Mark */
+	--mark-color-bg: Mark;
+	--mark-color-text: MarkText;
+	--mark-padding-inline: 0.125em;
+
+	/* Region */
+	--region-space-start: var(--space-m-3xl);
+	--region-space-end: var(--space-m-3xl);
+
+	/* Scrollbars */
+	--scrollbar-thumb-color: var(--wp--preset--color--brand-primary, auto);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--foreground, auto);
+	--scrollbar-track-color: transparent;
+	--scrollbar-track-color-hover: transparent;
+	--scrollbar-thumb-radius: 1rem;
+	--scrollbar-track-radius: 1rem;
+	--scrollbar-width-legacy: 0.5rem;
+
+	/*
+	Spacing Sizes
+	@link https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,m-3xl&g=s,l,xl,12
+	*/
+
+	/* stylelint-disable comment-empty-line-before -- Intended. */
+
+	/* Space 3xs: 5px → 6px */
+	--space-3xs: clamp(0.3125rem, 0.2905rem + 0.0939vw, 0.375rem);
+	/* Space 2xs: 7px → 9px */
+	--space-2xs: clamp(0.4375rem, 0.3935rem + 0.1878vw, 0.5625rem);
+	/* Space xs: 11px → 13px */
+	--space-xs: clamp(0.6875rem, 0.6435rem + 0.1878vw, 0.8125rem);
+	/* Space s: 16px → 20px */
+	--space-s: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+	/* Space m: 24px → 30px */
+	--space-m: clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem);
+	/* Space l: 36px → 45px */
+	--space-l: clamp(2.25rem, 2.0519rem + 0.8451vw, 2.8125rem);
+	/* Space xl: 54px → 68px */
+	--space-xl: clamp(3.375rem, 3.0669rem + 1.3146vw, 4.25rem);
+	/* Space 2xl: 80px → 100px */
+	--space-2xl: clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem);
+	/* Space 3xl: 122px → 152px */
+	--space-3xl: clamp(7.625rem, 6.9648rem + 2.8169vw, 9.5rem);
+	/* Space 4xl: 182px → 228px */
+	--space-4xl: clamp(11.375rem, 10.3627rem + 4.3192vw, 14.25rem);
+	/* Space 5xl: 272px → 340px */
+	--space-5xl: clamp(17rem, 15.5035rem + 6.385vw, 21.25rem);
+
+	/* One-up pairs */
+	/* Space 3xs-2xs: 5px → 9px */
+	--space-3xs-2xs: clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem);
+	/* Space 2xs-xs: 7px → 13px */
+	--space-2xs-xs: clamp(0.4375rem, 0.3055rem + 0.5634vw, 0.8125rem);
+	/* Space xs-s: 11px → 20px */
+	--space-xs-s: clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem);
+	/* Space s-m: 16px → 30px */
+	--space-s-m: clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem);
+	/* Space m-l: 24px → 45px */
+	--space-m-l: clamp(1.5rem, 1.0379rem + 1.9718vw, 2.8125rem);
+	/* Space l-xl: 36px → 68px */
+	--space-l-xl: clamp(2.25rem, 1.5458rem + 3.0047vw, 4.25rem);
+	/* Space xl-2xl: 54px → 100px */
+	--space-xl-2xl: clamp(3.375rem, 2.3627rem + 4.3192vw, 6.25rem);
+	/* Space 2xl-3xl: 80px → 152px */
+	--space-2xl-3xl: clamp(5rem, 3.4155rem + 6.7606vw, 9.5rem);
+	/* Space 3xl-4xl: 122px → 228px */
+	--space-3xl-4xl: clamp(7.625rem, 5.2923rem + 9.9531vw, 14.25rem);
+	/* Space 4xl-5xl: 182px → 340px */
+	--space-4xl-5xl: clamp(11.375rem, 7.8979rem + 14.8357vw, 21.25rem);
+
+	/* Custom pairs */
+	/* Space m-3xl: 24px → 152px */
+	--space-m-3xl: clamp(1.5rem, -1.3169rem + 12.0188vw, 9.5rem);
+
+	/* stylelint-enable comment-empty-line-before */
+
+	/* Tables */
+	--table-cell-padding-block: 0.5em;
+	--table-cell-padding-inline: 1rem;
+}

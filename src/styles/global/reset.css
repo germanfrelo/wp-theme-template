@@ -137,16 +137,6 @@ video {
 }
 
 /*
-1. Revert the display block for 'img' and 'svg' nested in certain elements where they are likely to be used as inline.
-2. Set a better, reasonable vertical aligment as SVGs are likely to be used as inline icons.
-*/
-
-:where(a, button, cite, h1, h2, h3, h4, h5, h6, li, p, td, th) > :is(img, svg) {
-	display: revert; /* 1 */
-	vertical-align: middle; /* 2 */
-}
-
-/*
 Maintain intrinsic aspect ratios when 'max-inline-size' is applied ('embed', 'iframe' and 'object' have no intrinsic ratio, so their 'block-size' needs to be set explicitly).
 */
 

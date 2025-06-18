@@ -1,0 +1,516 @@
+/**
+ * Low-specificity, global styles that apply to the whole project.
+ * More info:
+ * - https://cube.fyi/css.html
+ * - https://piccalil.li/blog/cube-css/#css
+ *
+ * Recommended selectors order:
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+ */
+
+/* ======================================================================
+Global
+====================================================================== */
+
+/* Opt in the whole page to interpolate sizes to/from keywords */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* Opt in all pages to cross-document view transitions */
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
+body {
+	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-size: var(--font-size-base, 1rem);
+	font-weight: var(--font-weight-normal, normal);
+	line-height: var(--leading-base, 1.5);
+	color: var(--wp--preset--color--foreground, CanvasText);
+	overflow-wrap: anywhere;
+	accent-color: var(--color-accent, auto);
+	background-color: var(--wp--preset--color--background-1, Canvas);
+	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design */
+}
+
+/* ======================================================================
+Headings
+====================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: var(--font-weight-bold, bold);
+}
+
+h1 {
+	font-size: var(--font-size-heading-1, 2rem);
+	font-weight: var(--font-weight-black, bold);
+	line-height: var(--leading-flat, 1);
+}
+
+h2 {
+	font-size: var(--font-size-heading-2, 1.5rem);
+}
+
+h3 {
+	font-size: var(--font-size-heading-3, 1.17rem);
+}
+
+h4 {
+	font-size: var(--font-size-heading-4, 1rem);
+}
+
+h5 {
+	font-size: var(--font-size-heading-5, 0.83rem);
+}
+
+h6 {
+	font-size: var(--font-size-heading-6, 0.67rem);
+}
+
+/* ======================================================================
+Grouping content
+====================================================================== */
+
+address {
+	font-style: inherit;
+}
+
+:where(figure) {
+	margin: 0;
+}
+
+/* ----------------------------------------------------------------------
+Lists
+---------------------------------------------------------------------- */
+
+/* Description List */
+
+dl {
+	margin-block: 0;
+}
+
+dt {
+	font-size: var(--wp--preset--font-size--l, inherit);
+	font-weight: var(--wp--custom--font-weight--medium, bolder);
+}
+
+dd {
+	margin-inline-start: 0;
+}
+
+/* Ordered and Unordered */
+
+:is(ol, ul) {
+	padding-inline-start: var(--list-indentation, revert);
+}
+
+ul {
+	list-style-type: var(--list-unordered-style-type, revert);
+}
+
+li > :is(ol, ul) {
+	margin-block-start: var(--list-gap, revert);
+}
+
+/*
+Remove list-style-type on 'ol' and 'ul' elements with a list role, which suggests default styling will be removed.
+More info:
+- https://piccalil.li/blog/a-more-modern-css-reset/
+- https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+*/
+:is(ol, ul):where([role="list"]) {
+	list-style-type: none;
+}
+
+/* Remove default styles on 'ul' elements in specific contexts. */
+:where(nav) ul,
+:is(ol, ul):where([role="list"][class]),
+:is(ol, ul):where([role="tablist"]),
+ul:where(:has(> li > :is(input))) {
+	padding-inline-start: 0;
+	margin-block: 0;
+	list-style-type: none;
+}
+
+/* List Items */
+
+:is(ol, ul) > li:where(:not([class])) {
+	padding-inline-start: var(--list-item-indentation, revert);
+}
+
+:is(ol, ul):where(:not([class])) > li:where(:not([class])) + li:where(:not([class])) {
+	margin-block-start: var(--list-gap, revert);
+}
+
+:is(ol, ul) > li::marker {
+	color: var(--list-item-marker-color, revert);
+}
+
+/* ----------------------------------------------------------------------
+Preformatted Text
+---------------------------------------------------------------------- */
+
+pre {
+	overflow: auto;
+	overscroll-behavior: contain;
+	font-family: var(--font-mono, ui-monospace, monospace);
+	font-size: 0.875em;
+}
+
+pre:has(code) {
+	padding: var(--code-block-padding, var(--gutter));
+	background-color: var(--code-block-color-bg, transparent);
+}
+
+/* ======================================================================
+Text-level semantics
+====================================================================== */
+
+b,
+strong {
+	font-weight: var(--font-weight-medium, bolder);
+}
+
+a:where(:any-link) {
+	color: var(--link-color, unset);
+	text-decoration-thickness: from-font;
+	text-underline-position: from-font;
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color, background-color, border-color;
+	text-decoration-skip-ink: none;
+
+	&:hover {
+		color: var(--link-color-on-hover, unset);
+	}
+
+	&:focus-visible {
+		color: var(--link-color-on-focus, unset);
+	}
+}
+
+code,
+kbd,
+samp {
+	font-family: var(--font-mono, ui-monospace, monospace);
+	font-size: 0.875em;
+}
+
+code {
+	padding-block: var(--code-padding-block, 0);
+	padding-inline: var(--code-padding-inline, 0);
+	white-space: break-spaces;
+	background-color: var(--code-color-bg, transparent);
+	border-radius: var(--code-border-radius, 0);
+}
+
+pre code {
+	padding: 0;
+	font-size: inherit;
+	text-align: start;
+	background-color: inherit;
+	border: none;
+	border-radius: 0;
+}
+
+kbd {
+	display: inline-block;
+	padding-block: var(--kbd-padding-block, 0.25em);
+	padding-inline: var(--kbd-padding-inline, 0.5em);
+	font-family: var(--font-base, inherit);
+	line-height: var(--kbd-leading, inherit);
+	color: var(--kbd-color-text, inherit);
+	white-space: nowrap;
+	background-color: var(--kbd-color-bg, transparent);
+	border: var(--kbd-stroke-weight, 1px) solid var(--kbd-stroke-color, currentcolor);
+	border-radius: var(--kbd-border-radius);
+	box-shadow: inset 0 calc(-1 * var(--kbd-stroke-weight, 1px)) 0 var(--kbd-stroke-color, currentcolor);
+}
+
+mark {
+	padding-inline: var(--mark-padding-inline, 0);
+	color: var(--mark-color-text, Mark);
+	background-color: var(--mark-color-bg, MarkText);
+}
+
+del {
+	/* TODO */
+}
+
+ins {
+	text-decoration-line: none;
+}
+
+/* ======================================================================
+Embedded content
+====================================================================== */
+
+svg {
+	flex-shrink: 0;
+}
+
+:is(a:where(:any-link), button) svg path {
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: fill;
+}
+
+/* ======================================================================
+Tables
+====================================================================== */
+
+th,
+td {
+	padding-block: var(--table-cell-padding-block, 0.5em);
+	padding-inline: var(--table-cell-padding-inline, 1rem);
+}
+
+th,
+thead,
+tfoot {
+	font-weight: var(--font-weight-medium, bold);
+}
+
+thead {
+	background-color: var(--wp--preset--color--background-2, transparent);
+}
+
+/* ======================================================================
+Forms
+====================================================================== */
+
+legend {
+	font-size: var(--legend-font-size, inherit);
+	font-weight: var(--legend-font-weight, inherit);
+}
+
+label {
+	display: inline-block;
+	font-size: var(--label-font-size, inherit);
+	font-weight: var(--label-font-weight, inherit);
+	line-height: var(--label-leading, inherit);
+}
+
+:is([type="checkbox"], [type="radio"]) + label,
+label:has(~ :is([type="checkbox"], [type="radio"])),
+label:has(> :is([type="checkbox"], [type="radio"])) {
+	font-weight: revert;
+}
+
+label:has(> :is([type="checkbox"], [type="radio"]) + span:only-of-type) {
+	display: inline-flex;
+	gap: 1ch;
+	align-items: center;
+}
+
+input,
+select,
+textarea {
+	inline-size: 100%;
+	padding-block: var(--input-padding-block, revert);
+	padding-inline: var(--input-padding-inline, revert);
+	font-weight: var(--input-font-weight, inherit);
+	background-color: var(--input-background-color, transparent);
+	border-color: var(--input-border-color, currentcolor);
+	border-style: solid;
+	border-width: var(--input-border-width, revert);
+	border-radius: var(--input-border-radius, revert);
+	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-property: color, background-color, border-color, border-width;
+}
+
+textarea {
+	display: block;
+	min-block-size: 7.5em;
+	min-block-size: 5lh;
+	resize: vertical;
+	field-sizing: content;
+}
+
+:where([type="checkbox"], [type="radio"]) {
+	margin: 0;
+}
+
+[type="checkbox"] {
+	inline-size: var(--input-checkbox-size, auto);
+	block-size: var(--input-checkbox-size, auto);
+}
+
+[type="radio"] {
+	inline-size: var(--input-radio-size, auto);
+	block-size: var(--input-radio-size, auto);
+}
+
+label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"]),
+label + *:has(> :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"])) {
+	display: block;
+	inline-size: 100%;
+	margin-block-start: var(--form-label-input-gap, 0.25em);
+}
+
+label:is(.screen-reader-text, .visually-hidden):first-child + * {
+	margin-block-start: 0;
+}
+
+/* TODO */
+
+/*
+:disabled,
+:disabled[disabled],
+:disabled:hover,
+:disabled[disabled]:hover {
+	opacity: 0.5;
+}
+
+:focus-visible {
+	outline-width: var(--focus-ring-width, revert);
+	outline-style: var(--focus-ring-style, revert);
+	outline-color: var(--focus-ring-color, revert);
+	outline-offset: var(--focus-ring-offset, revert);
+}
+*/
+
+form label ~ p[class*="error-message"] {
+	font-size: var(--form-field-error-message-font-size, inherit);
+	font-weight: var(--font-weight-normal, inherit);
+	color: var(--color-error, inherit);
+}
+
+/* ======================================================================
+Interactive elements
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Details & Summary
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#changing_the_summarys_icon
+- https://www.scottohara.me/blog/2022/09/12/details-summary.html
+- https://nerdy.dev/notebook/accordion.html
+- https://developer.chrome.com/blog/styling-details
+---------------------------------------------------------------------- */
+
+/*
+Details
+---------------------------------------------------------------------- */
+
+details {
+	padding-block-start: var(--details-padding-block-start, 1em);
+	padding-block-end: var(--details-padding-block-end, 1em);
+	padding-inline-start: var(--details-padding-inline-start, 1em);
+	padding-inline-end: var(--details-padding-inline-end, 1em);
+	background-color: var(--details-background-color, transparent);
+	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-inline-start: var(--details-border-inline-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-inline-end: var(--details-border-inline-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-radius: var(--details-border-radius, 0);
+
+	&:not(:only-of-type) {
+		--details-border-block-end-width: 1px;
+		--details-border-color: var(--wp--preset--color--brand-blue-main, currentcolor);
+		--details-border-style: solid;
+		--details-padding-block-end: var(--flow-space);
+	}
+}
+
+/*
+Summary
+---------------------------------------------------------------------- */
+
+details > summary {
+	display: flex;
+	gap: var(--details-summary-gap, 1rem);
+	align-items: center;
+	font-family: var(--details-summary-font-family, inherit);
+	font-size: var(--details-summary-font-size, inherit);
+	font-weight: var(--details-summary-font-weight, bold);
+	line-height: var(--details-summary-line-height, inherit);
+	color: var(--details-summary-color, inherit);
+	letter-spacing: var(--details-summary-letter-spacing, normal);
+	cursor: var(--details-summary-cursor, default);
+	list-style: none;
+
+	&:is(:hover, :focus-visible) {
+		--details-icon-color: var(--details-icon-color-on-hover, currentcolor);
+	}
+}
+
+/*
+Custom Icon
+---------------------------------------------------------------------- */
+
+/* Removes the default icon in WebKit-based browsers */
+details > summary::-webkit-details-marker {
+	display: none;
+}
+
+/*
+Adds a custom icon.
+It's rendered after the summary by default. To render it before, just change '::after' to '::before'
+*/
+details > summary::after {
+	display: inline-block;
+	flex-shrink: 0;
+	inline-size: var(--details-icon-size, 2.5rem);
+	block-size: var(--details-icon-size, 2.5rem);
+	margin-inline-start: auto;
+	content: "";
+	background-color: var(--details-icon-color, currentcolor);
+	mask-image: var(--details-icon-image, none);
+	mask-position: center;
+	mask-size: cover;
+}
+
+/* When Details is Open */
+details[open] > summary::after {
+	rotate: 0.5turn;
+}
+
+/*
+Content
+---------------------------------------------------------------------- */
+
+details > summary ~ * {
+	font-size: var(--details-content-font-size, inherit);
+}
+
+details > summary + * {
+	padding-block-start: var(--details-content-padding-block-start, 1em);
+	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+}
+
+/*
+Open & Close Transitions
+---------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+	details {
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* Don't add margin/padding to this, add it to the actual stuff inside the details content */
+details::details-content {
+	block-size: 0;
+	overflow-y: clip;
+	opacity: 0;
+	transition:
+		content-visibility var(--details-content-transition-duration-visibility, initial),
+		opacity var(--details-content-transition-duration-opacity, initial),
+		block-size var(--details-content-transition-duration-size, initial);
+	transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+	block-size: auto;
+	opacity: 1;
+}
