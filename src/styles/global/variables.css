@@ -7,22 +7,6 @@ Some design tokens are defined in theme.json:
 */
 
 :root {
-	/* Stroke */
-	--stroke-weight-thin: 1px;
-	--stroke-weight-medium: 3px;
-	--stroke-weight-thick: 12px;
-	--stroke: var(--stroke-weight-thin, thin) solid var(--stroke-color, currentcolor);
-
-	/* Spacing */
-	--flow-space: 1.5em;
-	--gutter: var(--space-s);
-
-	/* Focus rings */
-	--focus-ring-color: currentcolor;
-	--focus-ring-offset: 0.25lh;
-	--focus-ring-style: solid;
-	--focus-ring-width: 2px;
-
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
 	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
@@ -64,16 +48,11 @@ Some design tokens are defined in theme.json:
 	--details-content-transition-duration-size: var(--transition-duration);
 	--details-content-transition-duration-visibility: var(--transition-duration);
 
-	/* Keyboard Input */
-	--kbd-border-radius: 0.1875rem;
-	--kbd-color-bg: white;
-	--kbd-color-text: inherit;
-	--kbd-font-size: 0.875em;
-	--kbd-leading: 1;
-	--kbd-padding-block: 0.25em;
-	--kbd-padding-inline: 0.5em;
-	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
-	--kbd-stroke-weight: var(--stroke-weight-thin);
+	/* Focus rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
 
 	/* Font Families */
 	--font-base: var(--wp--preset--font-family--base);
@@ -114,6 +93,17 @@ Some design tokens are defined in theme.json:
 	--legend-font-weight: var(--font-weight-medium);
 	--legend-leading: inherit;
 
+	/* Keyboard Input */
+	--kbd-border-radius: 0.1875rem;
+	--kbd-color-bg: white;
+	--kbd-color-text: inherit;
+	--kbd-font-size: 0.875em;
+	--kbd-leading: 1;
+	--kbd-padding-block: 0.25em;
+	--kbd-padding-inline: 0.5em;
+	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
+	--kbd-stroke-weight: var(--stroke-weight-thin);
+
 	/* Leading (line height) */
 	--leading-flat: 1;
 	--leading-slim: 1.2;
@@ -139,6 +129,11 @@ Some design tokens are defined in theme.json:
 	--mark-color-text: MarkText;
 	--mark-padding-inline: 0.125em;
 
+	/* Radius */
+	--radius-small: 0.125rem;
+	--radius-medium: 0.25rem;
+	--radius-large: 0.5rem;
+
 	/* Region */
 	--region-space-start: var(--space-m-3xl);
 	--region-space-end: var(--space-m-3xl);
@@ -151,6 +146,17 @@ Some design tokens are defined in theme.json:
 	--scrollbar-thumb-radius: 1rem;
 	--scrollbar-track-radius: 1rem;
 	--scrollbar-width-legacy: 0.5rem;
+
+	/* Spacing */
+	--flow-space: 1.5em;
+	--gutter: var(--space-s);
+
+	/* Stroke */
+	--stroke-color: var(--wp--preset--color--border-3);
+	--stroke-weight-thin: 1px;
+	--stroke-weight-medium: 3px;
+	--stroke-weight-thick: 5px;
+	--stroke: var(--stroke-weight-thin, thin) solid var(--stroke-color, currentcolor);
 
 	/* Tables */
 	--table-cell-padding-block: 0.5em;
