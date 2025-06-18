@@ -1,0 +1,16 @@
+/* ======================================================================
+ICON
+
+A layout for inline icons.
+
+Reference: https://every-layout.dev/layouts/icon/
+
+Configuration:
+--icon-size: The 'block-size' of the icon.
+====================================================================== */
+
+.icon {
+	flex-shrink: 0;
+	inline-size: auto;
+	block-size: var(--icon-size, auto);
+}

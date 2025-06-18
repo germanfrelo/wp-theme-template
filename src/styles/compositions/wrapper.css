@@ -1,0 +1,18 @@
+/* ======================================================================
+WRAPPER
+
+A layout for centering a block-level element in the inline direction, with a max-inline-size value representing the typographic measure.
+
+Based on https://every-layout.dev/layouts/center/
+
+Configuration:
+--wrapper-gutters (var(--gutter, 1em)): The width of the gutters.
+--wrapper-max-width (var(--wp--style--global--wide-size, 80rem)): The maximum width of the centered element.
+====================================================================== */
+
+.wrapper {
+	box-sizing: content-box;
+	max-inline-size: var(--wrapper-max-width, var(--wp--style--global--wide-size, 80rem));
+	padding-inline: var(--wrapper-gutters, var(--gutter, 1rem));
+	margin-inline: auto;
+}

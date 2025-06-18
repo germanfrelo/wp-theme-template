@@ -1,0 +1,51 @@
+/* ======================================================================
+SIDEBAR
+
+A layout for placing two elements side-by-side. If space permits, the sidebar element has a set width, and the companion takes up the rest of the available horizontal space. If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space.
+
+Reference: https://every-layout.dev/layouts/sidebar/
+
+Configuration:
+--sidebar-align-items (normal): A valid 'align-items' property value.
+--sidebar-content-min-width (50%): The narrowest the content (main) element can be before wrapping. Should be a percentage.
+--sidebar-gap (var(--sidebar-gap, var(--gutter, var(--space-s-l, 1em)))): The space between the sidebar and non-sidebar.
+--sidebar-side-width (auto): How large the sidebar should be. Must NOT be a percentage. It defaults to the sidebar's content width.
+
+Exceptions:
+* sidebar--reversed
+====================================================================== */
+
+.sidebar,
+.sidebar-left,
+.sidebar-right {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--sidebar-gap, var(--gutter, var(--space-s-l, 1em)));
+	align-items: var(--sidebar-align-items, normal);
+}
+
+.sidebar:not([data-direction]) > :first-child,
+.sidebar-left > :first-child,
+.sidebar-left.sidebar--reversed > :last-child,
+.sidebar[data-direction="rtl"] > :last-child,
+.sidebar-right > :last-child,
+.sidebar-right.sidebar--reversed > :first-child {
+	flex-grow: 1;
+	flex-basis: var(--sidebar-side-width, auto);
+}
+
+.sidebar:not([data-direction]) > :last-child,
+.sidebar-left > :last-child,
+.sidebar-left.sidebar--reversed > :first-child,
+.sidebar[data-direction="rtl"] > :first-child,
+.sidebar-right > :first-child,
+.sidebar-right.sidebar--reversed > :last-child {
+	flex-grow: 999;
+	flex-basis: var(--sidebar-content-min-width, 50%);
+}
+
+.sidebar[data-reversed],
+.sidebar--reversed {
+	flex-direction: row-reverse;
+}

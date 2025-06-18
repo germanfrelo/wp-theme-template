@@ -1,0 +1,30 @@
+/* ======================================================================
+GRID
+
+A layout for creating a responsive grid with configurable grid item sizes.
+
+Reference: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+
+Configuration:
+--grid-gap var(--gutter, var(--space-s-l))
+--grid-min-item-size (16rem): How large each item should be ideally, as a minimum.
+--grid-placement (auto-fill): Set either auto-fit or auto-fill to change how empty grid tracks are handled
+====================================================================== */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(min(100%, var(--grid-min-item-size, 16rem)), 1fr));
+	gap: var(--grid-gap, var(--gutter, var(--space-s-l)));
+
+	/* A split 50/50 layout */
+	&:where([data-layout="halves"], .grid--halves) {
+		--grid-placement: auto-fit;
+		--grid-min-item-size: clamp(16rem, 50vw, 33em);
+	}
+
+	/* Three column grid layout */
+	&:where([data-layout="thirds"], .grid--thirds) {
+		--grid-placement: auto-fit;
+		--grid-min-item-size: clamp(16rem, 33%, 20rem);
+	}
+}
