@@ -101,7 +101,7 @@ dl {
 
 dt {
 	font-size: var(--wp--preset--font-size--l, inherit);
-	font-weight: var(--wp--custom--font-weight--medium, bolder);
+	font-weight: var(--font-weight-medium, bolder);
 }
 
 dd {
@@ -185,7 +185,7 @@ a:where(:any-link) {
 	color: var(--link-color, unset);
 	text-decoration-thickness: from-font;
 	text-underline-position: from-font;
-	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-duration: var(--transition-duration, 0);
 	transition-property: color, background-color, border-color;
 	text-decoration-skip-ink: none;
 
@@ -259,7 +259,7 @@ svg {
 }
 
 :is(a:where(:any-link), button) svg path {
-	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-duration: var(--transition-duration, 0);
 	transition-property: fill;
 }
 
@@ -323,7 +323,7 @@ textarea {
 	border-style: solid;
 	border-width: var(--input-border-width, revert);
 	border-radius: var(--input-border-radius, revert);
-	transition-duration: var(--wp--custom--transition--duration, 0);
+	transition-duration: var(--transition-duration, 0);
 	transition-property: color, background-color, border-color, border-width;
 }
 

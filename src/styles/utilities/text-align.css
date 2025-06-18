@@ -6,6 +6,10 @@ Text Align
 	text-align: center !important;
 }
 
+.text-end {
+	text-align: end !important;
+}
+
 .text-start {
 	text-align: start !important;
 }

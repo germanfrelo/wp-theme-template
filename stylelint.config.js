@@ -64,7 +64,7 @@ export default {
 				"severity": "warning",
 				"accidental-hover": false, // Enable as needed
 				"background-repeat": false, // The project CSS reset already add 'no-repeat' to all elements
-				"custom-property-fallbacks": true,
+				"custom-property-fallbacks": false, // Enable as needed
 				"flex-wrapping": false, // Enable as needed
 				"scroll-chaining": true,
 				"scrollbar-gutter": false, // Enable as needed

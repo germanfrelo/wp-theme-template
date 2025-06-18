@@ -54,7 +54,7 @@ Some design tokens are defined in theme.json:
 	--details-summary-cursor: pointer;
 	--details-summary-font-family: inherit;
 	--details-summary-font-size: var(--fluid-16-20);
-	--details-summary-font-weight: var(--wp--custom--font-weight--medium);
+	--details-summary-font-weight: var(--font-weight-medium);
 	--details-summary-gap: var(--wp--preset--spacing--s);
 	--details-summary-letter-spacing: normal;
 	--details-summary-line-height: inherit;
@@ -64,9 +64,9 @@ Some design tokens are defined in theme.json:
 	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
 	--details-content-font-size: var(--wp--preset--font-size--m);
 	--details-content-padding-block-start: var(--wp--preset--spacing--s);
-	--details-content-transition-duration-opacity: var(--wp--custom--transition--duration);
-	--details-content-transition-duration-size: var(--wp--custom--transition--duration);
-	--details-content-transition-duration-visibility: var(--wp--custom--transition--duration);
+	--details-content-transition-duration-opacity: var(--transition-duration);
+	--details-content-transition-duration-size: var(--transition-duration);
+	--details-content-transition-duration-visibility: var(--transition-duration);
 
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
