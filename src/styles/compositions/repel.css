@@ -4,7 +4,7 @@ REPEL
 A layout that pushes items away from each other where there is space in the viewport and stacks on small viewports.
 
 Configuration:
---gutter (var(--space-m, 1em)): This defines the space between each item.
+--gutter (var(--wp--preset--spacing--m, 1em)): This defines the space between each item.
 --repel-vertical-alignment (center): How items should align vertically. Can be any acceptable flexbox alignment value.
 --repel-wrap (wrap): A valid 'flex-wrap' value.
 ====================================================================== */
@@ -12,7 +12,7 @@ Configuration:
 .repel {
 	display: flex;
 	flex-wrap: var(--repel-wrap, wrap);
-	gap: var(--gutter, var(--space-m, 1em));
+	gap: var(--gutter, var(--wp--preset--spacing--m, 1em));
 	align-items: var(--repel-vertical-alignment, center);
 	justify-content: space-between;
 }

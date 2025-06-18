@@ -6,7 +6,7 @@ A layout for dynamically switching between horizontal and vertical arrangement o
 Reference: https://every-layout.dev/layouts/switcher/
 
 Configuration:
---gutter (var(--space-s-l, 1em)): This defines the space between each item.
+--gutter (var(--wp--preset--spacing--s-l, 1em)): This defines the space between each item.
 --switcher-horizontal-alignment (unset): How items should align horizontally. Can be any acceptable flexbox alignment value.
 --switcher-vertical-alignment (unset): How items should align vertically. Can be any acceptable flexbox alignment value.
 --switcher-target-container-width (40rem): How large *the container* needs to be to allow items to sit inline with each other.
@@ -17,7 +17,7 @@ Configuration:
 .switcher-3 {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--switcher-gap, var(--gutter, var(--space-s-l, 1em)));
+	gap: var(--switcher-gap, var(--gutter, var(--wp--preset--spacing--s-l, 1em)));
 	align-items: var(--switcher-vertical-alignment, unset);
 	justify-content: var(--switcher-horizontal-alignment, unset);
 }

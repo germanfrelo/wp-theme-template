@@ -8,7 +8,7 @@ Reference: https://every-layout.dev/layouts/sidebar/
 Configuration:
 --sidebar-align-items (normal): A valid 'align-items' property value.
 --sidebar-content-min-width (50%): The narrowest the content (main) element can be before wrapping. Should be a percentage.
---sidebar-gap (var(--sidebar-gap, var(--gutter, var(--space-s-l, 1em)))): The space between the sidebar and non-sidebar.
+--sidebar-gap (var(--sidebar-gap, var(--gutter, var(--wp--preset--spacing--s-l, 1em)))): The space between the sidebar and non-sidebar.
 --sidebar-side-width (auto): How large the sidebar should be. Must NOT be a percentage. It defaults to the sidebar's content width.
 
 Exceptions:
@@ -21,7 +21,7 @@ Exceptions:
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: var(--sidebar-gap, var(--gutter, var(--space-s-l, 1em)));
+	gap: var(--sidebar-gap, var(--gutter, var(--wp--preset--spacing--s-l, 1em)));
 	align-items: var(--sidebar-align-items, normal);
 }
 

@@ -6,7 +6,7 @@ A layout for adding white space (margin) between flow (block) elements along a v
 Reference: https://every-layout.dev/layouts/stack/
 
 Configuration:
---gutter (var(--space-s-l, 1rem)): This defines the space between each item.
+--gutter (var(--wp--preset--spacing--s-l, 1rem)): This defines the space between each item.
 --stack-horizontal-alignment (unset): How items should align horizontally. Can be any acceptable flexbox alignment value.
 --stack-vertical-alignment (unset): How items should align vertically. Can be any acceptable flexbox alignment value.
 ====================================================================== */
@@ -22,6 +22,6 @@ Configuration:
 	}
 
 	> * + * {
-		margin-block-start: var(--gutter, var(--space-s-l, 1rem));
+		margin-block-start: var(--gutter, var(--wp--preset--spacing--s-l, 1rem));
 	}
 }

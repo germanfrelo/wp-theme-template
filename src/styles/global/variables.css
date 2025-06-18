@@ -33,7 +33,7 @@ Some design tokens are defined in theme.json:
 	--details-summary-color: inherit;
 	--details-summary-cursor: pointer;
 	--details-summary-font-family: inherit;
-	--details-summary-font-size: var(--fluid-16-20);
+	--details-summary-font-size: inherit;
 	--details-summary-font-weight: var(--font-weight-medium);
 	--details-summary-gap: var(--wp--preset--spacing--s);
 	--details-summary-letter-spacing: normal;
@@ -135,8 +135,8 @@ Some design tokens are defined in theme.json:
 	--radius-large: 0.5rem;
 
 	/* Region */
-	--region-space-start: var(--space-m-3xl);
-	--region-space-end: var(--space-m-3xl);
+	--region-space-start: var(--wp--preset--spacing--m-3-xl);
+	--region-space-end: var(--wp--preset--spacing--m-3-xl);
 
 	/* Scrollbars */
 	--scrollbar-thumb-color: var(--wp--preset--color--brand-1-medium);
@@ -149,7 +149,7 @@ Some design tokens are defined in theme.json:
 
 	/* Spacing */
 	--flow-space: 1.5em;
-	--gutter: var(--space-s);
+	--gutter: var(--wp--preset--spacing--s);
 
 	/* Stroke */
 	--stroke-color: var(--wp--preset--color--border-3);
