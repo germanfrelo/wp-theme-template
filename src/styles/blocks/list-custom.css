@@ -1,0 +1,55 @@
+/* ======================================================================
+List variation: Custom
+====================================================================== */
+
+ol.is-style-custom {
+	--list-indentation: 0;
+	--list-item-indentation: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--xl, 1em);
+	list-style: none;
+	counter-reset: my-custom-counter;
+
+	> li {
+		display: flex;
+		flex-direction: row;
+		row-gap: var(--wp--preset--spacing--m, 1em);
+		column-gap: var(--wp--preset--spacing--xl, 1em);
+		align-items: var(--list-item-align-items, center);
+		margin: 0;
+		counter-increment: my-custom-counter;
+	}
+
+	> li::before {
+		display: inline-grid;
+		place-content: center;
+		inline-size: 1em;
+		block-size: 1em;
+		padding: 0.625em;
+		font-weight: var(--font-weight-medium, medium);
+		line-height: 0;
+		color: var(--wp--preset--color--brand-1-medium, inherit);
+		text-align: center;
+		content: counter(my-custom-counter);
+		border-color: var(--wp--preset--color--foreground-1, currentcolor);
+		border-style: solid;
+		border-width: 3px;
+		border-radius: 50%;
+	}
+
+	ul.is-style-checkmark > li > & {
+		margin-inline-start: calc(var(--list-item-custom-marker-size, 1em) + var(--list-item-custom-marker-margin, 1ch));
+	}
+}
+
+@media screen and (min-width: 60rem) {
+	ol.is-style-custom {
+		flex-direction: row;
+
+		> li {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+}

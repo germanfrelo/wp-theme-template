@@ -1,0 +1,171 @@
+/*
+Some design tokens are defined in theme.json:
+- Color palette
+- Fonts
+- Font size scale
+- Spacing scale
+*/
+
+:root {
+	/* Code (inline) */
+	--code-border-radius: 0.1875rem;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-padding-block: 0.1875em;
+	--code-padding-inline: 0.375em;
+
+	/* Code (block) */
+	--code-block-color-bg: var(--wp--preset--color--background-2);
+	--code-block-padding: var(--gutter);
+
+	/* Details + Summary */
+	--details-background-color: transparent;
+	--details-border-color: transparent;
+	--details-border-style: none;
+	--details-border-block-start-width: 0;
+	--details-border-inline-start-width: 0;
+	--details-border-inline-end-width: 0;
+	--details-border-block-end-width: 0;
+	--details-padding-block-start: 0;
+	--details-padding-block-end: 0;
+	--details-padding-inline-start: 0;
+	--details-padding-inline-end: 0;
+	--details-border-radius: 0;
+	--details-summary-color: inherit;
+	--details-summary-cursor: pointer;
+	--details-summary-font-family: inherit;
+	--details-summary-font-size: inherit;
+	--details-summary-font-weight: var(--font-weight-medium);
+	--details-summary-gap: var(--wp--preset--spacing--s);
+	--details-summary-letter-spacing: normal;
+	--details-summary-line-height: inherit;
+	--details-icon-color: var(--wp--preset--color--brand-1-medium);
+	--details-icon-color-on-hover: var(--wp--preset--color--foreground-1);
+	--details-icon-size: 2.75rem;
+	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
+	--details-content-font-size: inherit;
+	--details-content-padding-block-start: var(--wp--preset--spacing--s);
+	--details-content-transition-duration-opacity: var(--transition-duration);
+	--details-content-transition-duration-size: var(--transition-duration);
+	--details-content-transition-duration-visibility: var(--transition-duration);
+
+	/* Focus rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
+	/* Font Families */
+	--font-base: var(--wp--preset--font-family--base);
+	--font-mono: ui-monospace, monospace;
+
+	/* Font Weights */
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+
+	/* Font Sizes */
+	--font-size-base: var(--wp--preset--font-size--step-0);
+	--font-size-heading-1: var(--wp--preset--font-size--step-5);
+	--font-size-heading-2: var(--wp--preset--font-size--step-2);
+	--font-size-heading-3: var(--wp--preset--font-size--step-1);
+	--font-size-heading-4: var(--wp--preset--font-size--step-0);
+	--font-size-heading-5: var(--wp--preset--font-size--step-00);
+	--font-size-heading-6: var(--wp--preset--font-size--step-00);
+
+	/* Forms */
+	--form-field-error-message-font-size: var;
+	--form-label-input-gap: 0.25em;
+	--input-background-color: var(--wp--preset--color--background-1);
+	--input-border-color: currentcolor;
+	--input-border-radius: 0;
+	--input-border-width: var(--stroke-weight-thin);
+	--input-checkbox-size: 1.125em;
+	--input-color: var(--wp--preset--color--foreground-1);
+	--input-font-weight: var(--font-weight-normal);
+	--input-padding-block: 0.4375em;
+	--input-padding-inline: 0.5em;
+	--input-radio-size: 1.125em;
+	--label-font-size: var(--wp--preset--font-size--step-0);
+	--label-font-weight: var(--font-weight-medium);
+	--label-leading: inherit;
+	--legend-font-size: var(--wp--preset--font-size--step-0);
+	--legend-font-weight: var(--font-weight-medium);
+	--legend-leading: inherit;
+
+	/* Keyboard Input */
+	--kbd-border-radius: 0.1875rem;
+	--kbd-color-bg: white;
+	--kbd-color-text: inherit;
+	--kbd-font-size: 0.875em;
+	--kbd-leading: 1;
+	--kbd-padding-block: 0.25em;
+	--kbd-padding-inline: 0.5em;
+	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
+	--kbd-stroke-weight: var(--stroke-weight-thin);
+
+	/* Leading (line height) */
+	--leading-flat: 1;
+	--leading-slim: 1.2;
+	--leading-base: 1.7;
+
+	/* Links */
+	--link-color: currentcolor;
+	--link-color-on-hover: var(--wp--preset--color--brand-1-medium);
+	--link-color-on-focus: var(--wp--preset--color--brand-1-medium);
+
+	/* List */
+	--list-gap: 0.5em;
+	--list-indentation: 1.75ch;
+	--list-item-indentation: 0.5ch;
+	--list-item-marker-color: currentcolor;
+	--list-unordered-style-type: disc;
+
+	/* Logo */
+	--site-logo-width: 10rem;
+
+	/* Mark */
+	--mark-color-bg: Mark;
+	--mark-color-text: MarkText;
+	--mark-padding-inline: 0.125em;
+
+	/* Radius */
+	--radius-small: 0.125rem;
+	--radius-medium: 0.25rem;
+	--radius-large: 0.5rem;
+
+	/* Region */
+	--region-space-start: var(--wp--preset--spacing--m-3-xl);
+	--region-space-end: var(--wp--preset--spacing--m-3-xl);
+
+	/* Scrollbars */
+	--scrollbar-thumb-color: var(--wp--preset--color--brand-1-medium);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--foreground-1);
+	--scrollbar-track-color: transparent;
+	--scrollbar-track-color-hover: transparent;
+	--scrollbar-thumb-radius: 1rem;
+	--scrollbar-track-radius: 1rem;
+	--scrollbar-width-legacy: 0.5rem;
+
+	/* Sizing */
+	--min-target-size: 24px;
+
+	/* Spacing */
+	--flow-space: 1.5em;
+	--gutter: var(--wp--preset--spacing--s-m);
+
+	/* Stroke */
+	--stroke-color: var(--wp--preset--color--border-3);
+	--stroke-weight-thin: 1px;
+	--stroke-weight-medium: 3px;
+	--stroke-weight-thick: 5px;
+	--stroke: var(--stroke-weight-thin, thin) solid var(--stroke-color, currentcolor);
+
+	/* Tables */
+	--table-cell-padding-block: 0.5em;
+	--table-cell-padding-inline: 1rem;
+
+	/* Transitions */
+	--transition-duration: 0.15s;
+	--transition-timing-function: initial;
+}

@@ -1,0 +1,16 @@
+/* =======================================================================================
+Post Excerpt
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-excerpt
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-excerpt
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-post-excerpt:has(> .wp-block-post-excerpt__more-text) {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

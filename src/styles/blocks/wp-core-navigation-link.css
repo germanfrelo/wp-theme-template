@@ -1,0 +1,42 @@
+/* =======================================================================================
+Navigation Link
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation-link
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/navigation-link
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ----------------------------------------------------------------------
+Style: "external"
+---------------------------------------------------------------------- */
+
+.wp-block-navigation-link.is-style-external {
+	--nav-link-style-external-icon-color: currentcolor;
+	--nav-link-style-external-icon-image: url("../assets/svg/icon-external.svg");
+	--nav-link-style-external-icon-margin: 0.75ch;
+	--nav-link-style-external-icon-size: 1.25em;
+	--nav-link-style-external-icon-vertical-align: -0.2em;
+}
+
+/*
+Adds a custom icon.
+It's rendered after the text by default. To render it before:
+- Change '::before' to '::after'
+- Change 'margin-inline-start' to 'margin-inline-end'
+*/
+
+.wp-block-navigation-link.is-style-external .wp-block-navigation-item__label::after {
+	display: inline-block;
+	inline-size: var(--nav-link-style-external-icon-size, 1em);
+	block-size: var(--nav-link-style-external-icon-size, 1em);
+	margin-inline-start: var(--nav-link-style-external-icon-margin, 0.5ch);
+	vertical-align: var(--nav-link-style-external-icon-vertical-align, baseline);
+	content: "";
+	background-color: var(--nav-link-style-external-icon-color, currentcolor);
+	mask-image: var(--nav-link-style-external-icon-image, none);
+	mask-position: center;
+	mask-size: cover;
+}

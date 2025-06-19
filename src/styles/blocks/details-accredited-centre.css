@@ -1,0 +1,20 @@
+/* ======================================================================
+Details variation for Accredited Centres
+====================================================================== */
+
+details.accredited-centre {
+	--details-background-color: var(--wp--preset--color--background-1);
+	--details-border-block-end-width: 0;
+	--details-padding-block-start: var(--wp--preset--spacing--s-xl);
+	--details-padding-block-end: var(--wp--preset--spacing--m-xl);
+	--details-padding-inline-start: var(--wp--preset--spacing--m-xl);
+	--details-padding-inline-end: var(--wp--preset--spacing--s-xl);
+	--details-summary-font-size: inherit;
+	--details-summary-font-weight: var(--font-weight-bold);
+	--details-summary-gap: 1ch;
+
+	.accredited-centre-logo {
+		inline-size: 10rem;
+		block-size: auto;
+	}
+}

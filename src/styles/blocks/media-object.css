@@ -1,0 +1,50 @@
+/* ======================================================================
+Media Object
+====================================================================== */
+
+.media-object {
+	display: flex;
+	flex-direction: row;
+}
+
+.media-object > :is(.wp-block-image, .wp-block-post-featured-image) {
+	flex-basis: 45%;
+}
+
+.media-object > :is(.wp-block-image, .wp-block-post-featured-image) img {
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+}
+
+.media-object > :not(:is(.wp-block-image, .wp-block-post-featured-image)) {
+	flex: 1;
+	padding-block-start: var(--wp--preset--spacing--xl-4-xl, var(--gutter, 1em));
+	padding-block-end: var(--wp--preset--spacing--xl-4-xl, var(--gutter, 1em));
+}
+
+@media screen and (max-width: 50rem) {
+	.media-object {
+		flex-direction: column;
+	}
+
+	/* Hero */
+
+	.media-object:is(.media-object--hero) > :not(:is(.wp-block-image, .wp-block-post-featured-image)) {
+		text-align: center;
+	}
+
+	.media-object:is(.media-object--hero) > :not(:is(.wp-block-image, .wp-block-post-featured-image)) .is-layout-flex.is-horizontal {
+		justify-content: center;
+	}
+
+	.media-object:is(.media-object--hero) > :not(:is(.wp-block-image, .wp-block-post-featured-image)) .is-layout-flex.is-vertical {
+		align-items: center;
+	}
+
+	.media-object:is(.media-object--hero) > :not(:is(.wp-block-image, .wp-block-post-featured-image)) .is-layout-flex.is-content-justification-space-between {
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
