@@ -100,7 +100,6 @@ dl {
 }
 
 dt {
-	font-size: var(--wp--preset--font-size--l, inherit);
 	font-weight: var(--font-weight-medium, bolder);
 }
 

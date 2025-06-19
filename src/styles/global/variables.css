@@ -42,7 +42,7 @@ Some design tokens are defined in theme.json:
 	--details-icon-color-on-hover: var(--wp--preset--color--foreground-1);
 	--details-icon-size: 2.75rem;
 	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
-	--details-content-font-size: var(--wp--preset--font-size--m);
+	--details-content-font-size: inherit;
 	--details-content-padding-block-start: var(--wp--preset--spacing--s);
 	--details-content-transition-duration-opacity: var(--transition-duration);
 	--details-content-transition-duration-size: var(--transition-duration);
@@ -76,7 +76,7 @@ Some design tokens are defined in theme.json:
 	/* Forms */
 	--form-field-error-message-font-size: var;
 	--form-label-input-gap: 0.25em;
-	--input-background-color: var(--wp--preset--color--background-2);
+	--input-background-color: var(--wp--preset--color--background-1);
 	--input-border-color: currentcolor;
 	--input-border-radius: 0;
 	--input-border-width: var(--stroke-weight-thin);
@@ -147,9 +147,12 @@ Some design tokens are defined in theme.json:
 	--scrollbar-track-radius: 1rem;
 	--scrollbar-width-legacy: 0.5rem;
 
+	/* Sizing */
+	--min-target-size: 24px;
+
 	/* Spacing */
 	--flow-space: 1.5em;
-	--gutter: var(--wp--preset--spacing--s);
+	--gutter: var(--wp--preset--spacing--s-m);
 
 	/* Stroke */
 	--stroke-color: var(--wp--preset--color--border-3);
