@@ -1,0 +1,23 @@
+/* =====================================
+Site Logo
+===================================== */
+
+/* Default */
+
+.wp-block-site-logo.aligncenter {
+	margin-inline: auto;
+	text-align: center;
+}
+
+.wp-block-site-logo a:has(> :is(img, svg)),
+.wp-block-site-logo :is(img, svg) {
+	display: inline-block;
+}
+
+/* In header */
+
+header .wp-block-site-logo :is(img, svg) {
+	inline-size: 100%;
+	block-size: var(--header-logo-height, auto);
+	object-fit: contain;
+}

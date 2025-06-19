@@ -1,0 +1,40 @@
+/* ======================================================================
+Details variation for Team
+====================================================================== */
+
+details.is-style-team {
+	--details-background-color: var(--wp--preset--color--brand-1-lightest);
+	--details-border-block-end-width: 0;
+	--details-padding-block-start: 0px;
+	--details-padding-block-end: 0px;
+	--details-padding-inline-start: 0px;
+	--details-padding-inline-end: 0px;
+	--details-summary-font-weight: var(--font-weight-semibold);
+	--details-summary-gap: var(--wp--preset--spacing--m);
+	--details-content-padding-block-start: var(--wp--preset--spacing--s-xl);
+
+	/* ----------------------------------------------------------------------
+	Custom Icon
+	---------------------------------------------------------------------- */
+
+	/* Remove possible custom icons */
+	> summary::before,
+	> summary::after {
+		content: none;
+	}
+
+	> summary > .details__summary-icon {
+		display: inline-block;
+		flex-shrink: 0;
+		inline-size: var(--details-icon-size, 2.5rem);
+		block-size: var(--details-icon-size, 2.5rem);
+		background-color: var(--details-icon-color, currentcolor);
+		mask-image: var(--details-icon-image, none);
+		mask-position: center;
+		mask-size: cover;
+	}
+
+	&[open] > summary > .details__summary-icon {
+		rotate: 0.5turn;
+	}
+}

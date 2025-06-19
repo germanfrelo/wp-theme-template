@@ -1,0 +1,61 @@
+/* ======================================================================
+Details variation for Benefits
+====================================================================== */
+
+details.is-style-benefits {
+	--_image-size: 3.25rem;
+	--details-background-color: var(--wp--preset--color--brand-1-lightest);
+	--details-border-block-end-width: 0;
+	--details-padding-block-start: var(--wp--preset--spacing--l-3-xl);
+	--details-padding-block-end: var(--wp--preset--spacing--l-3-xl);
+	--details-padding-inline-start: var(--wp--preset--spacing--2-xs-2-xl);
+	--details-padding-inline-end: var(--wp--preset--spacing--2-xs-2-xl);
+	--details-summary-font-weight: var(--font-weight-extrabold);
+	--details-summary-gap: var(--wp--preset--spacing--2-xl-4-xl);
+	--details-content-padding-block-start: var(--wp--preset--spacing--s-3-xl);
+	container-type: inline-size;
+	container-name: details-benefits;
+
+	/* ----------------------------------------------------------------------
+	Images in Summary content
+	---------------------------------------------------------------------- */
+
+	> summary::before {
+		flex-shrink: 0;
+		inline-size: var(--_image-size, 1em);
+		block-size: var(--_image-size, 1em);
+		content: "";
+		background-position-y: center;
+		background-size: contain;
+	}
+
+	&#beneficio1 > summary::before {
+		background-image: url("../assets/svg/icon-beneficio-gestion-integral-formaciones.svg");
+	}
+
+	&#beneficio2 > summary::before {
+		background-image: url("../assets/svg/icon-beneficio-plataforma-elearning-propia.svg");
+	}
+
+	&#beneficio3 > summary::before {
+		background-image: url("../assets/svg/icon-beneficio-oferta-formativa-propia.svg");
+	}
+
+	> summary ~ * {
+		padding-inline-start: calc(var(--_image-size, 0px) + var(--details-summary-gap, 1rem));
+	}
+
+	@container details-benefits (max-width: 45rem) {
+		> summary {
+			--details-summary-gap: 0px;
+		}
+
+		> summary::before {
+			content: revert;
+		}
+
+		> summary ~ * {
+			padding-inline-start: 0;
+		}
+	}
+}

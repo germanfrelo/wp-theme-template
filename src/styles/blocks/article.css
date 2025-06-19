@@ -1,0 +1,9 @@
+/* ======================================================================
+Article
+====================================================================== */
+
+.article {
+	--sidebar-align-items: flex-start;
+	--sidebar-gap: var(--wp--preset--spacing--3-xl-6-xl, var(--gutter, 1em));
+	--sidebar-side-width: 24rem;
+}

@@ -1,0 +1,175 @@
+/* =======================================================================================
+gravityforms/form
+---
+Source:          URL
+Block Reference: URL
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* stylelint-disable selector-not-notation -- Intended. */
+
+/* ======================================================================
+Revert Gravity Forms styles
+====================================================================== */
+
+@media only screen and (max-width: 641px) {
+	.gform_wrapper.gravity-theme input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+		min-height: revert !important;
+		line-height: revert !important;
+	}
+}
+
+/* Hide the required field legend */
+.gform_required_legend {
+	display: none;
+}
+
+.gform_wrapper.gravity-theme .gfield textarea.large {
+	height: revert;
+}
+
+/* ======================================================================
+Set Gravity Forms styles
+====================================================================== */
+
+.gform_wrapper.gravity-theme {
+	--gform-fields-gap-rows: var(--wp--preset--spacing--l-xl);
+	--gform-body-footer-gap: var(--wp--preset--spacing--2-xl-3-xl);
+}
+
+.gform_wrapper.gravity-theme .gform_fields {
+	row-gap: var(--gform-fields-gap-rows, ar(--gutter, 1em));
+}
+
+.gfield_description,
+.gfield_validation_message {
+	font-size: var(--wp--preset--font-size--step-00, inherit);
+}
+
+.ginput_container_consent:has(:is([type="checkbox"], [type="radio"]) + label) {
+	display: inline-flex;
+	gap: 1ch;
+	align-items: center;
+	font-weight: inherit;
+}
+
+.ginput_container_consent :any-link {
+	text-decoration-thickness: auto;
+}
+
+/* Error messages
+---------------------------------------------------------------------- */
+
+.gform_validation_errors {
+	color: var(--color-error, inherit);
+}
+
+.gform_submission_error {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+.gform_submission_error:has(> [class*="icon"]) {
+	display: flex;
+	gap: 0.5em;
+	align-items: flex-start;
+}
+
+.gform_submission_error > [class*="icon"] {
+	flex-shrink: 0;
+	padding-block: 0.25em;
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(label, input, textarea, .validation_message.gfield_validation_message) {
+	color: var(--color-error, inherit);
+}
+
+.gform_wrapper:has(.gform_validation_errors) :is(input, textarea) {
+	outline-width: var(--stroke-weight-thin, 1px);
+	outline-style: solid;
+	outline-color: currentcolor;
+	outline-offset: 0;
+}
+
+/* ----------------------------------------------------------------------
+Newsletter Form in Site Footer
+---------------------------------------------------------------------- */
+
+.site-footer .gform_wrapper .form-newsletter .gform_fields {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 1em;
+	column-gap: 0.5em;
+	align-items: flex-end;
+}
+
+.site-footer .gform_wrapper .form-newsletter .gform_fields > .gfield--type-email {
+	flex-grow: 999;
+	flex-basis: 0;
+	min-inline-size: 60%;
+}
+
+.site-footer .gform_wrapper .form-newsletter .gform_fields > .gfield--type-submit {
+	flex-grow: 1;
+}
+
+.site-footer .gform_wrapper .form-newsletter .gform_fields > .gfield--type-submit > .gform-button {
+	inline-size: 100%;
+}
+
+/* ----------------------------------------------------------------------
+Contact Form
+---------------------------------------------------------------------- */
+
+.gfield--type-consent.gfield--input-type-consent {
+	justify-self: center;
+}
+
+.form-contact .ginput_container_consent {
+	--label-font-size: var(--wp--preset--font-size--step-00, inherit);
+}
+
+.form-contact .gform-footer {
+	display: flex;
+	justify-content: center;
+}
+
+.form-contact [type="submit"].button {
+	--button-color-text: inherit;
+	--button-color-background: var(--input-background-color, transparent);
+	--button-border-color: currentcolor;
+	--button-border-width: var(--stroke-weight-thin, thin);
+	--button-font-size: var(--wp--preset--font-size--step-00, inherit);
+}
+
+.form-contact > .gform-body + .gform-footer {
+	margin-block-start: var(--gform-body-footer-gap, ar(--gutter, 1em));
+}
+
+/* ----------------------------------------------------------------------
+Solicitar información Form
+---------------------------------------------------------------------- */
+
+.form-solicitar-info {
+	.gf_name_has_2.ginput_container_name.gform-grid-row {
+		display: flex;
+		flex-wrap: wrap;
+		grid-row-gap: 16px;
+		grid-column-gap: 2%;
+
+		> .gform-grid-col {
+			flex-grow: 1;
+			flex-basis: 26ch;
+		}
+	}
+
+	.gfield--type-consent.gfield--input-type-consent.gfield_contains_required {
+		justify-self: auto;
+	}
+
+	.gform-body + .gform-footer {
+		margin-block-start: var(--gform-body-footer-gap, ar(--gutter, 1em));
+	}
+}

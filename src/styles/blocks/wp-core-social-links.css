@@ -1,0 +1,138 @@
+/* =======================================================================================
+Social Links
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-links
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/social-links
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ======================================================================
+Social Links
+====================================================================== */
+
+/* Custom properties
+---------------------------------------------------------------------- */
+
+.wp-block-social-links {
+	/* Icon Sizes */
+	--social-link-icon-size-small: 1rem;
+	--social-link-icon-size-normal: 1.5rem;
+	--social-link-icon-size-large: 2.25rem;
+	--social-link-icon-size-huge: 3.375rem;
+
+	/* Icon Padding */
+	--social-link-style-default-padding: 0.125em;
+	--social-link-style-pill-shape-padding-inline: 0.6667em;
+
+	/* Logos with background */
+	--social-link-not-logo-only-color: var(--wp--preset--color--foreground-1, inherit);
+	--social-link-not-logo-only-color-bg: hsl(from var(--wp--preset--color--background-2, transparent) h s l / 20%);
+	--social-link-not-logo-only-color-hover: var(--wp--preset--color--foreground-1, inherit);
+	--social-link-not-logo-only-color-bg-hover: hsl(from var(--wp--preset--color--background-2, transparent) h s l / 50%);
+	--social-link-not-logo-only-border-width: 0;
+	--social-link-not-logo-only-border-color: transparent;
+	--social-link-not-logo-only-border-color-hover: transparent;
+}
+
+/* Custom properties for custom style variation
+---------------------------------------------------------------------- */
+
+.wp-block-social-links.is-style-custom {
+	/* Icon Sizes */
+	--social-link-icon-size-small: var(--wp--preset--spacing--s-m);
+	--social-link-icon-size-normal: var(--wp--preset--spacing--xl-2-xl);
+	--social-link-icon-size-large: var(--wp--preset--spacing--4-xl-5-xl);
+	--social-link-icon-size-huge: var(--wp--preset--spacing--7-xl-8-xl);
+
+	/* Icon Padding */
+	--social-link-style-default-padding: 0.125em;
+
+	/* Logos with background */
+	--social-link-not-logo-only-color: var(--wp--preset--color--brand-1-medium, inherit);
+	--social-link-not-logo-only-color-bg: var(--wp--preset--color--brand-1-lightest, transparent);
+	--social-link-not-logo-only-color-hover: var(--social-link-not-logo-only-color, inherit);
+	--social-link-not-logo-only-color-bg-hover: var(--social-link-not-logo-only-color-bg, transparent);
+	--social-link-not-logo-only-border-width: 0.0333em;
+	--social-link-not-logo-only-border-color: currentcolor;
+	--social-link-not-logo-only-border-color-hover: currentcolor;
+}
+
+/* Icon Sizes
+---------------------------------------------------------------------- */
+
+/* Replaces default icon sizes in 'px' with 'rem' to adapt to users' font size preferences */
+
+.wp-block-social-links.has-small-icon-size {
+	font-size: var(--social-link-icon-size-small, 1rem); /* default is 16px */
+}
+
+.wp-block-social-links,
+.wp-block-social-links.has-normal-icon-size {
+	font-size: var(--social-link-icon-size-normal, 1.5rem); /* default is 24px */
+}
+
+.wp-block-social-links.has-large-icon-size {
+	font-size: var(--social-link-icon-size-large, 2.25rem); /* default is 36px */
+}
+
+.wp-block-social-links.has-huge-icon-size {
+	font-size: var(--social-link-icon-size-huge, 3rem); /* default is 48px */
+}
+
+/* ======================================================================
+Social Link
+====================================================================== */
+
+/* Padding
+---------------------------------------------------------------------- */
+
+.wp-block-social-links .wp-block-social-link-anchor {
+	padding: var(--social-link-style-default-padding, 0.25em);
+}
+
+.wp-block-social-links.is-style-pill-shape .wp-block-social-link-anchor {
+	padding-inline: var(--social-link-style-pill-shape-padding-inline, 0.6667em);
+}
+
+.wp-block-social-links.is-style-logos .wp-block-social-link-anchor {
+	padding: 0;
+}
+
+/* Transitions
+---------------------------------------------------------------------- */
+
+.wp-block-social-link {
+	transition-duration: var(--social-link-transition-duration, var(--transition-duration, 0));
+	transition-property: var(--social-link-transition-properties, initial);
+}
+
+.wp-block-social-link:hover {
+	transform: var(--social-link-hover-transform, none);
+}
+
+/* Icon colors
+---------------------------------------------------------------------- */
+
+/* Logos with background */
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-block-social-link {
+	color: var(--social-link-not-logo-only-color, inherit);
+	background-color: var(--social-link-not-logo-only-color-bg, transparent);
+	border-color: var(--social-link-not-logo-only-border-color, transparent);
+	border-style: solid;
+	border-width: var(--social-link-not-logo-only-border-width, 0);
+}
+
+/* Icon colors on hover
+---------------------------------------------------------------------- */
+
+/* Logos with background */
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-block-social-link:hover {
+	color: var(--social-link-not-logo-only-color-hover, inherit);
+	background-color: var(--social-link-not-logo-only-color-bg-hover, transparent);
+	border-color: var(--social-link-not-logo-only-border-color-hover, transparent);
+}

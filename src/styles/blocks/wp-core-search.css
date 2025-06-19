@@ -1,0 +1,227 @@
+/* =======================================================================================
+Search
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/search
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/search
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/*
+Table of contents:
+1. Configuration
+   1.1. Global
+   1.2. Block Variations
+   1.2. Style Variations
+2. Element styles: Inside Wrapper
+3. Element styles: Input
+4. Element styles: Button
+*/
+
+/* ======================================================================
+1. Configuration
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+1.1. Global
+---------------------------------------------------------------------- */
+
+.wp-block-search {
+	/* Inside Wrapper */
+	--search-wrapper-border-color: var(--stroke-color);
+	--search-wrapper-border-radius: var(--radius-medium);
+	--search-wrapper-border-style: solid;
+	--search-wrapper-border-width: 0;
+	--search-wrapper-color-background-on-hover: transparent;
+	--search-wrapper-color-background: transparent;
+	--search-wrapper-flex-align-items: stretch;
+	--search-wrapper-flex-direction: row;
+	--search-wrapper-flex-justify-content: flex-start;
+	--search-wrapper-gap: 1.25ch;
+	--search-wrapper-padding-block: 0;
+	--search-wrapper-padding-inline: 0;
+	--search-wrapper-size-block-min: 24px;
+
+	/* Input */
+	--search-input-border-color: var(--stroke-color);
+	--search-input-border-radius: var(--radius-medium);
+	--search-input-border-style: solid;
+	--search-input-border-width: var(--stroke-weight-thin, 1px);
+	--search-input-color-background-on-hover: var(--search-input-color-background);
+	--search-input-color-background: var(--wp--preset--color--background-1);
+	--search-input-font-size: inherit;
+	--search-input-padding-block: 0.5em;
+	--search-input-padding-inline: 1em;
+
+	/* Button */
+	--search-button-border-color-on-hover: var(--search-button-color-background-on-hover);
+	--search-button-border-color: var(--search-button-color-background);
+	--search-button-border-radius: var(--radius-medium);
+	--search-button-border-style: solid;
+	--search-button-border-width: var(--stroke-weight-thin, 1px);
+	--search-button-color-background-on-hover: color-mix(in srgb, var(--search-button-color-background), transparent 25%);
+	--search-button-color-background: var(--wp--preset--color--foreground-1);
+	--search-button-color-text-on-hover: var(--wp--preset--color--background-1);
+	--search-button-color-text: var(--wp--preset--color--background-1);
+	--search-button-font-size: var(--wp--preset--font-size--step-00);
+	--search-button-font-weight: var(--font-weight-medium);
+	--search-button-icon-rotation: y 180deg;
+	--search-button-icon-size: 1.125rem;
+	--search-button-padding-block: 0.75em;
+	--search-button-padding-inline: 1.5em;
+	--search-button-transition-duration: var(--transition-duration);
+}
+
+/* ----------------------------------------------------------------------
+1.2. Block Variations
+---------------------------------------------------------------------- */
+
+/* Button Outside
+---------------------------------------------------------------------- */
+
+.wp-block-search.wp-block-search__button-outside.wp-block-search__icon-button {
+	--search-button-padding-block: 0.75em;
+	--search-button-padding-inline: 0.75em;
+}
+
+/* Button Inside
+---------------------------------------------------------------------- */
+
+.wp-block-search.wp-block-search__button-inside {
+	/* Inside Wrapper */
+	--search-wrapper-border-width: 0px;
+	--search-wrapper-color-background-on-hover: var(--wp--preset--color--brand-1-lightest);
+	--search-wrapper-color-background: var(--wp--preset--color--background-2);
+	--search-wrapper-flex-align-items: center;
+	--search-wrapper-padding-inline: 1em;
+	--search-wrapper-size-block-min: 35px;
+
+	/* Input */
+	--search-input-border-radius: 0;
+	--search-input-border-width: 0;
+	--search-input-color-background: transparent;
+	--search-input-font-size: var(--wp--preset--font-size--step-00);
+	--search-input-padding-block: 0.5em;
+	--search-input-padding-inline: 0;
+
+	/* Button */
+	--search-button-border-radius: var(--search-wrapper-border-radius);
+	--search-button-border-width: 0;
+	--search-button-color-background-on-hover: transparent;
+	--search-button-color-background: transparent;
+	--search-button-color-text-on-hover: var(--wp--preset--color--brand-1-medium);
+	--search-button-color-text: inherit;
+	--search-button-padding-block: 0;
+	--search-button-padding-inline: 0;
+}
+
+/* No Button
+---------------------------------------------------------------------- */
+
+/* .wp-block-search.wp-block-search__no-button {} */
+
+/* Button Only
+---------------------------------------------------------------------- */
+
+.wp-block-search.wp-block-search__button-only.wp-block-search__searchfield-hidden {
+	--search-wrapper-gap: 0;
+}
+
+/* ----------------------------------------------------------------------
+1.3. Style Variations
+---------------------------------------------------------------------- */
+
+.wp-block-search.is-style-direction-reversed {
+	--search-wrapper-flex-direction: row-reverse;
+	--search-wrapper-flex-justify-content: flex-end;
+	--search-button-icon-rotation: initial;
+}
+
+/* ======================================================================
+2. Element styles: Inside Wrapper
+====================================================================== */
+
+.wp-block-search .wp-block-search__inside-wrapper {
+	flex-direction: var(--search-wrapper-flex-direction, row);
+	column-gap: var(--search-wrapper-gap, 0);
+	align-items: var(--search-wrapper-flex-align-items, initial);
+	justify-content: var(--search-wrapper-flex-justify-content, flex-start);
+	min-block-size: var(--search-wrapper-size-block-min, initial);
+	padding-block: var(--search-wrapper-padding-block, 0);
+	padding-inline: var(--search-wrapper-padding-inline, 0);
+	background-color: var(--search-wrapper-color-background, transparent);
+	border-color: var(--search-wrapper-border-color, currentcolor);
+	border-style: var(--search-wrapper-border-style, solid);
+	border-width: var(--search-wrapper-border-width, 0);
+	border-radius: var(--search-wrapper-border-radius, 0);
+	transition-duration: var(--search-button-transition-duration, var(--transition-duration, 0));
+	transition-property: background-color;
+}
+
+.wp-block-search .wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) {
+	background-color: var(--search-wrapper-color-background-on-hover, transparent);
+}
+
+/* ======================================================================
+3. Element styles: Input
+====================================================================== */
+
+.wp-block-search .wp-block-search__input {
+	padding-block: var(--search-input-padding-block, 0);
+	padding-inline: var(--search-input-padding-inline, 1ch);
+	font-size: var(--search-input-font-size, inherit);
+	background-color: var(--search-input-color-background, 0);
+	border-color: var(--search-input-border-color, currentcolor);
+	border-style: var(--search-input-border-style, solid);
+	border-width: var(--search-input-border-width, 1px);
+	border-radius: var(--search-input-border-radius, 0);
+	transition-duration: var(--search-button-transition-duration, var(--transition-duration, 0));
+	transition-property: background-color;
+}
+
+.wp-block-search .wp-block-search__input:is(:hover, :focus-visible) {
+	background-color: var(--search-input-color-background-on-hover, transparent);
+}
+
+/* ======================================================================
+4. Element styles: Button
+====================================================================== */
+
+/* Button
+---------------------------------------------------------------------- */
+
+.wp-block-search .wp-block-search__button {
+	padding-block: var(--search-button-padding-block, initial);
+	padding-inline: var(--search-button-padding-inline, initial);
+	margin: 0; /* Remove WP's default value */
+	font-size: var(--search-button-font-size, inherit);
+	font-weight: var(--search-button-font-weight, inherit);
+	color: var(--search-button-color-text, inherit);
+	background-color: var(--search-button-color-background, inherit);
+	border-color: var(--search-button-border-color, currentcolor);
+	border-style: var(--search-button-border-style, initial);
+	border-width: var(--search-button-border-width, initial);
+	border-radius: var(--search-button-border-radius, 0);
+	transition-duration: var(--search-button-transition-duration, var(--transition-duration, 0));
+	transition-property: color, background-color, border-color;
+}
+
+.wp-block-search .wp-block-search__button:is(:hover, :focus-visible),
+.wp-block-search .wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) .wp-block-search__button {
+	color: var(--search-button-color-text-on-hover, inherit);
+	background-color: var(--search-button-color-background-on-hover, transparent);
+	border-color: var(--search-button-border-color-on-hover, transparent);
+}
+
+/* Icon
+---------------------------------------------------------------------- */
+
+.wp-block-search .wp-block-search__button.has-icon > .search-icon {
+	width: var(--search-button-icon-size, auto);
+	min-width: revert;
+	height: var(--search-button-icon-size, auto);
+	min-height: revert;
+	rotate: var(--search-button-icon-rotation, initial);
+}

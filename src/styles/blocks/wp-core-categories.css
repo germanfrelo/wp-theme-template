@@ -1,0 +1,67 @@
+/* =======================================================================================
+Categories
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/categories
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/categories
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ----------------------------------------------------------------------
+As a dropdown (<select>)
+---------------------------------------------------------------------- */
+
+.wp-block-categories.wp-block-categories-dropdown {
+	&.aligncenter {
+		justify-items: center;
+	}
+
+	label {
+		display: block;
+		inline-size: fit-content;
+	}
+
+	.select-wrapper {
+		--gutter: var(--wp--preset--spacing--2-xs-m);
+		display: flex;
+		column-gap: var(--gutter, 0.5em);
+		align-items: center;
+		inline-size: fit-content;
+		max-inline-size: 100%;
+		padding-block: var(--input-padding-block, initial);
+		padding-inline: var(--gutter, --input-padding-inline, initial);
+		font-size: var(--wp--preset--font-size--step-00, inherit);
+		font-weight: var(--font-weight-light, inherit);
+		background-color: var(--wp--preset--color--brand-violet-10, transparent);
+		border-color: var(--wp--preset--color--brand-violet-10, transparent);
+		border-style: solid;
+		border-width: var(--input-border-width, initial);
+		border-radius: var(--input-border-radius, initial);
+		transition-duration: var(--transition-duration, 0);
+		transition-property: color, background-color, border-color;
+
+		/* A reset of styles, including removing the default dropdown arrow */
+		> select {
+			padding-block: 0;
+			padding-inline: 0;
+			margin: 0;
+			font: inherit;
+			appearance: none;
+			outline: none; /* Remove default focus outline, will add later */
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+		}
+
+		&:focus-within {
+			outline: 2px solid var(--wp--preset--color--brand-2-medium, currentcolor);
+			outline-offset: 1px;
+		}
+
+		&:hover {
+			background-color: var(--wp--preset--color--brand-violet-20, transparent);
+		}
+	}
+}
