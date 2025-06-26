@@ -34,8 +34,8 @@ As a dropdown (<select>)
 		padding-inline: var(--gutter, --input-padding-inline, initial);
 		font-size: var(--wp--preset--font-size--step-00, inherit);
 		font-weight: var(--font-weight-light, inherit);
-		background-color: var(--wp--preset--color--brand-violet-10, transparent);
-		border-color: var(--wp--preset--color--brand-violet-10, transparent);
+		background-color: var(--wp--preset--color--primary-lighter, transparent);
+		border-color: var(--wp--preset--color--primary-lighter, transparent);
 		border-style: solid;
 		border-width: var(--input-border-width, initial);
 		border-radius: var(--input-border-radius, initial);
@@ -56,12 +56,12 @@ As a dropdown (<select>)
 		}
 
 		&:focus-within {
-			outline: 2px solid var(--wp--preset--color--brand-2-medium, currentcolor);
+			outline: 2px solid var(--wp--preset--color--primary-medium, currentcolor);
 			outline-offset: 1px;
 		}
 
 		&:hover {
-			background-color: var(--wp--preset--color--brand-violet-20, transparent);
+			background-color: var(--wp--preset--color--primary-lighter, transparent);
 		}
 	}
 }

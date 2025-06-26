@@ -34,7 +34,7 @@ Info Box
 		padding-block: var(--wp--preset--spacing--m-l, 1em);
 
 		& + & {
-			border-block-start: 1px solid var(--wp--preset--color--brand-2-medium, currentcolor);
+			border-block-start: 1px solid var(--wp--preset--color--primary-medium, currentcolor);
 		}
 
 		&:is(#course-date, #course-address) {
@@ -51,7 +51,7 @@ Info Box
 
 		&:not(#course-price) > :last-child {
 			font-weight: var(--font-weight-normal, inherit);
-			color: var(--wp--preset--color--brand-2-medium, inherit);
+			color: var(--wp--preset--color--primary-medium, inherit);
 		}
 	}
 
@@ -71,7 +71,7 @@ Info Box
 }
 
 .page-course #seccion-añadir-a-carrito:target {
-	outline: 2px solid var(--wp--preset--color--brand-2-medium);
+	outline: 2px solid var(--wp--preset--color--primary-medium);
 }
 
 @media screen and (min-width: 75rem) {

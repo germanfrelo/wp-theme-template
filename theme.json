@@ -14,116 +14,116 @@
 			"duotone": [],
 			"gradients": [
 				{
-					"name": "Brand 1 to Brand 2 Vertical",
-					"slug": "brand-1-to-brand-2-vertical",
-					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
+					"name": "Primary to Secondary Vertical",
+					"slug": "primary-to-secondary-vertical",
+					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--primary-medium) 0%, var(--wp--preset--color--secondary-medium) 100%)"
 				},
 				{
-					"name": "Brand 1 to Brand 2 Diagonal",
-					"slug": "brand-1-to-brand-2-diagonal",
-					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
+					"name": "Primary to Secondary Diagonal",
+					"slug": "primary-to-secondary-diagonal",
+					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--primary-medium) 0%, var(--wp--preset--color--secondary-medium) 100%)"
 				},
 				{
-					"name": "Brand 1 to Brand 2 Horizontal",
-					"slug": "brand-1-to-brand-2-horizontal",
-					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--brand-1-medium) 0%, var(--wp--preset--color--brand-2-medium) 100%)"
+					"name": "Primary to Secondary Horizontal",
+					"slug": "primary-to-secondary-horizontal",
+					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--primary-medium) 0%, var(--wp--preset--color--secondary-medium) 100%)"
 				},
 				{
-					"name": "Brand 2 to Brand 1 Vertical",
-					"slug": "brand-2-to-brand-1-vertical",
-					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+					"name": "Secondary to Primary Vertical",
+					"slug": "secondary-to-primary-vertical",
+					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--secondary-medium) 0%, var(--wp--preset--color--primary-medium) 100%)"
 				},
 				{
-					"name": "Brand 2 to Brand 1 Diagonal",
-					"slug": "brand-2-to-brand-1-diagonal",
-					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+					"name": "Secondary to Primary Diagonal",
+					"slug": "secondary-to-primary-diagonal",
+					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--secondary-medium) 0%, var(--wp--preset--color--primary-medium) 100%)"
 				},
 				{
-					"name": "Brand 2 to Brand 1 Horizontal",
-					"slug": "brand-2-to-brand-1-horizontal",
-					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--brand-2-medium) 0%, var(--wp--preset--color--brand-1-medium) 100%)"
+					"name": "Secondary to Primary Horizontal",
+					"slug": "secondary-to-primary-horizontal",
+					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--secondary-medium) 0%, var(--wp--preset--color--primary-medium) 100%)"
 				}
 			],
 			"palette": [
 				{
-					"name": "Background 1",
-					"slug": "background-1",
-					"color": "oklch(100% 0 268deg)"
+					"name": "Text-1",
+					"slug": "text-1",
+					"color": "oklch(0.1 0.005 270)"
 				},
 				{
-					"name": "Background 2",
-					"slug": "background-2",
-					"color": "oklch(98% 0.0025 268deg)"
+					"name": "Text-2",
+					"slug": "text-2",
+					"color": "oklch(0.5 0.005 270)"
 				},
 				{
-					"name": "Background 3",
-					"slug": "background-3",
-					"color": "oklch(96% 0.0025 268deg)"
+					"name": "Surface-1",
+					"slug": "surface-1",
+					"color": "oklch(1 0.005 270)"
 				},
 				{
-					"name": "Border 1",
-					"slug": "border-1",
-					"color": "oklch(90% 0.0025 268deg)"
+					"name": "Surface-2",
+					"slug": "surface-2",
+					"color": "oklch(0.97 0.005 270)"
 				},
 				{
-					"name": "Border 2",
-					"slug": "border-2",
-					"color": "oklch(80% 0.0025 268deg)"
+					"name": "Surface-3",
+					"slug": "surface-3",
+					"color": "oklch(0.92 0.005 270)"
 				},
 				{
-					"name": "Border 3",
-					"slug": "border-3",
-					"color": "oklch(70% 0.0025 268deg)"
+					"name": "Surface-4",
+					"slug": "surface-4",
+					"color": "oklch(0.82 0.005 270)"
 				},
 				{
-					"name": "Foreground 1",
-					"slug": "foreground-1",
-					"color": "oklch(20% 0.0025 268deg)"
+					"name": "Surface-5",
+					"slug": "surface-5",
+					"color": "oklch(0.67 0.005 270)"
 				},
 				{
-					"name": "Foreground 2",
-					"slug": "foreground-2",
-					"color": "oklch(55% 0.0025 268deg)"
+					"name": "Primary-Lighter",
+					"slug": "primary-lighter",
+					"color": "oklch(0.58 0.2 270)"
 				},
 				{
-					"name": "Brand 1 darker",
-					"slug": "brand-1-darker",
-					"color": "oklch(45.5% 0.22 268deg)"
+					"name": "Primary-Medium",
+					"slug": "primary-medium",
+					"color": "oklch(0.50 0.2 270)"
 				},
 				{
-					"name": "Brand 1 medium",
-					"slug": "brand-1-medium",
-					"color": "oklch(53% 0.22 268deg)"
+					"name": "Primary-Darker",
+					"slug": "primary-darker",
+					"color": "oklch(0.42 0.2 270)"
 				},
 				{
-					"name": "Brand 1 lightest",
-					"slug": "brand-1-lightest",
-					"color": "oklch(98% 0.009 268deg)"
+					"name": "Secondary-Lighter",
+					"slug": "secondary-lighter",
+					"color": "oklch(0.58 0.2 185)"
 				},
 				{
-					"name": "Brand 2 darker",
-					"slug": "brand-2-darker",
-					"color": "oklch(76.5% 0.2 150)"
+					"name": "Secondary-Medium",
+					"slug": "secondary-medium",
+					"color": "oklch(0.50 0.2 185)"
 				},
 				{
-					"name": "Brand 2 medium",
-					"slug": "brand-2-medium",
-					"color": "oklch(84% 0.2 150)"
+					"name": "Secondary-Darker",
+					"slug": "secondary-darker",
+					"color": "oklch(0.42 0.2 185)"
 				},
 				{
-					"name": "Brand 2 lightest",
-					"slug": "brand-2-lightest",
-					"color": "oklch(98% 0.03 150)"
+					"name": "Danger-Lighter",
+					"slug": "danger-lighter",
+					"color": "oklch(0.58 0.2 28)"
 				},
 				{
-					"name": "Danger darker",
-					"slug": "danger-darker",
-					"color": "oklch(45.5% 0.22 28deg)"
-				},
-				{
-					"name": "Danger medium",
+					"name": "Danger-Medium",
 					"slug": "danger-medium",
-					"color": "oklch(53% 0.22 28deg)"
+					"color": "oklch(0.50 0.2 28)"
+				},
+				{
+					"name": "Danger-Darker",
+					"slug": "danger-darker",
+					"color": "oklch(0.42 0.2 28)"
 				}
 			]
 		},

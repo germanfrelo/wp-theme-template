@@ -23,8 +23,8 @@ Tag
 }
 
 .taxonomy-tipo_formacion {
-	--tag-color-bg: var(--wp--preset--color--background-1);
-	--tag-color-text: var(--wp--preset--color--foreground-1);
+	--tag-color-bg: var(--wp--preset--color--surface-1);
+	--tag-color-text: var(--wp--preset--color--text-1);
 }
 
 .wp-block-post-terms.taxonomy-tipo_formacion > :is(a, span) {
@@ -41,24 +41,24 @@ Tag
 
 .is-style-tag-blog-theme,
 .wp-singular.post-template-default.single.single-post .wp-block-post-terms.taxonomy-category {
-	--tag-color-bg: var(--wp--preset--color--brand-1-lightest);
-	--tag-color-text: var(--wp--preset--color--foreground-1);
+	--tag-color-bg: var(--wp--preset--color--primary-lighter);
+	--tag-color-text: var(--wp--preset--color--text-1);
 }
 
 .is-style-tag-featured,
 .estado_formacion-destacado .taxonomy-estado_formacion {
 	--tag-color-bg: var(--wp--preset--color--course-featured);
-	--tag-color-text: var(--wp--preset--color--foreground-1);
+	--tag-color-text: var(--wp--preset--color--text-1);
 }
 
 .is-style-tag-new,
 .estado_formacion-nuevos .taxonomy-estado_formacion {
 	--tag-color-bg: var(--wp--preset--color--course-new);
-	--tag-color-text: var(--wp--preset--color--foreground-1);
+	--tag-color-text: var(--wp--preset--color--text-1);
 }
 
 .is-style-tag-last-spots,
 .estado_formacion-ultimas-plazas .taxonomy-estado_formacion {
 	--tag-color-bg: var(--wp--preset--color--course-last-spots);
-	--tag-color-text: var(--wp--preset--color--foreground-1);
+	--tag-color-text: var(--wp--preset--color--text-1);
 }

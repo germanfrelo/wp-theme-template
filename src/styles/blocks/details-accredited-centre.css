@@ -3,7 +3,7 @@ Details variation for Accredited Centres
 ====================================================================== */
 
 details.accredited-centre {
-	--details-background-color: var(--wp--preset--color--background-1);
+	--details-background-color: var(--wp--preset--color--surface-1);
 	--details-border-block-end-width: 0;
 	--details-padding-block-start: var(--wp--preset--spacing--s-xl);
 	--details-padding-block-end: var(--wp--preset--spacing--m-xl);

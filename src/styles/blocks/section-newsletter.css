@@ -11,7 +11,7 @@
 		--region-space: var(--wp--preset--spacing--4-xl);
 		--stack-vertical-alignment: center;
 		--gutter: var(--wp--preset--spacing--xl);
-		background-color: var(--wp--preset--color--brand-violet-10, transparent);
+		background-color: var(--wp--preset--color--primary-lighter, transparent);
 		background-image: url("../assets/svg/penguin.svg");
 		background-position-x: calc(100% - var(--gutter, 1em));
 		background-position-y: 125%;

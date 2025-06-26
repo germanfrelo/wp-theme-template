@@ -15,10 +15,10 @@ Configuration
 	--button-border-color: var(--button-color-background, currentcolor);
 	--button-border-radius: var(--radius-medium, 0);
 	--button-border-width: var(--stroke-weight-medium, 2px);
-	--button-color-background-on-hover: var(--wp--preset--color--foreground-1, transparent);
-	--button-color-background: var(--wp--preset--color--brand-2-medium, transparent);
-	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
-	--button-color-text: var(--wp--preset--color--background-1, inherit);
+	--button-color-background-on-hover: var(--wp--preset--color--primary-darker, transparent);
+	--button-color-background: var(--wp--preset--color--primary-medium, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--surface-1, inherit);
+	--button-color-text: var(--wp--preset--color--surface-1, inherit);
 	--button-display: inline-block;
 	--button-font-size: inherit;
 	--button-font-weight: var(--font-weight-medium, inherit);
@@ -41,18 +41,18 @@ Configuration
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-outline {
 	--button-border-color-on-hover: var(--button-color-background-on-hover, currentcolor);
 	--button-border-color: var(--button-color-text, currentcolor);
-	--button-color-background-on-hover: var(--wp--preset--color--foreground-1, transparent);
-	--button-color-background: var(--wp--preset--color--background-1, transparent);
-	--button-color-text-on-hover: var(--wp--preset--color--background-1, inherit);
-	--button-color-text: var(--wp--preset--color--brand-2-medium, inherit);
+	--button-color-background-on-hover: var(--wp--preset--color--primary-darker, transparent);
+	--button-color-background: var(--wp--preset--color--surface-1, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--surface-1, inherit);
+	--button-color-text: var(--wp--preset--color--primary-medium, inherit);
 	--button-padding-inline: 1em;
 }
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-default-inverted {
 	--button-color-background-on-hover: var(--button-color-background, transparent);
-	--button-color-background: var(--wp--preset--color--background-1, transparent);
-	--button-color-text-on-hover: var(--wp--preset--color--foreground-1, inherit);
-	--button-color-text: var(--wp--preset--color--brand-2-medium, inherit);
+	--button-color-background: var(--wp--preset--color--surface-1, transparent);
+	--button-color-text-on-hover: var(--wp--preset--color--text-1, inherit);
+	--button-color-text: var(--wp--preset--color--primary-medium, inherit);
 }
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-plain-text {
@@ -61,8 +61,6 @@ Configuration
 	--button-color-background: transparent;
 	--button-color-text-on-hover: var(--link-color-on-hover);
 	--button-color-text: inherit;
-	--button-gap: 0.5em;
-	--button-icon-size: 0.875em;
 	--button-padding-block: 0;
 	--button-padding-inline: 0;
 }
@@ -73,7 +71,6 @@ Configuration
 	--button-color-background: transparent;
 	--button-color-text-on-hover: var(--link-color-on-hover);
 	--button-color-text: inherit;
-	--button-font-size: 0.875rem;
 	--button-line: underline;
 	--button-padding-block: 0;
 	--button-padding-inline: 0;

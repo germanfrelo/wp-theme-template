@@ -31,7 +31,7 @@ Notes:
 }
 
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	background-color: var(--wp--preset--color--background-2, inherit);
+	background-color: var(--wp--preset--color--surface-2, inherit);
 }
 
 .wp-block-table.is-style-stripes :is(td, th) {

@@ -4,7 +4,7 @@ Details variation for Benefits
 
 details.is-style-benefits {
 	--_image-size: 3.25rem;
-	--details-background-color: var(--wp--preset--color--brand-1-lightest);
+	--details-background-color: var(--wp--preset--color--primary-lighter);
 	--details-border-block-end-width: 0;
 	--details-padding-block-start: var(--wp--preset--spacing--l-3-xl);
 	--details-padding-block-end: var(--wp--preset--spacing--l-3-xl);

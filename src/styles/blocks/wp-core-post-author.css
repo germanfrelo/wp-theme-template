@@ -29,7 +29,7 @@ Notes:
 }
 
 .wp-block-post-author:has(:any-link:hover) {
-	background-color: var(--wp--preset--color--background-2, transparent);
+	background-color: var(--wp--preset--color--surface-2, transparent);
 }
 
 .wp-block-post-author > * {

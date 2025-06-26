@@ -17,24 +17,24 @@ Notes:
 	--query-pag-numbers-gap: var(--wp--preset--spacing--xs-s);
 
 	/* Any Number */
-	--query-pag-number-border-color-hover: var(--wp--preset--color--brand-2-medium);
-	--query-pag-number-border-color: var(--wp--preset--color--brand-2-medium);
+	--query-pag-number-border-color-hover: var(--wp--preset--color--primary-medium);
+	--query-pag-number-border-color: var(--wp--preset--color--primary-medium);
 	--query-pag-number-border-radius: 0;
 	--query-pag-number-border-style: solid;
 	--query-pag-number-border-width: 1px;
 	--query-pag-number-border-block-end-width: 1px;
-	--query-pag-number-color-background-hover: var(--wp--preset--color--brand-violet-10);
-	--query-pag-number-color-background: var(--wp--preset--color--background-1);
-	--query-pag-number-color-text-hover: var(--wp--preset--color--foreground-1);
-	--query-pag-number-color-text: var(--wp--preset--color--foreground-1);
+	--query-pag-number-color-background-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-number-color-background: var(--wp--preset--color--surface-1);
+	--query-pag-number-color-text-hover: var(--wp--preset--color--text-1);
+	--query-pag-number-color-text: var(--wp--preset--color--text-1);
 	--query-pag-number-min-size: 44px;
 	--query-pag-number-padding-block: 0.5em;
 	--query-pag-number-padding-inline: 0.5em;
 
 	/* Current Number */
-	--query-pag-number-current-border-color: var(--wp--preset--color--brand-2-medium);
-	--query-pag-number-current-color-background: var(--wp--preset--color--brand-2-medium);
-	--query-pag-number-current-color-text: var(--wp--preset--color--background-1);
+	--query-pag-number-current-border-color: var(--wp--preset--color--primary-medium);
+	--query-pag-number-current-color-background: var(--wp--preset--color--primary-medium);
+	--query-pag-number-current-color-text: var(--wp--preset--color--surface-1);
 
 	/* Dots */
 	--query-pag-number-dots-border-width: 0;

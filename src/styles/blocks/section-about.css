@@ -15,7 +15,7 @@ Section About
 
 .section-about .section-about__hashtag {
 	inline-size: fit-content;
-	background-color: var(--wp--preset--color--brand-1-lightest, transparent);
+	background-color: var(--wp--preset--color--primary-lighter, transparent);
 }
 
 .section-about .wp-block-buttons {

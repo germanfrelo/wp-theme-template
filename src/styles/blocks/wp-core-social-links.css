@@ -28,10 +28,10 @@ Social Links
 	--social-link-style-pill-shape-padding-inline: 0.6667em;
 
 	/* Logos with background */
-	--social-link-not-logo-only-color: var(--wp--preset--color--foreground-1, inherit);
-	--social-link-not-logo-only-color-bg: hsl(from var(--wp--preset--color--background-2, transparent) h s l / 20%);
-	--social-link-not-logo-only-color-hover: var(--wp--preset--color--foreground-1, inherit);
-	--social-link-not-logo-only-color-bg-hover: hsl(from var(--wp--preset--color--background-2, transparent) h s l / 50%);
+	--social-link-not-logo-only-color: var(--wp--preset--color--text-1, inherit);
+	--social-link-not-logo-only-color-bg: hsl(from var(--wp--preset--color--surface-2, transparent) h s l / 20%);
+	--social-link-not-logo-only-color-hover: var(--wp--preset--color--text-1, inherit);
+	--social-link-not-logo-only-color-bg-hover: hsl(from var(--wp--preset--color--surface-2, transparent) h s l / 50%);
 	--social-link-not-logo-only-border-width: 0;
 	--social-link-not-logo-only-border-color: transparent;
 	--social-link-not-logo-only-border-color-hover: transparent;
@@ -51,8 +51,8 @@ Social Links
 	--social-link-style-default-padding: 0.125em;
 
 	/* Logos with background */
-	--social-link-not-logo-only-color: var(--wp--preset--color--brand-1-medium, inherit);
-	--social-link-not-logo-only-color-bg: var(--wp--preset--color--brand-1-lightest, transparent);
+	--social-link-not-logo-only-color: var(--wp--preset--color--primary-medium, inherit);
+	--social-link-not-logo-only-color-bg: var(--wp--preset--color--primary-lighter, transparent);
 	--social-link-not-logo-only-color-hover: var(--social-link-not-logo-only-color, inherit);
 	--social-link-not-logo-only-color-bg-hover: var(--social-link-not-logo-only-color-bg, transparent);
 	--social-link-not-logo-only-border-width: 0.0333em;

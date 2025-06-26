@@ -3,7 +3,7 @@ Details variation for Team
 ====================================================================== */
 
 details.is-style-team {
-	--details-background-color: var(--wp--preset--color--brand-1-lightest);
+	--details-background-color: var(--wp--preset--color--primary-lighter);
 	--details-border-block-end-width: 0;
 	--details-padding-block-start: 0px;
 	--details-padding-block-end: 0px;

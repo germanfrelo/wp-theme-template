@@ -16,22 +16,22 @@ function themeslug_register_block_style_variations() {
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'brand-1',
-			'label' => __( 'Brand 1', 'themeslug' )
+			'name'  => 'default-inverted',
+			'label' => __( 'Default Inverted', 'themeslug' )
 		)
 	);
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'brand-2',
-			'label' => __( 'Brand 2', 'themeslug' )
+			'name'  => 'plain-text',
+			'label' => __( 'Plain Text', 'themeslug' )
 		)
 	);
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'danger',
-			'label' => __( 'Danger', 'themeslug' )
+			'name'  => 'plain-text-underlined',
+			'label' => __( 'Plain Text Underlined', 'themeslug' )
 		)
 	);
 	register_block_style(

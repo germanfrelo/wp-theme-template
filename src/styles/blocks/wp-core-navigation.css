@@ -84,8 +84,8 @@ nav.wp-block-navigation {
 	/* Menu Items */
 	--nav-item-color-background-on-hover: transparent;
 	--nav-item-color-background: transparent;
-	--nav-item-color-text-current-page: var(--wp--preset--color--brand-2-medium, inherit);
-	--nav-item-color-text-on-hover: var(--wp--preset--color--brand-2-medium, inherit);
+	--nav-item-color-text-current-page: var(--wp--preset--color--primary-medium, inherit);
+	--nav-item-color-text-on-hover: var(--wp--preset--color--primary-medium, inherit);
 	--nav-item-color-text: inherit;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
@@ -117,8 +117,8 @@ nav.wp-block-navigation {
 	--nav-submenu-container-border-top-width: 0px;
 	--nav-submenu-container-border-width: 0px;
 	--nav-submenu-container-box-shadow: none;
-	--nav-submenu-container-color-background: var(--wp--preset--color--background-1, initial);
-	--nav-submenu-container-color-text: var(--wp--preset--color--foreground-1, inherit);
+	--nav-submenu-container-color-background: var(--wp--preset--color--surface-1, initial);
+	--nav-submenu-container-color-text: var(--wp--preset--color--text-1, inherit);
 	--nav-submenu-container-gap-columns: 0;
 	--nav-submenu-container-gap-rows: 0;
 	--nav-submenu-container-inline-size-min: 100%;
@@ -132,7 +132,7 @@ nav.wp-block-navigation {
 	/* Menu Responsive Container */
 	--nav-responsive-container-animation-duration: var(--transition-duration, 0.1s);
 	--nav-responsive-container-animation-timing-function: ease-out;
-	--nav-responsive-container-color-background: var(--wp--preset--color--background-1, inherit);
+	--nav-responsive-container-color-background: var(--wp--preset--color--surface-1, inherit);
 	--nav-responsive-container-color-text: inherit;
 	--nav-responsive-container-padding-block-start: calc(40px + var(--wp--preset--spacing--xs-m, 1em));
 	--nav-responsive-container-padding-block-end: 1em;
@@ -231,6 +231,26 @@ Add styles at custom breakpoint.
 	}
 }
 
+/* Custom Style: Tabs
+❗️ Applied to Navigation only if Overlay Menu is Off
+---------------------------------------------------------------------- */
+
+nav.wp-block-navigation.is-style-tabs:not(.is-responsive):not([data-wp-context*='"type":"overlay"']) {
+	--nav-gap-columns: 0;
+	--nav-gap-rows: 1em;
+	--nav-link-line-color-current-page: var(--wp--preset--color--primary-medium, currentcolor);
+	--nav-link-line-color-hover: var(--wp--preset--color--surface-5, transparent);
+	--nav-link-line-color: var(--wp--preset--color--surface-4, transparent);
+	--nav-link-line-offset-current-page: 0;
+	--nav-link-line-offset: 0;
+	--nav-link-line-thickness-current-page: var(--nav-link-line-thickness, medium);
+	--nav-link-line-thickness: var(--stroke-weight-medium, medium);
+	--nav-link-padding-block-end: 0.5em;
+	--nav-link-padding-block-start: 0.5em;
+	--nav-link-padding-inline: 0.5em;
+	--nav-link-transition-properties: border-block-end-color;
+}
+
 /* ----------------------------------------------------------------------
 ⚠️ Don't modify the following styles unless you're sure.
 ---------------------------------------------------------------------- */
@@ -293,7 +313,7 @@ nav.wp-block-navigation .is-menu-open .wp-block-navigation__responsive-container
 04.1. Responsive Container when Overlay Menu is Open
 ---------------------------------------------------------------------- */
 
-@keyframes overlay-menu__custom-animation {
+@keyframes overlay-menu {
 	0% {
 		translate: 100%;
 	}
@@ -309,7 +329,7 @@ nav.wp-block-navigation.is-responsive > .wp-block-navigation__responsive-contain
 	padding-block-end: var(--nav-responsive-container-padding-block-end, 2rem);
 	padding-inline-start: var(--nav-responsive-container-padding-inline-start, 1rem);
 	padding-inline-end: var(--nav-responsive-container-padding-inline-end, 1rem);
-	animation-name: overlay-menu__custom-animation;
+	animation-name: overlay-menu;
 	animation-duration: var(--nav-responsive-container-animation-duration, 0);
 	animation-timing-function: var(--nav-responsive-container-animation-timing-function, initial);
 }

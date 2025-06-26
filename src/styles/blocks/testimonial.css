@@ -3,7 +3,7 @@
 	padding-block-end: var(--wp--preset--spacing--2-xl-4-xl, var(--gutter, 1em));
 	padding-inline-start: var(--wp--preset--spacing--l-2-xl, var(--gutter, 1em));
 	padding-inline-end: var(--wp--preset--spacing--l-2-xl, var(--gutter, 1em));
-	background-color: var(--wp--preset--color--brand-violet-10, transparent);
+	background-color: var(--wp--preset--color--primary-lighter, transparent);
 
 	blockquote {
 		margin-inline: 0;

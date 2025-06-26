@@ -14,7 +14,7 @@ Some design tokens are defined in theme.json:
 	--code-padding-inline: 0.375em;
 
 	/* Code (block) */
-	--code-block-color-bg: var(--wp--preset--color--background-2);
+	--code-block-color-bg: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
 
 	/* Details + Summary */
@@ -38,8 +38,8 @@ Some design tokens are defined in theme.json:
 	--details-summary-gap: var(--wp--preset--spacing--s);
 	--details-summary-letter-spacing: normal;
 	--details-summary-line-height: inherit;
-	--details-icon-color: var(--wp--preset--color--brand-1-medium);
-	--details-icon-color-on-hover: var(--wp--preset--color--foreground-1);
+	--details-icon-color: var(--wp--preset--color--primary-medium);
+	--details-icon-color-on-hover: var(--wp--preset--color--text-1);
 	--details-icon-size: 2.75rem;
 	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
 	--details-content-font-size: inherit;
@@ -76,12 +76,12 @@ Some design tokens are defined in theme.json:
 	/* Forms */
 	--form-field-error-message-font-size: var;
 	--form-label-input-gap: 0.25em;
-	--input-background-color: var(--wp--preset--color--background-1);
+	--input-background-color: var(--wp--preset--color--surface-1);
 	--input-border-color: currentcolor;
 	--input-border-radius: 0;
 	--input-border-width: var(--stroke-weight-thin);
 	--input-checkbox-size: 1.125em;
-	--input-color: var(--wp--preset--color--foreground-1);
+	--input-color: var(--wp--preset--color--text-1);
 	--input-font-weight: var(--font-weight-normal);
 	--input-padding-block: 0.4375em;
 	--input-padding-inline: 0.5em;
@@ -111,8 +111,8 @@ Some design tokens are defined in theme.json:
 
 	/* Links */
 	--link-color: currentcolor;
-	--link-color-on-hover: var(--wp--preset--color--brand-1-medium);
-	--link-color-on-focus: var(--wp--preset--color--brand-1-medium);
+	--link-color-on-hover: var(--wp--preset--color--primary-medium);
+	--link-color-on-focus: var(--wp--preset--color--primary-medium);
 
 	/* List */
 	--list-gap: 0.5em;
@@ -139,8 +139,8 @@ Some design tokens are defined in theme.json:
 	--region-space-end: var(--wp--preset--spacing--m-3-xl);
 
 	/* Scrollbars */
-	--scrollbar-thumb-color: var(--wp--preset--color--brand-1-medium);
-	--scrollbar-thumb-color-hover: var(--wp--preset--color--foreground-1);
+	--scrollbar-thumb-color: var(--wp--preset--color--primary-medium);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--text-1);
 	--scrollbar-track-color: transparent;
 	--scrollbar-track-color-hover: transparent;
 	--scrollbar-thumb-radius: 1rem;
@@ -155,7 +155,7 @@ Some design tokens are defined in theme.json:
 	--gutter: var(--wp--preset--spacing--s-m);
 
 	/* Stroke */
-	--stroke-color: var(--wp--preset--color--border-3);
+	--stroke-color: var(--wp--preset--color--surface-3);
 	--stroke-weight-thin: 1px;
 	--stroke-weight-medium: 3px;
 	--stroke-weight-thick: 5px;

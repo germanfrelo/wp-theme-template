@@ -7,7 +7,7 @@ Site Header Login
 }
 
 .site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) {
-	--button-color-text-on-hover: var(--wp--preset--color--brand-1-medium, inherit);
+	--button-color-text-on-hover: var(--wp--preset--color--primary-medium, inherit);
 }
 
 .site-header-login :any-link.wp-block-button__link:is(:hover, :focus-visible) svg path[fill] {
@@ -15,5 +15,5 @@ Site Header Login
 }
 
 .site-header-login button.wc-block-mini-cart__button:is(:hover, :focus-visible) {
-	color: var(--wp--preset--color--brand-1-medium, inherit);
+	color: var(--wp--preset--color--primary-medium, inherit);
 }

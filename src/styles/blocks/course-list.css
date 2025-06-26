@@ -41,7 +41,7 @@ Course List
 	/* Card layout (desktop-first for code simplicity) */
 
 	.course-card {
-		--course-card-color-background: var(--wp--preset--color--background-1, transparent);
+		--course-card-color-background: var(--wp--preset--color--surface-1, transparent);
 		--course-card-content-padding-block: var(--wp--preset--spacing--xs-s, 1rem);
 		--course-card-content-padding-inline: var(--wp--preset--spacing--s, 1rem);
 		display: grid;

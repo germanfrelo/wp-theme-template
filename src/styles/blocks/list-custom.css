@@ -29,10 +29,10 @@ ol.is-style-custom {
 		padding: 0.625em;
 		font-weight: var(--font-weight-medium, medium);
 		line-height: 0;
-		color: var(--wp--preset--color--brand-1-medium, inherit);
+		color: var(--wp--preset--color--primary-medium, inherit);
 		text-align: center;
 		content: counter(my-custom-counter);
-		border-color: var(--wp--preset--color--foreground-1, currentcolor);
+		border-color: var(--wp--preset--color--text-1, currentcolor);
 		border-style: solid;
 		border-width: 3px;
 		border-radius: 50%;

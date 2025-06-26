@@ -15,15 +15,15 @@ Query Pagination Previous
 
 .wp-block-query-pagination-previous {
 	--query-pag-alignment-main-axis: center;
-	--query-pag-prev-border-color-hover: var(--wp--preset--color--brand-2-medium);
-	--query-pag-prev-border-color: var(--wp--preset--color--brand-2-medium);
+	--query-pag-prev-border-color-hover: var(--wp--preset--color--primary-medium);
+	--query-pag-prev-border-color: var(--wp--preset--color--primary-medium);
 	--query-pag-prev-border-radius: 0;
 	--query-pag-prev-border-style: solid;
 	--query-pag-prev-border-width: 1px;
-	--query-pag-prev-color-background-hover: var(--wp--preset--color--brand-violet-10);
-	--query-pag-prev-color-background: var(--wp--preset--color--background-1);
-	--query-pag-prev-color-text-hover: var(--wp--preset--color--foreground-1);
-	--query-pag-prev-color-text: var(--wp--preset--color--foreground-1);
+	--query-pag-prev-color-background-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-prev-color-background: var(--wp--preset--color--surface-1);
+	--query-pag-prev-color-text-hover: var(--wp--preset--color--text-1);
+	--query-pag-prev-color-text: var(--wp--preset--color--text-1);
 	--query-pag-prev-flex-wrap: wrap;
 	--query-pag-prev-gap-columns: var(--wp--preset--spacing--xs-s);
 	--query-pag-prev-gap-rows: var(--wp--preset--spacing--xs-s);

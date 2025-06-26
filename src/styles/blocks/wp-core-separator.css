@@ -24,7 +24,7 @@ Notes:
 /* Block Style: Custom */
 
 .wp-block-separator.is-style-custom {
-	--separator-color: var(--wp--preset--color--brand-1-medium, currentcolor);
+	--separator-color: var(--wp--preset--color--primary-medium, currentcolor);
 	--separator-height: var(--stroke-weight-thick, thick);
 }
 

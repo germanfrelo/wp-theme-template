@@ -12,7 +12,7 @@
 		--region-space-end: var(--wp--preset--spacing--3-xl-4-xl);
 		--stack-vertical-alignment: center;
 		--gutter: var(--wp--preset--spacing--xl);
-		background-color: var(--wp--preset--color--brand-violet-10, transparent);
+		background-color: var(--wp--preset--color--primary-lighter, transparent);
 	}
 }
 
