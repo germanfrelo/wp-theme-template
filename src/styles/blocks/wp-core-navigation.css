@@ -97,6 +97,10 @@ nav.wp-block-navigation {
 	--nav-item-of-submenu-has-submenu-gap-columns: 0;
 	--nav-item-of-submenu-padding-block: 0.5em;
 	--nav-item-of-submenu-padding-inline-start: 0;
+	--nav-item-outermost-border-block-end-color: transparent;
+	--nav-item-outermost-border-block-end-color-current-page: transparent;
+	--nav-item-outermost-border-block-end-color-on-hover: transparent;
+	--nav-item-outermost-border-block-end-width: 0;
 	--nav-item-outermost-has-submenu-icon-position: -1; /* 0 = right (default) | -1 = left */
 	--nav-link-border-radius: 0;
 	--nav-link-line-color-current-page: transparent;
@@ -236,19 +240,14 @@ Add styles at custom breakpoint.
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation.is-style-tabs:not(.is-responsive):not([data-wp-context*='"type":"overlay"']) {
-	--nav-gap-columns: 0;
-	--nav-gap-rows: 1em;
-	--nav-link-line-color-current-page: var(--wp--preset--color--primary-medium, currentcolor);
-	--nav-link-line-color-hover: var(--wp--preset--color--surface-5, transparent);
-	--nav-link-line-color: var(--wp--preset--color--surface-4, transparent);
-	--nav-link-line-offset-current-page: 0;
-	--nav-link-line-offset: 0;
-	--nav-link-line-thickness-current-page: var(--nav-link-line-thickness, medium);
-	--nav-link-line-thickness: var(--stroke-weight-medium, medium);
-	--nav-link-padding-block-end: 0.5em;
-	--nav-link-padding-block-start: 0.5em;
-	--nav-link-padding-inline: 0.5em;
-	--nav-link-transition-properties: border-block-end-color;
+	/* Menu Items */
+	--nav-item-outermost-border-block-end-color: transparent;
+	--nav-item-outermost-border-block-end-color-current-page: var(--wp--preset--color--primary-medium, currentcolor);
+	--nav-item-outermost-border-block-end-color-on-hover: var(--wp--preset--color--surface-4, currentcolor);
+	--nav-item-outermost-border-block-end-width: var(--stroke-weight-medium, medium);
+	--nav-link-padding-block-start: 0;
+	--nav-link-padding-block-end: 0;
+	--nav-link-padding-inline: 0;
 }
 
 /* ----------------------------------------------------------------------
@@ -390,12 +389,30 @@ nav.wp-block-navigation ul[class*="wp-block-navigation"] li.wp-block-navigation-
 	transition-property: color, background-color;
 }
 
+/* Outermost Menu Item
+---------------------------------------------------------------------- */
+
+nav.wp-block-navigation ul[class*="wp-block-navigation"].wp-block-navigation__container > li.wp-block-navigation-item {
+	border-block-end-color: var(--nav-item-outermost-border-block-end-color, transparent);
+	border-block-end-style: solid;
+	border-block-end-width: var(--nav-item-outermost-border-block-end-width, 0);
+	transition-duration: var(--transition-duration, 0);
+	transition-property: border-block-end-color;
+}
+
 /* Current Menu Item
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation ul[class*="wp-block-navigation"] li.wp-block-navigation-item.current-menu-item {
 	/* The !important is needed to override the WP's default styles when overlay menu is open */
 	color: var(--nav-item-color-text-current-page, inherit) !important;
+}
+
+/* Current Outermost Menu Item
+---------------------------------------------------------------------- */
+
+nav.wp-block-navigation ul[class*="wp-block-navigation"].wp-block-navigation__container > li.wp-block-navigation-item.current-menu-item {
+	border-block-end-color: var(--nav-item-outermost-border-block-end-color-current-page, currentcolor);
 }
 
 /* Menu Item on Hover/Click/Focus
@@ -407,6 +424,13 @@ nav.wp-block-navigation
 	/* The !important is needed to override WP's default styles when overlay menu is open */
 	color: var(--nav-item-color-text-on-hover, inherit) !important;
 	background-color: var(--nav-item-color-background-on-hover, inherit) !important;
+}
+
+/* Outermost Menu Item on Hover/Click/Focus
+---------------------------------------------------------------------- */
+
+nav.wp-block-navigation ul[class*="wp-block-navigation"].wp-block-navigation__container > li.wp-block-navigation-item:is(:hover, :focus-visible) {
+	border-block-end-color: var(--nav-item-outermost-border-block-end-color-on-hover, currentcolor);
 }
 
 /* Menu Item has Submenu
