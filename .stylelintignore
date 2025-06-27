@@ -1,9 +1,0 @@
-# Stylelint ignores the node_modules directory by default. More info:
-# - https://stylelint.io/user-guide/configure#ignorefiles)
-# - https://stylelint.io/user-guide/ignore-code#files-entirely
-
-# Minified files
-**/*.min.*
-
-# Build output
-build/

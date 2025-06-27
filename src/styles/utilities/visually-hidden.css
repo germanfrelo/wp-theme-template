@@ -1,0 +1,17 @@
+/*
+Hide elements visually.
+Info: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+*/
+
+.screen-reader-text, /* Improve WP's default styles */
+.visually-hidden:not(:focus, :active) {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+	clip-path: inset(50%) !important;
+}

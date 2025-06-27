@@ -1,0 +1,27 @@
+/* ======================================================================
+FLOW
+
+A layout for creating a consistent white space (margin) between flow (block) elements along a vertical axis.
+
+Reference: https://piccalil.li/blog/my-favourite-3-lines-of-css/
+
+Configuration:
+--flow-space (1em): The block space between elements.
+====================================================================== */
+
+.flow > * {
+	margin-block: 0;
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+/*
+Remove the margin between a visually hidden element and the element that immediately follows it.
+Note: '.is-layout-flow' is a WP-generated class.
+*/
+
+:is(.flow, .is-layout-flow) > *:where(.screen-reader-text, .visually-hidden) + * {
+	margin-block-start: 0;
+}
