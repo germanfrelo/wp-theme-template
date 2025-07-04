@@ -4,9 +4,11 @@
  */
 
 /**
- * Remove some inline default core styles/settings.
+ * Override some global settings from the WordPress default theme.json file, which are loaded as inline styles.
  *
  * @link https://github.com/WordPress/gutenberg/issues/36834#issuecomment-1769802551
+ * @link https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
+ * @link https://developer.wordpress.org/reference/hooks/wp_theme_json_data_default/
  *
  * @param \WP_Theme_JSON_Data $theme_json Class to access and update the underlying data.
  *
@@ -47,11 +49,8 @@ function themeslug_remove_core_styles() {
 add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_styles' );
 
 
-// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
-
-
 /**
- * Unregister core block style variations.
+ * Unregister WordPress default block style variations.
  *
  * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
  * The PHP method only works for styles registered server-side.
@@ -63,10 +62,9 @@ add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_styles' );
  */
 add_action('enqueue_block_editor_assets', function() {
 	wp_enqueue_script(
-		'jamiegallagher-unregister-core-block-style-variations',
+		'themeslug-unregister-core-block-style-variations',
 		get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js',
 		array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
-		// wp_get_theme()->get('Version'),
 		filemtime(get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js'),
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
@@ -78,7 +76,7 @@ add_action('enqueue_block_editor_assets', function() {
  *
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  */
-function jamiegallagher_remove_core_block_styles() {
+function themeslug_remove_core_block_styles() {
 	global $wp_styles;
 
 	foreach ( $wp_styles->queue as $key => $handle ) {
@@ -87,7 +85,7 @@ function jamiegallagher_remove_core_block_styles() {
 		}
 	}
 }
-// add_action( 'wp_enqueue_scripts', 'jamiegallagher_remove_core_block_styles' );
+// add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_block_styles' );
 
 /**
  * Remove default block styles from the Block Editor and Site Editor.
@@ -133,8 +131,14 @@ function jamiegallagher_remove_core_block_styles() {
  *
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  */
-function jamiegallagher_remove_global_styles() {
+function themeslug_remove_global_styles() {
 	// wp_dequeue_style( 'global-styles' );
 	wp_dequeue_style( 'wp-emoji-styles' );
 }
-// add_action( 'wp_enqueue_scripts', 'jamiegallagher_remove_global_styles', 100 );
+// add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles', 100 );
+
+
+/**
+ * Remove global styles on the front.
+ */
+// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
