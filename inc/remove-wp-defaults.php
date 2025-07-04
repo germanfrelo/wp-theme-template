@@ -24,6 +24,7 @@ function themeslug_filter_theme_json_default($theme_json) {
 }
 add_filter('wp_theme_json_data_default', 'themeslug_filter_theme_json_default');
 
+
 /**
  * Remove some default core block styles.
  *
@@ -44,3 +45,96 @@ function themeslug_remove_core_styles() {
 	wp_dequeue_style( 'wp-block-site-logo' );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_styles' );
+
+
+// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+
+
+/**
+ * Unregister core block style variations.
+ *
+ * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
+ * The PHP method only works for styles registered server-side.
+ * Core WordPress block styles are registered client-side using JavaScript.
+ * Therefore, to unregister core block styles, the JavaScript 'unregisterBlockStyle' function must be used.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/
+ * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience
+ */
+add_action('enqueue_block_editor_assets', function() {
+	wp_enqueue_script(
+		'jamiegallagher-unregister-core-block-style-variations',
+		get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js',
+		array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
+		// wp_get_theme()->get('Version'),
+		filemtime(get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js'),
+		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
+	);
+});
+
+
+/**
+ * Remove all default block styles from the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+function jamiegallagher_remove_core_block_styles() {
+	global $wp_styles;
+
+	foreach ( $wp_styles->queue as $key => $handle ) {
+		if ( strpos( $handle, 'wp-block-' ) === 0 ) {
+			wp_dequeue_style( $handle );
+		}
+	}
+}
+// add_action( 'wp_enqueue_scripts', 'jamiegallagher_remove_core_block_styles' );
+
+/**
+ * Remove default block styles from the Block Editor and Site Editor.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+// add_action(
+// 	'wp_default_styles',
+// 	function( $styles ) {
+
+// 		/* Create an array with the two handles wp-block-library and
+// 		 * wp-block-library-theme.
+// 		 */
+// 		$handles = [ 'wp-block-library', 'wp-block-library-theme' ];
+
+// 		foreach ( $handles as $handle ) {
+// 			// Search and compare with the list of registered style handles:
+// 			$style = $styles->query( $handle, 'registered' );
+// 			if ( ! $style ) {
+// 				continue;
+// 			}
+// 			// Remove the style
+// 			$styles->remove( $handle );
+// 			// Remove path and dependencies
+// 			$styles->add( $handle, false, [] );
+// 		}
+// 	},
+// 	PHP_INT_MAX
+// );
+
+/**
+ * Remove the inline styles on the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+// remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
+// remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
+// remove_filter( 'render_block', 'wp_render_elements_support', 10, 2 );
+// remove_filter( 'render_block', 'gutenberg_render_elements_support', 10, 2 );
+
+/**
+ * Remove global styles on the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+function jamiegallagher_remove_global_styles() {
+	// wp_dequeue_style( 'global-styles' );
+	wp_dequeue_style( 'wp-emoji-styles' );
+}
+// add_action( 'wp_enqueue_scripts', 'jamiegallagher_remove_global_styles', 100 );
