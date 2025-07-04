@@ -1,28 +1,37 @@
 // prettier.config.js, .prettierrc.js, prettier.config.mjs, or .prettierrc.mjs
 
+import wordpressPrettierConfig from '@wordpress/prettier-config';
+
 /**
  * @see https://prettier.io/docs/en/configuration.html
  * @type {import("prettier").Config}
  */
 const config = {
-	quoteProps: "consistent",
+	...wordpressPrettierConfig,
+	quoteProps: 'consistent',
 	overrides: [
+		// {
+		// 	files: ["*.css"],
+		// 	options: {
+		// 		printWidth: 160,
+		// 	},
+		// },
+		// {
+		// 	files: ["*.html"],
+		// 	options: {
+		// 		printWidth: 9999,
+		// 	},
+		// },
 		{
-			files: ["*.css", "*.html"],
-			options: {
-				printWidth: 9999,
-			},
-		},
-		{
-			files: ["*.js", "*.jsx", "*.vue"],
+			files: ['*.js', '*.jsx', '*.vue'],
 			options: {
 				singleAttributePerLine: true,
 			},
 		},
 		{
-			files: ["*.jsonc"],
+			files: ['*.jsonc'],
 			options: {
-				trailingComma: "none",
+				trailingComma: 'none',
 			},
 		},
 	],
