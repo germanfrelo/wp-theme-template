@@ -40,7 +40,9 @@
 	},
 	"devDependencies": {
 		"@wordpress/icons": "10.30.0",
+		"@wordpress/prettier-config": "4.26.0",
 		"@wordpress/scripts": "30.23.0",
+		"glob": "11.0.3",
 		"concurrently": "9.2.1",
 		"husky": "9.1.7",
 		"lint-staged": "16.1.6",
@@ -53,6 +55,7 @@
 		"postcss-nesting": "13.0.2",
 		"prettier": "3.6.2",
 		"rimraf": "6.0.1",
+		"remove-files-webpack-plugin": "1.5.0",
 		"stylelint": "16.22.0",
 		"stylelint-config-recess-order": "7.1.0",
 		"stylelint-config-standard": "38.0.0",
