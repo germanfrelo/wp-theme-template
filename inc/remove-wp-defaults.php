@@ -87,6 +87,7 @@ function themeslug_remove_core_block_styles() {
 }
 // add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_block_styles' );
 
+
 /**
  * Remove default block styles from the Block Editor and Site Editor.
  *
@@ -116,6 +117,7 @@ function themeslug_remove_core_block_styles() {
 // 	PHP_INT_MAX
 // );
 
+
 /**
  * Remove the inline styles on the front.
  *
@@ -125,6 +127,7 @@ function themeslug_remove_core_block_styles() {
 // remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
 // remove_filter( 'render_block', 'wp_render_elements_support', 10, 2 );
 // remove_filter( 'render_block', 'gutenberg_render_elements_support', 10, 2 );
+
 
 /**
  * Remove global styles on the front.
