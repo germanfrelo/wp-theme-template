@@ -1,4 +1,4 @@
-name: Deploy to Server (Build in Pipeline)
+name: Build and Deploy to Server
 
 on:
   push:
