@@ -14,7 +14,13 @@
  */
 function themeslug_register_block_style_variations() {
 	register_block_style(
-		'core/button', [
+		['core/button', 'core/read-more'], [
+			'name'  => 'outline',
+			'label' => __( 'Outline', 'themeslug' )
+		]
+	);
+	register_block_style(
+		['core/button', 'core/read-more'], [
 			'name'  => 'plain',
 			'label' => __( 'Plain', 'themeslug' )
 		]

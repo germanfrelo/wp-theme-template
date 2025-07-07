@@ -12,15 +12,13 @@
 Global
 ====================================================================== */
 
-/* Opt in the whole page to interpolate sizes to/from keywords */
 @media (prefers-reduced-motion: no-preference) {
+	/* Opt in the whole page to interpolate sizes to/from keywords */
 	html {
 		interpolate-size: allow-keywords;
 	}
-}
 
-/* Opt in all pages to cross-document view transitions */
-@media (prefers-reduced-motion: no-preference) {
+	/* Opt in all pages to cross-document view transitions */
 	@view-transition {
 		navigation: auto;
 	}
@@ -186,9 +184,12 @@ a:where(:any-link) {
 	color: var(--link-color, unset);
 	text-decoration-thickness: from-font;
 	text-underline-position: from-font;
-	transition-duration: var(--transition-duration, 0);
-	transition-property: color, background-color, border-color;
 	text-decoration-skip-ink: none;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: color, background-color, border-color;
+	}
 
 	&:hover {
 		color: var(--link-color-on-hover, unset);
@@ -260,8 +261,10 @@ svg {
 }
 
 :is(a:where(:any-link), button) svg path {
-	transition-duration: var(--transition-duration, 0);
-	transition-property: fill;
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: fill;
+	}
 }
 
 /* ======================================================================
@@ -324,8 +327,11 @@ textarea {
 	border-style: solid;
 	border-width: var(--input-border-width, revert);
 	border-radius: var(--input-border-radius, revert);
-	transition-duration: var(--transition-duration, 0);
-	transition-property: color, background-color, border-color, border-width;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: color, background-color, border-color, border-width;
+	}
 }
 
 textarea {
@@ -442,10 +448,14 @@ details {
 	padding-inline-start: var(--details-padding-inline-start, 1em);
 	padding-inline-end: var(--details-padding-inline-end, 1em);
 	background-color: var(--details-background-color, transparent);
-	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
-	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
-	border-inline-start: var(--details-border-inline-start-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
-	border-inline-end: var(--details-border-inline-end-width, 1px) var(--details-border-style, solid) var(--details-border-color, inherit);
+	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid)
+		var(--details-border-color, inherit);
+	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid)
+		var(--details-border-color, inherit);
+	border-inline-start: var(--details-border-inline-start-width, 1px) var(--details-border-style, solid)
+		var(--details-border-color, inherit);
+	border-inline-end: var(--details-border-inline-end-width, 1px) var(--details-border-style, solid)
+		var(--details-border-color, inherit);
 	border-radius: var(--details-border-radius, 0);
 
 	&:not(:only-of-type) {
@@ -519,7 +529,7 @@ details > summary ~ * {
 
 details > summary + * {
 	padding-block-start: var(--details-content-padding-block-start, 1em);
-	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy. */
 }
 
 /*
@@ -530,18 +540,25 @@ Open & Close Transitions
 	details {
 		interpolate-size: allow-keywords;
 	}
+
+	details::details-content {
+		transition:
+			content-visibility var(--details-content-transition-duration-visibility, initial),
+			opacity var(--details-content-transition-duration-opacity, initial),
+			block-size var(--details-content-transition-duration-size, initial);
+		transition-behavior: allow-discrete;
+	}
 }
 
-/* Don't add margin/padding to this, add it to the actual stuff inside the details content */
+/*
+Don't add margin or padding to this.
+If there is some margin, the open/close transition is a bit clumsy.
+Add it to the content inside the details.
+*/
 details::details-content {
 	block-size: 0;
 	overflow-y: clip;
 	opacity: 0;
-	transition:
-		content-visibility var(--details-content-transition-duration-visibility, initial),
-		opacity var(--details-content-transition-duration-opacity, initial),
-		block-size var(--details-content-transition-duration-size, initial);
-	transition-behavior: allow-discrete;
 }
 
 details[open]::details-content {
