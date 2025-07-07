@@ -6,21 +6,23 @@ A layout for augmenting image ratios.
 Reference: https://every-layout.dev/layouts/frame/
 
 Configuration:
---frame-numerator (16): The left-hand side of the ratio (e.g. the 16 in 16:9).
---frame-denominator (9): The right-hand side of the ratio (e.g. the 9 in 16:9).
+--frame-numerator (auto): The left-hand side of the ratio (e.g. the 16 in 16:9).
+--frame-denominator (auto): The right-hand side of the ratio (e.g. the 9 in 16:9).
 --frame-object-fit (cover): A valid 'object-fit' property value.
+--frame-object-position (initial): A valid 'object-position' property value.
 ====================================================================== */
 
 .frame {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	aspect-ratio: var(--frame-numerator, 16) / var(--frame-denominator, 9);
+	aspect-ratio: var(--frame-numerator, auto) / var(--frame-denominator, auto);
 	overflow: hidden;
 
 	> :is(img, svg, video) {
 		inline-size: 100%;
 		block-size: 100%;
 		object-fit: var(--frame-object-fit, cover);
+		object-position: var(--frame-object-position, initial);
 	}
 }

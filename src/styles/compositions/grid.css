@@ -6,15 +6,15 @@ A layout for creating a responsive grid with configurable grid item sizes.
 Reference: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
 
 Configuration:
---grid-gap var(--gutter, var(--wp--preset--spacing--s-l))
 --grid-min-item-size (16rem): How large each item should be ideally, as a minimum.
---grid-placement (auto-fill): Set either auto-fit or auto-fill to change how empty grid tracks are handled
+--grid-placement (auto-fill): Set either auto-fit or auto-fill to change how empty grid tracks are handled.
+--gutter (1em): This defines the space between each item.
 ====================================================================== */
 
 .grid {
 	display: grid;
 	grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(min(100%, var(--grid-min-item-size, 16rem)), 1fr));
-	gap: var(--grid-gap, var(--gutter, var(--wp--preset--spacing--s-l)));
+	gap: var(--gutter, 1em);
 
 	/* A split 50/50 layout */
 	&:where([data-layout="halves"], .grid--halves) {

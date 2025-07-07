@@ -14,88 +14,34 @@
  */
 function themeslug_register_block_style_variations() {
 	register_block_style(
-		'core/button',
-		array(
-			'name'  => 'default-inverted',
-			'label' => __( 'Default Inverted', 'themeslug' )
-		)
+		'core/button', [
+			'name'  => 'plain',
+			'label' => __( 'Plain', 'themeslug' )
+		]
 	);
 	register_block_style(
-		'core/button',
-		array(
-			'name'  => 'plain-text',
-			'label' => __( 'Plain Text', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/button',
-		array(
-			'name'  => 'plain-text-underlined',
-			'label' => __( 'Plain Text Underlined', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/cover',
-		array(
+		'core/details', [
 			'name'  => 'custom',
 			'label' => __( 'Custom', 'themeslug' )
-		)
+		]
 	);
 	register_block_style(
-		'core/details',
-		array(
-			'name'  => 'custom',
-			'label' => __( 'Custom', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/list',
-		array(
+		'core/list', [
 			'name'  => 'checkmark',
 			'label' => __( 'Checkmark', 'themeslug' )
-		)
+		]
 	);
 	register_block_style(
-		'core/navigation',
-		array(
-			'name'  => 'tabs',
-			'label' => __( 'Tabs', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/navigation-link',
-		array(
+		'core/navigation-link', [
 			'name'  => 'external',
 			'label' => __( 'External', 'themeslug' )
-		)
+		]
 	);
 	register_block_style(
-		'core/search',
-		array(
+		'core/search', [
 			'name'  => 'direction-reversed',
 			'label' => __( 'Reversed direction', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/separator',
-		array(
-			'name'  => 'thin',
-			'label' => __( 'Thin', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/separator',
-		array(
-			'name'  => 'thick',
-			'label' => __( 'Thick', 'themeslug' )
-		)
-	);
-	register_block_style(
-		'core/social-links',
-		array(
-			'name'  => 'custom',
-			'label' => __( 'Custom', 'themeslug' )
-		)
+		]
 	);
 }
 add_action( 'init', 'themeslug_register_block_style_variations' );

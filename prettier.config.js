@@ -10,25 +10,13 @@ const config = {
 		{
 			files: ["*.css"],
 			options: {
-				printWidth: 160,
+				printWidth: 120,
 			},
 		},
 		{
-			files: ["*.html"],
-			options: {
-				printWidth: 9999,
-			},
-		},
-		{
-			files: ["*.js", "*.jsx", "*.vue"],
+			files: ["*.js", "*.jsx"],
 			options: {
 				singleAttributePerLine: true,
-			},
-		},
-		{
-			files: ["*.jsonc"],
-			options: {
-				trailingComma: "none",
 			},
 		},
 	],

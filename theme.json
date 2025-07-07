@@ -127,25 +127,42 @@
 				}
 			]
 		},
-		"custom": {},
+		"custom": {
+			"shadow": {
+				"color": "232 3% 15%",
+				"strength": "1%"
+			}
+		},
 		"layout": {
 			"allowCustomContentAndWideSize": true,
 			"contentSize": "50rem",
 			"wideSize": "80rem"
 		},
 		"shadow": {
+			"defaultPresets": false,
+			"generator": "https://open-props.style/#shadows",
 			"presets": [
 				{
-					"name": "Submenu",
-					"slug": "submenu",
-					"shadow": "0px 4px 8px 2px hsl(0deg 0 0 / 10%)"
+					"name": "elevation-1",
+					"slug": "elevation-1",
+					"shadow": "0 3px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 7px 14px -5px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%))"
+				},
+				{
+					"name": "elevation-2",
+					"slug": "elevation-2",
+					"shadow": "0 -2px 5px 0 hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 2%)), 0 1px 1px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 2px 2px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 5px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 4%)), 0 9px 9px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%)), 0 16px 16px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 6%))"
+				},
+				{
+					"name": "elevation-3",
+					"slug": "elevation-3",
+					"shadow": "0 -1px 2px 0 hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 2%)), 0 3px 2px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 7px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 12px 10px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 4%)), 0 22px 18px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%)), 0 41px 33px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 6%)), 0 100px 80px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 7%))"
 				}
 			]
 		},
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
-			"spacingSizes-scaleGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,&g=s,l,xl,12",
+			"generator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
 			"spacingSizes": [
 				{
 					"name": "3XS",
@@ -203,54 +220,99 @@
 					"size": "clamp(17rem, 15.5035rem + 6.385vw, 21.25rem)"
 				},
 				{
-					"name": "3XS–2XS",
+					"name": "3XS-2XS",
 					"slug": "3-xs-2-xs",
 					"size": "clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem)"
 				},
 				{
-					"name": "2XS–XS",
+					"name": "2XS-XS",
 					"slug": "2-xs-xs",
 					"size": "clamp(0.4375rem, 0.3055rem + 0.5634vw, 0.8125rem)"
 				},
 				{
-					"name": "XS–S",
+					"name": "XS-S",
 					"slug": "xs-s",
 					"size": "clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem)"
 				},
 				{
-					"name": "S–M",
+					"name": "S-M",
 					"slug": "s-m",
 					"size": "clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem)"
 				},
 				{
-					"name": "M–L",
+					"name": "M-L",
 					"slug": "m-l",
 					"size": "clamp(1.5rem, 1.0379rem + 1.9718vw, 2.8125rem)"
 				},
 				{
-					"name": "L–XL",
+					"name": "L-XL",
 					"slug": "l-xl",
 					"size": "clamp(2.25rem, 1.5458rem + 3.0047vw, 4.25rem)"
 				},
 				{
-					"name": "XL–2XL",
+					"name": "XL-2XL",
 					"slug": "xl-2-xl",
 					"size": "clamp(3.375rem, 2.3627rem + 4.3192vw, 6.25rem)"
 				},
 				{
-					"name": "2XL–3XL",
+					"name": "2XL-3XL",
 					"slug": "2-xl-3-xl",
 					"size": "clamp(5rem, 3.4155rem + 6.7606vw, 9.5rem)"
 				},
 				{
-					"name": "3XL–4XL",
+					"name": "3XL-4XL",
 					"slug": "3-xl-4-xl",
 					"size": "clamp(7.625rem, 5.2923rem + 9.9531vw, 14.25rem)"
 				},
 				{
-					"name": "4XL–5XL",
+					"name": "4XL-5XL",
 					"slug": "4-xl-5-xl",
 					"size": "clamp(11.375rem, 7.8979rem + 14.8357vw, 21.25rem)"
+				},
+				{
+					"name": "3XS-XS",
+					"slug": "3xs-xs",
+					"size": "clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem)"
+				},
+				{
+					"name": "2XS-S",
+					"slug": "2xs-s",
+					"size": "clamp(0.4375rem, 0.1514rem + 1.2207vw, 1.25rem)"
+				},
+				{
+					"name": "XS-M",
+					"slug": "xs-m",
+					"size": "clamp(0.6875rem, 0.2694rem + 1.784vw, 1.875rem)"
+				},
+				{
+					"name": "S-L",
+					"slug": "s-l",
+					"size": "clamp(1rem, 0.3618rem + 2.723vw, 2.8125rem)"
+				},
+				{
+					"name": "M-XL",
+					"slug": "m-xl",
+					"size": "clamp(1.5rem, 0.5317rem + 4.1315vw, 4.25rem)"
+				},
+				{
+					"name": "L-2XL",
+					"slug": "l-2xl",
+					"size": "clamp(2.25rem, 0.8415rem + 6.0094vw, 6.25rem)"
+				},
+				{
+					"name": "XL-3XL",
+					"slug": "xl-3xl",
+					"size": "clamp(3.375rem, 1.2183rem + 9.2019vw, 9.5rem)"
+				},
+				{
+					"name": "2XL-4XL",
+					"slug": "2xl-4xl",
+					"size": "clamp(5rem, 1.743rem + 13.8967vw, 14.25rem)"
+				},
+				{
+					"name": "3XL-5XL",
+					"slug": "3xl-5xl",
+					"size": "clamp(7.625rem, 2.8275rem + 20.4695vw, 21.25rem)"
 				}
 			],
 			"units": [
@@ -403,7 +465,7 @@
 					]
 				}
 			],
-			"fontSizes-scaleGenerator": "https://utopia.fyi/type/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
+			"generator": "https://utopia.fyi/type/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fontSizes": [
 				{
 					"name": "Step 00",
@@ -482,38 +544,6 @@
 			}
 		},
 		"blocks": {
-			"core/button": {
-				"variations": {
-					"outline": {
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						},
-						"color": {
-							"text": "",
-							"gradient": ""
-						},
-						"border": {
-							"width": "",
-							"style": "",
-							"color": ""
-						}
-					}
-				}
-			},
-			"core/site-logo": {
-				"variations": {
-					"rounded": {
-						"border": {
-							"radius": ""
-						}
-					}
-				}
-			},
 			"core/social-link": {
 				"spacing": {
 					"padding": {
@@ -552,7 +582,13 @@
 			}
 		}
 	},
-	"customTemplates": [],
+	"customTemplates": [
+		{
+			"name": "page-custom-1",
+			"postTypes": ["page"],
+			"title": "Page: Custom #1"
+		}
+	],
 	"templateParts": [
 		{
 			"area": "footer",

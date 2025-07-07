@@ -32,9 +32,8 @@ body {
 	font-weight: var(--font-weight-normal, normal);
 	line-height: var(--leading-base, 1.5);
 	color: var(--wp--preset--color--text-1, CanvasText);
-	overflow-wrap: anywhere;
 	accent-color: var(--wp--preset--color--primary-medium, auto);
-	background-color: var(--wp--preset--color--surface-1, Canvas);
+	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design */
 }
 
@@ -49,20 +48,23 @@ h4,
 h5,
 h6 {
 	font-weight: var(--font-weight-bold, bold);
+	overflow-wrap: break-word;
 }
 
 h1 {
 	font-size: var(--font-size-heading-1, 2rem);
 	font-weight: var(--font-weight-black, bold);
-	line-height: var(--leading-flat, 1);
+	line-height: var(--leading-flat, normal);
 }
 
 h2 {
 	font-size: var(--font-size-heading-2, 1.5rem);
+	line-height: var(--leading-slim, normal);
 }
 
 h3 {
 	font-size: var(--font-size-heading-3, 1.17rem);
+	line-height: var(--leading-slim, normal);
 }
 
 h4 {
@@ -143,7 +145,7 @@ ul:where(:has(> li > :is(input))) {
 
 /* List Items */
 
-:is(ol, ul) > li:where(:not([class])) {
+:is(ol, ul):where(:not([class])) > li:where(:not([class])) {
 	padding-inline-start: var(--list-item-indentation, revert);
 }
 

@@ -7,6 +7,28 @@ Some design tokens are defined in theme.json:
 */
 
 :root {
+	/* Border */
+	--border-color: currentcolor;
+	--border-size-1: 1.5px;
+	--border-size-2: 3px;
+	--border-size-3: 12px;
+	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
+
+	/* Button */
+	--button-border-color-on-hover: var(--button-border-color);
+	--button-border-color: currentcolor;
+	--button-border-radius: var(--radius-4);
+	--button-border-width: var(--border-size-1);
+	--button-color-background-on-hover: var(--button-color-background);
+	--button-color-background: var(--wp--preset--color--surface-1);
+	--button-color-text-on-hover: color-mix(in hsl, var(--button-color-text), transparent 45%);
+	--button-color-text: var(--wp--preset--color--primary-medium);
+	--button-font-size: var(--font-size-base);
+	--button-font-weight: var(--font-weight-normal);
+	--button-leading: var(--leading-slim);
+	--button-padding-block: 0.75em;
+	--button-padding-inline: 2em;
+
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
 	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
@@ -16,6 +38,11 @@ Some design tokens are defined in theme.json:
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
+
+	/* Colors (not needed in the WP editor) */
+	--color-danger-lighter: oklch(58% 0.2 28deg);
+	--color-danger-medium: oklch(50% 0.2 28deg);
+	--color-danger-darker: oklch(42% 0.2 28deg);
 
 	/* Details + Summary */
 	--details-background-color: transparent;
@@ -79,7 +106,7 @@ Some design tokens are defined in theme.json:
 	--input-background-color: var(--wp--preset--color--surface-1);
 	--input-border-color: currentcolor;
 	--input-border-radius: 0;
-	--input-border-width: var(--stroke-weight-thin);
+	--input-border-width: var(--border-size-1);
 	--input-checkbox-size: 1.125em;
 	--input-color: var(--wp--preset--color--text-1);
 	--input-font-weight: var(--font-weight-normal);
@@ -102,7 +129,7 @@ Some design tokens are defined in theme.json:
 	--kbd-padding-block: 0.25em;
 	--kbd-padding-inline: 0.5em;
 	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
-	--kbd-stroke-weight: var(--stroke-weight-thin);
+	--kbd-stroke-weight: var(--border-size-1);
 
 	/* Leading (line height) */
 	--leading-flat: 1;
@@ -121,22 +148,21 @@ Some design tokens are defined in theme.json:
 	--list-item-marker-color: currentcolor;
 	--list-unordered-style-type: disc;
 
-	/* Logo */
-	--site-logo-width: 10rem;
-
 	/* Mark */
 	--mark-color-bg: Mark;
 	--mark-color-text: MarkText;
 	--mark-padding-inline: 0.125em;
 
 	/* Radius */
-	--radius-small: 0.125rem;
-	--radius-medium: 0.25rem;
-	--radius-large: 0.5rem;
+	--radius-1: var(--wp--preset--spacing--3-xs);
+	--radius-2: var(--wp--preset--spacing--2-xs);
+	--radius-3: var(--wp--preset--spacing--xs);
+	--radius-4: var(--wp--preset--spacing--s);
+	--radius-round: 999px;
 
 	/* Region */
-	--region-space-start: var(--wp--preset--spacing--m-3-xl);
-	--region-space-end: var(--wp--preset--spacing--m-3-xl);
+	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
+	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
 
 	/* Scrollbars */
 	--scrollbar-thumb-color: var(--wp--preset--color--primary-medium);
@@ -147,25 +173,21 @@ Some design tokens are defined in theme.json:
 	--scrollbar-track-radius: 1rem;
 	--scrollbar-width-legacy: 0.5rem;
 
+	/* Site Logo */
+	--site-logo-width: 10rem;
+
 	/* Sizing */
 	--min-target-size: 24px;
 
 	/* Spacing */
-	--flow-space: 1.5em;
-	--gutter: var(--wp--preset--spacing--s-m);
-
-	/* Stroke */
-	--stroke-color: var(--wp--preset--color--surface-3);
-	--stroke-weight-thin: 1px;
-	--stroke-weight-medium: 3px;
-	--stroke-weight-thick: 5px;
-	--stroke: var(--stroke-weight-thin, thin) solid var(--stroke-color, currentcolor);
+	--flow-space: var(--wp--style--block-gap, 1em);
+	--gutter: var(--wp--preset--spacing--s);
 
 	/* Tables */
 	--table-cell-padding-block: 0.5em;
 	--table-cell-padding-inline: 1rem;
 
 	/* Transitions */
-	--transition-duration: 0.15s;
+	--transition-duration: 0.25s;
 	--transition-timing-function: initial;
 }

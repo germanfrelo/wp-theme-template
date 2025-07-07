@@ -47,8 +47,6 @@ export default {
 				ignore: ["blockless-at-rules", "pseudo-classes"],
 			},
 		],
-		// Notation
-		"media-feature-range-notation": null, // TODO: Remove when 'baseline' is 'widely available' (https://caniuse.com/css-media-range-syntax)
 		// Pattern
 		"custom-property-pattern": null,
 		"selector-class-pattern": null,
