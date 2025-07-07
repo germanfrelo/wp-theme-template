@@ -16,11 +16,11 @@ Some design tokens are defined in theme.json:
 	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
-	--button-border-color-on-hover: var(--button-border-color);
+	--button-border-color-on-hover: var(--button-color-background-on-hover);
 	--button-border-color: var(--button-color-background);
-	--button-border-radius: var(--radius-1);
+	--button-border-radius: var(--radius-round);
 	--button-border-width: var(--border-size-1);
-	--button-color-background-on-hover: var(--wp--preset--color--primary-darker);
+	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
 	--button-color-background: var(--wp--preset--color--primary-medium);
 	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
 	--button-color-text: var(--wp--preset--color--surface-1);
@@ -28,7 +28,7 @@ Some design tokens are defined in theme.json:
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);
 	--button-padding-block: 0.75em;
-	--button-padding-inline: 1.5em;
+	--button-padding-inline: 1.25em;
 	--button-text-box: trim-both cap alphabetic;
 
 	/* Code (inline) */

@@ -3,8 +3,9 @@ Button - Variant: Outline
 ====================================================================== */
 
 :is(.wp-block-button, .wp-block-read-more).is-style-outline {
+	--button-border-color-on-hover: var(--button-color-background-on-hover);
 	--button-border-color: currentcolor;
-	--button-color-background-on-hover: var(--wp--preset--color--primary-darker);
+	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
 	--button-color-background: transparent;
 	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
 	--button-color-text: var(--wp--preset--color--primary-medium);

@@ -43,12 +43,11 @@ Table of contents:
 04. Responsive Containers
     04.1. Responsive Container when Overlay Menu is Open
     04.2. Responsive Container Content
-05. Outermost List (<ul>)
-06. Menu Item (<li>)
-07. Menu Item - Link (<a>)
-08. Menu Item - Submenu Icon (<button>/<span>)
-09. Submenu Container (<ul>)
-10. Keyframes
+05. Menu Item (<li>)
+06. Menu Item - Link (<a>)
+07. Menu Item - Submenu Icon (<button>/<span>)
+08. Submenu Container (<ul>)
+09. Keyframes
 
 ======================================================================================= */
 
@@ -65,6 +64,8 @@ nav.wp-block-navigation {
 	/* Menu */
 	--nav-global-font-size: 1rem;
 	--nav-global-font-weight: var(--font-weight-medium);
+	--nav-global-gap-columns: 2em;
+	--nav-global-gap-rows: 2em;
 
 	/*
 	--nav-global-letter-spacing: ;
@@ -78,20 +79,6 @@ nav.wp-block-navigation {
 	--nav-button-color: ;
 	*/
 	--nav-button-icon-size: 2.75rem; /* 44px */
-
-	/* Menu Content Container */
-
-	/*
-	--nav-content-container-gap-columns: ;
-	*/
-	--nav-content-container-gap-rows: 0.5em;
-
-	/* Menu Outermost List */
-
-	/*
-	--nav-outermost-list-gap-columns: ;
-	*/
-	--nav-outermost-list-gap-rows: 0.5em;
 
 	/* Menu Items */
 	--nav-item-color-background-on-hover: transparent;
@@ -132,7 +119,6 @@ nav.wp-block-navigation {
 	--nav-submenu-container-border-color: var(--border-color);
 	--nav-submenu-container-border-top-width: 0;
 	--nav-submenu-container-border-width: 0;
-	--nav-submenu-container-box-shadow: var(--wp--preset--shadow--elevation-1);
 	--nav-submenu-container-color-background: var(--wp--preset--color--surface-1);
 	--nav-submenu-container-color-text: var(--wp--preset--color--text-1);
 	--nav-submenu-container-gap-columns: 0;
@@ -146,6 +132,7 @@ nav.wp-block-navigation {
 	--nav-submenu-container-padding-inline-end: 0;
 	--nav-submenu-container-separator-color: var(--border-color);
 	--nav-submenu-container-separator-width: 0;
+	--nav-submenu-container-shadow: var(--wp--preset--shadow--elevation-1);
 
 	/* Menu Responsive Container */
 
@@ -176,12 +163,8 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 	/* Menu */
 	--nav-global-font-size: 1.25rem;
 	--nav-global-font-weight: var(--font-weight-bold);
-
-	/* Menu Content Container */
-	--nav-content-container-gap-columns: 0;
-	--nav-content-container-gap-rows: var(--wp--preset--spacing--3-xl, 1em);
-
-	/* Menu Outermost List */
+	--nav-global-gap-columns: 0;
+	--nav-global-gap-rows: var(--wp--preset--spacing--3-xl, 1em);
 
 	/* Menu Items */
 	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
@@ -189,6 +172,7 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 	/* Submenu Container */
 	--nav-submenu-container-padding-block: 0;
 	--nav-submenu-container-padding-inline-start: 0;
+	--nav-submenu-container-shadow: none;
 }
 
 /* ----------------------------------------------------------------------
@@ -200,8 +184,8 @@ nav.wp-block-navigation {
 	/* ======================================================================
 	02. Navigation (<nav>)
 	====================================================================== */
-	row-gap: var(--nav-content-container-gap-rows, var(--gutter, 0));
-	column-gap: var(--nav-content-container-gap-columns, var(--gutter, 0));
+	row-gap: var(--nav-global-gap-rows, var(--gutter, 0));
+	column-gap: var(--nav-global-gap-columns, var(--gutter, 0));
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
 	line-height: var(--nav-global-line-height, inherit);
@@ -284,12 +268,6 @@ nav.wp-block-navigation {
 	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
 	---------------------------------------------------------------------- */
 
-	/* ❗️ Specificity must be >= (0,2,0) */
-	> .wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content {
-		row-gap: var(--nav-content-container-gap-rows, var(--wp--style--block-gap, 0));
-		column-gap: var(--nav-content-container-gap-columns, var(--wp--style--block-gap, 0));
-	}
-
 	/* When Overlay Menu is Open */
 
 	/* ❗️ Specificity must be >= (0,3,0) */
@@ -298,16 +276,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	05. Outermost List (<ul>)
-	====================================================================== */
-
-	&.is-layout-flex ul.wp-block-navigation__container.wp-block-navigation {
-		row-gap: var(--nav-outermost-list-gap-rows, var(--wp--style--block-gap, 0));
-		column-gap: var(--nav-outermost-list-gap-columns, var(--wp--style--block-gap, 0));
-	}
-
-	/* ======================================================================
-	06. Menu Item (<li>)
+	05. Menu Item (<li>)
 	---
 	❗️ Specificity must be >= (0,2,0)
 	====================================================================== */
@@ -362,7 +331,7 @@ nav.wp-block-navigation {
 		}
 
 		/* ======================================================================
-		07. Menu Item - Link/Button
+		06. Menu Item - Link/Button
 		---
 		Link (<a>) on hover; Button (<button>) on click.
 		---
@@ -477,7 +446,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	08. Menu Item - Submenu Icon
+	07. Menu Item - Submenu Icon
 	---
 	<button> when submenu is open on hover; <span> when on click
 	====================================================================== */
@@ -533,7 +502,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	09. Submenu Container (<ul>)
+	08. Submenu Container (<ul>)
 	====================================================================== */
 
 	/* All Submenu Containers
@@ -564,7 +533,7 @@ nav.wp-block-navigation {
 			--nav-submenu-container-border-top-width,
 			var(--nav-submenu-container-border-width, 0)
 		);
-		box-shadow: var(--nav-submenu-container-box-shadow, inherit);
+		box-shadow: var(--nav-submenu-container-shadow, inherit);
 		opacity: 0; /* Hidden */
 	}
 
@@ -604,7 +573,7 @@ nav.wp-block-navigation {
 }
 
 /* ======================================================================
-10. Keyframes
+09. Keyframes
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
