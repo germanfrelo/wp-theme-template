@@ -27,8 +27,8 @@ Some design tokens are defined in theme.json:
 	--button-font-size: inherit;
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);
-	--button-padding-block: 0.75em;
-	--button-padding-inline: 1.25em;
+	--button-padding-block: 1em;
+	--button-padding-inline: 1.5em;
 	--button-text-box: trim-both cap alphabetic;
 
 	/* Code (inline) */
@@ -150,11 +150,6 @@ Some design tokens are defined in theme.json:
 	--list-item-indentation: 0.5ch;
 	--list-item-marker-color: currentcolor;
 	--list-unordered-style-type: disc;
-
-	/* Mark */
-	--mark-color-bg: Mark;
-	--mark-color-text: MarkText;
-	--mark-padding-inline: 0.125em;
 
 	/* Radius */
 	--radius-1: var(--wp--preset--spacing--3-xs);

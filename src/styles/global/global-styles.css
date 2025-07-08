@@ -239,9 +239,8 @@ kbd {
 }
 
 mark {
-	padding-inline: var(--mark-padding-inline, 0);
-	color: var(--mark-color-text, Mark);
-	background-color: var(--mark-color-bg, MarkText);
+	color: var(--mark-color-text, MarkText);
+	background-color: var(--mark-color-bg, Mark);
 }
 
 del {
