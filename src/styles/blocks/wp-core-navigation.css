@@ -81,7 +81,8 @@ nav.wp-block-navigation {
 	--nav-item-color-background-on-hover: var(--wp--preset--color--surface-2);
 	--nav-item-color-background: transparent;
 	--nav-item-color-text-current-page: var(--wp--preset--color--primary-medium);
-	--nav-item-color-text-on-hover: inherit;
+
+	/* --nav-item-color-text-on-hover: inherit; */
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
 	--nav-item-has-submenu-icon-size-min: 24px;
@@ -113,7 +114,8 @@ nav.wp-block-navigation {
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
 	--nav-submenu-color-background: var(--wp--preset--color--surface-1);
-	--nav-submenu-color-text: gold;
+
+	/* --nav-submenu-color-text: inherit; */
 	--nav-submenu-gap-columns: 0;
 	--nav-submenu-gap-rows: 0;
 	--nav-submenu-inline-size-min: 100%;
@@ -153,12 +155,13 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 	--navigation-layout-justification-setting: stretch;
 
 	/* Global */
-	--nav-global-color-text: rebeccapurple;
+	--nav-global-color-text: purple;
 
 	/* Menu Items */
 	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
 
 	/* Submenu Container */
+	--nav-submenu-color-text: violet;
 	--nav-submenu-padding-block: 0;
 	--nav-submenu-padding-inline-start: 0;
 	--nav-submenu-shadow: none;
@@ -177,7 +180,7 @@ nav.wp-block-navigation {
 	column-gap: var(--nav-global-gap-columns, var(--gutter, 0));
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
-	color: var(--nav-global-color-text, inherit);
+	color: var(--nav-global-color-text, inherit); /* ✅ */
 
 	/* ======================================================================
 	03. Menu Buttons Open/Close (<button>)
@@ -187,10 +190,10 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
-		color: var(--nav-button-color, inherit);
+		color: var(--nav-button-color, inherit); /* ✅ */
 
 		&:is(:hover, :focus-visible) {
-			color: var(--nav-button-color-hover, inherit);
+			color: var(--nav-button-color-hover, inherit); /* ✅ */
 		}
 
 		/* Icon of Button
@@ -236,7 +239,7 @@ nav.wp-block-navigation {
 		/* Outermost Menu Item */
 
 		&.wp-block-navigation__container > li.wp-block-navigation-item {
-			/* No styles */
+			/* No styles, jst or the selector boilerplate */
 		}
 
 		/* ======================================================================
@@ -418,7 +421,7 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		color: var(--nav-submenu-color-text, inherit);
+		color: var(--nav-submenu-color-text, inherit); /* ✅ */
 	}
 
 	/* ❗️ Specificity must be >= (0,5,0) */
@@ -501,7 +504,7 @@ nav.wp-block-navigation {
 
 		/*
 		❗️ Specificity must be >= (0,4,0).
-		The !important are needed to override WP's !important's when overlay menu is open.
+		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-text-color) {
 			color: var(--nav-global-color-text, inherit); /* ✅ */
@@ -518,14 +521,14 @@ nav.wp-block-navigation {
 				}
 
 				.wp-block-navigation__submenu-container {
-					color: var(--nav-submenu-color-text, inherit) !important;
+					color: var(--nav-submenu-color-text, inherit) !important; /* ✅ */
 				}
 			}
 		}
 
 		/*
 		❗️ Specificity must be >= (0,4,0).
-		The !important are needed to override WP's !important's when overlay menu is open.
+		All the !important's are needed to override WP's !important's..
 		*/
 		&:not(.has-background) {
 			background-color: var(--nav-responsive-container-color-background, var(--color-surface, inherit));
