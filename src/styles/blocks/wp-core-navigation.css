@@ -62,8 +62,8 @@ Table of contents:
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation {
-	/* Menu */
-	--nav-global-color-text: gold;
+	/* Global */
+	--nav-global-color-text: orange;
 	--nav-global-font-size: 1rem;
 	--nav-global-font-weight: var(--font-weight-medium);
 	--nav-global-gap-columns: var(--gutter);
@@ -109,28 +109,24 @@ nav.wp-block-navigation {
 	--nav-link-text-align: start;
 
 	/* Submenu Container */
-	--nav-submenu-container-border-color: var(--border-color);
-	--nav-submenu-container-border-top-width: 0;
-	--nav-submenu-container-border-width: 0;
-	--nav-submenu-container-color-background: var(--wp--preset--color--surface-1);
+	--nav-submenu-border-color: var(--border-color);
+	--nav-submenu-border-top-width: 0;
+	--nav-submenu-border-width: 0;
+	--nav-submenu-color-background: var(--wp--preset--color--surface-1);
+	--nav-submenu-color-text: gold;
+	--nav-submenu-gap-columns: 0;
+	--nav-submenu-gap-rows: 0;
+	--nav-submenu-inline-size-min: 100%;
+	--nav-submenu-inline-size: 20ch;
 
-	/* --nav-submenu-container-color-text: ; */
-	--nav-submenu-container-gap-columns: 0;
-	--nav-submenu-container-gap-rows: 0;
-	--nav-submenu-container-inline-size-min: 100%;
-	--nav-submenu-container-inline-size: 20ch;
-
-	/* --nav-submenu-container-padding-block: 1em;
-	--nav-submenu-container-padding-inline-start: calc(
+	/* --nav-submenu-padding-block: 1em;
+	--nav-submenu-padding-inline-start: calc(
 		var(--nav-item-has-submenu-icon-size-min) + var(--nav-item-has-submenu-gap-columns)
 	); */
-	--nav-submenu-container-padding-inline-end: 0;
-	--nav-submenu-container-separator-color: var(--border-color);
-	--nav-submenu-container-separator-width: 0;
-	--nav-submenu-container-shadow: var(--wp--preset--shadow--elevation-1);
-
-	/* Overlay Menu */
-	--nav-overlay-color-text: rebeccapurple;
+	--nav-submenu-padding-inline-end: 0;
+	--nav-submenu-separator-color: var(--border-color);
+	--nav-submenu-separator-width: 0;
+	--nav-submenu-shadow: var(--wp--preset--shadow--elevation-1);
 
 	/* Menu Responsive Container */
 
@@ -149,20 +145,23 @@ nav.wp-block-navigation {
 
 /* 01.2. Overlay Menu
 ---
-*Most* of custom properties added here are the same from the ones above.
+Custom properties added here are the same from the ones above.
 They are only used when the menu is open, overriding the ones above.
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is-menu-open)) {
 	--navigation-layout-justification-setting: stretch;
 
+	/* Global */
+	--nav-global-color-text: rebeccapurple;
+
 	/* Menu Items */
 	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
 
 	/* Submenu Container */
-	--nav-submenu-container-padding-block: 0;
-	--nav-submenu-container-padding-inline-start: 0;
-	--nav-submenu-container-shadow: none;
+	--nav-submenu-padding-block: 0;
+	--nav-submenu-padding-inline-start: 0;
+	--nav-submenu-shadow: none;
 }
 
 /* ----------------------------------------------------------------------
@@ -333,9 +332,9 @@ nav.wp-block-navigation {
 	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
 		> li.wp-block-navigation-item
 		+ li.wp-block-navigation-item {
-		border-block-start-color: var(--nav-submenu-container-separator-color, currentcolor);
+		border-block-start-color: var(--nav-submenu-separator-color, currentcolor);
 		border-block-start-style: solid;
-		border-block-start-width: var(--nav-submenu-container-separator-width, 0);
+		border-block-start-width: var(--nav-submenu-separator-width, 0);
 	}
 
 	/* Menu Item of Submenu has Submenu
@@ -418,32 +417,29 @@ nav.wp-block-navigation {
 	/* All Submenu Containers
 	---------------------------------------------------------------------- */
 
+	&:not(.has-text-color) .wp-block-navigation__submenu-container {
+		color: var(--nav-submenu-color-text, inherit);
+	}
+
 	/* ❗️ Specificity must be >= (0,5,0) */
 	li.wp-block-navigation-item.has-child.wp-block-navigation-submenu
 		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
 		visibility: hidden; /* Hidden */
-		row-gap: var(--nav-submenu-container-gap-rows, var(--wp--style--block-gap, 0));
-		column-gap: var(--nav-submenu-container-gap-columns, var(--wp--style--block-gap, 0));
+		row-gap: var(--nav-submenu-gap-rows, var(--wp--style--block-gap, 0));
+		column-gap: var(--nav-submenu-gap-columns, var(--wp--style--block-gap, 0));
 		width: 0; /* Hidden */
 		height: 0; /* Hidden */
-		padding-block: var(--nav-submenu-container-padding-block, 0);
-		padding-inline-start: var(--nav-submenu-container-padding-inline-start, 0);
-		padding-inline-end: var(--nav-submenu-container-padding-inline-end, 0);
+		padding-block: var(--nav-submenu-padding-block, 0);
+		padding-inline-start: var(--nav-submenu-padding-inline-start, 0);
+		padding-inline-end: var(--nav-submenu-padding-inline-end, 0);
 		overflow: hidden; /* Hidden (overflow is necessary to set, otherwise submenu items will take up space) */
-		border: var(--nav-submenu-container-border-width, 0) solid var(--nav-submenu-container-border-color, currentcolor);
-		border-block-start-width: var(
-			--nav-submenu-container-border-top-width,
-			var(--nav-submenu-container-border-width, 0)
-		);
-		box-shadow: var(--nav-submenu-container-shadow, inherit);
+		border: var(--nav-submenu-border-width, 0) solid var(--nav-submenu-border-color, currentcolor);
+		border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
+		box-shadow: var(--nav-submenu-shadow, inherit);
 		opacity: 0; /* Hidden */
 
-		&:where(:not(.has-text-color)) {
-			color: var(--nav-submenu-container-color-text, inherit);
-		}
-
 		&:where(:not(.has-background)) {
-			background-color: var(--nav-submenu-container-color-background, transparent);
+			background-color: var(--nav-submenu-color-background, transparent);
 		}
 	}
 
@@ -463,9 +459,7 @@ nav.wp-block-navigation {
 		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
 			> li.wp-block-navigation-item.wp-block-navigation-submenu
 			> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
-			top: calc(
-				-1 * (var(--nav-submenu-container-border-width, 0px) + var(--nav-submenu-container-padding-block, 0px))
-			);
+			top: calc(-1 * (var(--nav-submenu-border-width, 0px) + var(--nav-submenu-padding-block, 0px)));
 		}
 
 		/* When is shown (on hover/click) */
@@ -473,8 +467,8 @@ nav.wp-block-navigation {
 		&:not(.open-on-click):hover > ul.wp-block-navigation__submenu-container,
 		&:not(.open-on-click):not(.open-on-hover-click):focus-within > ul.wp-block-navigation__submenu-container {
 			visibility: visible;
-			inline-size: var(--nav-submenu-container-inline-size, auto); /* The fallback is the WP's default value */
-			min-inline-size: var(--nav-submenu-container-inline-size-min, 200px); /* The fallback is the WP's default value */
+			inline-size: var(--nav-submenu-inline-size, auto); /* The fallback is the WP's default value */
+			min-inline-size: var(--nav-submenu-inline-size-min, 200px); /* The fallback is the WP's default value */
 			block-size: auto;
 			overflow: visible;
 			opacity: 1;
@@ -507,10 +501,10 @@ nav.wp-block-navigation {
 
 		/*
 		❗️ Specificity must be >= (0,4,0).
-		The !important are needed to override WP's default styles when overlay menu is open.
+		The !important are needed to override WP's !important's when overlay menu is open.
 		*/
 		&:not(.has-text-color) {
-			color: var(--nav-overlay-color-text, inherit); /* ✅ */
+			color: var(--nav-global-color-text, inherit); /* ✅ */
 
 			.wp-block-navigation-item {
 				/* Current */
@@ -524,14 +518,14 @@ nav.wp-block-navigation {
 				}
 
 				.wp-block-navigation__submenu-container {
-					color: var(--nav-submenu-container-color-text, inherit) !important;
+					color: var(--nav-submenu-color-text, inherit) !important;
 				}
 			}
 		}
 
 		/*
 		❗️ Specificity must be >= (0,4,0).
-		The !important are needed to override WP's default styles when overlay menu is open.
+		The !important are needed to override WP's !important's when overlay menu is open.
 		*/
 		&:not(.has-background) {
 			background-color: var(--nav-responsive-container-color-background, var(--color-surface, inherit));
@@ -545,7 +539,7 @@ nav.wp-block-navigation {
 				}
 
 				.wp-block-navigation__submenu-container {
-					background-color: var(--nav-submenu-container-color-background, transparent) !important;
+					background-color: var(--nav-submenu-color-background, transparent) !important;
 				}
 			}
 		}
