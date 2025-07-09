@@ -78,11 +78,10 @@ nav.wp-block-navigation {
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
-	--nav-item-color-background-on-hover: var(--wp--preset--color--surface-2);
-	--nav-item-color-background: transparent;
-	--nav-item-color-text-current-page: var(--wp--preset--color--primary-medium);
-
-	/* --nav-item-color-text-on-hover: inherit; */
+	--nav-item-color-background-on-hover: var(--wp--preset--color--surface-3);
+	--nav-item-color-background: var(--wp--preset--color--surface-2);
+	--nav-item-color-text-current-page: blue;
+	--nav-item-color-text-on-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
 	--nav-item-has-submenu-icon-size-min: 24px;
@@ -94,7 +93,7 @@ nav.wp-block-navigation {
 	--nav-item-of-submenu-has-submenu-gap-columns: 0;
 	--nav-item-of-submenu-padding-block: 0.5em;
 	--nav-item-of-submenu-padding-inline-start: 0.5em;
-	--nav-item-outermost-has-submenu-icon-position: -1; /* 0 = right (default) | -1 = left */
+	--nav-item-outermost-has-submenu-icon-position: 0; /* 0 = right (default) | -1 = left */
 	--nav-link-border-radius: 0;
 	--nav-link-line-color-current-page: transparent;
 	--nav-link-line-color-hover: transparent;
@@ -180,7 +179,7 @@ nav.wp-block-navigation {
 	column-gap: var(--nav-global-gap-columns, var(--gutter, 0));
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
-	color: var(--nav-global-color-text, inherit); /* ✅ */
+	color: var(--nav-global-color-text, inherit);
 
 	/* ======================================================================
 	03. Menu Buttons Open/Close (<button>)
@@ -190,10 +189,10 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
-		color: var(--nav-button-color, inherit); /* ✅ */
+		color: var(--nav-button-color, inherit);
 
 		&:is(:hover, :focus-visible) {
-			color: var(--nav-button-color-hover, inherit); /* ✅ */
+			color: var(--nav-button-color-hover, inherit);
 		}
 
 		/* Icon of Button
@@ -209,83 +208,91 @@ nav.wp-block-navigation {
 
 	/* ======================================================================
 	04. Menu Item (<li>)
-	---
-	❗️ Specificity must be >= (0,2,0)
 	====================================================================== */
 
-	ul[class*="wp-block-navigation"] {
-		/* Menu Item */
+	/* Menu Item */
 
+	li.wp-block-navigation-item {
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--transition-duration, 0);
+			transition-property: color, background-color;
+		}
+
+		/* Current */
+		&.current-menu-item {
+			color: var(--nav-item-color-text-current-page, inherit);
+		}
+	}
+
+	&:not(.has-text-color) {
 		li.wp-block-navigation-item {
-			background-color: var(--nav-item-color-background, inherit);
-
-			@media (prefers-reduced-motion: no-preference) {
-				transition-duration: var(--transition-duration, 0);
-				transition-property: color, background-color;
-			}
-
-			/* Current */
-			&.current-menu-item {
-				color: var(--nav-item-color-text-current-page, inherit);
-			}
-
 			/* Hover/Click/Focus */
 			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 				color: var(--nav-item-color-text-on-hover, inherit);
+			}
+		}
+	}
+
+	&:not(.has-background) {
+		li.wp-block-navigation-item {
+			background-color: var(--nav-item-color-background, inherit);
+
+			/* Hover/Click/Focus */
+			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 				background-color: var(--nav-item-color-background-on-hover, inherit);
 			}
 		}
+	}
 
-		/* Outermost Menu Item */
+	/* Outermost Menu Item */
 
-		&.wp-block-navigation__container > li.wp-block-navigation-item {
-			/* No styles, jst or the selector boilerplate */
+	&.wp-block-navigation__container > li.wp-block-navigation-item {
+		/* No styles, jst or the selector boilerplate */
+	}
+
+	/* ======================================================================
+	05. Menu Item - Link/Button
+	---
+	Link (<a>) on hover; Button (<button>) on click.
+	---
+	❗️ Specificity must be >= (0,4,0)
+	====================================================================== */
+
+	/* Link/Button
+	---------------------------------------------------------------------- */
+
+	li.wp-block-navigation-item {
+		> .wp-block-navigation-item__content {
+			padding-block-start: var(--nav-link-padding-block-start, 0);
+			padding-block-end: var(--nav-link-padding-block-end, 0);
+			padding-inline: var(--nav-link-padding-inline, 0);
+			text-align: var(--nav-link-text-align, inherit);
+			text-decoration-line: var(--nav-link-line, none);
+			text-decoration-thickness: var(--nav-link-line-thickness, auto);
+			text-decoration-color: var(--nav-link-line-color, currentcolor);
+			text-underline-offset: var(--nav-link-line-offset, auto);
+			border-radius: var(--nav-link-border-radius, 0);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition-duration: inherit;
+				transition-property: text-decoration-color;
+			}
+
+			/* Hover/Click/Focus */
+			& :is(:hover, :focus-visible) {
+				text-decoration-color: var(--nav-link-line-color-hover, currentcolor);
+			}
+
+			/* Link/Button of Current Menu Item */
+			&[aria-current="page"] {
+				text-decoration-thickness: var(--nav-link-line-thickness-current-page, auto);
+				text-decoration-color: var(--nav-link-line-color-current-page, currentcolor);
+				text-underline-offset: var(--nav-link-line-offset-current-page, auto);
+			}
 		}
 
-		/* ======================================================================
-		05. Menu Item - Link/Button
-		---
-		Link (<a>) on hover; Button (<button>) on click.
-		---
-		❗️ Specificity must be >= (0,4,0)
-		====================================================================== */
-
-		/* Link/Button
-		---------------------------------------------------------------------- */
-
-		> li.wp-block-navigation-item {
-			> .wp-block-navigation-item__content {
-				padding-block-start: var(--nav-link-padding-block-start, 0);
-				padding-block-end: var(--nav-link-padding-block-end, 0);
-				padding-inline: var(--nav-link-padding-inline, 0);
-				text-align: var(--nav-link-text-align, inherit);
-				text-decoration-line: var(--nav-link-line, none);
-				text-decoration-thickness: var(--nav-link-line-thickness, auto);
-				text-decoration-color: var(--nav-link-line-color, currentcolor);
-				text-underline-offset: var(--nav-link-line-offset, auto);
-				border-radius: var(--nav-link-border-radius, 0);
-
-				@media (prefers-reduced-motion: no-preference) {
-					transition-duration: inherit;
-					transition-property: text-decoration-color;
-				}
-
-				/* Hover/Click/Focus */
-				& :is(:hover, :focus-visible) {
-					text-decoration-color: var(--nav-link-line-color-hover, currentcolor);
-				}
-
-				/* Link/Button of Current Menu Item */
-				&[aria-current="page"] {
-					text-decoration-thickness: var(--nav-link-line-thickness-current-page, auto);
-					text-decoration-color: var(--nav-link-line-color-current-page, currentcolor);
-					text-underline-offset: var(--nav-link-line-offset-current-page, auto);
-				}
-			}
-
-			.has-child.open-on-hover-click.wp-block-navigation-submenu > a.wp-block-navigation-item__content:not([href]) {
-				cursor: default;
-			}
+		.has-child.open-on-hover-click.wp-block-navigation-submenu > a.wp-block-navigation-item__content:not([href]) {
+			cursor: default;
 		}
 	}
 
@@ -401,18 +408,6 @@ nav.wp-block-navigation {
 		order: var(--nav-item-outermost-has-submenu-icon-position, 0);
 	}
 
-	/* Submenu Icon of Nested Menu Item when Overlay Menu is Open
-	---------------------------------------------------------------------- */
-
-	/* Revert WP's default rotation */
-	.is-menu-open
-		li.wp-block-navigation-submenu
-		li.wp-block-navigation-submenu
-		> .wp-block-navigation__submenu-icon
-		> svg {
-		transform: revert;
-	}
-
 	/* ======================================================================
 	07. Submenu Container (<ul>)
 	====================================================================== */
@@ -421,7 +416,8 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		color: var(--nav-submenu-color-text, inherit); /* ✅ */
+		/* The fallback '--nav-global-color-text' is necessary; otherwise, if '--nav-submenu-color-text' is not set and the color of the submenu parent item changes when hovered/clicked/focused, all its submenu items would inherit that hover/clic/focus color. */
+		color: var(--nav-submenu-color-text, var(--nav-global-color-text, inherit));
 	}
 
 	/* ❗️ Specificity must be >= (0,5,0) */
@@ -507,9 +503,9 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-text-color) {
-			color: var(--nav-global-color-text, inherit); /* ✅ */
+			color: var(--nav-global-color-text, inherit);
 
-			.wp-block-navigation-item {
+			li.wp-block-navigation-item {
 				/* Current */
 				&.current-menu-item {
 					color: var(--nav-item-color-text-current-page, inherit) !important;
@@ -519,16 +515,16 @@ nav.wp-block-navigation {
 				&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 					color: var(--nav-item-color-text-on-hover, inherit) !important;
 				}
+			}
 
-				.wp-block-navigation__submenu-container {
-					color: var(--nav-submenu-color-text, inherit) !important; /* ✅ */
-				}
+			.wp-block-navigation__submenu-container {
+				color: var(--nav-submenu-color-text, inherit) !important;
 			}
 		}
 
 		/*
 		❗️ Specificity must be >= (0,4,0).
-		All the !important's are needed to override WP's !important's..
+		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-background) {
 			background-color: var(--nav-responsive-container-color-background, var(--color-surface, inherit));

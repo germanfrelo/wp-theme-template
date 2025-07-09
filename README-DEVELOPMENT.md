@@ -140,13 +140,15 @@ This file is primarily used to:
 - Define and configure **some settings and global design tokens** that the client will likely use in the editor, such as colors and fonts.
 - Register **custom templates**, **template parts**, and **patterns**.
 
-> [!IMPORTANT] > **It is **not** used for applying styles.**
+> [!IMPORTANT]
+> **It is **not** used for applying styles.**
 
 ### `style.css`
 
 WordPress requires this file solely for theme registration metadata, such as the theme's name, author and version.
 
-> [!IMPORTANT] > **It is **not** used for adding custom CSS.**
+> [!IMPORTANT]
+> **It is **not** used for adding custom CSS.**
 
 ### Theme's main styles
 
@@ -198,7 +200,8 @@ The primary entry point is the **`global.css`** file:
 
 It uses `@import` rules (processed by PostCSS) to pull in all stylesheets that are organized in directories: **`blocks`**, **`compositions`**, **`global`**, and **`utilities`**.
 
-> [!IMPORTANT] > **The specific import order is important for correct CSS specificity.**
+> [!IMPORTANT]
+> **The specific import order is important for correct CSS specificity.**
 
 > [!NOTE]
 > Only stylesheets in `global/` are imported explicitly and in a specific order. Stylesheets in the other directories are all imported in default (alphabetical) order, thanks to the `import-glob` PostCSS plugin. This means that **any new `.css` file created in these directories is automatically imported**.
@@ -225,7 +228,8 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 
 ### Enqueuing
 
-> [!IMPORTANT] > **The theme enqueues both `style.css` and `build-css/global.css` CSS files.**
+> [!IMPORTANT]
+> **The theme enqueues both `style.css` and `build-css/global.css` CSS files.**
 > They are enqueued by `inc/styles.php`, **on the website and in the site editor**.
 
 ## Local Development Workflow
