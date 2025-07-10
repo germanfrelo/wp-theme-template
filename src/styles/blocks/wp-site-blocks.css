@@ -1,0 +1,26 @@
+/* ======================================================================
+WP Site Blocks
+---
+https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+====================================================================== */
+
+/* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
+
+.wp-site-blocks:has(> main) {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+
+	> * {
+		flex-shrink: 0;
+	}
+
+	> main {
+		flex-grow: 1;
+	}
+}
+
+/* Remove the spacing between direct child elements of '.wp-site-blocks' (the :root is needed for the Editor) */
+:root .wp-site-blocks > * + * {
+	margin-block-start: 0;
+}

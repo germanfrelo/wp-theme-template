@@ -8,21 +8,15 @@ const config = {
 	quoteProps: "consistent",
 	overrides: [
 		{
-			files: ["*.css", "*.html"],
+			files: ["*.css"],
 			options: {
-				printWidth: 9999,
+				printWidth: 120,
 			},
 		},
 		{
-			files: ["*.js", "*.jsx", "*.vue"],
+			files: ["*.js", "*.jsx"],
 			options: {
 				singleAttributePerLine: true,
-			},
-		},
-		{
-			files: ["*.jsonc"],
-			options: {
-				trailingComma: "none",
 			},
 		},
 	],
