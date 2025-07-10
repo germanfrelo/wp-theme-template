@@ -1,51 +1,51 @@
 /* ======================================================================
 SIDEBAR
 
-A layout for placing two elements side-by-side. If space permits, the sidebar element has a set width, and the companion takes up the rest of the available horizontal space. If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space.
+A layout for placing two elements side-by-side.
+If space permits, the sidebar element has a set width, and the companion takes up the rest of the available horizontal space.
+If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space.
 
-Reference: https://every-layout.dev/layouts/sidebar/
+Source:
+- https://every-layout.dev/layouts/sidebar/
+- https://piccalil.li/blog/a-revisit-of-the-every-layout-sidebar-with-has-and-selector-performance/
+
+Usage:
+To use this layout, simply add the '.sidebar' class to the specific element you want to designate as the sidebar.
+The layout will then be applied to this element's direct parent container, arranging it alongside its sibling elements.
 
 Configuration:
---gutter (1em): The space between the sidebar and non-sidebar.
---sidebar-align-items (normal): A valid 'align-items' property value.
---sidebar-content-min-width (50%): The narrowest the content (main) element can be before wrapping. Should be a percentage.
---sidebar-side-width (auto): How large the sidebar should be. Must NOT be a percentage. It defaults to the sidebar's content width.
-
-Exceptions:
-* sidebar--reversed
+--gutter
+	Description: The gap between the two elements.
+	Type:        A valid 'gap' value.
+	Default:     var(--gutter, 1em)
+--sidebar-container-align-items
+	Description: The block size (height) of the two adjacent elements.
+	Type:        A valid 'align-items' value.
+	Default:     normal (= 'stretch' for Flexbox)
+--sidebar-size
+	Description: How large the sidebar should be before wrapping.
+	Type:        A valid 'flex-basis' value except percentage.
+	Default:     auto
+--sidebar-wrap-at
+	Description: The narrowest the content (non-sidebar) element can be before wrapping.
+	Type:        A percentage value, relative to the container's inline size.
+	Default:     50% (wrap when the elements are of equal width)
 ====================================================================== */
 
-.sidebar,
-.sidebar-left,
-.sidebar-right {
+*:has(> .sidebar) {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: var(--gutter, 1em);
-	align-items: var(--sidebar-align-items, normal);
+	align-items: var(--sidebar-container-align-items, normal);
 }
 
-.sidebar:not([data-direction]) > :first-child,
-.sidebar-left > :first-child,
-.sidebar-left.sidebar--reversed > :last-child,
-.sidebar[data-direction="rtl"] > :last-child,
-.sidebar-right > :last-child,
-.sidebar-right.sidebar--reversed > :first-child {
+.sidebar {
 	flex-grow: 1;
-	flex-basis: var(--sidebar-side-width, auto);
+	flex-basis: var(--sidebar-size, auto);
 }
 
-.sidebar:not([data-direction]) > :last-child,
-.sidebar-left > :last-child,
-.sidebar-left.sidebar--reversed > :first-child,
-.sidebar[data-direction="rtl"] > :first-child,
-.sidebar-right > :first-child,
-.sidebar-right.sidebar--reversed > :last-child {
+*:has(> .sidebar) > *:not(.sidebar) {
 	flex-grow: 999;
-	flex-basis: var(--sidebar-content-min-width, 50%);
-}
-
-.sidebar[data-reversed],
-.sidebar--reversed {
-	flex-direction: row-reverse;
+	flex-basis: var(--sidebar-wrap-at, 50%);
 }
