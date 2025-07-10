@@ -4,5 +4,6 @@ export default {
 		"postcss-import": {},
 		"postcss-nesting": {},
 		"postcss-custom-media": {},
+		"postcss-discard-comments": {},
 	},
 };
