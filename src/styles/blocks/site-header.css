@@ -2,6 +2,85 @@
 Site Header
 ====================================================================== */
 
+header.wp-block-template-part:has(> .site-header) {
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 1;
+}
+
 .site-header {
 	--site-logo-width: 10.8rem;
+	padding-block-start: var(--site-header-padding-top, 2rem);
+	padding-block-end: var(--site-header-padding-bottom, 2rem);
+	background-color: var(--wp--preset--color--surface-1, Canvas);
+
+	.site-header__layout {
+		display: flex;
+		gap: var(--gutter, 1em);
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	/* Hide the inner logo */
+	.wp-block-navigation__responsive-container.is-menu-open
+		.wp-block-navigation-item:has(> .site-header__site-logo-inner) {
+		display: none;
+	}
+
+	/*
+	Navigation Overlay Menu - Breakpoint
+	Change the default viewport width at which navigation switches between expanded and collapsed.
+	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default.
+	⚠️ IMPORTANT: Only change the 'min-width' value of the second at-media selector.
+	*/
+
+	/* stylelint-disable no-unknown-custom-media -- Defined in variables.css file. */
+	/* stylelint-disable selector-not-notation -- To match specificity of default WP styles. */
+
+	/* Override styles at WP's default breakpoint. */
+
+	@media (--wp-default-navigation-breakpoint) {
+		/* Keep showing the button to open the menu */
+		nav.wp-block-navigation .wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: flex;
+		}
+
+		/* Keep hiding the expanded menu */
+		nav.wp-block-navigation .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+			display: none;
+		}
+	}
+
+	/* Add styles at custom breakpoint. */
+
+	@media (--navigation-breakpoint) {
+		/* Hide the button to open the menu */
+		nav.wp-block-navigation .wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: none;
+		}
+
+		/* Show the expanded menu */
+		nav.wp-block-navigation .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+			display: block;
+		}
+
+		/* Hide the outter logo */
+		.site-header__site-logo-outter {
+			display: none;
+		}
+
+		.site-header__layout {
+			justify-content: center;
+
+			> .wp-block-navigation {
+				flex: 1;
+			}
+
+			.wp-block-navigation {
+				--navigation-layout-justify: space-around;
+			}
+		}
+	}
+	/* stylelint-enable selector-not-notation */
+	/* stylelint-enable no-unknown-custom-media */
 }

@@ -1,0 +1,8 @@
+.region-intro {
+	--gutter: var(--wp--preset--spacing--l-xl);
+	--region-space-start: var(--wp--preset--spacing--l);
+
+	.region-intro__content {
+		align-content: center;
+	}
+}

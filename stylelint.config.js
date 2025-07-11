@@ -38,6 +38,7 @@ export default {
 			{ ignoreProperties: ["/^mask-/"] }, // Allow -webkit-mask-* properties
 		],
 		// Empty lines
+		"comment-empty-line-before": null,
 		"declaration-empty-line-before": "never",
 		// Max & min
 		"max-nesting-depth": [

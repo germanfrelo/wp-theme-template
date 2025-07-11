@@ -1,0 +1,14 @@
+.region-hero {
+	block-size: var(--fluid-286-592);
+	background-position: 50% 40%;
+
+	.region-hero__content {
+		align-content: end;
+		block-size: 100%;
+
+		h1 {
+			max-inline-size: min-content;
+			padding-block: 1.25em;
+		}
+	}
+}

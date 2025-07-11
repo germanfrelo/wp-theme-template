@@ -1,0 +1,23 @@
+/* ======================================================================
+Social Links
+---
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+====================================================================== */
+
+.social-links {
+	--cluster-horizontal-alignment: center;
+
+	&ul {
+		padding-inline-start: 0;
+		list-style-type: none;
+	}
+
+	a:only-child:has(> :is(img, svg)) {
+		display: block;
+	}
+
+	:is(img, svg) {
+		inline-size: var(--fluid-24-32, auto);
+		block-size: auto;
+	}
+}
