@@ -3,13 +3,14 @@ Logo Grid
 ====================================================================== */
 
 .logo-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-	gap: var(--wp--preset--spacing--m-2-xl, var(--gutter, 1em));
-	place-items: center;
-}
+	&.grid {
+		--grid-placement: auto-fit;
+		--grid-min-item-size: 8rem;
+		place-items: center;
+	}
 
-.logo-grid img {
-	max-block-size: 5rem;
-	object-fit: contain !important; /* !important is needed to override WP's inline style of 'cover' */
+	img {
+		max-block-size: var(--wp--preset--spacing--l-xl);
+		object-fit: contain;
+	}
 }

@@ -1,16 +1,18 @@
 /* =======================================================================================
-Image
+WP Image
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/image
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/image
----
-Notes:
-- Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height' */
+.wp-block-image {
+	&figure img {
+		inline-size: 100%;
+	}
 
-figure.wp-block-image > a:has(> :is(img, svg)) {
-	display: block; /* Default is inline-block */
+	/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height'. */
+	> a:has(> :is(img, svg)) {
+		display: block; /* Default is inline-block */
+	}
 }

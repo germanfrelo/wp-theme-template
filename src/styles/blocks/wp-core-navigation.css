@@ -199,10 +199,8 @@ nav.wp-block-navigation {
 		---------------------------------------------------------------------- */
 
 		> svg {
-			width: var(--nav-button-icon-size, var(--min-target-size, 44px));
-			min-width: var(--min-target-size, 24px);
-			height: var(--nav-button-icon-size, var(--min-target-size, 44px));
-			min-height: var(--min-target-size, 24px);
+			width: var(--nav-button-icon-size, 44px);
+			height: var(--nav-button-icon-size, 44px);
 		}
 	}
 
@@ -263,8 +261,8 @@ nav.wp-block-navigation {
 
 	li.wp-block-navigation-item {
 		> .wp-block-navigation-item__content {
-			padding-block-start: var(--nav-link-padding-block-start, 0);
-			padding-block-end: var(--nav-link-padding-block-end, 0);
+			padding-block-start: var(--nav-link-padding-top, 0);
+			padding-block-end: var(--nav-link-padding-bottom, 0);
 			padding-inline: var(--nav-link-padding-inline, 0);
 			text-align: var(--nav-link-text-align, inherit);
 			text-decoration-line: var(--nav-link-line, none);
@@ -361,7 +359,7 @@ nav.wp-block-navigation {
 		> li.wp-block-navigation-item
 		> .wp-block-navigation-item__content {
 		padding-block: var(--nav-item-of-submenu-padding-block, 0);
-		padding-inline-start: var(--nav-item-of-submenu-padding-inline-start, 0);
+		padding-inline-start: var(--nav-item-of-submenu-padding-left, 0);
 	}
 
 	/* ======================================================================
@@ -429,8 +427,8 @@ nav.wp-block-navigation {
 		width: 0; /* Hidden */
 		height: 0; /* Hidden */
 		padding-block: var(--nav-submenu-padding-block, 0);
-		padding-inline-start: var(--nav-submenu-padding-inline-start, 0);
-		padding-inline-end: var(--nav-submenu-padding-inline-end, 0);
+		padding-inline-start: var(--nav-submenu-padding-left, 0);
+		padding-inline-end: var(--nav-submenu-padding-right, 0);
 		overflow: hidden; /* Hidden (overflow is necessary to set, otherwise submenu items will take up space) */
 		border: var(--nav-submenu-border-width, 0) solid var(--nav-submenu-border-color, currentcolor);
 		border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
@@ -484,13 +482,10 @@ nav.wp-block-navigation {
 		---------------------------------------------------------------------- */
 
 		/* ❗️ Specificity must be >= (0,2,0) */
-		padding-block-start: var(
-			--nav-responsive-container-padding-block-start,
-			var(--site-header-padding-top, var(--gutter))
-		);
-		padding-block-end: var(--nav-responsive-container-padding-block-end, var(--gutter));
-		padding-inline-start: var(--nav-responsive-container-padding-inline-start, var(--gutter));
-		padding-inline-end: var(--nav-responsive-container-padding-inline-end, var(--gutter));
+		padding-block-start: var(--nav-responsive-container-padding-top, var(--site-header-padding-top, var(--gutter)));
+		padding-block-end: var(--nav-responsive-container-padding-bottom, var(--gutter));
+		padding-inline-start: var(--nav-responsive-container-padding-left, var(--gutter));
+		padding-inline-end: var(--nav-responsive-container-padding-right, var(--gutter));
 
 		@media (prefers-reduced-motion: no-preference) {
 			/* animation-name: overlay-menu; */
@@ -568,10 +563,7 @@ nav.wp-block-navigation {
 
 		/* ❗️ Specificity must be >= (0,3,0) */
 		.wp-block-navigation__responsive-container-content {
-			padding-block-start: var(
-				--nav-responsive-content-container-padding-block-start,
-				var(--nav-button-icon-size, 2rem)
-			);
+			padding-block-start: var(--nav-responsive-content-container-padding-top, var(--nav-button-icon-size, 2rem));
 		}
 	}
 }

@@ -18,7 +18,7 @@ Some design tokens are defined in theme.json:
 	/* Button */
 	--button-border-color-on-hover: var(--button-color-background-on-hover);
 	--button-border-color: var(--button-color-background);
-	--button-border-radius: var(--radius-round);
+	--button-border-radius: var(--radius-1);
 	--button-border-width: var(--border-size-1);
 	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
 	--button-color-background: var(--wp--preset--color--primary-medium);
@@ -27,7 +27,7 @@ Some design tokens are defined in theme.json:
 	--button-font-size: inherit;
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);
-	--button-padding-block: 1em;
+	--button-padding-block: 0.875em;
 	--button-padding-inline: 1.5em;
 	--button-text-box: trim-both cap alphabetic;
 
@@ -51,10 +51,7 @@ Some design tokens are defined in theme.json:
 	--details-background-color: transparent;
 	--details-border-color: transparent;
 	--details-border-style: none;
-	--details-border-block-start-width: 0;
-	--details-border-inline-start-width: 0;
-	--details-border-inline-end-width: 0;
-	--details-border-block-end-width: 0;
+	--details-border-width: 0;
 	--details-padding-block-start: 0;
 	--details-padding-block-end: 0;
 	--details-padding-inline-start: 0;
@@ -93,6 +90,7 @@ Some design tokens are defined in theme.json:
 	--font-weight-medium: 500;
 	--font-weight-bold: 700;
 	--font-weight-black: 900;
+	--font-weight-base: var(--font-weight-normal);
 
 	/* Font Sizes */
 	--font-size-base: var(--wp--preset--font-size--step-0);
@@ -104,11 +102,10 @@ Some design tokens are defined in theme.json:
 	--font-size-heading-6: var(--wp--preset--font-size--step-00);
 
 	/* Forms */
-	--form-field-error-message-font-size: var;
-	--form-label-input-gap: 0.25em;
+	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
 	--input-background-color: var(--wp--preset--color--surface-1);
-	--input-border-color: currentcolor;
-	--input-border-radius: 0;
+	--input-border-color: var(--wp--preset--color--surface-5);
+	--input-border-radius: var(--radius-1);
 	--input-border-width: var(--border-size-1);
 	--input-checkbox-size: 1.125em;
 	--input-color: var(--wp--preset--color--text-1);
@@ -179,9 +176,6 @@ Some design tokens are defined in theme.json:
 
 	/* Site Logo */
 	--site-logo-width: 10rem;
-
-	/* Sizing */
-	--min-target-size: 24px;
 
 	/*
 	Custom Fluid Tokens

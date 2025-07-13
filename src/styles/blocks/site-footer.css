@@ -4,4 +4,20 @@ Site Footer
 
 .site-footer {
 	--site-logo-width: 12.75rem;
+	padding-block: var(--wp--preset--spacing--xl, 2em);
+	color: var(--wp--preset--color--surface-1, inherit);
+	background-color: var(--wp--preset--color--primary-medium, transparent);
+
+	nav.wp-block-navigation {
+		--nav-global-gap-columns: var(--wp--preset--spacing--m);
+		--nav-global-gap-rows: var(--wp--preset--spacing--3-xs);
+
+		&.site-footer__main-navigation {
+			--nav-global-font-size: 1rem;
+		}
+
+		&.site-footer__legal-navigation {
+			--nav-global-font-size: 0.875rem;
+		}
+	}
 }

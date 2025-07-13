@@ -13,12 +13,12 @@ Global
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
-	/* Opt in the whole page to interpolate sizes to/from keywords */
+	/* Opt in the whole page to interpolate sizes to/from keywords. */
 	html {
 		interpolate-size: allow-keywords;
 	}
 
-	/* Opt in all pages to cross-document view transitions */
+	/* Opt in all pages to cross-document view transitions. */
 	@view-transition {
 		navigation: auto;
 	}
@@ -27,12 +27,12 @@ Global
 body {
 	font-family: var(--wp--preset--font-family--base, sans-serif);
 	font-size: var(--font-size-base, 1rem);
-	font-weight: var(--font-weight-normal, normal);
+	font-weight: var(--font-weight-base, normal);
 	line-height: var(--leading-base, 1.5);
 	color: var(--wp--preset--color--text-1, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
-	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design */
+	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }
 
 /* ======================================================================
@@ -200,6 +200,11 @@ a:where(:any-link) {
 	}
 }
 
+/* When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar. */
+:target {
+	scroll-margin-block-start: var(--target-scroll-margin, 5em);
+}
+
 code,
 kbd,
 samp {
@@ -302,22 +307,9 @@ label {
 	line-height: var(--label-leading, inherit);
 }
 
-:is([type="checkbox"], [type="radio"]) + label,
-label:has(~ :is([type="checkbox"], [type="radio"])),
-label:has(> :is([type="checkbox"], [type="radio"])) {
-	font-weight: revert;
-}
-
-label:has(> :is([type="checkbox"], [type="radio"]) + span:only-of-type) {
-	display: inline-flex;
-	gap: 1ch;
-	align-items: center;
-}
-
 input,
 select,
 textarea {
-	inline-size: 100%;
 	padding-block: var(--input-padding-block, revert);
 	padding-inline: var(--input-padding-inline, revert);
 	font-weight: var(--input-font-weight, inherit);
@@ -359,69 +351,20 @@ label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [
 label + *:has(> :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"])) {
 	display: block;
 	inline-size: 100%;
-	margin-block-start: var(--form-label-input-gap, 0.25em);
+	margin-block-start: var(--form-label-input-gap);
 }
 
 label:is(.screen-reader-text, .visually-hidden):first-child + * {
 	margin-block-start: 0;
 }
 
-form label ~ p[class*="error-message"] {
-	font-size: var(--form-field-error-message-font-size, inherit);
-	font-weight: var(--font-weight-normal, inherit);
-	color: var(--color-danger-medium, inherit);
+label:has(> :is([type="checkbox"], [type="radio"]):only-child),
+*:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
+	--label-font-weight: var(--font-weight-base);
+	display: inline-flex;
+	gap: var(--form-label-input-check-radio-gap, 1ch);
+	align-items: center;
 }
-
-/* TODO: Disabled state */
-
-/* :disabled,
-:disabled[disabled],
-:disabled:hover,
-:disabled[disabled]:hover {
-	opacity: 0.5;
-} */
-
-/* TODO: Focus indicators
-
-Refs.:
-- https://medienbaecker.com/articles/focus-outlines
-- https://www.sarasoueidan.com/blog/focus-indicators/
----------------------------------------------------------------------- */
-
-/* :focus-visible {
-	outline-width: var(--focus-ring-width, revert);
-	outline-style: var(--focus-ring-style, revert);
-	outline-color: var(--focus-ring-color, revert);
-	outline-offset: var(--focus-ring-offset, revert);
-} */
-
-/* *:focus-visible {
-	outline: 0.375rem double #000;
-	box-shadow: 0 0 0 0.25rem #fff;
-} */
-
-/* :where(.wp-site-blocks *:focus-visible) {
-	outline-width: 2px;
-	outline-style: solid;
-} */
-
-/* Increases the bottom margin on submenus, so that the outline is visible. */
-
-/* .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
-	margin-bottom: 3px;
-} */
-
-/* Increases the outline offset on the parent menu items, so that the outline does not touch the text. */
-
-/* .wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
-	outline-offset: 4px;
-} */
-
-/* Removes outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
-
-/* .wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	outline-offset: 0;
-} */
 
 /* ======================================================================
 Interactive elements
@@ -442,23 +385,18 @@ Details
 ---------------------------------------------------------------------- */
 
 details {
-	padding-block-start: var(--details-padding-block-start, 1em);
-	padding-block-end: var(--details-padding-block-end, 1em);
-	padding-inline-start: var(--details-padding-inline-start, 1em);
-	padding-inline-end: var(--details-padding-inline-end, 1em);
+	padding-block-start: var(--details-padding-top, 1em);
+	padding-block-end: var(--details-padding-bottom, 1em);
+	padding-inline-start: var(--details-padding-left, 1em);
+	padding-inline-end: var(--details-padding-right, 1em);
 	background-color: var(--details-background-color, transparent);
-	border-block-start: var(--details-border-block-start-width, 1px) var(--details-border-style, solid)
-		var(--details-border-color, inherit);
-	border-block-end: var(--details-border-block-end-width, 1px) var(--details-border-style, solid)
-		var(--details-border-color, inherit);
-	border-inline-start: var(--details-border-inline-start-width, 1px) var(--details-border-style, solid)
-		var(--details-border-color, inherit);
-	border-inline-end: var(--details-border-inline-end-width, 1px) var(--details-border-style, solid)
-		var(--details-border-color, inherit);
+	border-color: var(--details-border-color, inherit);
+	border-style: var(--details-border-style, solid);
+	border-width: var(--details-border-top-width, 1px);
 	border-radius: var(--details-border-radius, 0);
 
 	&:not(:only-of-type) {
-		--details-border-block-end-width: 1px;
+		--details-border-bottom-width: 1px;
 		--details-border-color: var(--wp--preset--color--primary-medium, currentcolor);
 		--details-border-style: solid;
 		--details-padding-block-end: var(--flow-space);
@@ -491,7 +429,7 @@ details > summary {
 Custom Icon
 ---------------------------------------------------------------------- */
 
-/* Removes the default icon in WebKit-based browsers */
+/* Removes the default icon in WebKit-based browsers. */
 details > summary::-webkit-details-marker {
 	display: none;
 }
@@ -527,7 +465,7 @@ details > summary ~ * {
 }
 
 details > summary + * {
-	padding-block-start: var(--details-content-padding-block-start, 1em);
+	padding-block-start: var(--details-content-padding-top, 1em);
 	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy. */
 }
 
@@ -564,3 +502,51 @@ details[open]::details-content {
 	block-size: auto;
 	opacity: 1;
 }
+
+/* ======================================================================
+Focus indicators
+====================================================================== */
+
+/*
+
+Refs.:
+- https://medienbaecker.com/articles/focus-outlines
+- https://www.sarasoueidan.com/blog/focus-indicators/
+---------------------------------------------------------------------- */
+
+/* TODO */
+
+/* :focus-visible {
+	outline-width: var(--focus-ring-width, revert);
+	outline-style: var(--focus-ring-style, revert);
+	outline-color: var(--focus-ring-color, revert);
+	outline-offset: var(--focus-ring-offset, revert);
+} */
+
+/* *:focus-visible {
+	outline: 0.375rem double #000;
+	box-shadow: 0 0 0 0.25rem #fff;
+} */
+
+/* :where(.wp-site-blocks *:focus-visible) {
+	outline-width: 2px;
+	outline-style: solid;
+} */
+
+/* Increases the bottom margin on submenus, so that the outline is visible. */
+
+/* .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
+	margin-bottom: 3px;
+} */
+
+/* Increases the outline offset on the parent menu items, so that the outline does not touch the text. */
+
+/* .wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
+	outline-offset: 4px;
+} */
+
+/* Removes outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
+
+/* .wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	outline-offset: 0;
+} */
