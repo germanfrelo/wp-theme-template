@@ -1,0 +1,25 @@
+/* ======================================================================
+Social Links
+---
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+====================================================================== */
+
+.social-links {
+	&ul {
+		padding-inline-start: 0;
+		list-style-type: none;
+	}
+
+	&.cluster {
+		--cluster-horizontal-alignment: center;
+	}
+
+	a:only-child:has(> :is(img, svg)) {
+		display: block;
+	}
+
+	:is(img, svg) {
+		inline-size: var(--wp--preset--spacing--l, auto);
+		block-size: auto;
+	}
+}

@@ -55,19 +55,16 @@ Social Link
 
 	&:hover {
 		border-color: var(--social-link-border-color-hover, transparent);
+		transform: var(--social-link-hover-transform, scale(1.1));
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: border-color, transform;
 	}
 
 	> a {
 		padding-block: var(--social-link-padding-block, 0.25em);
 		padding-inline: var(--social-link-padding-inline, 0.25em);
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
-		transition-property: transform;
-
-		&:hover {
-			transform: var(--social-link-hover-transform, scale(1.1));
-		}
 	}
 }
