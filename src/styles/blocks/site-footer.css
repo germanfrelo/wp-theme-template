@@ -3,7 +3,7 @@ Site Footer
 ====================================================================== */
 
 .site-footer {
-	--site-logo-width: 12.75rem;
+	--site-logo-height: var(--wp--preset--spacing--xl);
 	padding-block: var(--wp--preset--spacing--xl, 2em);
 	color: var(--wp--preset--color--surface-1, inherit);
 	background-color: var(--wp--preset--color--primary-medium, transparent);

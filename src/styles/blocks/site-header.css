@@ -2,6 +2,79 @@
 Site Header
 ====================================================================== */
 
-.site-header {
-	--site-logo-width: 10.8rem;
+@keyframes add-shadow-to-header {
+	to {
+		box-shadow: 0 2px 4px -2px color-mix(in oklch, currentcolor 25%, transparent);
+	}
+}
+
+header.wp-block-template-part {
+	padding-block-start: var(--site-header-padding-top, 2rem);
+	padding-block-end: var(--site-header-padding-bottom, 2rem);
+	background-color: color-mix(in oklch, var(--wp--preset--color--surface-1, Canvas) 95%, transparent);
+
+	@supports (animation-timeline: scroll()) {
+		& {
+			position: sticky;
+			inset-block-start: 0;
+			z-index: 1;
+			backdrop-filter: blur(8px);
+
+			@media (prefers-reduced-motion: no-preference) {
+				animation: add-shadow-to-header linear forwards;
+				animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
+				animation-timeline: scroll();
+				animation-range: 0 80px;
+			}
+		}
+	}
+
+	@supports not (animation-timeline: scroll()) {
+		& {
+			box-shadow: 0 1px color-mix(in oklch, currentcolor 10%, transparent);
+		}
+	}
+
+	/*
+	Navigation Overlay Menu - Breakpoint
+	Change the default viewport width at which navigation switches between expanded and collapsed.
+	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default.
+	*/
+
+	/* stylelint-disable no-unknown-custom-media -- Defined in variables.css file. */
+	/* stylelint-disable selector-not-notation -- To match specificity of default WP styles. */
+
+	/* Override styles at WP's default breakpoint. */
+
+	@media (--wp-default-navigation-breakpoint) {
+		nav.wp-block-navigation {
+			/* Keep showing the button to open the menu */
+			.wp-block-navigation__responsive-container-open:not(.always-shown) {
+				display: flex;
+			}
+
+			/* Keep hiding the expanded menu */
+			.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+				display: none;
+			}
+		}
+	}
+
+	/* Add styles at custom breakpoint larger than the default one. */
+
+	@media (--navigation-breakpoint) {
+		nav.wp-block-navigation {
+			/* Hide the button to open the menu */
+			.wp-block-navigation__responsive-container-open:not(.always-shown) {
+				display: none;
+			}
+
+			/* Show the expanded menu */
+			.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+				display: block;
+			}
+		}
+	}
+	/* stylelint-enable selector-not-notation */
+	/* stylelint-enable no-unknown-custom-media */
 }

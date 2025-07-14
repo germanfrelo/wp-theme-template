@@ -175,7 +175,7 @@ Some design tokens are defined in theme.json:
 	--site-header-padding-bottom: var(--wp--preset--spacing--s);
 
 	/* Site Logo */
-	--site-logo-width: 10rem;
+	--site-logo-height: var(--wp--preset--spacing--l);
 
 	/*
 	Custom Fluid Tokens

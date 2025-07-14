@@ -129,7 +129,7 @@
 		},
 		"custom": {
 			"shadow": {
-				"color": "232 3% 15%",
+				"color": "currentcolor",
 				"strength": "1%"
 			}
 		},
