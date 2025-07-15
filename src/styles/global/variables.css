@@ -96,11 +96,11 @@ Some design tokens are defined in theme.json:
 	/* Font Sizes */
 	--font-size-base: var(--wp--preset--font-size--step-0);
 	--font-size-heading-1: var(--wp--preset--font-size--step-5);
-	--font-size-heading-2: var(--wp--preset--font-size--step-2);
-	--font-size-heading-3: var(--wp--preset--font-size--step-1);
-	--font-size-heading-4: var(--wp--preset--font-size--step-0);
-	--font-size-heading-5: var(--wp--preset--font-size--step-00);
-	--font-size-heading-6: var(--wp--preset--font-size--step-00);
+	--font-size-heading-2: var(--wp--preset--font-size--step-4);
+	--font-size-heading-3: var(--wp--preset--font-size--step-3);
+	--font-size-heading-4: var(--wp--preset--font-size--step-2);
+	--font-size-heading-5: var(--wp--preset--font-size--step-1);
+	--font-size-heading-6: var(--wp--preset--font-size--step-0);
 
 	/* Forms */
 	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
