@@ -156,6 +156,20 @@ ul:where(:has(> li > :is(input))) {
 }
 
 /* ----------------------------------------------------------------------
+Blockquote
+---------------------------------------------------------------------- */
+
+blockquote:where(:not([class])) {
+	padding-block: var(--quote-padding-block, 0);
+	padding-inline: var(--quote-padding-inline, 0);
+	margin-inline: var(--quote-margin-inline, 0);
+	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
+	border-left-color: var(--quote-border-left-color, currentcolor);
+	border-left-style: var(--quote-border-left-style, solid);
+	border-left-width: var(--quote-border-left-width, 0);
+}
+
+/* ----------------------------------------------------------------------
 Preformatted Text
 ---------------------------------------------------------------------- */
 

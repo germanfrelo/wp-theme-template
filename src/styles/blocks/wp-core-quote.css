@@ -10,13 +10,16 @@ To customize most of this block and its parts, use the global CSS custom propert
 ======================================================================================= */
 
 .wp-block-quote {
-	padding-block: var(--quote-padding-block, 0);
-	padding-inline: var(--quote-padding-inline, 0);
 	margin-inline: var(--quote-margin-inline, 0);
 	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
-	border-left-color: var(--quote-border-left-color, currentcolor);
-	border-left-style: var(--quote-border-left-style, solid);
-	border-left-width: var(--quote-border-left-width, 0);
+
+	> :not(cite) {
+		padding-block: var(--quote-padding-block, 0);
+		padding-inline: var(--quote-padding-inline, 0);
+		border-left-color: var(--quote-border-left-color, currentcolor);
+		border-left-style: var(--quote-border-left-style, solid);
+		border-left-width: var(--quote-border-left-width, 0);
+	}
 
 	> cite {
 		display: block;
