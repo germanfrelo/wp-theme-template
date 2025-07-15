@@ -149,6 +149,10 @@ Some design tokens are defined in theme.json:
 	--list-item-marker-color: currentcolor;
 	--list-unordered-style-type: disc;
 
+	/* Quote */
+	--quote-border-left-width: 0.5ch;
+	--quote-padding-inline: 2ch;
+
 	/* Radius */
 	--radius-1: var(--wp--preset--spacing--3-xs);
 	--radius-2: var(--wp--preset--spacing--2-xs);
