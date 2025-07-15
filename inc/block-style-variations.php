@@ -33,8 +33,14 @@ function themeslug_register_block_style_variations() {
 	);
 	register_block_style(
 		'core/list', [
-			'name'  => 'checkmark',
-			'label' => __( 'Checkmark', 'themeslug' )
+			'name'  => 'unordered-checkmark',
+			'label' => __( 'Unordered Checkmark', 'themeslug' )
+		]
+	);
+	register_block_style(
+		'core/list', [
+			'name'  => 'ordered-custom',
+			'label' => __( 'Ordered Custom', 'themeslug' )
 		]
 	);
 	register_block_style(
