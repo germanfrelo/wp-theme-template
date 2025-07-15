@@ -1,39 +1,40 @@
 /* =======================================================================================
-Table
+WP Table
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/table
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
+- To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
 ======================================================================================= */
 
-.wp-block-table thead {
-	border-color: currentcolor;
-	border-block-end-width: var(--stroke-weight-medium, 2px);
-}
+.wp-block-table {
+	:is(th, td) {
+		padding-block: var(--table-cell-padding-block, 0.5em);
+		padding-inline: var(--table-cell-padding-inline, 0.5rem);
+		border-width: var(--table-border, 1px);
+	}
 
-.wp-block-table tfoot {
-	border-color: currentcolor;
-	border-block-start-width: var(--stroke-weight-medium, 2px);
-}
+	thead {
+		background-color: var(--table-thead-color-bg, transparent);
+		border-block-end: var(--table-thread-border, 3px) solid;
+	}
 
-.wp-block-table :is(td, th) {
-	padding-block: 0.5em;
-	padding-inline: 0.5rem;
-	border-color: currentcolor;
-	border-width: var(--stroke-weight-thin, 1px);
-}
+	tfoot {
+		background-color: var(--table-head-color-bg, transparent);
+		border-block-start: var(--table-head-border, 3px) solid;
+	}
 
-.wp-block-table.is-style-stripes {
-	border-bottom: revert;
-}
+	&.is-style-stripes {
+		border-bottom: revert;
 
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	background-color: var(--wp--preset--color--surface-2, inherit);
-}
+		tbody tr:nth-child(odd) {
+			background-color: var(--table-stripes-row-color-bg, color-mix(in srgb, currentcolor 5%, transparent));
+		}
 
-.wp-block-table.is-style-stripes :is(td, th) {
-	border-color: currentcolor;
+		:is(td, th) {
+			border-color: currentcolor;
+		}
+	}
 }

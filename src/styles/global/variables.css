@@ -187,10 +187,6 @@ Some design tokens are defined in theme.json:
 	--flow-space: var(--wp--style--block-gap, 1em);
 	--gutter: var(--wp--preset--spacing--s-m);
 
-	/* Tables */
-	--table-cell-padding-block: 0.5em;
-	--table-cell-padding-inline: 1rem;
-
 	/* Transitions */
 	--transition-duration: 0.25s;
 	--transition-timing-function: initial;

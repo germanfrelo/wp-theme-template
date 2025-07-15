@@ -275,20 +275,24 @@ svg {
 Tables
 ====================================================================== */
 
-th,
-td {
-	padding-block: var(--table-cell-padding-block, 0.5em);
-	padding-inline: var(--table-cell-padding-inline, 1rem);
+table {
+	inline-size: 100%;
 }
 
-th,
-thead,
-tfoot {
-	font-weight: var(--font-weight-medium, bold);
+:is(th, td) {
+	padding-block: var(--table-cell-padding-block, 0.5em);
+	padding-inline: var(--table-cell-padding-inline, 0.5rem);
+	border-width: var(--table-border, 1px);
 }
 
 thead {
-	background-color: var(--wp--preset--color--surface-2, transparent);
+	background-color: var(--table-head-color-bg, transparent);
+	border-block-end: var(--table-head-border, 3px) solid;
+}
+
+tfoot {
+	background-color: var(--table-foot-color-bg, transparent);
+	border-block-start: var(--table-foot-border, 3px) solid;
 }
 
 /* ======================================================================
