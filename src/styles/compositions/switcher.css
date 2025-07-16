@@ -6,25 +6,26 @@ A layout for dynamically switching between horizontal and vertical arrangement o
 Reference: https://every-layout.dev/layouts/switcher/
 
 Configuration:
---gutter (1em): This defines the space between each item.
---switcher-horizontal-alignment (unset): How items should align horizontally. Can be any acceptable flexbox alignment value.
---switcher-vertical-alignment (unset): How items should align vertically. Can be any acceptable flexbox alignment value.
---switcher-target-container-width (40rem): How large *the container* needs to be to allow items to sit inline with each other.
+--switcher-gap (var(--gutter, 1em)): The space between each item.
+--switcher-horizontal-alignment (start): How items should align horizontally. Can be any valid flexbox 'justify-content' property value.
+--switcher-vertical-alignment (stretch): How items should align vertically. Can be any valid flexbox 'align-items' property value.
+--switcher-target-container-width (var(--measure-content, 50rem)): How large *the container* needs to be to allow items to sit inline with each other.
+--switcher-wrap (wrap): A valid 'flex-wrap' value. Use 'wrap' or 'wrap-reverse'. Don't use 'nowrap' because that would make using this layout useless.
 ====================================================================== */
 
 .switcher,
 .switcher-2,
 .switcher-3 {
 	display: flex;
-	flex-wrap: wrap;
-	gap: var(--gutter, 1em);
-	align-items: var(--switcher-vertical-alignment, unset);
-	justify-content: var(--switcher-horizontal-alignment, unset);
+	flex-wrap: var(--switcher-wrap, wrap);
+	gap: var(--switcher-gap, var(--gutter, 1em));
+	align-items: var(--switcher-vertical-alignment, stretch);
+	justify-content: var(--switcher-horizontal-alignment, start);
 }
 
 :is(.switcher, .switcher-2, .switcher-3) > * {
 	flex-grow: 1;
-	flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+	flex-basis: calc((var(--switcher-target-container-width, var(--measure-content, 50rem)) - 100%) * 999);
 	max-inline-size: 100%;
 	margin: 0;
 }

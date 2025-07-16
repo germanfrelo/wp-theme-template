@@ -4,11 +4,11 @@ REEL
 A layout for creating a horizontally scrolling container for elements that maintain their intrinsic height.
 
 References:
-* https://every-layout.dev/layouts/reel/
-* https://developer.chrome.com/docs/css-ui/scrollbar-styling
-* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color
-* https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width
-* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+- https://every-layout.dev/layouts/reel/
+- https://developer.chrome.com/docs/css-ui/scrollbar-styling
+- https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color
+- https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width
+- https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
 
 Configuration:
 --reel-height (auto): The height of the Reel itself.
@@ -31,7 +31,6 @@ Safari only:
 
 .reel {
 	display: flex;
-	flex-direction: row;
 	flex-wrap: nowrap;
 	gap: var(--reel-items-gap, var(--gutter, 1em));
 	block-size: var(--reel-height, auto);

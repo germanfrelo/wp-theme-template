@@ -21,7 +21,6 @@ Configuration:
 Remove the margin between a visually hidden element and the element that immediately follows it.
 Note: '.is-layout-flow' is a WP-generated class.
 */
-
 :is(.flow, .is-layout-flow) > *:where(.screen-reader-text, .visually-hidden) + * {
 	margin-block-start: 0;
 }
