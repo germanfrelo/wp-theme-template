@@ -465,42 +465,42 @@
 					]
 				}
 			],
-			"generator": "https://utopia.fyi/type/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
+			"generator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fontSizes": [
 				{
 					"name": "Step 00",
 					"slug": "step-00",
-					"size": "clamp(0.8547rem, 0.8247rem + 0.1279vw, 0.9398rem)"
+					"size": "clamp(1rem, 1rem + 0vw, 1rem)"
 				},
 				{
 					"name": "Step 0",
 					"slug": "step-0",
-					"size": "clamp(1rem, 0.912rem + 0.3756vw, 1.25rem)"
+					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
 				},
 				{
 					"name": "Step 1",
 					"slug": "step-1",
-					"size": "clamp(1.17rem, 0.9966rem + 0.7399vw, 1.6625rem)"
+					"size": "clamp(1.2656rem, 1.1611rem + 0.446vw, 1.5625rem)"
 				},
 				{
 					"name": "Step 2",
 					"slug": "step-2",
-					"size": "clamp(1.3689rem, 1.0723rem + 1.2653vw, 2.2111rem)"
+					"size": "clamp(1.4238rem, 1.2375rem + 0.7952vw, 1.9531rem)"
 				},
 				{
 					"name": "Step 3",
 					"slug": "step-3",
-					"size": "clamp(1.6016rem, 1.1301rem + 2.0119vw, 2.9408rem)"
+					"size": "clamp(1.6018rem, 1.3062rem + 1.2614vw, 2.4414rem)"
 				},
 				{
 					"name": "Step 4",
 					"slug": "step-4",
-					"size": "clamp(1.8739rem, 1.1565rem + 3.0608vw, 3.9113rem)"
+					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
 				},
 				{
 					"name": "Step 5",
 					"slug": "step-5",
-					"size": "clamp(2.1924rem, 1.1328rem + 4.5214vw, 5.202rem)"
+					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
 				}
 			]
 		}
