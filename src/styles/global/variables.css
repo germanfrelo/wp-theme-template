@@ -25,7 +25,7 @@ Some design tokens are defined in theme.json:
 	--button-color-background: var(--wp--preset--color--primary-medium);
 	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
 	--button-color-text: var(--wp--preset--color--surface-1);
-	--button-font-size: inherit;
+	--button-font-size: var(--wp--preset--font-size--step-00);
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);
 	--button-padding-block: 0.875em;
