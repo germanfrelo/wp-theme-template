@@ -104,16 +104,16 @@ Some design tokens are defined in theme.json:
 
 	/* Forms */
 	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
-	--input-background-color: var(--wp--preset--color--surface-1);
-	--input-border-color: var(--wp--preset--color--surface-5);
-	--input-border-radius: var(--radius-1);
-	--input-border-width: var(--border-size-1);
-	--input-checkbox-size: 1.125em;
-	--input-color: var(--wp--preset--color--text-1);
-	--input-font-weight: var(--font-weight-normal);
-	--input-padding-block: 0.4375em;
-	--input-padding-inline: 0.5em;
-	--input-radio-size: 1.125em;
+	--field-background-color: var(--wp--preset--color--surface-1);
+	--field-border-color: var(--wp--preset--color--surface-5);
+	--field-border-radius: var(--radius-1);
+	--field-border-width: var(--border-size-1);
+	--field-checkbox-size: 1.125em;
+	--field-color: var(--wp--preset--color--text-1);
+	--field-font-weight: var(--font-weight-normal);
+	--field-padding-block: 0.4375em;
+	--field-padding-inline: 0.5em;
+	--field-radio-size: 1.125em;
 	--label-font-size: var(--wp--preset--font-size--step-0);
 	--label-font-weight: var(--font-weight-medium);
 	--label-leading: inherit;

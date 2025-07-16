@@ -328,14 +328,14 @@ label {
 input,
 select,
 textarea {
-	padding-block: var(--input-padding-block, revert);
-	padding-inline: var(--input-padding-inline, revert);
-	font-weight: var(--input-font-weight, inherit);
-	background-color: var(--input-background-color, transparent);
-	border-color: var(--input-border-color, currentcolor);
+	padding-block: var(--field-padding-block, revert);
+	padding-inline: var(--field-padding-inline, revert);
+	font-weight: var(--field-font-weight, inherit);
+	background-color: var(--field-background-color, transparent);
+	border-color: var(--field-border-color, currentcolor);
 	border-style: solid;
-	border-width: var(--input-border-width, revert);
-	border-radius: var(--input-border-radius, revert);
+	border-width: var(--field-border-width, revert);
+	border-radius: var(--field-border-radius, revert);
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--transition-duration, 0);
@@ -356,13 +356,13 @@ textarea {
 }
 
 [type="checkbox"] {
-	inline-size: var(--input-checkbox-size, auto);
-	block-size: var(--input-checkbox-size, auto);
+	inline-size: var(--field-checkbox-size, auto);
+	block-size: var(--field-checkbox-size, auto);
 }
 
 [type="radio"] {
-	inline-size: var(--input-radio-size, auto);
-	block-size: var(--input-radio-size, auto);
+	inline-size: var(--field-radio-size, auto);
+	block-size: var(--field-radio-size, auto);
 }
 
 label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"]),
