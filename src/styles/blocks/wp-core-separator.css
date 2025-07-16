@@ -5,8 +5,7 @@ Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/separator
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/separator
 ---
-Notes:
-- To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
 ======================================================================================= */
 
 .wp-block-separator {
