@@ -185,6 +185,17 @@ pre:has(code) {
 	background-color: var(--code-block-color-bg, transparent);
 }
 
+/* ----------------------------------------------------------------------
+Thematic Break (Horizontal Rule)
+---------------------------------------------------------------------- */
+
+hr {
+	color: var(--separator-color, inherit);
+	border: none;
+	border-block-start-style: var(--separator-style, solid);
+	border-block-start-width: var(--separator-thickness, 2px);
+}
+
 /* ======================================================================
 Text-level semantics
 ====================================================================== */
