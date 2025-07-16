@@ -330,6 +330,8 @@ select,
 textarea {
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
+	/* Setting a minimum font-size of 16px prevents iOS Safari from automatically zooming in when tapped: https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
+	font-size: max(16px, var(--field-font-size, inherit));
 	font-weight: var(--field-font-weight, inherit);
 	background-color: var(--field-background-color, transparent);
 	border-color: var(--field-border-color, currentcolor);
