@@ -1,5 +1,7 @@
+/* TODO: Check, improve and refactor. */
+
 /* =======================================================================================
-Post Author
+WP Post Author
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-author
@@ -10,9 +12,6 @@ Notes:
 ======================================================================================= */
 
 .wp-block-post-author {
-	--post-author-padding-block: var(--wp--preset--spacing--2-xs, 0.5rem);
-	--post-author-padding-inline-start: var(--wp--preset--spacing--2-xs, 0.5rem);
-	--post-author-padding-inline-end: var(--wp--preset--spacing--xs, 0.75rem);
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1em;
@@ -22,44 +21,44 @@ Notes:
 	padding-inline-end: var(--post-author-padding-inline-end, 0.75rem);
 	transition-duration: var(--transition-duration, 0);
 	transition-property: background-color;
-}
 
-.is-layout-flex > .wp-block-post-author {
-	margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
-}
+	.is-layout-flex > & {
+		margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
+	}
 
-.wp-block-post-author:has(:any-link:hover) {
-	background-color: var(--wp--preset--color--surface-2, transparent);
-}
+	&:has(:any-link:hover) {
+		background-color: var(--wp--preset--color--surface-2, transparent);
+	}
 
-.wp-block-post-author > * {
-	margin: 0;
-}
+	.wp-block-post-author > * {
+		margin: 0;
+	}
 
-.wp-block-post-author > .wp-block-post-author__avatar {
-	flex-shrink: 0;
-	inline-size: 2.5rem;
-	border-radius: 50%;
-}
+	> .wp-block-post-author__avatar {
+		flex-shrink: 0;
+		inline-size: 2.5rem;
+		border-radius: 50%;
 
-.wp-block-post-author > .wp-block-post-author__avatar :is(img, svg) {
-	border-radius: 50%;
-}
+		:is(img, svg) {
+			border-radius: 50%;
+		}
+	}
 
-.wp-block-post-author > .wp-block-post-author__content {
-	flex-basis: auto;
-}
+	> .wp-block-post-author__content {
+		flex-basis: auto;
 
-.wp-block-post-author > .wp-block-post-author__content > * {
-	margin-block: 0;
-	line-height: 1.2;
-}
+		> * {
+			margin-block: 0;
+			line-height: 1.2;
+		}
 
-.wp-block-post-author > .wp-block-post-author__content > * + * {
-	margin-block-start: 0.5em;
-}
+		> * + * {
+			margin-block-start: 0.5em;
+		}
 
-.wp-block-post-author > .wp-block-post-author__content > .wp-block-post-author__byline,
-.wp-block-post-author > .wp-block-post-author__content > .wp-block-post-author__bio {
-	font-size: max(12px, 0.875em);
+		> .wp-block-post-author__byline,
+		> .wp-block-post-author__bio {
+			font-size: max(12px, 0.875em);
+		}
+	}
 }

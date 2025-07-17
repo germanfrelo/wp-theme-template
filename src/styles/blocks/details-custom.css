@@ -1,0 +1,64 @@
+/* ======================================================================
+Details - Custom style
+====================================================================== */
+
+.wp-block-details.is-style-custom {
+	--details-background-color: var(--wp--preset--color--surface-2);
+	--details-padding-top: var(--wp--preset--spacing--2-xs);
+	--details-padding-bottom: var(--wp--preset--spacing--2-xs);
+	--details-padding-left: var(--wp--preset--spacing--xs);
+	--details-padding-right: var(--wp--preset--spacing--xs);
+	--details-border-radius: var(--radius-1);
+	--details-summary-font-weight: var(--font-weight-bold);
+	--details-summary-gap: 1ch;
+	--details-summary-letter-spacing: normal;
+	--details-summary-line-height: inherit;
+	--details-icon-color: var(--wp--preset--color--primary-medium);
+	--details-icon-color-on-hover: var(--wp--preset--color--text-1);
+	--details-icon-size: 2rem;
+	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
+	--details-content-font-size: inherit;
+	--details-content-padding-top: var(--wp--preset--spacing--xs);
+
+	&:has(> summary:is(:hover, :focus-visible)) {
+		--details-background-color: var(--wp--preset--color--surface-3);
+	}
+
+	> summary {
+		display: flex;
+		gap: var(--details-summary-gap, 1rem);
+		align-items: center;
+		list-style: none;
+	}
+
+	/*
+	Custom Icon.
+	It's rendered after the summary by default. To render it before, just change '::after' to '::before'.
+	---------------------------------------------------------------------- */
+
+	/* Remove the default icon in WebKit-based browsers. */
+	> summary::-webkit-details-marker {
+		display: none;
+	}
+
+	/*
+	Add a custom icon.
+	*/
+	> summary::after {
+		display: inline-block;
+		flex-shrink: 0;
+		inline-size: var(--details-icon-size, 2.5rem);
+		block-size: var(--details-icon-size, 2.5rem);
+		margin-inline-start: auto;
+		content: "";
+		background-color: var(--details-icon-color, currentcolor);
+		mask-image: var(--details-icon-image, none);
+		mask-position: center;
+		mask-size: cover;
+	}
+
+	/* When Details is Open */
+	&[open] > summary::after {
+		rotate: 0.5turn;
+	}
+}

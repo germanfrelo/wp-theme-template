@@ -1,67 +1,71 @@
+/* TODO: Check, improve and refactor. */
+
 /* =======================================================================================
-Categories
+WP Categories
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/categories
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/categories
 ---
-Notes:
-- Use CSS custom properties to customize most of this block and its parts.
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
 ======================================================================================= */
 
-/* ----------------------------------------------------------------------
-As a dropdown (<select>)
----------------------------------------------------------------------- */
+.wp-block-categories {
+	/* ----------------------------------------------------------------------
+	As a dropdown (<select>)
+	---------------------------------------------------------------------- */
 
-.wp-block-categories.wp-block-categories-dropdown {
-	&.aligncenter {
-		justify-items: center;
-	}
+	/* TODO: Improve and refactor it. */
 
-	label {
-		display: block;
-		inline-size: fit-content;
-	}
-
-	.select-wrapper {
-		--gutter: var(--wp--preset--spacing--2-xs-m);
-		display: flex;
-		column-gap: var(--gutter, 0.5em);
-		align-items: center;
-		inline-size: fit-content;
-		max-inline-size: 100%;
-		padding-block: var(--input-padding-block, initial);
-		padding-inline: var(--gutter, --input-padding-inline, initial);
-		font-size: var(--wp--preset--font-size--step-00, inherit);
-		font-weight: var(--font-weight-light, inherit);
-		background-color: var(--wp--preset--color--primary-lighter, transparent);
-		border-color: var(--wp--preset--color--primary-lighter, transparent);
-		border-style: solid;
-		border-width: var(--input-border-width, initial);
-		border-radius: var(--input-border-radius, initial);
-		transition-duration: var(--transition-duration, 0);
-		transition-property: color, background-color, border-color;
-
-		/* A reset of styles, including removing the default dropdown arrow */
-		> select {
-			padding-block: 0;
-			padding-inline: 0;
-			margin: 0;
-			font: inherit;
-			appearance: none;
-			outline: none; /* Remove default focus outline, will add later */
-			background-color: transparent;
-			border: none;
-			border-radius: 0;
+	&.wp-block-categories-dropdown {
+		&.aligncenter {
+			justify-items: center;
 		}
 
-		&:focus-within {
-			outline: 2px solid var(--wp--preset--color--primary-medium, currentcolor);
-			outline-offset: 1px;
+		label {
+			display: block;
+			inline-size: fit-content;
 		}
 
-		&:hover {
-			background-color: var(--wp--preset--color--primary-lighter, transparent);
+		.select-wrapper {
+			display: flex;
+			column-gap: var(--select-gap, 1ch);
+			align-items: center;
+			inline-size: fit-content;
+			max-inline-size: 100%;
+			padding-block: var(--select-padding-block, var(--field-padding-block));
+			padding-inline: var(--select-padding-inline, var(--field-padding-inline));
+			font-size: var(--select-font-size, initial);
+			font-weight: var(--select-font-weight, initial);
+			background-color: var(--select-background-color, var(--field-background-color));
+			border-color: var(--select-border-color, var(--field-border-color));
+			border-style: var(--select-border-style, solid);
+			border-width: var(--select-border-width, var(--field-border-width));
+			border-radius: var(--select-border-radius, var(--field-border-radius));
+			transition-duration: var(--transition-duration, 0);
+			transition-property: color, background-color, border-color;
+
+			/* A reset of styles, including removing the default dropdown arrow */
+			> select {
+				padding-block: 0;
+				padding-inline: 0;
+				margin: 0;
+				font: inherit;
+				appearance: none;
+				outline: none; /* Remove default focus outline, will add later */
+				background-color: transparent;
+				border: none;
+				border-radius: 0;
+			}
+
+			&:focus-within {
+				outline: var(--select-outline-width, 2px) solid var(--select-outline-color, currentcolor);
+				outline-offset: 1px;
+			}
+
+			&:hover {
+				background-color: var(--select-background-color-on-hover);
+			}
 		}
 	}
 }

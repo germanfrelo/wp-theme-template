@@ -220,8 +220,16 @@ textarea {
 Remove Firefox's default 1px 'margin-block' from 'textarea' for consistency across browsers (bug: https://bugzilla.mozilla.org/show_bug.cgi?id=73817).
 */
 
-textarea {
+:where(textarea) {
 	margin-block: 0;
+}
+
+/*
+Remove the default margin from some form elements, which is usually not wanted, in favor of better control in authored CSS.
+*/
+
+:where([type="checkbox"], [type="radio"], [type="range"]) {
+	margin: 0;
 }
 
 /*

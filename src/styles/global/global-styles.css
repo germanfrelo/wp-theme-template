@@ -29,7 +29,7 @@ body {
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--leading-base, 1.5);
-	color: var(--wp--preset--color--text-1, CanvasText);
+	color: var(--color-text, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
@@ -202,7 +202,7 @@ Text-level semantics
 
 b,
 strong {
-	font-weight: var(--font-weight-medium, bolder);
+	font-weight: var(--font-weight-bold, bolder);
 }
 
 a:where(:any-link) {
@@ -344,7 +344,8 @@ textarea {
 	/* Setting a minimum font-size of 16px prevents iOS Safari from automatically zooming in when tapped: https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-size: max(16px, var(--field-font-size, inherit));
 	font-weight: var(--field-font-weight, inherit);
-	background-color: var(--field-background-color, transparent);
+	color: var(--field-color-text, inherit);
+	background-color: var(--field-color-bg, transparent);
 	border-color: var(--field-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--field-border-width, revert);
@@ -362,10 +363,6 @@ textarea {
 	min-block-size: 5lh;
 	resize: vertical;
 	field-sizing: content;
-}
-
-:where([type="checkbox"], [type="radio"]) {
-	margin: 0;
 }
 
 [type="checkbox"] {
@@ -416,122 +413,74 @@ Details
 ---------------------------------------------------------------------- */
 
 details {
-	padding-block-start: var(--details-padding-top, 1em);
-	padding-block-end: var(--details-padding-bottom, 1em);
-	padding-inline-start: var(--details-padding-left, 1em);
-	padding-inline-end: var(--details-padding-right, 1em);
+	padding-block-start: var(--details-padding-top, 0);
+	padding-block-end: var(--details-padding-bottom, 0);
+	padding-inline-start: var(--details-padding-left, 0);
+	padding-inline-end: var(--details-padding-right, 0);
 	background-color: var(--details-background-color, transparent);
-	border-color: var(--details-border-color, inherit);
+	border-color: var(--details-border-color, currentcolor);
 	border-style: var(--details-border-style, solid);
-	border-width: var(--details-border-top-width, 1px);
+	border-width: var(--details-border-width, 0);
 	border-radius: var(--details-border-radius, 0);
 
-	&:not(:only-of-type) {
-		--details-border-bottom-width: 1px;
-		--details-border-color: var(--wp--preset--color--primary-medium, currentcolor);
-		--details-border-style: solid;
-		--details-padding-block-end: var(--flow-space);
+	@media (prefers-reduced-motion: no-preference) {
+		transition-timing-function: var(--transition-timing-function, ease);
+		transition-duration: var(--transition-duration, var(--transition-duration, 0));
+		transition-property: color, background-color, border-color;
 	}
-}
 
-/*
-Summary
----------------------------------------------------------------------- */
+	/*
+	Summary
+	---------------------------------------------------------------------- */
 
-details > summary {
-	display: flex;
-	gap: var(--details-summary-gap, 1rem);
-	align-items: center;
-	font-family: var(--details-summary-font-family, inherit);
-	font-size: var(--details-summary-font-size, inherit);
-	font-weight: var(--details-summary-font-weight, bold);
-	line-height: var(--details-summary-line-height, inherit);
-	color: var(--details-summary-color, inherit);
-	letter-spacing: var(--details-summary-letter-spacing, normal);
-	cursor: var(--details-summary-cursor, default);
-	list-style: none;
-
-	&:is(:hover, :focus-visible) {
-		--details-icon-color: var(--details-icon-color-on-hover, currentcolor);
+	> summary {
+		font-family: var(--details-summary-font-family, inherit);
+		font-size: var(--details-summary-font-size, inherit);
+		font-weight: var(--details-summary-font-weight, inherit);
+		line-height: var(--details-summary-line-height, inherit);
+		color: var(--details-summary-color, inherit);
+		letter-spacing: var(--details-summary-letter-spacing, normal);
+		cursor: var(--details-summary-cursor, default);
 	}
-}
 
-/*
-Custom Icon
----------------------------------------------------------------------- */
+	/*
+	Content
+	---------------------------------------------------------------------- */
 
-/* Removes the default icon in WebKit-based browsers. */
-details > summary::-webkit-details-marker {
-	display: none;
-}
+	> summary ~ * {
+		font-size: var(--details-content-font-size, inherit);
+	}
 
-/*
-Adds a custom icon.
-It's rendered after the summary by default. To render it before, just change '::after' to '::before'
-*/
-details > summary::after {
-	display: inline-block;
-	flex-shrink: 0;
-	inline-size: var(--details-icon-size, 2.5rem);
-	block-size: var(--details-icon-size, 2.5rem);
-	margin-inline-start: auto;
-	content: "";
-	background-color: var(--details-icon-color, currentcolor);
-	mask-image: var(--details-icon-image, none);
-	mask-position: center;
-	mask-size: cover;
-}
+	> summary + * {
+		padding-block-start: var(--details-content-padding-top, 0);
+		padding-block-end: var(--details-content-padding-bottom, 0);
+		margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+	}
 
-/* When Details is Open */
-details[open] > summary::after {
-	rotate: 0.5turn;
-}
+	/*
+	Open & Close Transitions
+	---------------------------------------------------------------------- */
 
-/*
-Content
----------------------------------------------------------------------- */
-
-details > summary ~ * {
-	font-size: var(--details-content-font-size, inherit);
-}
-
-details > summary + * {
-	padding-block-start: var(--details-content-padding-top, 1em);
-	margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy. */
-}
-
-/*
-Open & Close Transitions
----------------------------------------------------------------------- */
-
-@media (prefers-reduced-motion: no-preference) {
-	details {
+	@media (prefers-reduced-motion: no-preference) {
 		interpolate-size: allow-keywords;
 	}
 
-	details::details-content {
+	/* Don't add margin/padding to this, add it to the actual stuff inside the details content */
+	&::details-content {
+		block-size: 0;
+		overflow-y: clip;
+		opacity: 0;
 		transition:
-			content-visibility var(--details-content-transition-duration-visibility, initial),
-			opacity var(--details-content-transition-duration-opacity, initial),
-			block-size var(--details-content-transition-duration-size, initial);
+			content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
+			opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
+			block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
 		transition-behavior: allow-discrete;
 	}
-}
 
-/*
-Don't add margin or padding to this.
-If there is some margin, the open/close transition is a bit clumsy.
-Add it to the content inside the details.
-*/
-details::details-content {
-	block-size: 0;
-	overflow-y: clip;
-	opacity: 0;
-}
-
-details[open]::details-content {
-	block-size: auto;
-	opacity: 1;
+	&[open]::details-content {
+		block-size: auto;
+		opacity: 1;
+	}
 }
 
 /* ======================================================================

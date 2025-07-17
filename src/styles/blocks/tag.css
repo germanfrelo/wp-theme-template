@@ -8,57 +8,16 @@ Tag
 	display: inline-block;
 	align-content: center;
 	inline-size: fit-content;
-	padding-block: 0.25em;
-	padding-inline: 0.75em;
-	font-weight: var(--font-weight-normal, inherit);
-	line-height: var(--leading-slim, inherit);
+	padding-block: var(--tag-padding-block, 0.25em);
+	padding-inline: var(--tag-padding-inline, 0.75em);
+	font-weight: var(--tag-font-weight, inherit);
+	line-height: var(--tag-leading, inherit);
 	color: var(--tag-color-text, inherit);
 	text-align: center;
-	text-decoration-line: none;
+	text-decoration-line: var(--tag-underline, none);
 	background-color: var(--tag-color-bg, transparent);
-	border-color: var(--tag-border-color, var(--tag-color-bg, currentcolor));
+	border-color: var(--tag-border-color, currentcolor);
 	border-style: solid;
-	border-width: 1px;
-	border-radius: var(--radius-medium, 0);
-}
-
-.taxonomy-tipo_formacion {
-	--tag-color-bg: var(--wp--preset--color--surface-1);
-	--tag-color-text: var(--wp--preset--color--text-1);
-}
-
-.wp-block-post-terms.taxonomy-tipo_formacion > :is(a, span) {
-	display: flex;
-	gap: 0.5em;
-	align-items: center;
-
-	&::before {
-		flex-shrink: 0;
-		block-size: 1.25em;
-		content: var(--tipo-formacion-icon-url, "");
-	}
-}
-
-.is-style-tag-blog-theme,
-.wp-singular.post-template-default.single.single-post .wp-block-post-terms.taxonomy-category {
-	--tag-color-bg: var(--wp--preset--color--primary-lighter);
-	--tag-color-text: var(--wp--preset--color--text-1);
-}
-
-.is-style-tag-featured,
-.estado_formacion-destacado .taxonomy-estado_formacion {
-	--tag-color-bg: var(--wp--preset--color--course-featured);
-	--tag-color-text: var(--wp--preset--color--text-1);
-}
-
-.is-style-tag-new,
-.estado_formacion-nuevos .taxonomy-estado_formacion {
-	--tag-color-bg: var(--wp--preset--color--course-new);
-	--tag-color-text: var(--wp--preset--color--text-1);
-}
-
-.is-style-tag-last-spots,
-.estado_formacion-ultimas-plazas .taxonomy-estado_formacion {
-	--tag-color-bg: var(--wp--preset--color--course-last-spots);
-	--tag-color-text: var(--wp--preset--color--text-1);
+	border-width: var(--tag-border-width, 0);
+	border-radius: var(--tag-border-radius, 0);
 }

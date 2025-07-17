@@ -1,5 +1,7 @@
+/* TODO: Check, improve and refactor. */
+
 /* =======================================================================================
-Search
+WP Search
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/search
@@ -209,7 +211,9 @@ Table of contents:
 }
 
 .wp-block-search .wp-block-search__button:is(:hover, :focus-visible),
-.wp-block-search .wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) .wp-block-search__button {
+.wp-block-search
+	.wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus))
+	.wp-block-search__button {
 	color: var(--search-button-color-text-on-hover, inherit);
 	background-color: var(--search-button-color-background-on-hover, transparent);
 	border-color: var(--search-button-border-color-on-hover, transparent);

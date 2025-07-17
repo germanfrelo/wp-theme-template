@@ -1,5 +1,7 @@
+/* TODO: Check, improve and refactor. */
+
 /* =======================================================================================
-Post Terms
+WP Post Terms
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-terms
@@ -15,9 +17,9 @@ Source:
 	column-gap: var(--gutter, var(--wp--preset--spacing--s-m, 1em));
 	align-items: center;
 	justify-content: flex-start;
-}
 
-/* Hide the terms separator */
-.wp-block-post-terms > .wp-block-post-terms__separator {
-	display: none;
+	/* Hide the terms separator */
+	> .wp-block-post-terms__separator {
+		display: none;
+	}
 }
