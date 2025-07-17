@@ -421,10 +421,6 @@ Resources:
 - https://developer.chrome.com/blog/styling-details
 ---------------------------------------------------------------------- */
 
-/*
-Details
----------------------------------------------------------------------- */
-
 details {
 	padding-block-start: var(--details-padding-top, 0);
 	padding-block-end: var(--details-padding-bottom, 0);
@@ -435,16 +431,6 @@ details {
 	border-style: var(--details-border-style, solid);
 	border-width: var(--details-border-width, 0);
 	border-radius: var(--details-border-radius, 0);
-
-	@media (prefers-reduced-motion: no-preference) {
-		transition-timing-function: var(--transition-timing-function, ease);
-		transition-duration: var(--transition-duration, var(--transition-duration, 0));
-		transition-property: color, background-color, border-color;
-	}
-
-	/*
-	Summary
-	---------------------------------------------------------------------- */
 
 	> summary {
 		font-family: var(--details-summary-font-family, inherit);
@@ -457,8 +443,9 @@ details {
 	}
 
 	/*
-	Content
-	---------------------------------------------------------------------- */
+	Content.
+	TODO: Replace these selectors with '::details-content' when it has better support (https://caniuse.com/?search=details-content).
+	*/
 
 	> summary ~ * {
 		font-size: var(--details-content-font-size, inherit);
@@ -470,24 +457,34 @@ details {
 		margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
 	}
 
-	/*
-	Open & Close Transitions
-	---------------------------------------------------------------------- */
+	/* Transitions */
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-timing-function: var(--transition-timing-function, ease);
+		transition-duration: var(--transition-duration, var(--transition-duration, 0));
+		transition-property: color, background-color, border-color;
+		interpolate-size: allow-keywords;
+	}
+
+	/* Open & Close Transitions */
 
 	@media (prefers-reduced-motion: no-preference) {
 		interpolate-size: allow-keywords;
 	}
 
-	/* Don't add margin/padding to this, add it to the actual stuff inside the details content */
+	/* Don't add margin/padding to this, add it to the actual stuff inside the details content. */
 	&::details-content {
 		block-size: 0;
 		overflow-y: clip;
 		opacity: 0;
-		transition:
-			content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
-			opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
-			block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
-		transition-behavior: allow-discrete;
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition:
+				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
+				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
+				block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
+			transition-behavior: allow-discrete;
+		}
 	}
 
 	&[open]::details-content {
