@@ -1,15 +1,32 @@
-/**
- * Low-specificity, global styles that apply to the whole project.
- * More info:
- * - https://cube.fyi/css.html
- * - https://piccalil.li/blog/cube-css/#css
- *
- * Recommended selectors order:
- * https://developer.mozilla.org/en-US/docs/Web/HTML/Element
- */
+/* =======================================================================================
+GLOBAL STYLES
+
+Low-specificity, global styles that apply to the whole project.
+
+More info:
+- https://cube.fyi/css.html
+- https://piccalil.li/blog/cube-css/#css
+
+Almost all custom properties used are defined in 'variables.css',
+allowing us to customize globals with design tokens,
+rather than writing the same styles for *every* project.
+
+Selectors are grouped and sorted based on:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+Table of contents:
+1. Document / Global
+2. Sections
+3. Grouping content
+4. Inline text semantics
+5. Embedded content
+6. Tables
+7. Forms
+8. Interactive elements
+======================================================================================= */
 
 /* ======================================================================
-Global
+1. Document / Global
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -24,6 +41,10 @@ Global
 	}
 }
 
+/* ======================================================================
+2. Sections
+====================================================================== */
+
 body {
 	font-family: var(--wp--preset--font-family--base, sans-serif);
 	font-size: var(--font-size-base, 1rem);
@@ -34,10 +55,6 @@ body {
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }
-
-/* ======================================================================
-Headings
-====================================================================== */
 
 h1,
 h2,
@@ -77,23 +94,17 @@ h6 {
 	font-size: var(--font-size-heading-6, 0.67rem);
 }
 
-/* ======================================================================
-Grouping content
-====================================================================== */
-
 address {
 	font-style: inherit;
 }
 
-:where(figure) {
-	margin: 0;
-}
+/* ======================================================================
+3. Grouping Content
+====================================================================== */
 
 /* ----------------------------------------------------------------------
-Lists
+Description List
 ---------------------------------------------------------------------- */
-
-/* Description List */
 
 dl {
 	margin-block: 0;
@@ -107,7 +118,9 @@ dd {
 	margin-inline-start: 0;
 }
 
-/* Ordered and Unordered Lists */
+/* ----------------------------------------------------------------------
+Ordered & Unordered Lists
+---------------------------------------------------------------------- */
 
 :is(ol, ul) {
 	padding-inline-start: var(--list-indentation, revert);
@@ -197,7 +210,7 @@ hr {
 }
 
 /* ======================================================================
-Text-level semantics
+4. Inline Text Semantics
 ====================================================================== */
 
 b,
@@ -243,15 +256,15 @@ code {
 	white-space: break-spaces;
 	background-color: var(--code-color-bg, transparent);
 	border-radius: var(--code-border-radius, 0);
-}
 
-pre code {
-	padding: 0;
-	font-size: inherit;
-	text-align: start;
-	background-color: inherit;
-	border: none;
-	border-radius: 0;
+	pre & {
+		padding: 0;
+		font-size: inherit;
+		text-align: start;
+		background-color: inherit;
+		border: none;
+		border-radius: 0;
+	}
 }
 
 kbd {
@@ -282,22 +295,22 @@ ins {
 }
 
 /* ======================================================================
-Embedded content
+5. Embedded Content
 ====================================================================== */
 
 svg {
 	flex-shrink: 0;
-}
 
-:is(a:where(:any-link), button) svg path {
-	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
-		transition-property: fill;
+	:is(a:where(:any-link), button) & path {
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--transition-duration, 0);
+			transition-property: fill;
+		}
 	}
 }
 
 /* ======================================================================
-Tables
+6. Tables
 ====================================================================== */
 
 table {
@@ -321,7 +334,7 @@ tfoot {
 }
 
 /* ======================================================================
-Forms
+7. Forms
 ====================================================================== */
 
 legend {
@@ -395,7 +408,7 @@ label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 }
 
 /* ======================================================================
-Interactive elements
+8. Interactive Elements
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
@@ -483,12 +496,19 @@ details {
 	}
 }
 
+/* ----------------------------------------------------------------------
+Dialog
+---------------------------------------------------------------------- */
+
+dialog {
+	/* TODO */
+}
+
 /* ======================================================================
-Focus indicators
+9. Focus Indicators
 ====================================================================== */
 
 /*
-
 Refs.:
 - https://medienbaecker.com/articles/focus-outlines
 - https://www.sarasoueidan.com/blog/focus-indicators/
