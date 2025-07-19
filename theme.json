@@ -588,6 +588,11 @@
 			"name": "page-custom-1",
 			"postTypes": ["page"],
 			"title": "Page: Custom #1"
+		},
+		{
+			"name": "woocommerce-my-account",
+			"title": "WooCommerce: My Account",
+			"postTypes": ["page"]
 		}
 	],
 	"templateParts": [
