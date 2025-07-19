@@ -15,8 +15,4 @@ Configuration:
 	max-inline-size: var(--wrapper-max-width, var(--measure-wide, 80rem));
 	padding-inline: var(--wrapper-gutters, var(--gutter, 1rem));
 	margin-inline: auto;
-
-	.wrapper {
-		max-inline-size: var(--wrapper-max-width, var(--measure-content, 50rem));
-	}
 }

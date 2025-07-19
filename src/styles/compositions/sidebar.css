@@ -13,18 +13,22 @@ Usage:
 Use either 'with-sidebar-left' or 'with-sidebar-right'.
 
 Configuration:
---sidebar-vertical-alignment
-	Description: The block size (height) of the two adjacent elements.
-	Type:        A valid 'align-items' value.
-	Default:     stretch
+--sidebar-flex-wrap
+	Description: The 'flex-wrap' value.
+	Type:        A valid 'flex-wrap' value, except 'nowrap' because the elements wouldn't wrap.
+	Default:     wrap
 --sidebar-gap
 	Description: The gap between the two elements.
 	Type:        A valid 'gap' value.
 	Default:     var(--gutter, 1em)
 --sidebar-size
 	Description: How large the sidebar should be before wrapping.
-	Type:        A valid 'flex-basis' value, except percentage.
+	Type:        A valid 'flex-basis' value.
 	Default:     auto
+--sidebar-vertical-alignment
+	Description: The block size (height) of the two adjacent elements.
+	Type:        A valid 'align-items' value.
+	Default:     stretch
 --sidebar-wrap-at
 	Description: The narrowest the content (non-sidebar) element can be before wrapping.
 	Type:        A percentage value, relative to the container's inline size.
@@ -34,7 +38,7 @@ Configuration:
 .with-sidebar-left,
 .with-sidebar-right {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: var(--sidebar-flex-wrap, wrap);
 	gap: var(--sidebar-gap, var(--gutter, 1em));
 	align-items: var(--sidebar-vertical-alignment, stretch);
 
@@ -43,14 +47,14 @@ Configuration:
 	}
 }
 
-.with-sidebar-left > :first-child,
-.with-sidebar-right > :last-child {
+.with-sidebar-left > :nth-child(1),
+.with-sidebar-right > :nth-child(2) {
 	flex-grow: 1;
 	flex-basis: var(--sidebar-size, auto);
 }
 
-.with-sidebar-left > :last-child,
-.with-sidebar-right > :first-child {
+.with-sidebar-left > :nth-child(2),
+.with-sidebar-right > :nth-child(1) {
 	flex-grow: 999;
 	flex-basis: var(--sidebar-wrap-at, 50%);
 }

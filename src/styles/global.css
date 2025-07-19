@@ -30,7 +30,7 @@ The specific import order is important for correct CSS specificity.
 5. Regions
 ====================================================================== */
 
-@import-glob 'regions/*.css';
+@import-glob 'regions/**/*.css';
 
 /* ======================================================================
 6. Blocks

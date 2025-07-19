@@ -175,7 +175,7 @@ Some design tokens are defined in theme.json:
 
 	/* Spacing */
 	--flow-space: var(--wp--style--block-gap, 1em);
-	--gutter: var(--wp--preset--spacing--s-m);
+	--gutter: var(--wp--custom--global-padding-inline);
 
 	/* Transitions */
 	--transition-duration: 0.25s;
