@@ -221,8 +221,8 @@ strong {
 a:where(:any-link) {
 	color: var(--link-color, unset);
 	text-decoration-thickness: from-font;
-	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
+	text-underline-position: from-font;
 
 	&:hover {
 		color: var(--link-color-on-hover, unset);
