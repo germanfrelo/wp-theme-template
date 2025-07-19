@@ -4,12 +4,9 @@ export default {
 			name: "preset-default",
 			params: {
 				overrides: {
-					// Disable a default plugin
 					convertPathData: false,
 					mergePaths: false,
-					removeViewBox: false,
 
-					// Customize the params of a default plugin
 					sortAttrs: {
 						order: [
 							"id",
