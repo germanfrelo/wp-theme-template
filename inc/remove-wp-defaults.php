@@ -72,3 +72,79 @@ add_action('enqueue_block_editor_assets', function() {
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
 });
+
+
+/**
+ * Remove all default block styles from the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+function themeslug_remove_core_block_styles() {
+	global $wp_styles;
+
+	foreach ( $wp_styles->queue as $key => $handle ) {
+		if ( strpos( $handle, 'wp-block-' ) === 0 ) {
+			wp_dequeue_style( $handle );
+		}
+	}
+}
+// add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_block_styles' );
+
+
+/**
+ * Remove default block styles from the Block Editor and Site Editor.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+// add_action(
+// 	'wp_default_styles',
+// 	function( $styles ) {
+
+// 		/* Create an array with the two handles wp-block-library and
+// 		 * wp-block-library-theme.
+// 		 */
+// 		$handles = [ 'wp-block-library', 'wp-block-library-theme' ];
+
+// 		foreach ( $handles as $handle ) {
+// 			// Search and compare with the list of registered style handles:
+// 			$style = $styles->query( $handle, 'registered' );
+// 			if ( ! $style ) {
+// 				continue;
+// 			}
+// 			// Remove the style
+// 			$styles->remove( $handle );
+// 			// Remove path and dependencies
+// 			$styles->add( $handle, false, [] );
+// 		}
+// 	},
+// 	PHP_INT_MAX
+// );
+
+
+/**
+ * Remove the inline styles on the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+// remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
+// remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
+// remove_filter( 'render_block', 'wp_render_elements_support', 10, 2 );
+// remove_filter( 'render_block', 'gutenberg_render_elements_support', 10, 2 );
+
+
+/**
+ * Remove global styles on the front.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ */
+function themeslug_remove_global_styles() {
+	// wp_dequeue_style( 'global-styles' );
+	wp_dequeue_style( 'wp-emoji-styles' );
+}
+// add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles', 100 );
+
+
+/**
+ * Remove global styles on the front.
+ */
+// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
