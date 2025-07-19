@@ -9,8 +9,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    groups:
-      eslint:
-        patterns:
-          - "eslint"
-          - "@eslint/js"

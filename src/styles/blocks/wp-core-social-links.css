@@ -1,0 +1,70 @@
+/* =======================================================================================
+WP Social Links
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-links
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/social-links
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-social-links {
+	/*
+	Sizes:
+	Convert default icon sizes in 'px' to 'rem' to respect users' font size preferences for accessibility.
+	*/
+
+	&.has-small-icon-size {
+		font-size: var(--social-link-icon-size-small, 1rem); /* default is 16px */
+	}
+
+	&,
+	&.has-normal-icon-size {
+		font-size: var(--social-link-icon-size-normal, 1.5rem); /* default is 24px */
+	}
+
+	&.has-large-icon-size {
+		font-size: var(--social-link-icon-size-large, 2.25rem); /* default is 36px */
+	}
+
+	&.has-huge-icon-size {
+		font-size: var(--social-link-icon-size-huge, 3rem); /* default is 48px */
+	}
+
+	/* Style Variations */
+
+	&.is-style-logos-only {
+		--social-link-padding-block: 0;
+		--social-link-padding-inline: 0;
+	}
+
+	&.is-style-pill-shape {
+		--social-link-padding-inline: 0.6667em;
+	}
+}
+
+/* ======================================================================
+Social Link
+====================================================================== */
+
+.wp-block-social-link {
+	border-color: var(--social-link-border-color, transparent);
+	border-style: var(--social-link-border-style, solid);
+	border-width: var(--social-link-border-width, 0);
+
+	&:hover {
+		border-color: var(--social-link-border-color-hover, transparent);
+		transform: var(--social-link-hover-transform, scale(1.1));
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: border-color, transform;
+	}
+
+	> a {
+		padding-block: var(--social-link-padding-block, 0.25em);
+		padding-inline: var(--social-link-padding-inline, 0.25em);
+	}
+}

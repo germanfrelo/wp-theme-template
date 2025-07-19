@@ -1,0 +1,43 @@
+/* ======================================================================
+SWITCHER
+
+A layout for dynamically switching between horizontal and vertical arrangement of items based on available container width.
+
+Reference: https://every-layout.dev/layouts/switcher/
+
+Configuration:
+--switcher-gap (var(--gutter, 1em)): The space between each item.
+--switcher-horizontal-alignment (start): How items should align horizontally. Can be any valid flexbox 'justify-content' property value.
+--switcher-vertical-alignment (stretch): How items should align vertically. Can be any valid flexbox 'align-items' property value.
+--switcher-target-container-width (var(--measure-content, 50rem)): How large *the container* needs to be to allow items to sit inline with each other.
+--switcher-wrap (wrap): A valid 'flex-wrap' value. Use 'wrap' or 'wrap-reverse'. Don't use 'nowrap' because that would make using this layout useless.
+====================================================================== */
+
+.switcher,
+.switcher-2,
+.switcher-3 {
+	display: flex;
+	flex-wrap: var(--switcher-wrap, wrap);
+	gap: var(--switcher-gap, var(--gutter, 1em));
+	align-items: var(--switcher-vertical-alignment, stretch);
+	justify-content: var(--switcher-horizontal-alignment, start);
+}
+
+:is(.switcher, .switcher-2, .switcher-3) > * {
+	flex-grow: 1;
+	flex-basis: calc((var(--switcher-target-container-width, var(--measure-content, 50rem)) - 100%) * 999);
+	max-inline-size: 100%;
+	margin: 0;
+}
+
+/* Max 2 items, so anything greater than 2 is full width */
+:is(.switcher-2, .switcher:is(:not([data-limit]), [data-limit="2"])) > :nth-last-child(n + 3),
+:is(.switcher-2, .switcher:is(:not([data-limit]), [data-limit="2"])) > :nth-last-child(n + 3) ~ * {
+	flex-basis: 100%;
+}
+
+/* Max 3 items, so anything greater than 3 is full width */
+:is(.switcher-3, .switcher[data-limit="3"]) > :nth-last-child(n + 4),
+:is(.switcher-3, .switcher[data-limit="3"]) > :nth-last-child(n + 4) ~ * {
+	flex-basis: 100%;
+}

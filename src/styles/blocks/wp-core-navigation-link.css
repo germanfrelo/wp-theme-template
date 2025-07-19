@@ -1,0 +1,38 @@
+/* =======================================================================================
+WP Navigation Link
+---
+Contains styles only that are unique to the manually inserted menu item.
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation-link
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/navigation-link
+---
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+======================================================================================= */
+
+.wp-block-navigation-link {
+	/* ----------------------------------------------------------------------
+	Style Variation: External
+	---------------------------------------------------------------------- */
+
+	&.is-style-external {
+		.wp-block-navigation-item__label {
+			display: inline-flex;
+			gap: var(--nav-link-external-icon-margin, 1ch);
+			align-items: center;
+
+			/*
+			Add an icon after the text. To render it before, change '::after' to '::before'.
+			*/
+			&::after {
+				inline-size: var(--nav-link-external-icon-size, 1.25em);
+				block-size: var(--nav-link-external-icon-size, 1.25em);
+				content: "";
+				background-color: var(--nav-link-external-icon-color, currentcolor);
+				mask-image: var(--nav-link-external-icon-image, url("../assets/svg/icon-external.svg"));
+				mask-position: center;
+				mask-size: cover;
+			}
+		}
+	}
+}

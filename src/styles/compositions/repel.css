@@ -1,0 +1,18 @@
+/* ======================================================================
+REPEL
+
+A layout that pushes items away from each other where there is space in the viewport and stacks on small viewports.
+
+Configuration:
+--repel-gap (var(--gutter, 1em)): The space between each item.
+--repel-vertical-alignment (center): How items should align vertically. Can be any valid flexbox 'align-items' property value.
+--repel-wrap (wrap): A valid 'flex-wrap' value.
+====================================================================== */
+
+.repel {
+	display: flex;
+	flex-wrap: var(--repel-wrap, wrap);
+	gap: var(--repel-gap, var(--gutter, 1em));
+	align-items: var(--repel-vertical-alignment, center);
+	justify-content: space-between;
+}

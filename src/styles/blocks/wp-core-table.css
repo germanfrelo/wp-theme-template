@@ -1,0 +1,40 @@
+/* =======================================================================================
+WP Table
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/table
+---
+Notes:
+- To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+======================================================================================= */
+
+.wp-block-table {
+	:is(th, td) {
+		padding-block: var(--table-cell-padding-block, 0.5em);
+		padding-inline: var(--table-cell-padding-inline, 0.5rem);
+		border-width: var(--table-border, 1px);
+	}
+
+	thead {
+		background-color: var(--table-thead-color-bg, transparent);
+		border-block-end: var(--table-thread-border, 3px) solid;
+	}
+
+	tfoot {
+		background-color: var(--table-head-color-bg, transparent);
+		border-block-start: var(--table-head-border, 3px) solid;
+	}
+
+	&.is-style-stripes {
+		border-bottom: revert;
+
+		tbody tr:nth-child(odd) {
+			background-color: var(--table-stripes-row-color-bg, color-mix(in srgb, currentcolor 5%, transparent));
+		}
+
+		:is(td, th) {
+			border-color: currentcolor;
+		}
+	}
+}

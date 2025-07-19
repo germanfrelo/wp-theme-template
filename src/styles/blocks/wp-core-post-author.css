@@ -1,0 +1,64 @@
+/* TODO: Check, improve and refactor. */
+
+/* =======================================================================================
+WP Post Author
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-author
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-author
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-post-author {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	align-items: center;
+	padding-block: var(--post-author-padding-inline, 0.5rem);
+	padding-inline-start: var(--post-author-padding-inline-start, 0.5rem);
+	padding-inline-end: var(--post-author-padding-inline-end, 0.75rem);
+	transition-duration: var(--transition-duration, 0);
+	transition-property: background-color;
+
+	.is-layout-flex > & {
+		margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
+	}
+
+	&:has(:any-link:hover) {
+		background-color: var(--wp--preset--color--surface-2, transparent);
+	}
+
+	.wp-block-post-author > * {
+		margin: 0;
+	}
+
+	> .wp-block-post-author__avatar {
+		flex-shrink: 0;
+		inline-size: 2.5rem;
+		border-radius: 50%;
+
+		:is(img, svg) {
+			border-radius: 50%;
+		}
+	}
+
+	> .wp-block-post-author__content {
+		flex-basis: auto;
+
+		> * {
+			margin-block: 0;
+			line-height: 1.2;
+		}
+
+		> * + * {
+			margin-block-start: 0.5em;
+		}
+
+		> .wp-block-post-author__byline,
+		> .wp-block-post-author__bio {
+			font-size: max(12px, 0.875em);
+		}
+	}
+}

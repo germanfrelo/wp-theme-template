@@ -1,0 +1,192 @@
+/*
+Some design tokens are defined in theme.json:
+- Color palette
+- Fonts
+- Font size scale
+- Shadows
+- Spacing scale
+*/
+
+:root {
+	/* Border */
+	--border-color: currentcolor;
+	--border-size-1: 1px;
+	--border-size-2: 2px;
+	--border-size-3: 4px;
+	--border-size-4: 8px;
+	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
+
+	/* Button */
+	--button-border-color-on-hover: var(--button-color-background-on-hover);
+	--button-border-color: var(--button-color-background);
+	--button-border-radius: var(--radius-1);
+	--button-border-width: var(--border-size-1);
+	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
+	--button-color-background: var(--wp--preset--color--primary-medium);
+	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
+	--button-color-text: var(--wp--preset--color--surface-1);
+	--button-font-size: var(--wp--preset--font-size--step-00);
+	--button-font-weight: var(--font-weight-medium);
+	--button-leading: var(--leading-slim);
+	--button-padding-block: 0.875em;
+	--button-padding-inline: 1.5em;
+	--button-text-box: trim-both cap alphabetic;
+
+	/* Code (inline) */
+	--code-border-radius: 0.1875rem;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-padding-block: 0.1875em;
+	--code-padding-inline: 0.375em;
+
+	/* Code (block) */
+	--code-block-color-bg: var(--wp--preset--color--surface-2);
+	--code-block-padding: var(--gutter);
+
+	/* Colors (not needed in the WP editor) */
+	--color-danger-lighter: oklch(58% 0.2 28deg);
+	--color-danger-medium: oklch(50% 0.2 28deg);
+	--color-danger-darker: oklch(42% 0.2 28deg);
+	--color-error: var(--color-danger-medium);
+	--color-surface: var(--wp--preset--color--surface-1);
+	--color-text: var(--wp--preset--color--text-1);
+
+	/* Focus rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
+	/* Font Families */
+	--font-base: var(--wp--preset--font-family--base);
+	--font-mono: ui-monospace, monospace;
+
+	/* Font Weights */
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+	--font-weight-base: var(--font-weight-normal);
+
+	/* Font Sizes */
+	--font-size-base: var(--wp--preset--font-size--step-0);
+	--font-size-heading-1: var(--wp--preset--font-size--step-5);
+	--font-size-heading-2: var(--wp--preset--font-size--step-4);
+	--font-size-heading-3: var(--wp--preset--font-size--step-3);
+	--font-size-heading-4: var(--wp--preset--font-size--step-2);
+	--font-size-heading-5: var(--wp--preset--font-size--step-1);
+	--font-size-heading-6: var(--wp--preset--font-size--step-0);
+
+	/* Forms */
+	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
+	--field-color-bg: transparent;
+	--field-border-color: var(--wp--preset--color--surface-5);
+	--field-border-radius: var(--radius-1);
+	--field-border-width: var(--border-size-1);
+	--field-checkbox-size: 1.125em;
+	--field-color-text: var(--wp--preset--color--text-1);
+	--field-font-size: var(--wp--preset--font-size--step-00);
+	--field-font-weight: var(--font-weight-normal);
+	--field-padding-block: 0.25em;
+	--field-padding-inline: 0.5em;
+	--field-radio-size: 1.125em;
+	--label-font-size: var(--wp--preset--font-size--step-0);
+	--label-font-weight: var(--font-weight-bold);
+	--label-leading: var(--leading-slim);
+	--legend-font-size: var(--wp--preset--font-size--step-0);
+	--legend-font-weight: var(--font-weight-bold);
+	--legend-leading: inherit;
+
+	/* Keyboard Input */
+	--kbd-border-radius: 0.1875rem;
+	--kbd-color-bg: white;
+	--kbd-color-text: inherit;
+	--kbd-font-size: 0.875em;
+	--kbd-leading: 1;
+	--kbd-padding-block: 0.25em;
+	--kbd-padding-inline: 0.5em;
+	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
+	--kbd-stroke-weight: var(--border-size-1);
+
+	/* Leading (line height) */
+	--leading-flat: 1;
+	--leading-slim: 1.2;
+	--leading-base: 1.7;
+
+	/* Links */
+	--link-color: currentcolor;
+	--link-color-on-hover: var(--wp--preset--color--primary-medium);
+	--link-color-on-focus: var(--wp--preset--color--primary-medium);
+
+	/* List */
+	--list-gap: 0.5em;
+	--list-indentation: 1.75ch;
+	--list-item-indentation: 0.5ch;
+	--list-item-marker-color: currentcolor;
+	--list-unordered-style-type: disc;
+
+	/* Measure */
+	--measure-content: var(--wp--style--global--content-size);
+	--measure-wide: var(--wp--style--global--wide-size);
+
+	/* Outlines */
+	--outline-error: 0.25rem solid var(--color-error, red);
+
+	/* Quote */
+	--quote-border-left-width: var(--border-size-3);
+	--quote-border-left-color: var(--wp--preset--color--primary-medium);
+	--quote-padding-inline: var(--wp--preset--spacing--m);
+
+	/* Radius */
+	--radius-1: var(--wp--preset--spacing--3-xs);
+	--radius-2: var(--wp--preset--spacing--2-xs);
+	--radius-3: var(--wp--preset--spacing--xs);
+	--radius-4: var(--wp--preset--spacing--s);
+	--radius-5: var(--wp--preset--spacing--m);
+	--radius-6: var(--wp--preset--spacing--l);
+	--radius-round: 999px;
+
+	/* Region */
+	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
+	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
+
+	/* Scrollbars */
+	--scrollbar-thumb-color: var(--wp--preset--color--primary-medium);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--text-1);
+	--scrollbar-track-color: transparent;
+	--scrollbar-track-color-hover: transparent;
+	--scrollbar-thumb-radius: 1rem;
+	--scrollbar-track-radius: 1rem;
+	--scrollbar-width-legacy: 0.5rem;
+
+	/* Separator */
+	--separator-color: var(--wp--preset--color--primary-medium);
+
+	/* Site Header */
+	--site-header-padding-top: var(--wp--preset--spacing--s);
+	--site-header-padding-bottom: var(--wp--preset--spacing--s);
+
+	/* Site Logo */
+	--site-logo-height: var(--wp--preset--spacing--l);
+
+	/*
+	Custom Fluid Tokens
+	@link https://utopia.fyi/clamp/calculator
+	*/
+
+	/* Spacing */
+	--flow-space: var(--wp--style--block-gap, 1em);
+	--gutter: var(--wp--custom--global-padding-inline);
+
+	/* Transitions */
+	--transition-duration: 0.25s;
+	--transition-timing-function: initial;
+}
+
+/*
+Custom Media Queries.
+Requirement: PostCSS Custom Media plugin.
+@link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
+*/
+
+@custom-media --wp-default-navigation-breakpoint (width >= 600px);
+@custom-media --navigation-breakpoint (width >= 65rem);

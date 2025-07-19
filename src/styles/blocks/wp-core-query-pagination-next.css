@@ -1,0 +1,62 @@
+/* TODO: Check, improve and refactor. */
+
+/* =======================================================================================
+WP Query Pagination Next
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination-next
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/query-pagination-next
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ======================================================================
+Query Pagination Next
+====================================================================== */
+
+.wp-block-query-pagination-next {
+	--query-pag-alignment-main-axis: center;
+	--query-pag-next-border-color-hover: var(--wp--preset--color--primary-medium);
+	--query-pag-next-border-color: var(--wp--preset--color--primary-medium);
+	--query-pag-next-border-radius: 0;
+	--query-pag-next-border-style: solid;
+	--query-pag-next-border-width: 1px;
+	--query-pag-next-color-background-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-next-color-background: var(--wp--preset--color--surface-1);
+	--query-pag-next-color-text-hover: var(--wp--preset--color--text-1);
+	--query-pag-next-color-text: var(--wp--preset--color--text-1);
+	--query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
+	--query-pag-next-gap-columns: var(--wp--preset--spacing--xs-s);
+	--query-pag-next-gap-rows: var(--wp--preset--spacing--xs-s);
+	--query-pag-next-min-size: 44px;
+	display: inline-flex;
+	flex-wrap: var(--query-pag-next-flex-wrap, wrap);
+	row-gap: var(--query-pag-next-gap-rows, 0.5ch);
+	column-gap: var(--query-pag-next-gap-columns, 1ch);
+	align-content: center;
+	align-items: center;
+	justify-content: var(--query-pag-alignment-main-axis, center);
+	min-inline-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
+	min-block-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
+	color: var(--query-pag-next-color-text, inherit);
+	background-color: var(--query-pag-next-color-background, transparent);
+	border-color: var(--query-pag-next-border-color, transparent);
+	border-style: var(--query-pag-next-border-style, none);
+	border-width: var(--query-pag-next-border-width, 0);
+	border-radius: var(--query-pag-next-border-radius, 0);
+}
+
+.wp-block-query-pagination-next:is(:hover, :focus-visible) {
+	color: var(--query-pag-next-color-text-hover, inherit);
+	background-color: var(--query-pag-next-color-background-hover, transparent);
+	border-color: var(--query-pag-next-border-color-hover, transparent);
+}
+
+/* ======================================================================
+Query Pagination Next Arrow
+====================================================================== */
+
+.wp-block-query-pagination-next-arrow {
+	line-height: var(--leading-flat, 1);
+}

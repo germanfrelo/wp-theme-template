@@ -1,0 +1,16 @@
+/* =======================================================================================
+WP Separator
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/separator
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/separator
+---
+To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+======================================================================================= */
+
+.wp-block-separator {
+	color: var(--separator-color, inherit);
+	border: none;
+	border-block-start-style: var(--separator-style, solid);
+	border-block-start-width: var(--separator-thickness, 2px);
+}
