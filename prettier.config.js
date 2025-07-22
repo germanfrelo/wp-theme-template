@@ -14,9 +14,15 @@ const config = {
 			},
 		},
 		{
-			files: ["*.js", "*.jsx"],
+			files: ["*.js", "*.jsx", "*.vue"],
 			options: {
 				singleAttributePerLine: true,
+			},
+		},
+		{
+			files: ["*.jsonc"],
+			options: {
+				trailingComma: "none",
 			},
 		},
 	],
