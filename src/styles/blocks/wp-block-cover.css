@@ -14,6 +14,11 @@ Resources:
 - https://inclusive-components.design/cards/
 ======================================================================================= */
 
+.wp-block-cover {
+	min-height: revert;
+	padding: var(--gutter, 1em);
+}
+
 /* ======================================================================
 Custom Style: Custom
 ====================================================================== */
@@ -65,4 +70,47 @@ Custom Style: Custom
 	position: absolute;
 	inset: 0;
 	content: "";
+}
+
+/* ======================================================================
+Custom Style: Hero
+====================================================================== */
+
+.wp-block-cover.is-style-hero {
+	align-items: normal;
+	justify-content: normal;
+	block-size: clamp(300px, 50vmin, 600px);
+	container-type: inline-size;
+	color: var(--wp--preset--color--surface-1, inherit);
+
+	&:has(.wrapper) {
+		padding-inline: 0;
+	}
+
+	h1 {
+		overflow-wrap: anywhere;
+	}
+
+	> .wp-block-cover__inner-container {
+		display: grid;
+		grid-template-areas:
+			"."
+			"content";
+		grid-template-rows: minmax(auto, 1fr) minmax(auto, 1fr);
+
+		> .hero__content {
+			grid-area: content;
+			inline-size: 100%;
+		}
+	}
+
+	@container (width < 30rem) {
+		.hero__subtitle {
+			display: none;
+		}
+
+		> .wp-block-cover__inner-container {
+			align-items: center;
+		}
+	}
 }

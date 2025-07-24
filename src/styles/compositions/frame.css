@@ -18,7 +18,7 @@ Configuration:
 	aspect-ratio: var(--frame-aspect-ratio, auto);
 	overflow: hidden;
 
-	> :is(img, svg, video) {
+	:is(img, svg, video) {
 		inline-size: 100%;
 		block-size: 100%;
 		object-fit: var(--frame-object-fit, cover);

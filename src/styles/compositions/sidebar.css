@@ -23,7 +23,7 @@ Configuration:
 	Default:     var(--gutter, 1em)
 --sidebar-size
 	Description: How large the sidebar should be before wrapping.
-	Type:        A valid 'flex-basis' value.
+	Type:        A valid 'flex-basis' value, except a percentage.
 	Default:     auto
 --sidebar-vertical-alignment
 	Description: The block size (height) of the two adjacent elements.
@@ -43,6 +43,11 @@ Configuration:
 	align-items: var(--sidebar-vertical-alignment, stretch);
 
 	> * {
+		margin: 0;
+	}
+
+	/* WP - For the block editor */
+	&.is-layout-flow > * {
 		margin: 0;
 	}
 }

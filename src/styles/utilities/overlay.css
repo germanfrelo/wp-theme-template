@@ -1,0 +1,13 @@
+/* ======================================================================
+Overlay
+
+Configuration:
+--overlay-color (black): The overlay color.
+--overlay-color-opacity (50%): The opacity of the overlay color (0% = transparent, 100% = opaque).
+====================================================================== */
+
+.overlay {
+	--_linear-color-stop: color-mix(in srgb, var(--overlay-color, black) var(--overlay-color-opacity, 50%), transparent);
+	border-image-source: linear-gradient(var(--_linear-color-stop), var(--_linear-color-stop));
+	border-image-slice: fill 1;
+}

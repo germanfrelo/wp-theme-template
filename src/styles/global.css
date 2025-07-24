@@ -41,3 +41,5 @@ The specific import order is important for correct CSS specificity.
 /* ======================================================================
 7. Utilities
 ====================================================================== */
+
+@import-glob 'utilities/*.css';

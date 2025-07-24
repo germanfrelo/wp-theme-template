@@ -1,0 +1,15 @@
+.page-layouts-frame {
+	.box {
+		--box-border-size: 0;
+		--box-padding: 0;
+
+		.box {
+			--box-padding: var(--gutter);
+			--color-surface: var(--wp--preset--color--surface-2);
+		}
+	}
+
+	.is-layout-flow > .frame + .box {
+		margin-block-start: 0;
+	}
+}

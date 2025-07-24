@@ -45,6 +45,12 @@ Safari only:
 		flex-grow: 0;
 		flex-shrink: 0;
 		flex-basis: var(--reel-item-width, auto);
+		margin: 0;
+	}
+
+	/* WP - For the block editor */
+	&.is-layout-flow > * {
+		margin: 0;
 	}
 
 	> :is(img, figure:has(> img), ) {
@@ -65,6 +71,12 @@ Safari only:
 		scrollbar-color: var(--scrollbar-thumb-color, auto) var(--scrollbar-track-color, auto);
 		scrollbar-width: var(--scrollbar-width, auto);
 
+		@media (prefers-reduced-motion: no-preference) {
+			transition-timing-function: var(--transition-timing-function);
+			transition-duration: var(--transition-duration);
+			transition-property: scrollbar-color;
+		}
+
 		&:hover {
 			scrollbar-color: var(--scrollbar-thumb-color-hover, auto) var(--scrollbar-track-color-hover, auto);
 		}
@@ -80,6 +92,12 @@ Safari only:
 	.reel::-webkit-scrollbar-thumb {
 		background-color: var(--scrollbar-thumb-color, auto);
 		border-radius: var(--scrollbar-thumb-radius, 0);
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition-timing-function: var(--transition-timing-function);
+			transition-duration: var(--transition-duration);
+			transition-property: background-color;
+		}
 	}
 
 	.reel::-webkit-scrollbar-track {

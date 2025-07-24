@@ -15,4 +15,13 @@ Configuration:
 	gap: var(--repel-gap, var(--gutter, 1em));
 	align-items: var(--repel-vertical-alignment, center);
 	justify-content: space-between;
+
+	> * {
+		margin: 0;
+	}
+
+	/* WP - For the block editor */
+	&.is-layout-flow > * {
+		margin: 0;
+	}
 }
