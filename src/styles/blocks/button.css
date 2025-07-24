@@ -43,8 +43,16 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 		transition-property: color, background-color, border-color;
 	}
 
+	/* Pseudo-classes */
+	&:is(:hover, :focus-visible) {
+		color: var(--button-color-text-on-hover, unset);
+		background-color: var(--button-color-background-on-hover, transparent);
+		border-color: var(--button-border-color-on-hover, transparent);
+	}
+
 	/* Has icon */
-	&:has(> :is(img, svg, .icon)) {
+	&:has(> :is(img, svg, .icon)),
+	.wp-block-button.has-icon > & {
 		--button-display: flex;
 		display: var(--button-display, flex);
 		flex-wrap: nowrap;
@@ -53,17 +61,26 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 		justify-content: center;
 	}
 
-	/* Pseudo-classes */
-	&:is(:hover, :focus-visible) {
-		color: var(--button-color-text-on-hover, unset);
-		background-color: var(--button-color-background-on-hover, transparent);
-		border-color: var(--button-border-color-on-hover, transparent);
-	}
-
 	/* Icon */
 	> :is(img, svg, .icon) {
 		flex-shrink: 0;
 		inline-size: auto;
 		block-size: var(--button-icon-size, 1.25em);
+	}
+
+	/* Icon: External Link */
+	.wp-block-button.has-icon > &:any-link[rel~="external"] {
+		--button-gap: 0.5ch;
+
+		&::after {
+			flex-shrink: 0;
+			inline-size: var(--nav-link-external-icon-size, 1.25em);
+			block-size: var(--nav-link-external-icon-size, 1.25em);
+			content: "";
+			background-color: var(--nav-link-external-icon-color, currentcolor);
+			mask-image: var(--nav-link-external-icon-image, url("../assets/svg/icon-external.svg"));
+			mask-position: center;
+			mask-size: cover;
+		}
 	}
 }

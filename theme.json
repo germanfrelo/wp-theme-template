@@ -134,6 +134,9 @@
 				"strength": "1%"
 			}
 		},
+		"dimensions": {
+			"aspectRatios": []
+		},
 		"layout": {
 			"allowCustomContentAndWideSize": true,
 			"contentSize": "50rem",
@@ -236,7 +239,7 @@
 					"size": "clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem)"
 				},
 				{
-					"name": "S-M",
+					"name": "S-M (Global Gutter)",
 					"slug": "s-m",
 					"size": "clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem)"
 				},
@@ -272,12 +275,12 @@
 				},
 				{
 					"name": "3XS-XS",
-					"slug": "3xs-xs",
+					"slug": "3-xs-xs",
 					"size": "clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem)"
 				},
 				{
 					"name": "2XS-S",
-					"slug": "2xs-s",
+					"slug": "2-xs-s",
 					"size": "clamp(0.4375rem, 0.1514rem + 1.2207vw, 1.25rem)"
 				},
 				{
@@ -297,22 +300,22 @@
 				},
 				{
 					"name": "L-2XL",
-					"slug": "l-2xl",
+					"slug": "l-2-xl",
 					"size": "clamp(2.25rem, 0.8415rem + 6.0094vw, 6.25rem)"
 				},
 				{
-					"name": "XL-3XL",
-					"slug": "xl-3xl",
+					"name": "XL-3XL (Page Section Vertical Space)",
+					"slug": "xl-3-xl",
 					"size": "clamp(3.375rem, 1.2183rem + 9.2019vw, 9.5rem)"
 				},
 				{
 					"name": "2XL-4XL",
-					"slug": "2xl-4xl",
+					"slug": "2-xl-4-xl",
 					"size": "clamp(5rem, 1.743rem + 13.8967vw, 14.25rem)"
 				},
 				{
 					"name": "3XL-5XL",
-					"slug": "3xl-5xl",
+					"slug": "3-xl-5-xl",
 					"size": "clamp(7.625rem, 2.8275rem + 20.4695vw, 21.25rem)"
 				}
 			],
@@ -585,9 +588,14 @@
 	},
 	"customTemplates": [
 		{
-			"name": "page-custom-1",
+			"name": "page-with-cover-image",
 			"postTypes": ["page"],
-			"title": "Page: Custom #1"
+			"title": "Page with cover image"
+		},
+		{
+			"name": "page-without-title",
+			"postTypes": ["page"],
+			"title": "Page without title"
 		}
 	],
 	"templateParts": [

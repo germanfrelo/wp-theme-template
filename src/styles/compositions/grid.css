@@ -22,12 +22,21 @@ Configuration:
 	/* A split 50/50 layout */
 	&:where([data-layout="halves"], .grid--halves) {
 		--grid-placement: auto-fit;
-		--grid-min-item-size: clamp(16rem, 50vw, 33em);
+		--grid-min-item-size: clamp(16rem, 50vw, 33rem);
 	}
 
 	/* Three column grid layout */
 	&:where([data-layout="thirds"], .grid--thirds) {
 		--grid-placement: auto-fit;
 		--grid-min-item-size: clamp(16rem, 33%, 20rem);
+	}
+
+	> * {
+		margin: 0;
+	}
+
+	/* WP - For the block editor */
+	&.is-layout-flow > * {
+		margin: 0;
 	}
 }

@@ -7,8 +7,8 @@ Source:
 ======================================================================================= */
 
 .wp-block-image {
-	&figure img {
-		inline-size: 100%;
+	.wp-block-column > &:only-child {
+		block-size: 100%;
 	}
 
 	/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height'. */
