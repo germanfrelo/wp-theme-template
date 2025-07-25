@@ -301,6 +301,16 @@ ins {
 svg {
 	flex-shrink: 0;
 
+	&:not[class] {
+		inline-size: auto;
+		block-size: var(--svg-height, auto);
+	}
+
+	&[role="img"][width][height] {
+		inline-size: revert;
+		block-size: revert;
+	}
+
 	:is(a:where(:any-link), button) & path {
 		@media (prefers-reduced-motion: no-preference) {
 			transition-duration: var(--transition-duration, 0);

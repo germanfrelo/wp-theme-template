@@ -171,6 +171,9 @@ Some design tokens are defined in theme.json:
 	/* Site Logo */
 	--site-logo-height: var(--wp--preset--spacing--l);
 
+	/* SVG */
+	--svg-height: 1cap;
+
 	/*
 	Custom Fluid Tokens
 	@link https://utopia.fyi/clamp/calculator
