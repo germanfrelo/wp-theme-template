@@ -1,0 +1,13 @@
+/* ======================================================================
+WP Block Search - Style Variations
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Direction Reversed
+---------------------------------------------------------------------- */
+
+.wp-block-search.is-style-direction-reversed {
+	--search-button-icon-rotation: initial;
+	--search-wrapper-flex-direction: row-reverse;
+	--search-wrapper-flex-justify-content: flex-end;
+}

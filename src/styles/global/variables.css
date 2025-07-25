@@ -8,6 +8,45 @@ Some design tokens are defined in theme.json:
 */
 
 :root {
+	--block-search-button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--block-search-button-background-color: var(--wp--preset--color--primary-medium);
+	--block-search-button-border-color-on-hover: var(--block-search-button-background-color-on-hover);
+	--block-search-button-border-color: var(--block-search-button-background-color);
+	--block-search-button-border-radius: var(--radius-medium);
+	--block-search-button-border-style: solid;
+	--block-search-button-border-width: var(--stroke-weight-thin, 1px);
+	--block-search-button-color-on-hover: var(--wp--preset--color--surface-1);
+	--block-search-button-color: var(--wp--preset--color--surface-1);
+	--block-search-button-font-size: var(--wp--preset--font-size--step-00);
+	--block-search-button-font-weight: var(--font-weight-medium);
+	--block-search-button-icon-rotation: y 180deg;
+	--block-search-button-icon-size: 1.125rem;
+	--block-search-button-padding-block: 0.75em;
+	--block-search-button-padding-inline: 1.5em;
+	--block-search-button-transition-duration: var(--transition-duration);
+	--block-search-input-background-color-on-hover: var(--block-search-input-background-color);
+	--block-search-input-background-color: var(--wp--preset--color--surface-1);
+	--block-search-input-border-color: var(--stroke-color);
+	--block-search-input-border-radius: var(--radius-medium);
+	--block-search-input-border-style: solid;
+	--block-search-input-border-width: var(--stroke-weight-thin, 1px);
+	--block-search-input-font-size: inherit;
+	--block-search-input-padding-block: 0.5em;
+	--block-search-input-padding-inline: 1em;
+	--block-search-wrapper-background-color-on-hover: transparent;
+	--block-search-wrapper-background-color: transparent;
+	--block-search-wrapper-border-color: var(--stroke-color);
+	--block-search-wrapper-border-radius: var(--radius-medium);
+	--block-search-wrapper-border-style: solid;
+	--block-search-wrapper-border-width: 0;
+	--block-search-wrapper-flex-align-items: stretch;
+	--block-search-wrapper-flex-direction: row;
+	--block-search-wrapper-flex-justify-content: flex-start;
+	--block-search-wrapper-gap: 1.25ch;
+	--block-search-wrapper-padding-block: 0;
+	--block-search-wrapper-padding-inline: 0;
+	--block-search-wrapper-size-block-min: 24px;
+
 	/* Border */
 	--border-color: currentcolor;
 	--border-size-1: 1px;
