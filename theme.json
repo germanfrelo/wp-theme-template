@@ -607,14 +607,19 @@
 	},
 	"customTemplates": [
 		{
-			"name": "page-with-cover-image",
+			"name": "page-constrained-without-title",
 			"postTypes": ["page"],
-			"title": "Page with cover image"
+			"title": "Page constrained without title"
 		},
 		{
-			"name": "page-without-title",
+			"name": "page-not-constrained-with-title",
 			"postTypes": ["page"],
-			"title": "Page without title"
+			"title": "Page not constrained with title"
+		},
+		{
+			"name": "page-not-constrained-without-title",
+			"postTypes": ["page"],
+			"title": "Page not constrained without title"
 		}
 	],
 	"templateParts": [
