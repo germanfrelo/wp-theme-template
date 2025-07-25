@@ -124,7 +124,6 @@ Some design tokens are defined in theme.json:
 	--field-border-width: var(--border-size-1);
 	--field-checkbox-size: 1.125em;
 	--field-color: var(--wp--preset--color--text-1);
-	--field-font-size: var(--wp--preset--font-size--step-00);
 	--field-font-weight: var(--font-weight-normal);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5em;
