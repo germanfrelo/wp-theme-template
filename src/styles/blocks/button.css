@@ -5,7 +5,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 ====================================================================== */
 
 /* WP: Override default 'pointer' cursor */
-:is(button, [type="button"], [type="submit"]).wp-element-button {
+:where(button, [type="button"], [type="submit"]).wp-element-button {
 	cursor: default;
 }
 
