@@ -24,6 +24,8 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 .wp-block-read-more {
 	display: var(--button-display, inline-block);
 	align-content: center;
+	min-inline-size: 24px;
+	min-block-size: 24px;
 	padding-block: var(--button-padding-block, 0.5em);
 	padding-inline: var(--button-padding-inline, 1em);
 	font-size: var(--button-font-size, inherit);
