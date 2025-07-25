@@ -20,6 +20,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 }
 
 .button,
+.wp-element-button,
 .wp-block-button > .wp-block-button__link,
 .wp-block-read-more {
 	display: var(--button-display, inline-block);
