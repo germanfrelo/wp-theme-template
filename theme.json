@@ -543,6 +543,30 @@
 			}
 		},
 		"blocks": {
+			"core/button": {
+				"variations": {
+					"outline": {
+						"border": {
+							"color": "",
+							"style": "",
+							"width": ""
+						},
+						"color": {
+							"background": "",
+							"gradient": "",
+							"text": ""
+						},
+						"spacing": {
+							"padding": {
+								"top": "",
+								"bottom": "",
+								"left": "",
+								"right": ""
+							}
+						}
+					}
+				}
+			},
 			"core/social-link": {
 				"spacing": {
 					"padding": {
