@@ -1,5 +1,5 @@
 /* =======================================================================================
-Woocommerce Product Button
+Woocommerce - Product Button
 ---
 Source:
 - https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-button
@@ -8,35 +8,15 @@ Notes:
 - Use CSS custom properties to customize most of this block and its parts.
 ======================================================================================= */
 
-/* Default 'gap' is '12px' */
 .wp-block-button.wc-block-components-product-button {
-	gap: var(--button-gap, 0.5em);
-}
-
-/* Default is 'break-word' but it's deprecated, see https://developer.mozilla.org/en-US/docs/Web/CSS/word-break */
-.wp-block-button.wc-block-components-product-button,
-.wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
-	word-break: revert;
-}
-
-/*
-Replaces default 'font-size: 1em' with 'inherit' to allow setting it in theme.json file, e.g.
-"woocommerce/product-button": {
-	"typography": {
-		"fontSize": { "ref": "styles.elements.button.typography.fontSize" }
+	/* Default is 'break-word', but it's deprecated, see https://developer.mozilla.org/en-US/docs/Web/CSS/word-break */
+	&,
+	.wc-block-components-product-button__button {
+		word-break: revert;
 	}
-}
-*/
-.wp-block-button.wc-block-components-product-button .wp-block-button__link {
-	font-size: inherit;
-}
 
-/* Replaces default 'border-style: none' with 'solid' */
-.wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
-	border-style: solid;
-}
-
-/* Overrides default styles */
-.wp-block-button.is-style-outline .wp-block-button__link {
-	border: var(--wp--custom--border--width--thin, 2px) solid;
+	.wc-block-components-product-button__button {
+		overflow: revert;
+		border-style: solid;
+	}
 }
