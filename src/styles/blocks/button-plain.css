@@ -3,10 +3,13 @@ Button - Variant: Plain
 ====================================================================== */
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-plain {
+	--button-background-color-on-active: color-mix(in srgb, var(--button-color), transparent 80%);
 	--button-background-color-on-hover: color-mix(in srgb, var(--button-color), transparent 90%);
 	--button-background-color: transparent;
+	--button-border-color-on-active: var(--button-background-color-on-active);
 	--button-border-color-on-hover: var(--button-background-color-on-hover);
 	--button-border-color: var(--button-background-color);
+	--button-color-on-active: var(--wp--preset--color--primary-darker-20);
 	--button-color-on-hover: var(--wp--preset--color--primary-darker-10);
 	--button-color: var(--wp--preset--color--primary-medium);
 	--button-line: underline;
