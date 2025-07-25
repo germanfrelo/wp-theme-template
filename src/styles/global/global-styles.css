@@ -50,7 +50,7 @@ body {
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--leading-base, 1.5);
-	color: var(--color-text, CanvasText);
+	color: var(--color, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
@@ -273,7 +273,7 @@ kbd {
 	padding-inline: var(--kbd-padding-inline, 0.5em);
 	font-family: var(--font-base, inherit);
 	line-height: var(--kbd-leading, inherit);
-	color: var(--kbd-color-text, inherit);
+	color: var(--kbd-color, inherit);
 	white-space: nowrap;
 	background-color: var(--kbd-color-bg, transparent);
 	border: var(--kbd-stroke-weight, 1px) solid var(--kbd-stroke-color, currentcolor);
@@ -282,7 +282,7 @@ kbd {
 }
 
 mark {
-	color: var(--mark-color-text, MarkText);
+	color: var(--mark-color, MarkText);
 	background-color: var(--mark-color-bg, Mark);
 }
 
@@ -367,7 +367,7 @@ textarea {
 	/* Setting a minimum font-size of 16px prevents iOS Safari from automatically zooming in when tapped: https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-size: max(16px, var(--field-font-size, inherit));
 	font-weight: var(--field-font-weight, inherit);
-	color: var(--field-color-text, inherit);
+	color: var(--field-color, inherit);
 	background-color: var(--field-color-bg, transparent);
 	border-color: var(--field-border-color, currentcolor);
 	border-style: solid;

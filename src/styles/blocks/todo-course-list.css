@@ -44,7 +44,7 @@ Course List
 	/* Card layout (desktop-first for code simplicity) */
 
 	.course-card {
-		--course-card-color-background: var(--wp--preset--color--surface-1, transparent);
+		--course-card-background-color: var(--wp--preset--color--surface-1, transparent);
 		--course-card-content-padding-block: var(--wp--preset--spacing--xs-s, 1rem);
 		--course-card-content-padding-inline: var(--wp--preset--spacing--s, 1rem);
 		display: grid;
@@ -116,7 +116,7 @@ Course List
 			justify-content: space-between;
 			padding-block: var(--course-card-content-padding-block, 1rem);
 			padding-inline: var(--course-card-content-padding-inline, 1rem);
-			background-color: var(--course-card-color-background, transparent);
+			background-color: var(--course-card-background-color, transparent);
 		}
 
 		.wp-block-read-more.read-more-short {
@@ -166,7 +166,7 @@ Course List
 
 			.course-card-tags {
 				flex-direction: row;
-				background-color: var(--course-card-color-background, transparent);
+				background-color: var(--course-card-background-color, transparent);
 			}
 
 			.course-card-tags:has(> *):has(+ .course-card-content) {

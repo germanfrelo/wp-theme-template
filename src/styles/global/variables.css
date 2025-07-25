@@ -17,14 +17,13 @@ Some design tokens are defined in theme.json:
 	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
-	--button-border-color-on-hover: var(--button-color-background-on-hover);
-	--button-border-color: var(--button-color-background);
+	--button-border-color-on-hover: var(--button-background-color-on-hover);
+	--button-border-color: var(--button-background-color);
 	--button-border-radius: var(--radius-1);
 	--button-border-width: var(--border-size-1);
-	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
-	--button-color-background: var(--wp--preset--color--primary-medium);
-	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
-	--button-color-text: var(--wp--preset--color--surface-1);
+	--button-background-color-on-hover: var(--wp--preset--color--primary-lighter);
+	--button-background-color: var(--wp--preset--color--primary-medium);
+	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--step-00);
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);
@@ -48,7 +47,7 @@ Some design tokens are defined in theme.json:
 	--color-danger-darker: oklch(42% 0.2 28deg);
 	--color-error: var(--color-danger-medium);
 	--color-surface: var(--wp--preset--color--surface-1);
-	--color-text: var(--wp--preset--color--text-1);
+	--color: var(--wp--preset--color--text-1);
 
 	/* Focus rings */
 	--focus-ring-color: currentcolor;
@@ -83,7 +82,7 @@ Some design tokens are defined in theme.json:
 	--field-border-radius: var(--radius-1);
 	--field-border-width: var(--border-size-1);
 	--field-checkbox-size: 1.125em;
-	--field-color-text: var(--wp--preset--color--text-1);
+	--field-color: var(--wp--preset--color--text-1);
 	--field-font-size: var(--wp--preset--font-size--step-00);
 	--field-font-weight: var(--font-weight-normal);
 	--field-padding-block: 0.25em;
@@ -99,7 +98,7 @@ Some design tokens are defined in theme.json:
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
 	--kbd-color-bg: white;
-	--kbd-color-text: inherit;
+	--kbd-color: inherit;
 	--kbd-font-size: 0.875em;
 	--kbd-leading: 1;
 	--kbd-padding-block: 0.25em;

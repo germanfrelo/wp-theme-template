@@ -5,10 +5,10 @@ Button - Variant: Plain
 :is(.wp-block-button, .wp-block-read-more).is-style-plain {
 	--button-border-color-on-hover: transparent;
 	--button-border-color: transparent;
-	--button-color-background-on-hover: transparent;
-	--button-color-background: transparent;
-	--button-color-text-on-hover: var(--wp--preset--color--primary-darker);
-	--button-color-text: var(--wp--preset--color--primary-medium);
+	--button-background-color-on-hover: transparent;
+	--button-background-color: transparent;
+	--button-color-on-hover: var(--wp--preset--color--primary-darker);
+	--button-color: var(--wp--preset--color--primary-medium);
 	--button-leading: var(--leading-base);
 	--button-line: underline;
 	--button-padding-block: 0;

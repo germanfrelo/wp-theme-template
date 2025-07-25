@@ -22,10 +22,10 @@ Query Pagination Next
 	--query-pag-next-border-radius: 0;
 	--query-pag-next-border-style: solid;
 	--query-pag-next-border-width: 1px;
-	--query-pag-next-color-background-hover: var(--wp--preset--color--primary-lighter);
-	--query-pag-next-color-background: var(--wp--preset--color--surface-1);
-	--query-pag-next-color-text-hover: var(--wp--preset--color--text-1);
-	--query-pag-next-color-text: var(--wp--preset--color--text-1);
+	--query-pag-next-background-color-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-next-background-color: var(--wp--preset--color--surface-1);
+	--query-pag-next-color-hover: var(--wp--preset--color--text-1);
+	--query-pag-next-color: var(--wp--preset--color--text-1);
 	--query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
 	--query-pag-next-gap-columns: var(--wp--preset--spacing--xs-s);
 	--query-pag-next-gap-rows: var(--wp--preset--spacing--xs-s);
@@ -39,8 +39,8 @@ Query Pagination Next
 	justify-content: var(--query-pag-alignment-main-axis, center);
 	min-inline-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
 	min-block-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
-	color: var(--query-pag-next-color-text, inherit);
-	background-color: var(--query-pag-next-color-background, transparent);
+	color: var(--query-pag-next-color, inherit);
+	background-color: var(--query-pag-next-background-color, transparent);
 	border-color: var(--query-pag-next-border-color, transparent);
 	border-style: var(--query-pag-next-border-style, none);
 	border-width: var(--query-pag-next-border-width, 0);
@@ -48,8 +48,8 @@ Query Pagination Next
 }
 
 .wp-block-query-pagination-next:is(:hover, :focus-visible) {
-	color: var(--query-pag-next-color-text-hover, inherit);
-	background-color: var(--query-pag-next-color-background-hover, transparent);
+	color: var(--query-pag-next-color-hover, inherit);
+	background-color: var(--query-pag-next-background-color-hover, transparent);
 	border-color: var(--query-pag-next-border-color-hover, transparent);
 }
 
