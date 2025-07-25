@@ -17,13 +17,15 @@ Some design tokens are defined in theme.json:
 	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
-	--button-border-color-on-hover: var(--button-background-color-on-hover);
+	--button-background-color-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-background-color: var(--wp--preset--color--primary-medium);
+	--button-border-color-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
 	--button-border-color: var(--button-background-color);
 	--button-border-radius: var(--radius-1);
 	--button-border-width: var(--border-size-1);
-	--button-background-color-on-hover: var(--wp--preset--color--primary-lighter);
-	--button-background-color: var(--wp--preset--color--primary-medium);
-	--button-color-on-hover: var(--wp--preset--color--surface-1);
+	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--step-00);
 	--button-font-weight: var(--font-weight-medium);
 	--button-leading: var(--leading-slim);

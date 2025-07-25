@@ -22,7 +22,7 @@ Query Pagination Next
 	--query-pag-next-border-radius: 0;
 	--query-pag-next-border-style: solid;
 	--query-pag-next-border-width: 1px;
-	--query-pag-next-background-color-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-next-background-color-hover: var(--wp--preset--color--surface-2);
 	--query-pag-next-background-color: var(--wp--preset--color--surface-1);
 	--query-pag-next-color-hover: var(--wp--preset--color--text-1);
 	--query-pag-next-color: var(--wp--preset--color--text-1);

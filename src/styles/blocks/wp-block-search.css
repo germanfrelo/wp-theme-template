@@ -63,8 +63,8 @@ Table of contents:
 	--search-button-border-radius: var(--radius-medium);
 	--search-button-border-style: solid;
 	--search-button-border-width: var(--stroke-weight-thin, 1px);
-	--search-button-background-color-on-hover: color-mix(in srgb, var(--search-button-background-color), transparent 25%);
-	--search-button-background-color: var(--wp--preset--color--text-1);
+	--search-button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--search-button-background-color: var(--wp--preset--color--primary-medium);
 	--search-button-color-on-hover: var(--wp--preset--color--surface-1);
 	--search-button-color: var(--wp--preset--color--surface-1);
 	--search-button-font-size: var(--wp--preset--font-size--step-00);
@@ -94,8 +94,8 @@ Table of contents:
 .wp-block-search.wp-block-search__button-inside {
 	/* Inside Wrapper */
 	--search-wrapper-border-width: 0px;
-	--search-wrapper-background-color-on-hover: var(--wp--preset--color--primary-lighter);
-	--search-wrapper-background-color: var(--wp--preset--color--surface-2);
+	--search-wrapper-background-color-on-hover: var(--wp--preset--color--surface-2);
+	--search-wrapper-background-color: var(--wp--preset--color--surface-1);
 	--search-wrapper-flex-align-items: center;
 	--search-wrapper-padding-inline: 1em;
 	--search-wrapper-size-block-min: 35px;
