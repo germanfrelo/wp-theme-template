@@ -2,17 +2,12 @@
 Button - Variant: Plain
 ====================================================================== */
 
-:is(.wp-block-button, .wp-block-read-more).is-style-plain {
-	--button-border-color-on-hover: transparent;
-	--button-border-color: transparent;
-	--button-background-color-on-hover: transparent;
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-plain {
+	--button-background-color-on-hover: color-mix(in srgb, var(--button-color), transparent 90%);
 	--button-background-color: transparent;
-	--button-color-on-hover: var(--wp--preset--color--primary-darker);
+	--button-border-color-on-hover: var(--button-background-color-on-hover);
+	--button-border-color: var(--button-background-color);
+	--button-color-on-hover: var(--wp--preset--color--primary-darker-10);
 	--button-color: var(--wp--preset--color--primary-medium);
-	--button-leading: var(--leading-base);
 	--button-line: underline;
-	--button-padding-block: 0;
-	--button-padding-inline: 0;
-	--button-text-box: normal;
-	line-height: 1;
 }

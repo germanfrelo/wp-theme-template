@@ -29,7 +29,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	font-size: var(--button-font-size, inherit);
 	font-weight: var(--button-font-weight, inherit);
 	line-height: var(--button-leading, inherit);
-	color: var(--button-color, unset);
+	color: var(--button-color, inherit);
 	text-align: var(--button-text-align, center);
 	text-decoration-line: var(--button-line, none);
 	background-color: var(--button-background-color, transparent);
@@ -44,11 +44,12 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 		transition-property: color, background-color, border-color;
 	}
 
-	/* Pseudo-classes */
+	/* States */
+
 	&:is(:hover, :focus-visible) {
-		color: var(--button-color-on-hover, unset);
-		background-color: var(--button-background-color-on-hover, transparent);
-		border-color: var(--button-border-color-on-hover, transparent);
+		color: var(--button-color-on-hover, var(--button-color));
+		background-color: var(--button-background-color-on-hover, var(--button-background-color));
+		border-color: var(--button-border-color-on-hover, var(--button-border-color));
 	}
 
 	/* Has icon */
