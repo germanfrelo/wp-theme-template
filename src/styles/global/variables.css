@@ -138,13 +138,14 @@ Some design tokens are defined in theme.json:
 	--quote-padding-inline: var(--wp--preset--spacing--m);
 
 	/* Radius */
-	--radius-1: var(--wp--preset--spacing--3-xs);
-	--radius-2: var(--wp--preset--spacing--2-xs);
-	--radius-3: var(--wp--preset--spacing--xs);
-	--radius-4: var(--wp--preset--spacing--s);
-	--radius-5: var(--wp--preset--spacing--m);
-	--radius-6: var(--wp--preset--spacing--l);
-	--radius-round: 999px;
+	--radius-0: 0rem;
+	--radius-1: 0.125rem;
+	--radius-2: 0.25rem;
+	--radius-3: 0.5rem;
+	--radius-4: 1rem;
+	--radius-5: 2rem;
+	--radius-6: 4rem;
+	--radius-round: calc(9999px * 1rem);
 
 	/* Reel */
 	--reel-items-gap: calc(var(--gutter) * 2);
