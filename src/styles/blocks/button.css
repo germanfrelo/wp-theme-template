@@ -52,6 +52,12 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 		border-color: var(--button-border-color-on-hover, var(--button-border-color));
 	}
 
+	&:is(:active) {
+		color: var(--button-color-on-active, var(--button-color));
+		background-color: var(--button-background-color-on-active, var(--button-background-color));
+		border-color: var(--button-border-color-on-active, var(--button-border-color));
+	}
+
 	/* Has icon */
 	&:has(> :is(img, svg, .icon)),
 	.wp-block-button.has-icon > & {
