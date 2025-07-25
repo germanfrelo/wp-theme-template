@@ -36,8 +36,8 @@ Table of contents:
 	--search-wrapper-border-radius: var(--radius-medium);
 	--search-wrapper-border-style: solid;
 	--search-wrapper-border-width: 0;
-	--search-wrapper-color-background-on-hover: transparent;
-	--search-wrapper-color-background: transparent;
+	--search-wrapper-background-color-on-hover: transparent;
+	--search-wrapper-background-color: transparent;
 	--search-wrapper-flex-align-items: stretch;
 	--search-wrapper-flex-direction: row;
 	--search-wrapper-flex-justify-content: flex-start;
@@ -51,22 +51,22 @@ Table of contents:
 	--search-input-border-radius: var(--radius-medium);
 	--search-input-border-style: solid;
 	--search-input-border-width: var(--stroke-weight-thin, 1px);
-	--search-input-color-background-on-hover: var(--search-input-color-background);
-	--search-input-color-background: var(--wp--preset--color--surface-1);
+	--search-input-background-color-on-hover: var(--search-input-background-color);
+	--search-input-background-color: var(--wp--preset--color--surface-1);
 	--search-input-font-size: inherit;
 	--search-input-padding-block: 0.5em;
 	--search-input-padding-inline: 1em;
 
 	/* Button */
-	--search-button-border-color-on-hover: var(--search-button-color-background-on-hover);
-	--search-button-border-color: var(--search-button-color-background);
+	--search-button-border-color-on-hover: var(--search-button-background-color-on-hover);
+	--search-button-border-color: var(--search-button-background-color);
 	--search-button-border-radius: var(--radius-medium);
 	--search-button-border-style: solid;
 	--search-button-border-width: var(--stroke-weight-thin, 1px);
-	--search-button-color-background-on-hover: color-mix(in srgb, var(--search-button-color-background), transparent 25%);
-	--search-button-color-background: var(--wp--preset--color--text-1);
-	--search-button-color-text-on-hover: var(--wp--preset--color--surface-1);
-	--search-button-color-text: var(--wp--preset--color--surface-1);
+	--search-button-background-color-on-hover: color-mix(in srgb, var(--search-button-background-color), transparent 25%);
+	--search-button-background-color: var(--wp--preset--color--text-1);
+	--search-button-color-on-hover: var(--wp--preset--color--surface-1);
+	--search-button-color: var(--wp--preset--color--surface-1);
 	--search-button-font-size: var(--wp--preset--font-size--step-00);
 	--search-button-font-weight: var(--font-weight-medium);
 	--search-button-icon-rotation: y 180deg;
@@ -94,8 +94,8 @@ Table of contents:
 .wp-block-search.wp-block-search__button-inside {
 	/* Inside Wrapper */
 	--search-wrapper-border-width: 0px;
-	--search-wrapper-color-background-on-hover: var(--wp--preset--color--primary-lighter);
-	--search-wrapper-color-background: var(--wp--preset--color--surface-2);
+	--search-wrapper-background-color-on-hover: var(--wp--preset--color--primary-lighter);
+	--search-wrapper-background-color: var(--wp--preset--color--surface-2);
 	--search-wrapper-flex-align-items: center;
 	--search-wrapper-padding-inline: 1em;
 	--search-wrapper-size-block-min: 35px;
@@ -103,7 +103,7 @@ Table of contents:
 	/* Input */
 	--search-input-border-radius: 0;
 	--search-input-border-width: 0;
-	--search-input-color-background: transparent;
+	--search-input-background-color: transparent;
 	--search-input-font-size: var(--wp--preset--font-size--step-00);
 	--search-input-padding-block: 0.5em;
 	--search-input-padding-inline: 0;
@@ -111,10 +111,10 @@ Table of contents:
 	/* Button */
 	--search-button-border-radius: var(--search-wrapper-border-radius);
 	--search-button-border-width: 0;
-	--search-button-color-background-on-hover: transparent;
-	--search-button-color-background: transparent;
-	--search-button-color-text-on-hover: var(--wp--preset--color--primary-medium);
-	--search-button-color-text: inherit;
+	--search-button-background-color-on-hover: transparent;
+	--search-button-background-color: transparent;
+	--search-button-color-on-hover: var(--wp--preset--color--primary-medium);
+	--search-button-color: inherit;
 	--search-button-padding-block: 0;
 	--search-button-padding-inline: 0;
 }
@@ -153,7 +153,7 @@ Table of contents:
 	min-block-size: var(--search-wrapper-size-block-min, initial);
 	padding-block: var(--search-wrapper-padding-block, 0);
 	padding-inline: var(--search-wrapper-padding-inline, 0);
-	background-color: var(--search-wrapper-color-background, transparent);
+	background-color: var(--search-wrapper-background-color, transparent);
 	border-color: var(--search-wrapper-border-color, currentcolor);
 	border-style: var(--search-wrapper-border-style, solid);
 	border-width: var(--search-wrapper-border-width, 0);
@@ -163,7 +163,7 @@ Table of contents:
 }
 
 .wp-block-search .wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) {
-	background-color: var(--search-wrapper-color-background-on-hover, transparent);
+	background-color: var(--search-wrapper-background-color-on-hover, transparent);
 }
 
 /* ======================================================================
@@ -174,7 +174,7 @@ Table of contents:
 	padding-block: var(--search-input-padding-block, 0);
 	padding-inline: var(--search-input-padding-inline, 1ch);
 	font-size: var(--search-input-font-size, inherit);
-	background-color: var(--search-input-color-background, 0);
+	background-color: var(--search-input-background-color, 0);
 	border-color: var(--search-input-border-color, currentcolor);
 	border-style: var(--search-input-border-style, solid);
 	border-width: var(--search-input-border-width, 1px);
@@ -184,7 +184,7 @@ Table of contents:
 }
 
 .wp-block-search .wp-block-search__input:is(:hover, :focus-visible) {
-	background-color: var(--search-input-color-background-on-hover, transparent);
+	background-color: var(--search-input-background-color-on-hover, transparent);
 }
 
 /* ======================================================================
@@ -200,8 +200,8 @@ Table of contents:
 	margin: 0; /* Remove WP's default value */
 	font-size: var(--search-button-font-size, inherit);
 	font-weight: var(--search-button-font-weight, inherit);
-	color: var(--search-button-color-text, inherit);
-	background-color: var(--search-button-color-background, inherit);
+	color: var(--search-button-color, inherit);
+	background-color: var(--search-button-background-color, inherit);
 	border-color: var(--search-button-border-color, currentcolor);
 	border-style: var(--search-button-border-style, initial);
 	border-width: var(--search-button-border-width, initial);
@@ -214,8 +214,8 @@ Table of contents:
 .wp-block-search
 	.wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus))
 	.wp-block-search__button {
-	color: var(--search-button-color-text-on-hover, inherit);
-	background-color: var(--search-button-color-background-on-hover, transparent);
+	color: var(--search-button-color-on-hover, inherit);
+	background-color: var(--search-button-background-color-on-hover, transparent);
 	border-color: var(--search-button-border-color-on-hover, transparent);
 }
 

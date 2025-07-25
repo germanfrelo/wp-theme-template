@@ -65,7 +65,7 @@ Table of contents:
 
 nav.wp-block-navigation {
 	/* Global */
-	--nav-global-color-text: orange;
+	--nav-global-color: orange;
 	--nav-global-font-size: 1rem;
 	--nav-global-font-weight: var(--font-weight-medium);
 	--nav-global-gap-columns: var(--gutter);
@@ -80,10 +80,10 @@ nav.wp-block-navigation {
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
-	--nav-item-color-background-on-hover: var(--wp--preset--color--surface-3);
-	--nav-item-color-background: var(--wp--preset--color--surface-2);
-	--nav-item-color-text-current-page: blue;
-	--nav-item-color-text-on-hover: tomato;
+	--nav-item-background-color-on-hover: var(--wp--preset--color--surface-3);
+	--nav-item-background-color: var(--wp--preset--color--surface-2);
+	--nav-item-color-current-page: blue;
+	--nav-item-color-on-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
 	--nav-item-has-submenu-icon-size-min: 24px;
@@ -114,9 +114,9 @@ nav.wp-block-navigation {
 	--nav-submenu-border-color: var(--border-color);
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
-	--nav-submenu-color-background: var(--wp--preset--color--surface-1);
+	--nav-submenu-background-color: var(--wp--preset--color--surface-1);
 
-	/* --nav-submenu-color-text: inherit; */
+	/* --nav-submenu-color: inherit; */
 	--nav-submenu-gap-columns: 0;
 	--nav-submenu-gap-rows: 0;
 	--nav-submenu-inline-size-min: 100%;
@@ -135,7 +135,7 @@ nav.wp-block-navigation {
 
 	/* --nav-responsive-container-animation-duration: ;
 	--nav-responsive-container-animation-timing-function: ;
-	--nav-responsive-container-color-background: ; */
+	--nav-responsive-container-background-color: ; */
 
 	/* --nav-responsive-container-padding-block-start ;
 	--nav-responsive-container-padding-block-end ;
@@ -156,13 +156,13 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 	--navigation-layout-justification-setting: stretch;
 
 	/* Global */
-	--nav-global-color-text: purple;
+	--nav-global-color: purple;
 
 	/* Menu Items */
 	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
 
 	/* Submenu Container */
-	--nav-submenu-color-text: violet;
+	--nav-submenu-color: violet;
 	--nav-submenu-padding-block: 0;
 	--nav-submenu-padding-inline-start: 0;
 	--nav-submenu-shadow: none;
@@ -181,7 +181,7 @@ nav.wp-block-navigation {
 	column-gap: var(--nav-global-gap-columns, var(--gutter, 0));
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
-	color: var(--nav-global-color-text, inherit);
+	color: var(--nav-global-color, inherit);
 
 	/* ======================================================================
 	03. Menu Buttons Open/Close (<button>)
@@ -220,7 +220,7 @@ nav.wp-block-navigation {
 
 		/* Current */
 		&.current-menu-item {
-			color: var(--nav-item-color-text-current-page, inherit);
+			color: var(--nav-item-color-current-page, inherit);
 		}
 	}
 
@@ -228,18 +228,18 @@ nav.wp-block-navigation {
 		li.wp-block-navigation-item {
 			/* Hover/Click/Focus */
 			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-color-text-on-hover, inherit);
+				color: var(--nav-item-color-on-hover, inherit);
 			}
 		}
 	}
 
 	&:not(.has-background) {
 		li.wp-block-navigation-item {
-			background-color: var(--nav-item-color-background, inherit);
+			background-color: var(--nav-item-background-color, inherit);
 
 			/* Hover/Click/Focus */
 			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				background-color: var(--nav-item-color-background-on-hover, inherit);
+				background-color: var(--nav-item-background-color-on-hover, inherit);
 			}
 		}
 	}
@@ -416,8 +416,8 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		/* The fallback '--nav-global-color-text' is necessary; otherwise, if '--nav-submenu-color-text' is not set and the color of the submenu parent item changes when hovered/clicked/focused, all its submenu items would inherit that hover/clic/focus color. */
-		color: var(--nav-submenu-color-text, var(--nav-global-color-text, inherit));
+		/* The fallback '--nav-global-color' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked/focused, all its submenu items would inherit that hover/clic/focus color. */
+		color: var(--nav-submenu-color, var(--nav-global-color, inherit));
 	}
 
 	/* ❗️ Specificity must be >= (0,5,0) */
@@ -438,7 +438,7 @@ nav.wp-block-navigation {
 		opacity: 0; /* Hidden */
 
 		&:where(:not(.has-background)) {
-			background-color: var(--nav-submenu-color-background, transparent);
+			background-color: var(--nav-submenu-background-color, transparent);
 		}
 	}
 
@@ -500,22 +500,22 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-text-color) {
-			color: var(--nav-global-color-text, inherit);
+			color: var(--nav-global-color, inherit);
 
 			li.wp-block-navigation-item {
 				/* Current */
 				&.current-menu-item {
-					color: var(--nav-item-color-text-current-page, inherit) !important;
+					color: var(--nav-item-color-current-page, inherit) !important;
 				}
 
 				/* Hover/Click/Focus */
 				&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					color: var(--nav-item-color-text-on-hover, inherit) !important;
+					color: var(--nav-item-color-on-hover, inherit) !important;
 				}
 			}
 
 			.wp-block-navigation__submenu-container {
-				color: var(--nav-submenu-color-text, inherit) !important;
+				color: var(--nav-submenu-color, inherit) !important;
 			}
 		}
 
@@ -524,18 +524,18 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-background) {
-			background-color: var(--nav-responsive-container-color-background, var(--color-surface, inherit));
+			background-color: var(--nav-responsive-container-background-color, var(--color-surface, inherit));
 
 			.wp-block-navigation-item {
-				background-color: var(--nav-item-color-background, inherit) !important;
+				background-color: var(--nav-item-background-color, inherit) !important;
 
 				/* Hover/Click/Focus */
 				&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					background-color: var(--nav-item-color-background-on-hover, inherit) !important;
+					background-color: var(--nav-item-background-color-on-hover, inherit) !important;
 				}
 
 				.wp-block-navigation__submenu-container {
-					background-color: var(--nav-submenu-color-background, transparent) !important;
+					background-color: var(--nav-submenu-background-color, transparent) !important;
 				}
 			}
 		}

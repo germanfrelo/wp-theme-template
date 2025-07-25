@@ -22,10 +22,10 @@ Query Pagination Previous
 	--query-pag-prev-border-radius: 0;
 	--query-pag-prev-border-style: solid;
 	--query-pag-prev-border-width: 1px;
-	--query-pag-prev-color-background-hover: var(--wp--preset--color--primary-lighter);
-	--query-pag-prev-color-background: var(--wp--preset--color--surface-1);
-	--query-pag-prev-color-text-hover: var(--wp--preset--color--text-1);
-	--query-pag-prev-color-text: var(--wp--preset--color--text-1);
+	--query-pag-prev-background-color-hover: var(--wp--preset--color--primary-lighter);
+	--query-pag-prev-background-color: var(--wp--preset--color--surface-1);
+	--query-pag-prev-color-hover: var(--wp--preset--color--text-1);
+	--query-pag-prev-color: var(--wp--preset--color--text-1);
 	--query-pag-prev-flex-wrap: wrap;
 	--query-pag-prev-gap-columns: var(--wp--preset--spacing--xs-s);
 	--query-pag-prev-gap-rows: var(--wp--preset--spacing--xs-s);
@@ -39,8 +39,8 @@ Query Pagination Previous
 	justify-content: var(--query-pag-alignment-main-axis, center);
 	min-inline-size: var(--query-pag-prev-min-size, var(--min-target-size, 24px));
 	min-block-size: var(--query-pag-prev-min-size, var(--min-target-size, 24px));
-	color: var(--query-pag-prev-color-text, inherit);
-	background-color: var(--query-pag-prev-color-background, transparent);
+	color: var(--query-pag-prev-color, inherit);
+	background-color: var(--query-pag-prev-background-color, transparent);
 	border-color: var(--query-pag-prev-border-color, transparent);
 	border-style: var(--query-pag-prev-border-style, none);
 	border-width: var(--query-pag-prev-border-width, 0);
@@ -48,8 +48,8 @@ Query Pagination Previous
 }
 
 .wp-block-query-pagination-previous:is(:hover, :focus-visible) {
-	color: var(--query-pag-prev-color-text-hover, inherit);
-	background-color: var(--query-pag-prev-color-background-hover, transparent);
+	color: var(--query-pag-prev-color-hover, inherit);
+	background-color: var(--query-pag-prev-background-color-hover, transparent);
 	border-color: var(--query-pag-prev-border-color-hover, transparent);
 }
 
