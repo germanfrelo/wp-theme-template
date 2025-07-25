@@ -41,7 +41,6 @@ function themeslug_remove_core_styles() {
 	wp_dequeue_style( 'wp-block-categories' );
 	wp_dequeue_style( 'wp-block-code' );
 	wp_dequeue_style( 'wp-block-details' );
-	wp_dequeue_style( 'wp-block-group' );
 	wp_dequeue_style( 'wp-block-heading' );
 	wp_dequeue_style( 'wp-block-list' );
 	wp_dequeue_style( 'wp-block-post-template' );
