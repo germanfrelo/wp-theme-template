@@ -93,7 +93,7 @@ Table of contents:
 
 .wp-block-search.wp-block-search__button-inside {
 	/* Inside Wrapper */
-	--search-wrapper-border-width: 0px;
+	--search-wrapper-border-width: var(--border-size-1);
 	--search-wrapper-background-color-on-hover: var(--wp--preset--color--surface-2);
 	--search-wrapper-background-color: var(--wp--preset--color--surface-1);
 	--search-wrapper-flex-align-items: center;
