@@ -8,6 +8,7 @@ Some design tokens are defined in theme.json:
 */
 
 :root {
+	/* Block - Search */
 	--block-search-button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
 	--block-search-button-background-color: var(--wp--preset--color--primary-medium);
 	--block-search-button-border-color-on-hover: var(--block-search-button-background-color-on-hover);
@@ -152,9 +153,9 @@ Some design tokens are defined in theme.json:
 	--leading-base: 1.7;
 
 	/* Links */
-	--link-color: currentcolor;
-	--link-color-on-hover: var(--wp--preset--color--primary-medium);
-	--link-color-on-focus: var(--wp--preset--color--primary-medium);
+	--link-color: var(--wp--preset--color--primary-medium);
+	--link-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--link-color-on-focus: var(--wp--preset--color--primary-darker-10);
 
 	/* List */
 	--list-gap: 0.5em;
