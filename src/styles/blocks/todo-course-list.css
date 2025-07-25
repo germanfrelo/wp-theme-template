@@ -51,7 +51,7 @@ Course List
 		grid-template-rows: minmax(10rem, 36%) minmax(0, 1fr);
 		border-color: transparent;
 		border-style: solid;
-		border-width: var(--stroke-weight-medium, 2px);
+		border-width: var(--border-size-2, 2px);
 
 		@media (hover: hover) {
 			&:has(:is(:any-link, button):hover) {
