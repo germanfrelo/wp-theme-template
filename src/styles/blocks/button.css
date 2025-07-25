@@ -66,7 +66,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 		--button-display: flex;
 		display: var(--button-display, flex);
 		flex-wrap: nowrap;
-		gap: var(--button-gap, 0.75em);
+		gap: var(--button-gap, 1ch);
 		align-items: center;
 		justify-content: center;
 	}
