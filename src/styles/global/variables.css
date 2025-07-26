@@ -9,44 +9,6 @@ Some design tokens are defined in theme.json:
 
 :root {
 	/* Block - Search */
-	--block-search-button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
-	--block-search-button-background-color: var(--wp--preset--color--primary-medium);
-	--block-search-button-border-color-on-hover: var(--block-search-button-background-color-on-hover);
-	--block-search-button-border-color: var(--block-search-button-background-color);
-	--block-search-button-border-radius: var(--radius-medium);
-	--block-search-button-border-style: solid;
-	--block-search-button-border-width: var(--stroke-weight-thin, 1px);
-	--block-search-button-color-on-hover: var(--wp--preset--color--surface-1);
-	--block-search-button-color: var(--wp--preset--color--surface-1);
-	--block-search-button-font-size: var(--wp--preset--font-size--step-00);
-	--block-search-button-font-weight: var(--font-weight-medium);
-	--block-search-button-icon-rotation: y 180deg;
-	--block-search-button-icon-size: 1.125rem;
-	--block-search-button-padding-block: 0.75em;
-	--block-search-button-padding-inline: 1.5em;
-	--block-search-button-transition-duration: var(--transition-duration);
-	--block-search-input-background-color-on-hover: var(--block-search-input-background-color);
-	--block-search-input-background-color: var(--wp--preset--color--surface-1);
-	--block-search-input-border-color: var(--stroke-color);
-	--block-search-input-border-radius: var(--radius-medium);
-	--block-search-input-border-style: solid;
-	--block-search-input-border-width: var(--stroke-weight-thin, 1px);
-	--block-search-input-font-size: inherit;
-	--block-search-input-padding-block: 0.5em;
-	--block-search-input-padding-inline: 1em;
-	--block-search-wrapper-background-color-on-hover: transparent;
-	--block-search-wrapper-background-color: transparent;
-	--block-search-wrapper-border-color: var(--stroke-color);
-	--block-search-wrapper-border-radius: var(--radius-medium);
-	--block-search-wrapper-border-style: solid;
-	--block-search-wrapper-border-width: 0;
-	--block-search-wrapper-flex-align-items: stretch;
-	--block-search-wrapper-flex-direction: row;
-	--block-search-wrapper-flex-justify-content: flex-start;
-	--block-search-wrapper-gap: 1.25ch;
-	--block-search-wrapper-padding-block: 0;
-	--block-search-wrapper-padding-inline: 0;
-	--block-search-wrapper-size-block-min: 24px;
 
 	/* Border */
 	--border-color: currentcolor;
@@ -75,12 +37,12 @@ Some design tokens are defined in theme.json:
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
-	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-background-color: color-mix(in srgb, currentcolor, transparent 94%);
 	--code-padding-block: 0.1875em;
 	--code-padding-inline: 0.375em;
 
 	/* Code (block) */
-	--code-block-color-bg: var(--wp--preset--color--surface-2);
+	--code-block-background-color: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
 
 	/* Colors (not needed in the WP editor) */
@@ -91,7 +53,26 @@ Some design tokens are defined in theme.json:
 	--color-surface: var(--wp--preset--color--surface-1);
 	--color: var(--wp--preset--color--text-1);
 
-	/* Focus rings */
+	/*
+	Form Field
+	(input, textarea, select, button...)
+	*/
+	--field-background-color: transparent;
+	--field-border-color: var(--border-color);
+	--field-border-radius: var(--radius-1);
+	--field-border-width: var(--border-size-1);
+	--field-color: var(--wp--preset--color--text-1);
+	--field-font-weight: var(--font-weight-normal);
+	--field-padding-block: 0.25em;
+	--field-padding-inline: 0.5em;
+
+	/* Form Field - Checkbox */
+	--field-checkbox-size: 1.125em;
+
+	/* Form Field - Radio */
+	--field-radio-size: 1.125em;
+
+	/* Focus Rings */
 	--focus-ring-color: currentcolor;
 	--focus-ring-offset: 0.25lh;
 	--focus-ring-style: solid;
@@ -117,28 +98,9 @@ Some design tokens are defined in theme.json:
 	--font-size-heading-5: var(--wp--preset--font-size--step-1);
 	--font-size-heading-6: var(--wp--preset--font-size--step-0);
 
-	/* Forms */
-	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
-	--field-color-bg: transparent;
-	--field-border-color: var(--wp--preset--color--surface-5);
-	--field-border-radius: var(--radius-1);
-	--field-border-width: var(--border-size-1);
-	--field-checkbox-size: 1.125em;
-	--field-color: var(--wp--preset--color--text-1);
-	--field-font-weight: var(--font-weight-normal);
-	--field-padding-block: 0.25em;
-	--field-padding-inline: 0.5em;
-	--field-radio-size: 1.125em;
-	--label-font-size: var(--wp--preset--font-size--step-0);
-	--label-font-weight: var(--font-weight-bold);
-	--label-leading: var(--leading-slim);
-	--legend-font-size: var(--wp--preset--font-size--step-0);
-	--legend-font-weight: var(--font-weight-bold);
-	--legend-leading: inherit;
-
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
-	--kbd-color-bg: white;
+	--kbd-background-color: white;
 	--kbd-color: inherit;
 	--kbd-font-size: 0.875em;
 	--kbd-leading: 1;
@@ -147,10 +109,20 @@ Some design tokens are defined in theme.json:
 	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
 	--kbd-stroke-weight: var(--border-size-1);
 
+	/* Label */
+	--label-font-size: var(--wp--preset--font-size--step-0);
+	--label-font-weight: var(--font-weight-bold);
+	--label-leading: var(--leading-slim);
+
 	/* Leading (line height) */
 	--leading-flat: 1;
 	--leading-slim: 1.2;
 	--leading-base: 1.7;
+
+	/* Legend */
+	--legend-font-size: var(--wp--preset--font-size--step-0);
+	--legend-font-weight: var(--font-weight-bold);
+	--legend-leading: inherit;
 
 	/* Links */
 	--link-color: var(--wp--preset--color--primary-medium);

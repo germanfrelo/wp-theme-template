@@ -195,7 +195,7 @@ pre {
 
 pre:has(code) {
 	padding: var(--code-block-padding, var(--gutter, 1em));
-	background-color: var(--code-block-color-bg, transparent);
+	background-color: var(--code-block-background-color, transparent);
 }
 
 /* ----------------------------------------------------------------------
@@ -254,7 +254,7 @@ code {
 	padding-block: var(--code-padding-block, 0);
 	padding-inline: var(--code-padding-inline, 0);
 	white-space: break-spaces;
-	background-color: var(--code-color-bg, transparent);
+	background-color: var(--code-background-color, transparent);
 	border-radius: var(--code-border-radius, 0);
 
 	pre & {
@@ -275,7 +275,7 @@ kbd {
 	line-height: var(--kbd-leading, inherit);
 	color: var(--kbd-color, inherit);
 	white-space: nowrap;
-	background-color: var(--kbd-color-bg, transparent);
+	background-color: var(--kbd-background-color, transparent);
 	border: var(--kbd-stroke-weight, 1px) solid var(--kbd-stroke-color, currentcolor);
 	border-radius: var(--kbd-border-radius);
 	box-shadow: inset 0 calc(-1 * var(--kbd-stroke-weight, 1px)) 0 var(--kbd-stroke-color, currentcolor);
@@ -283,7 +283,7 @@ kbd {
 
 mark {
 	color: var(--mark-color, MarkText);
-	background-color: var(--mark-color-bg, Mark);
+	background-color: var(--mark-background-color, Mark);
 }
 
 del {
@@ -301,7 +301,7 @@ ins {
 svg {
 	flex-shrink: 0;
 
-	&:not[class] {
+	&:not([class]) {
 		inline-size: auto;
 		block-size: var(--svg-height, auto);
 	}
@@ -334,12 +334,12 @@ table {
 }
 
 thead {
-	background-color: var(--table-head-color-bg, transparent);
+	background-color: var(--table-head-background-color, transparent);
 	border-block-end: var(--table-head-border, 3px) solid;
 }
 
 tfoot {
-	background-color: var(--table-foot-color-bg, transparent);
+	background-color: var(--table-foot-background-color, transparent);
 	border-block-start: var(--table-foot-border, 3px) solid;
 }
 
@@ -370,7 +370,7 @@ textarea {
 	font-size: max(16px, var(--field-font-size, inherit));
 	font-weight: var(--field-font-weight, inherit);
 	color: var(--field-color, inherit);
-	background-color: var(--field-color-bg, transparent);
+	background-color: var(--field-background-color, transparent);
 	border-color: var(--field-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--field-border-width, revert);
@@ -398,17 +398,6 @@ textarea {
 [type="radio"] {
 	inline-size: var(--field-radio-size, auto);
 	block-size: var(--field-radio-size, auto);
-}
-
-label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"]),
-label + *:has(> :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"])) {
-	display: block;
-	inline-size: 100%;
-	margin-block-start: var(--form-label-input-gap);
-}
-
-label:is(.screen-reader-text, .visually-hidden):first-child + * {
-	margin-block-start: 0;
 }
 
 label:has(> :is([type="checkbox"], [type="radio"]):only-child),
@@ -492,9 +481,9 @@ details {
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
-				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
-				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
-				block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
+				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, 0)),
+				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, 0)),
+				block-size var(--details-content-transition-duration-size, var(--transition-duration, 0));
 			transition-behavior: allow-discrete;
 		}
 	}
