@@ -2,58 +2,49 @@
 WP Block Search - Block Variations
 ====================================================================== */
 
-/* ----------------------------------------------------------------------
-Button Outside
----------------------------------------------------------------------- */
+.wp-block-search {
+	/* ----------------------------------------------------------------------
+	Button Outside
+	---------------------------------------------------------------------- */
 
-.wp-block-search.wp-block-search__button-outside {
-	&.wp-block-search__icon-button {
-		--search-button-padding-block: 0.75em;
-		--search-button-padding-inline: 0.75em;
+	&.wp-block-search__button-outside {
+		/* No styles added */
 	}
-}
 
-/* ----------------------------------------------------------------------
-Button Inside
----------------------------------------------------------------------- */
+	/* ----------------------------------------------------------------------
+	Button Inside
+	---------------------------------------------------------------------- */
 
-.wp-block-search.wp-block-search__button-inside {
-	--search-button-background-color-on-hover: transparent;
-	--search-button-background-color: transparent;
-	--search-button-border-radius: var(--search-wrapper-border-radius);
-	--search-button-border-width: 0;
-	--search-button-color-on-hover: var(--wp--preset--color--primary-medium);
-	--search-button-color: inherit;
-	--search-button-padding-block: 0;
-	--search-button-padding-inline: 0;
-	--search-input-background-color: transparent;
-	--search-input-border-radius: 0;
-	--search-input-border-width: 0;
-	--search-input-font-size: var(--wp--preset--font-size--step-00);
-	--search-input-padding-block: 0.5em;
-	--search-input-padding-inline: 0;
-	--search-wrapper-background-color-on-hover: var(--wp--preset--color--surface-2);
-	--search-wrapper-background-color: var(--wp--preset--color--surface-1);
-	--search-wrapper-border-width: var(--border-size-1);
-	--search-wrapper-flex-align-items: center;
-	--search-wrapper-padding-inline: 1em;
-	--search-wrapper-size-block-min: 35px;
-}
-
-/* ----------------------------------------------------------------------
-Button Only
----------------------------------------------------------------------- */
-
-.wp-block-search.wp-block-search__button-only {
-	&.wp-block-search__searchfield-hidden {
-		--search-wrapper-gap: 0;
+	&.wp-block-search__button-inside {
+		--block-search-wrapper-border-width: var(--border-size-1);
+		--block-search-wrapper-flex-align-items: center;
+		--block-search-wrapper-padding-block: 0.5em;
+		--block-search-wrapper-padding-inline: 0.5em;
+		/* --button-background-color-on-hover: transparent;
+		--button-background-color: transparent;
+		--button-border-radius: var(--block-search-wrapper-border-radius);
+		--button-border-width: 0;
+		--button-color-on-hover: var(--wp--preset--color--primary-medium);
+		--button-color: inherit; */
+		/* --button-padding-block: 0;
+		--button-padding-inline: 0; */
+		--field-padding-block: 0;
+		--field-padding-inline: 0;
 	}
-}
 
-/* ----------------------------------------------------------------------
-No Button
----------------------------------------------------------------------- */
+	/* ----------------------------------------------------------------------
+	No Button
+	---------------------------------------------------------------------- */
 
-.wp-block-search.wp-block-search__no-button {
-	/* No styles added */
+	&.wp-block-search__no-button {
+		/* No styles added */
+	}
+
+	/* ----------------------------------------------------------------------
+	Button Only
+	---------------------------------------------------------------------- */
+
+	&.wp-block-search__button-only {
+		/* No styles added */
+	}
 }
