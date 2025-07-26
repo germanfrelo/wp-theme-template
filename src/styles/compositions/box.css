@@ -27,7 +27,7 @@ Configuration:
 	color: var(--box-color, inherit);
 	outline: var(--box-border-size) solid transparent; /* For high contrast mode */
 	outline-offset: calc(var(--box-border-size) * -1); /* For high contrast mode */
-	background-color: var(--box-background-color, transparent);
+	background-color: var(--box-color-bg, transparent);
 	border-style: solid;
 	border-width: var(--box-border-size, var(--border-size-1, thin));
 

@@ -16,11 +16,10 @@ To customize most of this block and its parts, use the global CSS custom propert
 	.wp-block-search__inside-wrapper {
 		display: flex;
 		flex-direction: var(--block-search-wrapper-flex-direction, row);
-		/* flex-wrap: wrap; */
-		column-gap: var(--block-search-wrapper-gap, 0.5rem);
-		align-items: var(--block-search-wrapper-flex-align-items, stretch);
-		justify-content: var(--block-search-wrapper-flex-justify-content, start);
-		min-block-size: var(--block-search-wrapper-size-block-min, 24px);
+		column-gap: var(--block-search-wrapper-gap, 0);
+		align-items: var(--block-search-wrapper-flex-align-items, initial);
+		justify-content: var(--block-search-wrapper-flex-justify-content, flex-start);
+		min-block-size: var(--block-search-wrapper-size-block-min, initial);
 		padding-block: var(--block-search-wrapper-padding-block, 0);
 		padding-inline: var(--block-search-wrapper-padding-inline, 0);
 		background-color: var(--block-search-wrapper-background-color, transparent);
@@ -41,45 +40,21 @@ To customize most of this block and its parts, use the global CSS custom propert
 		}
 	}
 
-	/* Variant: Button-only */
-
-	&.wp-block-search__button-only {
-		.wp-block-search__inside-wrapper {
-			min-inline-size: 0 !important;
-			transition-property: inline-size;
-		}
-
-		input.wp-block-search__input {
-			flex-basis: 100%;
-			transition-duration: 1s;
-		}
-
-		&.wp-block-search__searchfield-hidden {
-			overflow: hidden;
-
-			.wp-block-search__inside-wrapper {
-				gap: 0;
-				overflow: hidden;
-			}
-
-			/* !important here to override inline styles on button only deselected view */
-			input.wp-block-search__input {
-				flex: none !important;
-				inline-size: 0 !important;
-				min-inline-size: 0 !important;
-				padding: 0 !important;
-				border: 0 !important;
-			}
-		}
-	}
-
 	/* ----------------------------------------------------------------------
 	Input
 	---------------------------------------------------------------------- */
 
-	input.wp-block-search__input {
+	.wp-block-search__input {
 		flex-grow: 1;
 		min-inline-size: 48px;
+		padding-block: var(--block-search-input-padding-block, 0);
+		padding-inline: var(--block-search-input-padding-inline, 1ch);
+		font-size: var(--block-search-input-font-size, inherit);
+		background-color: var(--block-search-input-background-color, 0);
+		border-color: var(--block-search-input-border-color, currentcolor);
+		border-style: var(--block-search-input-border-style, solid);
+		border-width: var(--block-search-input-border-width, 1px);
+		border-radius: var(--block-search-input-border-radius, 0);
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition-duration: var(--block-search-button-transition-duration, var(--transition-duration, 0));
@@ -91,39 +66,43 @@ To customize most of this block and its parts, use the global CSS custom propert
 		}
 	}
 
-	/* Variant: Button inside */
-
-	&.wp-block-search__button-inside {
-		input.wp-block-search__input {
-			background-color: transparent;
-			border: 0;
-			border-radius: 0;
-
-			/* TODO: Check this */
-			&:focus {
-				outline: none;
-			}
-		}
-	}
-
 	/* ----------------------------------------------------------------------
 	Button
 	---------------------------------------------------------------------- */
 
-	button.wp-block-search__button {
-		flex-shrink: 0;
+	.wp-block-search__button {
+		padding-block: var(--block-search-button-padding-block, initial);
+		padding-inline: var(--block-search-button-padding-inline, initial);
+		font-size: var(--block-search-button-font-size, inherit);
+		font-weight: var(--block-search-button-font-weight, inherit);
+		color: var(--block-search-button-color, inherit);
+		background-color: var(--block-search-button-background-color, inherit);
+		border-color: var(--block-search-button-border-color, currentcolor);
+		border-style: var(--block-search-button-border-style, initial);
+		border-width: var(--block-search-button-border-width, initial);
+		border-radius: var(--block-search-button-border-radius, 0);
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--block-search-button-transition-duration, var(--transition-duration, 0));
+			transition-property: color, background-color, border-color;
+		}
 
 		/* States */
 
+		&:is(:hover, :focus-visible),
 		.wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) & {
-			/* color: var(--button-color-on-hover, inherit);
-			background-color: var(--button-background-color-on-hover, transparent);
-			border-color: var(--button-border-color-on-hover, transparent); */
+			color: var(--block-search-button-color-on-hover, inherit);
+			background-color: var(--block-search-button-background-color-on-hover, transparent);
+			border-color: var(--block-search-button-border-color-on-hover, transparent);
 		}
 
 		/* Icon */
 
-		> .search-icon {
+		&.has-icon > .search-icon {
+			width: var(--block-search-button-icon-size, auto);
+			min-width: revert;
+			height: var(--block-search-button-icon-size, auto);
+			min-height: revert;
 			rotate: var(--block-search-button-icon-rotation, initial);
 		}
 	}

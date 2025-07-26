@@ -17,12 +17,12 @@ Notes:
 	}
 
 	thead {
-		background-color: var(--table-thead-background-color, transparent);
+		background-color: var(--table-thead-color-bg, transparent);
 		border-block-end: var(--table-thread-border, 3px) solid;
 	}
 
 	tfoot {
-		background-color: var(--table-head-background-color, transparent);
+		background-color: var(--table-head-color-bg, transparent);
 		border-block-start: var(--table-head-border, 3px) solid;
 	}
 
@@ -30,7 +30,7 @@ Notes:
 		border-bottom: revert;
 
 		tbody tr:nth-child(odd) {
-			background-color: var(--table-stripes-row-background-color, color-mix(in srgb, currentcolor 5%, transparent));
+			background-color: var(--table-stripes-row-color-bg, color-mix(in srgb, currentcolor 5%, transparent));
 		}
 
 		:is(td, th) {

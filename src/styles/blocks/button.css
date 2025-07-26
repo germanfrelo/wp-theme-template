@@ -19,7 +19,10 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	block-size: 100%;
 }
 
-:is(.button, .wp-element-button, .wp-block-button > .wp-block-button__link, .wp-block-read-more) {
+.button,
+.wp-element-button,
+.wp-block-button > .wp-block-button__link,
+.wp-block-read-more {
 	display: var(--button-display, inline-block);
 	align-content: center;
 	min-inline-size: 24px;
@@ -73,11 +76,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	> :is(img, svg, .icon) {
 		flex-shrink: 0;
 		inline-size: auto;
-		block-size: var(--button-icon-size, auto);
-
-		&:not([fill]) {
-			fill: currentcolor;
-		}
+		block-size: var(--button-icon-size, 1.25em);
 	}
 
 	/* Icon: External Link */

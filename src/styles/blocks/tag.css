@@ -15,7 +15,7 @@ Tag
 	color: var(--tag-color, inherit);
 	text-align: center;
 	text-decoration-line: var(--tag-underline, none);
-	background-color: var(--tag-background-color, transparent);
+	background-color: var(--tag-color-bg, transparent);
 	border-color: var(--tag-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--tag-border-width, 0);

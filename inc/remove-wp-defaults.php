@@ -46,7 +46,6 @@ function themeslug_remove_core_styles() {
 	wp_dequeue_style( 'wp-block-post-template' );
 	wp_dequeue_style( 'wp-block-post-title' );
 	wp_dequeue_style( 'wp-block-quote' );
-	// wp_dequeue_style( 'wp-block-search' );
 	wp_dequeue_style( 'wp-block-site-logo' );
 	wp_dequeue_style( 'wp-block-site-title' );
 }
