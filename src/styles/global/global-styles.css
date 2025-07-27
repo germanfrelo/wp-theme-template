@@ -492,9 +492,9 @@ details {
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
-				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
-				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
-				block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
+				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, 0)),
+				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, 0)),
+				block-size var(--details-content-transition-duration-size, var(--transition-duration, 0));
 			transition-behavior: allow-discrete;
 		}
 	}
