@@ -424,8 +424,8 @@ nav.wp-block-navigation {
 	li.wp-block-navigation-item.has-child.wp-block-navigation-submenu
 		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
 		visibility: hidden; /* Hidden */
-		row-gap: var(--nav-submenu-gap-rows, var(--wp--style--block-gap, 0));
-		column-gap: var(--nav-submenu-gap-columns, var(--wp--style--block-gap, 0));
+		row-gap: var(--nav-submenu-gap-rows, var(--flow-space, 0));
+		column-gap: var(--nav-submenu-gap-columns, var(--flow-space, 0));
 		width: 0; /* Hidden */
 		height: 0; /* Hidden */
 		padding-block: var(--nav-submenu-padding-block, 0);
