@@ -76,7 +76,10 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	> :is(img, svg, .icon) {
 		flex-shrink: 0;
 		inline-size: auto;
-		block-size: var(--button-icon-size, 1.25em);
+
+		&:not([fill]) {
+			fill: currentcolor;
+		}
 	}
 
 	/* Icon: External Link */
