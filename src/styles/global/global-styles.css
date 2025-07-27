@@ -301,7 +301,7 @@ ins {
 svg {
 	flex-shrink: 0;
 
-	&:not[class] {
+	&:not([class]) {
 		inline-size: auto;
 		block-size: var(--svg-height, auto);
 	}
