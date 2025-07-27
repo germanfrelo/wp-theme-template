@@ -1,0 +1,16 @@
+/* ======================================================================
+WP Block Search - Block Variation - Button Inside
+====================================================================== */
+
+.wp-block-search.wp-block-search__button-inside {
+	--block-search-wrapper-border-width: var(--field-border-width, thin);
+	--block-search-wrapper-padding-block: 0.25em;
+	--block-search-wrapper-padding-inline: 0.25em;
+
+	[type="search"] {
+		--field-padding-block: 0;
+		background-color: transparent;
+		border-color: transparent;
+		border-radius: 0;
+	}
+}

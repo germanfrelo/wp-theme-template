@@ -359,11 +359,12 @@ label {
 	line-height: var(--label-leading, inherit);
 }
 
+button,
 input,
 select,
 textarea {
-	min-inline-size: 24px;
-	min-block-size: 24px;
+	min-inline-size: var(--field-min-size-inline, 24px);
+	min-block-size: var(--field-min-size-block, 24px);
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
 	/* Setting a minimum font-size of 16px prevents iOS Safari from automatically zooming in when tapped: https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
@@ -378,7 +379,6 @@ textarea {
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--transition-duration, 0);
-		transition-property: color, background-color, border-color;
 	}
 }
 

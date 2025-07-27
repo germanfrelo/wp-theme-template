@@ -7,7 +7,10 @@ Direction Reversed
 ---------------------------------------------------------------------- */
 
 .wp-block-search.is-style-direction-reversed {
-	--search-button-icon-rotation: initial;
-	--search-wrapper-flex-direction: row-reverse;
-	--search-wrapper-flex-justify-content: flex-end;
+	--block-search-button-icon-rotation: y 0.5turn;
+	--block-search-wrapper-direction: row-reverse;
+
+	.wp-block-search__inside-wrapper {
+		reading-flow: flex-visual;
+	}
 }
