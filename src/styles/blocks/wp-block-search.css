@@ -22,7 +22,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		min-block-size: var(--block-search-wrapper-size-block-min, initial);
 		padding-block: var(--block-search-wrapper-padding-block, 0);
 		padding-inline: var(--block-search-wrapper-padding-inline, 0);
-		background-color: var(--block-search-wrapper-background-color, transparent);
+		background-color: var(--block-search-wrapper-color-bg, transparent);
 		border-color: var(--block-search-wrapper-border-color, currentcolor);
 		border-style: var(--block-search-wrapper-border-style, solid);
 		border-width: var(--block-search-wrapper-border-width, 0);
@@ -36,7 +36,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		/* States */
 
 		&:is(:hover, :has(input.wp-block-search__input:focus)) {
-			background-color: var(--block-search-wrapper-background-color-on-hover, transparent);
+			background-color: var(--block-search-wrapper-color-bg-on-hover, transparent);
 		}
 	}
 
@@ -50,7 +50,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		padding-block: var(--block-search-input-padding-block, 0);
 		padding-inline: var(--block-search-input-padding-inline, 1ch);
 		font-size: var(--block-search-input-font-size, inherit);
-		background-color: var(--block-search-input-background-color, 0);
+		background-color: var(--block-search-input-color-bg, 0);
 		border-color: var(--block-search-input-border-color, currentcolor);
 		border-style: var(--block-search-input-border-style, solid);
 		border-width: var(--block-search-input-border-width, 1px);
@@ -62,7 +62,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		}
 
 		&:is(:hover, :focus-visible) {
-			background-color: var(--block-search-input-background-color-on-hover, transparent);
+			background-color: var(--block-search-input-color-bg-on-hover, transparent);
 		}
 	}
 
@@ -76,7 +76,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		font-size: var(--block-search-button-font-size, inherit);
 		font-weight: var(--block-search-button-font-weight, inherit);
 		color: var(--block-search-button-color, inherit);
-		background-color: var(--block-search-button-background-color, inherit);
+		background-color: var(--block-search-button-color-bg, inherit);
 		border-color: var(--block-search-button-border-color, currentcolor);
 		border-style: var(--block-search-button-border-style, initial);
 		border-width: var(--block-search-button-border-width, initial);
@@ -92,7 +92,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 		&:is(:hover, :focus-visible),
 		.wp-block-search__inside-wrapper:is(:hover, :has(input.wp-block-search__input:focus)) & {
 			color: var(--block-search-button-color-on-hover, inherit);
-			background-color: var(--block-search-button-background-color-on-hover, transparent);
+			background-color: var(--block-search-button-color-bg-on-hover, transparent);
 			border-color: var(--block-search-button-border-color-on-hover, transparent);
 		}
 

@@ -3,9 +3,9 @@ Button - Variant: Outline
 ====================================================================== */
 
 :is(.button, .wp-block-button, .wp-block-read-more).is-style-outline {
-	--button-background-color-on-active: color-mix(in srgb, var(--button-color), transparent 80%);
-	--button-background-color-on-hover: color-mix(in srgb, var(--button-color), transparent 90%);
-	--button-background-color: transparent;
+	--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 80%);
+	--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 90%);
+	--button-color-bg: transparent;
 	--button-border-color-on-active: currentcolor;
 	--button-border-color-on-hover: currentcolor;
 	--button-border-color: currentcolor;

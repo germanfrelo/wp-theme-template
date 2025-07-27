@@ -37,7 +37,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 			padding-inline: var(--select-padding-inline, var(--field-padding-inline));
 			font-size: var(--select-font-size, initial);
 			font-weight: var(--select-font-weight, initial);
-			background-color: var(--select-background-color, var(--field-background-color));
+			background-color: var(--select-color-bg, var(--field-color-bg));
 			border-color: var(--select-border-color, var(--field-border-color));
 			border-style: var(--select-border-style, solid);
 			border-width: var(--select-border-width, var(--field-border-width));
@@ -64,7 +64,7 @@ To customize most of this block and its parts, use the global CSS custom propert
 			}
 
 			&:hover {
-				background-color: var(--select-background-color-on-hover);
+				background-color: var(--select-color-bg-on-hover);
 			}
 		}
 	}

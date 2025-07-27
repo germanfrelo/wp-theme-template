@@ -18,22 +18,22 @@ Button Inside
 ---------------------------------------------------------------------- */
 
 .wp-block-search.wp-block-search__button-inside {
-	--search-button-background-color-on-hover: transparent;
-	--search-button-background-color: transparent;
+	--search-button-color-bg-on-hover: transparent;
+	--search-button-color-bg: transparent;
 	--search-button-border-radius: var(--search-wrapper-border-radius);
 	--search-button-border-width: 0;
 	--search-button-color-on-hover: var(--wp--preset--color--primary-medium);
 	--search-button-color: inherit;
 	--search-button-padding-block: 0;
 	--search-button-padding-inline: 0;
-	--search-input-background-color: transparent;
+	--search-input-color-bg: transparent;
 	--search-input-border-radius: 0;
 	--search-input-border-width: 0;
 	--search-input-font-size: var(--wp--preset--font-size--step-00);
 	--search-input-padding-block: 0.5em;
 	--search-input-padding-inline: 0;
-	--search-wrapper-background-color-on-hover: var(--wp--preset--color--surface-2);
-	--search-wrapper-background-color: var(--wp--preset--color--surface-1);
+	--search-wrapper-color-bg-on-hover: var(--wp--preset--color--surface-2);
+	--search-wrapper-color-bg: var(--wp--preset--color--surface-1);
 	--search-wrapper-border-width: var(--border-size-1);
 	--search-wrapper-flex-align-items: center;
 	--search-wrapper-padding-inline: 1em;

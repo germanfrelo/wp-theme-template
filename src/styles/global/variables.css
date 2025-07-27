@@ -9,10 +9,10 @@ Some design tokens are defined in theme.json:
 
 :root {
 	/* Block - Search */
-	--block-search-button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
-	--block-search-button-background-color: var(--wp--preset--color--primary-medium);
-	--block-search-button-border-color-on-hover: var(--block-search-button-background-color-on-hover);
-	--block-search-button-border-color: var(--block-search-button-background-color);
+	--block-search-button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
+	--block-search-button-color-bg: var(--wp--preset--color--primary-medium);
+	--block-search-button-border-color-on-hover: var(--block-search-button-color-bg-on-hover);
+	--block-search-button-border-color: var(--block-search-button-color-bg);
 	--block-search-button-border-radius: var(--radius-medium);
 	--block-search-button-border-style: solid;
 	--block-search-button-border-width: var(--stroke-weight-thin, 1px);
@@ -25,8 +25,8 @@ Some design tokens are defined in theme.json:
 	--block-search-button-padding-block: 0.75em;
 	--block-search-button-padding-inline: 1.5em;
 	--block-search-button-transition-duration: var(--transition-duration);
-	--block-search-input-background-color-on-hover: var(--block-search-input-background-color);
-	--block-search-input-background-color: var(--wp--preset--color--surface-1);
+	--block-search-input-color-bg-on-hover: var(--block-search-input-color-bg);
+	--block-search-input-color-bg: var(--wp--preset--color--surface-1);
 	--block-search-input-border-color: var(--stroke-color);
 	--block-search-input-border-radius: var(--radius-medium);
 	--block-search-input-border-style: solid;
@@ -34,8 +34,8 @@ Some design tokens are defined in theme.json:
 	--block-search-input-font-size: inherit;
 	--block-search-input-padding-block: 0.5em;
 	--block-search-input-padding-inline: 1em;
-	--block-search-wrapper-background-color-on-hover: transparent;
-	--block-search-wrapper-background-color: transparent;
+	--block-search-wrapper-color-bg-on-hover: transparent;
+	--block-search-wrapper-color-bg: transparent;
 	--block-search-wrapper-border-color: var(--stroke-color);
 	--block-search-wrapper-border-radius: var(--radius-medium);
 	--block-search-wrapper-border-style: solid;
@@ -57,12 +57,12 @@ Some design tokens are defined in theme.json:
 	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
-	--button-background-color-on-active: var(--wp--preset--color--primary-darker-20);
-	--button-background-color-on-hover: var(--wp--preset--color--primary-darker-10);
-	--button-background-color: var(--wp--preset--color--primary-medium);
+	--button-color-bg-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-color-bg: var(--wp--preset--color--primary-medium);
 	--button-border-color-on-active: var(--wp--preset--color--primary-darker-20);
 	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
-	--button-border-color: var(--button-background-color);
+	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--radius-1);
 	--button-border-width: var(--border-size-1);
 	--button-color: var(--wp--preset--color--surface-1);

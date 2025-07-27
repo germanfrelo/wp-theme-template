@@ -22,8 +22,8 @@ Query Pagination Next
 	--query-pag-next-border-radius: 0;
 	--query-pag-next-border-style: solid;
 	--query-pag-next-border-width: 1px;
-	--query-pag-next-background-color-hover: var(--wp--preset--color--surface-2);
-	--query-pag-next-background-color: var(--wp--preset--color--surface-1);
+	--query-pag-next-color-bg-hover: var(--wp--preset--color--surface-2);
+	--query-pag-next-color-bg: var(--wp--preset--color--surface-1);
 	--query-pag-next-color-hover: var(--wp--preset--color--text-1);
 	--query-pag-next-color: var(--wp--preset--color--text-1);
 	--query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
@@ -40,7 +40,7 @@ Query Pagination Next
 	min-inline-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
 	min-block-size: var(--query-pag-next-min-size, var(--min-target-size, 24px));
 	color: var(--query-pag-next-color, inherit);
-	background-color: var(--query-pag-next-background-color, transparent);
+	background-color: var(--query-pag-next-color-bg, transparent);
 	border-color: var(--query-pag-next-border-color, transparent);
 	border-style: var(--query-pag-next-border-style, none);
 	border-width: var(--query-pag-next-border-width, 0);
@@ -49,7 +49,7 @@ Query Pagination Next
 
 .wp-block-query-pagination-next:is(:hover, :focus-visible) {
 	color: var(--query-pag-next-color-hover, inherit);
-	background-color: var(--query-pag-next-background-color-hover, transparent);
+	background-color: var(--query-pag-next-color-bg-hover, transparent);
 	border-color: var(--query-pag-next-border-color-hover, transparent);
 }
 

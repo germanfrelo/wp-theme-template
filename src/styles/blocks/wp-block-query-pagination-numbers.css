@@ -25,8 +25,8 @@ Notes:
 	--query-pag-number-border-style: solid;
 	--query-pag-number-border-width: 1px;
 	--query-pag-number-border-block-end-width: 1px;
-	--query-pag-number-background-color-hover: var(--wp--preset--color--surface-2);
-	--query-pag-number-background-color: var(--wp--preset--color--surface-1);
+	--query-pag-number-color-bg-hover: var(--wp--preset--color--surface-2);
+	--query-pag-number-color-bg: var(--wp--preset--color--surface-1);
 	--query-pag-number-color-hover: var(--wp--preset--color--text-1);
 	--query-pag-number-color: var(--wp--preset--color--text-1);
 	--query-pag-number-min-size: 44px;
@@ -35,7 +35,7 @@ Notes:
 
 	/* Current Number */
 	--query-pag-number-current-border-color: var(--wp--preset--color--primary-medium);
-	--query-pag-number-current-background-color: var(--wp--preset--color--primary-medium);
+	--query-pag-number-current-color-bg: var(--wp--preset--color--primary-medium);
 	--query-pag-number-current-color: var(--wp--preset--color--surface-1);
 
 	/* Dots */
@@ -65,7 +65,7 @@ Notes:
 		padding-inline: var(--query-pag-number-padding-inline, 0);
 		line-height: 1;
 		color: var(--query-pag-number-color, inherit);
-		background-color: var(--query-pag-number-background-color, transparent);
+		background-color: var(--query-pag-number-color-bg, transparent);
 		border-color: var(--query-pag-number-border-color, transparent);
 		border-style: var(--query-pag-number-border-style, none);
 		border-width: var(--query-pag-number-border-width, 0);
@@ -79,7 +79,7 @@ Notes:
 
 	a.page-numbers:is(:hover, :focus-visible) {
 		color: var(--query-pag-number-color-hover, inherit);
-		background-color: var(--query-pag-number-background-color-hover, transparent);
+		background-color: var(--query-pag-number-color-bg-hover, transparent);
 		border-color: var(--query-pag-number-border-color-hover, transparent);
 	}
 
@@ -89,7 +89,7 @@ Notes:
 
 	.page-numbers.current {
 		color: var(--query-pag-number-current-color, inherit);
-		background-color: var(--query-pag-number-current-background-color, transparent);
+		background-color: var(--query-pag-number-current-color-bg, transparent);
 		border-color: var(--query-pag-number-current-border-color, transparent);
 	}
 
