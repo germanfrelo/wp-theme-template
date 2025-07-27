@@ -39,8 +39,11 @@ Custom Style: Custom
 .wp-block-cover.is-style-custom > .wp-block-cover__background {
 	background: var(--cover-background-background, initial);
 	opacity: var(--cover-background-opacity, initial);
-	transition-duration: var(--cover-background-transition-duration, var(--transition-duration, 0));
-	transition-property: var(--cover-background-transition-property, initial);
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--cover-background-transition-duration, var(--transition-duration, 0));
+		transition-property: var(--cover-background-transition-property, initial);
+	}
 }
 
 /* Cover background when is hovered or the Post Title link child is focused */

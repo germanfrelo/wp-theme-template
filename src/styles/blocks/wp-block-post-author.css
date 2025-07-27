@@ -19,8 +19,11 @@ Notes:
 	padding-block: var(--post-author-padding-inline, 0.5rem);
 	padding-inline-start: var(--post-author-padding-inline-start, 0.5rem);
 	padding-inline-end: var(--post-author-padding-inline-end, 0.75rem);
-	transition-duration: var(--transition-duration, 0);
-	transition-property: background-color;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration, 0);
+		transition-property: background-color;
+	}
 
 	.is-layout-flex > & {
 		margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
