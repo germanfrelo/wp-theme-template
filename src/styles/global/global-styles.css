@@ -400,17 +400,6 @@ textarea {
 	block-size: var(--field-radio-size, auto);
 }
 
-label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"]),
-label + *:has(> :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"])) {
-	display: block;
-	inline-size: 100%;
-	margin-block-start: var(--form-label-input-gap);
-}
-
-label:is(.screen-reader-text, .visually-hidden):first-child + * {
-	margin-block-start: 0;
-}
-
 label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 *:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
 	--label-font-weight: var(--font-weight-base);
