@@ -14,6 +14,10 @@ Resources:
 - https://inclusive-components.design/cards/
 ======================================================================================= */
 
+/* ======================================================================
+Default Style
+====================================================================== */
+
 .wp-block-cover {
 	min-height: revert;
 	padding: var(--gutter, 1em);
@@ -23,54 +27,52 @@ Resources:
 Custom Style: Custom
 ====================================================================== */
 
-/* Configuration */
-
 .wp-block-cover.is-style-custom {
 	--cover-background-background: linear-gradient(45deg, hsl(0deg 0% 0% / 80%) 0%, hsl(0deg 0% 0% / 0%) 100%);
 	--cover-background-opacity-default: 0;
 	--cover-background-opacity-on-hover: 1;
 	--cover-focus-shadow: 0 0 0 0.25rem var(--wp--preset--color--primary-medium, currentcolor);
-}
 
-/* Cover background */
+	/* Cover background */
 
-.wp-block-cover.is-style-custom > .wp-block-cover__background {
-	background: var(--cover-background-background, initial);
-	opacity: var(--cover-background-opacity, initial);
+	& > .wp-block-cover__background {
+		background: var(--cover-background-background, initial);
+		opacity: var(--cover-background-opacity, initial);
 
-	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
-		transition-property: opacity;
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--transition-duration, 0);
+			transition-property: opacity;
+		}
 	}
-}
 
-/* Cover background when is hovered or the Post Title link child is focused */
+	/* Cover background when is hovered or the Post Title link child is focused */
 
-.wp-block-cover.is-style-custom:is(:hover, :focus-within) > .wp-block-cover__background {
-	opacity: var(--cover-background-opacity-on-hover, initial);
-}
+	&:is(:hover, :focus-within) > .wp-block-cover__background {
+		opacity: var(--cover-background-opacity-on-hover, initial);
+	}
 
-/* Make the whole block interactive if it has a Post Title as link */
+	/* Make the whole block interactive if it has a Post Title as link */
 
-.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link) {
-	position: relative;
-}
+	&:has(.wp-block-post-title > :any-link) {
+		position: relative;
+	}
 
-/* Cover when the Post Title link child is focused */
+	/* Cover when the Post Title link child is focused */
 
-.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link):focus-within {
-	box-shadow: var(--cover-focus-shadow, initial);
-}
+	&:has(.wp-block-post-title > :any-link):focus-within {
+		box-shadow: var(--cover-focus-shadow, initial);
+	}
 
-.wp-block-cover.is-style-custom .wp-block-post-title > :any-link {
-	text-decoration: none;
-	outline: none;
-}
+	& .wp-block-post-title > :any-link {
+		text-decoration: none;
+		outline: none;
+	}
 
-.wp-block-cover.is-style-custom .wp-block-post-title > :any-link::after {
-	position: absolute;
-	inset: 0;
-	content: "";
+	& .wp-block-post-title > :any-link::after {
+		position: absolute;
+		inset: 0;
+		content: "";
+	}
 }
 
 /* ======================================================================
