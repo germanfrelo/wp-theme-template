@@ -45,16 +45,24 @@ Table of contents:
 2. Sections
 ====================================================================== */
 
+/* ----------------------------------------------------------------------
+Body
+---------------------------------------------------------------------- */
+
 body {
-	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-family: var(--font-family-base, sans-serif);
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
-	line-height: var(--leading-base, 1.5);
+	line-height: var(--font-line-height-base, 1.5);
 	color: var(--color-text, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }
+
+/* ----------------------------------------------------------------------
+Headings
+---------------------------------------------------------------------- */
 
 h1,
 h2,
@@ -62,37 +70,44 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: var(--font-weight-bold, bold);
+	font-family: var(--font-family-headings, inherit);
+	font-weight: var(--font-weight-headings, bold);
 	overflow-wrap: break-word;
 }
 
 h1 {
-	font-size: var(--font-size-heading-1, 2rem);
-	font-weight: var(--font-weight-black, bold);
-	line-height: var(--leading-flat, normal);
+	font-size: var(--font-size-h1, 2rem);
+	line-height: var(--font-line-height-h1, normal);
 }
 
 h2 {
-	font-size: var(--font-size-heading-2, 1.5rem);
-	line-height: var(--leading-slim, normal);
+	font-size: var(--font-size-h2, 1.5rem);
+	line-height: var(--font-line-height-h2, normal);
 }
 
 h3 {
-	font-size: var(--font-size-heading-3, 1.17rem);
-	line-height: var(--leading-slim, normal);
+	font-size: var(--font-size-h3, 1.17rem);
+	line-height: var(--font-line-height-h3, normal);
 }
 
 h4 {
-	font-size: var(--font-size-heading-4, 1rem);
+	font-size: var(--font-size-h4, 1rem);
+	line-height: var(--font-line-height-h4, normal);
 }
 
 h5 {
-	font-size: var(--font-size-heading-5, 0.83rem);
+	font-size: var(--font-size-h5, 0.83rem);
+	line-height: var(--font-line-height-h5, normal);
 }
 
 h6 {
-	font-size: var(--font-size-heading-6, 0.67rem);
+	font-size: var(--font-size-h6, 0.67rem);
+	line-height: var(--font-line-height-h6, normal);
 }
+
+/* ----------------------------------------------------------------------
+Address
+---------------------------------------------------------------------- */
 
 address {
 	font-style: inherit;
@@ -111,7 +126,7 @@ dl {
 }
 
 dt {
-	font-weight: var(--font-weight-medium, bolder);
+	font-weight: var(--wp--custom--font-weight--600, bolder);
 }
 
 dd {
@@ -215,7 +230,7 @@ hr {
 
 b,
 strong {
-	font-weight: var(--font-weight-bold, bolder);
+	font-weight: var(--wp--custom--font-weight--700, bolder);
 }
 
 a:where(:any-link) {
@@ -233,7 +248,7 @@ a:where(:any-link) {
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 	}
 }
@@ -246,7 +261,7 @@ a:where(:any-link) {
 code,
 kbd,
 samp {
-	font-family: var(--wp--preset--font-family--mono, ui-monospace, monospace);
+	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
 }
 
@@ -272,7 +287,7 @@ kbd {
 	padding-block: var(--kbd-padding-block, 0.25em);
 	padding-inline: var(--kbd-padding-inline, 0.5em);
 	font-family: var(--wp--preset--font-family--base, inherit);
-	line-height: var(--kbd-leading, inherit);
+	line-height: var(--kbd-line-height, inherit);
 	color: var(--kbd-color, inherit);
 	white-space: nowrap;
 	background-color: var(--kbd-color-bg, transparent);
@@ -313,7 +328,7 @@ svg {
 
 	:is(a:where(:any-link), button) & path {
 		@media (prefers-reduced-motion: no-preference) {
-			transition-duration: var(--transition-duration, 0);
+			transition-duration: var(--wp--custom--transition--duration, 0);
 			transition-property: fill;
 		}
 	}
@@ -356,7 +371,7 @@ label {
 	display: inline-block;
 	font-size: var(--label-font-size, inherit);
 	font-weight: var(--label-font-weight, inherit);
-	line-height: var(--label-leading, inherit);
+	line-height: var(--label-line-height, inherit);
 }
 
 button,
@@ -378,7 +393,7 @@ textarea {
 	border-radius: var(--field-border-radius, revert);
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 	}
 }
 
@@ -461,8 +476,8 @@ details {
 	/* Transitions */
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-timing-function: var(--transition-timing-function, ease);
-		transition-duration: var(--transition-duration, var(--transition-duration, 0));
+		transition-timing-function: var(--wp--custom--transition--timing-function);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 		interpolate-size: allow-keywords;
 	}
@@ -481,9 +496,9 @@ details {
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
-				content-visibility var(--transition-duration, 0),
-				opacity var(--transition-duration, 0),
-				block-size var(--transition-duration, 0);
+				content-visibility var(--wp--custom--transition--duration, 0),
+				opacity var(--wp--custom--transition--duration, 0),
+				block-size var(--wp--custom--transition--duration, 0);
 			transition-behavior: allow-discrete;
 		}
 	}

@@ -50,7 +50,7 @@ Info Box
 		}
 
 		&:not(#course-price) > :last-child {
-			font-weight: var(--font-weight-normal, inherit);
+			font-weight: var(--font-weight-base, inherit);
 			color: var(--wp--preset--color--primary-medium, inherit);
 		}
 	}

@@ -51,7 +51,7 @@ Course List
 		grid-template-rows: minmax(10rem, 36%) minmax(0, 1fr);
 		border-color: transparent;
 		border-style: solid;
-		border-width: var(--border-size-2, 2px);
+		border-width: var(--box-border-size, thin);
 
 		@media (hover: hover) {
 			&:has(:is(:any-link, button):hover) {
@@ -92,10 +92,6 @@ Course List
 		.course-card-image img {
 			inline-size: 100%;
 			block-size: 100%;
-		}
-
-		.wp-block-post-title {
-			font-weight: var(--font-weight-medium, bolder);
 		}
 
 		.course-card-tags:has(> *) {

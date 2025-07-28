@@ -28,7 +28,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	padding-inline: var(--button-padding-inline, 1em);
 	font-size: var(--button-font-size, inherit);
 	font-weight: var(--button-font-weight, inherit);
-	line-height: var(--button-leading, inherit);
+	line-height: var(--button-line-height, inherit);
 	color: var(--button-color, inherit);
 	text-align: var(--button-text-align, center);
 	text-decoration-line: var(--button-line, none);
@@ -40,7 +40,7 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	text-box: var(--button-text-box, normal);
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 	}
 

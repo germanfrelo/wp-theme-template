@@ -12,7 +12,8 @@ This specific import order is critical for correct CSS specificity.
 2. Custom Properties
 ====================================================================== */
 
-@import "global/variables/primitive-tokens.css";
+/* Primitive design tokens are defined in the theme.json file. */
+
 @import "global/variables/semantic-tokens.css";
 @import "global/variables/custom-media-queries.css";
 

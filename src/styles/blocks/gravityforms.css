@@ -84,7 +84,7 @@ Notes:
 		}
 
 		:is(input, textarea) {
-			outline-width: var(--border-size-1, 1px);
+			outline-width: var(--focus-ring-width, 2px);
 			outline-style: solid;
 			outline-color: currentcolor;
 			outline-offset: 0;

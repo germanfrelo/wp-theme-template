@@ -11,7 +11,7 @@ Tag
 	padding-block: var(--tag-padding-block, 0.25em);
 	padding-inline: var(--tag-padding-inline, 0.75em);
 	font-weight: var(--tag-font-weight, inherit);
-	line-height: var(--tag-leading, inherit);
+	line-height: var(--tag-line-height, inherit);
 	color: var(--tag-color, inherit);
 	text-align: center;
 	text-decoration-line: var(--tag-underline, none);

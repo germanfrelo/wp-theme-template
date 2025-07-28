@@ -18,7 +18,7 @@ Configuration:
 --box-border-size
 	Description: The width of the (solid) border. If empty or '0', the transparent outline is instated for high contrast mode.
 	Type:        A valid 'border-width' value.
-	Default:     var(--border-size-1, thin)
+	Default:     thin
 ====================================================================== */
 
 .box {
@@ -29,7 +29,7 @@ Configuration:
 	outline-offset: calc(var(--box-border-size) * -1); /* For high contrast mode */
 	background-color: var(--box-color-bg, transparent);
 	border-style: solid;
-	border-width: var(--box-border-size, var(--border-size-1, thin));
+	border-width: var(--box-border-size, thin);
 
 	&.invert {
 		color: var(--color-surface);

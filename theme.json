@@ -123,10 +123,43 @@
 			]
 		},
 		"custom": {
-			"globalPaddingInline": "var:preset|spacing|s-m",
+			"fluid-spacing": {
+				"// (generator)": "https://utopia.fyi/clamp/calculator"
+			},
+			"font-weight": {
+				"400": "400",
+				"500": "500",
+				"700": "700",
+				"900": "900"
+			},
+			"line-height": {
+				"slim": "1.2",
+				"loose": "1.7"
+			},
+			"radius": {
+				"0": "0rem",
+				"1": "0.125rem",
+				"2": "0.25rem",
+				"3": "0.5rem",
+				"4": "1rem",
+				"5": "2rem",
+				"6": "4rem",
+				"round": "calc(9999px * 1rem)"
+			},
+			"root-padding-inline": "var:preset|spacing|s-m",
 			"shadow": {
 				"color": "currentcolor",
 				"strength": "1%"
+			},
+			"stroke-weight": {
+				"1": "1px",
+				"2": "2px",
+				"3": "4px",
+				"4": "8px"
+			},
+			"transition": {
+				"duration": "0.25s",
+				"timing-function": "ease"
 			}
 		},
 		"dimensions": {
@@ -139,7 +172,7 @@
 		},
 		"shadow": {
 			"defaultPresets": false,
-			"generator": "https://open-props.style/#shadows",
+			"presetsGenerator": "https://open-props.style/#shadows",
 			"presets": [
 				{
 					"name": "elevation-1",
@@ -161,7 +194,7 @@
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
-			"generator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
+			"spacingSizesGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
 			"spacingSizes": [
 				{
 					"name": "3XS",
@@ -464,7 +497,7 @@
 					]
 				}
 			],
-			"generator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
+			"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fontSizes": [
 				{
 					"name": "Step 00",
@@ -508,8 +541,8 @@
 		"spacing": {
 			"blockGap": "1em",
 			"padding": {
-				"left": "var:custom|global-padding-inline",
-				"right": "var:custom|global-padding-inline"
+				"left": "var:custom|root-padding-inline",
+				"right": "var:custom|root-padding-inline"
 			}
 		},
 		"elements": {

@@ -42,5 +42,5 @@ Query Pagination Next Arrow
 ====================================================================== */
 
 .wp-block-query-pagination-next-arrow {
-	line-height: var(--leading-flat, 1);
+	line-height: 1;
 }

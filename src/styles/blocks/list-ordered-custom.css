@@ -21,12 +21,13 @@ ol.is-style-ordered-custom {
 			padding: 0.5em;
 			font-family: var(--wp--preset--font-family-mono, inherit);
 			font-size: 0.875em;
-			font-weight: var(--font-weight-bold, inherit);
+			font-weight: var(--wp--custom--font-weight--700, inherit);
 			line-height: 0;
 			color: var(--wp--preset--color--primary-medium, inherit);
 			content: counter(ol-custom-counter);
 			background-color: var(--wp--preset--color--surface-2, transparent);
-			border: var(--border-size-1) solid var(--border-color);
+			border-style: solid;
+			border-width: var(--wp--custom--stroke-weight---1, thin);
 			border-radius: 50%;
 		}
 	}
