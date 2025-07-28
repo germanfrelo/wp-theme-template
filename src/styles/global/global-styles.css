@@ -50,7 +50,7 @@ body {
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--leading-base, 1.5);
-	color: var(--color, CanvasText);
+	color: var(--color-text, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
@@ -189,7 +189,7 @@ Preformatted Text
 pre {
 	overflow: auto;
 	overscroll-behavior: contain;
-	font-family: var(--font-mono, ui-monospace, monospace);
+	font-family: var(--wp--preset--font-family--mono, ui-monospace, monospace);
 	font-size: 0.875em;
 }
 
@@ -246,7 +246,7 @@ a:where(:any-link) {
 code,
 kbd,
 samp {
-	font-family: var(--font-mono, ui-monospace, monospace);
+	font-family: var(--wp--preset--font-family--mono, ui-monospace, monospace);
 	font-size: 0.875em;
 }
 
@@ -271,7 +271,7 @@ kbd {
 	display: inline-block;
 	padding-block: var(--kbd-padding-block, 0.25em);
 	padding-inline: var(--kbd-padding-inline, 0.5em);
-	font-family: var(--font-base, inherit);
+	font-family: var(--wp--preset--font-family--base, inherit);
 	line-height: var(--kbd-leading, inherit);
 	color: var(--kbd-color, inherit);
 	white-space: nowrap;

@@ -1,5 +1,5 @@
 /*
-The specific import order is important for correct CSS specificity.
+This specific import order is critical for correct CSS specificity.
 */
 
 /* ======================================================================
@@ -12,7 +12,9 @@ The specific import order is important for correct CSS specificity.
 2. Custom Properties
 ====================================================================== */
 
-@import "global/variables.css";
+@import "global/variables/primitive-tokens.css";
+@import "global/variables/semantic-tokens.css";
+@import "global/variables/custom-media-queries.css";
 
 /* ======================================================================
 3. Global Styles

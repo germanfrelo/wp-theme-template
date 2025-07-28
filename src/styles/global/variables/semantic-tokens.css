@@ -1,11 +1,6 @@
-/*
-Some design tokens are defined in theme.json:
-- Color palette
-- Fonts
-- Font size scale
-- Shadows
-- Spacing scale
-*/
+/* ======================================================================
+Semantic Design Tokens
+====================================================================== */
 
 :root {
 	/* Block - Query Pagination */
@@ -64,11 +59,6 @@ Some design tokens are defined in theme.json:
 	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
 
 	/* Border */
-	--border-color: currentcolor;
-	--border-size-1: 1px;
-	--border-size-2: 2px;
-	--border-size-3: 4px;
-	--border-size-4: 8px;
 	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
@@ -99,12 +89,9 @@ Some design tokens are defined in theme.json:
 	--code-block-padding: var(--gutter);
 
 	/* Colors (not needed in the WP editor) */
-	--color-danger-lighter: oklch(58% 0.2 28deg);
-	--color-danger-medium: oklch(50% 0.2 28deg);
-	--color-danger-darker: oklch(42% 0.2 28deg);
 	--color-error: var(--color-danger-medium);
 	--color-surface: var(--wp--preset--color--surface-1);
-	--color: var(--wp--preset--color--text-1);
+	--color-text: var(--wp--preset--color--text-1);
 
 	/*
 	Form Field
@@ -131,15 +118,7 @@ Some design tokens are defined in theme.json:
 	--focus-ring-style: solid;
 	--focus-ring-width: 2px;
 
-	/* Font Families */
-	--font-base: var(--wp--preset--font-family--base);
-	--font-mono: ui-monospace, monospace;
-
 	/* Font Weights */
-	--font-weight-normal: 400;
-	--font-weight-medium: 500;
-	--font-weight-bold: 700;
-	--font-weight-black: 900;
 	--font-weight-base: var(--font-weight-normal);
 
 	/* Font Sizes */
@@ -166,11 +145,6 @@ Some design tokens are defined in theme.json:
 	--label-font-size: var(--wp--preset--font-size--step-0);
 	--label-font-weight: var(--font-weight-bold);
 	--label-leading: var(--leading-slim);
-
-	/* Leading (line height) */
-	--leading-flat: 1;
-	--leading-slim: 1.2;
-	--leading-base: 1.7;
 
 	/* Legend */
 	--legend-font-size: var(--wp--preset--font-size--step-0);
@@ -201,16 +175,6 @@ Some design tokens are defined in theme.json:
 	--quote-border-left-color: var(--wp--preset--color--primary-medium);
 	--quote-padding-inline: var(--wp--preset--spacing--m);
 
-	/* Radius */
-	--radius-0: 0rem;
-	--radius-1: 0.125rem;
-	--radius-2: 0.25rem;
-	--radius-3: 0.5rem;
-	--radius-4: 1rem;
-	--radius-5: 2rem;
-	--radius-6: 4rem;
-	--radius-round: calc(9999px * 1rem);
-
 	/* Reel */
 	--reel-items-gap: calc(var(--gutter) * 2);
 
@@ -240,25 +204,7 @@ Some design tokens are defined in theme.json:
 	/* SVG */
 	--svg-height: 1cap;
 
-	/*
-	Custom Fluid Tokens
-	@link https://utopia.fyi/clamp/calculator
-	*/
-
 	/* Spacing */
 	--flow-space: var(--wp--style--block-gap, 1em);
 	--gutter: var(--wp--custom--global-padding-inline);
-
-	/* Transitions */
-	--transition-duration: 0.25s;
-	--transition-timing-function: initial;
 }
-
-/*
-Custom Media Queries.
-Requirement: PostCSS Custom Media plugin.
-@link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
-*/
-
-@custom-media --wp-default-navigation-breakpoint (width >= 600px);
-@custom-media --navigation-breakpoint (width >= 65rem);
