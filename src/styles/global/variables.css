@@ -1,6 +1,25 @@
-/* ======================================================================
-Semantic Design Tokens
-====================================================================== */
+/* =======================================================================================
+VARIABLES
+
+- Custom Media Queries
+- Semantic Tokens
+
+Primitive Design Tokens are already defined in the 'theme.json' file.
+======================================================================================= */
+
+/* ----------------------------------------------------------------------
+Custom Media Queries
+
+Requisites:
+- PostCSS Custom Media plugin (https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media)
+---------------------------------------------------------------------- */
+
+@custom-media --wp-default-navigation-breakpoint (width >= 600px);
+@custom-media --navigation-breakpoint (width >= 65rem);
+
+/* ----------------------------------------------------------------------
+Semantic Tokens
+---------------------------------------------------------------------- */
 
 :root {
 	/* Block - Query Pagination */

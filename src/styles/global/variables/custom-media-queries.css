@@ -1,8 +1,0 @@
-/*
-Custom Media Queries.
-Requirement: PostCSS Custom Media plugin.
-@link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
-*/
-
-@custom-media --wp-default-navigation-breakpoint (width >= 600px);
-@custom-media --navigation-breakpoint (width >= 65rem);

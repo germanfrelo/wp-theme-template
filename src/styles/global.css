@@ -9,13 +9,10 @@ This specific import order is critical for correct CSS specificity.
 @import "global/reset.css";
 
 /* ======================================================================
-2. Custom Properties
+2. Variables
 ====================================================================== */
 
-/* Primitive design tokens are defined in the theme.json file. */
-
-@import "global/variables/semantic-tokens.css";
-@import "global/variables/custom-media-queries.css";
+@import "global/variables.css";
 
 /* ======================================================================
 3. Global Styles

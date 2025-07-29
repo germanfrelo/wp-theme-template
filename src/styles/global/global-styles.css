@@ -12,21 +12,22 @@ allowing us to customize globals with design tokens,
 rather than writing the same styles for *every* project.
 
 Selectors are grouped and sorted based on:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+- https://html.spec.whatwg.org/multipage/#toc-semantics
 
 Table of contents:
-1. Document / Global
-2. Sections
-3. Grouping content
-4. Inline text semantics
-5. Embedded content
-6. Tables
-7. Forms
-8. Interactive elements
+01. Document / Global
+02. Sections
+03. Grouping content
+04. Inline text semantics
+05. Embedded content
+06. Tables
+07. Forms
+08. Interactive elements
 ======================================================================================= */
 
 /* ======================================================================
-1. Document / Global
+01. Document / Global
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -42,7 +43,7 @@ Table of contents:
 }
 
 /* ======================================================================
-2. Sections
+02. Sections
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
@@ -114,7 +115,7 @@ address {
 }
 
 /* ======================================================================
-3. Grouping Content
+03. Grouping Content
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
@@ -225,7 +226,7 @@ hr {
 }
 
 /* ======================================================================
-4. Inline Text Semantics
+04. Inline Text Semantics
 ====================================================================== */
 
 b,
@@ -310,7 +311,7 @@ ins {
 }
 
 /* ======================================================================
-5. Embedded Content
+05. Embedded Content
 ====================================================================== */
 
 svg {
@@ -335,7 +336,7 @@ svg {
 }
 
 /* ======================================================================
-6. Tables
+06. Tables
 ====================================================================== */
 
 table {
@@ -359,7 +360,7 @@ tfoot {
 }
 
 /* ======================================================================
-7. Forms
+07. Forms
 ====================================================================== */
 
 legend {
@@ -424,7 +425,7 @@ label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 }
 
 /* ======================================================================
-8. Interactive Elements
+08. Interactive Elements
 ====================================================================== */
 
 /* ----------------------------------------------------------------------

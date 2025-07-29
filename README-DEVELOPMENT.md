@@ -137,7 +137,7 @@ These are the theme's main CSS-related directories and files:
 
 This file is primarily used to:
 
-- Define and configure **some settings and global design tokens** that the client will likely use in the editor, such as colors and fonts.
+- Define and configure **some settings and global/primitive design tokens**. Except those defined as "custom", the rest will be available in the editor.
 - Register **custom templates**, **template parts**, and **patterns**.
 
 > [!IMPORTANT]
