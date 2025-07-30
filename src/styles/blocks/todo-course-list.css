@@ -13,7 +13,10 @@ Course List
 		--grid-placement: auto-fit;
 		--grid-min-item-size: clamp(16rem, 50vw, 18rem);
 		display: grid;
-		grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(min(100%, var(--grid-min-item-size, 16rem)), 1fr));
+		grid-template-columns: repeat(
+			var(--grid-placement, auto-fill),
+			minmax(min(100%, var(--grid-min-item-size, 16rem)), 1fr)
+		);
 	}
 
 	ul:where(&) {

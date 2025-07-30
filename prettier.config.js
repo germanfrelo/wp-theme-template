@@ -16,7 +16,7 @@ const config = {
 		{
 			files: ["*.css"],
 			options: {
-				printWidth: 160,
+				printWidth: 120,
 			},
 		},
 		{
