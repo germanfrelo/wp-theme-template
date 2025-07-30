@@ -1,14 +1,24 @@
 /* ======================================================================
-GRID
+Title:       Grid
+Description: A layout for creating a responsive grid with configurable grid item sizes.
+Reference:   https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+---
+Variables:
 
-A layout for creating a responsive grid with configurable grid item sizes.
+--grid-gap
+	Description: The space between each item.
+	Type:        A valid 'gap' value.
+	Default:     var(--gutter, 1em)
 
-Reference: https://piccalil.li/tutorial/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+--grid-min-item-size
+	Description: How large each item should be ideally, as a minimum.
+	Type:        A valid '<length>' value.
+	Default:     16rem
 
-Configuration:
---grid-gap (var(--gutter (1em)): The space between each item.
---grid-min-item-size (16rem): How large each item should be ideally, as a minimum.
---grid-placement (auto-fill): Set either 'auto-fit' or 'auto-fill' to change how empty grid tracks are handled.
+--grid-placement
+	Description: Set either 'auto-fit' or 'auto-fill' to change how empty grid tracks are handled.
+	Type:        A 'grid-template-columns' keyword ('auto-fit' or 'auto-fill').
+	Default:     auto-fill
 ====================================================================== */
 
 .grid {

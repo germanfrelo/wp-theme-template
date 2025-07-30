@@ -1,12 +1,23 @@
 /* ======================================================================
-REPEL
+Title:       Repel
+Description: A layout that pushes items away from each other where there is space in the viewport and stacks on small viewports.
+---
+Variables:
 
-A layout that pushes items away from each other where there is space in the viewport and stacks on small viewports.
+--repel-gap
+	Description: The space between each item.
+	Type:        A valid 'gap' value.
+	Default:     var(--gutter, 1em)
 
-Configuration:
---repel-gap (var(--gutter, 1em)): The space between each item.
---repel-vertical-alignment (center): How items should align vertically. Can be any valid flexbox 'align-items' property value.
---repel-wrap (wrap): A valid 'flex-wrap' value.
+--repel-vertical-alignment
+	Description: How items should align vertically.
+	Type:        A valid 'align-items' value.
+	Default:     center
+
+--repel-wrap
+	Description: A 'flex-wrap' value.
+	Type:        A valid 'flex-wrap' value.
+	Default:     wrap
 ====================================================================== */
 
 .repel {

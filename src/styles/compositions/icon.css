@@ -1,12 +1,14 @@
 /* ======================================================================
-ICON
+Title:       Icon
+Description: A layout for inline icons.
+Reference:   https://every-layout.dev/layouts/icon/
+---
+Variables:
 
-A layout for inline icons.
-
-Reference: https://every-layout.dev/layouts/icon/
-
-Configuration:
---icon-size: The 'block-size' of the icon.
+--icon-size
+	Description: The 'height' of the icon.
+	Values:      A valid 'height' value.
+	Default:     auto
 ====================================================================== */
 
 .icon {

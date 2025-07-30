@@ -1,12 +1,14 @@
 /* ======================================================================
-FLOW
+Title:       Flow
+Description: A layout that provides consistent vertical spacing between elements.
+Reference:   https://piccalil.li/blog/my-favourite-3-lines-of-css/
+---
+Variables:
 
-A layout for creating a consistent white space (margin) between flow (block) elements along a vertical axis.
-
-Reference: https://piccalil.li/blog/my-favourite-3-lines-of-css/
-
-Configuration:
---flow-space (1em): The block space between elements.
+--flow-space
+	Description: The block space between elements.
+	Type:        A valid 'margin' value.
+	Default:     1em
 ====================================================================== */
 
 .flow > * {

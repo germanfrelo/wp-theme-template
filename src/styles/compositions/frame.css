@@ -1,14 +1,24 @@
 /* ======================================================================
-FRAME
+Title:       Frame
+Description: A layout for augmenting image ratios.
+Reference:   https://every-layout.dev/layouts/frame/
+---
+Variables:
 
-A layout for augmenting image ratios.
+--frame-aspect-ratio
+	Description: The aspect-ratio (e.g. 16/9, 1, etc.).
+	Type:        A valid 'aspect-ratio' value.
+	Default:     auto
 
-Reference: https://every-layout.dev/layouts/frame/
+--frame-object-fit
+	Description: A 'object-fit' property value.
+	Type:        A valid 'object-fit' value.
+	Default:     cover
 
-Configuration:
---frame-aspect-ratio (auto): The aspect-ratio (e.g. 16/9, 1, etc.).
---frame-object-fit (cover): A valid 'object-fit' property value.
---frame-object-position (initial): A valid 'object-position' property value.
+--frame-object-position
+	Description: A 'object-position' property value.
+	Type:        A valid 'object-position' value.
+	Default:     initial
 ====================================================================== */
 
 .frame {
