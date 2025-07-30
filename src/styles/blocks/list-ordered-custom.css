@@ -21,7 +21,7 @@ ol.is-style-ordered-custom {
 			padding: 0.5em;
 			font-family: var(--wp--preset--font-family-mono, inherit);
 			font-size: 0.875em;
-			font-weight: var(--wp--custom--font-weight--700, inherit);
+			font-weight: bolder;
 			line-height: 0;
 			color: var(--wp--preset--color--primary-medium, inherit);
 			content: counter(ol-custom-counter);

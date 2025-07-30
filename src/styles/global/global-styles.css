@@ -127,7 +127,7 @@ dl {
 }
 
 dt {
-	font-weight: var(--wp--custom--font-weight--600, bolder);
+	font-weight: var(--font-weight-bold, bolder);
 }
 
 dd {
@@ -231,7 +231,7 @@ hr {
 
 b,
 strong {
-	font-weight: var(--wp--custom--font-weight--700, bolder);
+	font-weight: var(--font-weight-bold, bolder);
 }
 
 a:where(:any-link) {
@@ -343,7 +343,8 @@ table {
 	inline-size: 100%;
 }
 
-:is(th, td) {
+th,
+td {
 	padding-block: var(--table-cell-padding-block, 0.5em);
 	padding-inline: var(--table-cell-padding-inline, 0.5rem);
 	border-width: var(--table-border, 1px);
@@ -357,6 +358,12 @@ thead {
 tfoot {
 	background-color: var(--table-foot-color-bg, transparent);
 	border-block-start: var(--table-foot-border, 3px) solid;
+}
+
+th,
+thead,
+tfoot {
+	font-weight: var(--font-weight-bold, bolder);
 }
 
 /* ======================================================================

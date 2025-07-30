@@ -162,6 +162,7 @@ Semantic Tokens
 
 	/* Font Weights */
 	--font-weight-base: var(--wp--custom--font-weight--400);
+	--font-weight-bold: var(--wp--custom--font-weight--700);
 	--font-weight-headings: var(--wp--custom--font-weight--900);
 
 	/* Keyboard Input */
@@ -177,7 +178,7 @@ Semantic Tokens
 
 	/* Label */
 	--label-font-size: var(--wp--preset--font-size--step-0);
-	--label-font-weight: var(--wp--custom--font-weight--700);
+	--label-font-weight: var(--font-weight-bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
 	/* Layout - Box */
@@ -185,7 +186,7 @@ Semantic Tokens
 
 	/* Legend */
 	--legend-font-size: var(--wp--preset--font-size--step-0);
-	--legend-font-weight: var(--wp--custom--font-weight--700);
+	--legend-font-weight: var(--font-weight-bold);
 	--legend-line-height: inherit;
 
 	/* Links */
