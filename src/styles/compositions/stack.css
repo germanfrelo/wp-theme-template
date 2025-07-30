@@ -14,14 +14,11 @@ Configuration:
 .stack {
 	display: flex;
 	flex-direction: column;
+	gap: var(--stack-gap, var(--gutter, 1rem));
 	align-items: var(--stack-horizontal-alignment, stretch);
 	justify-content: var(--stack-vertical-alignment, start);
 
 	> * {
 		margin-block: 0;
-	}
-
-	> * + * {
-		margin-block-start: var(--stack-gap, var(--gutter, 1rem));
 	}
 }
