@@ -1,5 +1,7 @@
 {
 	"recommendations": [
+		// CSS
+		"pucelle.vscode-css-navigation",
 		// Formatting
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",
