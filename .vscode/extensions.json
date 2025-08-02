@@ -9,6 +9,7 @@
 		"dbaeumer.vscode-eslint",
 		"stylelint.vscode-stylelint",
 		// WordPress
+		"GabrielRose.wordpress-theme-json-css-autosuggest",
 		"wordpresstoolbox.wordpress-toolbox"
 	]
 }
