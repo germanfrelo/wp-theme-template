@@ -2,7 +2,7 @@
 Course List
 ====================================================================== */
 
-:is(.courses, .wp-block-post-template, .wc-block-product-template, .wp-block-woocommerce-product-template) {
+:is(.courses, .wp-block-post-template) {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--wp--preset--spacing--l, 1em);
@@ -78,16 +78,6 @@ Course List
 		}
 
 		/* Elements inside course card */
-
-		/* Reset WooCommerce default style */
-		.wc-block-components-product-image {
-			position: revert;
-		}
-
-		/* Fix WooCommerce style */
-		.wc-block-components-product-image a {
-			block-size: 100%;
-		}
 
 		.course-card-image img {
 			inline-size: 100%;

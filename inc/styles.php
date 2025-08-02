@@ -65,11 +65,11 @@ function themeslug_admin_styles() {
 
 	// You can inspect the $screen object to find the 'id' for your specific page.
 	// To see the $screen object, you can temporarily add:
-	error_log( print_r( $screen, true ) );
+	// error_log( print_r( $screen, true ) );
 	// and check your server's error logs.
 
-	// WooCommerce product edit page
-	if ( $screen->id === 'product' ) {
+	// ___ edit page
+	if ( $screen->id === '___' ) {
 		wp_enqueue_style(
 			'themeslug-admin-styles',
 			get_theme_file_uri('assets/admin-styles/admin.css'),
@@ -79,7 +79,7 @@ function themeslug_admin_styles() {
 		);
 	}
 }
-add_action( 'admin_enqueue_scripts', 'themeslug_admin_styles' );
+// add_action( 'admin_enqueue_scripts', 'themeslug_admin_styles' );
 
 
 /**
@@ -91,7 +91,7 @@ function themeslug_tinymce_styles( $mce_css ) {
 	// Get the current screen object to ensure we're on the product edit page
 	$screen = get_current_screen();
 
-	// Check if we are on the WooCommerce product edit page
+	// Check if we are on the ___ edit page
 	if ( $screen && $screen->id === 'product' ) {
 		// Append your custom stylesheet URL to the existing TinyMCE CSS string.
 		// It's crucial to use get_stylesheet_directory_uri() for child themes
@@ -105,4 +105,4 @@ function themeslug_tinymce_styles( $mce_css ) {
 
 	return $mce_css;
 }
-add_filter( 'mce_css', 'themeslug_tinymce_styles' );
+// add_filter( 'mce_css', 'themeslug_tinymce_styles' );
