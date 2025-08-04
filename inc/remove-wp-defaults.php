@@ -78,6 +78,67 @@ add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles');
 
 
 /**
+ * Remove default WordPress's emoji functionality.
+ *
+ * WordPress 4.2 added support for emojis into core for older browsers. This disables this functionality by removing the associated styles and scripts, because:
+ * - Modern browsers handle this conversion natively, so emojis will still be visible to most users.
+ * - This helps reduce an extra HTTP request on every page load, improving site performance.
+ *
+ * @link https://fkwdigital.com/removing-all-styles-and-scripts-associated-with-wordpress-core-emojis-in-2024/
+ * @link https://docs.wp-rocket.me/article/1509-disable-emoji-optimization
+ */
+
+// Remove emojis from the admin
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('admin_print_styles', 'print_emoji_styles');
+
+// Remove emojis from the front end
+remove_action('wp_head', 'print_emoji_detection_script', 7 );
+remove_action('wp_print_styles', 'print_emoji_styles');
+
+// Remove emojis from the RSS feed
+remove_filter('embed_head', 'print_emoji_detection_script');
+
+// Remove emojis from comments
+remove_filter('the_content_feed', 'wp_staticize_emoji');
+remove_filter('comment_text_rss', 'wp_staticize_emoji');
+
+// Remove emojis from emails
+remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+
+// Remove the translation of emojis from someone's mobile device
+add_filter('option_use_smilies', '__return_false');
+
+// Remove the injection of the inline CSS in the front end
+add_action('wp_enqueue_scripts', function() {
+	wp_dequeue_style('wp-emoji-styles');
+});
+
+// Remove extra nonsense from emojis
+add_action('init', function( $plugins ) {
+	if( is_array($plugins) ) {
+		$plugins = array_diff( $plugins, array('wpemoji') );
+	}
+	return $plugins;
+} );
+
+// Remove the SVG prefetch URL
+add_filter('emoji_svg_url', '__return_false');
+add_filter('wp_resource_hints', function($urls, $relation_type) {
+	if ('dns-prefetch' === $relation_type ) {
+		// Strip out any URLs referencing the emoji script
+		$emoji_svg_url_pattern = "/https:\/\/s.w.org\/images\/core\/emoji\//";
+		foreach ( $urls as $key => $url ) {
+			if ( preg_match( $emoji_svg_url_pattern, $url ) ) {
+				unset($urls[$key]);
+			}
+		}
+	}
+	return $urls;
+}, 20, 2);
+
+
+/**
  * Remove default WordPress's block style variations.
  *
  * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
@@ -101,7 +162,6 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
 
 
 // TODO: Check.
-
 /**
  * Remove the inline styles on the front.
  *
@@ -121,7 +181,6 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
  */
 function themeslug_remove_global_styles() {
 	// wp_dequeue_style( 'global-styles' );
-	wp_dequeue_style( 'wp-emoji-styles' );
 }
 // add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles', 100 );
 
