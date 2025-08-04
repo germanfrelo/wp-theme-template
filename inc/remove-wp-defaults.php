@@ -199,10 +199,10 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
  *
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  */
-// remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
-// remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
-// remove_filter( 'render_block', 'wp_render_elements_support', 10, 2 );
-// remove_filter( 'render_block', 'gutenberg_render_elements_support', 10, 2 );
+// remove_filter('render_block', 'wp_render_layout_support_flag', 10, 2);
+// remove_filter('render_block', 'gutenberg_render_layout_support_flag', 10, 2);
+// remove_filter('render_block', 'wp_render_elements_support', 10, 2);
+// remove_filter('render_block', 'gutenberg_render_elements_support', 10, 2);
 
 
 // TODO: Check.
@@ -212,13 +212,13 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  */
 function themeslug_remove_global_styles() {
-	// wp_dequeue_style( 'global-styles' );
+	// wp_dequeue_style('global-styles');
 }
-// add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles', 100 );
+// add_action('wp_enqueue_scripts', 'themeslug_remove_global_styles', 100);
 
 
 // TODO: Check.
 /**
  * Remove global styles on the front.
  */
-// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+// remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
