@@ -4,11 +4,6 @@ Button
 To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
 ====================================================================== */
 
-/* WP: Override default 'pointer' cursor on actual buttons. */
-.wp-element-button:where(button, [type="button"], [type="submit"]) {
-	cursor: revert;
-}
-
 .button,
 .wp-block-button__link,
 .wp-block-read-more,
@@ -33,6 +28,11 @@ To customize most of this block and its parts, use the global CSS custom propert
 
 	&:where(:not([class*="has-text-align"])) {
 		text-align: var(--button-text-align, center);
+	}
+
+	/* WP: Revert default 'pointer' cursor on elements without an 'href'. */
+	&:where(:not(:any-link)) {
+		cursor: revert;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
