@@ -1,20 +1,23 @@
 <?php
 /**
- * Remove WordPress' defaults.
+ * Remove WordPress defaults.
  */
 
+
 /**
- * Override some global settings from the WordPress default theme.json file, which are loaded as inline styles.
+ * Remove the default global settings and styles that WordPress loads from its core 'theme.json' file.
+ *
+ * This prevents them from being loaded on the front end of the website, which reduces a substantial amount of opinionated inline styles.
  *
  * @link https://github.com/WordPress/gutenberg/issues/36834#issuecomment-1769802551
+ * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/theme.json
  * @link https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
  * @link https://developer.wordpress.org/reference/hooks/wp_theme_json_data_default/
  *
  * @param \WP_Theme_JSON_Data $theme_json Class to access and update the underlying data.
- *
  * @return \WP_Theme_JSON_Data
  */
-function themeslug_filter_theme_json_default($theme_json) {
+function themeslug_remove_wp_theme_json_defaults($theme_json) {
 	// Get the theme data
 	$new_data = $theme_json->get_data();
 
@@ -47,35 +50,35 @@ function themeslug_filter_theme_json_default($theme_json) {
 	// Return the updated theme data
 	return $theme_json;
 }
-add_filter('wp_theme_json_data_default', 'themeslug_filter_theme_json_default');
+add_filter('wp_theme_json_data_default', 'themeslug_remove_wp_theme_json_defaults');
 
 
 /**
- * Remove some default core block styles.
+ * Remove default WordPress's block styles.
  *
  * @link https://developer.wordpress.org/reference/functions/wp_dequeue_style/
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  *
  * @return void
  */
-function themeslug_remove_core_styles() {
-	wp_dequeue_style( 'wp-block-button' );
-	wp_dequeue_style( 'wp-block-categories' );
-	wp_dequeue_style( 'wp-block-code' );
-	wp_dequeue_style( 'wp-block-details' );
-	wp_dequeue_style( 'wp-block-group' );
-	wp_dequeue_style( 'wp-block-heading' );
-	wp_dequeue_style( 'wp-block-list' );
-	wp_dequeue_style( 'wp-block-post-template' );
-	wp_dequeue_style( 'wp-block-quote' );
-	wp_dequeue_style( 'wp-block-site-logo' );
-	wp_dequeue_style( 'wp-block-site-title' );
+function themeslug_remove_wp_block_styles() {
+	wp_dequeue_style('wp-block-button');
+	wp_dequeue_style('wp-block-categories');
+	wp_dequeue_style('wp-block-code');
+	wp_dequeue_style('wp-block-details');
+	wp_dequeue_style('wp-block-group');
+	wp_dequeue_style('wp-block-heading');
+	wp_dequeue_style('wp-block-list');
+	wp_dequeue_style('wp-block-post-template');
+	wp_dequeue_style('wp-block-quote');
+	wp_dequeue_style('wp-block-site-logo');
+	wp_dequeue_style('wp-block-site-title');
 }
-add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_styles' );
+add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles');
 
 
 /**
- * Unregister WordPress default block style variations.
+ * Remove default WordPress's block style variations.
  *
  * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
  * The PHP method only works for styles registered server-side.
@@ -85,17 +88,19 @@ add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_styles' );
  * @link https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/
  * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience
  */
-add_action('enqueue_block_editor_assets', function() {
+function themeslug_unregister_wp_block_style_variations_script() {
 	wp_enqueue_script(
-		'themeslug-unregister-core-block-style-variations',
-		get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js',
+		'themeslug-unregister-wp-block-style-variations',
+		get_template_directory_uri() . '/assets/js/unregister-wp-block-style-variations.js',
 		array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'),
-		filemtime(get_template_directory_uri() . '/assets/js/unregister-core-block-style-variations.js'),
+		filemtime(get_template_directory_uri() . '/assets/js/unregister-wp-block-style-variations.js'),
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
-});
+}
+add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_variations_script');
 
 
+// TODO: Check.
 /**
  * Remove all default block styles from the front.
  *
@@ -113,6 +118,7 @@ function themeslug_remove_core_block_styles() {
 // add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_block_styles' );
 
 
+// TODO: Check.
 /**
  * Remove default block styles from the Block Editor and Site Editor.
  *
@@ -143,6 +149,7 @@ function themeslug_remove_core_block_styles() {
 // );
 
 
+// TODO: Check.
 /**
  * Remove the inline styles on the front.
  *
@@ -154,6 +161,7 @@ function themeslug_remove_core_block_styles() {
 // remove_filter( 'render_block', 'gutenberg_render_elements_support', 10, 2 );
 
 
+// TODO: Check.
 /**
  * Remove global styles on the front.
  *
@@ -166,6 +174,7 @@ function themeslug_remove_global_styles() {
 // add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles', 100 );
 
 
+// TODO: Check.
 /**
  * Remove global styles on the front.
  */
