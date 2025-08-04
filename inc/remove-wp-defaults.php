@@ -15,14 +15,36 @@
  * @return \WP_Theme_JSON_Data
  */
 function themeslug_filter_theme_json_default($theme_json) {
-	$data = $theme_json->get_data();
-	$data['settings']['color']['duotone']['default'] = []; // Remove default color duotone
-	$data['settings']['color']['gradients']['default'] = []; // Remove default color gradients
-	$data['settings']['color']['palette']['default'] = []; // Remove default color palette
-	$data['settings']['shadow']['presets']['default'] = []; // Remove default shadow presets
-	$data['settings']['spacing']['spacingSizes']['default'] = []; // Remove default spacing sizes
-	$data['settings']['typography']['fontSizes']['default'] = []; // Remove default font sizes
-	$theme_json->update_with($data); // Updates the theme data
+	// Get the theme data
+	$new_data = $theme_json->get_data();
+
+	// Override the theme data
+	$new_data = [
+		"version"  => 3,
+		"settings" => [
+			"color" => [
+				"duotone" => [],
+				"gradients" => [],
+				"palette" => [],
+			],
+			"shadow" => [
+				"presets" => [],
+			],
+			"spacing" => [
+				"spacingScale" => [
+					"steps" => 0
+				],
+			],
+			"typography" => [
+				"fontSizes" => [],
+			],
+		],
+	];
+
+	// Update the theme data
+	$theme_json->update_with($new_data);
+
+	// Return the updated theme data
 	return $theme_json;
 }
 add_filter('wp_theme_json_data_default', 'themeslug_filter_theme_json_default');
