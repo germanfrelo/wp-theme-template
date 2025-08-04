@@ -42,6 +42,38 @@ function themeslug_remove_wp_theme_json_defaults($theme_json) {
 				"fontSizes" => [],
 			],
 		],
+		"styles" => [
+			"elements" => [
+				"button" => [
+					"color" => [
+						"text" => "",
+						"background" => "",
+					],
+					"spacing" => [
+						"padding" => [
+							"top" => "",
+							"bottom" => "",
+							"left" => "",
+							"right" => "",
+						],
+					],
+					"typography" => [
+						"fontFamily" => "",
+						"fontSize" => "",
+						"lineHeight" => "",
+						"textDecoration" => "",
+					],
+					"border" => [
+						"width" => "",
+					],
+				],
+				"link" => [
+					"typography" => [
+						"textDecoration" => "",
+					],
+				],
+			],
+		],
 	];
 
 	// Update the theme data
