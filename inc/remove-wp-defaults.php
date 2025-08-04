@@ -101,55 +101,7 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
 
 
 // TODO: Check.
-/**
- * Remove all default block styles from the front.
- *
- * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
- */
-function themeslug_remove_core_block_styles() {
-	global $wp_styles;
 
-	foreach ( $wp_styles->queue as $key => $handle ) {
-		if ( strpos( $handle, 'wp-block-' ) === 0 ) {
-			wp_dequeue_style( $handle );
-		}
-	}
-}
-// add_action( 'wp_enqueue_scripts', 'themeslug_remove_core_block_styles' );
-
-
-// TODO: Check.
-/**
- * Remove default block styles from the Block Editor and Site Editor.
- *
- * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
- */
-// add_action(
-// 	'wp_default_styles',
-// 	function( $styles ) {
-
-// 		/* Create an array with the two handles wp-block-library and
-// 		 * wp-block-library-theme.
-// 		 */
-// 		$handles = [ 'wp-block-library', 'wp-block-library-theme' ];
-
-// 		foreach ( $handles as $handle ) {
-// 			// Search and compare with the list of registered style handles:
-// 			$style = $styles->query( $handle, 'registered' );
-// 			if ( ! $style ) {
-// 				continue;
-// 			}
-// 			// Remove the style
-// 			$styles->remove( $handle );
-// 			// Remove path and dependencies
-// 			$styles->add( $handle, false, [] );
-// 		}
-// 	},
-// 	PHP_INT_MAX
-// );
-
-
-// TODO: Check.
 /**
  * Remove the inline styles on the front.
  *
