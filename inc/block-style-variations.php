@@ -15,8 +15,8 @@
 function themeslug_register_block_style_variations() {
 	register_block_style(
 		['core/button', 'core/read-more'], [
-			'name'  => 'outline',
-			'label' => __( 'Outline', 'themeslug' )
+			'name'  => 'outlined',
+			'label' => __( 'Outlined', 'themeslug' )
 		]
 	);
 	register_block_style(
