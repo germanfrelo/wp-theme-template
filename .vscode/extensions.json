@@ -2,14 +2,21 @@
 	"recommendations": [
 		// CSS
 		"pucelle.vscode-css-navigation",
+		"jacobcassidy.css-nesting-syntax-highlighting",
 		// Formatting
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",
+		// JSON
+		"kamikillerto.vscode-colorize",
 		// Linting
 		"dbaeumer.vscode-eslint",
 		"stylelint.vscode-stylelint",
+		"usernamehw.errorlens",
+		// PHP
+		"bmewburn.vscode-intelephense-client",
 		// WordPress
 		"GabrielRose.wordpress-theme-json-css-autosuggest",
+		"johnbillion.vscode-wordpress-hooks",
 		"wordpresstoolbox.wordpress-toolbox"
 	]
 }

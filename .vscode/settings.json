@@ -6,6 +6,10 @@
 	},
 	"editor.formatOnSave": true,
 
+	// JSON
+	"colorize.include": ["**/*.json"],
+	"colorize.languages": ["json"],
+
 	// Lint CSS with Stylelint
 	// Disable VS Code's built-in linters to prevent them from reporting the same errors as Stylelint
 	"stylelint.enable": true, // default
@@ -22,6 +26,14 @@
 		"source.fixAll.stylelint": "explicit",
 		"source.sortImports": "explicit"
 	},
+
+	// Code Spell Checker
+	"cSpell.words": [
+		"ibm-plex-sans",
+		"jetbrains-mono",
+		"merriweather",
+		"themeslug"
+	],
 
 	// pucelle.vscode-css-navigation
 	"CSSNavigation.enableClassNameDefinitionDiagnostic": false,
