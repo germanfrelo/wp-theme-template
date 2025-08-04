@@ -1,8 +1,8 @@
 /* ======================================================================
-Button - Variant: Outline
+Button - Variant: Outlined
 ====================================================================== */
 
-:is(.button, .wp-block-button, .wp-block-read-more).is-style-outline {
+:is(.button, .wp-block-button, .wp-block-read-more).is-style-outlined {
 	--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 80%);
 	--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 90%);
 	--button-color-bg: transparent;
