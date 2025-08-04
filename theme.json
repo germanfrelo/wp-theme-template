@@ -599,42 +599,6 @@
 						}
 					}
 				}
-			},
-			"core/social-link": {
-				"spacing": {
-					"padding": {
-						"top": "",
-						"bottom": "",
-						"left": "",
-						"right": ""
-					}
-				},
-				"elements": {
-					"link": {
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						}
-					}
-				}
-			},
-			"core/social-links": {
-				"elements": {
-					"link": {
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						}
-					}
-				}
 			}
 		}
 	},
