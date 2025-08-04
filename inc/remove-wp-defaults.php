@@ -37,7 +37,6 @@ add_filter('wp_theme_json_data_default', 'themeslug_filter_theme_json_default');
  * @return void
  */
 function themeslug_remove_core_styles() {
-	wp_dequeue_style( 'wp-block-button' );
 	wp_dequeue_style( 'wp-block-categories' );
 	wp_dequeue_style( 'wp-block-code' );
 	wp_dequeue_style( 'wp-block-details' );

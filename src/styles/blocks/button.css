@@ -4,25 +4,15 @@ Button
 To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
 ====================================================================== */
 
-/* WP: Override default 'pointer' cursor */
-:where(button, [type="button"], [type="submit"]).wp-element-button {
-	cursor: default;
-}
-
-/*
-Needed to make the buttons stretch correctly in a vertical layout. See:
-- https://github.com/WordPress/gutenberg/commit/2036d7e
-- https://github.com/WordPress/gutenberg/commit/0100e98
-*/
-:where(.wp-block-buttons.is-layout-flex) > .wp-block-button > .wp-block-button__link {
-	inline-size: 100%;
-	block-size: 100%;
+/* WP: Override default 'pointer' cursor on actual buttons. */
+.wp-element-button:where(button, [type="button"], [type="submit"]) {
+	cursor: revert;
 }
 
 .button,
-.wp-element-button,
-.wp-block-button > .wp-block-button__link,
-.wp-block-read-more {
+.wp-block-button__link,
+.wp-block-read-more,
+.wp-element-button {
 	display: var(--button-display, inline-block);
 	align-content: center;
 	min-inline-size: var(--field-min-size-inline, 24px);
@@ -33,7 +23,6 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	font-weight: var(--button-font-weight, inherit);
 	line-height: var(--button-line-height, inherit);
 	color: var(--button-color, inherit);
-	text-align: var(--button-text-align, center);
 	text-decoration-line: var(--button-line, none);
 	background-color: var(--button-color-bg, transparent);
 	border-color: var(--button-border-color, currentcolor);
@@ -41,6 +30,10 @@ Needed to make the buttons stretch correctly in a vertical layout. See:
 	border-width: var(--button-border-width, 0);
 	border-radius: var(--button-border-radius, 0);
 	text-box: var(--button-text-box, normal);
+
+	&:where(:not([class*="has-text-align"])) {
+		text-align: var(--button-text-align, center);
+	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--wp--custom--transition--duration, 0);
