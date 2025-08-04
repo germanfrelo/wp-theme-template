@@ -514,36 +514,6 @@
 				"right": "var:custom|global-padding-inline"
 			}
 		},
-		"elements": {
-			"link": {
-				"typography": {
-					"textDecoration": ""
-				}
-			},
-			"button": {
-				"spacing": {
-					"padding": {
-						"top": "",
-						"bottom": "",
-						"left": "",
-						"right": ""
-					}
-				},
-				"typography": {
-					"fontFamily": "",
-					"fontSize": "",
-					"lineHeight": "",
-					"textDecoration": ""
-				},
-				"color": {
-					"text": "",
-					"background": ""
-				},
-				"border": {
-					"width": ""
-				}
-			}
-		},
 		"blocks": {
 			"core/social-link": {
 				"spacing": {
