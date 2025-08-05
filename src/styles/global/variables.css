@@ -139,9 +139,9 @@ Semantic Tokens
 	--focus-ring-width: 2px;
 
 	/* Font Families */
-	--font-family-base: var(--wp--preset--font-family--base);
-	--font-family-headings: var(--wp--preset--font-family--display);
-	--font-family-mono: var(--wp--preset--font-family--mono);
+	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
+	--font-family-headings: var(--wp--preset--font-family--merriweather);
+	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
 
 	/* Font Line Heights */
 	--font-line-height-base: var(--wp--custom--line-height--loose);

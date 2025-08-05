@@ -377,12 +377,12 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"name": "Base (IBM Plex Sans)",
-					"slug": "base",
-					"fontFamily": "'IBM Plex Sans', sans-serif",
+					"name": "IBM Plex Sans",
+					"slug": "ibm-plex-sans",
+					"fontFamily": "\"IBM Plex Sans\", sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
 							"src": [
@@ -390,7 +390,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "400",
 							"fontStyle": "italic",
 							"src": [
@@ -398,7 +398,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"src": [
@@ -406,7 +406,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "500",
 							"fontStyle": "italic",
 							"src": [
@@ -414,7 +414,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"src": [
@@ -422,7 +422,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "700",
 							"fontStyle": "italic",
 							"src": [
@@ -432,35 +432,12 @@
 					]
 				},
 				{
-					"name": "Display (Merriweather)",
-					"slug": "display",
-					"fontFamily": "'Merriweather', serif",
+					"name": "JetBrains Mono",
+					"slug": "jetbrains-mono",
+					"fontFamily": "\"JetBrains Mono\", monospace",
 					"fontFace": [
 						{
-							"fontFamily": "'Merriweather'",
-							"fontWeight": "900",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "'Merriweather'",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
-							]
-						}
-					]
-				},
-				{
-					"name": "Monospace (JetBrains Mono)",
-					"slug": "mono",
-					"fontFamily": "'JetBrains Mono', monospace",
-					"fontFace": [
-						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
 							"src": [
@@ -468,7 +445,7 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "italic",
 							"src": [
@@ -476,7 +453,7 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"src": [
@@ -484,11 +461,34 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "700",
 							"fontStyle": "italic",
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-italic.woff2"
+							]
+						}
+					]
+				},
+				{
+					"name": "Merriweather",
+					"slug": "merriweather",
+					"fontFamily": "\"Merriweather\", serif",
+					"fontFace": [
+						{
+							"fontFamily": "\"Merriweather\"",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Merriweather\"",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
 							]
 						}
 					]
