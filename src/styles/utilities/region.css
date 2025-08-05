@@ -6,11 +6,4 @@ Consistent block padding for page sections.
 .region {
 	padding-block-start: var(--region-space-start);
 	padding-block-end: var(--region-space-end);
-
-	&.has-surface-1-color {
-		--scrollbar-thumb-color: var(--wp--preset--color--surface-1);
-		--scrollbar-thumb-color-hover: var(--wp--preset--color--primary-medium);
-		--scrollbar-track-color: color-mix(in srgb, var(--wp--preset--color--surface-1), transparent 80%);
-		--scrollbar-track-color-hover: color-mix(in srgb, var(--wp--preset--color--surface-1), transparent 80%);
-	}
 }
