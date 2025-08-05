@@ -26,7 +26,7 @@ Notes:
 
 	.gfield_description,
 	.gfield_validation_message {
-		font-size: var(--wp--preset--font-size--step-00, inherit);
+		font-size: var(--font-size-base, inherit);
 	}
 
 	&.gravity-theme {
