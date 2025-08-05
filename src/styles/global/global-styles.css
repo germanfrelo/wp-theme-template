@@ -287,7 +287,7 @@ kbd {
 	display: inline-block;
 	padding-block: var(--kbd-padding-block, 0.25em);
 	padding-inline: var(--kbd-padding-inline, 0.5em);
-	font-family: var(--wp--preset--font-family--base, inherit);
+	font-family: ui-sans-serif, sans-serif;
 	line-height: var(--kbd-line-height, inherit);
 	color: var(--kbd-color, inherit);
 	white-space: nowrap;
