@@ -1,14 +1,15 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Categories
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/categories
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/categories
 ---
-To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
-======================================================================================= */
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-categories {
 	/* ----------------------------------------------------------------------

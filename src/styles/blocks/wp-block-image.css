@@ -1,10 +1,10 @@
-/* =======================================================================================
+/* ======================================================================
 WP Image
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/image
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/image
-======================================================================================= */
+====================================================================== */
 
 .wp-block-image {
 	/* When an image is a link, remove the unwanted extra block space of the 'figure' parent element caused by its 'line-height'. */

@@ -1,6 +1,6 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Post Author
 ---
 Source:
@@ -8,8 +8,8 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-author
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-post-author {
 	display: flex;

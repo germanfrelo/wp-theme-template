@@ -1,6 +1,6 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Post Excerpt
 ---
 Source:
@@ -8,8 +8,8 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-excerpt
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-post-excerpt:has(> .wp-block-post-excerpt__more-text) {
 	display: flex;

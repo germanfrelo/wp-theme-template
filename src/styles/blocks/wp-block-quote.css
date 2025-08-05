@@ -1,4 +1,4 @@
-/* =======================================================================================
+/* ======================================================================
 WP Quote
 ---
 Source:
@@ -6,8 +6,8 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/quote
 ---
 Notes:
-To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
-======================================================================================= */
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-quote {
 	margin-inline: var(--quote-margin-inline, 0);

@@ -1,6 +1,6 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Navigation
 ---
 Source:
@@ -8,7 +8,7 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/navigation
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
+- To customize most of this block and its parts, use the custom properties.
 ---
 DOM Structure:
 
@@ -52,7 +52,7 @@ Table of contents:
     08.3. Responsive Container Content
 09. Keyframes
 
-======================================================================================= */
+====================================================================== */
 
 /* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors. */
 

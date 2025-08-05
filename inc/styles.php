@@ -68,8 +68,8 @@ function themeslug_admin_styles() {
 	// error_log( print_r( $screen, true ) );
 	// and check your server's error logs.
 
-	// ___ edit page
-	if ( $screen->id === '___' ) {
+	// Page
+	if ( $screen->id === '________' ) {
 		wp_enqueue_style(
 			'themeslug-admin-styles',
 			get_theme_file_uri('assets/admin-styles/admin.css'),
@@ -88,11 +88,11 @@ function themeslug_admin_styles() {
  * @link https://developer.wordpress.org/reference/hooks/mce_css/
  */
 function themeslug_tinymce_styles( $mce_css ) {
-	// Get the current screen object to ensure we're on the product edit page
+	// Get the current screen object to ensure we're on the ________ edit page
 	$screen = get_current_screen();
 
-	// Check if we are on the ___ edit page
-	if ( $screen && $screen->id === 'product' ) {
+	// Check if we are on the ________ edit page
+	if ( $screen && $screen->id === '________' ) {
 		// Append your custom stylesheet URL to the existing TinyMCE CSS string.
 		// It's crucial to use get_stylesheet_directory_uri() for child themes
 		// or plugins_url() for plugins, and get_template_directory_uri() for parent themes.

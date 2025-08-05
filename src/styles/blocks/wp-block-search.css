@@ -1,12 +1,13 @@
-/* =======================================================================================
+/* ======================================================================
 WP Block: Search
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/search
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/search
 ---
-To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
-======================================================================================= */
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-search {
 	/* ----------------------------------------------------------------------

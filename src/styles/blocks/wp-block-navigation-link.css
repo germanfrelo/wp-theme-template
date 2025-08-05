@@ -1,4 +1,4 @@
-/* =======================================================================================
+/* ======================================================================
 WP Navigation Link
 ---
 Contains styles only that are unique to the manually inserted menu item.
@@ -7,8 +7,9 @@ Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation-link
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/navigation-link
 ---
-To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
-======================================================================================= */
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-navigation-link {
 	/* ----------------------------------------------------------------------

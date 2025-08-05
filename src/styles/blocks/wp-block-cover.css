@@ -1,6 +1,6 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Cover
 ---
 Source:
@@ -8,11 +8,11 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/cover
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
+- To customize most of this block and its parts, use the custom properties.
 ---
 Resources:
 - https://inclusive-components.design/cards/
-======================================================================================= */
+====================================================================== */
 
 /* ======================================================================
 Default Style
