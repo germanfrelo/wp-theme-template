@@ -10,10 +10,6 @@ Site Footer
 		--nav-global-gap-columns: var(--wp--preset--spacing--m);
 		--nav-global-gap-rows: var(--wp--preset--spacing--3-xs);
 
-		&.site-footer__main-navigation {
-			--nav-global-font-size: 1rem;
-		}
-
 		&.site-footer__legal-navigation {
 			--nav-global-font-size: 0.875rem;
 		}
