@@ -123,9 +123,6 @@
 			]
 		},
 		"custom": {
-			"fluid-spacing": {
-				"// (generator)": "https://utopia.fyi/clamp/calculator"
-			},
 			"font-weight": {
 				"400": "400",
 				"500": "500",
@@ -543,32 +540,6 @@
 			"padding": {
 				"left": "var:custom|root-padding-inline",
 				"right": "var:custom|root-padding-inline"
-			}
-		},
-		"blocks": {
-			"core/button": {
-				"variations": {
-					"outline": {
-						"border": {
-							"color": "",
-							"style": "",
-							"width": ""
-						},
-						"color": {
-							"background": "",
-							"gradient": "",
-							"text": ""
-						},
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						}
-					}
-				}
 			}
 		}
 	},
