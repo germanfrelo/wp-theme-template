@@ -34,7 +34,7 @@ Variables:
 :is(.switcher, .switcher-2, .switcher-3) {
 	display: flex;
 	flex-wrap: var(--switcher-wrap, wrap);
-	gap: var(--switcher-gap, normal);
+	gap: var(--switcher-gap, var(--gutter, 1em));
 	align-items: var(--switcher-vertical-alignment, stretch);
 	justify-content: var(--switcher-horizontal-alignment, start);
 
