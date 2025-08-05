@@ -2,11 +2,11 @@
 	--gutter: 0;
 }
 
-.gutter-3-xs {
+.gutter-3xs {
 	--gutter: var(--wp--preset--spacing--3-xs) !important;
 }
 
-.gutter-2-xs {
+.gutter-2xs {
 	--gutter: var(--wp--preset--spacing--2-xs) !important;
 }
 
@@ -30,27 +30,27 @@
 	--gutter: var(--wp--preset--spacing--xl) !important;
 }
 
-.gutter-2-xl {
+.gutter-2xl {
 	--gutter: var(--wp--preset--spacing--2-xl) !important;
 }
 
-.gutter-3-xl {
+.gutter-3xl {
 	--gutter: var(--wp--preset--spacing--3-xl) !important;
 }
 
-.gutter-4-xl {
+.gutter-4xl {
 	--gutter: var(--wp--preset--spacing--4-xl) !important;
 }
 
-.gutter-5-xl {
+.gutter-5xl {
 	--gutter: var(--wp--preset--spacing--5-xl) !important;
 }
 
-.gutter-3-xs-2-xs {
+.gutter-3xs-2xs {
 	--gutter: var(--wp--preset--spacing--3-xs-2-xs) !important;
 }
 
-.gutter-2-xs-xs {
+.gutter-2xs-xs {
 	--gutter: var(--wp--preset--spacing--2-xs-xs) !important;
 }
 
@@ -70,28 +70,28 @@
 	--gutter: var(--wp--preset--spacing--l-xl) !important;
 }
 
-.gutter-xl-2-xl {
+.gutter-xl-2xl {
 	--gutter: var(--wp--preset--spacing--xl-2-xl) !important;
 }
 
-.gutter-2-xl-3-xl {
+.gutter-2xl-3xl {
 	--gutter: var(--wp--preset--spacing--2-xl-3-xl) !important;
 }
 
-.gutter-3-xl-4-xl {
+.gutter-3xl-4xl {
 	--gutter: var(--wp--preset--spacing--3-xl-4-xl) !important;
 }
 
-.gutter-4-xl-5-xl {
+.gutter-4xl-5xl {
 	--gutter: var(--wp--preset--spacing--4-xl-5-xl) !important;
 }
 
 .gutter-3xs-xs {
-	--gutter: var(--wp--preset--spacing--3xs-xs) !important;
+	--gutter: var(--wp--preset--spacing--3-xs-xs) !important;
 }
 
 .gutter-2xs-s {
-	--gutter: var(--wp--preset--spacing--2xs-s) !important;
+	--gutter: var(--wp--preset--spacing--2-xs-s) !important;
 }
 
 .gutter-xs-m {
@@ -107,17 +107,17 @@
 }
 
 .gutter-l-2xl {
-	--gutter: var(--wp--preset--spacing--l-2xl) !important;
+	--gutter: var(--wp--preset--spacing--l-2-xl) !important;
 }
 
 .gutter-xl-3xl {
-	--gutter: var(--wp--preset--spacing--xl-3xl) !important;
+	--gutter: var(--wp--preset--spacing--xl-3-xl) !important;
 }
 
 .gutter-2xl-4xl {
-	--gutter: var(--wp--preset--spacing--2xl-4xl) !important;
+	--gutter: var(--wp--preset--spacing--2-xl-4-xl) !important;
 }
 
 .gutter-3xl-5xl {
-	--gutter: var(--wp--preset--spacing--3xl-5xl) !important;
+	--gutter: var(--wp--preset--spacing--3-xl-5-xl) !important;
 }

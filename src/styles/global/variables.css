@@ -1,35 +1,101 @@
-/*
-Some design tokens are defined in theme.json:
-- Color palette
-- Fonts
-- Font size scale
-- Shadows
-- Spacing scale
-*/
+/* ======================================================================
+VARIABLES
+
+- Custom Media Queries
+- Semantic Tokens
+
+Primitive Design Tokens are already defined in the 'theme.json' file.
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Custom Media Queries
+
+Requisites:
+- PostCSS Custom Media plugin (https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media)
+---------------------------------------------------------------------- */
+
+@custom-media --wp-default-navigation-breakpoint (width >= 600px);
+@custom-media --navigation-breakpoint (width >= 65rem);
+
+/* ----------------------------------------------------------------------
+Semantic Tokens
+---------------------------------------------------------------------- */
 
 :root {
+	/* Block - Query Pagination */
+	--block-query-pag-align-main-axis: center;
+	--block-query-pag-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-link-line: none;
+
+	/* Block - Query Pagination Numbers */
+	--block-query-pag-number-border-block-end-width: 1px;
+	--block-query-pag-number-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-border-style: solid;
+	--block-query-pag-number-border-width: 1px;
+	--block-query-pag-number-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-number-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-number-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-number-color: var(--wp--preset--color--text-1);
+	--block-query-pag-number-current-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-current-color-bg: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-current-color: var(--wp--preset--color--surface-1);
+	--block-query-pag-number-min-size: 44px;
+	--block-query-pag-number-padding-block: 0.5em;
+	--block-query-pag-number-padding-inline: 0.5em;
+	--block-query-pag-numbers-gap: var(--wp--preset--spacing--xs-s);
+
+	/* Block - Query Pagination Next */
+	--block-query-pag-next-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-next-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-next-border-style: solid;
+	--block-query-pag-next-border-width: 1px;
+	--block-query-pag-next-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-next-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-next-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-next-color: var(--wp--preset--color--text-1);
+	--block-query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
+	--block-query-pag-next-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-next-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-next-min-size: 44px;
+
+	/* Block - Query Pagination Previous */
+	--block-query-pag-prev-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-prev-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-prev-border-style: solid;
+	--block-query-pag-prev-border-width: 1px;
+	--block-query-pag-prev-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-prev-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-prev-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-prev-color: var(--wp--preset--color--text-1);
+	--block-query-pag-prev-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-prev-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-prev-min-size: 44px;
+
+	/* Block - Search */
+	--block-search-button-icon-scale: 1.5;
+	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
+
 	/* Border */
 	--border-color: currentcolor;
-	--border-size-1: 1px;
-	--border-size-2: 2px;
-	--border-size-3: 4px;
-	--border-size-4: 8px;
-	--border: var(--border-size-1, thin) solid var(--border-color, currentcolor);
+	--border: var(--wp--custom--stroke-weight--1, thin) solid var(--border-color, currentcolor);
 
 	/* Button */
-	--button-border-color-on-hover: var(--button-color-background-on-hover);
-	--button-border-color: var(--button-color-background);
-	--button-border-radius: var(--radius-1);
-	--button-border-width: var(--border-size-1);
-	--button-color-background-on-hover: var(--wp--preset--color--primary-lighter);
-	--button-color-background: var(--wp--preset--color--primary-medium);
-	--button-color-text-on-hover: var(--wp--preset--color--surface-1);
-	--button-color-text: var(--wp--preset--color--surface-1);
+	--button-color-bg-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-color-bg: var(--wp--preset--color--primary-medium);
+	--button-border-color-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-border-color: var(--button-color-bg);
+	--button-border-radius: var(--wp--custom--radius--1);
+	--button-border-width: var(--wp--custom--stroke-weight--1);
+	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--step-00);
-	--button-font-weight: var(--font-weight-medium);
-	--button-leading: var(--leading-slim);
+	--button-font-weight: var(--wp--custom--font-weight--500);
+	--button-line-height: var(--wp--custom--line-height--slim);
 	--button-padding-block: 0.875em;
-	--button-padding-inline: 1.5em;
+	--button-padding-inline: 1.25em;
 	--button-text-box: trim-both cap alphabetic;
 
 	/* Code (inline) */
@@ -43,79 +109,91 @@ Some design tokens are defined in theme.json:
 	--code-block-padding: var(--gutter);
 
 	/* Colors (not needed in the WP editor) */
-	--color-danger-lighter: oklch(58% 0.2 28deg);
-	--color-danger-medium: oklch(50% 0.2 28deg);
-	--color-danger-darker: oklch(42% 0.2 28deg);
 	--color-error: var(--color-danger-medium);
 	--color-surface: var(--wp--preset--color--surface-1);
 	--color-text: var(--wp--preset--color--text-1);
 
-	/* Focus rings */
+	/*
+	Form Field
+	(input, textarea, select, button...)
+	*/
+	--field-color-bg: transparent;
+	--field-border-color: var(--border-color);
+	--field-border-radius: var(--wp--custom--radius--1);
+	--field-border-width: var(--wp--custom--stroke-weight--1);
+	--field-color: var(--wp--preset--color--text-1);
+	--field-font-weight: var(--font-weight-base);
+	--field-padding-block: 0.25em;
+	--field-padding-inline: 0.5rem;
+
+	/* Form Field - Checkbox */
+	--field-checkbox-size: 1.125em;
+
+	/* Form Field - Radio */
+	--field-radio-size: 1.125em;
+
+	/* Focus Rings */
 	--focus-ring-color: currentcolor;
 	--focus-ring-offset: 0.25lh;
 	--focus-ring-style: solid;
 	--focus-ring-width: 2px;
 
 	/* Font Families */
-	--font-base: var(--wp--preset--font-family--base);
-	--font-mono: ui-monospace, monospace;
+	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
+	--font-family-headings: var(--wp--preset--font-family--merriweather);
+	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
 
-	/* Font Weights */
-	--font-weight-normal: 400;
-	--font-weight-medium: 500;
-	--font-weight-bold: 700;
-	--font-weight-black: 900;
-	--font-weight-base: var(--font-weight-normal);
+	/* Font Line Heights */
+	--font-line-height-base: var(--wp--custom--line-height--loose);
+	--font-line-height-h1: 1.05;
+	--font-line-height-h2: 1.1;
+	--font-line-height-h3: 1.15;
+	--font-line-height-h4: 1.2;
+	--font-line-height-h5: 1.25;
+	--font-line-height-h6: 1.3;
 
 	/* Font Sizes */
 	--font-size-base: var(--wp--preset--font-size--step-0);
-	--font-size-heading-1: var(--wp--preset--font-size--step-5);
-	--font-size-heading-2: var(--wp--preset--font-size--step-4);
-	--font-size-heading-3: var(--wp--preset--font-size--step-3);
-	--font-size-heading-4: var(--wp--preset--font-size--step-2);
-	--font-size-heading-5: var(--wp--preset--font-size--step-1);
-	--font-size-heading-6: var(--wp--preset--font-size--step-0);
+	--font-size-h1: var(--wp--preset--font-size--step-5);
+	--font-size-h2: var(--wp--preset--font-size--step-4);
+	--font-size-h3: var(--wp--preset--font-size--step-3);
+	--font-size-h4: var(--wp--preset--font-size--step-2);
+	--font-size-h5: var(--wp--preset--font-size--step-1);
+	--font-size-h6: var(--wp--preset--font-size--step-0);
 
-	/* Forms */
-	--form-label-input-gap: var(--wp--preset--spacing--3-xs);
-	--field-color-bg: transparent;
-	--field-border-color: var(--wp--preset--color--surface-5);
-	--field-border-radius: var(--radius-1);
-	--field-border-width: var(--border-size-1);
-	--field-checkbox-size: 1.125em;
-	--field-color-text: var(--wp--preset--color--text-1);
-	--field-font-size: var(--wp--preset--font-size--step-00);
-	--field-font-weight: var(--font-weight-normal);
-	--field-padding-block: 0.25em;
-	--field-padding-inline: 0.5em;
-	--field-radio-size: 1.125em;
-	--label-font-size: var(--wp--preset--font-size--step-0);
-	--label-font-weight: var(--font-weight-bold);
-	--label-leading: var(--leading-slim);
-	--legend-font-size: var(--wp--preset--font-size--step-0);
-	--legend-font-weight: var(--font-weight-bold);
-	--legend-leading: inherit;
+	/* Font Weights */
+	--font-weight-base: var(--wp--custom--font-weight--400);
+	--font-weight-bold: var(--wp--custom--font-weight--700);
+	--font-weight-headings: var(--wp--custom--font-weight--900);
 
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
 	--kbd-color-bg: white;
-	--kbd-color-text: inherit;
+	--kbd-color: inherit;
 	--kbd-font-size: 0.875em;
-	--kbd-leading: 1;
+	--kbd-line-height: 1;
 	--kbd-padding-block: 0.25em;
 	--kbd-padding-inline: 0.5em;
 	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
-	--kbd-stroke-weight: var(--border-size-1);
+	--kbd-stroke-weight: var(--wp--custom--stroke-weight--1);
 
-	/* Leading (line height) */
-	--leading-flat: 1;
-	--leading-slim: 1.2;
-	--leading-base: 1.7;
+	/* Label */
+	--label-font-size: var(--wp--preset--font-size--step-0);
+	--label-font-weight: var(--font-weight-bold);
+	--label-line-height: var(--wp--custom--line-height--slim);
+
+	/* Layout - Box */
+	--box-border-size: var(--wp--custom--stroke-weight--1);
+
+	/* Legend */
+	--legend-font-size: var(--wp--preset--font-size--step-0);
+	--legend-font-weight: var(--font-weight-bold);
+	--legend-line-height: inherit;
 
 	/* Links */
-	--link-color: currentcolor;
-	--link-color-on-hover: var(--wp--preset--color--primary-medium);
-	--link-color-on-focus: var(--wp--preset--color--primary-medium);
+	--link-color: var(--wp--preset--color--primary-medium);
+	--link-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--link-color-on-focus: var(--wp--preset--color--primary-darker-10);
 
 	/* List */
 	--list-gap: 0.5em;
@@ -132,18 +210,12 @@ Some design tokens are defined in theme.json:
 	--outline-error: 0.25rem solid var(--color-error, red);
 
 	/* Quote */
-	--quote-border-left-width: var(--border-size-3);
+	--quote-border-left-width: var(--wp--custom--stroke-weight--3);
 	--quote-border-left-color: var(--wp--preset--color--primary-medium);
 	--quote-padding-inline: var(--wp--preset--spacing--m);
 
-	/* Radius */
-	--radius-1: var(--wp--preset--spacing--3-xs);
-	--radius-2: var(--wp--preset--spacing--2-xs);
-	--radius-3: var(--wp--preset--spacing--xs);
-	--radius-4: var(--wp--preset--spacing--s);
-	--radius-5: var(--wp--preset--spacing--m);
-	--radius-6: var(--wp--preset--spacing--l);
-	--radius-round: 999px;
+	/* Reel */
+	--reel-items-gap: calc(var(--gutter) * 2);
 
 	/* Region */
 	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
@@ -159,7 +231,7 @@ Some design tokens are defined in theme.json:
 	--scrollbar-width-legacy: 0.5rem;
 
 	/* Separator */
-	--separator-color: var(--wp--preset--color--primary-medium);
+	--separator-color: var(--border-color);
 
 	/* Site Header */
 	--site-header-padding-top: var(--wp--preset--spacing--s);
@@ -168,25 +240,10 @@ Some design tokens are defined in theme.json:
 	/* Site Logo */
 	--site-logo-height: var(--wp--preset--spacing--l);
 
-	/*
-	Custom Fluid Tokens
-	@link https://utopia.fyi/clamp/calculator
-	*/
+	/* SVG */
+	--svg-height: 1cap;
 
 	/* Spacing */
 	--flow-space: var(--wp--style--block-gap, 1em);
-	--gutter: var(--wp--custom--global-padding-inline);
-
-	/* Transitions */
-	--transition-duration: 0.25s;
-	--transition-timing-function: initial;
+	--gutter: var(--wp--custom--root-padding-inline);
 }
-
-/*
-Custom Media Queries.
-Requirement: PostCSS Custom Media plugin.
-@link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
-*/
-
-@custom-media --wp-default-navigation-breakpoint (width >= 600px);
-@custom-media --navigation-breakpoint (width >= 65rem);

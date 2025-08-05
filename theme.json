@@ -81,24 +81,19 @@
 					"color": "oklch(0.67 0.005 270)"
 				},
 				{
-					"name": "Primary-Lighter",
-					"slug": "primary-lighter",
-					"color": "oklch(0.58 0.2 270)"
-				},
-				{
 					"name": "Primary-Medium",
 					"slug": "primary-medium",
-					"color": "oklch(0.50 0.2 270)"
+					"color": "oklch(0.53 0.22 268)"
 				},
 				{
-					"name": "Primary-Darker",
-					"slug": "primary-darker",
-					"color": "oklch(0.42 0.2 270)"
+					"name": "Primary-Darker-10",
+					"slug": "primary-darker-10",
+					"color": "oklch(0.49 0.22 268)"
 				},
 				{
-					"name": "Secondary-Lighter",
-					"slug": "secondary-lighter",
-					"color": "oklch(0.58 0.2 185)"
+					"name": "Primary-Darker-20",
+					"slug": "primary-darker-20",
+					"color": "oklch(0.45 0.22 268)"
 				},
 				{
 					"name": "Secondary-Medium",
@@ -128,11 +123,44 @@
 			]
 		},
 		"custom": {
-			"globalPaddingInline": "var:preset|spacing|s-m",
+			"font-weight": {
+				"400": "400",
+				"500": "500",
+				"700": "700",
+				"900": "900"
+			},
+			"line-height": {
+				"slim": "1.2",
+				"loose": "1.7"
+			},
+			"radius": {
+				"0": "0rem",
+				"1": "0.125rem",
+				"2": "0.25rem",
+				"3": "0.5rem",
+				"4": "1rem",
+				"5": "2rem",
+				"6": "4rem",
+				"round": "calc(9999px * 1rem)"
+			},
+			"root-padding-inline": "var:preset|spacing|s-m",
 			"shadow": {
 				"color": "currentcolor",
 				"strength": "1%"
+			},
+			"stroke-weight": {
+				"1": "0.0625em",
+				"2": "0.125em",
+				"3": "0.25em",
+				"4": "0.5em"
+			},
+			"transition": {
+				"duration": "0.25s",
+				"timing-function": "ease"
 			}
+		},
+		"dimensions": {
+			"aspectRatios": []
 		},
 		"layout": {
 			"allowCustomContentAndWideSize": true,
@@ -141,7 +169,7 @@
 		},
 		"shadow": {
 			"defaultPresets": false,
-			"generator": "https://open-props.style/#shadows",
+			"presetsGenerator": "https://open-props.style/#shadows",
 			"presets": [
 				{
 					"name": "elevation-1",
@@ -163,7 +191,7 @@
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
-			"generator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
+			"spacingSizesGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
 			"spacingSizes": [
 				{
 					"name": "3XS",
@@ -236,7 +264,7 @@
 					"size": "clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem)"
 				},
 				{
-					"name": "S-M",
+					"name": "S-M (Global Gutter)",
 					"slug": "s-m",
 					"size": "clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem)"
 				},
@@ -272,12 +300,12 @@
 				},
 				{
 					"name": "3XS-XS",
-					"slug": "3xs-xs",
+					"slug": "3-xs-xs",
 					"size": "clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem)"
 				},
 				{
 					"name": "2XS-S",
-					"slug": "2xs-s",
+					"slug": "2-xs-s",
 					"size": "clamp(0.4375rem, 0.1514rem + 1.2207vw, 1.25rem)"
 				},
 				{
@@ -297,22 +325,22 @@
 				},
 				{
 					"name": "L-2XL",
-					"slug": "l-2xl",
+					"slug": "l-2-xl",
 					"size": "clamp(2.25rem, 0.8415rem + 6.0094vw, 6.25rem)"
 				},
 				{
-					"name": "XL-3XL",
-					"slug": "xl-3xl",
+					"name": "XL-3XL (Page Section Vertical Space)",
+					"slug": "xl-3-xl",
 					"size": "clamp(3.375rem, 1.2183rem + 9.2019vw, 9.5rem)"
 				},
 				{
 					"name": "2XL-4XL",
-					"slug": "2xl-4xl",
+					"slug": "2-xl-4-xl",
 					"size": "clamp(5rem, 1.743rem + 13.8967vw, 14.25rem)"
 				},
 				{
 					"name": "3XL-5XL",
-					"slug": "3xl-5xl",
+					"slug": "3-xl-5-xl",
 					"size": "clamp(7.625rem, 2.8275rem + 20.4695vw, 21.25rem)"
 				}
 			],
@@ -349,12 +377,12 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"name": "Base",
-					"slug": "base",
-					"fontFamily": "'IBM Plex Sans', sans-serif",
+					"name": "IBM Plex Sans",
+					"slug": "ibm-plex-sans",
+					"fontFamily": "\"IBM Plex Sans\", sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
 							"src": [
@@ -362,7 +390,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "400",
 							"fontStyle": "italic",
 							"src": [
@@ -370,7 +398,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"src": [
@@ -378,7 +406,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "500",
 							"fontStyle": "italic",
 							"src": [
@@ -386,7 +414,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"src": [
@@ -394,7 +422,7 @@
 							]
 						},
 						{
-							"fontFamily": "'IBM Plex Sans'",
+							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "700",
 							"fontStyle": "italic",
 							"src": [
@@ -404,35 +432,12 @@
 					]
 				},
 				{
-					"name": "Display",
-					"slug": "display",
-					"fontFamily": "'Merriweather', serif",
+					"name": "JetBrains Mono",
+					"slug": "jetbrains-mono",
+					"fontFamily": "\"JetBrains Mono\", monospace",
 					"fontFace": [
 						{
-							"fontFamily": "'Merriweather'",
-							"fontWeight": "900",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "'Merriweather'",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
-							]
-						}
-					]
-				},
-				{
-					"name": "Monospace",
-					"slug": "mono",
-					"fontFamily": "'JetBrains Mono', monospace",
-					"fontFace": [
-						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
 							"src": [
@@ -440,7 +445,7 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "italic",
 							"src": [
@@ -448,7 +453,7 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"src": [
@@ -456,7 +461,7 @@
 							]
 						},
 						{
-							"fontFamily": "'JetBrains Mono'",
+							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "700",
 							"fontStyle": "italic",
 							"src": [
@@ -464,9 +469,32 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Merriweather",
+					"slug": "merriweather",
+					"fontFamily": "\"Merriweather\", serif",
+					"fontFace": [
+						{
+							"fontFamily": "\"Merriweather\"",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Merriweather\"",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
+							]
+						}
+					]
 				}
 			],
-			"generator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
+			"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fontSizes": [
 				{
 					"name": "Step 00",
@@ -510,54 +538,21 @@
 		"spacing": {
 			"blockGap": "1em",
 			"padding": {
-				"left": "var:custom|global-padding-inline",
-				"right": "var:custom|global-padding-inline"
-			}
-		},
-		"blocks": {
-			"core/social-link": {
-				"spacing": {
-					"padding": {
-						"top": "",
-						"bottom": "",
-						"left": "",
-						"right": ""
-					}
-				},
-				"elements": {
-					"link": {
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						}
-					}
-				}
-			},
-			"core/social-links": {
-				"elements": {
-					"link": {
-						"spacing": {
-							"padding": {
-								"top": "",
-								"bottom": "",
-								"left": "",
-								"right": ""
-							}
-						}
-					}
-				}
+				"left": "var:custom|root-padding-inline",
+				"right": "var:custom|root-padding-inline"
 			}
 		}
 	},
 	"customTemplates": [
 		{
-			"name": "page-custom-1",
+			"name": "page-without-title",
 			"postTypes": ["page"],
-			"title": "Page: Custom #1"
+			"title": "Páginas sin título"
+		},
+		{
+			"name": "page-without-title-content-not-centered",
+			"postTypes": ["page"],
+			"title": "Páginas sin título y contenido no centrado"
 		}
 	],
 	"templateParts": [

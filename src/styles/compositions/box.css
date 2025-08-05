@@ -1,0 +1,42 @@
+/* ======================================================================
+BOX
+
+A layout for generic boxes/containers.
+
+References:
+- https://every-layout.dev/layouts/box/
+
+Usage:
+...
+
+
+Configuration:
+--box-padding
+	Description: The amount by with the Box is padded on all sides.
+	Type:        A valid 'padding' value.
+	Default:     var(--gutter, 1em)
+--box-border-size
+	Description: The width of the (solid) border. If empty or '0', the transparent outline is instated for high contrast mode.
+	Type:        A valid 'border-width' value.
+	Default:     thin
+====================================================================== */
+
+.box {
+	display: block;
+	padding: var(--box-padding, var(--gutter, 1em));
+	color: var(--box-color, inherit);
+	outline: var(--box-border-size) solid transparent; /* For high contrast mode */
+	outline-offset: calc(var(--box-border-size) * -1); /* For high contrast mode */
+	background-color: var(--box-color-bg, transparent);
+	border-style: solid;
+	border-width: var(--box-border-size, thin);
+
+	&.invert {
+		color: var(--color-surface);
+		background-color: var(--color-text);
+	}
+
+	* {
+		color: inherit;
+	}
+}

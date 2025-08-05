@@ -1,34 +1,34 @@
 /* ======================================================================
-SIDEBAR
-
-A layout for placing two elements side-by-side.
-If space permits, the sidebar element has a set width, and the companion takes up the rest of the available horizontal space.
-If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space.
-
+Title:       Sidebar
+Description: A layout for placing two elements side-by-side. If space permits, the sidebar element has a set width, and the companion takes up the rest of the available horizontal space. If not, the elements are collapsed into a single column, each taking up 100% of the horizontal space.
 References:
 - https://every-layout.dev/layouts/sidebar/
 - https://piccalil.li/blog/a-revisit-of-the-every-layout-sidebar-with-has-and-selector-performance/
-
 Usage:
 Use either 'with-sidebar-left' or 'with-sidebar-right'.
+---
+Variables:
 
-Configuration:
 --sidebar-flex-wrap
 	Description: The 'flex-wrap' value.
 	Type:        A valid 'flex-wrap' value, except 'nowrap' because the elements wouldn't wrap.
 	Default:     wrap
+
 --sidebar-gap
 	Description: The gap between the two elements.
 	Type:        A valid 'gap' value.
 	Default:     var(--gutter, 1em)
+
 --sidebar-size
 	Description: How large the sidebar should be before wrapping.
-	Type:        A valid 'flex-basis' value.
+	Type:        A valid 'flex-basis' value, except a percentage.
 	Default:     auto
+
 --sidebar-vertical-alignment
 	Description: The block size (height) of the two adjacent elements.
 	Type:        A valid 'align-items' value.
 	Default:     stretch
+
 --sidebar-wrap-at
 	Description: The narrowest the content (non-sidebar) element can be before wrapping.
 	Type:        A percentage value, relative to the container's inline size.
@@ -43,6 +43,11 @@ Configuration:
 	align-items: var(--sidebar-vertical-alignment, stretch);
 
 	> * {
+		margin: 0;
+	}
+
+	/* WP - For the block editor */
+	&.is-layout-flow > * {
 		margin: 0;
 	}
 }

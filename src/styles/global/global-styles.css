@@ -1,4 +1,4 @@
-/* =======================================================================================
+/* ======================================================================
 GLOBAL STYLES
 
 Low-specificity, global styles that apply to the whole project.
@@ -12,21 +12,22 @@ allowing us to customize globals with design tokens,
 rather than writing the same styles for *every* project.
 
 Selectors are grouped and sorted based on:
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+- https://html.spec.whatwg.org/multipage/#toc-semantics
 
 Table of contents:
-1. Document / Global
-2. Sections
-3. Grouping content
-4. Inline text semantics
-5. Embedded content
-6. Tables
-7. Forms
-8. Interactive elements
-======================================================================================= */
+01. Document / Global
+02. Sections
+03. Grouping content
+04. Inline text semantics
+05. Embedded content
+06. Tables
+07. Forms
+08. Interactive elements
+====================================================================== */
 
 /* ======================================================================
-1. Document / Global
+01. Document / Global
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -42,19 +43,27 @@ Table of contents:
 }
 
 /* ======================================================================
-2. Sections
+02. Sections
 ====================================================================== */
 
+/* ----------------------------------------------------------------------
+Body
+---------------------------------------------------------------------- */
+
 body {
-	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-family: var(--font-family-base, sans-serif);
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
-	line-height: var(--leading-base, 1.5);
+	line-height: var(--font-line-height-base, 1.5);
 	color: var(--color-text, CanvasText);
 	accent-color: var(--wp--preset--color--primary-medium, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }
+
+/* ----------------------------------------------------------------------
+Headings
+---------------------------------------------------------------------- */
 
 h1,
 h2,
@@ -62,44 +71,51 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: var(--font-weight-bold, bold);
+	font-family: var(--font-family-headings, inherit);
+	font-weight: var(--font-weight-headings, bold);
 	overflow-wrap: break-word;
 }
 
 h1 {
-	font-size: var(--font-size-heading-1, 2rem);
-	font-weight: var(--font-weight-black, bold);
-	line-height: var(--leading-flat, normal);
+	font-size: var(--font-size-h1, 2rem);
+	line-height: var(--font-line-height-h1, normal);
 }
 
 h2 {
-	font-size: var(--font-size-heading-2, 1.5rem);
-	line-height: var(--leading-slim, normal);
+	font-size: var(--font-size-h2, 1.5rem);
+	line-height: var(--font-line-height-h2, normal);
 }
 
 h3 {
-	font-size: var(--font-size-heading-3, 1.17rem);
-	line-height: var(--leading-slim, normal);
+	font-size: var(--font-size-h3, 1.17rem);
+	line-height: var(--font-line-height-h3, normal);
 }
 
 h4 {
-	font-size: var(--font-size-heading-4, 1rem);
+	font-size: var(--font-size-h4, 1rem);
+	line-height: var(--font-line-height-h4, normal);
 }
 
 h5 {
-	font-size: var(--font-size-heading-5, 0.83rem);
+	font-size: var(--font-size-h5, 0.83rem);
+	line-height: var(--font-line-height-h5, normal);
 }
 
 h6 {
-	font-size: var(--font-size-heading-6, 0.67rem);
+	font-size: var(--font-size-h6, 0.67rem);
+	line-height: var(--font-line-height-h6, normal);
 }
+
+/* ----------------------------------------------------------------------
+Address
+---------------------------------------------------------------------- */
 
 address {
 	font-style: inherit;
 }
 
 /* ======================================================================
-3. Grouping Content
+03. Grouping Content
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
@@ -111,7 +127,7 @@ dl {
 }
 
 dt {
-	font-weight: var(--font-weight-medium, bolder);
+	font-weight: var(--font-weight-bold, bolder);
 }
 
 dd {
@@ -189,7 +205,7 @@ Preformatted Text
 pre {
 	overflow: auto;
 	overscroll-behavior: contain;
-	font-family: var(--font-mono, ui-monospace, monospace);
+	font-family: var(--font-family-mono, ui-monospace, monospace);
 	font-size: 0.875em;
 }
 
@@ -210,7 +226,7 @@ hr {
 }
 
 /* ======================================================================
-4. Inline Text Semantics
+04. Inline Text Semantics
 ====================================================================== */
 
 b,
@@ -233,7 +249,7 @@ a:where(:any-link) {
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 	}
 }
@@ -246,7 +262,7 @@ a:where(:any-link) {
 code,
 kbd,
 samp {
-	font-family: var(--font-mono, ui-monospace, monospace);
+	font-family: var(--font-family-mono, ui-monospace, monospace);
 	font-size: 0.875em;
 }
 
@@ -271,9 +287,9 @@ kbd {
 	display: inline-block;
 	padding-block: var(--kbd-padding-block, 0.25em);
 	padding-inline: var(--kbd-padding-inline, 0.5em);
-	font-family: var(--font-base, inherit);
-	line-height: var(--kbd-leading, inherit);
-	color: var(--kbd-color-text, inherit);
+	font-family: ui-sans-serif, sans-serif;
+	line-height: var(--kbd-line-height, inherit);
+	color: var(--kbd-color, inherit);
 	white-space: nowrap;
 	background-color: var(--kbd-color-bg, transparent);
 	border: var(--kbd-stroke-weight, 1px) solid var(--kbd-stroke-color, currentcolor);
@@ -282,7 +298,7 @@ kbd {
 }
 
 mark {
-	color: var(--mark-color-text, MarkText);
+	color: var(--mark-color, MarkText);
 	background-color: var(--mark-color-bg, Mark);
 }
 
@@ -295,29 +311,40 @@ ins {
 }
 
 /* ======================================================================
-5. Embedded Content
+05. Embedded Content
 ====================================================================== */
 
 svg {
 	flex-shrink: 0;
 
+	&:not([class]) {
+		inline-size: auto;
+		block-size: var(--svg-height, auto);
+	}
+
+	&[role="img"][width][height] {
+		inline-size: revert;
+		block-size: revert;
+	}
+
 	:is(a:where(:any-link), button) & path {
 		@media (prefers-reduced-motion: no-preference) {
-			transition-duration: var(--transition-duration, 0);
+			transition-duration: var(--wp--custom--transition--duration, 0);
 			transition-property: fill;
 		}
 	}
 }
 
 /* ======================================================================
-6. Tables
+06. Tables
 ====================================================================== */
 
 table {
 	inline-size: 100%;
 }
 
-:is(th, td) {
+th,
+td {
 	padding-block: var(--table-cell-padding-block, 0.5em);
 	padding-inline: var(--table-cell-padding-inline, 0.5rem);
 	border-width: var(--table-border, 1px);
@@ -333,8 +360,14 @@ tfoot {
 	border-block-start: var(--table-foot-border, 3px) solid;
 }
 
+th,
+thead,
+tfoot {
+	font-weight: var(--font-weight-bold, bolder);
+}
+
 /* ======================================================================
-7. Forms
+07. Forms
 ====================================================================== */
 
 legend {
@@ -346,18 +379,23 @@ label {
 	display: inline-block;
 	font-size: var(--label-font-size, inherit);
 	font-weight: var(--label-font-weight, inherit);
-	line-height: var(--label-leading, inherit);
+	line-height: var(--label-line-height, inherit);
 }
 
+button,
 input,
 select,
 textarea {
+	min-inline-size: var(--field-min-size-inline, 24px);
+	min-block-size: var(--field-min-size-block, 24px);
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
-	/* Setting a minimum font-size of 16px prevents iOS Safari from automatically zooming in when tapped: https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
-	font-size: max(16px, var(--field-font-size, inherit));
+	font-size: max(
+		16px,
+		var(--field-font-size, inherit)
+	); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
-	color: var(--field-color-text, inherit);
+	color: var(--field-color, inherit);
 	background-color: var(--field-color-bg, transparent);
 	border-color: var(--field-border-color, currentcolor);
 	border-style: solid;
@@ -365,8 +403,7 @@ textarea {
 	border-radius: var(--field-border-radius, revert);
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
-		transition-property: color, background-color, border-color;
+		transition-duration: var(--wp--custom--transition--duration, 0);
 	}
 }
 
@@ -388,17 +425,6 @@ textarea {
 	block-size: var(--field-radio-size, auto);
 }
 
-label + :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"]),
-label + *:has(> :is(select, textarea, [type="email"], [type="password"], [type="tel"], [type="text"])) {
-	display: block;
-	inline-size: 100%;
-	margin-block-start: var(--form-label-input-gap);
-}
-
-label:is(.screen-reader-text, .visually-hidden):first-child + * {
-	margin-block-start: 0;
-}
-
 label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 *:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
 	--label-font-weight: var(--font-weight-base);
@@ -408,7 +434,7 @@ label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 }
 
 /* ======================================================================
-8. Interactive Elements
+08. Interactive Elements
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
@@ -426,7 +452,7 @@ details {
 	padding-block-end: var(--details-padding-bottom, 0);
 	padding-inline-start: var(--details-padding-left, 0);
 	padding-inline-end: var(--details-padding-right, 0);
-	background-color: var(--details-background-color, transparent);
+	background-color: var(--details-color-bg, transparent);
 	border-color: var(--details-border-color, currentcolor);
 	border-style: var(--details-border-style, solid);
 	border-width: var(--details-border-width, 0);
@@ -460,8 +486,8 @@ details {
 	/* Transitions */
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-timing-function: var(--transition-timing-function, ease);
-		transition-duration: var(--transition-duration, var(--transition-duration, 0));
+		transition-timing-function: var(--wp--custom--transition--timing-function);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 		interpolate-size: allow-keywords;
 	}
@@ -480,9 +506,9 @@ details {
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
-				content-visibility var(--details-content-transition-duration-visibility, var(--transition-duration, initial)),
-				opacity var(--details-content-transition-duration-opacity, var(--transition-duration, initial)),
-				block-size var(--details-content-transition-duration-size, var(--transition-duration, initial));
+				content-visibility var(--wp--custom--transition--duration, 0),
+				opacity var(--wp--custom--transition--duration, 0),
+				block-size var(--wp--custom--transition--duration, 0);
 			transition-behavior: allow-discrete;
 		}
 	}

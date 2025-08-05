@@ -27,6 +27,3 @@ require_once get_theme_file_path( 'inc/js-scripts.php' );
 
 // Plugin: Gravity Forms
 require_once get_theme_file_path( 'inc/plugin-gravityforms.php' );
-
-// Plugin: WooCommerce
-require_once get_theme_file_path( 'inc/plugin-woocommerce.php' );

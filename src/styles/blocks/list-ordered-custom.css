@@ -19,14 +19,15 @@ ol.is-style-ordered-custom {
 			place-content: center;
 			aspect-ratio: 1;
 			padding: 0.5em;
-			font-family: var(--font-mono, inherit);
+			font-family: var(--font-family-mono, ui-monospace, monospace);
 			font-size: 0.875em;
-			font-weight: var(--font-weight-bold, inherit);
+			font-weight: bolder;
 			line-height: 0;
 			color: var(--wp--preset--color--primary-medium, inherit);
 			content: counter(ol-custom-counter);
 			background-color: var(--wp--preset--color--surface-2, transparent);
-			border: var(--border-size-1) solid var(--border-color);
+			border-style: solid;
+			border-width: var(--wp--custom--stroke-weight--1, thin);
 			border-radius: 50%;
 		}
 	}

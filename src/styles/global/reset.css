@@ -1,5 +1,28 @@
-/* Global
-================================================== */
+/* ======================================================================
+CSS RESET
+
+Based on the following CSS reset, but adapted for a WordPress block theme context:
+https://github.com/germanfrelo/base-css-stylesheet
+
+Selectors are grouped and sorted based on:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+- https://html.spec.whatwg.org/multipage/#toc-semantics
+
+Table of contents:
+01. Document / Global
+02. Sections
+03. Grouping content
+04. Inline text semantics
+05. Embedded content
+06. Tables
+07. Forms
+08. Interactive elements
+09. Hidden elements
+====================================================================== */
+
+/* ======================================================================
+01. Document / Global
+====================================================================== */
 
 /*
 1. Use the more intuitive and predictable border box sizing by default (refs. https://github.com/jensimmons/cssremedy/issues/4 and https://wiki.csswg.org/ideas/mistakes).
@@ -36,19 +59,12 @@ html {
 }
 
 /*
-1. Smooth scrolling, but only when focused in the page to prevent unnaturally scrolling when tabbing though the results of a search.
-2. When users prefer reduced motion, revert the smooth scrolling.
+Smooth scrolling, but only when users have no preference for reduced motion, and when focused in the page to prevent unnaturally scrolling when tabbing through the results of a search.
 */
 
-/* 1 */
-html:focus-within {
-	scroll-behavior: smooth;
-}
-
-/* 2 */
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: no-preference) {
 	html:focus-within {
-		scroll-behavior: auto;
+		scroll-behavior: smooth;
 	}
 }
 
@@ -60,8 +76,9 @@ When scrolling to target elements, a reasonable spacing is added above them to e
 	scroll-margin-block-start: 5em;
 }
 
-/* Page
-================================================== */
+/* ======================================================================
+02. Sections
+====================================================================== */
 
 /*
 Makes 'body' at least as tall as the viewport height (requires 'html { block-size: 100%; }', see 'html' rule above). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
@@ -70,9 +87,6 @@ Makes 'body' at least as tall as the viewport height (requires 'html { block-siz
 body {
 	min-block-size: 100%;
 }
-
-/* Headings
-================================================== */
 
 /*
 Ensure consistent 'h1' rendering.
@@ -84,8 +98,9 @@ Ref. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#
 	font-size: 2em;
 }
 
-/* Grouping content
-================================================== */
+/* ======================================================================
+03. Grouping Content
+====================================================================== */
 
 /*
 1. Prevent content from overflowing while preserving its formatting. (ref. https://github.com/jensimmons/cssremedy/issues/81).
@@ -101,8 +116,9 @@ pre {
 	font-size: 1em; /* 4 */
 }
 
-/* Text-level semantics
-================================================== */
+/* ======================================================================
+04. Inline Text Semantics
+====================================================================== */
 
 /*
 1. Fix the inheritance and scaling of the font size in all browsers.
@@ -116,8 +132,9 @@ samp {
 	font-size: 1em; /* 2 */
 }
 
-/* Embedded content
-================================================== */
+/* ======================================================================
+05. Embedded Content
+====================================================================== */
 
 /*
 1. Block display by default is usually what we want/the most common use case (default is 'inline').
@@ -155,8 +172,9 @@ audio {
 	inline-size: 100%;
 }
 
-/* Tabular data
-================================================== */
+/* ======================================================================
+06. Tables
+====================================================================== */
 
 /*
 1. Ensure numbers line up (ref. https://github.com/jensimmons/cssremedy/issues/39).
@@ -188,8 +206,9 @@ Add padding and border to table cells for a better readability (ref. https://git
 	border: 1px solid;
 }
 
-/* Forms
-================================================== */
+/* ======================================================================
+07. Forms
+====================================================================== */
 
 /*
 Remove the default 2px inline margin.
@@ -257,8 +276,21 @@ Ref. https://codepen.io/germanfrelo/pen/EaYwZdb
 	font: inherit; /* 2 */
 }
 
-/* Hidden elements
-================================================== */
+/* ======================================================================
+08. Interactive Elements
+====================================================================== */
+
+/*
+Set the cursor on 'summary' elements to the same as buttons (default is 'text').
+*/
+
+:where(details > summary:first-of-type) {
+	cursor: default;
+}
+
+/* ======================================================================
+09. Hidden Elements
+====================================================================== */
 
 /*
 Ensure some elements with the 'hidden' attribute remain hidden, even if a different display value is set (e.g., from the preceding 'display: block' on media element).
@@ -271,15 +303,4 @@ Refs.:
 
 [hidden]:not([hidden="until-found" i], embed) {
 	display: none;
-}
-
-/* Cursor
-================================================== */
-
-/*
-Set the cursor on 'summary' elements to the same as buttons (default is 'text').
-*/
-
-:where(details > summary:first-of-type) {
-	cursor: default;
 }

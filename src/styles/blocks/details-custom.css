@@ -3,12 +3,12 @@ Details - Custom style
 ====================================================================== */
 
 .wp-block-details.is-style-custom {
-	--details-background-color: var(--wp--preset--color--surface-2);
+	--details-color-bg: var(--wp--preset--color--surface-2);
 	--details-padding-top: var(--wp--preset--spacing--2-xs);
 	--details-padding-bottom: var(--wp--preset--spacing--2-xs);
 	--details-padding-left: var(--wp--preset--spacing--xs);
 	--details-padding-right: var(--wp--preset--spacing--xs);
-	--details-border-radius: var(--radius-1);
+	--details-border-radius: var(--wp--custom--radius--1);
 	--details-summary-font-weight: var(--font-weight-bold);
 	--details-summary-gap: 1ch;
 	--details-summary-letter-spacing: normal;
@@ -21,7 +21,7 @@ Details - Custom style
 	--details-content-padding-top: var(--wp--preset--spacing--xs);
 
 	&:has(> summary:is(:hover, :focus-visible)) {
-		--details-background-color: var(--wp--preset--color--surface-3);
+		--details-color-bg: var(--wp--preset--color--surface-3);
 	}
 
 	> summary {

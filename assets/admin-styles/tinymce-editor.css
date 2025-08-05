@@ -1,4 +1,0 @@
-html:has(> body#tinymce.mce-content-body.wp-editor.wp-autoresize) {
-	overflow-y: auto !important;
-	overscroll-behavior-y: contain;
-}

@@ -1,0 +1,30 @@
+.pattern-image-content {
+	display: flex;
+	flex-wrap: wrap;
+	container-type: inline-size;
+
+	> * {
+		flex-basis: 100%;
+	}
+
+	.frame {
+		--frame-aspect-ratio: 16 / 9;
+	}
+
+	@container (width >= 45rem) {
+		> * {
+			flex-grow: 1;
+			flex-basis: 0;
+			margin: 0;
+		}
+
+		/* WP - For the block editor */
+		&.is-layout-flow > * {
+			margin: 0;
+		}
+
+		.frame {
+			--frame-aspect-ratio: auto;
+		}
+	}
+}

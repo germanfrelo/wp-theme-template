@@ -65,11 +65,11 @@ function themeslug_admin_styles() {
 
 	// You can inspect the $screen object to find the 'id' for your specific page.
 	// To see the $screen object, you can temporarily add:
-	error_log( print_r( $screen, true ) );
+	// error_log( print_r( $screen, true ) );
 	// and check your server's error logs.
 
-	// WooCommerce product edit page
-	if ( $screen->id === 'product' ) {
+	// Page
+	if ( $screen->id === '________' ) {
 		wp_enqueue_style(
 			'themeslug-admin-styles',
 			get_theme_file_uri('assets/admin-styles/admin.css'),
@@ -79,7 +79,7 @@ function themeslug_admin_styles() {
 		);
 	}
 }
-add_action( 'admin_enqueue_scripts', 'themeslug_admin_styles' );
+// add_action( 'admin_enqueue_scripts', 'themeslug_admin_styles' );
 
 
 /**
@@ -88,11 +88,11 @@ add_action( 'admin_enqueue_scripts', 'themeslug_admin_styles' );
  * @link https://developer.wordpress.org/reference/hooks/mce_css/
  */
 function themeslug_tinymce_styles( $mce_css ) {
-	// Get the current screen object to ensure we're on the product edit page
+	// Get the current screen object to ensure we're on the ________ edit page
 	$screen = get_current_screen();
 
-	// Check if we are on the WooCommerce product edit page
-	if ( $screen && $screen->id === 'product' ) {
+	// Check if we are on the ________ edit page
+	if ( $screen && $screen->id === '________' ) {
 		// Append your custom stylesheet URL to the existing TinyMCE CSS string.
 		// It's crucial to use get_stylesheet_directory_uri() for child themes
 		// or plugins_url() for plugins, and get_template_directory_uri() for parent themes.
@@ -105,4 +105,4 @@ function themeslug_tinymce_styles( $mce_css ) {
 
 	return $mce_css;
 }
-add_filter( 'mce_css', 'themeslug_tinymce_styles' );
+// add_filter( 'mce_css', 'themeslug_tinymce_styles' );

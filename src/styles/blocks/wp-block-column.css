@@ -1,0 +1,21 @@
+/* ======================================================================
+WP Block Column
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/column
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/column
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
+.wp-block-column {
+	/* Add low specificity default padding to column with background. */
+	:where(&.has-background) {
+		padding: var(--block-bg-padding, 1em);
+
+		:where(&:has(> :is(h1, h2, h3, h4, h5, h6, p):first-child)) {
+			padding-inline: calc(var(--block-bg-padding, 1em) + ((1lh - 1em) / 2));
+		}
+	}
+}

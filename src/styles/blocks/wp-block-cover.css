@@ -1,6 +1,6 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Cover
 ---
 Source:
@@ -8,61 +8,112 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/cover
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
+- To customize most of this block and its parts, use the custom properties.
 ---
 Resources:
 - https://inclusive-components.design/cards/
-======================================================================================= */
+====================================================================== */
+
+/* ======================================================================
+Default Style
+====================================================================== */
+
+.wp-block-cover {
+	min-height: revert;
+	padding: var(--gutter, 1em);
+}
 
 /* ======================================================================
 Custom Style: Custom
 ====================================================================== */
 
-/* Configuration */
-
 .wp-block-cover.is-style-custom {
 	--cover-background-background: linear-gradient(45deg, hsl(0deg 0% 0% / 80%) 0%, hsl(0deg 0% 0% / 0%) 100%);
 	--cover-background-opacity-default: 0;
 	--cover-background-opacity-on-hover: 1;
-	--cover-background-transition-duration: var(--transition-duration, 0);
-	--cover-background-transition-property: opacity;
 	--cover-focus-shadow: 0 0 0 0.25rem var(--wp--preset--color--primary-medium, currentcolor);
+
+	/* Cover background */
+
+	& > .wp-block-cover__background {
+		background: var(--cover-background-background, initial);
+		opacity: var(--cover-background-opacity, initial);
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--wp--custom--transition--duration, 0);
+			transition-property: opacity;
+		}
+	}
+
+	/* Cover background when is hovered or the Post Title link child is focused */
+
+	&:is(:hover, :focus-within) > .wp-block-cover__background {
+		opacity: var(--cover-background-opacity-on-hover, initial);
+	}
+
+	/* Make the whole block interactive if it has a Post Title as link */
+
+	&:has(.wp-block-post-title > :any-link) {
+		position: relative;
+	}
+
+	/* Cover when the Post Title link child is focused */
+
+	&:has(.wp-block-post-title > :any-link):focus-within {
+		box-shadow: var(--cover-focus-shadow, initial);
+	}
+
+	& .wp-block-post-title > :any-link {
+		text-decoration: none;
+		outline: none;
+	}
+
+	& .wp-block-post-title > :any-link::after {
+		position: absolute;
+		inset: 0;
+		content: "";
+	}
 }
 
-/* Cover background */
+/* ======================================================================
+Custom Style: Hero
+====================================================================== */
 
-.wp-block-cover.is-style-custom > .wp-block-cover__background {
-	background: var(--cover-background-background, initial);
-	opacity: var(--cover-background-opacity, initial);
-	transition-duration: var(--cover-background-transition-duration, var(--transition-duration, 0));
-	transition-property: var(--cover-background-transition-property, initial);
-}
+.wp-block-cover.is-style-hero {
+	align-items: normal;
+	justify-content: normal;
+	block-size: clamp(300px, 50vmin, 600px);
+	container-type: inline-size;
+	color: var(--wp--preset--color--surface-1, inherit);
 
-/* Cover background when is hovered or the Post Title link child is focused */
+	&:has(.wrapper) {
+		padding-inline: 0;
+	}
 
-.wp-block-cover.is-style-custom:is(:hover, :focus-within) > .wp-block-cover__background {
-	opacity: var(--cover-background-opacity-on-hover, initial);
-}
+	h1 {
+		overflow-wrap: anywhere;
+	}
 
-/* Make the whole block interactive if it has a Post Title as link */
+	> .wp-block-cover__inner-container {
+		display: grid;
+		grid-template-areas:
+			"."
+			"content";
+		grid-template-rows: minmax(auto, 1fr) minmax(auto, 1fr);
 
-.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link) {
-	position: relative;
-}
+		> .hero__content {
+			grid-area: content;
+			inline-size: 100%;
+		}
+	}
 
-/* Cover when the Post Title link child is focused */
+	@container (width < 30rem) {
+		.hero__subtitle {
+			display: none;
+		}
 
-.wp-block-cover.is-style-custom:has(.wp-block-post-title > :any-link):focus-within {
-	box-shadow: var(--cover-focus-shadow, initial);
-}
-
-.wp-block-cover.is-style-custom .wp-block-post-title > :any-link {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-cover.is-style-custom .wp-block-post-title > :any-link::after {
-	position: absolute;
-	inset: 0;
-	content: "";
+		> .wp-block-cover__inner-container {
+			align-items: center;
+		}
+	}
 }

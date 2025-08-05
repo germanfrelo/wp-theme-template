@@ -1,6 +1,4 @@
-/* TODO: Check, improve and refactor. */
-
-/* =======================================================================================
+/* ======================================================================
 WP Query Pagination Numbers
 ---
 Source:
@@ -8,49 +6,15 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/query-pagination-numbers
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 .wp-block-query-pagination-numbers {
-	/* Numbers Container */
-	--query-pag-numbers-align-cross-axis: center;
-	--query-pag-numbers-align-main-axis: center;
-	--query-pag-numbers-flex-wrap: wrap;
-	--query-pag-numbers-gap: var(--wp--preset--spacing--xs-s);
-
-	/* Any Number */
-	--query-pag-number-border-color-hover: var(--wp--preset--color--primary-medium);
-	--query-pag-number-border-color: var(--wp--preset--color--primary-medium);
-	--query-pag-number-border-radius: 0;
-	--query-pag-number-border-style: solid;
-	--query-pag-number-border-width: 1px;
-	--query-pag-number-border-block-end-width: 1px;
-	--query-pag-number-color-background-hover: var(--wp--preset--color--primary-lighter);
-	--query-pag-number-color-background: var(--wp--preset--color--surface-1);
-	--query-pag-number-color-text-hover: var(--wp--preset--color--text-1);
-	--query-pag-number-color-text: var(--wp--preset--color--text-1);
-	--query-pag-number-min-size: 44px;
-	--query-pag-number-padding-block: 0.5em;
-	--query-pag-number-padding-inline: 0.5em;
-
-	/* Current Number */
-	--query-pag-number-current-border-color: var(--wp--preset--color--primary-medium);
-	--query-pag-number-current-color-background: var(--wp--preset--color--primary-medium);
-	--query-pag-number-current-color-text: var(--wp--preset--color--surface-1);
-
-	/* Dots */
-	--query-pag-number-dots-border-width: 0;
-	--query-pag-number-dots-border-color: transparent;
-	--query-pag-number-dots-min-size: auto;
-	--query-pag-number-dots-padding-block: 0;
-	--query-pag-number-dots-padding-inline: 0;
-
-	/* Styles */
 	display: flex;
-	flex-wrap: var(--query-pag-numbers-flex-wrap, wrap);
-	gap: var(--query-pag-numbers-gap, 1ch);
-	align-items: var(--query-pag-numbers-align-cross-axis, center);
-	justify-content: var(--query-pag-numbers-align-main-axis, center);
+	flex-wrap: var(--block-query-pag-numbers-flex-wrap, wrap);
+	gap: var(--block-query-pag-numbers-gap, 1ch);
+	align-items: var(--block-query-pag-numbers-align-cross-axis, center);
+	justify-content: var(--block-query-pag-numbers-align-main-axis, center);
 
 	/* ----------------------------------------------------------------------
 	Any Page Number
@@ -59,18 +23,18 @@ Notes:
 	.page-numbers {
 		display: inline-grid;
 		place-content: center;
-		min-inline-size: var(--query-pag-number-min-size, var(--min-target-size, 24px));
-		min-block-size: var(--query-pag-number-min-size, var(--min-target-size, 24px));
-		padding-block: var(--query-pag-number-padding-block, 0);
-		padding-inline: var(--query-pag-number-padding-inline, 0);
+		min-inline-size: var(--block-query-pag-number-min-size, var(--min-target-size, 24px));
+		min-block-size: var(--block-query-pag-number-min-size, var(--min-target-size, 24px));
+		padding-block: var(--block-query-pag-number-padding-block, 0);
+		padding-inline: var(--block-query-pag-number-padding-inline, 0);
 		line-height: 1;
-		color: var(--query-pag-number-color-text, inherit);
-		background-color: var(--query-pag-number-color-background, transparent);
-		border-color: var(--query-pag-number-border-color, transparent);
-		border-style: var(--query-pag-number-border-style, none);
-		border-width: var(--query-pag-number-border-width, 0);
-		border-block-end-width: var(--query-pag-number-border-block-end-width, 0);
-		border-radius: var(--query-pag-number-border-radius, 0);
+		color: var(--block-query-pag-number-color, inherit);
+		background-color: var(--block-query-pag-number-color-bg, transparent);
+		border-color: var(--block-query-pag-number-border-color, transparent);
+		border-style: var(--block-query-pag-number-border-style, none);
+		border-width: var(--block-query-pag-number-border-width, 0);
+		border-block-end-width: var(--block-query-pag-number-border-block-end-width, 0);
+		border-radius: var(--block-query-pag-number-border-radius, 0);
 	}
 
 	/* ----------------------------------------------------------------------
@@ -78,9 +42,9 @@ Notes:
 	---------------------------------------------------------------------- */
 
 	a.page-numbers:is(:hover, :focus-visible) {
-		color: var(--query-pag-number-color-text-hover, inherit);
-		background-color: var(--query-pag-number-color-background-hover, transparent);
-		border-color: var(--query-pag-number-border-color-hover, transparent);
+		color: var(--block-query-pag-number-color-hover, inherit);
+		background-color: var(--block-query-pag-number-color-bg-hover, transparent);
+		border-color: var(--block-query-pag-number-border-color-hover, transparent);
 	}
 
 	/* ----------------------------------------------------------------------
@@ -88,9 +52,9 @@ Notes:
 	---------------------------------------------------------------------- */
 
 	.page-numbers.current {
-		color: var(--query-pag-number-current-color-text, inherit);
-		background-color: var(--query-pag-number-current-color-background, transparent);
-		border-color: var(--query-pag-number-current-border-color, transparent);
+		color: var(--block-query-pag-number-current-color, inherit);
+		background-color: var(--block-query-pag-number-current-color-bg, transparent);
+		border-color: var(--block-query-pag-number-current-border-color, transparent);
 	}
 
 	/* ----------------------------------------------------------------------
@@ -98,11 +62,11 @@ Notes:
 	---------------------------------------------------------------------- */
 
 	.page-numbers.dots {
-		min-inline-size: var(--query-pag-number-dots-min-size, auto);
-		min-block-size: var(--query-pag-number-dots-min-size, auto);
-		padding-block: var(--query-pag-number-dots-padding-block, 0);
-		padding-inline: var(--query-pag-number-dots-padding-inline, 0);
-		border-color: var(--query-pag-number-dots-border-color, transparent);
-		border-width: var(--query-pag-number-dots-border-width, 0);
+		min-inline-size: var(--block-query-pag-number-dots-min-size, auto);
+		min-block-size: var(--block-query-pag-number-dots-min-size, auto);
+		padding-block: var(--block-query-pag-number-dots-padding-block, 0);
+		padding-inline: var(--block-query-pag-number-dots-padding-inline, 0);
+		border-color: var(--block-query-pag-number-dots-border-color, transparent);
+		border-width: var(--block-query-pag-number-dots-border-width, 0);
 	}
 }

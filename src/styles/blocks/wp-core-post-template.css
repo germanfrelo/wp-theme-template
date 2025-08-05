@@ -1,0 +1,31 @@
+/* ======================================================================
+WP Post Template
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-template
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-template
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
+.wp-block-post-template {
+	/* Remove default 'ul' styles */
+	&ul.is-layout-grid {
+		padding-inline-start: 0;
+		list-style-type: none;
+	}
+
+	&.is-layout-grid {
+		column-gap: var(--gutter);
+	}
+
+	.wp-block-post-featured-image {
+		img,
+		> a:has(> img) {
+			display: block;
+			inline-size: 100%;
+			block-size: 100%;
+		}
+	}
+}

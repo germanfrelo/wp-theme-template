@@ -1,69 +1,95 @@
 /* ======================================================================
 Button
 ---
-To customize most of this block and its parts, use the global CSS custom properties in the 'variables.css' file.
+Notes:
+- To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
 
-button.wp-element-button {
-	cursor: default; /* Override WP's default 'pointer' */
-}
-
-/*
-Needed to make the buttons stretch correctly in a vertical layout. See:
-- https://github.com/WordPress/gutenberg/commit/2036d7e
-- https://github.com/WordPress/gutenberg/commit/0100e98
-*/
-:where(.wp-block-buttons.is-layout-flex) > .wp-block-button > .wp-block-button__link {
-	inline-size: 100%;
-	block-size: 100%;
-}
-
 .button,
-.wp-block-button > .wp-block-button__link,
-.wp-block-read-more {
+.wp-block-button__link,
+.wp-block-read-more,
+.wp-element-button {
 	display: var(--button-display, inline-block);
 	align-content: center;
+	min-inline-size: var(--field-min-size-inline, 24px);
+	min-block-size: var(--field-min-size-block, 24px);
 	padding-block: var(--button-padding-block, 0.5em);
 	padding-inline: var(--button-padding-inline, 1em);
 	font-size: var(--button-font-size, inherit);
 	font-weight: var(--button-font-weight, inherit);
-	line-height: var(--button-leading, inherit);
-	color: var(--button-color-text, unset);
-	text-align: var(--button-text-align, center);
+	line-height: var(--button-line-height, inherit);
+	color: var(--button-color, inherit);
 	text-decoration-line: var(--button-line, none);
-	background-color: var(--button-color-background, transparent);
+	background-color: var(--button-color-bg, transparent);
 	border-color: var(--button-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--button-border-width, 0);
 	border-radius: var(--button-border-radius, 0);
 	text-box: var(--button-text-box, normal);
 
+	&:where(:not([class*="has-text-align"])) {
+		text-align: var(--button-text-align, center);
+	}
+
+	/* WP: Revert default 'pointer' cursor on elements without an 'href'. */
+	&:where(:not(:any-link)) {
+		cursor: revert;
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--transition-duration, 0);
+		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color;
 	}
 
+	/* States */
+
+	&:is(:hover, :focus-visible) {
+		color: var(--button-color-on-hover, var(--button-color));
+		background-color: var(--button-color-bg-on-hover, var(--button-color-bg));
+		border-color: var(--button-border-color-on-hover, var(--button-border-color));
+	}
+
+	&:is(:active) {
+		color: var(--button-color-on-active, var(--button-color));
+		background-color: var(--button-color-bg-on-active, var(--button-color-bg));
+		border-color: var(--button-border-color-on-active, var(--button-border-color));
+	}
+
 	/* Has icon */
-	&:has(> :is(img, svg, .icon)) {
+	&:has(> :is(img, svg, .icon)),
+	.wp-block-button.has-icon > & {
 		--button-display: flex;
 		display: var(--button-display, flex);
 		flex-wrap: nowrap;
-		gap: var(--button-gap, 0.75em);
+		gap: var(--button-gap, 1ch);
 		align-items: center;
 		justify-content: center;
-	}
-
-	/* Pseudo-classes */
-	&:is(:hover, :focus-visible) {
-		color: var(--button-color-text-on-hover, unset);
-		background-color: var(--button-color-background-on-hover, transparent);
-		border-color: var(--button-border-color-on-hover, transparent);
 	}
 
 	/* Icon */
 	> :is(img, svg, .icon) {
 		flex-shrink: 0;
 		inline-size: auto;
-		block-size: var(--button-icon-size, 1.25em);
+		block-size: var(--button-icon-size, 1em);
+
+		&:not([fill]) {
+			fill: currentcolor;
+		}
+	}
+
+	/* Icon: External Link */
+	.wp-block-button.has-icon > &:any-link[rel~="external"] {
+		--button-gap: 0.5ch;
+
+		&::after {
+			flex-shrink: 0;
+			inline-size: var(--nav-link-external-icon-size, 1.25em);
+			block-size: var(--nav-link-external-icon-size, 1.25em);
+			content: "";
+			background-color: var(--nav-link-external-icon-color, currentcolor);
+			mask-image: var(--nav-link-external-icon-image, url("../assets/svg/icon-external.svg"));
+			mask-position: center;
+			mask-size: cover;
+		}
 	}
 }

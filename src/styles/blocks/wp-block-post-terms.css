@@ -1,12 +1,12 @@
 /* TODO: Check, improve and refactor. */
 
-/* =======================================================================================
+/* ======================================================================
 WP Post Terms
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-terms
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-terms
-======================================================================================= */
+====================================================================== */
 
 .wp-block-post-terms {
 	--gutter: var(--wp--preset--spacing--s);

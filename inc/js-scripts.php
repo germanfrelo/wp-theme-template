@@ -17,8 +17,8 @@ if ( ! function_exists( 'themeslug_enqueue_frontend_scripts' ) ) {
 		$theme_version = wp_get_theme()->get( 'Version' );
 
 		wp_enqueue_script(
-			'themeslug-dom-manipulation',
-			get_theme_file_uri( 'assets/js/dom-manipulation.js' ),
+			'themeslug-<script_name>',
+			get_theme_file_uri( 'assets/js/<script_name>.js' ),
 			[], // Dependencies
 			$theme_version,
 			[
@@ -27,5 +27,5 @@ if ( ! function_exists( 'themeslug_enqueue_frontend_scripts' ) ) {
 			]
 		);
 	}
-	add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_frontend_scripts' );
+	// add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_frontend_scripts' );
 }

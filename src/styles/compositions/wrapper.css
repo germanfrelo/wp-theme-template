@@ -1,13 +1,19 @@
 /* ======================================================================
-WRAPPER
+Title:       Wrapper
+Description: A layout for centering a block-level element in the inline direction, with a max-inline-size value representing the typographic measure.
+Reference:   https://every-layout.dev/layouts/center/
+---
+Variables:
 
-A layout for centering a block-level element in the inline direction, with a max-inline-size value representing the typographic measure.
+--wrapper-gutters
+	Description: The width of the gutters.
+	Type:        A valid '<length>' value.
+	Default:     var(--gutter, 1rem)
 
-Based on https://every-layout.dev/layouts/center/
-
-Configuration:
---wrapper-gutters (var(--gutter, 1rem)): The width of the gutters.
---wrapper-max-width (var(--measure-wide, 80rem)): The maximum width of the centered element.
+--wrapper-max-width
+	Description: The maximum width of the centered element.
+	Type:        A valid '<length>' value.
+	Default:     var(--measure-wide, 80rem)
 ====================================================================== */
 
 .wrapper {

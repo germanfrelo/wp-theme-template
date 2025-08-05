@@ -1,6 +1,4 @@
-/* TODO: Check, improve and refactor. */
-
-/* =======================================================================================
+/* ======================================================================
 WP Query Pagination
 ---
 Source:
@@ -8,58 +6,42 @@ Source:
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/query-pagination
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
-
-/* ======================================================================
-Query Pagination
+- To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
-
-/*
-Using only the `.wp-block-query-pagination` selector will allow these styles to be overridden by the styles set in the Editor.
-To make these styles always win, just append `.is-layout-flex` to the selector: `.wp-block-query-pagination.is-layout-flex`.
-*/
 
 .wp-block-query-pagination {
-	--query-pag-align-cross-axis: center;
-	--query-pag-align-main-axis: center;
-	--query-pag-direction: row;
-	--query-pag-gap-columns: var(--wp--preset--spacing--xs-s);
-	--query-pag-gap-rows: var(--wp--preset--spacing--xs-s);
-	--query-pag-link-line: none;
-	--query-pag-wrap: wrap;
 	display: flex;
-	flex-direction: var(--query-pag-direction, row);
-	flex-wrap: var(--query-pag-wrap, wrap);
-	align-items: var(--query-pag-align-cross-axis, center);
-	justify-content: var(--query-pag-align-main-axis, flex-start);
-}
+	flex-direction: var(--block-query-pag-direction, row);
+	flex-wrap: var(--block-query-pag-wrap, wrap);
+	align-items: var(--block-query-pag-align-cross-axis, center);
+	justify-content: var(--block-query-pag-align-main-axis, flex-start);
 
-.wp-block-query-pagination.is-layout-flex {
-	row-gap: var(--query-pag-gap-rows, var(--wp--style--block-gap));
-	column-gap: var(--query-pag-gap-columns, var(--wp--style--block-gap));
-}
+	&.is-layout-flex {
+		row-gap: var(--block-query-pag-gap-rows, var(--flow-space, 1em));
+		column-gap: var(--block-query-pag-gap-columns, var(--flow-space, 1em));
+	}
 
-/* ======================================================================
-Query Pagination: Previous & Next Arrows
-====================================================================== */
+	/* ----------------------------------------------------------------------
+	Previous & Next Arrows
+	---------------------------------------------------------------------- */
 
-/* Removes default margins */
+	/* Removes default margins */
 
-/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L9 */
-.wp-block-query-pagination .wp-block-query-pagination-previous-arrow {
-	margin-right: 0;
-}
+	/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L9 */
+	.wp-block-query-pagination-previous-arrow {
+		margin-right: 0;
+	}
 
-/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L16 */
-.wp-block-query-pagination .wp-block-query-pagination-next-arrow {
-	margin-left: 0;
-}
+	/* https://github.com/WordPress/WordPress/blob/dd967e2/wp-includes/blocks/query-pagination/style.css#L16 */
+	.wp-block-query-pagination-next-arrow {
+		margin-left: 0;
+	}
 
-/* ======================================================================
-Query Pagination: Links
-====================================================================== */
+	/* ----------------------------------------------------------------------
+	Links
+	---------------------------------------------------------------------- */
 
-.wp-block-query-pagination a:where(:any-link) {
-	text-decoration-line: var(--query-pag-link-line, revert);
+	a:where(:any-link) {
+		text-decoration-line: var(--block-query-pag-link-line, revert);
+	}
 }

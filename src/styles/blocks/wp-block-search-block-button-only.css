@@ -1,0 +1,30 @@
+/* ======================================================================
+WP Block Search - Block Variation - Button Only
+====================================================================== */
+
+.wp-block-search.wp-block-search__button-only {
+	[type="search"] {
+		transition-property: inline-size, min-inline-size;
+	}
+
+	/* When search field is hidden/collapsed */
+	&.wp-block-search__searchfield-hidden {
+		/* !important is needed to override inline styles on deselected view */
+
+		.wp-block-search__inside-wrapper {
+			gap: 0 !important;
+		}
+
+		[type="search"] {
+			flex: none !important;
+			inline-size: 0 !important;
+			min-inline-size: 0 !important;
+			padding: 0 !important;
+			border: 0 !important;
+		}
+
+		button {
+			flex-grow: 0 !important;
+		}
+	}
+}

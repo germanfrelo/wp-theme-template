@@ -1,12 +1,12 @@
-/* =======================================================================================
+/* ======================================================================
 gravityforms/form
 ---
 Source:          URL
 Block Reference: URL
 ---
 Notes:
-- Use CSS custom properties to customize most of this block and its parts.
-======================================================================================= */
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
 
 /* Selector is repeated to increase specificity to override GF styles */
 .gform_wrapper.gform_wrapper {
@@ -26,7 +26,7 @@ Notes:
 
 	.gfield_description,
 	.gfield_validation_message {
-		font-size: var(--wp--preset--font-size--step-00, inherit);
+		font-size: var(--font-size-base, inherit);
 	}
 
 	&.gravity-theme {
@@ -84,7 +84,7 @@ Notes:
 		}
 
 		:is(input, textarea) {
-			outline-width: var(--border-size-1, 1px);
+			outline-width: var(--focus-ring-width, 2px);
 			outline-style: solid;
 			outline-color: currentcolor;
 			outline-offset: 0;
