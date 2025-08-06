@@ -24,6 +24,3 @@ require_once get_theme_file_path( 'inc/styles.php' );
 
 // Front-end JavaScript
 require_once get_theme_file_path( 'inc/js-scripts.php' );
-
-// Plugin: Gravity Forms
-require_once get_theme_file_path( 'inc/plugin-gravityforms.php' );
