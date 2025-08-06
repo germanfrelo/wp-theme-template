@@ -15,8 +15,7 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*
-IMPORTANT:
-- This file is *not* used for adding any custom CSS.
-- Add styles in the src/styles/ directory.
-- See the README.md file for more info.
+IMPORTANT!
+This file is for theme metadata only. It's *not* enqueued by the theme. Do *not* use it for adding any CSS.
+See the README file for more info.
 */

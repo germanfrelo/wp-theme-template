@@ -5,6 +5,7 @@
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#including-css
  */
 
+
 /**
  * Enqueue stylesheets on the front end of the website.
  *
@@ -14,17 +15,8 @@
  * @return void
  */
 function themeslug_enqueue_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+	$theme_version = wp_get_theme()->get('Version');
 
-	// Active theme's style.css file
-	wp_enqueue_style(
-		'themeslug-theme-stylesheet',
-		get_stylesheet_uri(),
-		[],
-		$theme_version
-	);
-
-	// All the styles
 	wp_enqueue_style(
 		'themeslug-styles',
 		get_theme_file_uri('build-css/global.css'),
@@ -32,7 +24,8 @@ function themeslug_enqueue_styles() {
 		$theme_version
 	);
 }
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'themeslug_enqueue_styles');
+
 
 /**
  * Enqueue stylesheets in the Editor.
@@ -43,14 +36,13 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_styles' );
  * @return void
  */
 function themeslug_add_editor_styles() {
-	add_editor_style( array(
-		// Active theme's style.css file
-		get_stylesheet_uri(),
-		// All the styles
-		get_theme_file_uri('build-css/global.css'),
-	) );
+	add_editor_style(
+		[
+			get_theme_file_uri('build-css/global.css'),
+		]
+	);
 }
-add_action( 'after_setup_theme', 'themeslug_add_editor_styles' );
+add_action('after_setup_theme', 'themeslug_add_editor_styles');
 
 
 /**
