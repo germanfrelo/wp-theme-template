@@ -143,14 +143,14 @@ This file is primarily used to:
 - Register **custom templates**, **template parts**, and **patterns**.
 
 > [!IMPORTANT]
-> **It is **not** used for applying styles.**
+> **It's _not_ used for applying styles.**
 
 ### `style.css`
 
 WordPress requires this file solely for theme registration metadata, such as the theme's name, author and version.
 
 > [!IMPORTANT]
-> **It is **not** used for adding custom CSS.**
+> This file is for metadata only. **It's _not_ enqueued by the theme. Do _not_ use it for adding any CSS.**
 
 ### Theme's main styles
 

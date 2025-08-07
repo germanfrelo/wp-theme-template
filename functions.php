@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  */
 
-// Remove default WordPress styles
+// Remove WordPress defaults
 require_once get_theme_file_path( 'inc/remove-wp-defaults.php' );
 
 // Custom Blocks
