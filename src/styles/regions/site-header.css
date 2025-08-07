@@ -18,7 +18,6 @@ header.wp-block-template-part {
 			position: sticky;
 			inset-block-start: 0;
 			z-index: 1;
-			backdrop-filter: blur(8px);
 
 			@media (prefers-reduced-motion: no-preference) {
 				animation: add-shadow-to-header linear forwards;
