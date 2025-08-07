@@ -497,38 +497,38 @@
 			"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
 			"fontSizes": [
 				{
-					"name": "Step 00",
-					"slug": "step-00",
+					"name": "XS",
+					"slug": "xs",
 					"size": "clamp(1rem, 1rem + 0vw, 1rem)"
 				},
 				{
-					"name": "Step 0",
-					"slug": "step-0",
+					"name": "S",
+					"slug": "s",
 					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
 				},
 				{
-					"name": "Step 1",
-					"slug": "step-1",
+					"name": "M",
+					"slug": "m",
 					"size": "clamp(1.2656rem, 1.1611rem + 0.446vw, 1.5625rem)"
 				},
 				{
-					"name": "Step 2",
-					"slug": "step-2",
+					"name": "L",
+					"slug": "l",
 					"size": "clamp(1.4238rem, 1.2375rem + 0.7952vw, 1.9531rem)"
 				},
 				{
-					"name": "Step 3",
-					"slug": "step-3",
+					"name": "XL",
+					"slug": "xl",
 					"size": "clamp(1.6018rem, 1.3062rem + 1.2614vw, 2.4414rem)"
 				},
 				{
-					"name": "Step 4",
-					"slug": "step-4",
+					"name": "XXL",
+					"slug": "xxl",
 					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
 				},
 				{
-					"name": "Step 5",
-					"slug": "step-5",
+					"name": "XXXL",
+					"slug": "xxxl",
 					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
 				}
 			]
