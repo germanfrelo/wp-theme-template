@@ -182,9 +182,6 @@ Semantic Tokens
 	--label-font-weight: var(--font-weight-bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
-	/* Layout - Box */
-	--box-border-size: var(--wp--custom--stroke-weight--1);
-
 	/* Legend */
 	--legend-font-size: var(--wp--preset--font-size--step-0);
 	--legend-font-weight: var(--font-weight-bold);
