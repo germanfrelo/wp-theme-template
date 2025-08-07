@@ -1,0 +1,22 @@
+/* =======================================================================================
+Woocommerce - Product Button
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-button
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-button.wc-block-components-product-button {
+	/* Default is 'break-word', but it's deprecated, see https://developer.mozilla.org/en-US/docs/Web/CSS/word-break */
+	&,
+	.wc-block-components-product-button__button {
+		word-break: revert;
+	}
+
+	.wc-block-components-product-button__button {
+		overflow: revert;
+		border-style: solid;
+	}
+}
