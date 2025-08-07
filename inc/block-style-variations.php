@@ -18,7 +18,8 @@ function themeslug_register_block_style_variations() {
 	register_block_style(
 		[
 			'core/button',
-			'core/read-more'
+			'core/read-more',
+			'woocommerce/product-button'
 		],
 		[
 			'name'  => 'outlined',
@@ -29,7 +30,8 @@ function themeslug_register_block_style_variations() {
 	register_block_style(
 		[
 			'core/button',
-			'core/read-more'
+			'core/read-more',
+			'woocommerce/product-button'
 		],
 		[
 			'name'  => 'plain',

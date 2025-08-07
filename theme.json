@@ -537,6 +537,11 @@
 			"name": "page-without-title-content-not-centered",
 			"postTypes": ["page"],
 			"title": "Pages without title & content not centered"
+		},
+		{
+			"name": "woocommerce-my-account",
+			"postTypes": ["page"],
+			"title": "WooCommerce: My Account"
 		}
 	],
 	"templateParts": [
