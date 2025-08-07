@@ -6,4 +6,5 @@ wp.domReady(() => {
 	wp.blocks.unregisterBlockStyle("core/quote", ["default", "plain"]);
 	wp.blocks.unregisterBlockStyle("core/site-logo", ["rounded"]);
 	wp.blocks.unregisterBlockStyle("core/separator", ["wide"]);
+	wp.blocks.unregisterBlockStyle("woocommerce/product-button", ["fill"]);
 });
