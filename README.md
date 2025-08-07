@@ -143,7 +143,7 @@ This file is primarily used to:
 - Register **custom templates**, **template parts**, and **patterns**.
 
 > [!IMPORTANT]
-> **It is **not** used for applying styles.**
+> **It's _not_ used for applying styles.**
 
 ### `style.css`
 
