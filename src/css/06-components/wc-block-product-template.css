@@ -1,0 +1,48 @@
+/* =======================================================================================
+Woocommerce Product Template
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-template
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+/* ======================================================================
+Product
+====================================================================== */
+
+/* Configuration
+---------------------------------------------------------------------- */
+
+.wc-block-product {
+	--wc-product-border-radius: var(--wp--custom--border--radius--small, 0);
+	--wc-product-box-shadow: var(--wp--preset--shadow--elevation-medium, none);
+	--wc-product-box-shadow-on-hover: var(--wp--preset--shadow--elevation-low, none);
+	--wc-product-color-background: var(--wp--preset--color--base-1, transparent);
+	--wc-product-transition-duration: var(--wp--custom--transition--duration, 0);
+	--wc-product-transition-timing-function: ease-in-out;
+}
+
+/* Styles — ⚠️ Don't modify unless you're sure
+---------------------------------------------------------------------- */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+.wc-block-product {
+	background-color: var(--wc-product-color-background, transparent);
+	border-radius: var(--wc-product-border-radius, 0);
+	box-shadow: var(--wc-product-box-shadow, var(--wp--preset--shadow--natural, none));
+	transition-timing-function: var(--wc-product-transition-timing-function, initial);
+	transition-duration: var(--wc-product-transition-duration, 0);
+}
+
+@media (hover: hover) {
+	.wc-block-product:has(:is(:any-link, button):hover) {
+		box-shadow: var(--wc-product-box-shadow-on-hover, none);
+	}
+}
+
+.wc-block-product img {
+	border-start-start-radius: var(--wc-product-border-radius, 0);
+	border-start-end-radius: var(--wc-product-border-radius, 0);
+}
