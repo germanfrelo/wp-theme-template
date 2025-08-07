@@ -91,7 +91,7 @@ Semantic Tokens
 	--button-border-radius: var(--wp--custom--radius--1);
 	--button-border-width: var(--wp--custom--stroke-weight--1);
 	--button-color: var(--wp--preset--color--surface-1);
-	--button-font-size: var(--wp--preset--font-size--step-00);
+	--button-font-size: var(--wp--preset--font-size--xs);
 	--button-font-weight: var(--wp--custom--font-weight--500);
 	--button-line-height: var(--wp--custom--line-height--slim);
 	--button-padding-block: 0.875em;
@@ -153,13 +153,13 @@ Semantic Tokens
 	--font-line-height-h6: 1.3;
 
 	/* Font Sizes */
-	--font-size-base: var(--wp--preset--font-size--step-0);
-	--font-size-h1: var(--wp--preset--font-size--step-5);
-	--font-size-h2: var(--wp--preset--font-size--step-4);
-	--font-size-h3: var(--wp--preset--font-size--step-3);
-	--font-size-h4: var(--wp--preset--font-size--step-2);
-	--font-size-h5: var(--wp--preset--font-size--step-1);
-	--font-size-h6: var(--wp--preset--font-size--step-0);
+	--font-size-base: var(--wp--preset--font-size--s);
+	--font-size-h1: var(--wp--preset--font-size--xxxl);
+	--font-size-h2: var(--wp--preset--font-size--xxl);
+	--font-size-h3: var(--wp--preset--font-size--xl);
+	--font-size-h4: var(--wp--preset--font-size--l);
+	--font-size-h5: var(--wp--preset--font-size--m);
+	--font-size-h6: var(--wp--preset--font-size--s);
 
 	/* Font Weights */
 	--font-weight-base: var(--wp--custom--font-weight--400);
@@ -178,12 +178,12 @@ Semantic Tokens
 	--kbd-stroke-weight: var(--wp--custom--stroke-weight--1);
 
 	/* Label */
-	--label-font-size: var(--wp--preset--font-size--step-0);
+	--label-font-size: var(--wp--preset--font-size--s);
 	--label-font-weight: var(--font-weight-bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
 	/* Legend */
-	--legend-font-size: var(--wp--preset--font-size--step-0);
+	--legend-font-size: var(--wp--preset--font-size--s);
 	--legend-font-weight: var(--font-weight-bold);
 	--legend-line-height: inherit;
 
