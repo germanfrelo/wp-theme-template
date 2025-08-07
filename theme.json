@@ -547,12 +547,12 @@
 		{
 			"name": "page-without-title",
 			"postTypes": ["page"],
-			"title": "Páginas sin título"
+			"title": "Pages without title"
 		},
 		{
 			"name": "page-without-title-content-not-centered",
 			"postTypes": ["page"],
-			"title": "Páginas sin título y contenido no centrado"
+			"title": "Pages without title & content not centered"
 		}
 	],
 	"templateParts": [
