@@ -1,0 +1,20 @@
+/* =======================================================================================
+Woocommerce Customer Account
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/customer-account
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-woocommerce-customer-account a {
+	padding: 0;
+}
+
+.wp-block-woocommerce-customer-account a .wc-block-customer-account__account-icon {
+	width: 1.875em;
+	min-width: 24px;
+	height: 1.875em;
+	min-height: 24px;
+}

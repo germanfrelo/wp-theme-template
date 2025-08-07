@@ -1,0 +1,31 @@
+<!-- wp:group {"tagName":"header","lock":{"move":true,"remove":true},"metadata":{"name":"Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"blockGap":"0"}},"backgroundColor":"base-1","layout":{"type":"default"}} -->
+<header class="wp-block-group has-base-1-background-color has-background">
+	<!-- wp:template-part {"slug":"header","tagName":"div","area":"header","lock":{"move":true,"remove":true}} /-->
+</header>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","lock":{"move":true,"remove":true},"metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0","padding":{"top":"var:preset|spacing|2-xl","bottom":"var:preset|spacing|2-xl"}}},"backgroundColor":"base-2","layout":{"type":"constrained"}} -->
+<main class="wp-block-group has-base-2-background-color has-background" style="padding-top: var(--wp--preset--spacing--2-xl); padding-bottom: var(--wp--preset--spacing--2-xl)">
+	<!-- wp:group {"lock":{"move":true,"remove":true},"align":"wide","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:group {"lock":{"move":false,"remove":true},"style":{"spacing":{"blockGap":"var:preset|spacing|xs"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group">
+			<!-- wp:image {"sizeSlug":"full","linkDestination":"none"} -->
+			<figure class="wp-block-image size-full">
+				<img src="https://brandeame.es/academia/wp-content/uploads/2025/03/carrito.png" alt="" class="" />
+			</figure>
+			<!-- /wp:image -->
+
+			<!-- wp:heading {"level":1,"lock":{"move":false,"remove":true},"style":{"elements":{"link":{"color":{"text":"var:preset|color|brand-1"}}},"typography":{"fontStyle":"normal","fontWeight":"700"}},"textColor":"brand-1","fontFamily":"body"} -->
+			<h1 class="wp-block-heading has-brand-1-color has-text-color has-link-color has-body-font-family" style="font-style: normal; font-weight: 700">Carrito</h1>
+			<!-- /wp:heading -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:post-content {"lock":{"move":true,"remove":true}} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","area":"footer","lock":{"move":true,"remove":true}} /-->

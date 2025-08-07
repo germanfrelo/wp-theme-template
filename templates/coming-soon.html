@@ -1,0 +1,27 @@
+<!-- wp:group {"tagName":"header","lock":{"move":true,"remove":true},"metadata":{"name":"Header"},"style":{"position":{"type":"sticky","top":"0px"},"spacing":{"blockGap":"0"}},"backgroundColor":"base-1","layout":{"type":"default"}} -->
+<header class="wp-block-group has-base-1-background-color has-background">
+	<!-- wp:template-part {"slug":"header","tagName":"div","area":"header","lock":{"move":true,"remove":true}} /-->
+</header>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","lock":{"move":true,"remove":true},"metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group">
+	<!-- wp:woocommerce/coming-soon {"storeOnly":true} -->
+	<div class="wp-block-woocommerce-coming-soon">
+		<!-- wp:group {"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:heading {"textAlign":"center","level":1,"fontFamily":"cardo"} -->
+			<h1 class="wp-block-heading has-text-align-center has-cardo-font-family">Great things are on the horizon</h1>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"align":"center","fontFamily":"inter"} -->
+			<p class="has-text-align-center has-inter-font-family">Something big is brewing! Our store is in the works and will be launching soon!</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:woocommerce/coming-soon -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","area":"footer","lock":{"move":true,"remove":true}} /-->

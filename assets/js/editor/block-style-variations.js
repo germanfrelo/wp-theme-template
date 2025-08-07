@@ -34,6 +34,7 @@ wp.domReady(() => {
 	wp.blocks.unregisterBlockStyle("core/social-links", "default");
 	wp.blocks.unregisterBlockStyle("core/social-links", "logos-only");
 	wp.blocks.unregisterBlockStyle("core/social-links", "pill-shape");
+	wp.blocks.unregisterBlockStyle("woocommerce/product-button", "fill");
 	/*
 	 * The following are the remaining core block style variations.
 	 * They are intentionally left registered. To unregister them, just uncomment them.
