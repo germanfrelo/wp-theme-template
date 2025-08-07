@@ -1,0 +1,267 @@
+/* =======================================================================================
+WooCommerce - My Account pages
+---
+- Endpoints:
+  https://developer.woocommerce.com/docs/woocommerce-endpoints/#1-account-endpoints
+- Shortcode:
+  https://woocommerce.com/document/woocommerce-shortcodes/page-shortcodes/#my-account
+- Block:
+  None yet → https://woocommerce.com/document/woocommerce-shortcodes/#woocommerce-shortcodes
+- Block code:
+  None yet
+======================================================================================= */
+
+/* ======================================================================
+0. Global
+====================================================================== */
+
+:where(body.woocommerce-account) {
+	:where(ul, ol, dl) {
+		margin-block: 0;
+	}
+
+	:where(p) {
+		margin-block-end: 0;
+	}
+
+	:where(p:first-of-type) {
+		margin-block-start: 0;
+	}
+
+	form {
+		--flow-space: var(--wp--preset--spacing--m);
+	}
+
+	h2:has(+ form) {
+		text-align: center;
+	}
+
+	div:has(> form) {
+		--stack-gap: var(--wp--preset--spacing--l);
+		padding-block: var(--wp--preset--spacing--l, var(--gutter, 1em));
+		padding-inline: var(--wp--preset--spacing--m-l, var(--gutter, 1em));
+		border-radius: var(--radius-1);
+		box-shadow: var(--wp--preset--shadow--contact-info-form);
+
+		.form-row {
+			--form-field-label-input-gap: 0;
+			--stack-gap: 0.5em;
+		}
+
+		.form-row:has(> .woocommerce-form-login__rememberme ~ [type="submit"]) {
+			--stack-gap: var(--wp--preset--spacing--m);
+		}
+	}
+
+	.stack > form {
+		flex-grow: 1;
+	}
+}
+
+/* ======================================================================
+1. Logged out
+====================================================================== */
+
+body.woocommerce-account:not(.logged-in) {
+	/* ----------------------------------------------------------------------
+	1.1. Forms: Log in & Register
+	---------------------------------------------------------------------- */
+
+	/* ----------------------------------------------------------------------
+	1.2. Form: Lost password
+	---------------------------------------------------------------------- */
+
+	&.woocommerce-lost-password {
+		main {
+			--wrapper-max-width: var(--measure-content, 40rem);
+		}
+	}
+}
+
+/* ======================================================================
+2. Logged in
+====================================================================== */
+
+body.woocommerce-account.logged-in {
+	/* ----------------------------------------------------------------------
+	Container
+	---------------------------------------------------------------------- */
+
+	.woocommerce:has(> .woocommerce-MyAccount-navigation + .woocommerce-MyAccount-content).with-sidebar-left {
+		--sidebar-wrap-at: 75%;
+		row-gap: var(--wp--preset--spacing--l, 1em);
+		column-gap: var(--wp--preset--spacing--xl, 1em);
+	}
+
+	/* ----------------------------------------------------------------------
+	Navigation
+	---------------------------------------------------------------------- */
+
+	.woocommerce-MyAccount-navigation {
+		> ul.grid {
+			--grid-min-item-size: 12rem;
+			--grid-placement: auto-fit;
+			--gutter: var(--wp--preset--spacing--2-xs, 0.25em);
+
+			li {
+				> a {
+					display: flex;
+					align-items: center;
+					block-size: 100%;
+					padding-block: 0.625em;
+					padding-inline: 1em;
+					font-size: var(--wp--preset--font-size--step-00, inherit);
+					font-weight: var(--font-weight-medium, inherit);
+					line-height: var(--leading-slim, 1.2);
+					color: inherit;
+					text-decoration-line: none;
+					background-color: var(--wp--preset--color--surface-2, transparent);
+					border-color: transparent;
+					border-style: solid;
+					border-width: 1px;
+				}
+
+				> a:is(:hover, :focus-visible) {
+					color: inherit;
+					text-decoration-line: none;
+					background-color: var(--wp--preset--color--surface-3, transparent);
+				}
+
+				&.is-active a {
+					color: var(--wp--preset--color--surface-1, inherit);
+					background-color: var(--wp--preset--color--primary-medium, transparent);
+				}
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	Content
+	---------------------------------------------------------------------- */
+
+	/* .woocommerce-MyAccount-content {
+	} */
+
+	/* ----------------------------------------------------------------------
+	2.0. Global elements
+	---------------------------------------------------------------------- */
+
+	mark {
+		font-weight: var(--font-weight-medium, bolder);
+		color: inherit;
+		background-color: transparent;
+	}
+
+	table {
+		inline-size: 100%;
+		font-size: var(--wp--preset--font-size--step-00, inherit);
+
+		a {
+			overflow-wrap: break-word;
+		}
+
+		.button {
+			--button-font-size: var(--wp--preset--font-size--step-00, inherit);
+		}
+
+		.amount {
+			font-weight: var(--font-weight-bold, bold);
+		}
+
+		td.woocommerce-orders-table__cell-order-actions a.button {
+			margin: 0.25em;
+		}
+
+		th.woocommerce-orders-table__header.woocommerce-orders-table__header-order-total,
+		th.woocommerce-table__product-table.product-total,
+		td.woocommerce-table__product-total.product-total,
+		td:has(.woocommerce-Price-amount) {
+			text-align: end;
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	2.1. Dashboard (My Account homepage)
+	---------------------------------------------------------------------- */
+
+	/* &.woocommerce-dashboard {
+	} */
+
+	/* ----------------------------------------------------------------------
+	2.2. Orders
+	---------------------------------------------------------------------- */
+
+	&.woocommerce-orders {
+		.woocommerce-MyAccount-content:has(> table) {
+			container: table-container / inline-size;
+		}
+
+		@container table-container (width <= 40rem) {
+			table {
+				thead {
+					display: none;
+				}
+
+				tr {
+					display: block;
+				}
+
+				tbody > tr + tr {
+					margin-block-start: var(--flow-space, 1em);
+				}
+
+				:is(th, td) {
+					display: block;
+					text-align: end;
+
+					&::before {
+						float: left;
+						content: attr(data-title) ": ";
+					}
+
+					&.woocommerce-orders-table__cell-order-actions::before {
+						content: "";
+					}
+				}
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	2.3. Orders → View Order
+	---------------------------------------------------------------------- */
+
+	/* &.woocommerce-view-order {
+	} */
+
+	/* ----------------------------------------------------------------------
+	2.4. Downloads
+	---------------------------------------------------------------------- */
+
+	/* &.woocommerce-downloads {
+	} */
+
+	/* ----------------------------------------------------------------------
+	2.5. Account Details (Edit Account & Change Password)
+	---------------------------------------------------------------------- */
+
+	/* &.woocommerce-edit-account {
+	} */
+
+	/* ----------------------------------------------------------------------
+	2.6. Addresses (Edit Address)
+	---------------------------------------------------------------------- */
+
+	&.woocommerce-edit-address {
+		a.edit {
+			display: inline-block;
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	2.7. Payment Methods
+	---------------------------------------------------------------------- */
+
+	/* &.woocommerce-payment-methods {
+	} */
+}
