@@ -1,0 +1,93 @@
+/* ======================================================================
+gravityforms/form
+---
+Source:          URL
+Block Reference: URL
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
+/* Selector is repeated to increase specificity to override GF styles */
+.gform_wrapper.gform_wrapper {
+	/* Hide the required field legend */
+	.gform_required_legend {
+		display: none;
+	}
+
+	/* Hide the required asterisk */
+	.gfield_required_asterisk {
+		display: none;
+	}
+
+	.gform-body + .gform-footer:has(> :not([type="hidden"])) {
+		margin-block-start: var(--flow-space, 1em);
+	}
+
+	.gfield_description,
+	.gfield_validation_message {
+		font-size: var(--font-size-base, inherit);
+	}
+
+	&.gravity-theme {
+		.gform_fields {
+			row-gap: var(--gutter, 1em);
+			column-gap: 0; /* This avoid overflowing issues with GF default grid-template-columns */
+		}
+
+		/* Revert GF styles */
+		.gfield textarea.large {
+			height: revert;
+		}
+
+		/* Revert GF styles */
+		@media only screen and (width <= 641px) {
+			/* stylelint-disable-next-line selector-not-notation -- To match GF selector specificity. */
+			input:not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+				min-height: revert !important;
+				line-height: inherit !important;
+			}
+
+			textarea {
+				line-height: inherit !important;
+			}
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	Error messages
+	---------------------------------------------------------------------- */
+
+	.gform_validation_errors {
+		color: var(--color-error, inherit);
+	}
+
+	.gform_submission_error {
+		font-size: inherit;
+		font-weight: inherit;
+
+		&:has(> [class*="icon"]) {
+			display: flex;
+			gap: 0.5em;
+			align-items: flex-start;
+		}
+
+		> [class*="icon"] {
+			flex-shrink: 0;
+			padding-block: 0.25em;
+		}
+	}
+
+	&:has(.gform_validation_errors) {
+		:is(label, input, textarea, .validation_message.gfield_validation_message) {
+			color: var(--color-error, inherit);
+		}
+
+		:is(input, textarea) {
+			outline-width: var(--focus-ring-width, 2px);
+			outline-style: solid;
+			outline-color: currentcolor;
+			outline-offset: 0;
+		}
+	}
+}
