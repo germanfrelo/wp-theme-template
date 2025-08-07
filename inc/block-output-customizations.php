@@ -38,3 +38,33 @@ function themeslug_customize_categories_dropdown( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block_core/categories', 'themeslug_customize_categories_dropdown', 10, 2 );
+
+
+/**
+ * WooCommerce - Hides the Cart Link's text visually.
+ *
+ * This function uses the 'render_block' filter to intercept the rendering of all blocks.
+ * It specifically targets the 'woocommerce/cart-link' block and adds a 'visually-hidden'
+ * class to the span element containing the cart text, making it accessible to screen readers but
+ * visually hidden.
+ *
+ * @param string $block_content The HTML content of the rendered block.
+ * @param array  $block         An array containing information about the block (blockName, attributes, etc.).
+ *
+ * @return string The modified HTML content of the block.
+ */
+function themeslug_modify_cart_link_block($block_content, $block) {
+	if ('woocommerce/cart-link' === $block['blockName']) {
+		// Finds the span with class 'wc-block-cart-link__text' and add 'visually-hidden'.
+		$block_content = preg_replace(
+			'/(<span class="wc-block-cart-link__text">)/',
+			'$1<span class="visually-hidden">',
+			$block_content
+		);
+		// Ensures the closing 'span' is also correct.
+		$block_content = str_replace('<span class="wc-block-cart-link__text"><span class="visually-hidden">', '<span class="wc-block-cart-link__text visually-hidden">', $block_content);
+
+	}
+	return $block_content;
+}
+// add_filter('render_block', 'themeslug_modify_cart_link_block', 10, 2);

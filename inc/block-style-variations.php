@@ -14,13 +14,13 @@
  */
 function themeslug_register_block_style_variations() {
 	register_block_style(
-		['core/button', 'core/read-more'], [
+		['core/button', 'core/read-more', 'woocommerce/product-button'], [
 			'name'  => 'outlined',
 			'label' => __( 'Outlined', 'themeslug' )
 		]
 	);
 	register_block_style(
-		['core/button', 'core/read-more'], [
+		['core/button', 'core/read-more', 'woocommerce/product-button'], [
 			'name'  => 'plain',
 			'label' => __( 'Plain', 'themeslug' )
 		]
