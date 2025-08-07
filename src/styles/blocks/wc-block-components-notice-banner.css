@@ -1,0 +1,38 @@
+/* =======================================================================================
+WooCommerce - Block - Components - Notice Banner
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/base/components/notice-banner
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wc-block-components-notice-banner {
+	&:has(> svg + .wc-block-components-notice-banner__content) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2ch;
+
+		> * {
+			margin: 0;
+		}
+
+		> .wc-block-components-notice-banner__content {
+			flex-grow: 1;
+			flex-basis: 80%;
+		}
+	}
+
+	.wc-block-components-notice-banner__content:has(> .wc-forward:only-child) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2ch;
+		align-items: center;
+		justify-content: space-between;
+
+		> * {
+			margin: 0;
+		}
+	}
+}

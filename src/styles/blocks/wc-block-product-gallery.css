@@ -1,0 +1,21 @@
+/* =======================================================================================
+WooCommerce - Block - Product Gallery
+---
+Source:
+- https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce/client/blocks/assets/js/blocks/product-gallery
+---
+Notes:
+- Use CSS custom properties to customize most of this block and its parts.
+======================================================================================= */
+
+.wp-block-woocommerce-product-gallery.wc-block-product-gallery {
+	/* Change default WC value */
+	.wc-block-product-gallery-large-image .wc-block-components-product-image img {
+		object-fit: cover !important;
+	}
+
+	.wc-block-woocommerce-product-gallery-large-image__image,
+	.wc-block-product-gallery-thumbnails__thumbnail__image {
+		border-radius: var(--radius-3);
+	}
+}
