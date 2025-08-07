@@ -1,0 +1,188 @@
+/* ======================================================================
+COMPONENT TOKENS
+
+This file contains design tokens (CSS custom properties) for specific
+components and blocks. These tokens define the individual styles for
+elements like buttons, cards, or form fields.
+
+Component tokens should always reference the system tokens defined in
+the 'tokens-system.css' file to maintain consistency. This creates a
+clear hierarchy where global styles can be updated in one place and
+automatically propagate to all components.
+
+Examples:
+--button-color-bg: var(--color-primary);
+--button-color-text: var(--color-on-primary);
+
+Reference: https://m3.material.io/foundations/design-tokens/overview
+====================================================================== */
+
+:root {
+	/* Block - Query Pagination */
+	--block-query-pag-align-main-axis: center;
+	--block-query-pag-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-link-line: none;
+
+	/* Block - Query Pagination Numbers */
+	--block-query-pag-number-border-block-end-width: 1px;
+	--block-query-pag-number-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-border-style: solid;
+	--block-query-pag-number-border-width: 1px;
+	--block-query-pag-number-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-number-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-number-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-number-color: var(--wp--preset--color--text-1);
+	--block-query-pag-number-current-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-current-color-bg: var(--wp--preset--color--primary-medium);
+	--block-query-pag-number-current-color: var(--wp--preset--color--surface-1);
+	--block-query-pag-number-min-size: 44px;
+	--block-query-pag-number-padding-block: 0.5em;
+	--block-query-pag-number-padding-inline: 0.5em;
+	--block-query-pag-numbers-gap: var(--wp--preset--spacing--xs-s);
+
+	/* Block - Query Pagination Next */
+	--block-query-pag-next-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-next-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-next-border-style: solid;
+	--block-query-pag-next-border-width: 1px;
+	--block-query-pag-next-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-next-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-next-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-next-color: var(--wp--preset--color--text-1);
+	--block-query-pag-next-flex-wrap: wrap-reverse; /* text above and icon below when wrapped */
+	--block-query-pag-next-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-next-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-next-min-size: 44px;
+
+	/* Block - Query Pagination Previous */
+	--block-query-pag-prev-border-color-hover: var(--wp--preset--color--primary-medium);
+	--block-query-pag-prev-border-color: var(--wp--preset--color--primary-medium);
+	--block-query-pag-prev-border-style: solid;
+	--block-query-pag-prev-border-width: 1px;
+	--block-query-pag-prev-color-bg-hover: var(--wp--preset--color--surface-2);
+	--block-query-pag-prev-color-bg: var(--wp--preset--color--surface-1);
+	--block-query-pag-prev-color-hover: var(--wp--preset--color--text-1);
+	--block-query-pag-prev-color: var(--wp--preset--color--text-1);
+	--block-query-pag-prev-gap-columns: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-prev-gap-rows: var(--wp--preset--spacing--xs-s);
+	--block-query-pag-prev-min-size: 44px;
+
+	/* Block - Search */
+	--block-search-button-icon-scale: 1.5;
+	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
+
+	/* Button */
+	--button-color-bg-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-color-bg: var(--wp--preset--color--primary-medium);
+	--button-border-color-on-active: var(--wp--preset--color--primary-darker-20);
+	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-border-color: var(--button-color-bg);
+	--button-border-radius: var(--wp--custom--radius--1);
+	--button-border-width: var(--wp--custom--stroke-weight--1);
+	--button-color: var(--wp--preset--color--surface-1);
+	--button-font-size: var(--wp--preset--font-size--xs);
+	--button-font-weight: var(--wp--custom--font-weight--500);
+	--button-line-height: var(--wp--custom--line-height--slim);
+	--button-padding-block: 0.875em;
+	--button-padding-inline: 1.25em;
+	--button-text-box: trim-both cap alphabetic;
+
+	/* Code (inline) */
+	--code-border-radius: 0.1875rem;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-padding-block: 0.1875em;
+	--code-padding-inline: 0.375em;
+
+	/* Code (block) */
+	--code-block-color-bg: var(--wp--preset--color--surface-2);
+	--code-block-padding: var(--gutter);
+
+	/*
+	Form Field
+	(input, textarea, select, button...)
+	*/
+	--field-color-bg: transparent;
+	--field-border-color: var(--border-color);
+	--field-border-radius: var(--wp--custom--radius--1);
+	--field-border-width: var(--wp--custom--stroke-weight--1);
+	--field-color: var(--wp--preset--color--text-1);
+	--field-font-weight: var(--font-weight-base);
+	--field-padding-block: 0.25em;
+	--field-padding-inline: 0.5rem;
+
+	/* Form Field - Checkbox */
+	--field-checkbox-size: 1.125em;
+
+	/* Form Field - Radio */
+	--field-radio-size: 1.125em;
+
+	/* Keyboard Input */
+	--kbd-border-radius: 0.1875rem;
+	--kbd-color-bg: white;
+	--kbd-color: inherit;
+	--kbd-font-size: 0.875em;
+	--kbd-line-height: 1;
+	--kbd-padding-block: 0.25em;
+	--kbd-padding-inline: 0.5em;
+	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
+	--kbd-stroke-weight: var(--wp--custom--stroke-weight--1);
+
+	/* Label */
+	--label-font-size: var(--wp--preset--font-size--s);
+	--label-font-weight: var(--font-weight-bold);
+	--label-line-height: var(--wp--custom--line-height--slim);
+
+	/* Legend */
+	--legend-font-size: var(--wp--preset--font-size--s);
+	--legend-font-weight: var(--font-weight-bold);
+	--legend-line-height: inherit;
+
+	/* Links */
+	--link-color: var(--wp--preset--color--primary-medium);
+	--link-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--link-color-on-focus: var(--wp--preset--color--primary-darker-10);
+
+	/* List */
+	--list-gap: 0.5em;
+	--list-indentation: 1.75ch;
+	--list-item-indentation: 0.5ch;
+	--list-item-marker-color: currentcolor;
+	--list-unordered-style-type: disc;
+
+	/* Quote */
+	--quote-border-left-width: var(--wp--custom--stroke-weight--3);
+	--quote-border-left-color: var(--wp--preset--color--primary-medium);
+	--quote-padding-inline: var(--wp--preset--spacing--m);
+
+	/* Reel */
+	--reel-items-gap: calc(var(--gutter) * 2);
+
+	/* Region */
+	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
+	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
+
+	/* Scrollbars */
+	--scrollbar-thumb-color: var(--wp--preset--color--primary-medium);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--text-1);
+	--scrollbar-track-color: transparent;
+	--scrollbar-track-color-hover: transparent;
+	--scrollbar-thumb-radius: 1rem;
+	--scrollbar-track-radius: 1rem;
+	--scrollbar-width-legacy: 0.5rem;
+
+	/* Separator */
+	--separator-color: var(--border-color);
+
+	/* Site Header */
+	--site-header-padding-top: var(--wp--preset--spacing--s);
+	--site-header-padding-bottom: var(--wp--preset--spacing--s);
+
+	/* Site Logo */
+	--site-logo-height: var(--wp--preset--spacing--l);
+
+	/* SVG */
+	--svg-height: 1cap;
+}

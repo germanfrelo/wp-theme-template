@@ -7,8 +7,8 @@ More info:
 - https://cube.fyi/css.html
 - https://piccalil.li/blog/cube-css/#css
 
-Almost all custom properties used are defined in 'variables.css',
-allowing us to customize globals with design tokens,
+Almost all custom properties used are defined in
+'theme.json', 'variables-system-tokens.css', and 'variables-component-tokens.css',
 rather than writing the same styles for *every* project.
 
 Selectors are grouped and sorted based on:
