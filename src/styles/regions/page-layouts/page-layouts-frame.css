@@ -1,15 +1,12 @@
 .page-layouts-frame {
-	.box {
-		--box-border-size: 0;
-		--box-padding: 0;
-
-		.box {
-			--box-padding: var(--gutter);
-			--color-surface: var(--wp--preset--color--surface-2);
+	.card {
+		.card__content {
+			padding: var(--gutter, 1em);
+			background-color: var(--wp--preset--color--surface-2, transparent);
 		}
-	}
 
-	.is-layout-flow > .frame + .box {
-		margin-block-start: 0;
+		&.is-layout-flow > .frame + .card__content {
+			margin-block-start: 0;
+		}
 	}
 }
