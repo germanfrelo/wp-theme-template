@@ -1,13 +1,13 @@
-name: Build and Deploy to Server
+name: Build and Deploy
 
 on:
   push:
     branches:
-      - dev # Trigger deployment only on push to 'dev' branch
+      - dev
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest # Use Ubuntu for faster and cost-effective deployments
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -26,7 +26,6 @@ jobs:
           npm ci
           # Run the script that compiles theme assets
           npm run build
-        # The directory where the commands should run (the theme's root)
         working-directory: ./
 
       - name: Setup SSH Key
