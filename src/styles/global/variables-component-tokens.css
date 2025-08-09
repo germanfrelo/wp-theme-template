@@ -1,25 +1,21 @@
 /* ======================================================================
-VARIABLES
+COMPONENT TOKENS
 
-- Custom Media Queries
-- Semantic Tokens
+This file contains design tokens (CSS custom properties) for specific
+components and blocks. These tokens define the individual styles for
+elements like buttons, cards, or form fields.
 
-Primitive Design Tokens are already defined in the 'theme.json' file.
+Component tokens should always reference the system tokens defined in
+the 'tokens-system.css' file to maintain consistency. This creates a
+clear hierarchy where global styles can be updated in one place and
+automatically propagate to all components.
+
+Examples:
+--button-color-bg: var(--color-primary);
+--button-color-text: var(--color-on-primary);
+
+Reference: https://m3.material.io/foundations/design-tokens/overview
 ====================================================================== */
-
-/* ----------------------------------------------------------------------
-Custom Media Queries
-
-Requisites:
-- PostCSS Custom Media plugin (https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media)
----------------------------------------------------------------------- */
-
-@custom-media --wp-default-navigation-breakpoint (width >= 600px);
-@custom-media --navigation-breakpoint (width >= 65rem);
-
-/* ----------------------------------------------------------------------
-Semantic Tokens
----------------------------------------------------------------------- */
 
 :root {
 	/* Block - Query Pagination */
@@ -77,10 +73,6 @@ Semantic Tokens
 	--block-search-button-icon-scale: 1.5;
 	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
 
-	/* Border */
-	--border-color: currentcolor;
-	--border: var(--wp--custom--stroke-weight--1, thin) solid var(--border-color, currentcolor);
-
 	/* Button */
 	--button-color-bg-on-active: var(--wp--preset--color--primary-darker-20);
 	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
@@ -108,11 +100,6 @@ Semantic Tokens
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
 
-	/* Colors (not needed in the WP editor) */
-	--color-error: var(--color-danger-medium);
-	--color-surface: var(--wp--preset--color--surface-1);
-	--color-text: var(--wp--preset--color--text-1);
-
 	/*
 	Form Field
 	(input, textarea, select, button...)
@@ -131,40 +118,6 @@ Semantic Tokens
 
 	/* Form Field - Radio */
 	--field-radio-size: 1.125em;
-
-	/* Focus Rings */
-	--focus-ring-color: currentcolor;
-	--focus-ring-offset: 0.25lh;
-	--focus-ring-style: solid;
-	--focus-ring-width: 2px;
-
-	/* Font Families */
-	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
-	--font-family-headings: var(--wp--preset--font-family--merriweather);
-	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
-
-	/* Font Line Heights */
-	--font-line-height-base: var(--wp--custom--line-height--loose);
-	--font-line-height-h1: 1.05;
-	--font-line-height-h2: 1.1;
-	--font-line-height-h3: 1.15;
-	--font-line-height-h4: 1.2;
-	--font-line-height-h5: 1.25;
-	--font-line-height-h6: 1.3;
-
-	/* Font Sizes */
-	--font-size-base: var(--wp--preset--font-size--s);
-	--font-size-h1: var(--wp--preset--font-size--xxxl);
-	--font-size-h2: var(--wp--preset--font-size--xxl);
-	--font-size-h3: var(--wp--preset--font-size--xl);
-	--font-size-h4: var(--wp--preset--font-size--l);
-	--font-size-h5: var(--wp--preset--font-size--m);
-	--font-size-h6: var(--wp--preset--font-size--s);
-
-	/* Font Weights */
-	--font-weight-base: var(--wp--custom--font-weight--400);
-	--font-weight-bold: var(--wp--custom--font-weight--700);
-	--font-weight-headings: var(--wp--custom--font-weight--900);
 
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
@@ -199,13 +152,6 @@ Semantic Tokens
 	--list-item-marker-color: currentcolor;
 	--list-unordered-style-type: disc;
 
-	/* Measure */
-	--measure-content: var(--wp--style--global--content-size);
-	--measure-wide: var(--wp--style--global--wide-size);
-
-	/* Outlines */
-	--outline-error: 0.25rem solid var(--color-error, red);
-
 	/* Quote */
 	--quote-border-left-width: var(--wp--custom--stroke-weight--3);
 	--quote-border-left-color: var(--wp--preset--color--primary-medium);
@@ -239,8 +185,4 @@ Semantic Tokens
 
 	/* SVG */
 	--svg-height: 1cap;
-
-	/* Spacing */
-	--flow-space: var(--wp--style--block-gap, 1em);
-	--gutter: var(--wp--custom--root-padding-inline);
 }

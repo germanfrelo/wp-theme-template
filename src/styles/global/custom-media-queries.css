@@ -1,0 +1,11 @@
+/*
+CUSTOM MEDIA QUERIES
+
+Requisites:
+
+PostCSS Custom Media plugin installed and added to PostCSS config file (postcss.config.js).
+@link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
+*/
+
+@custom-media --wp-default-navigation-breakpoint (width >= 600px);
+@custom-media --navigation-breakpoint (width >= 65rem);

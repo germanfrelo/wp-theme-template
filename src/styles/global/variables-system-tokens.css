@@ -1,0 +1,75 @@
+/* ======================================================================
+SYSTEM TOKENS
+
+This file contains the foundational design tokens (CSS custom properties)
+that define the theme's core style. These tokens represent global design
+decisions for colors, typography, spacing, etc.
+
+These tokens typically reference primitive values, or reference tokens,
+which are set in the 'theme.json' file. They should not be hardcoded
+with hex values or pixel values.
+
+Examples:
+--color-primary: var(--wp--preset--color--blue);
+--color-on-primary: var(--wp--preset--color--white);
+
+All components in the theme should reference these system tokens.
+
+Reference: https://m3.material.io/foundations/design-tokens/overview
+====================================================================== */
+
+:root {
+	/* Border */
+	--border-color: currentcolor;
+	--border: var(--wp--custom--stroke-weight--1, thin) solid var(--border-color, currentcolor);
+
+	/* Colors */
+	--color-error: var(--color-danger-medium);
+	--color-surface: var(--wp--preset--color--surface-1);
+	--color-text: var(--wp--preset--color--text-1);
+
+	/* Focus Rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
+	/* Font Families */
+	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
+	--font-family-headings: var(--wp--preset--font-family--merriweather);
+	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
+
+	/* Font Line Heights */
+	--font-line-height-base: var(--wp--custom--line-height--loose);
+	--font-line-height-h1: 1.05;
+	--font-line-height-h2: 1.1;
+	--font-line-height-h3: 1.15;
+	--font-line-height-h4: 1.2;
+	--font-line-height-h5: 1.25;
+	--font-line-height-h6: 1.3;
+
+	/* Font Sizes */
+	--font-size-base: var(--wp--preset--font-size--s);
+	--font-size-h1: var(--wp--preset--font-size--xxxl);
+	--font-size-h2: var(--wp--preset--font-size--xxl);
+	--font-size-h3: var(--wp--preset--font-size--xl);
+	--font-size-h4: var(--wp--preset--font-size--l);
+	--font-size-h5: var(--wp--preset--font-size--m);
+	--font-size-h6: var(--wp--preset--font-size--s);
+
+	/* Font Weights */
+	--font-weight-base: var(--wp--custom--font-weight--400);
+	--font-weight-bold: var(--wp--custom--font-weight--700);
+	--font-weight-headings: var(--wp--custom--font-weight--900);
+
+	/* Measure */
+	--measure-content: var(--wp--style--global--content-size);
+	--measure-wide: var(--wp--style--global--wide-size);
+
+	/* Outlines */
+	--outline-error: 0.25rem solid var(--color-error, red);
+
+	/* Spacing */
+	--flow-space: var(--wp--style--block-gap, 1em);
+	--gutter: var(--wp--custom--root-padding-inline);
+}

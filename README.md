@@ -128,6 +128,7 @@ These are the theme's main CSS-related directories and files:
 │       ├── blocks/
 │       ├── compositions/
 │       ├── global/
+│       ├── regions/
 │       ├── utilities/
 │       └── global.css
 ├── postcss.config.js
@@ -161,14 +162,16 @@ src/styles/
 ├── blocks/
 │   ├── button.css
 │   ├── ...
-│   ├── wp-core-{block_slug}.css
+│   ├── wp-block-{block_slug}.css
 │   ├── ...
 │   ├── {plugin_slug}-{block_slug}.css
 │   └── ...
 ├── compositions/
 │   ├── cluster.css
 │   ├── flow.css
+│   ├── frame.css
 │   ├── grid.css
+│   ├── icon.css
 │   ├── reel.css
 │   ├── repel.css
 │   ├── sidebar.css
@@ -176,45 +179,45 @@ src/styles/
 │   ├── switcher.css
 │   └── wrapper.css
 ├── global/
+│   ├── custom-media-queries.css
 │   ├── global-styles.css
 │   ├── reset.css
-│   └── variables.css
+│   ├── variables-component-tokens.css
+│   └── variables-system-tokens.css
+├── regions/
+│   ├── ...
+│   ├── site-footer.css
+│   ├── site-header.css
+│   └── ...
 ├── utilities/
+│   ├── ...
 │   ├── region.css
+│   ├── text-align.css
+│   ├── text-wrap.css
 │   ├── visually-hidden.css
 │   └── ...
 └── global.css
 ```
 
-The structure follows the [CUBE CSS methodology](https://piccalil.li/blog/cube-css/) and [boilerplate](https://piccalil.li/blog/a-css-project-boilerplate/) previously mentioned.
+The structure is based on the [CUBE CSS methodology](https://piccalil.li/blog/cube-css/) and [boilerplate](https://piccalil.li/blog/a-css-project-boilerplate/) previously mentioned.
 
-The primary entry point is the **`global.css`** file:
-
-```css
-@import "global/reset.css";
-@import "global/variables.css";
-@import "global/global-styles.css";
-
-@import-glob 'compositions/*.css';
-@import-glob 'blocks/*.css';
-@import-glob 'utilities/*.css';
-```
-
-It uses `@import` rules (processed by PostCSS) to pull in all stylesheets that are organized in directories: **`blocks`**, **`compositions`**, **`global`**, and **`utilities`**.
+The primary entry point is the **`global.css`** file. It uses `@import` rules (processed by PostCSS) to pull in all stylesheets that are organized in directories.
 
 > [!IMPORTANT]
-> **The specific import order is important for correct CSS specificity.**
+> **The specific import order is critical for correct CSS specificity.**
 
 > [!NOTE]
 > Only stylesheets in `global/` are imported explicitly and in a specific order. Stylesheets in the other directories are all imported in default (alphabetical) order, thanks to the `import-glob` PostCSS plugin. This means that **any new `.css` file created in these directories is automatically imported**.
 
 Some CSS files probably don't need to be changed, whereas other do:
 
-- `global/reset.css`: Rarely. It contains useful project-agnostic reset styles.
-- `global/variables.css`: Always
+- `global/reset.css`: Unlikely. It contains useful project-agnostic reset styles.
+- `global/variables-system-tokens.css`: Always.
+- `global/variables-component-tokens.css`: Always.
 - `global/global-styles.css`: Always.
-- `compositions/`: Rarely. It contains a bunch of **predefined, project-agnostic layouts from [Every Layout](https://every-layout.dev/)**.
+- `compositions/`: Unlikely. It contains a bunch of **predefined, project-agnostic compositional layouts from [Every Layout](https://every-layout.dev/)**.
 - `blocks/`: Always.
+- `regions/`: Always.
 - `utilities/`: Maybe.
 
 ### Automated compilation
