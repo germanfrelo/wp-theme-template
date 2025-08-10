@@ -1,6 +1,11 @@
 # themeslug
 
-> Get a quick start on building modern WordPress websites with this starter block theme template. It comes with a curated and useful set of basic presets.
+> Get a quick start on building modern WordPress websites with this starter block theme template. It includes a curated and useful set of basic presets.
+
+> [!WARNING]
+> This is a personal **work-in-progress** project and is subject to significant changes. If you are going to use it, it is **crucial** that you carefully review and adapt the code to fit your project's requirements.
+>
+> There are no current plans to release it on the official WordPress.org themes directory.
 
 ## Development
 
@@ -109,9 +114,14 @@ define( 'MEDIA_TRASH' , true );
 
 Once your local site is set up:
 
-1. Clone this theme repository into the `/wp-content/themes/` directory of your local site.
-2. `cd` to the theme directory using your terminal.
-3. Install the dependencies with `npm install`.
+1. **Clone this theme repository** into the `/wp-content/themes/` directory of your local site.
+2. **`cd` to the theme directory** using your terminal.
+3. **Find and replace placeholders.** Use the global search and replace feature in your code editor to replace all instances of the following placeholders with your own project's information:
+
+    - `themeauthor`
+    - `themename`
+    - `themeslug`
+4. **Install the dependencies** with `npm install`.
 
 ## CSS
 
@@ -241,7 +251,7 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 
 ## Local Development Workflow
 
-Once you have followed the local site and theme setups, and installed the dependencies, you can now start developing.
+Once you have followed the [Local Site Setup](#local-site-setup) and the [Theme Setup](#theme-setup), you can now start developing.
 
 Open your terminal in the theme directory and run:
 

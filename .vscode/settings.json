@@ -29,15 +29,6 @@
 		"source.sortImports": "explicit"
 	},
 
-	// Code Spell Checker
-	"cSpell.words": [
-		"ibm-plex-sans",
-		"jetbrains-mono",
-		"merriweather",
-		"postcss",
-		"themeslug"
-	],
-
 	// pucelle.vscode-css-navigation
 	"CSSNavigation.enableClassNameDefinitionDiagnostic": false,
 	"CSSNavigation.enableClassNameReferenceDiagnostic": false
