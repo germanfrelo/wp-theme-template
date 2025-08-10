@@ -128,16 +128,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--h5-font-weight: var(--wp--custom--font-weight--black);
 	--h6-font-weight: var(--wp--custom--font-weight--black);
 
-	/* Keyboard Input */
-	--kbd-border-radius: 0.1875rem;
-	--kbd-color-bg: white;
-	--kbd-color: inherit;
-	--kbd-line-height: 1;
-	--kbd-padding-block: 0.25em;
-	--kbd-padding-inline: 0.5em;
-	--kbd-stroke-color: color-mix(in srgb, currentcolor, transparent 75%);
-	--kbd-stroke-weight: var(--wp--custom--stroke-weight--1);
-
 	/* Label */
 	--label-font-size: var(--wp--preset--font-size--s);
 	--label-font-weight: var(--font-weight-bold);
