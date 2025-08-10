@@ -52,13 +52,12 @@ Variables:
 }
 
 /* Max 2 items, so anything greater than 2 is full width */
-:is(.switcher-2, .switcher:is(:not([data-limit]), [data-limit="2"])) > :nth-last-child(n + 3),
-:is(.switcher-2, .switcher:is(:not([data-limit]), [data-limit="2"])) > :nth-last-child(n + 3) ~ * {
+:is(.switcher-2, .switcher:is(:not([data-limit]), [data-limit="2"]))
+	> :is(:nth-last-child(n + 3), :nth-last-child(n + 3) ~ *) {
 	flex-basis: 100%;
 }
 
 /* Max 3 items, so anything greater than 3 is full width */
-:is(.switcher-3, .switcher[data-limit="3"]) > :nth-last-child(n + 4),
-:is(.switcher-3, .switcher[data-limit="3"]) > :nth-last-child(n + 4) ~ * {
+:is(.switcher-3, .switcher[data-limit="3"]) > :is(:nth-last-child(n + 4), :nth-last-child(n + 4) ~ *) {
 	flex-basis: 100%;
 }
