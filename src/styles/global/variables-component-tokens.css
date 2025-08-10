@@ -182,7 +182,4 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Site Logo */
 	--site-logo-height: var(--wp--preset--spacing--l);
-
-	/* SVG */
-	--svg-height: 1cap;
 }
