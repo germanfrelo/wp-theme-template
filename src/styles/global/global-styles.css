@@ -317,11 +317,6 @@ ins {
 svg {
 	flex-shrink: 0;
 
-	&:not([class]) {
-		inline-size: auto;
-		block-size: var(--svg-height, auto);
-	}
-
 	&[role="img"][width][height] {
 		inline-size: revert;
 		block-size: revert;
