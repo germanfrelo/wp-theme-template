@@ -32,6 +32,12 @@ function themeslug_register_block_style_variations() {
 		]
 	);
 	register_block_style(
+		'core/heading', [
+			'name'  => 'bottom-line',
+			'label' => __( 'Bottom line', 'themeslug' )
+		]
+	);
+	register_block_style(
 		'core/list', [
 			'name'  => 'unordered-checkmark',
 			'label' => __( 'Unordered Checkmark', 'themeslug' )
