@@ -118,10 +118,9 @@ Once your local site is set up:
 1. **Clone this theme repository** into the `/wp-content/themes/` directory of your local site.
 2. **`cd` to the theme directory** using your terminal.
 3. **Find and replace placeholders.** Use the global search and replace feature in your code editor to replace all instances of the following placeholders with your own project's information:
-
-    - `themeauthor`
-    - `themename`
-    - `themeslug`
+   - `themeauthor`
+   - `themename`
+   - `themeslug`
 4. **Install the dependencies** with `npm install`.
 
 ## CSS
