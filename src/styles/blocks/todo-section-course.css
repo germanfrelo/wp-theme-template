@@ -64,10 +64,6 @@ Info Box
 	position: sticky;
 	inset-block-end: 1%;
 	z-index: 3;
-
-	.wp-block-button {
-		--button-font-size: 1.25rem;
-	}
 }
 
 .page-course #seccion-añadir-a-carrito:target {
