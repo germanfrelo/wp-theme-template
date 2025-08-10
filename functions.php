@@ -13,6 +13,9 @@ require_once get_theme_file_path( 'inc/remove-wp-defaults.php' );
 // Custom Blocks
 require_once get_theme_file_path( 'inc/custom-blocks.php' );
 
+// Block variations
+require_once get_theme_file_path( 'inc/block-variations.php' );
+
 // Block style variations
 require_once get_theme_file_path( 'inc/block-style-variations.php' );
 
