@@ -1,0 +1,24 @@
+/* =======================================================================================
+WP BLOCK HEADING
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/heading
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/heading
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+======================================================================================= */
+
+.wp-block-heading {
+	/* Block Style Variation */
+	&.is-style-bottom-line {
+		&::after {
+			display: block;
+			inline-size: 5ch;
+			block-size: 0.125em;
+			margin-block-start: 0.25em;
+			content: "";
+			background-color: var(--heading-bottom-line-color, currentcolor);
+		}
+	}
+}
