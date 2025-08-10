@@ -4,7 +4,8 @@
 
 > [!WARNING]
 > This is a personal **work-in-progress** project and is subject to significant changes. If you are going to use it, it is **crucial** that you carefully review and adapt the code to fit your project's requirements.
->
+
+> [!IMPORTANT]
 > There are no current plans to release it on the official WordPress.org themes directory.
 
 ## Development
