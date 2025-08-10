@@ -123,6 +123,16 @@
 			]
 		},
 		"custom": {
+			"corner-radius": {
+				"0": "0rem",
+				"1": "0.125rem",
+				"2": "0.25rem",
+				"3": "0.5rem",
+				"4": "1rem",
+				"5": "2rem",
+				"6": "4rem",
+				"round": "calc(9999px * 1rem)"
+			},
 			"font-weight": {
 				"400": "400",
 				"500": "500",
@@ -132,16 +142,6 @@
 			"line-height": {
 				"slim": "1.2",
 				"loose": "1.7"
-			},
-			"radius": {
-				"0": "0rem",
-				"1": "0.125rem",
-				"2": "0.25rem",
-				"3": "0.5rem",
-				"4": "1rem",
-				"5": "2rem",
-				"6": "4rem",
-				"round": "calc(9999px * 1rem)"
 			},
 			"root-padding-inline": "var:preset|spacing|s-m",
 			"shadow": {
