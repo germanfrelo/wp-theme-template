@@ -235,22 +235,25 @@ strong {
 }
 
 a:where(:any-link) {
-	color: var(--link-color, unset);
+	color: var(--link-color, revert);
 	text-decoration-thickness: from-font;
+	text-decoration-color: var(--link-color-underline, currentcolor);
 	text-decoration-skip-ink: none;
 	text-underline-position: from-font;
 
 	&:hover {
-		color: var(--link-color-on-hover, unset);
+		color: var(--link-color-on-hover, var(--link-color));
+		text-decoration-color: var(--link-color-underline-on-hover, currentcolor);
 	}
 
 	&:focus-visible {
-		color: var(--link-color-on-focus, unset);
+		color: var(--link-color-on-focus, var(--link-color));
+		text-decoration-color: var(--link-color-underline-on-focus, currentcolor);
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--wp--custom--transition--duration, 0);
-		transition-property: color, background-color, border-color;
+		transition-property: color, background-color, border-color, text-decoration-color;
 	}
 }
 
