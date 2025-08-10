@@ -31,7 +31,7 @@ Variables:
 	Default:     wrap
 ====================================================================== */
 
-:is(.switcher, .switcher-2, .switcher-3) {
+:is(.switcher, .switcher-2, .switcher-3, .switcher-4) {
 	display: flex;
 	flex-wrap: var(--switcher-wrap, wrap);
 	gap: var(--switcher-gap, var(--gutter, 1em));
@@ -59,5 +59,10 @@ Variables:
 
 /* Max 3 items, so anything greater than 3 is full width */
 :is(.switcher-3, .switcher[data-limit="3"]) > :is(:nth-last-child(n + 4), :nth-last-child(n + 4) ~ *) {
+	flex-basis: 100%;
+}
+
+/* Max 4 items, so anything greater than 4 is full width */
+:is(.switcher-4, .switcher[data-limit="4"]) > :is(:nth-last-child(n + 5), :nth-last-child(n + 5) ~ *) {
 	flex-basis: 100%;
 }
