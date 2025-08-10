@@ -124,14 +124,16 @@
 		},
 		"custom": {
 			"corner-radius": {
-				"0": "0rem",
-				"1": "0.125rem",
-				"2": "0.25rem",
-				"3": "0.5rem",
-				"4": "1rem",
-				"5": "2rem",
-				"6": "4rem",
-				"round": "calc(9999px * 1rem)"
+				"none": "0rem",
+				"xxs": "0.125rem",
+				"xs": "0.25rem",
+				"s": "0.5rem",
+				"m": "0.75rem",
+				"l": "1rem",
+				"xl": "1.5rem",
+				"xxl": "2rem",
+				"xxxl": "3rem",
+				"full": "calc(9999px)"
 			},
 			"font-weight": {
 				"400": "400",
