@@ -169,7 +169,9 @@
 		},
 		"shadow": {
 			"defaultPresets": false,
-			"presetsGenerator": "https://open-props.style/#shadows",
+			"meta": {
+				"presetsGenerator": "https://open-props.style/#shadows"
+			},
 			"presets": [
 				{
 					"name": "elevation-1",
@@ -191,7 +193,9 @@
 		"spacing": {
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
-			"spacingSizesGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12",
+			"meta": {
+				"spacingSizesGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12"
+			},
 			"spacingSizes": [
 				{
 					"name": "3XS",
@@ -494,7 +498,9 @@
 					]
 				}
 			],
-			"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12",
+			"meta": {
+				"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12"
+			},
 			"fontSizes": [
 				{
 					"name": "XXXL",
