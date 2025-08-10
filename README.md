@@ -1,5 +1,7 @@
 # themeslug
 
+> Get a quick start on building modern WordPress websites with this starter block theme template. It comes with a curated and useful set of basic presets.
+
 ## Development
 
 **Table of Contents**:
@@ -144,14 +146,14 @@ This file is primarily used to:
 - Register **custom templates**, **template parts**, and **patterns**.
 
 > [!IMPORTANT]
-> **It's _not_ used for applying styles.**
+> **It's *not* used for applying styles.**
 
 ### `style.css`
 
 WordPress requires this file solely for theme registration metadata, such as the theme's name, author and version.
 
 > [!IMPORTANT]
-> This file is for metadata only. **It's _not_ enqueued by the theme. Do _not_ use it for adding any CSS.**
+> This file is for metadata only. **It's *not* enqueued by the theme. Do *not* use it for adding any CSS.**
 
 ### Theme's main styles
 
