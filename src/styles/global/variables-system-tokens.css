@@ -50,8 +50,8 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Font Sizes */
 	--font-size-base: var(--wp--preset--font-size--s);
-	--font-size-h1: var(--wp--preset--font-size--xxxl);
-	--font-size-h2: var(--wp--preset--font-size--xxl);
+	--font-size-h1: var(--wp--preset--font-size--3-xl);
+	--font-size-h2: var(--wp--preset--font-size--2-xl);
 	--font-size-h3: var(--wp--preset--font-size--xl);
 	--font-size-h4: var(--wp--preset--font-size--l);
 	--font-size-h5: var(--wp--preset--font-size--m);

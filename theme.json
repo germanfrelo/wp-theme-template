@@ -125,14 +125,14 @@
 		"custom": {
 			"corner-radius": {
 				"none": "0rem",
-				"xxs": "0.125rem",
+				"2-xs": "0.125rem",
 				"xs": "0.25rem",
 				"s": "0.5rem",
 				"m": "0.75rem",
 				"l": "1rem",
 				"xl": "1.5rem",
-				"xxl": "2rem",
-				"xxxl": "3rem",
+				"2-xl": "2rem",
+				"3-xl": "3rem",
 				"full": "calc(9999px)"
 			},
 			"font-weight": {
@@ -505,13 +505,13 @@
 			},
 			"fontSizes": [
 				{
-					"name": "XXXL",
-					"slug": "xxxl",
+					"name": "3XL",
+					"slug": "3-xl",
 					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
 				},
 				{
-					"name": "XXL",
-					"slug": "xxl",
+					"name": "2XL",
+					"slug": "2-xl",
 					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
 				},
 				{
