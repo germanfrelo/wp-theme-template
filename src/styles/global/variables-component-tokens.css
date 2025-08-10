@@ -84,7 +84,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--button-border-width: var(--wp--custom--stroke-weight--1);
 	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--xs);
-	--button-font-weight: var(--wp--custom--font-weight--500);
+	--button-font-weight: var(--wp--custom--font-weight--medium);
 	--button-line-height: var(--wp--custom--line-height--slim);
 	--button-padding-block: 0.875em;
 	--button-padding-inline: 1.25em;
@@ -118,6 +118,15 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Form Field - Radio */
 	--field-radio-size: 1.125em;
+
+	/* Headings */
+	--heading-font-weight: var(--wp--custom--font-weight--black);
+	--h1-font-weight: var(--wp--custom--font-weight--black);
+	--h2-font-weight: var(--wp--custom--font-weight--black);
+	--h3-font-weight: var(--wp--custom--font-weight--black);
+	--h4-font-weight: var(--wp--custom--font-weight--black);
+	--h5-font-weight: var(--wp--custom--font-weight--black);
+	--h6-font-weight: var(--wp--custom--font-weight--black);
 
 	/* Keyboard Input */
 	--kbd-border-radius: 0.1875rem;
@@ -182,4 +191,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Site Logo */
 	--site-logo-height: var(--wp--preset--spacing--l);
+
+	/* Table */
+	--table-cell-header-weight: var(--font-weight-bold);
+	--table-foot-font-weight: var(--font-weight-bold);
+	--table-head-head-weight: var(--font-weight-bold);
 }

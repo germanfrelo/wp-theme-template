@@ -72,37 +72,43 @@ h4,
 h5,
 h6 {
 	font-family: var(--font-family-headings, inherit);
-	font-weight: var(--font-weight-headings, bold);
+	font-weight: var(--heading-font-weight, bold);
 	overflow-wrap: break-word;
 }
 
 h1 {
 	font-size: var(--font-size-h1, 2rem);
+	font-weight: var(--h1-font-weight, bold);
 	line-height: var(--font-line-height-h1, normal);
 }
 
 h2 {
 	font-size: var(--font-size-h2, 1.5rem);
+	font-weight: var(--h2-font-weight, bold);
 	line-height: var(--font-line-height-h2, normal);
 }
 
 h3 {
 	font-size: var(--font-size-h3, 1.17rem);
+	font-weight: var(--h3-font-weight, bold);
 	line-height: var(--font-line-height-h3, normal);
 }
 
 h4 {
 	font-size: var(--font-size-h4, 1rem);
+	font-weight: var(--h4-font-weight, bold);
 	line-height: var(--font-line-height-h4, normal);
 }
 
 h5 {
 	font-size: var(--font-size-h5, 0.83rem);
+	font-weight: var(--h5-font-weight, bold);
 	line-height: var(--font-line-height-h5, normal);
 }
 
 h6 {
 	font-size: var(--font-size-h6, 0.67rem);
+	font-weight: var(--h5-font-weight, bold);
 	line-height: var(--font-line-height-h6, normal);
 }
 
@@ -127,7 +133,7 @@ dl {
 }
 
 dt {
-	font-weight: var(--font-weight-bold, bolder);
+	font-weight: var(--dt-font-weight, inherit);
 }
 
 dd {
@@ -348,20 +354,20 @@ td {
 	border-width: var(--table-border, 1px);
 }
 
+th {
+	font-weight: var(--table-cell-header-font-weight, inherit);
+}
+
 thead {
+	font-weight: var(--table-head-font-weight, inherit);
 	background-color: var(--table-head-color-bg, transparent);
 	border-block-end: var(--table-head-border, 3px) solid;
 }
 
 tfoot {
+	font-weight: var(--table-foot-font-weight, inherit);
 	background-color: var(--table-foot-color-bg, transparent);
 	border-block-start: var(--table-foot-border, 3px) solid;
-}
-
-th,
-thead,
-tfoot {
-	font-weight: var(--font-weight-bold, bolder);
 }
 
 /* ======================================================================
