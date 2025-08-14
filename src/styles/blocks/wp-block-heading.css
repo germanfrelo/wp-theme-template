@@ -1,0 +1,66 @@
+/* ======================================================================
+WP BLOCK HEADING
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/heading
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/heading
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
+.wp-block-heading {
+	/* ----------------------------------------------------------------------
+	Style Variations
+	---------------------------------------------------------------------- */
+
+	&.is-style-3xl {
+		font-size: var(--wp--preset--font-size--xxxl);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.1;
+	}
+
+	&.is-style-2xl {
+		font-size: var(--wp--preset--font-size--xxl);
+		font-weight: var(--wp--custom--font-weight--light);
+		line-height: 1.2;
+	}
+
+	&.is-style-xl {
+		font-size: var(--wp--preset--font-size--xl);
+		font-weight: var(--wp--custom--font-weight--light);
+		line-height: 1.3;
+	}
+
+	&.is-style-l {
+		font-size: var(--wp--preset--font-size--l);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.4;
+	}
+
+	&.is-style-m {
+		font-size: var(--wp--preset--font-size--m);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.5;
+	}
+
+	&.is-style-s {
+		font-size: var(--wp--preset--font-size--s);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.5;
+	}
+
+	&.is-style-xs {
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.5;
+	}
+
+	&.is-style-small-uppercase {
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: var(--wp--custom--font-weight--regular);
+		line-height: 1.5;
+		text-transform: uppercase;
+		letter-spacing: var(--wp--custom--letter-spacing--wider, inherit);
+	}
+}
