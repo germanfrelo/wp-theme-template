@@ -92,13 +92,15 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
-	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
-	--code-padding-block: 0.1875em;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 95%);
 	--code-padding-inline: 0.375em;
 
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
+
+	/* Description List */
+	--dt-font-weight: var(--wp--custom--font-weight--bold);
 
 	/*
 	Form Field
