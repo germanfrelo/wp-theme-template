@@ -157,7 +157,7 @@
 				"4": "0.5em"
 			},
 			"transition": {
-				"duration": "0.25s",
+				"duration": "0.15s",
 				"timing-function": "ease"
 			}
 		},
