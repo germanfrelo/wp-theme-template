@@ -1,0 +1,34 @@
+/* ======================================================================
+Utility: has-background
+---
+Applies a visually balanced padding to elements with a background color,
+preventing text from touching the container's edges.
+
+This rule improves upon WordPress's default static styles by carefully
+calculating vertical padding to compensate for line-height, ensuring the
+perceived vertical and horizontal spacing are visually identical. It's
+intended for any element with the '.has-background' class, which
+WordPress adds when a background color is applied in the editor.
+---
+Configuration:
+
+--block-bg-padding
+    Description: Overrides the base padding value used in the calculation.
+    Type:        A valid CSS length value.
+    Default:     1.25em
+====================================================================== */
+
+/*
+These selectors are intentionally different to match the specificity of WordPress's default styles.
+@see https://github.com/search?q=repo%3AWordPress%2Fgutenberg+%22block-bg-padding%22&type=code
+*/
+.has-background {
+	&:where(p),
+	&:where(.wp-block-columns),
+	&:where(.wp-block-list),
+	&:where(.wp-block-preformatted),
+	&:is(h1, h2, h3, h4, h5, h6) {
+		padding: var(--block-bg-padding, 1.25em);
+		padding-block: calc(var(--block-bg-padding, 1.25em) - ((1lh - 1em) / 2));
+	}
+}
