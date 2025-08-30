@@ -397,14 +397,6 @@
 						},
 						{
 							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "500",
 							"fontStyle": "normal",
 							"src": [
@@ -413,26 +405,10 @@
 						},
 						{
 							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
 							"fontWeight": "700",
 							"fontStyle": "normal",
 							"src": [
 								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-italic.woff2"
 							]
 						}
 					]
@@ -449,30 +425,6 @@
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
 							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-italic.woff2"
-							]
 						}
 					]
 				},
@@ -487,14 +439,6 @@
 							"fontStyle": "normal",
 							"src": [
 								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"Merriweather\"",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
 							]
 						}
 					]
