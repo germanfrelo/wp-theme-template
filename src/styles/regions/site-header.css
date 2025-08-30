@@ -40,7 +40,7 @@ header.wp-block-template-part {
 	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default.
 	*/
 
-	/* stylelint-disable no-unknown-custom-media -- Defined in variables.css file. */
+	/* stylelint-disable no-unknown-custom-media -- Defined in custom-media-queries.css file. */
 	/* stylelint-disable selector-not-notation -- To match specificity of default WP styles. */
 
 	/* Override styles at WP's default breakpoint. */
