@@ -383,32 +383,16 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"name": "IBM Plex Sans",
-					"slug": "ibm-plex-sans",
-					"fontFamily": "\"IBM Plex Sans\", sans-serif",
+					"name": "Atkinson Hyperlegible Next",
+					"slug": "atkinson-hyperlegible-next",
+					"fontFamily": "\"Atkinson Hyperlegible Next\", sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "400",
+							"fontFamily": "\"Atkinson Hyperlegible Next\"",
+							"fontWeight": "300 800",
 							"fontStyle": "normal",
 							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-normal.woff2"
+								"file:./assets/fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-variable.woff2"
 							]
 						}
 					]
