@@ -391,6 +391,7 @@
 							"fontFamily": "\"Atkinson Hyperlegible Next\"",
 							"fontWeight": "300 800",
 							"fontStyle": "normal",
+							"fontDisplay": "fallback",
 							"src": [
 								"file:./assets/fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-variable.woff2"
 							]
@@ -406,6 +407,7 @@
 							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
+							"fontDisplay": "fallback",
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
 							]
@@ -421,6 +423,7 @@
 							"fontFamily": "\"Merriweather\"",
 							"fontWeight": "900",
 							"fontStyle": "normal",
+							"fontDisplay": "fallback",
 							"src": [
 								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
 							]
