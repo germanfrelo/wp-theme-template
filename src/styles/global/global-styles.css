@@ -56,7 +56,7 @@ body {
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--font-line-height-base, 1.5);
 	color: var(--color-text, CanvasText);
-	accent-color: var(--wp--preset--color--primary-medium, auto);
+	accent-color: var(--field-accent-color, auto);
 	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }

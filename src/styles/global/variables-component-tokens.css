@@ -82,6 +82,8 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--custom--corner-radius--2-xs);
 	--button-border-width: var(--wp--custom--stroke-weight--1);
+	--button-color-on-active: var(--wp--preset--color--surface-1);
+	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--xs);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
@@ -104,11 +106,11 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	Form Field
 	(input, textarea, select, button...)
 	*/
+	/* --field-accent-color: ; */
 	--field-color-bg: transparent;
 	--field-border-color: var(--border-color);
 	--field-border-radius: var(--wp--custom--corner-radius--2-xs);
 	--field-border-width: var(--wp--custom--stroke-weight--1);
-	--field-color: var(--wp--preset--color--text-1);
 	--field-font-weight: var(--font-weight-base);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;

@@ -28,6 +28,19 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--color-surface: var(--wp--preset--color--surface-1);
 	--color-text: var(--wp--preset--color--text-1);
 
+	/* --color-surface: var(--wp--preset--color--white);
+	--color-on-surface: var(--wp--preset--color--desaturated-olive);
+	--color-surface-container: ;
+	--color-surface-container-high: ;
+	--color-on-surface-container: ;
+	--color-on-surface-container-high: ;
+	--color-primary-1: var(--wp--preset--color--light-green);
+	--color-on-primary-1: var(--wp--preset--color--desaturated-olive);
+	--color-primary-2: var(--wp--preset--color--desaturated-olive);
+	--color-on-primary-2: var(--wp--preset--color--white);
+	--color-on-primary-2-alt: var(--wp--preset--color--light-green);
+	--color-error: var(--wp--preset--color--dark-red); */
+
 	/* Focus Rings */
 	--focus-ring-color: currentcolor;
 	--focus-ring-offset: 0.25lh;
