@@ -389,7 +389,7 @@
 						{
 							"fontFamily": "'Atkinson Hyperlegible Next'",
 							"fontStyle": "normal",
-							"fontWeight": "300 800",
+							"fontWeight": "300 700",
 							"fontDisplay": "swap",
 							"src": [
 								"file:./assets/fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-variable.woff2"
