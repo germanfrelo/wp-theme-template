@@ -138,8 +138,7 @@
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
-				"bold": "700",
-				"black": "900"
+				"bold": "700"
 			},
 			"line-height": {
 				"slim": "1.2",
@@ -415,18 +414,17 @@
 					]
 				},
 				{
-					"name": "Merriweather",
-					"slug": "merriweather",
-					"fontFamily": "\"Merriweather\", serif",
+					"name": "Inter",
+					"slug": "inter",
+					"fontFamily": "'Inter', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "\"Merriweather\"",
-							"fontWeight": "900",
+							"fontFamily": "'Inter'",
 							"fontStyle": "normal",
+							"fontWeight": "800",
 							"fontDisplay": "swap",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
-							]
+							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
+							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
 						}
 					]
 				}

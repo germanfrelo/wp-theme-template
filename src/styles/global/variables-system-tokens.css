@@ -36,7 +36,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Font Families */
 	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
-	--font-family-headings: var(--wp--preset--font-family--merriweather);
+	--font-family-headings: var(--wp--preset--font-family--inter);
 	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
 
 	/* Font Line Heights */
@@ -60,7 +60,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	/* Font Weights */
 	--font-weight-base: var(--wp--custom--font-weight--regular);
 	--font-weight-bold: var(--wp--custom--font-weight--bold);
-	--font-weight-headings: var(--wp--custom--font-weight--black);
+	--font-weight-headings: 800;
 
 	/* Measure */
 	--measure-content: var(--wp--style--global--content-size);

@@ -73,7 +73,9 @@ h5,
 h6 {
 	font-family: var(--font-family-headings, inherit);
 	font-weight: var(--heading-font-weight, bold);
-	overflow-wrap: break-word;
+	font-feature-settings:
+		"calt" 1,
+		"ss02" 1;
 }
 
 h1 {
