@@ -35,7 +35,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--focus-ring-width: 2px;
 
 	/* Font Families */
-	--font-family-base: var(--wp--preset--font-family--ibm-plex-sans);
+	--font-family-base: var(--wp--preset--font-family--atkinson-hyperlegible-next);
 	--font-family-headings: var(--wp--preset--font-family--inter);
 	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
 
