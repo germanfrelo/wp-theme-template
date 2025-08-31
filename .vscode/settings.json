@@ -31,5 +31,8 @@
 
 	// pucelle.vscode-css-navigation
 	"CSSNavigation.enableClassNameDefinitionDiagnostic": false,
-	"CSSNavigation.enableClassNameReferenceDiagnostic": false
+	"CSSNavigation.enableClassNameReferenceDiagnostic": false,
+
+	// Spelling
+	"cSpell.words": ["atkinson-hyperlegible", "Hyperlegible"]
 }

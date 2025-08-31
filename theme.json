@@ -138,8 +138,7 @@
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
-				"bold": "700",
-				"black": "900"
+				"bold": "700"
 			},
 			"line-height": {
 				"slim": "1.2",
@@ -383,56 +382,17 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"name": "IBM Plex Sans",
-					"slug": "ibm-plex-sans",
-					"fontFamily": "\"IBM Plex Sans\", sans-serif",
+					"name": "Atkinson Hyperlegible Next",
+					"slug": "atkinson-hyperlegible-next",
+					"fontFamily": "\"Atkinson Hyperlegible Next\", sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "400",
+							"fontFamily": "\"Atkinson Hyperlegible Next\"",
+							"fontWeight": "300 800",
 							"fontStyle": "normal",
+							"fontDisplay": "swap",
 							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-400-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "500",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-500-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"IBM Plex Sans\"",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/ibm-plex-sans/ibm-plex-sans-700-italic.woff2"
+								"file:./assets/fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-variable.woff2"
 							]
 						}
 					]
@@ -446,56 +406,25 @@
 							"fontFamily": "\"JetBrains Mono\"",
 							"fontWeight": "400",
 							"fontStyle": "normal",
+							"fontDisplay": "swap",
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-italic.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-700-italic.woff2"
 							]
 						}
 					]
 				},
 				{
-					"name": "Merriweather",
-					"slug": "merriweather",
-					"fontFamily": "\"Merriweather\", serif",
+					"name": "Inter",
+					"slug": "inter",
+					"fontFamily": "'Inter', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "\"Merriweather\"",
-							"fontWeight": "900",
+							"fontFamily": "'Inter'",
 							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-normal.woff2"
-							]
-						},
-						{
-							"fontFamily": "\"Merriweather\"",
-							"fontWeight": "900",
-							"fontStyle": "italic",
-							"src": [
-								"file:./assets/fonts/merriweather/merriweather-900-italic.woff2"
-							]
+							"fontWeight": "800",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
+							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
 						}
 					]
 				}
