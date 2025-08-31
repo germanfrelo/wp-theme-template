@@ -384,12 +384,12 @@
 				{
 					"name": "Atkinson Hyperlegible Next",
 					"slug": "atkinson-hyperlegible-next",
-					"fontFamily": "\"Atkinson Hyperlegible Next\", sans-serif",
+					"fontFamily": "'Atkinson Hyperlegible Next', sans-serif",
 					"fontFace": [
 						{
-							"fontFamily": "\"Atkinson Hyperlegible Next\"",
-							"fontWeight": "300 800",
+							"fontFamily": "'Atkinson Hyperlegible Next'",
 							"fontStyle": "normal",
+							"fontWeight": "300 700",
 							"fontDisplay": "swap",
 							"src": [
 								"file:./assets/fonts/atkinson-hyperlegible-next/atkinson-hyperlegible-next-variable.woff2"
@@ -400,12 +400,12 @@
 				{
 					"name": "JetBrains Mono",
 					"slug": "jetbrains-mono",
-					"fontFamily": "\"JetBrains Mono\", monospace",
+					"fontFamily": "'JetBrains Mono', monospace",
 					"fontFace": [
 						{
-							"fontFamily": "\"JetBrains Mono\"",
-							"fontWeight": "400",
+							"fontFamily": "'JetBrains Mono'",
 							"fontStyle": "normal",
+							"fontWeight": "400",
 							"fontDisplay": "swap",
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
