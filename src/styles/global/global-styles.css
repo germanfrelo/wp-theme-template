@@ -213,7 +213,7 @@ Preformatted Text
 pre {
 	overflow: auto;
 	overscroll-behavior: contain;
-	font-family: var(--font-family-mono, ui-monospace, monospace);
+	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 }
 
@@ -272,7 +272,7 @@ a:where(:any-link) {
 
 code,
 samp {
-	font-family: var(--font-family-mono, ui-monospace, monospace);
+	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 }
 
