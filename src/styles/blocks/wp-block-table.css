@@ -26,6 +26,23 @@ Notes:
 		border-block-start: var(--table-head-border, 3px) solid;
 	}
 
+	/* ----------------------------------------------------------------------
+	Setting enabled: Fixed width table cells
+	---------------------------------------------------------------------- */
+
+	/* Prevent long unbroken words from overflowing. */
+	.has-fixed-layout {
+		th,
+		td {
+			word-break: revert; /* WP: Revert the deprecated 'word-break: break-word' set by WordPress. */
+			overflow-wrap: break-word;
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	Style Variation: Stripes
+	---------------------------------------------------------------------- */
+
 	&.is-style-stripes {
 		border-bottom: revert;
 

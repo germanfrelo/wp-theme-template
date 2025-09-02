@@ -1,0 +1,18 @@
+/* =======================================================================================
+WP BLOCK MEDIA TEXT
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/media-text
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/media-text
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+======================================================================================= */
+
+.wp-block-media-text {
+	/* Prevent long unbroken words from overflowing. */
+	> .wp-block-media-text__content {
+		word-break: revert; /* WP: Revert the deprecated 'word-break: break-word' set by WordPress. */
+		overflow-wrap: break-word;
+	}
+}
