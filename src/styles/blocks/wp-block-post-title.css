@@ -1,0 +1,16 @@
+/* =======================================================================================
+WP BLOCK POST TITLE
+---
+Source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-title
+- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-title
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+======================================================================================= */
+
+/* Prevent long unbroken words from overflowing. */
+.wp-block-post-title {
+	word-break: revert; /* WP: Revert the deprecated 'word-break: break-word' set by WordPress. */
+	overflow-wrap: break-word;
+}
