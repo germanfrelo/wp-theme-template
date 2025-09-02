@@ -76,6 +76,7 @@ h6 {
 	font-feature-settings:
 		"calt" 1,
 		"ss02" 1;
+	overflow-wrap: break-word; /* Prevent long unbroken words from overflowing. */
 }
 
 h1 {
@@ -200,7 +201,7 @@ blockquote:where(:not([class])) {
 	padding-block: var(--quote-padding-block, 0);
 	padding-inline: var(--quote-padding-inline, 0);
 	margin-inline: var(--quote-margin-inline, 0);
-	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
+	overflow-wrap: break-word; /* Prevent long unbroken words from overflowing. */
 	border-left-color: var(--quote-border-left-color, currentcolor);
 	border-left-style: var(--quote-border-left-style, solid);
 	border-left-width: var(--quote-border-left-width, 0);
@@ -259,6 +260,14 @@ a {
 			color: var(--link-color-on-hover-focus, var(--link-color));
 			text-decoration-color: var(--link-color-underline-on-hover-focus, currentcolor);
 		}
+	}
+
+	/*
+	Prevent long URLs in from overflowing.
+	Scoped to un-classed links within paragraphs for safety.
+	*/
+	p & {
+		overflow-wrap: break-word;
 	}
 }
 
