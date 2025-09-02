@@ -66,6 +66,7 @@ h6 {
 	font-feature-settings:
 		"calt" 1,
 		"ss02" 1;
+	overflow-wrap: break-word; /* Prevent long unbroken words from overflowing. */
 }
 
 h1 {
@@ -234,6 +235,14 @@ a {
 			color: var(--link-color-on-hover-focus, var(--link-color));
 			text-decoration-color: var(--link-color-underline-on-hover-focus, currentcolor);
 		}
+	}
+
+	/*
+	Prevent long URLs in from overflowing.
+	Scoped to un-classed links within paragraphs for safety.
+	*/
+	p & {
+		overflow-wrap: break-word;
 	}
 }
 
