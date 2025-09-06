@@ -178,9 +178,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--site-header-padding-top: var(--wp--preset--spacing--s);
 	--site-header-padding-bottom: var(--wp--preset--spacing--s);
 
-	/* Site Logo */
-	--site-logo-height: var(--wp--preset--spacing--l);
-
 	/* Table */
 	--table-cell-header-weight: var(--font-weight-bold);
 	--table-foot-font-weight: var(--font-weight-bold);
