@@ -382,8 +382,8 @@
 			"fluid": false,
 			"fontFamilies": [
 				{
-					"name": "Atkinson Hyperlegible Next",
-					"slug": "atkinson-hyperlegible-next",
+					"name": "Base",
+					"slug": "base",
 					"fontFamily": "'Atkinson Hyperlegible Next', sans-serif",
 					"fontFace": [
 						{
@@ -398,8 +398,23 @@
 					]
 				},
 				{
-					"name": "JetBrains Mono",
-					"slug": "jetbrains-mono",
+					"name": "Headings",
+					"slug": "headings",
+					"fontFamily": "'Inter', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "'Inter'",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
+							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
+						}
+					]
+				},
+				{
+					"name": "Monospaced",
+					"slug": "mono",
 					"fontFamily": "'JetBrains Mono', monospace",
 					"fontFace": [
 						{
@@ -410,21 +425,6 @@
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
 							]
-						}
-					]
-				},
-				{
-					"name": "Inter",
-					"slug": "inter",
-					"fontFamily": "'Inter', sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "'Inter'",
-							"fontStyle": "normal",
-							"fontWeight": "800",
-							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
-							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
 						}
 					]
 				}
