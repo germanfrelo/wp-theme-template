@@ -29,9 +29,8 @@
 	},
 
 	// pucelle.vscode-css-navigation
-	"CSSNavigation.enableClassNameDefinitionDiagnostic": false,
-	"CSSNavigation.enableClassNameReferenceDiagnostic": false,
-
-	// Spelling
-	"cSpell.words": ["atkinson-hyperlegible", "Hyperlegible"]
+	"CSSNavigation.enableClassNameDefinitionDiagnostic": true,
+	"CSSNavigation.enableClassNameReferenceDiagnostic": true,
+	"CSSNavigation.enableDefinitionCodeLens": true,
+	"CSSNavigation.enableReferenceCodeLens": true
 }
