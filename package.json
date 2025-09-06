@@ -39,7 +39,7 @@
 		]
 	},
 	"devDependencies": {
-		"@wordpress/icons": "10.29.0",
+		"@wordpress/icons": "10.30.0",
 		"@wordpress/scripts": "30.23.0",
 		"concurrently": "9.2.1",
 		"husky": "9.1.7",
