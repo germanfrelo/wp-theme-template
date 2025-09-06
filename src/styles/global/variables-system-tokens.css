@@ -30,11 +30,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--focus-ring-style: solid;
 	--focus-ring-width: 2px;
 
-	/* Font Families */
-	--font-family-base: var(--wp--preset--font-family--atkinson-hyperlegible-next);
-	--font-family-headings: var(--wp--preset--font-family--inter);
-	--font-family-mono: var(--wp--preset--font-family--jetbrains-mono);
-
 	/* Font Line Heights */
 	--font-line-height-base: var(--wp--custom--line-height--loose);
 
@@ -48,9 +43,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	/* Measure */
 	--measure-content: var(--wp--style--global--content-size);
 	--measure-wide: var(--wp--style--global--wide-size);
-
-	/* Outlines */
-	--outline-error: 0.25rem solid var(--color-error, red);
 
 	/* Spacing */
 	--flow-space: var(--wp--style--block-gap, 1em);
