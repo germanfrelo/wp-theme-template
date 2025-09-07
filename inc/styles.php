@@ -6,11 +6,6 @@
  */
 
 
-// Define layer names as a single source of truth.
-define( 'THEMESLUG_WP_LAYER', 'wordpress' );
-define( 'THEMESLUG_THEME_LAYER', 'theme' );
-
-
 /**
  * Enqueue stylesheets on the front end of the website.
  *
@@ -51,17 +46,40 @@ add_action( 'after_setup_theme', 'themeslug_add_editor_styles' );
 
 
 /**
+ * The single source of truth for the entire cascade layer setup.
+ *
+ * @return array The configuration for CSS layers.
+ */
+function themeslug_get_layer_config() {
+	return [
+		// Defines the final order of all top-level layers.
+		'order'   => [
+			'wordpress',
+			'theme',
+		],
+		// Maps specific stylesheet 'handles' to a layer.
+		'map'     => [
+			'themeslug-styles' => 'theme',
+		],
+		// The default layer for any handle not found in the map.
+		'default' => 'wordpress',
+	];
+}
+
+
+/**
  * Defines the top-level cascade layers a single time.
  *
  * This runs early to ensure the @layer rule appears before any @import rules that use it.
  */
 function themeslug_define_cascade_layers() {
+	// Dynamically build the @layer rule from the config array.
+	$config = themeslug_get_layer_config();
+	$layer_css = sprintf( '@layer %s;', implode( ', ', $config['order'] ) );
+
 	// Register a dummy, empty style handle.
 	wp_register_style( 'themeslug-layer-definition', false );
 	wp_enqueue_style( 'themeslug-layer-definition' );
-
-	// Use the constants to build the layer definition string.
-	$layer_css = sprintf( '@layer %s, %s;', THEMESLUG_WP_LAYER, THEMESLUG_THEME_LAYER );
 
 	// Add the layer definition as an inline style. This will be the first style block.
 	wp_add_inline_style( 'themeslug-layer-definition', $layer_css );
@@ -79,8 +97,9 @@ add_action( 'wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5 );
  */
 function themeslug_enqueue_layered_scripts() {
 	global $wp_styles;
+	$config = themeslug_get_layer_config();
 
-	// More efficient: Only loop through styles actually enqueued on the page.
+	// Only loop through styles actually enqueued on the page.
 	$enqueued_handles = $wp_styles->queue;
 
 	foreach ( $enqueued_handles as $handle ) {
@@ -101,13 +120,8 @@ function themeslug_enqueue_layered_scripts() {
 		// The main @layer definition is already handled, so we just build the import/wrapper.
 		$code = '';
 
-		if ( 'themeslug-styles' === $handle ) {
-			// This is our theme stylesheet.
-			$layer_name = THEMESLUG_THEME_LAYER;
-		} else {
-			// This is a WordPress core or plugin stylesheet.
-			$layer_name = THEMESLUG_WP_LAYER;
-		}
+		// Dynamically determine layer name.
+		$layer_name = $config['map'][ $handle ] ?? $config['default'];
 
 		if ( $src_exists ) {
 			$code .= sprintf( '@import url("%s") layer(%s);', $style->src, $layer_name );
