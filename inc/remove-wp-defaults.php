@@ -211,21 +211,13 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
  */
 function themeslug_remove_global_styles() {
-	wp_dequeue_style('global-styles');
+	// wp_dequeue_style('global-styles');
 }
-add_action('wp_enqueue_scripts', 'themeslug_remove_global_styles', 100);
+// add_action('wp_enqueue_scripts', 'themeslug_remove_global_styles', 100);
 
 
 // TODO: Check.
 /**
  * Remove global styles on the front.
  */
-remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
-
-
-/**
- * Remove the block-library stylesheet itself from loading.
- */
-add_action( 'wp_enqueue_scripts', function() {
-	wp_deregister_style( 'wp-block-library' );
-}, 100 );
+// remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
