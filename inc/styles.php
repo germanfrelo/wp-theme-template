@@ -6,6 +6,11 @@
  */
 
 
+// Define layer names as a single source of truth.
+define( 'THEMESLUG_WP_LAYER', 'wordpress' );
+define( 'THEMESLUG_THEME_LAYER', 'theme' );
+
+
 /**
  * Enqueue stylesheets on the front end of the website.
  *
@@ -55,8 +60,11 @@ function themeslug_define_cascade_layers() {
 	wp_register_style( 'themeslug-layer-definition', false );
 	wp_enqueue_style( 'themeslug-layer-definition' );
 
+	// Use the constants to build the layer definition string.
+	$layer_css = sprintf( '@layer %s, %s;', THEMESLUG_WP_LAYER, THEMESLUG_THEME_LAYER );
+
 	// Add the layer definition as an inline style. This will be the first style block.
-	wp_add_inline_style( 'themeslug-layer-definition', '@layer wordpress, theme;' );
+	wp_add_inline_style( 'themeslug-layer-definition', $layer_css );
 }
 add_action( 'wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5 );
 
@@ -95,17 +103,16 @@ function themeslug_enqueue_layered_scripts() {
 
 		if ( 'themeslug-styles' === $handle ) {
 			// This is our theme stylesheet.
-			if ( $src_exists ) {
-				$code .= '@import url("' . $style->src . '") layer(theme);';
-			}
-			$code .= '@layer theme {';
+			$layer_name = THEMESLUG_THEME_LAYER;
 		} else {
 			// This is a WordPress core or plugin stylesheet.
-			if ( $src_exists ) {
-				$code .= '@import url("' . $style->src . '") layer(wordpress);';
-			}
-			$code .= '@layer wordpress {';
+			$layer_name = THEMESLUG_WP_LAYER;
 		}
+
+		if ( $src_exists ) {
+			$code .= sprintf( '@import url("%s") layer(%s);', $style->src, $layer_name );
+		}
+		$code .= sprintf( '@layer %s {', $layer_name );
 
 		$after = $after_data ?: [];
 		array_unshift( $after, $code );
