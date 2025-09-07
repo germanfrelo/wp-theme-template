@@ -55,11 +55,13 @@ function themeslug_get_layer_config() {
 		// Defines the final order of all top-level layers.
 		'order'   => [
 			'wordpress',
+			'plugins',
 			'theme',
 		],
 		// Maps specific stylesheet 'handles' to a layer.
 		'map'     => [
 			'themeslug-styles' => 'theme',
+			// e.g. 'plugin_handle' => 'plugins',
 		],
 		// The default layer for any handle not found in the map.
 		'default' => 'wordpress',
