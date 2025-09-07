@@ -4,13 +4,14 @@ This specific import order is critical for correct CSS specificity.
 See the README file for more info.
 */
 
-@import "../../../../../wp-includes/css/dist/block-library/style.min.css" layer(wordpress);
-@import "global/reset.css";
-@import "global/custom-media-queries.css";
-@import "global/variables-system-tokens.css";
-@import "global/variables-component-tokens.css";
-@import "global/global-styles.css";
-@import-glob "compositions/*.css";
-@import-glob "regions/**/*.css";
-@import-glob "blocks/**/*.css";
-@import-glob "utilities/*.css";
+@layer reset, variables.custom-media-queries, variables.primitives, variables.semantic, global, layouts, blocks, regions, utilities;
+
+@import "global/reset.css" layer(reset);
+@import "global/custom-media-queries.css" layer(variables.custom-media-queries);
+@import "global/variables-system-tokens.css" layer(variables.primitives);
+@import "global/variables-component-tokens.css" layer(variables.semantic);
+@import "global/global-styles.css" layer(global);
+@import-glob "compositions/*.css" layer(layouts);
+@import-glob "blocks/**/*.css" layer(blocks);
+@import-glob "regions/**/*.css" layer(regions);
+@import-glob "utilities/*.css" layer(utilities);
