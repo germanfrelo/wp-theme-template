@@ -172,6 +172,7 @@ function themeslug_get_layer_config() {
 		// Maps specific stylesheet 'handles' to a layer.
 		'map' => [
 			'themeslug-styles' => 'theme',
+			'gform_basic'      => 'plugins',
 			// e.g. 'plugin_handle' => 'plugins',
 		],
 		// The default layer for any handle not found in the map.
