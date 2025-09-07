@@ -4,6 +4,7 @@ This specific import order is critical for correct CSS specificity.
 See the README file for more info.
 */
 
+@import "../../../../../wp-includes/css/dist/block-library/style.min.css" layer(wordpress);
 @import "global/reset.css";
 @import "global/custom-media-queries.css";
 @import "global/variables-system-tokens.css";
