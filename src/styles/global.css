@@ -4,12 +4,12 @@ This specific import order is critical for correct CSS specificity.
 See the README file for more info.
 */
 
-@layer reset, variables.custom-media-queries, variables.primitives, variables.semantic, global, layouts, blocks, regions, utilities;
+@layer reset, variables, global, layouts, blocks, regions, utilities;
 
 @import "global/reset.css" layer(reset);
-@import "global/custom-media-queries.css" layer(variables.custom-media-queries);
-@import "global/variables-system-tokens.css" layer(variables.primitives);
-@import "global/variables-component-tokens.css" layer(variables.semantic);
+@import "global/custom-media-queries.css" layer(variables);
+@import "global/variables-system-tokens.css" layer(variables);
+@import "global/variables-component-tokens.css" layer(variables);
 @import "global/global-styles.css" layer(global);
 @import-glob "compositions/*.css" layer(layouts);
 @import-glob "blocks/**/*.css" layer(blocks);
