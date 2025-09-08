@@ -41,17 +41,18 @@ Table of contents:
     01.1. Global
     01.2. Overlay Menu
 02. Navigation (<nav>)
-03. Menu Buttons Open/Close (<button>)
-04. Outermost Menu Items (<li>)
-    04.1. Link/Button (<a>/<button>)
-05. Submenu Icon/Toggle (<span>/<button>)
-06. Submenus (<ul>)
-07. Responsive Containers when Overlay Menu is Open
-    07.1. Responsive Container
-    07.2. Responsive Container Close + Dialog + Content
-    07.3. Responsive Container Content
-    07.4. Elements
-08. Keyframes
+03. Elements
+04. Menu Buttons Open/Close (<button>)
+05. Outermost Menu Items (<li>)
+    05.1. Link/Button (<a>/<button>)
+06. Submenu Icon/Toggle (<span>/<button>)
+07. Submenus (<ul>)
+08. Responsive Containers when Overlay Menu is Open
+    08.1. Responsive Container
+    08.2. Responsive Container Close + Dialog + Content
+    08.3. Responsive Container Content
+    08.4. Elements
+09. Keyframes
 ====================================================================== */
 
 /* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors. */
@@ -143,6 +144,10 @@ nav.wp-block-navigation {
 	--nav-overlay-menu-padding-left: var(--wp--preset--spacing--m-xl);
 	/* --nav-overlay-menu-padding-right: ; */
 	/* --nav-overlay-menu-content-container-padding-top: ; */
+
+	/* Other elements */
+	--field-border-width: 0;
+	--link-color: currentcolor;
 }
 
 /* ----------------------------------------------------------------------
@@ -179,7 +184,11 @@ nav.wp-block-navigation {
 }
 
 /* ======================================================================
-03. Menu Buttons Open/Close (<button>)
+03. Elements
+====================================================================== */
+
+/* ======================================================================
+04. Menu Buttons Open/Close (<button>)
 ====================================================================== */
 
 /* Both Open & Close Buttons */
@@ -226,7 +235,7 @@ nav.wp-block-navigation {
 }
 
 /* ======================================================================
-04. Outermost Menu Items (<li>)
+05. Outermost Menu Items (<li>)
 ====================================================================== */
 
 .wp-block-navigation__container > .wp-block-navigation-item {
@@ -270,7 +279,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ----------------------------------------------------------------------
-	04.1. Link/Button
+	05.1. Link/Button
 	---
 	<a> when "Open on click" is disabled; <button> when "Open on click" is enabled.
 	---------------------------------------------------------------------- */
@@ -291,7 +300,7 @@ nav.wp-block-navigation {
 }
 
 /* ======================================================================
-05. Submenu Icon/Toggle
+06. Submenu Icon/Toggle
 ====================================================================== */
 
 /* .wp-block-navigation__container > .wp-block-navigation-item.open-on-click {
@@ -346,7 +355,7 @@ nav.wp-block-navigation {
 }
 
 /* ======================================================================
-06. Submenus
+07. Submenus
 TODO: Refactor.
 ====================================================================== */
 
@@ -441,13 +450,13 @@ li.wp-block-navigation-submenu li.wp-block-navigation-submenu {
 }
 
 /* ======================================================================
-07. Responsive Containers when Overlay Menu is Open
+08. Responsive Containers when Overlay Menu is Open
 TODO: Refactor.
 ====================================================================== */
 
 .wp-block-navigation__responsive-container.is-menu-open {
 	/* ----------------------------------------------------------------------
-	07.1. Responsive Container
+	08.1. Responsive Container
 	---------------------------------------------------------------------- */
 	padding-block-start: var(--nav-overlay-menu-padding-top, var(--site-header-padding-top, 2rem));
 	padding-block-end: var(--nav-overlay-menu-padding-bottom, var(--site-header-padding-bottom, 2rem));
@@ -499,7 +508,7 @@ TODO: Refactor.
 	}
 
 	/* ----------------------------------------------------------------------
-	07.2. Responsive Container Close + Dialog + Content
+	08.2. Responsive Container Close + Dialog + Content
 	---
 	The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
 	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
@@ -515,7 +524,7 @@ TODO: Refactor.
 	}
 
 	/* ----------------------------------------------------------------------
-	07.3. Responsive Container Content
+	08.3. Responsive Container Content
 	---
 	The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
 	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
@@ -530,7 +539,7 @@ TODO: Refactor.
 	}
 
 	/* ----------------------------------------------------------------------
-	07.4. Elements
+	08.4. Elements
 	---------------------------------------------------------------------- */
 
 	ul.wp-block-navigation__container
@@ -559,7 +568,7 @@ TODO: Refactor.
 }
 
 /* ======================================================================
-08. Keyframes
+09. Keyframes
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
