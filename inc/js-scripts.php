@@ -2,7 +2,7 @@
 /**
  * Enqueue JavaScript files.
  *
- * @package rightswebs
+ * @package themeslug
  */
 
 /**

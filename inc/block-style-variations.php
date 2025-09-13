@@ -2,7 +2,7 @@
 /**
  * Block Style Variations (aka Block Styles).
  *
- * @package rightswebs
+ * @package themeslug
  */
 
 /**

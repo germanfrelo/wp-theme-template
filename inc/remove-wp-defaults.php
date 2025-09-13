@@ -2,7 +2,7 @@
 /**
  * Remove WordPress defaults.
  *
- * @package rightswebs
+ * @package themeslug
  */
 
 

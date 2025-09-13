@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/core-concepts/custom-functionality/
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package rightswebs
+ * @package themeslug
  */
 
 // Remove WordPress defaults

@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#managing-block-categories
  * @link https://developer.wordpress.org/reference/hooks/block_categories_all/
  *
- * @package rightswebs-functions
+ * @package themeslug
  */
 
 /**
