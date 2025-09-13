@@ -3,6 +3,8 @@
  * Enqueue stylesheets.
  *
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#including-css
+ *
+ * @package rightswebs
  */
 
 

@@ -1,6 +1,8 @@
 <?php
 /**
  * Remove WordPress defaults.
+ *
+ * @package rightswebs
  */
 
 

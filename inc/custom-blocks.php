@@ -1,4 +1,13 @@
 <?php
+/**
+ * Register custom blocks and block categories
+ *
+ * @link https://developer.wordpress.org/block-editor/getting-started/fundamentals/registration-of-a-block/
+ * @link https://developer.wordpress.org/block-editor/reference-guides/filters/block-filters/#managing-block-categories
+ * @link https://developer.wordpress.org/reference/hooks/block_categories_all/
+ *
+ * @package rightswebs-functions
+ */
 
 /**
  * Add custom block category.
@@ -15,12 +24,8 @@ add_filter('block_categories_all', function ($categories) {
 	);
 });
 
-
 /**
  * Register blocks.
- *
- * @link https://developer.wordpress.org/reference/functions/register_block_type/
- * @link https://developer.wordpress.org/block-editor/getting-started/fundamentals/registration-of-a-block/
  */
 function themeslug_register_blocks() {
 	// register_block_type(get_template_directory() . '/build/blocks/______');

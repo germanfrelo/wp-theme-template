@@ -1,7 +1,8 @@
 <?php
-
 /**
  * Enqueue JavaScript files.
+ *
+ * @package rightswebs
  */
 
 /**
