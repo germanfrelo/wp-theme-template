@@ -15,24 +15,20 @@ header.wp-block-template-part {
 	background-color: color-mix(in oklch, var(--wp--preset--color--surface-1, Canvas) 95%, transparent);
 
 	@supports (animation-timeline: scroll()) {
-		& {
-			position: sticky;
-			inset-block-start: 0;
-			z-index: 1;
+		position: sticky;
+		inset-block-start: 0;
+		z-index: 1;
 
-			@media (prefers-reduced-motion: no-preference) {
-				animation: add-shadow-to-header linear forwards;
-				animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
-				animation-timeline: scroll();
-				animation-range: 0 80px;
-			}
+		@media (prefers-reduced-motion: no-preference) {
+			animation: add-shadow-to-header linear forwards;
+			animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
+			animation-timeline: scroll();
+			animation-range: 0 80px;
 		}
 	}
 
 	@supports not (animation-timeline: scroll()) {
-		& {
-			box-shadow: 0 1px color-mix(in oklch, currentcolor 10%, transparent);
-		}
+		box-shadow: 0 1px color-mix(in oklch, currentcolor 10%, transparent);
 	}
 
 	/*
