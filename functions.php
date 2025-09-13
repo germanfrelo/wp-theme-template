@@ -17,9 +17,6 @@ require_once get_theme_file_path( 'inc/custom-blocks.php' );
 // Block style variations
 require_once get_theme_file_path( 'inc/block-style-variations.php' );
 
-// Block output customizations
-require_once get_theme_file_path( 'inc/block-output-customizations.php' );
-
 // CSS
 require_once get_theme_file_path( 'inc/styles.php' );
 
