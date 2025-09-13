@@ -1,9 +1,58 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
+		"border": {
+			"radiusSizes": [
+				{
+					"name": "2-XS",
+					"slug": "2-xs",
+					"size": "0.125rem"
+				},
+				{
+					"name": "XS",
+					"slug": "xs",
+					"size": "0.25rem"
+				},
+				{
+					"name": "S",
+					"slug": "s",
+					"size": "0.5rem"
+				},
+				{
+					"name": "M",
+					"slug": "m",
+					"size": "0.75rem"
+				},
+				{
+					"name": "L",
+					"slug": "l",
+					"size": "1rem"
+				},
+				{
+					"name": "XL",
+					"slug": "xl",
+					"size": "1.5rem"
+				},
+				{
+					"name": "2-XL",
+					"slug": "2-xl",
+					"size": "2rem"
+				},
+				{
+					"name": "3-XL",
+					"slug": "3-xl",
+					"size": "3rem"
+				},
+				{
+					"name": "Full",
+					"slug": "full",
+					"size": "9999px"
+				}
+			]
+		},
 		"color": {
 			"custom": true,
 			"customDuotone": true,
@@ -123,18 +172,6 @@
 			]
 		},
 		"custom": {
-			"corner-radius": {
-				"none": "0rem",
-				"2-xs": "0.125rem",
-				"xs": "0.25rem",
-				"s": "0.5rem",
-				"m": "0.75rem",
-				"l": "1rem",
-				"xl": "1.5rem",
-				"2-xl": "2rem",
-				"3-xl": "3rem",
-				"full": "calc(9999px)"
-			},
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
