@@ -67,7 +67,7 @@ Table of contents:
 
 nav.wp-block-navigation {
 	/* Global */
-	--nav-global-color-text: inherit;
+	--nav-global-color-text: currentcolor;
 	--nav-global-font-size: var(--typescale-menu-font-size);
 	--nav-global-font-weight: var(--typescale-menu-font-weight);
 	--nav-global-letter-spacing: var(--typescale-menu-letter-spacing);
@@ -92,8 +92,8 @@ nav.wp-block-navigation {
 	--nav-item-border-color-current-page: transparent;
 	--nav-item-border-radius: var(--wp--custom--corner-radius--s);
 	--nav-item-border-width: 0px;
-	--nav-item-color-text-on-hover: inherit;
-	--nav-item-color-text-current-page: inherit;
+	--nav-item-color-text-on-hover: currentcolor;
+	--nav-item-color-text-current-page: currentcolor;
 	--nav-item-color-bg: transparent;
 	--nav-item-color-bg-on-hover: var(--wp--preset--color--surface-2);
 	--nav-item-color-bg-current-page: var(--wp--preset--color--surface-2);
@@ -122,7 +122,7 @@ nav.wp-block-navigation {
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
 	--nav-submenu-color-bg: var(--wp--preset--color--surface-1);
-	/* --nav-submenu-color: inherit; */
+	/* --nav-submenu-color: currentcolor; */
 	--nav-submenu-gap-columns: 0;
 	--nav-submenu-gap-rows: 0;
 	--nav-submenu-inline-size-min: 100%;
