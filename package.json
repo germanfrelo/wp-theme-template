@@ -16,9 +16,9 @@
 	"main": "",
 	"scripts": {
 		"build": "npm run clean-build-css && npm run css && npm run svgo",
-		"clean-build-css": "rimraf build-css && mkdir -p build-css",
-		"css": "postcss src/styles/global.css --dir build-css",
-		"css:watch": "postcss src/styles/global.css --dir build-css --watch",
+		"clean-build-css": "rimraf build/styles && mkdir -p build/styles",
+		"css": "postcss src/styles/global.css --dir build/styles",
+		"css:watch": "npm run css -- --watch",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "npm run lint:css",

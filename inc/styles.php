@@ -21,7 +21,7 @@ function themeslug_enqueue_styles() {
 
 	wp_enqueue_style(
 		'themeslug-styles',
-		get_theme_file_uri( 'build-css/global.css' ),
+		get_theme_file_uri( 'build/styles/global.css' ),
 		[],
 		$theme_version
 	);
@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_styles' );
 function themeslug_add_editor_styles() {
 	add_editor_style(
 		[
-			get_theme_file_uri( 'build-css/global.css' ),
+			get_theme_file_uri( 'build/styles/global.css' ),
 		]
 	);
 }

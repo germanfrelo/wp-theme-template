@@ -156,14 +156,14 @@ This file is primarily used to:
 - Register **custom templates**, **template parts**, and **patterns**.
 
 > [!IMPORTANT]
-> **It's *not* used for applying styles.**
+> **It's _not_ used for applying styles.**
 
 ### `style.css`
 
 WordPress requires this file solely for theme registration metadata, such as the theme's name, author and version.
 
 > [!IMPORTANT]
-> This file is for metadata only. **It's *not* enqueued by the theme. Do *not* use it for adding any CSS.**
+> This file is for metadata only. **It's _not_ enqueued by the theme. Do _not_ use it for adding any CSS.**
 
 ### Theme's main styles
 
@@ -234,7 +234,7 @@ Some CSS files probably don't need to be changed, whereas other do:
 
 ### Automated compilation
 
-PostCSS processes the file **`src/styles/global.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build-css/global.css`**.
+PostCSS processes the file **`src/styles/global.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build/styles/global.css`**.
 
 This process happens automatically:
 
@@ -246,7 +246,7 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 ### Enqueuing
 
 > [!IMPORTANT]
-> **The theme enqueues both `style.css` and `build-css/global.css` CSS files.**
+> **The theme enqueues both `style.css` and `build/styles/global.css` CSS files.**
 > They are enqueued by `inc/styles.php`, **on the website and in the site editor**.
 
 ## Local Development Workflow
@@ -261,8 +261,7 @@ npm run start
 
 This command builds the development version of the theme's assets:
 
-- Styles: from `src/styles/` to `build-css/`
-- Custom blocks: from `src/blocks/` to `build/blocks/`
+- Styles: from `src/styles/` to `build/styles/`
 
 It then activates a "watch" mode, automatically recompiling and rebuilding necessary files in real-time as you make and save changes to your code.
 
@@ -288,5 +287,5 @@ Upon pushing changes or merging Pull Requests to the repository's default branch
 
 1. Set up the Node.js environment.
 2. Install theme dependencies.
-3. Build production-ready assets such as the theme's main CSS and custom blocks.
+3. Build production-ready assets such as the theme's main CSS.
 4. Deploy the built theme files to the configured server.

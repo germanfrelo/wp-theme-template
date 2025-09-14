@@ -76,7 +76,6 @@ export default {
 		"node_modules/",
 		"**/*.min.*",
 		"build/**/*.css",
-		"build-css/**/*.css",
 		"src/styles/global.css",
 	],
 };
