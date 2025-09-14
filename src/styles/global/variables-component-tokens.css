@@ -105,7 +105,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	(input, textarea, select, button...)
 	*/
 	--field-color-bg: transparent;
-	--field-border-color: var(currentcolor);
+	--field-border-color: currentcolor;
 	--field-border-radius: var(--wp--preset--border-radius--2-xs);
 	--field-border-width: var(--wp--custom--border-width--1);
 	--field-color: var(--wp--preset--color--text-1);
@@ -172,7 +172,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--scrollbar-width-legacy: 0.5rem;
 
 	/* Separator */
-	--separator-color: var(currentcolor);
+	--separator-color: currentcolor;
 
 	/* Site Header */
 	--site-header-padding-top: var(--wp--preset--spacing--s);
