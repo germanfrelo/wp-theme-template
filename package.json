@@ -42,8 +42,7 @@
 		"format:check": "prettier --check .",
 		"lint": "npm run lint:css",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
-		"lint:fix": "npm run lint:fix:css",
-		"lint:fix:css": "npm run lint:css -- --fix",
+		"lint:css:fix": "npm run lint:css -- --fix",
 		"prepare": "husky",
 		"start": "npm run build:css -- --watch"
 	},
