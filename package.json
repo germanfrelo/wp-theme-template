@@ -15,7 +15,7 @@
 	"type": "module",
 	"main": "",
 	"scripts": {
-		"build": "wp-scripts build && npm run clean-build-css && npm run css && npm run svgo",
+		"build": "npm run clean-build-css && npm run css && npm run svgo",
 		"clean-build-css": "rimraf build-css && mkdir -p build-css",
 		"css": "postcss src/styles/global.css --dir build-css",
 		"css:watch": "postcss src/styles/global.css --dir build-css --watch",
@@ -26,7 +26,7 @@
 		"lint:css:fix": "npm run lint:css -- --fix",
 		"lint:fix": "npm run lint:css:fix",
 		"prepare": "husky",
-		"start": "concurrently \"wp-scripts start\" \"npm run css:watch\"",
+		"start": "concurrently \"npm run css:watch\"",
 		"svgo": "svgo -f assets/svg"
 	},
 	"lint-staged": {
