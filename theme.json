@@ -195,10 +195,9 @@
 				"strength": "1%"
 			},
 			"border-width": {
-				"1": "0.0625em",
-				"2": "0.125em",
-				"3": "0.25em",
-				"4": "0.5em"
+				"thin": "1px",
+				"medium": "2px",
+				"thick": "4px"
 			},
 			"transition": {
 				"duration": "0.25s",

@@ -27,7 +27,7 @@ ol.is-style-ordered-custom {
 			content: counter(ol-custom-counter);
 			background-color: var(--wp--preset--color--surface-2, transparent);
 			border-style: solid;
-			border-width: var(--wp--custom--border-width--1, thin);
+			border-width: var(--wp--custom--border-width--thin, thin);
 			border-radius: 50%;
 		}
 	}
