@@ -172,6 +172,11 @@
 			]
 		},
 		"custom": {
+			"border-width": {
+				"thin": "1px",
+				"medium": "2px",
+				"thick": "4px"
+			},
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
@@ -193,11 +198,6 @@
 			"shadow": {
 				"color": "currentcolor",
 				"strength": "1%"
-			},
-			"border-width": {
-				"thin": "1px",
-				"medium": "2px",
-				"thick": "4px"
 			},
 			"transition": {
 				"duration": "0.25s",
