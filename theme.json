@@ -177,6 +177,14 @@
 				"medium": "500",
 				"bold": "700"
 			},
+			"letter-spacing": {
+				"tighter": "-0.1ch",
+				"tight": "-0.05ch",
+				"normal": "normal",
+				"wide": "0.05ch",
+				"wider": "0.10ch",
+				"widest": "0.15ch"
+			},
 			"line-height": {
 				"slim": "1.2",
 				"loose": "1.7"
