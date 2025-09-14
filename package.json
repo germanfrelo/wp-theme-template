@@ -35,19 +35,17 @@
 		"svgo": "4.0.0"
 	},
 	"scripts": {
-		"build": "npm run clean-build-css && npm run css && npm run svgo",
-		"clean-build-css": "rimraf build/styles && mkdir -p build/styles",
-		"css": "postcss src/styles/global.css --dir build/styles",
-		"css:watch": "npm run css -- --watch",
+		"build": "npm run build:css && npm run build:svg",
+		"build:css": "rimraf build/styles && postcss src/styles/global.css --dir build/styles",
+		"build:svg": "svgo --folder assets/svg",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "npm run lint:css",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
-		"lint:css:fix": "npm run lint:css -- --fix",
-		"lint:fix": "npm run lint:css:fix",
+		"lint:fix": "npm run lint:fix:css",
+		"lint:fix:css": "npm run lint:css -- --fix",
 		"prepare": "husky",
-		"start": "concurrently \"npm run css:watch\"",
-		"svgo": "svgo -f assets/svg"
+		"start": "npm run build:css -- --watch"
 	},
 	"lint-staged": {
 		"*.css": [
