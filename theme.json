@@ -194,7 +194,7 @@
 				"color": "currentcolor",
 				"strength": "1%"
 			},
-			"stroke-weight": {
+			"border-width": {
 				"1": "0.0625em",
 				"2": "0.125em",
 				"3": "0.25em",

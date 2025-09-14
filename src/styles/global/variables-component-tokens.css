@@ -81,7 +81,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--preset--border-radius--2-xs);
-	--button-border-width: var(--wp--custom--stroke-weight--1);
+	--button-border-width: var(--wp--custom--border-width--1);
 	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--xs);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
@@ -107,7 +107,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--field-color-bg: transparent;
 	--field-border-color: var(--border-color);
 	--field-border-radius: var(--wp--preset--border-radius--2-xs);
-	--field-border-width: var(--wp--custom--stroke-weight--1);
+	--field-border-width: var(--wp--custom--border-width--1);
 	--field-color: var(--wp--preset--color--text-1);
 	--field-font-weight: var(--font-weight-base);
 	--field-padding-block: 0.25em;
@@ -151,7 +151,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--list-unordered-style-type: disc;
 
 	/* Quote */
-	--quote-border-left-width: var(--wp--custom--stroke-weight--3);
+	--quote-border-left-width: var(--wp--custom--border-width--3);
 	--quote-border-left-color: var(--wp--preset--color--primary-medium);
 	--quote-padding-inline: var(--wp--preset--spacing--m);
 

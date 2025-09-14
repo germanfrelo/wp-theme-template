@@ -21,7 +21,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 :root {
 	/* Border */
 	--border-color: currentcolor;
-	--border: var(--wp--custom--stroke-weight--1, thin) solid var(--border-color, currentcolor);
+	--border: var(--wp--custom--border-width--1, thin) solid var(--border-color, currentcolor);
 
 	/* Colors */
 	--color-error: var(--color-danger-medium);
