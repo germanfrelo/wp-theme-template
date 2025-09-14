@@ -1,4 +1,4 @@
-# themeslug
+# themename
 
 > Get a quick start on building modern WordPress websites with this starter block theme template. It includes a curated and useful set of basic presets.
 
@@ -119,8 +119,11 @@ Once your local site is set up:
 2. **`cd` to the theme directory** using your terminal.
 3. **Find and replace placeholders.** Use the global search and replace feature in your code editor to replace all instances of the following placeholders with your own project's information:
    - `themeauthor`
+   - `themedescription`
    - `themename`
+   - `themerepourl`
    - `themeslug`
+   - `themeurl`
 4. **Install the dependencies** with `npm install`.
 
 ## CSS

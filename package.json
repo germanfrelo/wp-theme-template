@@ -1,16 +1,16 @@
 {
 	"name": "themeslug",
 	"version": "0.2.0",
-	"description": "",
+	"description": "themedescription",
 	"author": "themeauthor",
 	"license": "GPL-2.0-or-later",
 	"keywords": [],
-	"homepage": "",
+	"homepage": "themerepourl",
 	"repository": {
 		"type": "git",
-		"url": ""
+		"url": "git+themerepourl.git"
 	},
-	"bugs": "",
+	"bugs": "themerepourl/issues",
 	"type": "module",
 	"private": true,
 	"main": "",
