@@ -1,19 +1,39 @@
 {
 	"name": "themeslug",
 	"version": "0.2.0",
-	"private": true,
 	"description": "",
+	"author": "themeauthor",
+	"license": "GPL-2.0-or-later",
 	"keywords": [],
 	"homepage": "",
-	"bugs": {},
 	"repository": {
 		"type": "git",
 		"url": ""
 	},
-	"license": "GPL-2.0-or-later",
-	"author": "themeauthor",
+	"bugs": "",
 	"type": "module",
+	"private": true,
 	"main": "",
+	"devDependencies": {
+		"concurrently": "9.2.1",
+		"husky": "9.1.7",
+		"lint-staged": "16.1.6",
+		"postcss": "8.5.6",
+		"postcss-cli": "11.0.1",
+		"postcss-custom-media": "11.0.6",
+		"postcss-discard-comments": "7.0.4",
+		"postcss-import": "16.1.1",
+		"postcss-import-ext-glob": "2.1.1",
+		"postcss-nesting": "13.0.2",
+		"prettier": "3.6.2",
+		"rimraf": "6.0.1",
+		"stylelint": "16.24.0",
+		"stylelint-config-recess-order": "7.3.0",
+		"stylelint-config-standard": "39.0.0",
+		"stylelint-order": "7.0.0",
+		"stylelint-plugin-defensive-css": "1.0.4",
+		"svgo": "4.0.0"
+	},
 	"scripts": {
 		"build": "npm run clean-build-css && npm run css && npm run svgo",
 		"clean-build-css": "rimraf build/styles && mkdir -p build/styles",
@@ -37,25 +57,5 @@
 		"!(*.css)": [
 			"prettier --write --ignore-unknown"
 		]
-	},
-	"devDependencies": {
-		"concurrently": "9.2.1",
-		"husky": "9.1.7",
-		"lint-staged": "16.1.6",
-		"postcss": "8.5.6",
-		"postcss-cli": "11.0.1",
-		"postcss-custom-media": "11.0.6",
-		"postcss-discard-comments": "7.0.4",
-		"postcss-import": "16.1.1",
-		"postcss-import-ext-glob": "2.1.1",
-		"postcss-nesting": "13.0.2",
-		"prettier": "3.6.2",
-		"rimraf": "6.0.1",
-		"stylelint": "16.24.0",
-		"stylelint-config-recess-order": "7.3.0",
-		"stylelint-config-standard": "39.0.0",
-		"stylelint-order": "7.0.0",
-		"stylelint-plugin-defensive-css": "1.0.4",
-		"svgo": "4.0.0"
 	}
 }
