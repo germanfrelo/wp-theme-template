@@ -10,7 +10,6 @@
 	"colorize.include": ["**/*.json"],
 	"colorize.languages": ["json"],
 	"colorize.colorized_colors": ["HEXA", "RGB", "HSL", "OKLAB", "OKLCH"],
-	"colorize.decoration_type": "square-dot",
 
 	// Lint CSS with Stylelint
 	// Disable VS Code's built-in linters to prevent them from reporting the same errors as Stylelint
@@ -27,12 +26,5 @@
 		"source.fixAll.eslint": "explicit",
 		"source.fixAll.stylelint": "explicit",
 		"source.sortImports": "explicit"
-	},
-
-	// pucelle.vscode-css-navigation
-	"CSSNavigation.enableClassNameDefinitionDiagnostic": false,
-	"CSSNavigation.enableClassNameReferenceDiagnostic": false,
-
-	// Spelling
-	"cSpell.words": ["atkinson-hyperlegible", "Hyperlegible"]
+	}
 }
