@@ -1,4 +1,9 @@
 export default {
+	js2svg: {
+		pretty: true,
+		eol: "lf",
+		indent: "\t",
+	},
 	plugins: [
 		{
 			name: "preset-default",
@@ -6,7 +11,6 @@ export default {
 				overrides: {
 					convertPathData: false,
 					mergePaths: false,
-
 					sortAttrs: {
 						order: [
 							"id",
