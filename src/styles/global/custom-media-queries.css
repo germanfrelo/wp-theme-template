@@ -7,5 +7,14 @@ PostCSS Custom Media plugin installed and added to PostCSS config file (postcss.
 @link https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
 */
 
-@custom-media --wp-default-navigation-breakpoint (width >= 600px);
-@custom-media --navigation-breakpoint (width >= 65rem);
+/* ----------------------------------------------------------------------
+Navigation
+---------------------------------------------------------------------- */
+
+/* This shouldn't be modified */
+@custom-media --wp-block-navigation-breakpoint-default (width >= 600px);
+@custom-media --wp-block-navigation-breakpoint-default-reversed (width < 600px);
+
+/* This is customizable, *but the width value must be the same for both queries */
+@custom-media --nav-breakpoint-larger-width (width >= 65rem);
+@custom-media --nav-breakpoint-larger-width-reversed (width < 65rem);

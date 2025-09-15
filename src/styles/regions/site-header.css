@@ -42,7 +42,7 @@ header.wp-block-template-part {
 
 	/* Override styles at WP's default breakpoint. */
 
-	@media (--wp-default-navigation-breakpoint) {
+	@media (-wp-block-navigation-breakpoint-default) {
 		nav.wp-block-navigation {
 			/* Keep showing the button to open the menu */
 			.wp-block-navigation__responsive-container-open:not(.always-shown) {
@@ -58,7 +58,7 @@ header.wp-block-template-part {
 
 	/* Add styles at custom breakpoint larger than the default one. */
 
-	@media (--navigation-breakpoint) {
+	@media (--nav-breakpoint-larger-width) {
 		nav.wp-block-navigation {
 			/* Hide the button to open the menu */
 			.wp-block-navigation__responsive-container-open:not(.always-shown) {
