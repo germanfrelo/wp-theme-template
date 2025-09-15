@@ -243,152 +243,152 @@
 			},
 			"spacingSizes": [
 				{
-					"name": "3XS",
+					"name": "3XS (0.3125–0.375rem)",
 					"slug": "3-xs",
 					"size": "clamp(0.3125rem, 0.2905rem + 0.0939vw, 0.375rem)"
 				},
 				{
-					"name": "2XS",
+					"name": "2XS (0.4375–0.5625rem)",
 					"slug": "2-xs",
 					"size": "clamp(0.4375rem, 0.3935rem + 0.1878vw, 0.5625rem)"
 				},
 				{
-					"name": "XS",
+					"name": "XS (0.6875–0.8125rem)",
 					"slug": "xs",
 					"size": "clamp(0.6875rem, 0.6435rem + 0.1878vw, 0.8125rem)"
 				},
 				{
-					"name": "S",
+					"name": "S (1–1.25rem)",
 					"slug": "s",
 					"size": "clamp(1rem, 0.912rem + 0.3756vw, 1.25rem)"
 				},
 				{
-					"name": "M",
+					"name": "M (1.5–1.875rem)",
 					"slug": "m",
 					"size": "clamp(1.5rem, 1.368rem + 0.5634vw, 1.875rem)"
 				},
 				{
-					"name": "L",
+					"name": "L (2.25–2.8125rem)",
 					"slug": "l",
 					"size": "clamp(2.25rem, 2.0519rem + 0.8451vw, 2.8125rem)"
 				},
 				{
-					"name": "XL",
+					"name": "XL (3.375–4.25rem)",
 					"slug": "xl",
 					"size": "clamp(3.375rem, 3.0669rem + 1.3146vw, 4.25rem)"
 				},
 				{
-					"name": "2XL",
+					"name": "2XL (5–6.25rem)",
 					"slug": "2-xl",
 					"size": "clamp(5rem, 4.5599rem + 1.8779vw, 6.25rem)"
 				},
 				{
-					"name": "3XL",
+					"name": "3XL (7.625–9.5rem)",
 					"slug": "3-xl",
 					"size": "clamp(7.625rem, 6.9648rem + 2.8169vw, 9.5rem)"
 				},
 				{
-					"name": "4XL",
+					"name": "4XL (11.375–14.25rem)",
 					"slug": "4-xl",
 					"size": "clamp(11.375rem, 10.3627rem + 4.3192vw, 14.25rem)"
 				},
 				{
-					"name": "5XL",
+					"name": "5XL (17–21.25rem)",
 					"slug": "5-xl",
 					"size": "clamp(17rem, 15.5035rem + 6.385vw, 21.25rem)"
 				},
 				{
-					"name": "3XS-2XS",
+					"name": "3XS-2XS (0.3125–0.5625rem)",
 					"slug": "3-xs-2-xs",
 					"size": "clamp(0.3125rem, 0.2245rem + 0.3756vw, 0.5625rem)"
 				},
 				{
-					"name": "2XS-XS",
+					"name": "2XS-XS (0.4375–0.8125rem)",
 					"slug": "2-xs-xs",
 					"size": "clamp(0.4375rem, 0.3055rem + 0.5634vw, 0.8125rem)"
 				},
 				{
-					"name": "XS-S",
+					"name": "XS-S (0.6875–1.25rem)",
 					"slug": "xs-s",
 					"size": "clamp(0.6875rem, 0.4894rem + 0.8451vw, 1.25rem)"
 				},
 				{
-					"name": "S-M (Global Gutter)",
+					"name": "S-M (1–1.875rem)",
 					"slug": "s-m",
 					"size": "clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem)"
 				},
 				{
-					"name": "M-L",
+					"name": "M-L (1.5–2.8125rem)",
 					"slug": "m-l",
 					"size": "clamp(1.5rem, 1.0379rem + 1.9718vw, 2.8125rem)"
 				},
 				{
-					"name": "L-XL",
+					"name": "L-XL (2.25–4.25rem)",
 					"slug": "l-xl",
 					"size": "clamp(2.25rem, 1.5458rem + 3.0047vw, 4.25rem)"
 				},
 				{
-					"name": "XL-2XL",
+					"name": "XL-2XL (3.375–6.25rem)",
 					"slug": "xl-2-xl",
 					"size": "clamp(3.375rem, 2.3627rem + 4.3192vw, 6.25rem)"
 				},
 				{
-					"name": "2XL-3XL",
+					"name": "2XL-3XL (5–9.5rem)",
 					"slug": "2-xl-3-xl",
 					"size": "clamp(5rem, 3.4155rem + 6.7606vw, 9.5rem)"
 				},
 				{
-					"name": "3XL-4XL",
+					"name": "3XL-4XL (7.625–14.25rem)",
 					"slug": "3-xl-4-xl",
 					"size": "clamp(7.625rem, 5.2923rem + 9.9531vw, 14.25rem)"
 				},
 				{
-					"name": "4XL-5XL",
+					"name": "4XL-5XL (11.375–21.25rem)",
 					"slug": "4-xl-5-xl",
 					"size": "clamp(11.375rem, 7.8979rem + 14.8357vw, 21.25rem)"
 				},
 				{
-					"name": "3XS-XS",
+					"name": "3XS-XS (0.3125–0.8125rem)",
 					"slug": "3-xs-xs",
 					"size": "clamp(0.3125rem, 0.1364rem + 0.7512vw, 0.8125rem)"
 				},
 				{
-					"name": "2XS-S",
+					"name": "2XS-S (0.4375–1.25rem)",
 					"slug": "2-xs-s",
 					"size": "clamp(0.4375rem, 0.1514rem + 1.2207vw, 1.25rem)"
 				},
 				{
-					"name": "XS-M",
+					"name": "XS-M (0.6875–1.875rem)",
 					"slug": "xs-m",
 					"size": "clamp(0.6875rem, 0.2694rem + 1.784vw, 1.875rem)"
 				},
 				{
-					"name": "S-L",
+					"name": "S-L (1–2.8125rem)",
 					"slug": "s-l",
 					"size": "clamp(1rem, 0.3618rem + 2.723vw, 2.8125rem)"
 				},
 				{
-					"name": "M-XL",
+					"name": "M-XL (1.5–4.25rem)",
 					"slug": "m-xl",
 					"size": "clamp(1.5rem, 0.5317rem + 4.1315vw, 4.25rem)"
 				},
 				{
-					"name": "L-2XL",
+					"name": "L-2XL (2.25–6.25rem)",
 					"slug": "l-2-xl",
 					"size": "clamp(2.25rem, 0.8415rem + 6.0094vw, 6.25rem)"
 				},
 				{
-					"name": "XL-3XL (Page Section Vertical Space)",
+					"name": "XL-3XL (3.375–9.5rem)",
 					"slug": "xl-3-xl",
 					"size": "clamp(3.375rem, 1.2183rem + 9.2019vw, 9.5rem)"
 				},
 				{
-					"name": "2XL-4XL",
+					"name": "2XL-4XL (5–14.25rem)",
 					"slug": "2-xl-4-xl",
 					"size": "clamp(5rem, 1.743rem + 13.8967vw, 14.25rem)"
 				},
 				{
-					"name": "3XL-5XL",
+					"name": "3XL-5XL (7.625–21.25rem)",
 					"slug": "3-xl-5-xl",
 					"size": "clamp(7.625rem, 2.8275rem + 20.4695vw, 21.25rem)"
 				}
@@ -478,37 +478,37 @@
 			},
 			"fontSizes": [
 				{
-					"name": "3XL",
+					"name": "3XL (2.0273–3.8147rem)",
 					"slug": "3-xl",
 					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
 				},
 				{
-					"name": "2XL",
+					"name": "2XL (1.802–3.0518rem)",
 					"slug": "2-xl",
 					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
 				},
 				{
-					"name": "XL",
+					"name": "XL (1.6018–2.4414rem)",
 					"slug": "xl",
 					"size": "clamp(1.6018rem, 1.3062rem + 1.2614vw, 2.4414rem)"
 				},
 				{
-					"name": "L",
+					"name": "L (1.4238–1.9531rem)",
 					"slug": "l",
 					"size": "clamp(1.4238rem, 1.2375rem + 0.7952vw, 1.9531rem)"
 				},
 				{
-					"name": "M",
+					"name": "M (1.2656–1.5625rem)",
 					"slug": "m",
 					"size": "clamp(1.2656rem, 1.1611rem + 0.446vw, 1.5625rem)"
 				},
 				{
-					"name": "S",
+					"name": "S (1.125–1.25rem)",
 					"slug": "s",
 					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
 				},
 				{
-					"name": "XS",
+					"name": "XS (1rem)",
 					"slug": "xs",
 					"size": "clamp(1rem, 1rem + 0vw, 1rem)"
 				}
