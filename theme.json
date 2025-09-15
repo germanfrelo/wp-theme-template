@@ -7,47 +7,47 @@
 		"border": {
 			"radiusSizes": [
 				{
-					"name": "2-XS",
+					"name": "2XS (0.125rem)",
 					"slug": "2-xs",
 					"size": "0.125rem"
 				},
 				{
-					"name": "XS",
+					"name": "XS (0.25rem)",
 					"slug": "xs",
 					"size": "0.25rem"
 				},
 				{
-					"name": "S",
+					"name": "S (0.5rem)",
 					"slug": "s",
 					"size": "0.5rem"
 				},
 				{
-					"name": "M",
+					"name": "M (0.75rem)",
 					"slug": "m",
 					"size": "0.75rem"
 				},
 				{
-					"name": "L",
+					"name": "L (1rem)",
 					"slug": "l",
 					"size": "1rem"
 				},
 				{
-					"name": "XL",
+					"name": "XL (1.5rem)",
 					"slug": "xl",
 					"size": "1.5rem"
 				},
 				{
-					"name": "2-XL",
+					"name": "2XL (2rem)",
 					"slug": "2-xl",
 					"size": "2rem"
 				},
 				{
-					"name": "3-XL",
+					"name": "3XL (3rem)",
 					"slug": "3-xl",
 					"size": "3rem"
 				},
 				{
-					"name": "Full",
+					"name": "Full (9999px)",
 					"slug": "full",
 					"size": "9999px"
 				}
