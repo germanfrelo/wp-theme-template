@@ -5,7 +5,6 @@ export default {
 		"stylelint-config-standard", // Extends stylelint-config-recommended and turns on additional rules to enforce modern conventions
 		"stylelint-config-recess-order", // Sorts CSS properties
 	],
-	plugins: ["stylelint-plugin-defensive-css"], // Enforces defensive CSS best practices
 	reportDescriptionlessDisables: true,
 	reportInvalidScopeDisables: true,
 	reportNeedlessDisables: true,
@@ -54,22 +53,6 @@ export default {
 		"selector-id-pattern": null,
 		// Redundant
 		"declaration-block-no-redundant-longhand-properties": null,
-
-		/* Plugin: use-defensive-css
-		---------------------------------------- */
-		"plugin/use-defensive-css": [
-			true,
-			{
-				"severity": "warning",
-				"accidental-hover": false, // Enable as needed
-				"background-repeat": false, // The project CSS reset already add 'no-repeat' to all elements
-				"custom-property-fallbacks": false, // Enable as needed
-				"flex-wrapping": false, // Enable as needed
-				"scroll-chaining": true,
-				"scrollbar-gutter": false, // Enable as needed
-				"vendor-prefix-grouping": true,
-			},
-		],
 	},
 	ignoreFiles: [
 		// See https://stylelint.io/user-guide/configure#ignorefiles
