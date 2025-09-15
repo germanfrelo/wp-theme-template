@@ -226,14 +226,17 @@ The primary entry point is the **`global.css`** file. It uses `@import` rules (p
 
 Some CSS files probably don't need to be changed, whereas other do:
 
-- `global/reset.css`: Unlikely. It contains useful project-agnostic reset styles.
-- `global/variables-system-tokens.css`: Always.
-- `global/variables-component-tokens.css`: Always.
-- `global/global-styles.css`: Always.
-- `compositions/`: Unlikely. It contains a bunch of **predefined, project-agnostic compositional layouts from [Every Layout](https://every-layout.dev/)**.
-- `blocks/`: Always.
-- `regions/`: Always.
-- `utilities/`: Maybe.
+| File/Directory                          | Needs Changes?                                                                       |
+| :-------------------------------------- | :----------------------------------------------------------------------------------- |
+| `global/custom-media-queries.css`       | Probably.                                                                            |
+| `global/global-styles.css`              | Yes.                                                                                 |
+| `global/reset.css`                      | Unlikely. It contains useful project-agnostic reset styles.                          |
+| `global/variables-component-tokens.css` | Yes.                                                                                 |
+| `global/variables-system-tokens.css`    | Yes.                                                                                 |
+| `compositions/`                         | Unlikely. It contains a bunch of predefined, project-agnostic compositional layouts. |
+| `blocks/`                               | Yes.                                                                                 |
+| `regions/`                              | Yes.                                                                                 |
+| `utilities/`                            | Probably.                                                                            |
 
 ### Automated compilation
 
