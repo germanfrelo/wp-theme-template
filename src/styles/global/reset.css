@@ -88,16 +88,6 @@ body {
 	min-block-size: 100%;
 }
 
-/*
-Ensure consistent 'h1' rendering.
-Ref. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#specifying_a_uniform_font_size_for_h1
-*/
-
-:where(h1) {
-	margin-block: 0.67em;
-	font-size: 2em;
-}
-
 /* ======================================================================
 03. Grouping Content
 ====================================================================== */
