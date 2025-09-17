@@ -239,7 +239,7 @@
 			"customSpacingSize": true,
 			"defaultSpacingSizes": false,
 			"//": {
-				"spacingSizesGenerator": "https://utopia.fyi/space/calculator?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667|0.444|0.296,1.5|2.25|3.375|5|7.6|11.4|17,3xs-xs|2xs-s|xs-m|s-l|m-xl|l-2xl|xl-3xl|2xl-4xl|3xl-5xl&g=s,l,xl,12"
+				"spacingSizesGenerator": "https://utopia.fyi/space/calculator/?c=375,16,1.17,1440,20,1.33,5,1,430&s=0.667%7C0.444%7C0.296,1.5%7C2.25%7C3.375%7C5%7C7.6%7C11.4%7C17,3xs-xs%7C2xs-s%7Cxs-m%7Cs-l%7Cm-xl%7Cl-2xl%7Cxl-3xl%7C2xl-4xl%7C3xl-5xl&g=s,l,xl,12"
 			},
 			"spacingSizes": [
 				{
@@ -474,7 +474,7 @@
 				}
 			],
 			"//": {
-				"fontSizesGenerator": "https://utopia.fyi/type/calculator?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12"
+				"fontSizesGenerator": "https://utopia.fyi/type/calculator/?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12"
 			},
 			"fontSizes": [
 				{
