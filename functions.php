@@ -8,6 +8,9 @@
  * @package themeslug
  */
 
+// Register template part areas
+require_once get_theme_file_path( 'inc/template-part-areas.php' );
+
 // Remove WordPress defaults
 require_once get_theme_file_path( 'inc/remove-wp-defaults.php' );
 
