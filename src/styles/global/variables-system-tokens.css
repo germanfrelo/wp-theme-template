@@ -62,9 +62,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--measure-content: var(--wp--style--global--content-size);
 	--measure-wide: var(--wp--style--global--wide-size);
 
-	/* Outlines */
-	--outline-error: 0.25rem solid var(--color-error, red);
-
 	/* Spacing */
 	--flow-space: var(--wp--style--block-gap, 1em);
 	--gutter: var(--wp--custom--root-padding-inline);

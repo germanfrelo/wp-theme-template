@@ -1,9 +1,0 @@
-.testimonial {
-	--sidebar-size: 23rem;
-	--sidebar-vertical-alignment: center;
-	inline-size: clamp(15rem, 80%, 80rem);
-
-	.testimonial__content > * {
-		max-inline-size: 25rem;
-	}
-}

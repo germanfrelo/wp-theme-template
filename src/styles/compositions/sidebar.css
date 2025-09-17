@@ -63,10 +63,3 @@ Variables:
 	flex-grow: 999;
 	flex-basis: var(--sidebar-wrap-at, 50%);
 }
-
-/* Layout testing */
-
-:is(.with-sidebar-left, .with-sidebar-right) > :not(:nth-child(1), :nth-child(2)) {
-	--error: "Sidebar layouts must include exactly two child elements.";
-	outline: var(--outline-error);
-}
