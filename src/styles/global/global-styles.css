@@ -349,17 +349,6 @@ table {
 	inline-size: 100%;
 }
 
-th,
-td {
-	padding-block: var(--table-cell-padding-block, 0.5em);
-	padding-inline: var(--table-cell-padding-inline, 0.5rem);
-	border-width: var(--table-border, 1px);
-}
-
-th {
-	font-weight: var(--table-cell-header-font-weight, inherit);
-}
-
 thead {
 	font-weight: var(--table-head-font-weight, inherit);
 	background-color: var(--table-head-color-bg, transparent);
@@ -370,6 +359,17 @@ tfoot {
 	font-weight: var(--table-foot-font-weight, inherit);
 	background-color: var(--table-foot-color-bg, transparent);
 	border-block-start: var(--table-foot-border, 3px) solid;
+}
+
+th,
+td {
+	padding-block: var(--table-cell-padding-block, 0.5em);
+	padding-inline: var(--table-cell-padding-inline, 0.5rem);
+	border-width: var(--table-border, 1px);
+}
+
+th {
+	font-weight: var(--table-cell-header-font-weight, inherit);
 }
 
 /* ======================================================================
