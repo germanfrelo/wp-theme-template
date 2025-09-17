@@ -47,9 +47,9 @@
 					"size": "3rem"
 				},
 				{
-					"name": "Full (9999px)",
-					"slug": "full",
-					"size": "9999px"
+					"name": "Round",
+					"slug": "round",
+					"size": "999rem"
 				}
 			]
 		},
