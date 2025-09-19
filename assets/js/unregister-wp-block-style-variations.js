@@ -1,6 +1,6 @@
-/* Unregister WordPress default block style variations */
-
 wp.domReady(() => {
+	/* Unregister Block Style Variations. */
+
 	wp.blocks.unregisterBlockStyle("core/button", ["fill", "outline"]);
 	wp.blocks.unregisterBlockStyle("core/image", ["rounded"]);
 	wp.blocks.unregisterBlockStyle("core/quote", ["default", "plain"]);

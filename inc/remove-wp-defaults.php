@@ -194,7 +194,7 @@ function themeslug_unregister_wp_block_style_variations_script() {
 add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_variations_script');
 
 
-// TODO: Check.
+// TODO: Check this carefully..
 /**
  * Remove the inline styles on the front.
  *
@@ -206,7 +206,7 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_v
 // remove_filter('render_block', 'gutenberg_render_elements_support', 10, 2);
 
 
-// TODO: Check.
+// TODO: Check this carefully..
 /**
  * Remove global styles on the front.
  *
@@ -218,7 +218,7 @@ function themeslug_remove_global_styles() {
 // add_action('wp_enqueue_scripts', 'themeslug_remove_global_styles', 100);
 
 
-// TODO: Check.
+// TODO: Check this carefully..
 /**
  * Remove global styles on the front.
  */
