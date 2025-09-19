@@ -477,33 +477,33 @@
 				}
 			],
 			"//": {
-				"fontSizesGenerator": "https://utopia.fyi/type/calculator/?c=375,18,1.125,1440,20,1.25,5,1,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12"
+				"fontSizesGenerator": "https://utopia.fyi/type/calculator/?c=375,18,1.2,1440,20,1.25,5,1,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12"
 			},
 			"fontSizes": [
 				{
 					"name": "4XL",
 					"slug": "xxxxl",
-					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
+					"size": "clamp(2.7994rem, 2.4418rem + 1.5254vw, 3.8147rem)"
 				},
 				{
 					"name": "3XL",
 					"slug": "xxxl",
-					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
+					"size": "clamp(2.3328rem, 2.0796rem + 1.0801vw, 3.0518rem)"
 				},
 				{
 					"name": "2XL",
 					"slug": "xxl",
-					"size": "clamp(1.6018rem, 1.3062rem + 1.2614vw, 2.4414rem)"
+					"size": "clamp(1.944rem, 1.7689rem + 0.7473vw, 2.4414rem)"
 				},
 				{
 					"name": "XL",
 					"slug": "xl",
-					"size": "clamp(1.4238rem, 1.2375rem + 0.7952vw, 1.9531rem)"
+					"size": "clamp(1.62rem, 1.5027rem + 0.5005vw, 1.9531rem)"
 				},
 				{
 					"name": "L",
 					"slug": "l",
-					"size": "clamp(1.2656rem, 1.1611rem + 0.446vw, 1.5625rem)"
+					"size": "clamp(1.35rem, 1.2752rem + 0.3192vw, 1.5625rem)"
 				},
 				{
 					"name": "M",
@@ -513,7 +513,7 @@
 				{
 					"name": "S",
 					"slug": "s",
-					"size": "clamp(1rem, 1rem + 0vw, 1rem)"
+					"size": "clamp(0.9375rem, 0.9155rem + 0.0939vw, 1rem)"
 				}
 			]
 		}
