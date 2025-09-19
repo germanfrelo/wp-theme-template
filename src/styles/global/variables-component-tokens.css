@@ -119,6 +119,12 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	/* Form Field - Radio */
 	--field-radio-size: 1.125em;
 
+	/* Focus Rings */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
 	/* Headings */
 	--heading-font-weight: var(--wp--custom--font-weight--black);
 	--h1-font-weight: var(--wp--custom--font-weight--black);
