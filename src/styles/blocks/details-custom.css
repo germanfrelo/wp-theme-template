@@ -9,7 +9,7 @@ Details - Custom style
 	--details-padding-left: var(--wp--preset--spacing--xs);
 	--details-padding-right: var(--wp--preset--spacing--xs);
 	--details-border-radius: var(--wp--preset--border-radius--2-xs);
-	--details-summary-font-weight: var(--font-weight-bold);
+	--details-summary-font-weight: var(--wp--custom--font-weight--bold);
 	--details-summary-gap: 1ch;
 	--details-summary-letter-spacing: normal;
 	--details-summary-line-height: inherit;

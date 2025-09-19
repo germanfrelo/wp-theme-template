@@ -239,7 +239,7 @@ hr {
 
 b,
 strong {
-	font-weight: var(--font-weight-bold, bolder);
+	font-weight: var(--wp--custom--font-weight--bold, bolder);
 }
 
 a {

@@ -130,12 +130,12 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Label */
 	--label-font-size: var(--wp--preset--font-size--m);
-	--label-font-weight: var(--font-weight-bold);
+	--label-font-weight: var(--wp--custom--font-weight--bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
 	/* Legend */
 	--legend-font-size: var(--wp--preset--font-size--m);
-	--legend-font-weight: var(--font-weight-bold);
+	--legend-font-weight: var(--wp--custom--font-weight--bold);
 	--legend-line-height: inherit;
 
 	/* Links */
@@ -179,7 +179,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--site-header-padding-bottom: var(--wp--preset--spacing--s);
 
 	/* Table */
-	--table-cell-header-weight: var(--font-weight-bold);
-	--table-foot-font-weight: var(--font-weight-bold);
-	--table-head-head-weight: var(--font-weight-bold);
+	--table-cell-header-weight: var(--wp--custom--font-weight--bold);
+	--table-foot-font-weight: var(--wp--custom--font-weight--bold);
+	--table-head-head-weight: var(--wp--custom--font-weight--bold);
 }

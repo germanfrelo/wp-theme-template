@@ -55,8 +55,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Font Weights */
 	--font-weight-base: var(--wp--custom--font-weight--regular);
-	--font-weight-bold: var(--wp--custom--font-weight--bold);
-	--font-weight-headings: 800;
 
 	/* Measure */
 	--measure-content: var(--wp--style--global--content-size);
