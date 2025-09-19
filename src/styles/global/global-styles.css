@@ -79,39 +79,39 @@ h6 {
 }
 
 h1 {
-	font-size: var(--font-size-h1, 2rem);
+	font-size: var(--h1-font-size, 2rem);
 	font-weight: var(--h1-font-weight, bold);
-	line-height: var(--font-line-height-h1, normal);
+	line-height: var(--h1-line-height, normal);
 }
 
 h2 {
-	font-size: var(--font-size-h2, 1.5rem);
+	font-size: var(--h2-font-size, 1.5rem);
 	font-weight: var(--h2-font-weight, bold);
-	line-height: var(--font-line-height-h2, normal);
+	line-height: var(--h2-line-height, normal);
 }
 
 h3 {
-	font-size: var(--font-size-h3, 1.17rem);
+	font-size: var(--h3-font-size, 1.17rem);
 	font-weight: var(--h3-font-weight, bold);
-	line-height: var(--font-line-height-h3, normal);
+	line-height: var(--h3-line-height, normal);
 }
 
 h4 {
-	font-size: var(--font-size-h4, 1rem);
+	font-size: var(--h4-font-size, 1rem);
 	font-weight: var(--h4-font-weight, bold);
-	line-height: var(--font-line-height-h4, normal);
+	line-height: var(--h4-line-height, normal);
 }
 
 h5 {
-	font-size: var(--font-size-h5, 0.83rem);
+	font-size: var(--h5-font-size, 0.83rem);
 	font-weight: var(--h5-font-weight, bold);
-	line-height: var(--font-line-height-h5, normal);
+	line-height: var(--h5-line-height, normal);
 }
 
 h6 {
-	font-size: var(--font-size-h6, 0.67rem);
-	font-weight: var(--h5-font-weight, bold);
-	line-height: var(--font-line-height-h6, normal);
+	font-size: var(--h6-font-size, 0.67rem);
+	font-weight: var(--h6-font-weight, bold);
+	line-height: var(--h6-line-height, normal);
 }
 
 /* ----------------------------------------------------------------------
