@@ -34,7 +34,7 @@
 		"svgo": "4.0.0"
 	},
 	"scripts": {
-		"build": "npm run build:css && npm run build:svg",
+		"build": "npm run build:css && npm run format:svg",
 		"build:css": "rimraf build/styles && postcss src/styles/global.css --dir build/styles",
 		"format": "prettier --write . && npm run format:svg",
 		"format:check": "prettier --check .",
