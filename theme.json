@@ -399,8 +399,8 @@
 				"ch",
 				"cqb",
 				"cqi",
-				"cqmin",
 				"cqmax",
+				"cqmin",
 				"dvb",
 				"dvi",
 				"em",
@@ -414,9 +414,11 @@
 				"svb",
 				"svi",
 				"vb",
+				"vh",
 				"vi",
 				"vmax",
-				"vmin"
+				"vmin",
+				"vw"
 			]
 		},
 		"typography": {
