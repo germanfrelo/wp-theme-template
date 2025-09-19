@@ -66,7 +66,7 @@ Table of contents:
 nav.wp-block-navigation {
 	/* Global */
 	--nav-global-color: orange;
-	--nav-global-font-size: var(--wp--preset--font-size--xs);
+	--nav-global-font-size: var(--wp--preset--font-size--s);
 	--nav-global-font-weight: var(--font-weight-medium);
 	--nav-global-gap-columns: var(--gutter);
 	--nav-global-gap-rows: var(--gutter);

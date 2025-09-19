@@ -9,6 +9,6 @@ Site Footer
 	nav.wp-block-navigation {
 		--nav-global-gap-columns: var(--wp--preset--spacing--m);
 		--nav-global-gap-rows: var(--wp--preset--spacing--3-xs);
-		--nav-global-font-size: var(--wp--preset--font-size--xs);
+		--nav-global-font-size: var(--wp--preset--font-size--s);
 	}
 }

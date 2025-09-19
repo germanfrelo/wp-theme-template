@@ -83,7 +83,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--button-border-radius: var(--wp--preset--border-radius--2-xs);
 	--button-border-width: var(--wp--custom--border-width--thin);
 	--button-color: var(--wp--preset--color--surface-1);
-	--button-font-size: var(--wp--preset--font-size--xs);
+	--button-font-size: var(--wp--preset--font-size--s);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
 	--button-line-height: var(--wp--custom--line-height--slim);
 	--button-padding-block: 0.875em;
@@ -129,12 +129,12 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--h6-font-weight: var(--wp--custom--font-weight--black);
 
 	/* Label */
-	--label-font-size: var(--wp--preset--font-size--s);
+	--label-font-size: var(--wp--preset--font-size--m);
 	--label-font-weight: var(--font-weight-bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
 	/* Legend */
-	--legend-font-size: var(--wp--preset--font-size--s);
+	--legend-font-size: var(--wp--preset--font-size--m);
 	--legend-font-weight: var(--font-weight-bold);
 	--legend-line-height: inherit;
 

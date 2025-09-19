@@ -20,7 +20,7 @@ ol.is-style-ordered-custom {
 			aspect-ratio: 1;
 			padding: 0.5em;
 			font-family: var(--font-family-mono, monospace);
-			font-size: var(--wp--preset--font-size--xs, inherit);
+			font-size: var(--wp--preset--font-size--s, inherit);
 			font-weight: bolder;
 			line-height: 0;
 			color: var(--wp--preset--color--primary-medium, inherit);

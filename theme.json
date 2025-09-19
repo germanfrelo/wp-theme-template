@@ -481,38 +481,38 @@
 			},
 			"fontSizes": [
 				{
-					"name": "3XL (2.0273–3.8147rem)",
-					"slug": "3-xl",
+					"name": "4XL",
+					"slug": "xxxxl",
 					"size": "clamp(2.0273rem, 1.3979rem + 2.6853vw, 3.8147rem)"
 				},
 				{
-					"name": "2XL (1.802–3.0518rem)",
-					"slug": "2-xl",
+					"name": "3XL",
+					"slug": "xxxl",
 					"size": "clamp(1.802rem, 1.362rem + 1.8775vw, 3.0518rem)"
 				},
 				{
-					"name": "XL (1.6018–2.4414rem)",
-					"slug": "xl",
+					"name": "2XL",
+					"slug": "xxl",
 					"size": "clamp(1.6018rem, 1.3062rem + 1.2614vw, 2.4414rem)"
 				},
 				{
-					"name": "L (1.4238–1.9531rem)",
-					"slug": "l",
+					"name": "XL",
+					"slug": "xl",
 					"size": "clamp(1.4238rem, 1.2375rem + 0.7952vw, 1.9531rem)"
 				},
 				{
-					"name": "M (1.2656–1.5625rem)",
-					"slug": "m",
+					"name": "L",
+					"slug": "l",
 					"size": "clamp(1.2656rem, 1.1611rem + 0.446vw, 1.5625rem)"
 				},
 				{
-					"name": "S (1.125–1.25rem)",
-					"slug": "s",
+					"name": "M",
+					"slug": "m",
 					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
 				},
 				{
-					"name": "XS (1rem)",
-					"slug": "xs",
+					"name": "S",
+					"slug": "s",
 					"size": "clamp(1rem, 1rem + 0vw, 1rem)"
 				}
 			]
