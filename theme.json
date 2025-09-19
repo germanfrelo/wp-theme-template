@@ -180,7 +180,8 @@
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
-				"bold": "700"
+				"bold": "700",
+				"black": "800"
 			},
 			"letter-spacing": {
 				"tighter": "-0.1ch",
