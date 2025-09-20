@@ -12,61 +12,53 @@ Notes:
 .wp-block-query-pagination-numbers {
 	display: flex;
 	flex-wrap: var(--block-query-pag-numbers-flex-wrap, wrap);
-	gap: var(--block-query-pag-numbers-gap, 1ch);
-	align-items: var(--block-query-pag-numbers-align-cross-axis, center);
-	justify-content: var(--block-query-pag-numbers-align-main-axis, center);
+	row-gap: var(--block-query-pag-numbers-gap-rows, inherit);
+	column-gap: var(--block-query-pag-numbers-gap-columns, inherit);
+	align-items: var(--block-query-pag-numbers-align-items, inherit);
+	justify-content: var(--block-query-pag-numbers-justify-content, inherit);
 
-	/* ----------------------------------------------------------------------
-	Any Page Number
-	---------------------------------------------------------------------- */
+	/* Page Number */
 
 	.page-numbers {
-		display: inline-grid;
-		place-content: center;
-		min-inline-size: var(--block-query-pag-number-min-size, var(--min-target-size, 24px));
-		min-block-size: var(--block-query-pag-number-min-size, var(--min-target-size, 24px));
-		padding-block: var(--block-query-pag-number-padding-block, 0);
-		padding-inline: var(--block-query-pag-number-padding-inline, 0);
+		align-content: center;
+		min-inline-size: var(--block-query-pag-number-min-size, 44px);
+		min-block-size: var(--block-query-pag-number-min-size, 44px);
+		padding-block: var(--block-query-pag-number-padding-block, 0.5em);
+		padding-inline: var(--block-query-pag-number-padding-inline, 0.5em);
 		line-height: 1;
-		color: var(--block-query-pag-number-color, inherit);
-		background-color: var(--block-query-pag-number-color-bg, transparent);
-		border-color: var(--block-query-pag-number-border-color, transparent);
-		border-style: var(--block-query-pag-number-border-style, none);
-		border-width: var(--block-query-pag-number-border-width, 0);
-		border-block-end-width: var(--block-query-pag-number-border-block-end-width, 0);
-		border-radius: var(--block-query-pag-number-border-radius, 0);
-	}
+		color: var(--block-query-pag-number-color);
+		text-align: center;
+		background-color: var(--block-query-pag-number-color-bg);
+		border-color: var(--block-query-pag-number-border-color);
+		border-style: var(--block-query-pag-number-border-style, solid);
+		border-width: var(--block-query-pag-number-border-width, thin);
+		border-radius: var(--block-query-pag-number-border-radius);
 
-	/* ----------------------------------------------------------------------
-	Page Number that is a Link (neither Current not Dots)
-	---------------------------------------------------------------------- */
+		/* Page Number that is a Link (neither Current nor Dots) */
 
-	a.page-numbers:is(:hover, :focus-visible) {
-		color: var(--block-query-pag-number-color-hover, inherit);
-		background-color: var(--block-query-pag-number-color-bg-hover, transparent);
-		border-color: var(--block-query-pag-number-border-color-hover, transparent);
-	}
+		&a:is(:hover, :focus-visible) {
+			color: var(--block-query-pag-number-color-hover);
+			background-color: var(--block-query-pag-number-color-bg-hover);
+			border-color: var(--block-query-pag-number-border-color-hover);
+		}
 
-	/* ----------------------------------------------------------------------
-	Current Page Number
-	---------------------------------------------------------------------- */
+		/* Current Page Number */
 
-	.page-numbers.current {
-		color: var(--block-query-pag-number-current-color, inherit);
-		background-color: var(--block-query-pag-number-current-color-bg, transparent);
-		border-color: var(--block-query-pag-number-current-border-color, transparent);
-	}
+		&.current {
+			color: var(--block-query-pag-number-current-color);
+			background-color: var(--block-query-pag-number-current-color-bg);
+			border-color: var(--block-query-pag-number-current-border-color, transparent);
+		}
 
-	/* ----------------------------------------------------------------------
-	Dots
-	---------------------------------------------------------------------- */
+		/* Dots */
 
-	.page-numbers.dots {
-		min-inline-size: var(--block-query-pag-number-dots-min-size, auto);
-		min-block-size: var(--block-query-pag-number-dots-min-size, auto);
-		padding-block: var(--block-query-pag-number-dots-padding-block, 0);
-		padding-inline: var(--block-query-pag-number-dots-padding-inline, 0);
-		border-color: var(--block-query-pag-number-dots-border-color, transparent);
-		border-width: var(--block-query-pag-number-dots-border-width, 0);
+		&.dots {
+			min-inline-size: var(--block-query-pag-number-dots-min-size, auto);
+			min-block-size: var(--block-query-pag-number-dots-min-size, auto);
+			padding-block: var(--block-query-pag-number-dots-padding-block, 0);
+			padding-inline: var(--block-query-pag-number-dots-padding-inline, 0);
+			border-color: var(--block-query-pag-number-dots-border-color, transparent);
+			border-width: var(--block-query-pag-number-dots-border-width, 0);
+		}
 	}
 }

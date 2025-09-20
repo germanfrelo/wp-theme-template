@@ -15,32 +15,31 @@ Query Pagination Next
 
 .wp-block-query-pagination-next {
 	display: inline-flex;
-	flex-wrap: var(--block-query-pag-next-flex-wrap, wrap);
+	flex-wrap: wrap-reverse; /* So that when wrapped, text is above and icon is below */
 	row-gap: var(--block-query-pag-next-gap-rows, 0.5ch);
 	column-gap: var(--block-query-pag-next-gap-columns, 1ch);
-	align-content: center;
-	align-items: center;
-	justify-content: var(--block-query-pag-alignment-main-axis, center);
-	min-inline-size: var(--block-query-pag-next-min-size, var(--min-target-size, 24px));
-	min-block-size: var(--block-query-pag-next-min-size, var(--min-target-size, 24px));
-	color: var(--block-query-pag-next-color, inherit);
-	background-color: var(--block-query-pag-next-color-bg, transparent);
-	border-color: var(--block-query-pag-next-border-color, transparent);
-	border-style: var(--block-query-pag-next-border-style, none);
-	border-width: var(--block-query-pag-next-border-width, 0);
-	border-radius: var(--block-query-pag-next-border-radius, 0);
-}
-
-.wp-block-query-pagination-next:is(:hover, :focus-visible) {
-	color: var(--block-query-pag-next-color-hover, inherit);
-	background-color: var(--block-query-pag-next-color-bg-hover, transparent);
-	border-color: var(--block-query-pag-next-border-color-hover, transparent);
-}
-
-/* ======================================================================
-Query Pagination Next Arrow
-====================================================================== */
-
-.wp-block-query-pagination-next-arrow {
+	place-content: center;
+	min-inline-size: var(--block-query-pag-next-min-size, 44px);
+	min-block-size: var(--block-query-pag-next-min-size, 44px);
+	padding-block: var(--block-query-pag-next-padding-block, 0.5em);
+	padding-inline: var(--block-query-pag-next-padding-inline, 0.5em);
 	line-height: 1;
+	color: var(--block-query-pag-next-color);
+	text-align: center;
+	background-color: var(--block-query-pag-next-color-bg);
+	border-color: var(--block-query-pag-next-border-color);
+	border-style: var(--block-query-pag-next-border-style, solid);
+	border-width: var(--block-query-pag-next-border-width, thin);
+	border-radius: var(--block-query-pag-next-border-radius);
+
+	&:is(:hover, :focus-visible) {
+		color: var(--block-query-pag-next-color-hover);
+		background-color: var(--block-query-pag-next-color-bg-hover);
+		border-color: var(--block-query-pag-next-border-color-hover);
+	}
+
+	.wp-block-query-pagination-next-arrow {
+		margin-left: 0; /* Remove default margin */
+		line-height: 1;
+	}
 }

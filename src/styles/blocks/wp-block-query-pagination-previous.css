@@ -15,33 +15,31 @@ Query Pagination Previous
 
 .wp-block-query-pagination-previous {
 	display: inline-flex;
-	flex-wrap: var(--block-query-pag-prev-flex-wrap, wrap);
-	row-gap: var(--block-query-pag-prev-gap-rows, 0.5ch);
-	column-gap: var(--block-query-pag-prev-gap-columns, 1ch);
-	align-content: center;
-	align-items: center;
-	justify-content: var(--block-query-pag-alignment-main-axis, center);
-	min-inline-size: var(--block-query-pag-prev-min-size, var(--min-target-size, 24px));
-	min-block-size: var(--block-query-pag-prev-min-size, var(--min-target-size, 24px));
-	color: var(--block-query-pag-prev-color, inherit);
-	background-color: var(--block-query-pag-prev-color-bg, transparent);
-	border-color: var(--block-query-pag-prev-border-color, transparent);
-	border-style: var(--block-query-pag-prev-border-style, none);
-	border-width: var(--block-query-pag-prev-border-width, 0);
-	border-radius: var(--block-query-pag-prev-border-radius, 0);
-
-	/* States */
-	:is(:hover, :focus-visible) {
-		color: var(--block-query-pag-prev-color-hover, inherit);
-		background-color: var(--block-query-pag-prev-color-bg-hover, transparent);
-		border-color: var(--block-query-pag-prev-border-color-hover, transparent);
-	}
-}
-
-/* ======================================================================
-Query Pagination Previous Arrow
-====================================================================== */
-
-.wp-block-query-pagination-previous-arrow {
+	flex-wrap: wrap;
+	row-gap: var(--block-query-pag-previous-gap-rows, 0.5ch);
+	column-gap: var(--block-query-pag-previous-gap-columns, 1ch);
+	place-content: center;
+	min-inline-size: var(--block-query-pag-previous-min-size, 44px);
+	min-block-size: var(--block-query-pag-previous-min-size, 44px);
+	padding-block: var(--block-query-pag-previous-padding-block, 0.5em);
+	padding-inline: var(--block-query-pag-previous-padding-inline, 0.5em);
 	line-height: 1;
+	color: var(--block-query-pag-previous-color);
+	text-align: center;
+	background-color: var(--block-query-pag-previous-color-bg);
+	border-color: var(--block-query-pag-previous-border-color);
+	border-style: var(--block-query-pag-previous-border-style, solid);
+	border-width: var(--block-query-pag-previous-border-width, thin);
+	border-radius: var(--block-query-pag-previous-border-radius);
+
+	&:is(:hover, :focus-visible) {
+		color: var(--block-query-pag-prev-color-hover);
+		background-color: var(--block-query-pag-prev-color-bg-hover);
+		border-color: var(--block-query-pag-prev-border-color-hover);
+	}
+
+	.wp-block-query-pagination-previous-arrow {
+		margin-right: 0; /* Remove default margin */
+		line-height: 1;
+	}
 }
