@@ -529,14 +529,19 @@
 	},
 	"customTemplates": [
 		{
+			"name": "page-content-not-centered",
+			"postTypes": ["page"],
+			"title": "Páginas (contenido no centrado)"
+		},
+		{
 			"name": "page-without-title",
 			"postTypes": ["page"],
-			"title": "Pages without title"
+			"title": "Páginas (sin título)"
 		},
 		{
 			"name": "page-without-title-content-not-centered",
 			"postTypes": ["page"],
-			"title": "Pages without title & content not centered"
+			"title": "Páginas (sin título y contenido no centrado)"
 		}
 	],
 	"templateParts": [
