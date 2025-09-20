@@ -128,19 +128,9 @@ address {
 
 /* ----------------------------------------------------------------------
 Description List
+---
+Elements: dl, dt, dd
 ---------------------------------------------------------------------- */
-
-dl {
-	margin-block: 0;
-}
-
-dt {
-	font-weight: var(--dt-font-weight, inherit);
-}
-
-dd {
-	margin-inline-start: 0;
-}
 
 /* ----------------------------------------------------------------------
 Ordered & Unordered Lists

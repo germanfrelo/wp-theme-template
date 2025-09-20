@@ -41,9 +41,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
-	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
-	--code-padding-block: 0.1875em;
-	--code-padding-inline: 0.375em;
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 95%);
+	--code-padding-block: 0.125em;
+	--code-padding-inline: 0.25em;
 
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
