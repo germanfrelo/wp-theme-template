@@ -201,7 +201,7 @@
 				"strength": "1%"
 			},
 			"transition": {
-				"duration": "0.25s",
+				"duration": "0.15s",
 				"timing-function": "ease"
 			}
 		},
