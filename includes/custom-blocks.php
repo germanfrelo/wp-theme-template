@@ -11,7 +11,7 @@
 
 
 /**
- * Add custom block category.
+ * Add custom block categories.
  */
 function themeslug_register_block_categories($categories) {
 	return array_merge(

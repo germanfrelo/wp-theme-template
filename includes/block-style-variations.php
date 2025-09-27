@@ -19,10 +19,10 @@
  */
 function themeslug_unregister_wp_block_style_variations_script() {
 	wp_enqueue_script(
-		'themeslug-unregister-wp-block-style-variations',
-		get_template_directory_uri() . '/assets/js/unregister-wp-block-style-variations.js',
+		'themeslug-unregister-block-style-variations',
+		get_template_directory_uri() . '/assets/js/unregister-block-style-variations.js',
 		['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
-		filemtime(get_template_directory() . '/assets/js/unregister-wp-block-style-variations.js'),
+		filemtime(get_template_directory() . '/assets/js/unregister-block-style-variations.js'),
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
 }
