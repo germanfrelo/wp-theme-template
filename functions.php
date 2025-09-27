@@ -14,6 +14,9 @@ require_once get_theme_file_path( 'includes/template-part-areas.php' );
 // Custom Blocks
 require_once get_theme_file_path( 'includes/custom-blocks.php' );
 
+// Block Variations
+require_once get_theme_file_path( 'includes/block-variations.php' );
+
 // Block Style Variations
 require_once get_theme_file_path( 'includes/block-style-variations.php' );
 
