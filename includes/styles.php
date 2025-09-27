@@ -13,10 +13,11 @@
  *
  * This prevents them from being loaded on the front end of the website, which reduces a substantial amount of opinionated inline styles.
  *
- * @link https://github.com/WordPress/gutenberg/issues/36834#issuecomment-1769802551
  * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/theme.json
- * @link https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
+ * @link https://github.com/WordPress/gutenberg/issues/36834#issuecomment-1769802551
+ * @link https://developer.wordpress.org/news/2023/07/how-to-modify-theme-json-data-using-server-side-filters/
  * @link https://developer.wordpress.org/reference/hooks/wp_theme_json_data_default/
+ * @link https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
  *
  * @param \WP_Theme_JSON_Data $theme_json Class to access and update the underlying data.
  * @return \WP_Theme_JSON_Data
