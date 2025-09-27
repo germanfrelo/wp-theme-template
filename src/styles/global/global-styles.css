@@ -199,8 +199,6 @@ Preformatted Text
 ---------------------------------------------------------------------- */
 
 pre {
-	overflow: auto;
-	overscroll-behavior: contain;
 	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 }
