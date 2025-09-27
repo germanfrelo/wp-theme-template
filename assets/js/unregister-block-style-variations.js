@@ -1,5 +1,7 @@
 /**
  * Unregister Block Style Variations (Block Styles, for short)
+ *
+ * @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-blocks/#unregisterblockstyle
  */
 
 wp.domReady(() => {

@@ -3,23 +3,24 @@
  * Block Style Variations (Block Styles, for short)
  *
  * @link https://developer.wordpress.org/themes/features/block-style-variations/
+ * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
  *
  * @package themeslug
  */
 
 
 /**
- * Unregister block style variations.
+ * Unregister Block Style Variations
  *
- * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
- * The PHP method only works for styles registered server-side.
- * Core WordPress block styles are registered client-side using JavaScript.
- * Therefore, to unregister core block styles, the JavaScript 'unregisterBlockStyle' function must be used.
+ * Block styles can be unregistered in both PHP and JavaScript.
+ * The PHP method only works for styles registered server-side with 'register_block_style'.
+ * To disable styles registered with client-side code, which includes those provided by WordPress, you must use JavaScript with 'unregisterBlockStyle'.
  *
+ * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience/#unregister-block-styles
  * @link https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
-function themeslug_enqueue_unregister_block_style_variations_script() {
+function themeslug_unregister_block_style_variations() {
 	wp_enqueue_script(
 		'themeslug-unregister-block-style-variations',
 		get_template_directory_uri() . '/assets/js/unregister-block-style-variations.js',
@@ -28,11 +29,11 @@ function themeslug_enqueue_unregister_block_style_variations_script() {
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
 }
-add_action('enqueue_block_editor_assets', 'themeslug_enqueue_unregister_block_style_variations_script');
+add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_variations');
 
 
 /**
- * Register block style variations.
+ * Register Block Style Variations
  *
  * @link https://developer.wordpress.org/reference/functions/register_block_style/
  *
