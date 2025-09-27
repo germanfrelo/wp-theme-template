@@ -1,13 +1,15 @@
 <?php
 /**
- * Block Style Variations (aka Block Styles).
+ * Block Style Variations (Block Styles, for short)
+ *
+ * @link https://developer.wordpress.org/themes/features/block-style-variations/
  *
  * @package themeslug
  */
 
 
 /**
- * Remove WordPress default block style variations.
+ * Unregister block style variations.
  *
  * Block styles can be unregistered in PHP ('unregister_block_style') or JavaScript ('unregisterBlockStyle').
  * The PHP method only works for styles registered server-side.
@@ -15,26 +17,24 @@
  * Therefore, to unregister core block styles, the JavaScript 'unregisterBlockStyle' function must be used.
  *
  * @link https://developer.wordpress.org/reference/hooks/enqueue_block_editor_assets/
- * @link https://developer.wordpress.org/news/2024/07/15-ways-to-curate-the-wordpress-editing-experience
+ * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
-function themeslug_unregister_wp_block_style_variations_script() {
+function themeslug_enqueue_unregister_block_style_variations_script() {
 	wp_enqueue_script(
 		'themeslug-unregister-block-style-variations',
 		get_template_directory_uri() . '/assets/js/unregister-block-style-variations.js',
-		['wp-blocks', 'wp-dom-ready', 'wp-edit-post'],
+		['wp-blocks', 'wp-dom-ready'],
 		filemtime(get_template_directory() . '/assets/js/unregister-block-style-variations.js'),
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
 }
-add_action('enqueue_block_editor_assets', 'themeslug_unregister_wp_block_style_variations_script');
+add_action('enqueue_block_editor_assets', 'themeslug_enqueue_unregister_block_style_variations_script');
 
 
 /**
  * Register block style variations.
  *
  * @link https://developer.wordpress.org/reference/functions/register_block_style/
- * @link https://developer.wordpress.org/themes/features/block-style-variations/
- * @link https://fullsiteediting.com/lessons/custom-block-styles/
  *
  * @return void
  */
@@ -70,6 +70,7 @@ function themeslug_register_block_style_variations() {
 			'label' => __( 'Custom', 'themeslug' )
 		]
 	);
+
 	register_block_style(
 		[
 			'core/list'

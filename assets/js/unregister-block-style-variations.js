@@ -1,5 +1,5 @@
 /**
- * Unregister Block Style Variations
+ * Unregister Block Style Variations (Block Styles, for short)
  */
 
 wp.domReady(() => {
