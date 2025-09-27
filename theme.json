@@ -319,7 +319,7 @@
 					"size": "clamp(1rem, 0.6919rem + 1.3146vw, 1.875rem)"
 				},
 				{
-					"name": "M-L",
+					"name": "M-L (Sección int)",
 					"slug": "m-l",
 					"size": "clamp(1.5rem, 1.0379rem + 1.9718vw, 2.8125rem)"
 				},
@@ -329,7 +329,7 @@
 					"size": "clamp(2.25rem, 1.5458rem + 3.0047vw, 4.25rem)"
 				},
 				{
-					"name": "XL-2XL (3.375–6.25rem)",
+					"name": "XL-2XL (Sección ext)",
 					"slug": "xl-2-xl",
 					"size": "clamp(3.375rem, 2.3627rem + 4.3192vw, 6.25rem)"
 				},
