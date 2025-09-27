@@ -68,6 +68,20 @@ Smooth scrolling, but only when users have no preference for reduced motion, and
 	}
 }
 
+/* Opt in the whole page to interpolate sizes to/from keywords. */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* Opt in all pages to cross-document view transitions. */
+@media (prefers-reduced-motion: no-preference) {
+	@view-transition {
+		navigation: auto;
+	}
+}
+
 /*
 When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar.
 */

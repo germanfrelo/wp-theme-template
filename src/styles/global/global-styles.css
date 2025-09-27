@@ -30,18 +30,6 @@ Table of contents:
 01. Document / Global
 ====================================================================== */
 
-@media (prefers-reduced-motion: no-preference) {
-	/* Opt in the whole page to interpolate sizes to/from keywords. */
-	html {
-		interpolate-size: allow-keywords;
-	}
-
-	/* Opt in all pages to cross-document view transitions. */
-	@view-transition {
-		navigation: auto;
-	}
-}
-
 /* ======================================================================
 02. Sections
 ====================================================================== */
@@ -393,10 +381,7 @@ textarea {
 	min-block-size: var(--field-min-size-block, 24px);
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
-	font-size: max(
-		16px,
-		var(--field-font-size, inherit)
-	); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
+	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
 	color: var(--field-color, inherit);
 	background-color: var(--field-color-bg, transparent);
