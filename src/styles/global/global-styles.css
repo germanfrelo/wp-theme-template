@@ -16,18 +16,19 @@ Selectors are grouped and sorted based on:
 - https://html.spec.whatwg.org/multipage/#toc-semantics
 
 Table of contents:
-01. Document / Global
+01. Document/Global
 02. Sections
-03. Grouping content
-04. Inline text semantics
-05. Embedded content
+03. Grouping Content
+04. Inline Text Semantics
+05. Embedded Content
 06. Tables
-07. Forms
-08. Interactive elements
+07. Form Controls
+08. Interactive Elements
+08. Focus Indicators
 ====================================================================== */
 
 /* ======================================================================
-01. Document / Global
+01. Document/Global
 ====================================================================== */
 
 /* ======================================================================
@@ -356,7 +357,7 @@ th {
 }
 
 /* ======================================================================
-07. Forms
+07. Form Controls
 ====================================================================== */
 
 legend {
@@ -514,7 +515,7 @@ dialog {
 }
 
 /* ======================================================================
-9. Focus Indicators
+09. Focus Indicators
 ====================================================================== */
 
 /*
