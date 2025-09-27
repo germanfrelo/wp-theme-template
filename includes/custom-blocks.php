@@ -28,9 +28,9 @@ add_filter('block_categories_all', 'themeslug_register_block_categories');
 
 
 /**
- * Register custom block types.
+ * Enqueue custom block types.
  */
-function themeslug_register_blocks() {
+function themeslug_enqueue_blocks() {
 	// register_block_type(get_template_directory() . '/build/blocks/______');
 }
-add_action('init', 'themeslug_register_blocks');
+add_action('init', 'themeslug_enqueue_blocks');

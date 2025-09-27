@@ -23,9 +23,9 @@
 function themeslug_unregister_block_style_variations() {
 	wp_enqueue_script(
 		'themeslug-unregister-block-style-variations',
-		get_template_directory_uri() . '/assets/js/unregister-block-style-variations.js',
+		get_theme_file_uri('assets/js/unregister-block-style-variations.js'),
 		['wp-blocks', 'wp-dom-ready'],
-		filemtime(get_template_directory() . '/assets/js/unregister-block-style-variations.js'),
+		filemtime(get_theme_file_path('assets/js/unregister-block-style-variations.js')),
 		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
 	);
 }
