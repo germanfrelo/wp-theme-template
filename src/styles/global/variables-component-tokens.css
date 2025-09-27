@@ -10,10 +10,6 @@ the 'tokens-system.css' file to maintain consistency. This creates a
 clear hierarchy where global styles can be updated in one place and
 automatically propagate to all components.
 
-Examples:
---button-color-bg: var(--color-primary);
---button-color-text: var(--color-on-primary);
-
 Reference: https://m3.material.io/foundations/design-tokens/overview
 ====================================================================== */
 
@@ -23,14 +19,13 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
 
 	/* Button */
-	--button-color-bg-on-active: var(--wp--preset--color--primary-darker-20);
-	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker-10);
-	--button-color-bg: var(--wp--preset--color--primary-medium);
-	--button-border-color-on-active: var(--wp--preset--color--primary-darker-20);
-	--button-border-color-on-hover: var(--wp--preset--color--primary-darker-10);
+	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker);
+	--button-color-bg: var(--wp--preset--color--primary);
+	--button-border-color-on-hover: var(--wp--preset--color--primary-darker);
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--preset--border-radius--2-xs);
 	--button-border-width: var(--wp--custom--border-width--thin);
+	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--s);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
@@ -41,7 +36,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
-	--code-color-bg: color-mix(in srgb, currentcolor, transparent 94%);
+	--code-color-bg: color-mix(in srgb, currentcolor, transparent 95%);
 	--code-padding-block: 0.1875em;
 	--code-padding-inline: 0.375em;
 
@@ -53,11 +48,13 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	Form Field
 	(input, textarea, select, button...)
 	*/
-	--field-color-bg: transparent;
+	--field-accent-color: var(--wp--preset--color--primary);
 	--field-border-color: currentcolor;
 	--field-border-radius: var(--wp--preset--border-radius--2-xs);
 	--field-border-width: var(--wp--custom--border-width--thin);
-	--field-color: var(--wp--preset--color--text-1);
+	--field-color-bg: transparent;
+	--field-color: var(--wp--preset--color--text);
+	--field-error-color: var(--color-error, crimson);
 	--field-font-weight: var(--font-weight-base);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;
@@ -106,9 +103,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--legend-line-height: inherit;
 
 	/* Links */
-	--link-color: var(--wp--preset--color--primary-medium);
-	--link-color-on-hover: var(--wp--preset--color--primary-darker-10);
-	--link-color-on-focus: var(--wp--preset--color--primary-darker-10);
+	--link-color: var(--wp--preset--color--primary);
+	--link-color-on-hover: var(--wp--preset--color--primary-darker);
+	--link-color-on-focus: var(--wp--preset--color--primary-darker);
 
 	/* List */
 	--list-gap: 0.5em;
@@ -119,7 +116,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Quote */
 	--quote-border-left-width: var(--wp--custom--border-width--thick);
-	--quote-border-left-color: var(--wp--preset--color--primary-medium);
+	--quote-border-left-color: var(--wp--preset--color--primary);
 	--quote-padding-inline: var(--wp--preset--spacing--m);
 
 	/* Reel */
@@ -130,8 +127,8 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
 
 	/* Scrollbars */
-	--scrollbar-thumb-color: var(--wp--preset--color--primary-medium);
-	--scrollbar-thumb-color-hover: var(--wp--preset--color--text-1);
+	--scrollbar-thumb-color: var(--wp--preset--color--primary);
+	--scrollbar-thumb-color-hover: var(--wp--preset--color--text);
 	--scrollbar-track-color: transparent;
 	--scrollbar-track-color-hover: transparent;
 	--scrollbar-thumb-radius: 1rem;

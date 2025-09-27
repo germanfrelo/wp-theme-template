@@ -49,12 +49,6 @@ Notes:
 		border-color: var(--button-border-color-on-hover, var(--button-border-color));
 	}
 
-	&:is(:active) {
-		color: var(--button-color-on-active, var(--button-color));
-		background-color: var(--button-color-bg-on-active, var(--button-color-bg));
-		border-color: var(--button-border-color-on-active, var(--button-border-color));
-	}
-
 	/* Has icon */
 	&:has(> :is(img, svg, .icon)),
 	.wp-block-button.has-icon > & {

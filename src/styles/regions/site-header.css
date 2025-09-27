@@ -12,7 +12,7 @@ header.wp-block-template-part {
 	--site-logo-height: var(--wp--preset--spacing--l);
 	padding-block-start: var(--site-header-padding-top, var(--gutter, 2rem));
 	padding-block-end: var(--site-header-padding-bottom, var(--gutter, 2rem));
-	background-color: color-mix(in oklch, var(--wp--preset--color--surface-1, Canvas) 95%, transparent);
+	background-color: var(--wp--preset--color--surface-2);
 
 	@supports (animation-timeline: scroll()) {
 		position: sticky;

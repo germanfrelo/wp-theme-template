@@ -23,7 +23,7 @@ ol.is-style-ordered-custom {
 			font-size: var(--wp--preset--font-size--s, inherit);
 			font-weight: bolder;
 			line-height: 0;
-			color: var(--wp--preset--color--primary-medium, inherit);
+			color: var(--wp--preset--color--primary, inherit);
 			content: counter(ol-custom-counter);
 			background-color: var(--wp--preset--color--surface-2, transparent);
 			border-style: solid;

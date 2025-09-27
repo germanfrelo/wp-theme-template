@@ -9,21 +9,12 @@ These tokens typically reference primitive values, or reference tokens,
 which are set in the 'theme.json' file. They should not be hardcoded
 with hex values or pixel values.
 
-Examples:
---color-primary: var(--wp--preset--color--blue);
---color-on-primary: var(--wp--preset--color--white);
-
 All components in the theme should reference these system tokens.
 
 Reference: https://m3.material.io/foundations/design-tokens/overview
 ====================================================================== */
 
 :root {
-	/* Colors */
-	--color-error: var(--color-danger-medium);
-	--color-surface: var(--wp--preset--color--surface-1);
-	--color-text: var(--wp--preset--color--text-1);
-
 	/* Font Families */
 	--font-family-base: var(--wp--preset--font-family--atkinson-hyperlegible-next);
 	--font-family-headings: var(--wp--preset--font-family--inter);

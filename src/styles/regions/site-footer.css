@@ -5,6 +5,7 @@ Site Footer
 .site-footer {
 	--site-logo-height: var(--wp--preset--spacing--xl);
 	padding-block: var(--wp--preset--spacing--xl, 2em);
+	background-color: var(--wp--preset--color--surface-2);
 
 	nav.wp-block-navigation {
 		--nav-global-gap-columns: var(--wp--preset--spacing--m);

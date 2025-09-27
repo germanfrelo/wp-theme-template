@@ -527,7 +527,7 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-background) {
-			background-color: var(--nav-responsive-container-color-bg, var(--color-surface, inherit));
+			background-color: var(--nav-responsive-container-color-bg, var(--wp--preset--color--surface-1, inherit));
 
 			.wp-block-navigation-item {
 				background-color: var(--nav-item-color-bg, inherit) !important;

@@ -44,9 +44,9 @@ body {
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--font-line-height-base, normal);
-	color: var(--color-text, CanvasText);
-	accent-color: var(--wp--preset--color--primary-medium, auto);
-	background-color: var(--color-surface, Canvas);
+	color: var(--wp--preset--color--text, CanvasText);
+	accent-color: var(--field-accent-color, auto);
+	background-color: var(--wp--preset--color--surface-1, Canvas);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
 }
 

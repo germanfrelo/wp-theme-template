@@ -13,8 +13,8 @@ Details - Custom style
 	--details-summary-gap: 1ch;
 	--details-summary-letter-spacing: normal;
 	--details-summary-line-height: inherit;
-	--details-icon-color: var(--wp--preset--color--primary-medium);
-	--details-icon-color-on-hover: var(--wp--preset--color--text-1);
+	--details-icon-color: var(--wp--preset--color--primary);
+	--details-icon-color-on-hover: var(--wp--preset--color--text);
 	--details-icon-size: 2rem;
 	--details-icon-image: url("../assets/svg/icon-chevron-down.svg");
 	--details-content-font-size: inherit;
