@@ -9,10 +9,11 @@
  * @package themeslug
  */
 
+
 /**
  * Add custom block category.
  */
-add_filter('block_categories_all', function ($categories) {
+function themeslug_register_block_categories($categories) {
 	return array_merge(
 		$categories,
 		[
@@ -22,10 +23,12 @@ add_filter('block_categories_all', function ($categories) {
 			],
 		]
 	);
-});
+}
+add_filter('block_categories_all', 'themeslug_register_block_categories');
+
 
 /**
- * Register blocks.
+ * Register custom block types.
  */
 function themeslug_register_blocks() {
 	// register_block_type(get_template_directory() . '/build/blocks/______');

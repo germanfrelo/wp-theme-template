@@ -5,6 +5,7 @@
  * @package themeslug
  */
 
+
 /**
  * Enqueue JS scripts on the front end of the website.
  *

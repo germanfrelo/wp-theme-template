@@ -8,20 +8,17 @@
  * @package themeslug
  */
 
-// Register template part areas
-require_once get_theme_file_path( 'inc/template-part-areas.php' );
-
-// Remove WordPress defaults
-require_once get_theme_file_path( 'inc/remove-wp-defaults.php' );
+// Template Part Areas
+require_once get_theme_file_path( 'includes/template-part-areas.php' );
 
 // Custom Blocks
-require_once get_theme_file_path( 'inc/custom-blocks.php' );
+require_once get_theme_file_path( 'includes/custom-blocks.php' );
 
-// Block style variations
-require_once get_theme_file_path( 'inc/block-style-variations.php' );
+// Block Style Variations
+require_once get_theme_file_path( 'includes/block-style-variations.php' );
 
 // CSS
-require_once get_theme_file_path( 'inc/styles.php' );
+require_once get_theme_file_path( 'includes/styles.php' );
 
 // Front-end JavaScript
-require_once get_theme_file_path( 'inc/js-scripts.php' );
+require_once get_theme_file_path( 'includes/scripts.php' );

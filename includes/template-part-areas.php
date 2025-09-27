@@ -7,6 +7,7 @@
  * @package themeslug
  */
 
+
 function themeslug_template_part_areas( array $areas ) {
 	$areas[] = [
 		'area'        => 'aside',

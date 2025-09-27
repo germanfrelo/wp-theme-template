@@ -1,6 +1,6 @@
 <?php
 /**
- * Enqueue stylesheets.
+ * Enqueue and manage theme styles.
  *
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#including-css
  *
@@ -9,7 +9,111 @@
 
 
 /**
- * Enqueue stylesheets on the front end of the website.
+ * Remove the default global settings and styles that WordPress loads from its core 'theme.json' file.
+ *
+ * This prevents them from being loaded on the front end of the website, which reduces a substantial amount of opinionated inline styles.
+ *
+ * @link https://github.com/WordPress/gutenberg/issues/36834#issuecomment-1769802551
+ * @link https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/theme.json
+ * @link https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
+ * @link https://developer.wordpress.org/reference/hooks/wp_theme_json_data_default/
+ *
+ * @param \WP_Theme_JSON_Data $theme_json Class to access and update the underlying data.
+ * @return \WP_Theme_JSON_Data
+ */
+function themeslug_remove_wp_theme_json_defaults($theme_json) {
+	// Get the theme data
+	$new_data = $theme_json->get_data();
+
+	// Override the theme data
+	$new_data = [
+		"version" => 3,
+		"settings" => [
+			"color" => [
+				"duotone" => [],
+				"gradients" => [],
+				"palette" => [],
+			],
+			"shadow" => [
+				"presets" => [],
+			],
+			"spacing" => [
+				"spacingScale" => [
+					"steps" => 0
+				],
+			],
+			"typography" => [
+				"fontSizes" => [],
+			],
+		],
+		"styles" => [
+			"elements" => [
+				"button" => [
+					"color" => [
+						"text" => "",
+						"background" => "",
+					],
+					"spacing" => [
+						"padding" => [
+							"top" => "",
+							"bottom" => "",
+							"left" => "",
+							"right" => "",
+						],
+					],
+					"typography" => [
+						"fontFamily" => "",
+						"fontSize" => "",
+						"lineHeight" => "",
+						"textDecoration" => "",
+					],
+					"border" => [
+						"width" => "",
+					],
+				],
+				"link" => [
+					"typography" => [
+						"textDecoration" => "",
+					],
+				],
+			],
+		],
+	];
+
+	// Update the theme data
+	$theme_json->update_with($new_data);
+
+	// Return the updated theme data
+	return $theme_json;
+}
+add_filter('wp_theme_json_data_default', 'themeslug_remove_wp_theme_json_defaults');
+
+
+/**
+ * Remove WordPress default block styles.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wp_dequeue_style/
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ *
+ * @return void
+ */
+function themeslug_remove_wp_block_styles() {
+	wp_dequeue_style('wp-block-categories');
+	wp_dequeue_style('wp-block-code');
+	wp_dequeue_style('wp-block-details');
+	wp_dequeue_style('wp-block-list');
+	wp_dequeue_style('wp-block-post-template');
+	wp_dequeue_style('wp-block-post-title');
+	wp_dequeue_style('wp-block-quote');
+	wp_dequeue_style('wp-block-search');
+	wp_dequeue_style('wp-block-site-logo');
+	wp_dequeue_style('wp-block-site-title');
+}
+add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles', 10);
+
+
+/**
+ * Enqueue theme stylesheets on the front end of the website.
  *
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#front-end-stylesheets
@@ -26,11 +130,11 @@ function themeslug_enqueue_styles() {
 		$theme_version
 	);
 }
-add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_styles', 20 );
 
 
 /**
- * Enqueue stylesheets in the Editor.
+ * Enqueue theme stylesheets in the Editor.
  *
  * @link https://developer.wordpress.org/reference/functions/add_editor_style/
  * @link https://developer.wordpress.org/themes/core-concepts/including-assets/#editor-stylesheets
@@ -47,7 +151,10 @@ function themeslug_add_editor_styles() {
 add_action( 'after_setup_theme', 'themeslug_add_editor_styles' );
 
 
+// TODO: WIP
 /**
+ * CSS Cascade Layers
+ *
  * The single source of truth for the entire cascade layer setup.
  *
  * @return array The configuration for CSS layers.
@@ -55,13 +162,13 @@ add_action( 'after_setup_theme', 'themeslug_add_editor_styles' );
 function themeslug_get_layer_config() {
 	return [
 		// Defines the final order of all top-level layers.
-		'order'   => [
+		'order' => [
 			'wordpress',
 			'plugins',
 			'theme',
 		],
 		// Maps specific stylesheet 'handles' to a layer.
-		'map'     => [
+		'map' => [
 			'themeslug-styles' => 'theme',
 			// e.g. 'plugin_handle' => 'plugins',
 		],
@@ -69,7 +176,6 @@ function themeslug_get_layer_config() {
 		'default' => 'wordpress',
 	];
 }
-
 
 // TODO: WIP
 /**
@@ -90,7 +196,6 @@ function themeslug_define_cascade_layers() {
 	wp_add_inline_style( 'themeslug-layer-definition', $layer_css );
 }
 // add_action( 'wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5 );
-
 
 // TODO: WIP
 /**

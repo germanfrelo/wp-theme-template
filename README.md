@@ -135,7 +135,7 @@ These are the theme's main CSS-related directories and files:
 
 ```text
 /
-├── inc/
+├── includes/
 │   ├── block-style-variations.php
 │   └── styles.php
 ├── src/
@@ -252,8 +252,8 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 ### Enqueuing
 
 > [!IMPORTANT]
-> **The theme enqueues both `style.css` and `build/styles/global.css` CSS files.**
-> They are enqueued by `inc/styles.php`, **on the website and in the site editor**.
+> **The theme only enqueues the `build/styles/global.css` file.**
+> It's enqueued by `includes/styles.php`, **on the website and in the site editor**.
 
 ## Local Development Workflow
 
