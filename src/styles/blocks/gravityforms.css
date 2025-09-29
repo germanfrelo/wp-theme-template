@@ -1,0 +1,104 @@
+/* ======================================================================
+gravityforms/form
+---
+Source:          URL
+Block Reference: URL
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
+/* stylelint-disable selector-not-notation -- To match GF selector specificity. */
+
+/* Selector is repeated to increase specificity to override GF styles */
+.gform_wrapper.gravity-theme {
+	/* ----------------------------------------------------------------------
+	Revert GF default styles
+	---------------------------------------------------------------------- */
+
+	.gfield textarea.large {
+		height: revert;
+	}
+
+	@media only screen and (width <= 641px) {
+		input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+			line-height: inherit;
+		}
+
+		textarea {
+			line-height: inherit;
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	Custom styles
+	---------------------------------------------------------------------- */
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin-block: 0;
+	}
+
+	/* Hide the required field legend */
+	.gform_required_legend {
+		display: none;
+	}
+
+	/* Hide the required asterisk */
+	.gfield_required_asterisk {
+		display: none;
+	}
+
+	.gform_fields {
+		row-gap: var(--form-fields-gap-rows, var(--gutter));
+		column-gap: 0; /* This avoid overflowing issues with GF default grid-template-columns */
+	}
+
+	.gfield {
+		--flow-space: 0.875rem;
+	}
+
+	.gform-footer {
+		--flow-space: var(--form-fields-gap-rows, var(--gutter));
+	}
+
+	.flow {
+		.gfield_radio > .gchoice + .gchoice {
+			margin-block-start: var(--flow-space);
+		}
+	}
+
+	/*
+	Errors
+	*/
+
+	&:has(.gform_validation_errors) {
+		--field-border-color: var(--field-error-color);
+		--field-color: var(--field-error-color);
+
+		.gfield_validation_message {
+			color: var(--field-error-color, inherit);
+		}
+	}
+
+	.gform_validation_errors {
+		padding: 1em;
+		color: var(--field-error-color, inherit);
+		border: 2px solid;
+	}
+
+	.gform_submission_error {
+		font: inherit;
+
+		.gform-icon {
+			float: left;
+			margin-inline-end: 1ch;
+			line-height: inherit;
+		}
+	}
+}

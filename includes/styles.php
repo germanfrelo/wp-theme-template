@@ -123,12 +123,23 @@ add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles', 10);
  * @return void
  */
 function themeslug_enqueue_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+	$theme_version = wp_get_theme()->get('Version');
+	$dependencies = [];
+
+	/**
+	 * Make the theme's main stylesheet dependent on the Gravity Forms basic stylesheet.
+	 * This ensures the theme's CSS loads *after* the plugin's CSS, which allows
+	 * for easy style overrides without increasing specificity or using `!important`.
+	 * The `wp_style_is()` check prevents errors if Gravity Forms is not active.
+	 */
+	if ( wp_style_is( 'gform_basic-css', 'registered' ) ) {
+		$dependencies[] = 'gform_basic-css';
+	}
 
 	wp_enqueue_style(
 		'themeslug-styles',
-		get_theme_file_uri( 'build/styles/global.css' ),
-		[],
+		get_theme_file_uri('build/styles/global.css'),
+		$dependencies,
 		$theme_version
 	);
 }
@@ -172,6 +183,7 @@ function themeslug_get_layer_config() {
 		// Maps specific stylesheet 'handles' to a layer.
 		'map' => [
 			'themeslug-styles' => 'theme',
+			'gform_basic'      => 'plugins',
 			// e.g. 'plugin_handle' => 'plugins',
 		],
 		// The default layer for any handle not found in the map.
