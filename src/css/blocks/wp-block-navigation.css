@@ -39,17 +39,18 @@ Table of contents:
 	01.2. Overlay Menu
 02. Navigation Breakpoint Override
 03. Navigation (<nav>)
-04. Menu Buttons Open/Close (<button>)
-05. Menu Item (<li>)
-06. Menu Item - Link (<a>)
-07. Menu Item - Submenu Icon (<button>/<span>)
-08. Submenu Container (<ul>)
+04. Elements
+05. Menu Buttons Open/Close (<button>)
+06. Outermost Menu Items (<li>)
+	06.1. Link/Button (<a>/<button>)
+07. Submenu Icon/Toggle (<span>/<button>)
+08. Submenus (<ul>)
 09. Responsive Containers when Overlay Menu is Open
 	09.1. Responsive Container
 	09.2. Responsive Container Close + Dialog + Content
 	09.3. Responsive Container Content
+	09.4. Elements
 10. Keyframes
-
 ====================================================================== */
 
 /* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors */
@@ -59,107 +60,103 @@ Table of contents:
 01. Configuration
 ====================================================================== */
 
-/* 01.1. Global
+/* ----------------------------------------------------------------------
+01.1. Global
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation {
 	/* Global */
 	--nav-global-text-color: orange;
 
-	/* Menu Toggle Buttons */
-
-	/*
-	--nav-button-text-color-hover: ;
-	--nav-button-text-color: ;
-	*/
+	/* Menu Toggle Button */
 	--nav-button-icon-size: 2.75rem; /* 44px */
+	/* --nav-button-open-text-color: ;
+	--nav-button-open-background-color: ;
+	--nav-button-open-text-color-hover: ;
+	--nav-button-open-background-color-hover: ;
+	--nav-button-close-text-color: ;
+	--nav-button-close-background-color: ;
+	--nav-button-close-text-color-hover: ;
+	--nav-button-close-background-color-hover: ; */
 
-	/* Menu Items */
-	--nav-item-background-color-hover: var(--color-surface-3);
-	--nav-item-background-color: var(--color-surface-2);
-	--nav-item-text-color-current-page: blue;
-	--nav-item-text-color-hover: tomato;
-	--nav-item-has-submenu-gap-columns: 0.25ch;
-	--nav-item-has-submenu-icon-display: grid;
-	--nav-item-has-submenu-icon-size-min: 24px;
+	/* Menu Item */
+	--nav-item-border-color: transparent;
+	--nav-item-border-color-hover: currentcolor;
+	--nav-item-border-color-current-page: transparent;
+	--nav-item-border-radius: var(--border-radius-s);
+	--nav-item-border-width: 0px;
+	--nav-item-text-color-hover: currentcolor;
+	--nav-item-text-color-current-page: currentcolor;
+	--nav-item-background-color: transparent;
+	--nav-item-background-color-hover: var(--color-surface-2);
+	--nav-item-background-color-current-page: var(--color-surface-2);
+	--nav-item-padding-block: 0.375em;
+	--nav-item-padding-inline: 0.875em;
 
-	/* --nav-item-has-submenu-icon-svg-path-stroke-width: ; */
-	--nav-item-has-submenu-icon-svg-size: inherit;
+	/* Menu Item has Submenu */
 	--nav-item-has-submenu-when-overlay-menu-open-content-grid-column: 2;
 	--nav-item-has-submenu-when-overlay-menu-open-icon-grid-column: 1;
-	--nav-item-of-submenu-has-submenu-gap-columns: 0;
+
+	/* Menu Item of Submenu */
 	--nav-item-of-submenu-padding-block: 0.5em;
 	--nav-item-of-submenu-padding-inline-start: 0.5em;
-	--nav-item-outermost-has-submenu-icon-position: 0; /* 0 = right (default) | -1 = left */
-	--nav-link-border-radius: 0;
-	--nav-link-line-color-current-page: transparent;
-	--nav-link-line-color-hover: transparent;
-	--nav-link-line-color: transparent;
-	--nav-link-line-offset-current-page: auto;
-	--nav-link-line-offset: auto;
-	--nav-link-line-thickness-current-page: auto;
-	--nav-link-line-thickness: auto;
-	--nav-link-line: underline;
-	--nav-link-padding-block-start: 0.5em;
-	--nav-link-padding-block-end: 0.5em;
-	--nav-link-padding-inline: 1em;
-	--nav-link-text-align: start;
 
-	/* Submenu Container */
+	/* Menu Link */
+
+	/* Submenu Icon */
+	--nav-submenu-icon-display: grid;
+	--nav-submenu-icon-margin-left: var(--space-3xs);
+	--nav-submenu-icon-size: 1.5rem; /* 24px */
+	--nav-submenu-icon-svg-size: 1rem;
+	/* --nav-submenu-icon-svg-path-stroke-width: ; */
+
+	/* Submenus */
 	--nav-submenu-border-color: currentcolor;
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
 	--nav-submenu-background-color: var(--color-surface-1);
-
-	/* --nav-submenu-text-color: inherit; */
+	/* --nav-submenu-color: currentcolor; */
 	--nav-submenu-gap-columns: 0;
 	--nav-submenu-gap-rows: 0;
 	--nav-submenu-inline-size-min: 100%;
 	--nav-submenu-inline-size: 20ch;
-
-	/* --nav-submenu-padding-block: 1em;
-	--nav-submenu-padding-inline-start: calc(
-		var(--nav-item-has-submenu-icon-size-min) + var(--nav-item-has-submenu-gap-columns)
-	); */
+	/* --nav-submenu-padding-block: 1em; */
+	/* --nav-submenu-padding-left: var(--nav-submenu-icon-svg-size); */
 	--nav-submenu-padding-inline-end: 0;
 	--nav-submenu-separator-color: currentcolor;
 	--nav-submenu-separator-width: 0;
 	--nav-submenu-shadow: none;
 
-	/* Menu Responsive Container */
+	/* Overlay Menu */
+	/* --nav-overlay-menu-animation-duration: ;
+	--nav-overlay-menu-animation-timing-function: ; */
+	/* --nav-overlay-menu-text-color: ; */
+	/* --nav-overlay-menu-background-color: ; */
+	/* --nav-overlay-menu-padding-top: ;
+	--nav-overlay-menu-padding-bottom: ; */
+	--nav-overlay-menu-padding-left: var(--space-m-xl);
+	/* --nav-overlay-menu-padding-right: ; */
+	/* --nav-overlay-menu-content-container-padding-top: ; */
 
-	/* --nav-responsive-container-animation-duration: ;
-	--nav-responsive-container-animation-timing-function: ;
-	--nav-responsive-container-background-color: ; */
-
-	/* --nav-responsive-container-padding-block-start ;
-	--nav-responsive-container-padding-block-end ;
-	--nav-responsive-container-padding-inline-start ;
-	--nav-responsive-container-padding-inline-end ; */
-
-	/* Menu Responsive Content Container */
-	--nav-responsive-content-container-padding-block-start: var(--nav-button-icon-size);
+	/* Other elements */
+	--field-border-width: 0;
+	--link-color: currentcolor;
 }
 
-/* 01.2. Overlay Menu
+/* ----------------------------------------------------------------------
+01.2. Overlay Menu
 ---
 Custom properties added here are the same from the ones above.
 They are only used when the menu is open, overriding the ones above.
 ---------------------------------------------------------------------- */
 
 nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is-menu-open)) {
-	--navigation-layout-justification-setting: stretch;
-
 	/* Global */
-	--nav-global-text-color: purple;
-
-	/* Menu Items */
-	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
+	--nav-global-gap-rows: var(--space-xs);
 
 	/* Submenu Container */
-	--nav-submenu-text-color: violet;
 	--nav-submenu-padding-block: 0;
-	--nav-submenu-padding-inline-start: 0;
+	--nav-submenu-padding-left: 0;
 	--nav-submenu-shadow: none;
 }
 
@@ -214,140 +211,373 @@ nav.wp-block-navigation {
 	font-weight: var(--nav-global-font-weight);
 	line-height: var(--nav-global-line-height);
 	color: var(--nav-global-text-color, currentcolor);
+	text-transform: var(--nav-global-text-transform);
+	letter-spacing: var(--nav-global-letter-spacing);
+}
 
-	/* ======================================================================
-	04. Menu Buttons Open/Close (<button>)
-	====================================================================== */
+/* ======================================================================
+04. Elements
+====================================================================== */
 
-	/* Both Open and Close Buttons
-	---------------------------------------------------------------------- */
+/* ======================================================================
+05. Menu Buttons Open/Close (<button>)
+====================================================================== */
 
-	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
-		color: var(--nav-button-text-color, currentcolor);
+/* Both Open & Close Buttons */
+
+:is(.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close) {
+	&button {
+		cursor: default;
+	}
+
+	> svg {
+		width: var(--nav-button-icon-size, 44px);
+		min-width: 24px;
+		height: var(--nav-button-icon-size, 44px);
+		min-height: 24px;
+	}
+}
+
+/* Open Button */
+
+.wp-block-navigation__responsive-container-open {
+	:where(.wp-block-navigation:not(.has-background, .has-text-color)) & {
+		color: var(--nav-button-open-text-color, currentcolor);
+		background-color: var(--nav-button-open-background-color, transparent);
 
 		&:hover {
-			color: var(--nav-button-text-color-hover, currentcolor);
-		}
-
-		/* Icon of Button
-		---------------------------------------------------------------------- */
-
-		> svg {
-			width: var(--nav-button-icon-size, 44px);
-			height: var(--nav-button-icon-size, 44px);
+			color: var(--nav-button-open-text-color-hover, currentcolor);
+			background-color: var(--nav-button-open-background-color-hover, transparent);
 		}
 	}
+}
 
-	/* ======================================================================
-	05. Menu Item (<li>)
-	====================================================================== */
+/* Close Button */
 
-	/* Menu Item */
+.wp-block-navigation__responsive-container-close {
+	:where(.wp-block-navigation:not(.has-background, .has-text-color)) & {
+		color: var(--nav-button-close-text-color, currentcolor);
+		background-color: var(--nav-button-close-background-color, transparent);
 
-	li.wp-block-navigation-item {
+		&:hover {
+			color: var(--nav-button-close-text-color-hover, currentcolor);
+			background-color: var(--nav-button-close-background-color-hover, transparent);
+		}
+	}
+}
+
+/* ======================================================================
+06. Menu Item (<li>)
+====================================================================== */
+
+.wp-block-navigation__container > .wp-block-navigation-item {
+	align-content: center;
+	align-items: stretch;
+	padding-block: var(--nav-item-padding-block, 0);
+	padding-inline: var(--nav-item-padding-inline, 0);
+
+	&.open-on-click {
+		padding: 0;
+	}
+
+	/*
+	❗️ All the !important are needed here to override some WP's default styles.
+	WP resets 'color' and 'background-color' for items inside the overlay menu using !important.
+	Source: https://github.com/search?q=repo%3AWordPress%2Fgutenberg+path%3Apackages%2Fblock-library%2Fsrc%2Fnavigation%2Fstyle.scss+%21important&type=code
+	*/
+	:where(.wp-block-navigation:not(.has-background, .has-text-color)) & {
+		background-color: var(--nav-item-background-color, transparent) !important;
+		border-color: var(--nav-item-border-color, currentcolor);
+		border-style: solid;
+		border-width: var(--nav-item-border-width, 0);
+		border-radius: var(--nav-item-border-radius, 0);
+
 		@media (prefers-reduced-motion: no-preference) {
 			transition-duration: var(--transition-duration, 0);
-			transition-property: color, background-color;
+			transition-property: color, background-color, border-color;
 		}
 
-		/* Current */
+		&:is(:hover, :has(> :where(.wp-block-navigation-submenu__toggle)[aria-expanded="true"])) {
+			color: var(--nav-item-text-color-hover, currentcolor) !important;
+			background-color: var(--nav-item-background-color-hover, inherit) !important;
+			border-color: var(--nav-item-border-color-hover, var(--nav-item-border-color, currentcolor));
+		}
+
 		&.current-menu-item {
-			color: var(--nav-item-text-color-current-page, currentcolor);
+			color: var(--nav-item-text-color-current-page, currentcolor) !important;
+			background-color: var(--nav-item-background-color-current-page, transparent) !important;
+			border-color: var(--nav-item-border-color-current-page, var(--nav-item-border-color, currentcolor));
 		}
 	}
 
-	&:not(.has-text-color) {
-		li.wp-block-navigation-item {
-			/* Hover/Click */
-			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-text-color-hover, currentcolor);
-			}
-		}
-	}
-
-	&:not(.has-background) {
-		li.wp-block-navigation-item {
-			background-color: var(--nav-item-background-color, inherit);
-
-			/* Hover/Click */
-			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				background-color: var(--nav-item-background-color-hover, inherit);
-			}
-		}
-	}
-
-	/* Outermost Menu Item */
-
-	&.wp-block-navigation__container > li.wp-block-navigation-item {
-		/* No styles, jst or the selector boilerplate */
-	}
-
-	/* ======================================================================
-	06. Menu Item - Link/Button
+	/* ----------------------------------------------------------------------
+	06.1. Link/Button
 	---
-	Link (<a>) on hover; Button (<button>) on click.
-	---
-	❗️ Specificity must be >= (0,4,0)
+	<a> when "Open on click" is disabled; <button> when "Open on click" is enabled.
+	---------------------------------------------------------------------- */
+
+	/* WP: Revert default padding; we are already adding padding to 'li.wp-block-navigation-item' */
+	:where(
+		.wp-block-navigation.has-background
+			:is(.wp-block-navigation-item, .wp-block-navigation-submenu)
+			a:not(.wp-element-button)
+	) {
+		padding: 0;
+	}
+
+	/* If link doesn't have 'href', use button's cursor */
+	&.has-child.open-on-hover-click.wp-block-navigation-submenu > .wp-block-navigation-item__content:not([href]) {
+		cursor: default;
+	}
+}
+
+/* ======================================================================
+07. Submenu Icon/Toggle
+====================================================================== */
+
+/* .wp-block-navigation__container > .wp-block-navigation-item.open-on-click {
+	display: grid;
+	grid-template-columns: 1fr;
+
+	> :is(
+		.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle,
+		.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle + .wp-block-navigation__submenu-icon
+	) {
+		grid-area: 1 / -1;
+	}
+} */
+
+/* Toggle */
+
+.wp-block-navigation-submenu__toggle {
+	cursor: default;
+
+	.wp-block-navigation-item.open-on-click & {
+		/* padding-block: var(--nav-item-padding-block, 0);
+		padding-inline: var(--nav-item-padding-inline, 0);
+		padding-inline-end: calc(var(--nav-submenu-icon-svg-size, 1rem) + var(--nav-item-padding-inline, 0)); */
+	}
+}
+
+/* Icon */
+
+.wp-block-navigation .wp-block-navigation__submenu-icon {
+	display: var(--nav-submenu-icon-display, grid);
+	place-items: center;
+	width: max(24px, var(--nav-submenu-icon-size, 24px)); /* The fallback is the WP's default value */
+	height: auto; /* The fallback is the WP's default value */
+	margin-inline-start: var(--nav-submenu-icon-margin-left, 0.25em); /* The fallback is the WP's default value */
+
+	svg {
+		/* inline-size: var(--nav-submenu-icon-svg-size, 1rem);
+		block-size: auto; */
+		margin-top: revert; /* WP: Revert default value */
+
+		> path {
+			stroke-width: var(--nav-submenu-icon-svg-path-stroke-width, 1.5);
+		}
+	}
+}
+
+.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle + .wp-block-navigation__submenu-icon {
+	justify-self: end;
+	width: auto;
+	/* margin-inline-start: calc(-1 * (max(24px, var(--nav-submenu-icon-size, 24px)) + var(--nav-item-padding-inline, 0))); */
+	margin-inline-end: var(--nav-item-padding-inline, 0);
+}
+
+/* ======================================================================
+	09. Submenus
+	TODO: Refactor.
 	====================================================================== */
 
-	/* Link/Button
+/* All Submenu Containers (<ul>)
+---------------------------------------------------------------------- */
+
+.wp-block-navigation:where(:not(.has-text-color) .wp-block-navigation__submenu-container) {
+	/* The fallback '--nav-global-text-color' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked, all its submenu items would inherit that hover/clic color. */
+	color: var(--nav-submenu-color, var(--nav-global-text-color, currentcolor));
+}
+
+li.wp-block-navigation-item.has-child.wp-block-navigation-submenu
+	> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+	visibility: hidden; /* Hidden */
+	row-gap: var(--nav-submenu-gap-rows, var(--flow-space, 0));
+	column-gap: var(--nav-submenu-gap-columns, var(--flow-space, 0));
+	width: 0; /* Hidden */
+	height: 0; /* Hidden */
+	padding-block: var(--nav-submenu-padding-block, 0);
+	padding-inline-start: var(--nav-submenu-padding-left, 0);
+	padding-inline-end: var(--nav-submenu-padding-right, 0);
+	overflow: hidden; /* Hidden (overflow is necessary to set, otherwise submenu items will take up space) */
+	border-color: var(--nav-submenu-border-color, currentcolor);
+	border-style: solid;
+	border-width: var(--nav-submenu-border-width, 0);
+	border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
+	box-shadow: var(--nav-submenu-shadow);
+	opacity: 0; /* Hidden */
+
+	&:where(:not(.has-background)) {
+		background-color: var(--nav-submenu-background-color, transparent);
+	}
+}
+
+/* Submenu Container - Outermost (1st level) (<ul>)
+---------------------------------------------------------------------- */
+
+ul.wp-block-navigation__container > li.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container {
+	left: 0; /* Override WP's default value '-1px' */
+}
+
+/* Submenu Containers - Nested (2nd level & beyond) (<ul>)
+---------------------------------------------------------------------- */
+
+li.wp-block-navigation-item.wp-block-navigation-submenu {
+	> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
+		> li.wp-block-navigation-item.wp-block-navigation-submenu
+		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+		top: calc(-1 * (var(--nav-submenu-border-width, 0px) + var(--nav-submenu-padding-block, 0px)));
+	}
+
+	/* When is shown (on hover/click) */
+	.wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ ul.wp-block-navigation__submenu-container,
+	&:not(.open-on-click):hover > ul.wp-block-navigation__submenu-container,
+	&:not(.open-on-click):not(.open-on-hover-click):focus-within > ul.wp-block-navigation__submenu-container {
+		visibility: visible;
+		inline-size: var(--nav-submenu-inline-size, auto); /* The fallback is the WP's default value */
+		min-inline-size: var(--nav-submenu-inline-size-min, 200px); /* The fallback is the WP's default value */
+		block-size: auto;
+		overflow: visible;
+		opacity: 1;
+	}
+}
+
+/* Menu Item of Submenu (<li>)
+---------------------------------------------------------------------- */
+
+/* Adjacent menu item */
+ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
+	> li.wp-block-navigation-item
+	+ li.wp-block-navigation-item {
+	border-block-start-color: var(--nav-submenu-separator-color, currentcolor);
+	border-block-start-style: solid;
+	border-block-start-width: var(--nav-submenu-separator-width, 0);
+}
+
+/* Link/Button of Menu Item of Submenu
+---------------------------------------------------------------------- */
+
+ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
+	> li.wp-block-navigation-item
+	> .wp-block-navigation-item__content {
+	padding-block: var(--nav-item-of-submenu-padding-block, 0);
+	padding-inline-start: var(--nav-item-of-submenu-padding-inline-start, 0);
+}
+
+/* Menu Item of Submenu has Submenu (<li>)
+---------------------------------------------------------------------- */
+
+li.wp-block-navigation-submenu li.wp-block-navigation-submenu {
+	/* No current styles; just added if it's ever needed. */
+}
+
+/* ======================================================================
+08. Responsive Containers when Overlay Menu is Open
+TODO: Refactor.
+====================================================================== */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	/* ----------------------------------------------------------------------
+	09.1. Responsive Container
 	---------------------------------------------------------------------- */
+	padding-block-start: var(--nav-overlay-menu-padding-top, var(--site-header-padding-top, 2rem));
+	padding-block-end: var(--nav-overlay-menu-padding-bottom, var(--site-header-padding-bottom, 2rem));
+	padding-inline-start: var(--nav-overlay-menu-padding-left, var(--gutter, 1rem));
+	padding-inline-end: var(--nav-overlay-menu-padding-right, var(--gutter, 1rem));
 
-	/* stylelint-disable-next-line no-duplicate-selectors -- Intended (temporary) */
-	li.wp-block-navigation-item {
-		> .wp-block-navigation-item__content {
-			padding-block-start: var(--nav-link-padding-top, 0);
-			padding-block-end: var(--nav-link-padding-bottom, 0);
-			padding-inline: var(--nav-link-padding-inline, 0);
-			text-align: var(--nav-link-text-align, inherit);
-			text-decoration-line: var(--nav-link-line, none);
-			text-decoration-thickness: var(--nav-link-line-thickness, auto);
-			text-decoration-color: var(--nav-link-line-color, currentcolor);
-			text-underline-offset: var(--nav-link-line-offset, auto);
-			border-radius: var(--nav-link-border-radius, 0);
+	@media (prefers-reduced-motion: no-preference) {
+		/* animation-name: overlay-menu; */
+		animation-duration: var(--nav-overlay-menu-animation-duration, var(--transition-duration, 0));
+		animation-timing-function: var(--nav-overlay-menu-animation-timing-function);
+	}
 
-			@media (prefers-reduced-motion: no-preference) {
-				transition-duration: inherit;
-				transition-property: text-decoration-color;
+	.wp-block-navigation:not(.has-background) & {
+		background-color: var(--nav-overlay-menu-background-color, var(--color-surface-1, Canvas));
+
+		/* .wp-block-navigation-item {
+			background-color: var(--nav-item-background-color, transparent) !important;
+
+			&.current-menu-item {
+				background-color: var(--nav-item-background-color-current-page, transparent) !important;
 			}
 
-			/* Hover/Click */
-			&:hover {
-				text-decoration-color: var(--nav-link-line-color-hover, currentcolor);
+			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+				background-color: var(--nav-item-background-color-hover, inherit) !important;
 			}
 
-			/* Link/Button of Current Menu Item */
-			&[aria-current="page"] {
-				text-decoration-thickness: var(--nav-link-line-thickness-current-page, auto);
-				text-decoration-color: var(--nav-link-line-color-current-page, currentcolor);
-				text-underline-offset: var(--nav-link-line-offset-current-page, auto);
+			.wp-block-navigation__submenu-container {
+				background-color: var(--nav-submenu-background-color, transparent) !important;
+			}
+		} */
+	}
+
+	.wp-block-navigation:not(.has-text-color) & {
+		color: var(--nav-overlay-menu-text-color, var(--color-text, CanvasText));
+
+		/* li.wp-block-navigation-item {
+			&.current-menu-item {
+				color: var(--nav-item-text-color-current-page, currentcolor) !important;
+			}
+
+			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+				color: var(--nav-item-text-color-hover, currentcolor) !important;
 			}
 		}
 
-		.has-child.open-on-hover-click.wp-block-navigation-submenu > a.wp-block-navigation-item__content:not([href]) {
-			cursor: default;
-		}
+		.wp-block-navigation__submenu-container {
+			color: var(--nav-submenu-color, currentcolor) !important;
+		} */
 	}
 
-	/* Menu Item has Submenu
-	---------------------------------------------------------------------- */
-
-	li.wp-block-navigation-submenu {
-		column-gap: var(--nav-item-has-submenu-gap-columns, 0);
-		align-items: stretch;
-	}
-
-	/* Outermost Menu Item has Submenu
-	---------------------------------------------------------------------- */
-
-	/* ul.wp-block-navigation__container > li.wp-block-navigation-submenu {} */
-
-	/* Menu Item has Submenu when Overlay Menu is Open
+	/* ----------------------------------------------------------------------
+	09.2. Responsive Container Close + Dialog + Content
 	---
-	❗️ Specificity must be >= (0,4,0)
+	The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
+	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
 	---------------------------------------------------------------------- */
 
-	> .is-menu-open li.wp-block-navigation-item.wp-block-navigation-submenu {
+	/* Make containers between 'nav' and the outermost 'ul' fill the available vertical space for better layout control, e.g. if some items need to be pushed to the bottom of the overlay menu. */
+	:is(
+		.wp-block-navigation__responsive-close,
+		.wp-block-navigation__responsive-dialog,
+		.wp-block-navigation__responsive-container-content
+	) {
+		block-size: 100%;
+	}
+
+	/* ----------------------------------------------------------------------
+	09.3. Responsive Container Content
+	---
+	The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
+	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
+	---------------------------------------------------------------------- */
+
+	.wp-block-navigation__responsive-container-content {
+		padding-block-start: var(--nav-overlay-menu-content-container-padding-top, var(--nav-button-icon-size, 2rem));
+
+		.wp-block-navigation__container {
+			align-items: stretch;
+		}
+	}
+
+	/* ----------------------------------------------------------------------
+	09.4. Elements
+	---------------------------------------------------------------------- */
+
+	ul.wp-block-navigation__container
+		> li.wp-block-navigation-item.wp-block-navigation-submenu:is(
+			.wp-block-navigation__responsive-container.is-menu-open &
+		) {
 		display: grid;
 		align-items: stretch;
 		justify-items: start;
@@ -367,244 +597,10 @@ nav.wp-block-navigation {
 			grid-column: var(--nav-item-has-submenu-when-overlay-menu-open-content-grid-column, 1);
 		}
 	}
-
-	/* Menu Item of Submenu
-	---------------------------------------------------------------------- */
-
-	/* Adjacent menu items */
-	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-		> li.wp-block-navigation-item
-		+ li.wp-block-navigation-item {
-		border-block-start-color: var(--nav-submenu-separator-color, currentcolor);
-		border-block-start-style: solid;
-		border-block-start-width: var(--nav-submenu-separator-width, 0);
-	}
-
-	/* Menu Item of Submenu has Submenu
-	---------------------------------------------------------------------- */
-
-	li.wp-block-navigation-submenu li.wp-block-navigation-submenu {
-		column-gap: var(--nav-item-of-submenu-has-submenu-gap-columns, 0);
-	}
-
-	/* Link/Button of Menu Item of Submenu
-	---------------------------------------------------------------------- */
-
-	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-		> li.wp-block-navigation-item
-		> .wp-block-navigation-item__content {
-		padding-block: var(--nav-item-of-submenu-padding-block, 0);
-		padding-inline-start: var(--nav-item-of-submenu-padding-left, 0);
-	}
-
-	/* ======================================================================
-	07. Menu Item - Submenu Icon
-	---
-	<button> when submenu is open on hover; <span> when on click
-	====================================================================== */
-
-	.wp-block-navigation-submenu__toggle {
-		cursor: default;
-	}
-
-	/* All Submenu Icons (Outermost and Nested)
-	---------------------------------------------------------------------- */
-
-	/*
-	button/span
-	❗️ Specificity must be >= (0,4,0)
-	*/
-	li.wp-block-navigation-item.wp-block-navigation-submenu > .wp-block-navigation__submenu-icon {
-		display: var(--nav-item-has-submenu-icon-display, grid);
-		place-items: center;
-		align-self: revert; /* Overrides WP's default value of 'center' */
-		inline-size: auto; /* Overrides WP's default value of '.6em' */
-		min-inline-size: var(--nav-item-has-submenu-icon-size-min, 24px);
-		block-size: auto; /* Overrides WP's default value of '.6em' */
-		min-block-size: var(--nav-item-has-submenu-icon-size-min, 24px);
-		margin: 0; /* Overrides WP's default value of '.25em' */
-
-		> svg {
-			inline-size: var(--nav-item-has-submenu-icon-svg-size, inherit);
-			margin: 0; /* Overrides WP's default value '.075em' */
-
-			> path {
-				stroke-width: var(--nav-item-has-submenu-icon-svg-path-stroke-width, 1.5);
-			}
-		}
-	}
-
-	/* Submenu Icon of Outermost Menu Item
-	---------------------------------------------------------------------- */
-
-	ul.wp-block-navigation__container > li.wp-block-navigation-submenu > .wp-block-navigation__submenu-icon {
-		order: var(--nav-item-outermost-has-submenu-icon-position, 0);
-	}
-
-	/* ======================================================================
-	08. Submenu Container (<ul>)
-	====================================================================== */
-
-	/* All Submenu Containers
-	---------------------------------------------------------------------- */
-
-	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		/* The fallback '--nav-global-text-color' is necessary; otherwise, if '--nav-submenu-text-color' is not set and the color of the submenu parent item changes when hovered/clicked, all its submenu items would inherit that hover/clic color. */
-		color: var(--nav-submenu-text-color, var(--nav-global-text-color, inherit));
-	}
-
-	/* ❗️ Specificity must be >= (0,5,0) */
-	li.wp-block-navigation-item.has-child.wp-block-navigation-submenu
-		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
-		visibility: hidden; /* Hidden */
-		row-gap: var(--nav-submenu-gap-rows, var(--flow-space, 0));
-		column-gap: var(--nav-submenu-gap-columns, var(--flow-space, 0));
-		width: 0; /* Hidden */
-		height: 0; /* Hidden */
-		padding-block: var(--nav-submenu-padding-block, 0);
-		padding-inline-start: var(--nav-submenu-padding-left, 0);
-		padding-inline-end: var(--nav-submenu-padding-right, 0);
-		overflow: hidden; /* Hidden (overflow is necessary to set, otherwise submenu items will take up space) */
-		border: var(--nav-submenu-border-width, 0) solid var(--nav-submenu-border-color, currentcolor);
-		border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
-		box-shadow: var(--nav-submenu-shadow);
-		opacity: 0; /* Hidden */
-
-		&:where(:not(.has-background)) {
-			background-color: var(--nav-submenu-background-color, transparent);
-		}
-	}
-
-	/* Submenu Container - Outermost (1st level)
-	---------------------------------------------------------------------- */
-
-	/* ❗️ Specificity must be >= (0,3,0) */
-	ul.wp-block-navigation__container > li.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container {
-		left: 0; /* Override WP's default value '-1px' */
-	}
-
-	/* Submenu Containers - Nested (2nd level and beyond)
-	---------------------------------------------------------------------- */
-
-	/* ❗️ Specificity must be >= (0,5,0) */
-	li.wp-block-navigation-item.wp-block-navigation-submenu {
-		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-			> li.wp-block-navigation-item.wp-block-navigation-submenu
-			> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
-			top: calc(-1 * (var(--nav-submenu-border-width, 0px) + var(--nav-submenu-padding-block, 0px)));
-		}
-
-		/* When is shown (on hover/click) */
-		.wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ ul.wp-block-navigation__submenu-container,
-		&:not(.open-on-click):hover > ul.wp-block-navigation__submenu-container,
-		&:not(.open-on-click):not(.open-on-hover-click):focus-within > ul.wp-block-navigation__submenu-container {
-			visibility: visible;
-			inline-size: var(--nav-submenu-inline-size, auto); /* The fallback is the WP's default value */
-			min-inline-size: var(--nav-submenu-inline-size-min, 200px); /* The fallback is the WP's default value */
-			block-size: auto;
-			overflow: visible;
-			opacity: 1;
-		}
-	}
-
-	/* ======================================================================
-	09. Responsive Containers when Overlay Menu is Open
-	====================================================================== */
-
-	.wp-block-navigation__responsive-container.is-menu-open {
-		/* ----------------------------------------------------------------------
-		08.1. Responsive Container
-		---------------------------------------------------------------------- */
-
-		/* ❗️ Specificity must be >= (0,2,0) */
-		padding-block-start: var(--nav-responsive-container-padding-top, var(--site-header-padding-top, var(--gutter)));
-		padding-block-end: var(--nav-responsive-container-padding-bottom, var(--gutter));
-		padding-inline-start: var(--nav-responsive-container-padding-left, var(--gutter));
-		padding-inline-end: var(--nav-responsive-container-padding-right, var(--gutter));
-
-		@media (prefers-reduced-motion: no-preference) {
-			/* animation-name: overlay-menu; */
-			animation-duration: var(--nav-responsive-container-animation-duration, var(--transition-duration, 0));
-			animation-timing-function: var(--nav-responsive-container-animation-timing-function);
-		}
-
-		/*
-		❗️ Specificity must be >= (0,4,0).
-		All the !important's are needed to override WP's !important's.
-		*/
-		&:not(.has-text-color) {
-			color: var(--nav-global-text-color, currentcolor);
-
-			li.wp-block-navigation-item {
-				/* Current */
-				&.current-menu-item {
-					color: var(--nav-item-text-color-current-page, inherit) !important;
-				}
-
-				/* Hover/Click */
-				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					color: var(--nav-item-text-color-hover, inherit) !important;
-				}
-			}
-
-			.wp-block-navigation__submenu-container {
-				color: var(--nav-submenu-text-color, inherit) !important;
-			}
-		}
-
-		/*
-		❗️ Specificity must be >= (0,4,0).
-		All the !important's are needed to override WP's !important's.
-		*/
-		&:not(.has-background) {
-			background-color: var(--nav-responsive-container-background-color, var(--color-surface-1, inherit));
-
-			.wp-block-navigation-item {
-				background-color: var(--nav-item-background-color, inherit) !important;
-
-				/* Hover/Click */
-				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					background-color: var(--nav-item-background-color-hover, inherit) !important;
-				}
-
-				.wp-block-navigation__submenu-container {
-					background-color: var(--nav-submenu-background-color, transparent) !important;
-				}
-			}
-		}
-
-		/* ----------------------------------------------------------------------
-		08.2. Responsive Container Close + Dialog + Content
-		---
-		The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
-		The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
-		---------------------------------------------------------------------- */
-
-		/* Make containers between 'nav' and the outermost 'ul' fill the available vertical space for better layout control, e.g. if some items need to be pushed to the bottom of the overlay menu. */
-		:is(
-			.wp-block-navigation__responsive-close,
-			.wp-block-navigation__responsive-dialog,
-			.wp-block-navigation__responsive-container-content
-		) {
-			block-size: 100%;
-		}
-
-		/* ----------------------------------------------------------------------
-		08.3. Responsive Container Content
-		---
-		The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
-		The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
-		---------------------------------------------------------------------- */
-
-		/* ❗️ Specificity must be >= (0,3,0) */
-		.wp-block-navigation__responsive-container-content {
-			padding-block-start: var(--nav-responsive-content-container-padding-top, var(--nav-button-icon-size, 2rem));
-		}
-	}
 }
 
 /* ======================================================================
-09. Keyframes
+10. Keyframes
 ====================================================================== */
 
 @media (prefers-reduced-motion: no-preference) {
