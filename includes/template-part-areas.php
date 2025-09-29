@@ -7,13 +7,12 @@
  * @package themeslug
  */
 
-
 function themeslug_template_part_areas( array $areas ) {
 	$areas[] = [
 		'area'        => 'aside',
 		'area_tag'    => 'aside',
 		'label'       => __( 'Aside', 'themeslug' ),
-		'description' => __( 'Aside templates define an area of the page whose content is only indirectly related to the main content of the page. Although they are usually represented visually as sidebars, their function is not positional, but rather semantic. They are often used to display supplementary content such as ads, related blog articles, contact or newsletter subscription forms, call-to-action sections, etc.', 'themeslug' ),
+		'description' => __( 'Las plantillas de tipo «aside» definen un área de la página cuyo contenido solo está relacionado indirectamente con el contenido principal de la página. Aunque suelen representarse visualmente como barras laterales, su función no es posicional, sino de significado. Suelen utilizarse para mostrar contenido suplementario como publicidad, artículos de blog relacionados, formularios de contacto o de suscripción a una newsletter, secciones de llamada a la acción, etc.', 'themeslug' ),
 		'icon'        => 'sidebar'
 	];
 
