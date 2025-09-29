@@ -1,5 +1,7 @@
 # themename
 
+[![Build and Deploy to Server](https://github.com/germanfrelo/wp-theme-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/germanfrelo/wp-theme-template/actions/workflows/deploy.yml)
+
 > Get a quick start on building modern WordPress websites with this starter block theme template. It includes a curated and useful set of basic presets.
 
 > [!WARNING]
