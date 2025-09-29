@@ -1,14 +1,12 @@
-/* TODO: Check, improve and refactor. */
-
 /* ======================================================================
-WP Navigation
+WP BLOCK NAVIGATION
 ---
 Source:
 - https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation
 - https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/navigation
 ---
 Notes:
-- To customize most of this block and its parts, use the custom properties.
+- ❗️ To customize most of this block and its parts, prioritize using the defined custom properties whenever possible.
 ---
 DOM Structure:
 

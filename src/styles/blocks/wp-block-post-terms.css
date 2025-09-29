@@ -1,24 +1,45 @@
-/* TODO: Check, improve and refactor. */
-
 /* ======================================================================
-WP Post Terms
+WP BLOCK POST TERMS
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-terms
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-terms
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-terms
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
 
 .wp-block-post-terms {
-	--gutter: var(--wp--preset--spacing--s);
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	row-gap: var(--gutter, var(--wp--preset--spacing--s-m, 1em));
-	column-gap: var(--gutter, var(--wp--preset--spacing--s-m, 1em));
-	align-items: center;
-	justify-content: flex-start;
+	--gutter: 1ch;
 
-	/* Hide the terms separator */
+	> :is(a[href]) {
+		display: inline-block;
+		min-inline-size: 24px;
+		min-block-size: 24px;
+		padding-block: 0.75em;
+		padding-inline: 1em;
+		font-size: var(--wp--preset--font-size--s);
+		line-height: var(--wp--custom--line-height--slim);
+		color: var(--wp--preset--color--surface-1);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: var(--wp--custom--letter-spacing--uppercase);
+		text-decoration-line: none;
+		background-color: var(--wp--preset--color--primary);
+		border-radius: var(--wp--preset--border-radius--xs);
+		text-box: trim-both cap alphabetic;
+
+		/* States */
+
+		&:is(:hover, :focus-visible) {
+			background-color: var(--wp--preset--color--primary-darker);
+		}
+
+		&:is(:active) {
+			background-color: var(--wp--preset--color--primary-darker);
+		}
+	}
+
+	/* Separator */
 	> .wp-block-post-terms__separator {
 		display: none;
 	}

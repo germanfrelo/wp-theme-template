@@ -29,7 +29,7 @@ Notes:
 		margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
 	}
 
-	&:has(:any-link:hover) {
+	&:has(a:where([href]):hover) {
 		background-color: var(--wp--preset--color--surface-2, transparent);
 	}
 

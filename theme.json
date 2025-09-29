@@ -112,7 +112,12 @@
 				{
 					"name": "Surface-3",
 					"slug": "surface-3",
-					"color": "hsl(224deg 10% 91%)"
+					"color": "hsl(224deg 9% 90%)"
+				},
+				{
+					"name": "Surface-4",
+					"slug": "surface-4",
+					"color": "hsl(224deg 5% 84%)"
 				},
 				{
 					"name": "primary",
@@ -144,12 +149,7 @@
 				"black": "800"
 			},
 			"letter-spacing": {
-				"tighter": "-0.1ch",
-				"tight": "-0.05ch",
-				"normal": "normal",
-				"wide": "0.05ch",
-				"wider": "0.10ch",
-				"widest": "0.15ch"
+				"uppercase": "0.05ch"
 			},
 			"line-height": {
 				"slim": "1.2",

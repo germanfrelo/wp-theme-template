@@ -4,12 +4,37 @@ Site Footer
 
 .site-footer {
 	--site-logo-height: var(--wp--preset--spacing--xl);
-	padding-block: var(--wp--preset--spacing--xl, 2em);
-	background-color: var(--wp--preset--color--surface-2);
+	padding-block: var(--wp--preset--spacing--l);
+	font-size: var(--wp--preset--font-size--s);
+	border-block-start: var(--wp--custom--border-width--thin) solid var(--separator-color);
 
-	nav.wp-block-navigation {
-		--nav-global-gap-columns: var(--wp--preset--spacing--m);
-		--nav-global-gap-rows: var(--wp--preset--spacing--3-xs);
-		--nav-global-font-size: var(--wp--preset--font-size--s);
+	.wp-block-navigation {
+		--nav-global-gap-rows: var(--gutter);
+		--nav-global-gap-columns: var(--gutter);
+
+		a:where([href]) {
+			color: var(--link-color, revert);
+			text-decoration-line: underline;
+			text-decoration-thickness: from-font;
+			text-decoration-color: var(--link-color-underline, currentcolor);
+
+			@media (prefers-reduced-motion: no-preference) {
+				transition-duration: var(--wp--custom--transition--duration, 0);
+				transition-property: color, background-color, border-color, text-decoration-color;
+			}
+
+			&:is(:hover, :focus-visible) {
+				color: var(--link-color-on-hover-focus, var(--link-color));
+				text-decoration-color: var(--link-color-underline-on-hover-focus, currentcolor);
+			}
+		}
+	}
+
+	@media (width < 40rem) {
+		text-align: center;
+
+		.wp-block-navigation__container {
+			--navigation-layout-direction: column;
+		}
 	}
 }

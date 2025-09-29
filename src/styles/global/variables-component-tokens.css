@@ -18,21 +18,31 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--block-search-button-icon-scale: 1.5;
 	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
 
+	/* Block - Post Date */
+	--block-post-date-font-size: var(--wp--preset--font-size--s);
+
 	/* Button */
 	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker);
 	--button-color-bg: var(--wp--preset--color--primary);
 	--button-border-color-on-hover: var(--wp--preset--color--primary-darker);
 	--button-border-color: var(--button-color-bg);
-	--button-border-radius: var(--wp--preset--border-radius--2-xs);
+	--button-border-radius: var(--wp--preset--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
 	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--s);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
 	--button-line-height: var(--wp--custom--line-height--slim);
-	--button-padding-block: 0.875em;
+	--button-letter-spacing: var(--wp--custom--letter-spacing--uppercase);
+	--button-padding-block: 1em;
 	--button-padding-inline: 1.25em;
 	--button-text-box: trim-both cap alphabetic;
+	--button-text-transform: uppercase;
+
+	/* Card */
+	--card-border-color: var(--wp--preset--color--surface-4);
+	--card-border-radius: var(--wp--preset--border-radius--s);
+	--card-border-width: var(--wp--custom--border-width--thin);
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
@@ -43,6 +53,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
 	--code-block-padding: var(--gutter);
+
+	/* Form */
+	--form-fields-gap-rows: var(--gutter);
 
 	/*
 	Form Field
@@ -92,6 +105,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--h6-font-weight: var(--wp--custom--font-weight--black);
 	--h6-line-height: normal;
 
+	/* Image */
+	--image-border-radius: var(--wp--preset--border-radius-l);
+
 	/* Label */
 	--label-font-size: var(--wp--preset--font-size--m);
 	--label-font-weight: var(--wp--custom--font-weight--bold);
@@ -103,9 +119,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--legend-line-height: inherit;
 
 	/* Links */
-	--link-color: var(--wp--preset--color--primary);
-	--link-color-on-hover: var(--wp--preset--color--primary-darker);
-	--link-color-on-focus: var(--wp--preset--color--primary-darker);
+	--link-color: currentcolor;
 
 	/* List */
 	--list-gap: 0.5em;
@@ -126,17 +140,9 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
 	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
 
-	/* Scrollbars */
-	--scrollbar-thumb-color: var(--wp--preset--color--primary);
-	--scrollbar-thumb-color-hover: var(--wp--preset--color--text);
-	--scrollbar-track-color: transparent;
-	--scrollbar-track-color-hover: transparent;
-	--scrollbar-thumb-radius: 1rem;
-	--scrollbar-track-radius: 1rem;
-	--scrollbar-width-legacy: 0.5rem;
-
 	/* Separator */
-	--separator-color: currentcolor;
+	--separator-color: var(--wp--preset--color--surface-4);
+	--separator-thickness: var(--wp--custom--border-width--medium);
 
 	/* Site Header */
 	--site-header-padding-top: var(--wp--preset--spacing--s);

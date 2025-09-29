@@ -11,10 +11,8 @@ PostCSS Custom Media plugin installed and added to PostCSS config file (postcss.
 Navigation
 ---------------------------------------------------------------------- */
 
-/* This shouldn't be modified */
-@custom-media --wp-block-navigation-breakpoint-default (width >= 600px);
-@custom-media --wp-block-navigation-breakpoint-default-reversed (width < 600px);
+/* This must NOT be modified */
+@custom-media --nav-default-breakpoint (min-width: 600px);
 
-/* This is customizable, *but the width value must be the same for both queries */
-@custom-media --nav-breakpoint-larger-width (width >= 65rem);
-@custom-media --nav-breakpoint-larger-width-reversed (width < 65rem);
+/* This is customizable, BUT *the width value must be the same for both queries* */
+@custom-media --nav-custom-breakpoint (min-width: 50rem);

@@ -10,7 +10,7 @@ Variables:
 	Type:        A valid 'gap' value.
 	Default:     var(--gutter, 1em)
 
---grid-min-item-size
+--grid-item-min-size
 	Description: How large each item should be ideally, as a minimum.
 	Type:        A valid '<length>' value.
 	Default:     16rem
@@ -25,20 +25,20 @@ Variables:
 	display: grid;
 	grid-template-columns: repeat(
 		var(--grid-placement, auto-fill),
-		minmax(min(100%, var(--grid-min-item-size, 16rem)), 1fr)
+		minmax(min(100%, var(--grid-item-min-size, 16rem)), 1fr)
 	);
 	gap: var(--grid-gap, var(--gutter, 1em));
 
 	/* A split 50/50 layout */
-	&:where([data-layout="halves"], .grid--halves) {
+	&[data-grid-layout="halves"] {
 		--grid-placement: auto-fit;
-		--grid-min-item-size: clamp(16rem, 50vw, 33rem);
+		--grid-item-min-size: clamp(16rem, 50vi, 33rem);
 	}
 
 	/* Three column grid layout */
-	&:where([data-layout="thirds"], .grid--thirds) {
+	&[data-grid-layout="thirds"] {
 		--grid-placement: auto-fit;
-		--grid-min-item-size: clamp(16rem, 33%, 20rem);
+		--grid-item-min-size: clamp(16rem, 33%, 20rem);
 	}
 
 	> * {

@@ -8,7 +8,8 @@ More info:
 - https://piccalil.li/blog/cube-css/#css
 
 Almost all custom properties used are defined in
-'theme.json', 'variables-system-tokens.css', and 'variables-component-tokens.css',
+'theme.json' and 'variables.css',
+allowing us to customize globals with design tokens,
 rather than writing the same styles for *every* project.
 
 Selectors are grouped and sorted based on:
@@ -116,19 +117,42 @@ address {
 ====================================================================== */
 
 /* ----------------------------------------------------------------------
-Description List
+Thematic Break (Horizontal Rule)
 ---------------------------------------------------------------------- */
 
-dl {
-	margin-block: 0;
+hr {
+	color: var(--separator-color, inherit);
+	border: none;
+	border-block-start-style: var(--separator-style, solid);
+	border-block-start-width: var(--separator-thickness, 2px);
 }
 
-dt {
-	font-weight: var(--dt-font-weight, inherit);
+/* ----------------------------------------------------------------------
+Preformatted Text
+---------------------------------------------------------------------- */
+
+pre {
+	font-family: var(--font-family-mono, monospace);
+	font-size: 0.875em;
 }
 
-dd {
-	margin-inline-start: 0;
+pre:has(code) {
+	padding: var(--code-block-padding, var(--gutter, 1em));
+	background-color: var(--code-block-color-bg, transparent);
+}
+
+/* ----------------------------------------------------------------------
+Blockquote
+---------------------------------------------------------------------- */
+
+blockquote:where(:not([class])) {
+	padding-block: var(--quote-padding-block, 0);
+	padding-inline: var(--quote-padding-inline, 0);
+	margin-inline: var(--quote-margin-inline, 0);
+	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
+	border-left-color: var(--quote-border-left-color, currentcolor);
+	border-left-style: var(--quote-border-left-style, solid);
+	border-left-width: var(--quote-border-left-width, 0);
 }
 
 /* ----------------------------------------------------------------------
@@ -147,24 +171,12 @@ li > :is(ol, ul) {
 	margin-block-start: var(--list-gap, revert);
 }
 
-/*
-Remove list-style-type on 'ol' and 'ul' elements with a list role, which suggests default styling will be removed.
-More info:
-- https://piccalil.li/blog/a-more-modern-css-reset/
-- https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
-*/
-:is(ol, ul):where([role="list"]) {
-	list-style-type: none;
-}
-
-/* Remove default styles on 'ul' elements in specific contexts. */
+/* Remove default styles on lists in specific contexts. */
 :where(nav) ul,
-:is(ol, ul):where([role="list"][class]),
-:is(ol, ul):where([role="tablist"]),
-ul:where(:has(> li > :is(input))) {
+:is(ol, ul):where([role="tablist"]) {
 	padding-inline-start: 0;
 	margin-block: 0;
-	list-style-type: none;
+	list-style-type: ""; /* Preserves accessibility in Safari by using an empty string instead of 'none'. See: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics */
 }
 
 /* List Items */
@@ -182,55 +194,31 @@ ul:where(:has(> li > :is(input))) {
 }
 
 /* ----------------------------------------------------------------------
-Blockquote
+Description List
 ---------------------------------------------------------------------- */
 
-blockquote:where(:not([class])) {
-	padding-block: var(--quote-padding-block, 0);
-	padding-inline: var(--quote-padding-inline, 0);
-	margin-inline: var(--quote-margin-inline, 0);
-	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
-	border-left-color: var(--quote-border-left-color, currentcolor);
-	border-left-style: var(--quote-border-left-style, solid);
-	border-left-width: var(--quote-border-left-width, 0);
+dl {
+	margin-block: 0;
+}
+
+dt {
+	font-weight: var(--dt-font-weight, inherit);
+}
+
+dd {
+	margin-inline-start: 0;
 }
 
 /* ----------------------------------------------------------------------
-Preformatted Text
+Figure and Figure Caption
 ---------------------------------------------------------------------- */
-
-pre {
-	font-family: var(--font-family-mono, monospace);
-	font-size: 0.875em;
-}
-
-pre:has(code) {
-	padding: var(--code-block-padding, var(--gutter, 1em));
-	background-color: var(--code-block-color-bg, transparent);
-}
-
-/* ----------------------------------------------------------------------
-Thematic Break (Horizontal Rule)
----------------------------------------------------------------------- */
-
-hr {
-	color: var(--separator-color, inherit);
-	border: none;
-	border-block-start-style: var(--separator-style, solid);
-	border-block-start-width: var(--separator-thickness, 2px);
-}
 
 /* ======================================================================
 04. Inline Text Semantics
 ====================================================================== */
 
-b,
-strong {
-	font-weight: var(--wp--custom--font-weight--bold, bolder);
-}
-
 a {
-	&:where(:any-link) {
+	&:where([href]) {
 		color: var(--link-color, revert);
 		text-decoration-thickness: from-font;
 		text-decoration-color: var(--link-color-underline, currentcolor);
@@ -309,15 +297,20 @@ ins {
 05. Embedded Content
 ====================================================================== */
 
+:is(figure, picture) img {
+	inline-size: 100%;
+}
+
 svg {
 	flex-shrink: 0;
 
-	&[role="img"][width][height] {
+	/* TODO: Test this. */
+	/* &[role="img"][width][height] {
 		inline-size: revert;
 		block-size: revert;
-	}
+	} */
 
-	:is(a:where(:any-link), button) & path {
+	:is(a:where([href]), button) & path {
 		@media (prefers-reduced-motion: no-preference) {
 			transition-duration: var(--wp--custom--transition--duration, 0);
 			transition-property: fill;
@@ -365,13 +358,6 @@ legend {
 	font-weight: var(--legend-font-weight, inherit);
 }
 
-label {
-	display: inline-block;
-	font-size: var(--label-font-size, inherit);
-	font-weight: var(--label-font-weight, inherit);
-	line-height: var(--label-line-height, inherit);
-}
-
 button,
 input,
 select,
@@ -391,6 +377,7 @@ textarea {
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--wp--custom--transition--duration, 0);
+		transition-property: color, background-color, border-color;
 	}
 }
 
@@ -412,10 +399,24 @@ textarea {
 	block-size: var(--field-radio-size, auto);
 }
 
+label {
+	line-height: var(--wp--custom--line-height--slim);
+}
+
+:is(input:not([type="checkbox"], [type="hidden"], [type="radio"]), select, textarea) {
+	label:has(+ &),
+	label:has(+ * > &) {
+		display: inline-block;
+		font-size: var(--label-font-size, inherit);
+		font-weight: var(--label-font-weight, inherit);
+		line-height: var(--label-line-height, inherit);
+	}
+}
+
 label:has(> :is([type="checkbox"], [type="radio"]):only-child),
 *:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
 	--label-font-weight: var(--font-weight-base);
-	display: inline-flex;
+	display: flex;
 	gap: var(--form-label-input-check-radio-gap, 1ch);
 	align-items: center;
 }
@@ -453,6 +454,10 @@ details {
 		color: var(--details-summary-color, inherit);
 		letter-spacing: var(--details-summary-letter-spacing, normal);
 		cursor: var(--details-summary-cursor, default);
+	}
+
+	&:has(> summary:is(:hover, :focus-visible)) {
+		background-color: var(--details-color-bg-on-hover-focus, var(--details-color-bg, transparent));
 	}
 
 	/*
@@ -504,14 +509,6 @@ details {
 		block-size: auto;
 		opacity: 1;
 	}
-}
-
-/* ----------------------------------------------------------------------
-Dialog
----------------------------------------------------------------------- */
-
-dialog {
-	/* TODO */
 }
 
 /* ======================================================================

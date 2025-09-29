@@ -42,33 +42,22 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_vari
 function themeslug_register_block_style_variations() {
 	register_block_style(
 		[
-			'core/button',
-			'core/read-more'
-		],
-		[
-			'name'  => 'outlined',
-			'label' => __( 'Outlined', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
-			'core/button',
-			'core/read-more'
-		],
-		[
-			'name'  => 'plain',
-			'label' => __( 'Plain', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
 			'core/details'
 		],
 		[
 			'name'  => 'custom',
-			'label' => __( 'Custom', 'themeslug' )
+			'label' => __( 'Personalizado', 'themeslug' )
+		]
+	);
+
+	register_block_style(
+		[
+			'core/heading',
+			'core/post-title'
+		],
+		[
+			'name'  => 'eyebrow',
+			'label' => __( 'Eyebrow', 'themeslug' )
 		]
 	);
 
@@ -98,7 +87,7 @@ function themeslug_register_block_style_variations() {
 		],
 		[
 			'name'  => 'external',
-			'label' => __( 'External', 'themeslug' )
+			'label' => __( 'Enlace externo', 'themeslug' )
 		]
 	);
 
@@ -108,7 +97,7 @@ function themeslug_register_block_style_variations() {
 		],
 		[
 			'name'  => 'direction-reversed',
-			'label' => __( 'Reversed direction', 'themeslug' )
+			'label' => __( 'Dirección inversa', 'themeslug' )
 		]
 	);
 }

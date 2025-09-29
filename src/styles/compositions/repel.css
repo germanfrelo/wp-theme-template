@@ -9,6 +9,11 @@ Variables:
 	Type:        A valid 'gap' value.
 	Default:     var(--gutter, 1em)
 
+--repel-horizontal-alignment
+	Description: How items should align horizontally.
+	Type:        A valid 'justify-content' value.
+	Default:     space-between
+
 --repel-vertical-alignment
 	Description: How items should align vertically.
 	Type:        A valid 'align-items' value.
@@ -25,7 +30,7 @@ Variables:
 	flex-wrap: var(--repel-wrap, wrap);
 	gap: var(--repel-gap, var(--gutter, 1em));
 	align-items: var(--repel-vertical-alignment, center);
-	justify-content: space-between;
+	justify-content: var(--repel-horizontal-alignment, space-between);
 
 	> * {
 		margin: 0;

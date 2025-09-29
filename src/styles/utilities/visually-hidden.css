@@ -3,8 +3,8 @@ Hide elements visually.
 Info: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 */
 
-.screen-reader-text, /* Improve WP's default styles */
-.visually-hidden:not(:focus, :active) {
+/* '.screen-reader-text' is a WordPress utility class, but we have improved it and are reusing the same styles for it and our 'visually-hidden' utility class. */
+:is(.screen-reader-text, .visually-hidden):not(:focus, :active) {
 	position: absolute !important;
 	width: 1px !important;
 	height: 1px !important;

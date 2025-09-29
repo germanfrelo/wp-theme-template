@@ -1,14 +1,13 @@
 /* ======================================================================
-Button
+BUTTON
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
 
 .button,
-.wp-block-button__link,
-.wp-block-read-more,
-.wp-element-button {
+.wp-element-button,
+.wp-block-button__link {
 	display: var(--button-display, inline-block);
 	align-content: center;
 	min-inline-size: var(--field-min-size-inline, 24px);
@@ -19,6 +18,8 @@ Notes:
 	font-weight: var(--button-font-weight, inherit);
 	line-height: var(--button-line-height, inherit);
 	color: var(--button-color, inherit);
+	text-transform: var(--button-text-transform, inherit);
+	letter-spacing: var(--button-letter-spacing, inherit);
 	text-decoration-line: var(--button-line, none);
 	background-color: var(--button-color-bg, transparent);
 	border-color: var(--button-border-color, currentcolor);
@@ -31,8 +32,8 @@ Notes:
 		text-align: var(--button-text-align, center);
 	}
 
-	/* WP: Revert default 'pointer' cursor on elements without an 'href'. */
-	&:where(:not(:any-link)) {
+	/* WP: Revert default 'pointer' cursor on button-like links without an 'href'. */
+	&:where(a:not([href])) {
 		cursor: revert;
 	}
 
@@ -47,6 +48,12 @@ Notes:
 		color: var(--button-color-on-hover, var(--button-color));
 		background-color: var(--button-color-bg-on-hover, var(--button-color-bg));
 		border-color: var(--button-border-color-on-hover, var(--button-border-color));
+	}
+
+	&:is(:active) {
+		color: var(--button-color-on-active, var(--button-color-on-hover));
+		background-color: var(--button-color-bg-on-active, var(--button-color-bg-on-hover));
+		border-color: var(--button-border-color-on-active, var(--button-border-color-on-hover));
 	}
 
 	/* Has icon */
@@ -72,7 +79,7 @@ Notes:
 	}
 
 	/* Icon: External Link */
-	.wp-block-button.has-icon > &:any-link[rel~="external"] {
+	.wp-block-button.has-icon > &a:where([href])[rel~="external"] {
 		--button-gap: 0.5ch;
 
 		&::after {
@@ -85,5 +92,47 @@ Notes:
 			mask-position: center;
 			mask-size: cover;
 		}
+	}
+}
+
+/* ----------------------------------------------------------------------
+Variants
+---------------------------------------------------------------------- */
+
+:is(.button, .wp-block-button) {
+	/* Appearance */
+
+	&[data-button-appearance="inverse"] {
+		--button-color: var(--wp--preset--color--primary);
+		--button-color-on-hover: var(--wp--preset--color--primary);
+		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-color-bg: var(--wp--preset--color--surface);
+		--button-color-bg-on-hover: var(--wp--preset--color--surface);
+		--button-color-bg-on-active: var(--wp--preset--color--surface);
+	}
+
+	&[data-button-appearance="outlined"] {
+		--button-color: var(--wp--preset--color--primary);
+		--button-color-on-hover: var(--wp--preset--color--primary);
+		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-color-bg: transparent;
+		--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 95%);
+		--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 90%);
+		--button-border-color: currentcolor;
+		--button-border-color-on-hover: currentcolor;
+		--button-border-color-on-active: currentcolor;
+	}
+
+	&[data-button-appearance="plain"] {
+		--button-line: underline;
+		--button-color: var(--link-color);
+		--button-color-on-hover: var(--link-color-on-hover-focus);
+		--button-color-on-active: var(--link-color-on-hover-focus);
+		--button-color-bg: transparent;
+		--button-color-bg-on-hover: transparent;
+		--button-color-bg-on-active: transparent;
+		--button-border-color: transparent;
+		--button-border-color-on-hover: transparent;
+		--button-border-color-on-active: transparent;
 	}
 }

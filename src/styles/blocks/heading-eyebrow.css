@@ -1,0 +1,10 @@
+/* ======================================================================
+Heading - Style Variation: Eyebrow
+====================================================================== */
+
+:is(h1, h2, h3, h4, h5, h6).is-style-eyebrow {
+	font-size: var(--wp--preset--font-size--s);
+	line-height: var(--wp--custom--line-height--slim);
+	text-transform: uppercase;
+	letter-spacing: var(--wp--custom--letter-spacing--uppercase);
+}

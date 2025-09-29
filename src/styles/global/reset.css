@@ -256,18 +256,12 @@ Remove the default margin from some form elements, which is usually not wanted, 
 }
 
 /*
-Normalize the placeholder color with a new default value that is consistent and accessible across browsers, and adapted to browsers native dark color schemes.
-Ref. https://codepen.io/germanfrelo/pen/EaYwZdb
+Normalize the placeholder color to use the same as Firefox.
+More info: https://codepen.io/germanfrelo/pen/EaYwZdb
 */
 
 ::placeholder {
-	color: #757575;
-}
-
-@supports (color: light-dark(black, white)) {
-	::placeholder {
-		color: light-dark(hsl(0deg 0% 46%), hsl(0deg 0% 65%));
-	}
+	color: color-mix(in srgb, currentcolor 54%, transparent);
 }
 
 /*

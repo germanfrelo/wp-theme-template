@@ -1,31 +1,21 @@
 /* ======================================================================
-WP Post Template
+WP BLOCK POST TEMPLATE
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-template
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-template
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-template
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
-
 .wp-block-post-template {
-	/* Remove default 'ul' styles */
-	&ul.is-layout-grid {
+	/* Remove default list styles */
+	&:is(ol, ul) {
 		padding-inline-start: 0;
-		list-style-type: none;
+		list-style-type: "";
 	}
 
-	&.is-layout-grid {
-		column-gap: var(--gutter);
-	}
-
-	.wp-block-post-featured-image {
-		img,
-		> a:has(> img) {
-			display: block;
-			inline-size: 100%;
-			block-size: 100%;
-		}
+	/* Stretches each post's container to create a uniform height for all items in a grid */
+	&:is(.grid, .is-layout-grid) > li.wp-block-post > .wp-block-group {
+		min-block-size: 100%;
 	}
 }

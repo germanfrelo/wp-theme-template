@@ -8,33 +8,38 @@ Site Header
 	}
 }
 
-header.wp-block-template-part {
+.site-header {
 	--site-logo-height: var(--wp--preset--spacing--l);
+	--wrapper-max-width: 90rem;
 	padding-block-start: var(--site-header-padding-top, var(--gutter, 2rem));
 	padding-block-end: var(--site-header-padding-bottom, var(--gutter, 2rem));
-	background-color: var(--wp--preset--color--surface-2);
+	container: site-header-container / inline-size;
+	background-color: var(--wp--preset--color--surface-1, Canvas);
+	box-shadow: 0 var(--wp--custom--border-width--thin) var(--separator-color);
 
-	@supports (animation-timeline: scroll()) {
+	@media (width >= 80rem) and (height >= 70rem) {
 		position: sticky;
 		inset-block-start: 0;
-		z-index: 1;
+		z-index: 2;
 
-		@media (prefers-reduced-motion: no-preference) {
-			animation: add-shadow-to-header linear forwards;
-			animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
-			animation-timeline: scroll();
-			animation-range: 0 80px;
+		@supports (animation-timeline: scroll()) {
+			@media (prefers-reduced-motion: no-preference) {
+				animation: add-shadow-to-header linear forwards;
+				animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
+				animation-timeline: scroll();
+				animation-range: 0 80px;
+			}
 		}
 	}
 
-	@supports not (animation-timeline: scroll()) {
-		box-shadow: 0 1px color-mix(in oklch, currentcolor 10%, transparent);
+	.repel > .wp-block-site-logo {
+		flex-shrink: 0;
 	}
 
 	/*
 	Navigation Overlay Menu - Breakpoint
 	Change the default viewport width at which navigation switches between expanded and collapsed.
-	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default.
+	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default (600px).
 	*/
 
 	/* stylelint-disable no-unknown-custom-media -- Defined in custom-media-queries.css file. */
@@ -42,7 +47,7 @@ header.wp-block-template-part {
 
 	/* Override styles at WP's default breakpoint. */
 
-	@media (-wp-block-navigation-breakpoint-default) {
+	@media (--nav-default-breakpoint) {
 		nav.wp-block-navigation {
 			/* Keep showing the button to open the menu */
 			.wp-block-navigation__responsive-container-open:not(.always-shown) {
@@ -58,7 +63,7 @@ header.wp-block-template-part {
 
 	/* Add styles at custom breakpoint larger than the default one. */
 
-	@media (--nav-breakpoint-larger-width) {
+	@media (--nav-custom-breakpoint) {
 		nav.wp-block-navigation {
 			/* Hide the button to open the menu */
 			.wp-block-navigation__responsive-container-open:not(.always-shown) {
@@ -71,6 +76,7 @@ header.wp-block-template-part {
 			}
 		}
 	}
+
 	/* stylelint-enable selector-not-notation */
 	/* stylelint-enable no-unknown-custom-media */
 }

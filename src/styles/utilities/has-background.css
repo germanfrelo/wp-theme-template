@@ -25,6 +25,7 @@ These selectors are intentionally different to match the specificity of WordPres
 .has-background {
 	&:where(p),
 	&:where(.wp-block-columns),
+	&:where(.wp-block-group),
 	&:where(.wp-block-list),
 	&:where(.wp-block-preformatted),
 	&:is(h1, h2, h3, h4, h5, h6) {

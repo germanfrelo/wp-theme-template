@@ -1,16 +1,4 @@
-/* ======================================================================
-Logo Grid
-====================================================================== */
-
 .logo-grid {
-	&.grid {
-		--grid-placement: auto-fit;
-		--grid-min-item-size: 8rem;
-		place-items: center;
-	}
-
-	img {
-		max-block-size: var(--wp--preset--spacing--l-xl);
-		object-fit: contain;
-	}
+	--grid-item-min-size: 8rem;
+	place-items: center;
 }

@@ -53,22 +53,22 @@ Custom Style: Custom
 
 	/* Make the whole block interactive if it has a Post Title as link */
 
-	&:has(.wp-block-post-title > :any-link) {
+	&:has(.wp-block-post-title > a:where([href])) {
 		position: relative;
 	}
 
 	/* Cover when the Post Title link child is focused */
 
-	&:has(.wp-block-post-title > :any-link):focus-within {
+	&:has(.wp-block-post-title > a:where([href])):focus-within {
 		box-shadow: var(--cover-focus-shadow, initial);
 	}
 
-	& .wp-block-post-title > :any-link {
+	& .wp-block-post-title > a:where([href]) {
 		text-decoration: none;
 		outline: none;
 	}
 
-	& .wp-block-post-title > :any-link::after {
+	& .wp-block-post-title > a:where([href])::after {
 		position: absolute;
 		inset: 0;
 		content: "";

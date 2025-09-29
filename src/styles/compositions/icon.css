@@ -13,6 +13,10 @@ Variables:
 
 .icon {
 	flex-shrink: 0;
-	inline-size: auto;
-	block-size: var(--icon-size, auto);
+
+	&svg,
+	& > svg {
+		inline-size: auto;
+		block-size: var(--icon-size, 1em);
+	}
 }

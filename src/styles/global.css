@@ -12,4 +12,5 @@ See the README file for more info.
 @import-glob "compositions/*.css";
 @import-glob "blocks/**/*.css";
 @import-glob "regions/**/*.css";
+@import-glob "templates/**/*.css";
 @import-glob "utilities/*.css";

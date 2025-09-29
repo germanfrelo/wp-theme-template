@@ -1,0 +1,38 @@
+.pattern-image-content-container {
+	container: pattern-image-content / inline-size;
+	overflow: hidden;
+	resize: horizontal;
+
+	.wp-block-image img {
+		inline-size: 100%;
+		block-size: 100%;
+		aspect-ratio: 2 / 1;
+		object-fit: cover;
+	}
+
+	@container pattern-image-content (width > 50rem) {
+		.wp-block-image img {
+			aspect-ratio: auto;
+		}
+	}
+
+	&:nth-of-type(1) {
+		@container pattern-image-content (width > 50rem) {
+			.pattern-image-content {
+				display: flex;
+			}
+		}
+	}
+
+	&:nth-of-type(2) {
+		.pattern-image-content {
+			display: grid;
+		}
+
+		@container pattern-image-content (width > 50rem) {
+			.pattern-image-content {
+				grid-template-columns: auto auto;
+			}
+		}
+	}
+}
