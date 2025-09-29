@@ -259,6 +259,7 @@ nav.wp-block-navigation {
 	/* Link/Button
 	---------------------------------------------------------------------- */
 
+	/* stylelint-disable-next-line no-duplicate-selectors -- Intended (temporary). */
 	li.wp-block-navigation-item {
 		> .wp-block-navigation-item__content {
 			padding-block-start: var(--nav-link-padding-top, 0);
@@ -337,9 +338,7 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	/* Adjacent menu items */
-	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-		> li.wp-block-navigation-item
-		+ li.wp-block-navigation-item {
+	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu > li.wp-block-navigation-item + li.wp-block-navigation-item {
 		border-block-start-color: var(--nav-submenu-separator-color, currentcolor);
 		border-block-start-style: solid;
 		border-block-start-width: var(--nav-submenu-separator-width, 0);
@@ -355,9 +354,7 @@ nav.wp-block-navigation {
 	/* Link/Button of Menu Item of Submenu
 	---------------------------------------------------------------------- */
 
-	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-		> li.wp-block-navigation-item
-		> .wp-block-navigation-item__content {
+	ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu > li.wp-block-navigation-item > .wp-block-navigation-item__content {
 		padding-block: var(--nav-item-of-submenu-padding-block, 0);
 		padding-inline-start: var(--nav-item-of-submenu-padding-left, 0);
 	}
@@ -419,8 +416,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ❗️ Specificity must be >= (0,5,0) */
-	li.wp-block-navigation-item.has-child.wp-block-navigation-submenu
-		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+	li.wp-block-navigation-item.has-child.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
 		visibility: hidden; /* Hidden */
 		row-gap: var(--nav-submenu-gap-rows, var(--flow-space, 0));
 		column-gap: var(--nav-submenu-gap-columns, var(--flow-space, 0));
@@ -453,9 +449,7 @@ nav.wp-block-navigation {
 
 	/* ❗️ Specificity must be >= (0,5,0) */
 	li.wp-block-navigation-item.wp-block-navigation-submenu {
-		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
-			> li.wp-block-navigation-item.wp-block-navigation-submenu
-			> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
+		> ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu > li.wp-block-navigation-item.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
 			top: calc(-1 * (var(--nav-submenu-border-width, 0px) + var(--nav-submenu-padding-block, 0px)));
 		}
 
@@ -489,10 +483,7 @@ nav.wp-block-navigation {
 
 		@media (prefers-reduced-motion: no-preference) {
 			/* animation-name: overlay-menu; */
-			animation-duration: var(
-				--nav-responsive-container-animation-duration,
-				var(--wp--custom--transition--duration, 0)
-			);
+			animation-duration: var(--nav-responsive-container-animation-duration, var(--wp--custom--transition--duration, 0));
 			animation-timing-function: var(--nav-responsive-container-animation-timing-function);
 		}
 
@@ -549,11 +540,7 @@ nav.wp-block-navigation {
 		---------------------------------------------------------------------- */
 
 		/* Make containers between 'nav' and the outermost 'ul' fill the available vertical space for better layout control, e.g. if some items need to be pushed to the bottom of the overlay menu. */
-		:is(
-			.wp-block-navigation__responsive-close,
-			.wp-block-navigation__responsive-dialog,
-			.wp-block-navigation__responsive-container-content
-		) {
+		:is(.wp-block-navigation__responsive-close, .wp-block-navigation__responsive-dialog, .wp-block-navigation__responsive-container-content) {
 			block-size: 100%;
 		}
 
