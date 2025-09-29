@@ -3,6 +3,8 @@
  * Gravity Forms customizations.
  *
  * All actions and filters related to the Gravity Forms plugin.
+ *
+ * @package themeslug
  */
 
 
@@ -60,7 +62,7 @@ add_filter('gform_submit_button', 'themeslug_gform_input_to_button', 10, 2);
  *
  * @link https://docs.gravityforms.com/gform_submit_button/#h-5-append-custom-css-classes-to-the-button
  *
- * @return void
+ * @return string
  */
 function themeslug_gform_add_custom_css_classes($button, $form) {
 	$fragment = WP_HTML_Processor::create_fragment($button);
@@ -69,4 +71,70 @@ function themeslug_gform_add_custom_css_classes($button, $form) {
 
 	return $fragment->get_updated_html();
 }
-add_filter( 'gform_submit_button', 'themeslug_gform_add_custom_css_classes', 10, 2 );
+add_filter( 'gform_submit_button', 'themeslug_gform_add_custom_css_classes', 15, 2 );
+
+
+/**
+ * Adds custom data- attributes to the submit button for specific forms.
+ *
+ * This function uses a centralized configuration array to apply various
+ * data attributes to the submit buttons of specified Gravity Forms.
+ *
+ * @since WordPress 6.6
+ *
+ * @param string $button The HTML for the button element.
+ * @param array  $form   The current form object.
+ * @return string The modified button HTML with data attributes.
+ */
+function themeslug_gform_add_data_attributes( $button, $form ) {
+	// Early return if there's no button HTML to process.
+	if ( empty( $button ) ) {
+		return $button;
+	}
+
+	$form_id = $form['id'];
+
+	/**
+	 * Configuration for data attributes.
+	 *
+	 * Structure:
+	 * 'data-attribute-name' => [
+	 * 'attribute_value' => [ form_id_1, form_id_2, ... ],
+	 * 'another_value'   => [ form_id_3, ... ],
+	 * ],
+	 */
+	$config = [
+		'data-appearance' => [
+			'inverse' => [  ],
+			'outlined' => [  ],
+			'plain' => [  ],
+		],
+	];
+
+	// Find all attributes that should be applied to the current form.
+	$attributes_to_set = [];
+	foreach ( $config as $attribute_name => $value_map ) {
+		foreach ( $value_map as $attribute_value => $form_ids ) {
+			if ( in_array( $form_id, $form_ids, true ) ) {
+				$attributes_to_set[ $attribute_name ] = $attribute_value;
+				break; // Found the value for this attribute, move to the next one.
+			}
+		}
+	}
+
+	// If no attributes were found for this form, return the button without changes.
+	if ( empty( $attributes_to_set ) ) {
+		return $button;
+	}
+
+	$fragment = WP_HTML_Processor::create_fragment( $button );
+
+	if ( $fragment->next_tag() ) {
+		foreach ( $attributes_to_set as $name => $value ) {
+			$fragment->set_attribute( $name, $value );
+		}
+	}
+
+	return $fragment->get_updated_html();
+}
+add_filter( 'gform_submit_button', 'themeslug_gform_add_data_attributes', 20, 2 );
