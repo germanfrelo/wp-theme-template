@@ -173,7 +173,7 @@ nav.wp-block-navigation {
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
 	line-height: var(--nav-global-line-height, inherit);
-	color: var(--nav-global-color-text, inherit);
+	color: var(--nav-global-color-text, currentcolor);
 	text-transform: var(--nav-global-text-transform, inherit);
 	letter-spacing: var(--nav-global-letter-spacing, inherit);
 }
@@ -205,11 +205,11 @@ nav.wp-block-navigation {
 
 .wp-block-navigation__responsive-container-open {
 	:where(.wp-block-navigation:not(.has-background, .has-text-color)) & {
-		color: var(--nav-button-open-color-text, inherit);
+		color: var(--nav-button-open-color-text, currentcolor);
 		background-color: var(--nav-button-open-color-bg, transparent);
 
 		&:is(:hover, :focus-visible) {
-			color: var(--nav-button-open-color-text-on-hover, inherit);
+			color: var(--nav-button-open-color-text-on-hover, currentcolor);
 			background-color: var(--nav-button-open-color-bg-on-hover, transparent);
 		}
 	}
@@ -219,11 +219,11 @@ nav.wp-block-navigation {
 
 .wp-block-navigation__responsive-container-close {
 	:where(.wp-block-navigation:not(.has-background, .has-text-color)) & {
-		color: var(--nav-button-close-color-text, inherit);
+		color: var(--nav-button-close-color-text, currentcolor);
 		background-color: var(--nav-button-close-color-bg, transparent);
 
 		&:is(:hover, :focus-visible) {
-			color: var(--nav-button-close-color-text-on-hover, inherit);
+			color: var(--nav-button-close-color-text-on-hover, currentcolor);
 			background-color: var(--nav-button-close-color-bg-on-hover, transparent);
 		}
 	}
@@ -355,7 +355,7 @@ TODO: Refactor.
 
 .wp-block-navigation:where(:not(.has-text-color) .wp-block-navigation__submenu-container) {
 	/* The fallback '--nav-global-color-text' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked/focused, all its submenu items would inherit that hover/clic/focus color. */
-	color: var(--nav-submenu-color, var(--nav-global-color-text, inherit));
+	color: var(--nav-submenu-color, var(--nav-global-color-text, currentcolor));
 }
 
 li.wp-block-navigation-item.has-child.wp-block-navigation-submenu > ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu {
@@ -478,16 +478,16 @@ TODO: Refactor.
 
 		/* li.wp-block-navigation-item {
 			&.current-menu-item {
-				color: var(--nav-item-color-text-current-page, inherit) !important;
+				color: var(--nav-item-color-text-current-page, currentcolor) !important;
 			}
 
 			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-color-text-on-hover, inherit) !important;
+				color: var(--nav-item-color-text-on-hover, currentcolor) !important;
 			}
 		}
 
 		.wp-block-navigation__submenu-container {
-			color: var(--nav-submenu-color, inherit) !important;
+			color: var(--nav-submenu-color, currentcolor) !important;
 		} */
 	}
 
