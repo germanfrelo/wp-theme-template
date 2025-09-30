@@ -168,7 +168,6 @@ function themeslug_add_editor_styles() {
 add_action( 'after_setup_theme', 'themeslug_add_editor_styles' );
 
 
-// TODO: WIP
 /**
  * CSS Cascade Layers
  *
@@ -195,7 +194,6 @@ function themeslug_get_layer_config() {
 	];
 }
 
-// TODO: WIP
 /**
  * Defines the top-level cascade layers a single time.
  *
@@ -213,9 +211,8 @@ function themeslug_define_cascade_layers() {
 	// Add the layer definition as an inline style. This will be the first style block.
 	wp_add_inline_style( 'themeslug-layer-definition', $layer_css );
 }
-// add_action( 'wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5 );
+add_action( 'wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5 );
 
-// TODO: WIP
 /**
  * Re-formats enqueued stylesheets to use CSS Cascade Layers.
  *
@@ -266,4 +263,4 @@ function themeslug_enqueue_layered_scripts() {
 		}
 	}
 }
-// add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_layered_scripts', 9999999999 );
+add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_layered_scripts', 9999999999 );
