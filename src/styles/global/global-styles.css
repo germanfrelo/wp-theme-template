@@ -41,7 +41,7 @@ Body
 ---------------------------------------------------------------------- */
 
 body {
-	font-family: var(--font-family-base, sans-serif);
+	font-family: var(--wp--preset--font-family--base, sans-serif);
 	font-size: var(--font-size-base, 1rem);
 	font-weight: var(--font-weight-base, normal);
 	line-height: var(--font-line-height-base, normal);
@@ -61,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-family-headings, inherit);
+	font-family: var(--wp--preset--font-family--headings, inherit);
 	font-weight: var(--heading-font-weight, bold);
 	font-feature-settings:
 		"calt" 1,
@@ -121,7 +121,7 @@ Thematic Break (Horizontal Rule)
 ---------------------------------------------------------------------- */
 
 hr {
-	color: var(--separator-color, inherit);
+	color: var(--separator-color, currentcolor);
 	border: none;
 	border-block-start-style: var(--separator-style, solid);
 	border-block-start-width: var(--separator-thickness, 2px);
@@ -132,7 +132,7 @@ Preformatted Text
 ---------------------------------------------------------------------- */
 
 pre {
-	font-family: var(--font-family-mono, monospace);
+	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
 }
 
@@ -181,12 +181,12 @@ li > :is(ol, ul) {
 
 /* List Items */
 
-:is(ol, ul):where(:not([class])) > li:where(:not([class])) {
-	padding-inline-start: var(--list-item-indentation, revert);
+li {
+	padding-inline-start: var(--list-item-indentation);
 }
 
-:is(ol, ul):where(:not([class])) > li:where(:not([class])) + li:where(:not([class])) {
-	margin-block-start: var(--list-gap, revert);
+li + li {
+	margin-block-start: var(--list-gap);
 }
 
 :is(ol, ul) > li::marker {
@@ -244,7 +244,7 @@ a {
 
 code,
 samp {
-	font-family: var(--font-family-mono, monospace);
+	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
 }
 
@@ -368,12 +368,12 @@ textarea {
 	padding-inline: var(--field-padding-inline, revert);
 	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
-	color: var(--field-color, inherit);
-	background-color: var(--field-color-bg, transparent);
-	border-color: var(--field-border-color, currentcolor);
+	color: var(--field-color, currentcolor);
+	background-color: var(--field-color-bg);
+	border-color: var(--field-border-color);
 	border-style: solid;
-	border-width: var(--field-border-width, revert);
-	border-radius: var(--field-border-radius, revert);
+	border-width: var(--field-border-width);
+	border-radius: var(--field-border-radius);
 
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--wp--custom--transition--duration, 0);
@@ -451,7 +451,7 @@ details {
 		font-size: var(--details-summary-font-size, inherit);
 		font-weight: var(--details-summary-font-weight, inherit);
 		line-height: var(--details-summary-line-height, inherit);
-		color: var(--details-summary-color, inherit);
+		color: var(--details-summary-color, currentcolor);
 		letter-spacing: var(--details-summary-letter-spacing, normal);
 		cursor: var(--details-summary-cursor, default);
 	}

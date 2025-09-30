@@ -72,7 +72,7 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 define( 'WP_ENVIRONMENT_TYPE', 'local' );
 
 /**
- * Set the development mode for the site to 'theme'.
+ * Set the development mode for the site. Can be 'theme', 'plugin', or 'all'.
  *
  * @link https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/
  */
@@ -119,7 +119,7 @@ Once your local site is set up:
 
 1. **Clone this theme repository** into the `/wp-content/themes/` directory of your local site.
 2. **`cd` to the theme directory** using your terminal.
-3. **Find and replace placeholders.** Use the global search and replace feature in your code editor to replace all instances of the following placeholders with your own project's information:
+3. **Find and replace placeholders.** Use your code editor's global search and replace feature to replace all instances of the following placeholders with your project's information:
    - `themeauthor`
    - `themedescription`
    - `themename`
@@ -196,11 +196,9 @@ src/styles/
 │   ├── switcher.css
 │   └── wrapper.css
 ├── global/
-│   ├── custom-media-queries.css
 │   ├── global-styles.css
 │   ├── reset.css
-│   ├── variables-component-tokens.css
-│   └── variables-system-tokens.css
+│   ├── variables.css
 ├── regions/
 │   ├── ...
 │   ├── site-footer.css
@@ -228,17 +226,15 @@ The primary entry point is the **`global.css`** file. It uses `@import` rules (p
 
 Some CSS files probably don't need to be changed, whereas other do:
 
-| File/Directory                          | Needs Changes?                                                                       |
-| :-------------------------------------- | :----------------------------------------------------------------------------------- |
-| `global/custom-media-queries.css`       | Probably.                                                                            |
-| `global/global-styles.css`              | Yes.                                                                                 |
-| `global/reset.css`                      | Unlikely. It contains useful project-agnostic reset styles.                          |
-| `global/variables-component-tokens.css` | Yes.                                                                                 |
-| `global/variables-system-tokens.css`    | Yes.                                                                                 |
-| `compositions/`                         | Unlikely. It contains a bunch of predefined, project-agnostic compositional layouts. |
-| `blocks/`                               | Yes.                                                                                 |
-| `regions/`                              | Yes.                                                                                 |
-| `utilities/`                            | Probably.                                                                            |
+| File/Directory             | Needs Changes?                                                                       |
+| :------------------------- | :----------------------------------------------------------------------------------- |
+| `global/global-styles.css` | Yes.                                                                                 |
+| `global/reset.css`         | Unlikely. It contains useful project-agnostic reset styles.                          |
+| `global/variables.css`     | Yes.                                                                                 |
+| `compositions/`            | Unlikely. It contains a bunch of predefined, project-agnostic compositional layouts. |
+| `blocks/`                  | Yes.                                                                                 |
+| `regions/`                 | Yes.                                                                                 |
+| `utilities/`               | Probably.                                                                            |
 
 ### Automated compilation
 

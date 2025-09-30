@@ -54,7 +54,6 @@ Notes:
 			/* Icon */
 			> :is(svg, .search-icon) {
 				rotate: var(--block-search-button-icon-rotation, initial);
-				scale: var(--block-search-button-icon-scale, initial);
 			}
 		}
 	}

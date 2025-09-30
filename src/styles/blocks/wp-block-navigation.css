@@ -94,7 +94,7 @@ nav.wp-block-navigation {
 	--nav-item-of-submenu-padding-block: 0.5em;
 	--nav-item-of-submenu-padding-inline-start: 0.5em;
 	--nav-item-outermost-has-submenu-icon-position: 0; /* 0 = right (default) | -1 = left */
-	--nav-link-border-radius: var(--wp--preset--border-radius--none);
+	--nav-link-border-radius: 0;
 	--nav-link-line-color-current-page: transparent;
 	--nav-link-line-color-hover: transparent;
 	--nav-link-line-color: transparent;
@@ -179,7 +179,7 @@ nav.wp-block-navigation {
 	column-gap: var(--nav-global-gap-columns, var(--gutter, 0));
 	font-size: var(--nav-global-font-size, inherit);
 	font-weight: var(--nav-global-font-weight, inherit);
-	color: var(--nav-global-color, inherit);
+	color: var(--nav-global-color, currentcolor);
 
 	/* ======================================================================
 	03. Menu Buttons Open/Close (<button>)
@@ -189,10 +189,10 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
-		color: var(--nav-button-color, inherit);
+		color: var(--nav-button-color, currentcolor);
 
 		&:is(:hover, :focus-visible) {
-			color: var(--nav-button-color-hover, inherit);
+			color: var(--nav-button-color-hover, currentcolor);
 		}
 
 		/* Icon of Button
@@ -218,7 +218,7 @@ nav.wp-block-navigation {
 
 		/* Current */
 		&.current-menu-item {
-			color: var(--nav-item-color-current-page, inherit);
+			color: var(--nav-item-color-current-page, currentcolor);
 		}
 	}
 
@@ -226,7 +226,7 @@ nav.wp-block-navigation {
 		li.wp-block-navigation-item {
 			/* Hover/Click/Focus */
 			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-color-on-hover, inherit);
+				color: var(--nav-item-color-on-hover, currentcolor);
 			}
 		}
 	}
@@ -492,7 +492,7 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-text-color) {
-			color: var(--nav-global-color, inherit);
+			color: var(--nav-global-color, currentcolor);
 
 			li.wp-block-navigation-item {
 				/* Current */

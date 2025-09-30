@@ -82,13 +82,13 @@ Notes:
 		--field-color: var(--field-error-color);
 
 		.gfield_validation_message {
-			color: var(--field-error-color, inherit);
+			color: var(--field-error-color, currentcolor);
 		}
 	}
 
 	.gform_validation_errors {
 		padding: 1em;
-		color: var(--field-error-color, inherit);
+		color: var(--field-error-color, currentcolor);
 		border: 2px solid;
 	}
 

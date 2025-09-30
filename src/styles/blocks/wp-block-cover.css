@@ -85,7 +85,7 @@ Custom Style: Hero
 	justify-content: normal;
 	block-size: clamp(300px, 50vmin, 600px);
 	container-type: inline-size;
-	color: var(--wp--preset--color--surface-1, inherit);
+	color: var(--wp--preset--color--surface-1, currentcolor);
 
 	&:has(.wrapper) {
 		padding-inline: 0;

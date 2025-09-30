@@ -17,7 +17,7 @@ Notes:
 	font-size: var(--button-font-size, inherit);
 	font-weight: var(--button-font-weight, inherit);
 	line-height: var(--button-line-height, inherit);
-	color: var(--button-color, inherit);
+	color: var(--button-color, currentcolor);
 	text-transform: var(--button-text-transform, inherit);
 	letter-spacing: var(--button-letter-spacing, inherit);
 	text-decoration-line: var(--button-line, none);

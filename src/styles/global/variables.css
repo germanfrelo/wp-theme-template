@@ -1,24 +1,42 @@
 /* ======================================================================
-COMPONENT TOKENS
-
-This file contains design tokens (CSS custom properties) for specific
-components and blocks. These tokens define the individual styles for
-elements like buttons, cards, or form fields.
-
-Component tokens should always reference the system tokens defined in
-the 'tokens-system.css' file to maintain consistency. This creates a
-clear hierarchy where global styles can be updated in one place and
-automatically propagate to all components.
-
-Reference: https://m3.material.io/foundations/design-tokens/overview
+VARIABLES (CUSTOM PROPERTIES)
 ====================================================================== */
 
-:root {
-	/* Block - Search */
-	--block-search-button-icon-scale: 1.5;
-	--block-search-input-color-bg-on-hover: var(--wp--preset--color--surface-1);
+/* ----------------------------------------------------------------------
+Custom Media Queries
+---
+Prerequisites:
+1. PostCSS
+2. PostCSS Custom Media plugin
+---------------------------------------------------------------------- */
 
-	/* Block - Post Date */
+/* WordPress default breakpoint — DO NOT MODIFY */
+@custom-media --nav-default-breakpoint (min-width: 600px);
+
+/* New customizable breakpoint */
+@custom-media --nav-custom-breakpoint (min-width: 50rem);
+
+/* ----------------------------------------------------------------------
+Custom Properties
+---------------------------------------------------------------------- */
+
+:root {
+	/* Typography */
+	--font-line-height-base: var(--wp--custom--line-height--loose);
+	--font-size-base: var(--wp--preset--font-size--m);
+	--font-size-lede: var(--wp--preset--font-size--l);
+	--font-size-meta: var(--wp--preset--font-size--s);
+	--font-weight-base: var(--wp--custom--font-weight--regular);
+
+	/* Dimensions/Layout/Spacing */
+	--flow-space: var(--wp--custom--block-gap);
+	--gutter: var(--wp--custom--root-padding-inline);
+	--measure-content: var(--wp--style--global--content-size);
+	--measure-wide: var(--wp--style--global--wide-size);
+	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
+	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
+
+	/* Post Date */
 	--block-post-date-font-size: var(--wp--preset--font-size--s);
 
 	/* Button */
@@ -26,7 +44,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--button-color-bg: var(--wp--preset--color--primary);
 	--button-border-color-on-hover: var(--wp--preset--color--primary-darker);
 	--button-border-color: var(--button-color-bg);
-	--button-border-radius: var(--wp--preset--border-radius--s);
+	--button-border-radius: var(--wp--custom--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
 	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-color: var(--wp--preset--color--surface-1);
@@ -41,7 +59,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Card */
 	--card-border-color: var(--wp--preset--color--surface-4);
-	--card-border-radius: var(--wp--preset--border-radius--s);
+	--card-border-radius: var(--wp--custom--border-radius--s);
 	--card-border-width: var(--wp--custom--border-width--thin);
 
 	/* Code (inline) */
@@ -52,7 +70,6 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
-	--code-block-padding: var(--gutter);
 
 	/* Form */
 	--form-fields-gap-rows: var(--gutter);
@@ -62,13 +79,8 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	(input, textarea, select, button...)
 	*/
 	--field-accent-color: var(--wp--preset--color--primary);
-	--field-border-color: currentcolor;
-	--field-border-radius: var(--wp--preset--border-radius--2-xs);
 	--field-border-width: var(--wp--custom--border-width--thin);
-	--field-color-bg: transparent;
-	--field-color: var(--wp--preset--color--text);
 	--field-error-color: var(--color-error, crimson);
-	--field-font-weight: var(--font-weight-base);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;
 
@@ -106,23 +118,20 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	--h6-line-height: normal;
 
 	/* Image */
-	--image-border-radius: var(--wp--preset--border-radius-l);
+	--image-border-radius: var(--wp--custom--border-radius--l);
 
 	/* Label */
-	--label-font-size: var(--wp--preset--font-size--m);
 	--label-font-weight: var(--wp--custom--font-weight--bold);
 	--label-line-height: var(--wp--custom--line-height--slim);
 
 	/* Legend */
-	--legend-font-size: var(--wp--preset--font-size--m);
 	--legend-font-weight: var(--wp--custom--font-weight--bold);
-	--legend-line-height: inherit;
+	--legend-line-height: var(--wp--custom--line-height--slim);
 
-	/* Links */
+	/* Link */
 	--link-color: currentcolor;
 
 	/* List */
-	--list-gap: 0.5em;
 	--list-indentation: 1.75ch;
 	--list-item-indentation: 0.5ch;
 	--list-item-marker-color: currentcolor;
@@ -131,14 +140,7 @@ Reference: https://m3.material.io/foundations/design-tokens/overview
 	/* Quote */
 	--quote-border-left-width: var(--wp--custom--border-width--thick);
 	--quote-border-left-color: var(--wp--preset--color--primary);
-	--quote-padding-inline: var(--wp--preset--spacing--m);
-
-	/* Reel */
-	--reel-items-gap: calc(var(--gutter) * 2);
-
-	/* Region */
-	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
-	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
+	--quote-padding-inline: 2ch;
 
 	/* Separator */
 	--separator-color: var(--wp--preset--color--surface-4);

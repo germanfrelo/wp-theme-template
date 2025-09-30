@@ -10,7 +10,7 @@ Notes:
 ====================================================================== */
 
 .wp-block-separator {
-	color: var(--separator-color, inherit);
+	color: var(--separator-color, currentcolor);
 	border: none;
 	border-block-start-style: var(--separator-style, solid);
 	border-block-start-width: var(--separator-thickness, 2px);

@@ -4,55 +4,6 @@
 	"settings": {
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
-		"border": {
-			"radiusSizes": [
-				{
-					"name": "2XS (0.125rem)",
-					"slug": "2-xs",
-					"size": "0.125rem"
-				},
-				{
-					"name": "XS (0.25rem)",
-					"slug": "xs",
-					"size": "0.25rem"
-				},
-				{
-					"name": "S (0.5rem)",
-					"slug": "s",
-					"size": "0.5rem"
-				},
-				{
-					"name": "M (0.75rem)",
-					"slug": "m",
-					"size": "0.75rem"
-				},
-				{
-					"name": "L (1rem)",
-					"slug": "l",
-					"size": "1rem"
-				},
-				{
-					"name": "XL (1.5rem)",
-					"slug": "xl",
-					"size": "1.5rem"
-				},
-				{
-					"name": "2XL (2rem)",
-					"slug": "2-xl",
-					"size": "2rem"
-				},
-				{
-					"name": "3XL (3rem)",
-					"slug": "3-xl",
-					"size": "3rem"
-				},
-				{
-					"name": "Round",
-					"slug": "round",
-					"size": "999rem"
-				}
-			]
-		},
 		"color": {
 			"custom": true,
 			"customDuotone": true,
@@ -137,11 +88,23 @@
 			]
 		},
 		"custom": {
+			"border-radius": {
+				"2-xs": "0.125rem",
+				"xs": "0.25rem",
+				"s": "0.5rem",
+				"m": "0.75rem",
+				"l": "1rem",
+				"xl": "1.5rem",
+				"2-xl": "2rem",
+				"3-xl": "3rem",
+				"round": "9999rem"
+			},
 			"border-width": {
 				"thin": "1px",
 				"medium": "2px",
 				"thick": "4px"
 			},
+			"block-gap": "1.5em",
 			"font-weight": {
 				"regular": "400",
 				"medium": "500",
@@ -390,7 +353,7 @@
 			"fontFamilies": [
 				{
 					"name": "Atkinson Hyperlegible Next",
-					"slug": "atkinson-hyperlegible-next",
+					"slug": "base",
 					"fontFamily": "'Atkinson Hyperlegible Next', sans-serif",
 					"fontFace": [
 						{
@@ -406,7 +369,7 @@
 				},
 				{
 					"name": "JetBrains Mono",
-					"slug": "jetbrains-mono",
+					"slug": "mono",
 					"fontFamily": "'JetBrains Mono', monospace",
 					"fontFace": [
 						{
@@ -422,7 +385,7 @@
 				},
 				{
 					"name": "Inter",
-					"slug": "inter",
+					"slug": "headings",
 					"fontFamily": "'Inter', sans-serif",
 					"fontFace": [
 						{
@@ -480,7 +443,7 @@
 	},
 	"styles": {
 		"spacing": {
-			"blockGap": "1em",
+			"blockGap": "var:custom|block-gap",
 			"padding": {
 				"left": "var:custom|root-padding-inline",
 				"right": "var:custom|root-padding-inline"

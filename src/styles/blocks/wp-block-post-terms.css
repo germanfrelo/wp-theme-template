@@ -25,7 +25,7 @@ Notes:
 		letter-spacing: var(--wp--custom--letter-spacing--uppercase);
 		text-decoration-line: none;
 		background-color: var(--wp--preset--color--primary);
-		border-radius: var(--wp--preset--border-radius--xs);
+		border-radius: var(--wp--custom--border-radius--xs);
 		text-box: trim-both cap alphabetic;
 
 		/* States */
