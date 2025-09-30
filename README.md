@@ -141,7 +141,7 @@ These are the theme's main CSS-related directories and files:
 │   ├── block-style-variations.php
 │   └── styles.php
 ├── src/
-│   └── styles/
+│   └── css/
 │       ├── blocks/
 │       ├── compositions/
 │       ├── global/
@@ -172,10 +172,10 @@ WordPress requires this file solely for theme registration metadata, such as the
 
 ### Theme's main styles
 
-The theme's main styles are in **`src/styles/`**, split into multiple files and organized in directories:
+The theme's main styles are in **`src/css/`**, split into multiple files and organized in directories:
 
 ```text
-src/styles/
+src/css/
 ├── blocks/
 │   ├── button.css
 │   ├── ...
@@ -238,7 +238,7 @@ Some CSS files probably don't need to be changed, whereas other do:
 
 ### Automated compilation
 
-PostCSS processes the file **`src/styles/global.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build/styles/global.css`**.
+PostCSS processes the file **`src/css/global.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build/css/global.css`**.
 
 This process happens automatically:
 
@@ -250,7 +250,7 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 ### Enqueuing
 
 > [!IMPORTANT]
-> **The theme only enqueues the `build/styles/global.css` file.**
+> **The theme only enqueues the `build/css/global.css` file.**
 > It's enqueued by `includes/styles.php`, **on the website and in the site editor**.
 
 ## Local Development Workflow
@@ -265,7 +265,7 @@ npm run start
 
 This command builds the development version of the theme's assets:
 
-- Styles: from `src/styles/` to `build/styles/`
+- Styles: from `src/css/` to `build/css/`
 
 It then activates a "watch" mode, automatically recompiling and rebuilding necessary files in real-time as you make and save changes to your code.
 

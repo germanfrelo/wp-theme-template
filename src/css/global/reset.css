@@ -1,7 +1,7 @@
 /* ======================================================================
-CSS RESET
+RESET STYLES
 
-Based on the following CSS reset, but adapted for a WordPress block theme context:
+Based on the following CSS reset:
 https://github.com/germanfrelo/base-css-stylesheet
 
 Selectors are grouped and sorted based on:
@@ -9,19 +9,19 @@ Selectors are grouped and sorted based on:
 - https://html.spec.whatwg.org/multipage/#toc-semantics
 
 Table of contents:
-01. Document / Global
+01. Document/Global
 02. Sections
-03. Grouping content
-04. Inline text semantics
-05. Embedded content
+03. Grouping Content
+04. Inline Text Semantics
+05. Embedded Content
 06. Tables
-07. Forms
-08. Interactive elements
-09. Hidden elements
+07. Form Controls
+08. Interactive Elements
+09. Hidden Elements
 ====================================================================== */
 
 /* ======================================================================
-01. Document / Global
+01. Document/Global
 ====================================================================== */
 
 /*
@@ -95,11 +95,15 @@ When scrolling to target elements, a reasonable spacing is added above them to e
 ====================================================================== */
 
 /*
-Makes 'body' at least as tall as the viewport height (requires 'html { block-size: 100%; }', see 'html' rule above). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
+1. Make 'body' at least as tall as the viewport height (requires 'html { block-size: 100%; }', see 'html' rule above). Ref. https://codepen.io/germanfrelo/pen/jOGNpbj
+2. Remove the default 8px margin from 'body', which is usually not wanted, in favor of better control in authored CSS.
+3. Ensure visual consistency by making the height of lowercase letters in fallback fonts match the primary font. (E.g., it keeps code blocks <code> a more in-proportion size based on the base font.)
 */
 
 body {
-	min-block-size: 100%;
+	min-block-size: 100%; /* 1 */
+	margin: 0; /* 2 */
+	font-size-adjust: from-font; /* 3 */
 }
 
 /* ======================================================================
@@ -109,7 +113,17 @@ body {
 /*
 1. Prevent content from overflowing while preserving its formatting. (ref. https://github.com/jensimmons/cssremedy/issues/81).
 2. Prevent scroll chaining because of 1.
-3. Fix the inheritance and scaling of the font size in all browsers.
+3. Fix the inheritance and scaling of the font size in all browsers. Refs.:
+- https://www.brunildo.org/test/monospace_fsize.html
+- https://bugzilla.mozilla.org/show_bug.cgi?id=175415
+- https://www.456bereastreet.com/archive/200408/sizing_monospaced_fonts/
+- https://webkit.org/blog/67/strange-medium/
+- https://www.456bereastreet.com/archive/200609/font_size_inconsistencies_with_fontfamily_monospace/
+- https://neugierig.org/software/chromium/notes/2009/04/monospace-fonts.html
+- https://neugierig.org/software/chromium/notes/2009/09/monospace-fonts-workaround.html
+- https://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+- https://github.com/necolas/normalize.css/commit/5daad010a2f19c12b89f317ba9d2c8e4573210d7
+- https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966
 4. Fix the odd 'em' font sizing in all browsers.
 */
 
@@ -118,6 +132,18 @@ pre {
 	overscroll-behavior: contain; /* 2 */
 	font-family: monospace, monospace; /* 3 */
 	font-size: 1em; /* 4 */
+}
+
+/*
+Sets a consistent and modern default look for 'hr':
+1. Reverts the default 'gray' color in Firefox and WebKit to allow the text foreground color to be used as the border color.
+2. Removes all default '1px inset' borders to instead use a single border with a 'solid' style and a border width of '2px' to have the same height as before.
+*/
+
+hr {
+	color: inherit; /* 1 */
+	border: none; /* 2 */
+	border-block-start: 2px solid; /* 2 */
 }
 
 /* ======================================================================
@@ -211,7 +237,7 @@ Add padding and border to table cells for a better readability (ref. https://git
 }
 
 /* ======================================================================
-07. Forms
+07. Form Controls
 ====================================================================== */
 
 /*
@@ -256,7 +282,7 @@ Remove the default margin from some form elements, which is usually not wanted, 
 }
 
 /*
-Normalize the placeholder color to use the same as Firefox.
+Normalize the placeholder text color.
 More info: https://codepen.io/germanfrelo/pen/EaYwZdb
 */
 
@@ -279,7 +305,7 @@ More info: https://codepen.io/germanfrelo/pen/EaYwZdb
 ====================================================================== */
 
 /*
-Set the cursor on 'summary' elements to the same as buttons (default is 'text').
+Use the same cursor as buttons (default is 'text'), which feels more interactive, and aligns with its common implicit ARIA role of 'button'.
 */
 
 :where(details > summary:first-of-type) {
@@ -299,6 +325,6 @@ Refs.:
 - https://github.com/tailwindlabs/tailwindcss/commit/b570e2b
 */
 
-[hidden]:not([hidden="until-found" i], embed) {
+[hidden]:not(:is([hidden="until-found"], embed)) {
 	display: none;
 }

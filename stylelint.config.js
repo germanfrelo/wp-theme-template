@@ -31,11 +31,6 @@ export default {
 		/* Enforce conventions
 		(overrides rules from stylelint-config-standard)
 		---------------------------------------- */
-		// Allowed, disallowed & required
-		"property-no-vendor-prefix": [
-			true, // Already enabled in stylelint-config-recommended
-			{ ignoreProperties: ["/^mask-/"] }, // Allow -webkit-mask-* properties
-		],
 		// Empty lines
 		"comment-empty-line-before": null,
 		"declaration-empty-line-before": "never",
@@ -59,6 +54,6 @@ export default {
 		"node_modules/",
 		"**/*.min.*",
 		"build/**/*.css",
-		"src/styles/global.css",
+		"src/css/global.css",
 	],
 };
