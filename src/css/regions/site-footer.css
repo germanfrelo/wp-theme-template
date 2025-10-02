@@ -9,14 +9,11 @@ Site Footer
 	border-block-start: var(--wp--custom--border-width--thin) solid var(--separator-color);
 
 	.wp-block-navigation {
-		--nav-global-gap-rows: var(--gutter);
-		--nav-global-gap-columns: var(--gutter);
-
 		a:where([href]) {
 			color: var(--link-color, revert);
 			text-decoration-line: underline;
 			text-decoration-thickness: from-font;
-			text-decoration-color: var(--link-color-underline, currentcolor);
+			text-decoration-color: var(--link-underline-color, currentcolor);
 
 			@media (prefers-reduced-motion: no-preference) {
 				transition-duration: var(--wp--custom--transition--duration, 0);
@@ -25,7 +22,7 @@ Site Footer
 
 			&:is(:hover, :focus-visible) {
 				color: var(--link-color-on-hover-focus, var(--link-color));
-				text-decoration-color: var(--link-color-underline-on-hover-focus, currentcolor);
+				text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 			}
 		}
 	}

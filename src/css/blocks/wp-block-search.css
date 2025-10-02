@@ -17,18 +17,18 @@ Notes:
 	.wp-block-search__inside-wrapper {
 		--field-min-size-block: 48px;
 		display: flex;
-		flex-direction: var(--block-search-wrapper-direction, row);
+		flex-direction: var(--search-wrapper-direction, row);
 		flex-wrap: wrap;
-		gap: var(--block-search-wrapper-gap, 0.5rem);
-		align-items: var(--block-search-wrapper-align-items, stretch);
-		justify-content: var(--block-search-wrapper-justify-content, start);
-		padding-block: var(--block-search-wrapper-padding-block, 0);
-		padding-inline: var(--block-search-wrapper-padding-inline, 0);
-		background-color: var(--block-search-wrapper-color-bg, transparent);
-		border-color: var(--block-search-wrapper-border-color, currentcolor);
-		border-style: var(--block-search-wrapper-border-style, solid);
-		border-width: var(--block-search-wrapper-border-width, 0);
-		border-radius: var(--block-search-wrapper-border-radius, 0);
+		gap: var(--search-wrapper-gap, 0.5rem);
+		align-items: var(--search-wrapper-align-items, stretch);
+		justify-content: var(--search-wrapper-justify-content, start);
+		padding-block: var(--search-wrapper-padding-block, 0);
+		padding-inline: var(--search-wrapper-padding-inline, 0);
+		background-color: var(--search-wrapper-color-bg, transparent);
+		border-color: var(--search-wrapper-border-color, currentcolor);
+		border-style: var(--search-wrapper-border-style, solid);
+		border-width: var(--search-wrapper-border-width, 0);
+		border-radius: var(--search-wrapper-border-radius, 0);
 
 		/* ----------------------------------------------------------------------
 		Input
@@ -36,11 +36,11 @@ Notes:
 
 		> [type="search"] {
 			flex-grow: 999;
-			flex-basis: var(--block-search-wrap-at, 66%);
+			flex-basis: var(--search-wrap-at, 66%);
 
 			/* States */
 			&:is(:hover, :focus-visible) {
-				background-color: var(--block-search-input-color-bg-on-hover, transparent);
+				background-color: var(--search-input-color-bg-on-hover, transparent);
 			}
 		}
 
@@ -53,7 +53,7 @@ Notes:
 
 			/* Icon */
 			> :is(svg, .search-icon) {
-				rotate: var(--block-search-button-icon-rotation, initial);
+				rotate: var(--search-button-icon-rotation, initial);
 			}
 		}
 	}

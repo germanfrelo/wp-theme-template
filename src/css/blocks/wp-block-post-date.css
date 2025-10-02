@@ -9,5 +9,5 @@ Notes:
 ====================================================================== */
 
 .wp-block-post-date {
-	font-size: var(--block-post-date-font-size);
+	font-size: var(--post-date-font-size);
 }

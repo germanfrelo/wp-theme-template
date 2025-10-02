@@ -107,7 +107,6 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 		'data-appearance' => [
 			'inverse' => [  ],
 			'outlined' => [  ],
-			'plain' => [  ],
 		],
 	];
 

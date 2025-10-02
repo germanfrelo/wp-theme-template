@@ -3,24 +3,24 @@ List variation: Unordered Checkmark
 ====================================================================== */
 
 ul.is-style-unordered-checkmark {
-	--list-indentation: 0;
-	--list-unordered-style-type: none;
-	--list-gap: 0.375em;
-	--list-item-align-items: start;
-	--list-item-indentation: 0;
-	--list-item-custom-marker-image: url("../assets/svg/icon-check.svg");
-	--list-item-custom-marker-margin: 0.875em;
-	--list-item-custom-marker-size: 1.5em;
+	--_list-item-align-items: start;
+	--_list-item-custom-marker-image: url("../assets/svg/icon-check.svg");
+	--_list-item-custom-marker-margin: 0.875em;
+	--_list-item-custom-marker-size: 1.5em;
+	--list-items-gap: 0.375em;
+	--ul-indentation: 0;
+	--ul-item-indentation: 0;
+	list-style-type: "";
 
 	> li::before {
 		display: inline-block;
-		inline-size: var(--list-item-custom-marker-size, 1em);
-		block-size: var(--list-item-custom-marker-size, 1em);
-		margin-inline-end: var(--list-item-custom-marker-margin, 1ch);
+		inline-size: var(--_list-item-custom-marker-size, 1em);
+		block-size: var(--_list-item-custom-marker-size, 1em);
+		margin-inline-end: var(--_list-item-custom-marker-margin, 1ch);
 		vertical-align: middle;
 		content: "";
-		background-color: var(--list-item-marker-color, currentcolor);
-		mask-image: var(--list-item-custom-marker-image, none);
+		background-color: var(--_list-item-marker-color, currentcolor);
+		mask-image: var(--_list-item-custom-marker-image, none);
 		mask-position: center;
 		mask-size: contain;
 	}
@@ -29,8 +29,8 @@ ul.is-style-unordered-checkmark {
 	> li:has(> :is(div, ol, ul):only-child) {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		column-gap: var(--list-item-custom-marker-margin, 1ch);
-		align-items: var(--list-item-align-items, center);
+		column-gap: var(--_list-item-custom-marker-margin, 1ch);
+		align-items: var(--_list-item-align-items, center);
 	}
 
 	> li:not(:has(> *))::before,

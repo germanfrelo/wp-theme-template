@@ -36,9 +36,6 @@ Custom Properties
 	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
 	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
 
-	/* Post Date */
-	--block-post-date-font-size: var(--wp--preset--font-size--s);
-
 	/* Button */
 	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker);
 	--button-color-bg: var(--wp--preset--color--primary);
@@ -128,14 +125,18 @@ Custom Properties
 	--legend-font-weight: var(--wp--custom--font-weight--bold);
 	--legend-line-height: var(--wp--custom--line-height--slim);
 
-	/* Link */
-	--link-color: currentcolor;
-
 	/* List */
-	--list-indentation: 1.75ch;
-	--list-item-indentation: 0.5ch;
-	--list-item-marker-color: currentcolor;
-	--list-unordered-style-type: disc;
+	--dd-indentation: 2ch;
+	--dl-gap: 0.5em;
+	--ul-indentation: 1.75ch;
+	--ul-item-indentation: 0.5ch;
+
+	/* Post Date */
+	--post-date-font-size: var(--wp--preset--font-size--s);
+
+	/* Query Pagination */
+	--query-pag-numbers-gap-rows: 1ch;
+	--query-pag-numbers-gap-columns: 1ch;
 
 	/* Quote */
 	--quote-border-left-width: var(--wp--custom--border-width--thick);

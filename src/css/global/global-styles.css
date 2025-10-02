@@ -159,38 +159,34 @@ blockquote:where(:not([class])) {
 Ordered & Unordered Lists
 ---------------------------------------------------------------------- */
 
-:is(ol, ul) {
-	padding-inline-start: var(--list-indentation, revert);
-}
-
-ul {
-	list-style-type: var(--list-unordered-style-type, revert);
-}
-
-li > :is(ol, ul) {
-	margin-block-start: var(--list-gap, revert);
-}
-
-/* Remove default styles on lists in specific contexts. */
+/*
+Remove default styles on lists in specific contexts.
+Note: using an empty string instead of 'none' for the 'list-style-type' value preserves accessibility in Safari.
+See: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+*/
 :where(nav) ul,
 :is(ol, ul):where([role="tablist"]) {
 	padding-inline-start: 0;
 	margin-block: 0;
-	list-style-type: ""; /* Preserves accessibility in Safari by using an empty string instead of 'none'. See: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics */
+	list-style-type: "";
 }
 
-/* List Items */
+ul:where(:not([class]), .wp-block-list) {
+	padding-inline-start: var(--ul-indentation, revert);
 
-li {
-	padding-inline-start: var(--list-item-indentation);
+	> li {
+		padding-inline-start: var(--ul-item-indentation);
+	}
 }
 
-li + li {
-	margin-block-start: var(--list-gap);
+:is(ol, ul):where(:not([class]), .wp-block-list) {
+	li + * {
+		margin-block-start: var(--list-items-gap);
+	}
 }
 
-:is(ol, ul) > li::marker {
-	color: var(--list-item-marker-color, revert);
+:is(ol, ul) ::marker {
+	color: var(--list-item-marker-color);
 }
 
 /* ----------------------------------------------------------------------
@@ -202,11 +198,19 @@ dl {
 }
 
 dt {
-	font-weight: var(--dt-font-weight, inherit);
+	font-weight: var(--dt-font-weight);
 }
 
 dd {
-	margin-inline-start: 0;
+	margin-inline-start: var(--dd-indentation);
+}
+
+dt ~ dd {
+	margin-block-start: var(--dt-dd-margin);
+}
+
+:is(dd + dt, dl > div:has(> dt ~ dd)) + div:has(> dt ~ dd) {
+	margin-block-start: var(--dl-gap);
 }
 
 /* ----------------------------------------------------------------------
@@ -218,21 +222,21 @@ Figure and Figure Caption
 ====================================================================== */
 
 a {
-	&:where([href]) {
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--wp--custom--transition--duration, 0);
+		transition-property: color, background-color, border-color, text-decoration-color;
+	}
+
+	&:where(:not([class])) {
 		color: var(--link-color, revert);
 		text-decoration-thickness: from-font;
-		text-decoration-color: var(--link-color-underline, currentcolor);
+		text-decoration-color: var(--link-underline-color, currentcolor);
 		text-decoration-skip-ink: none;
 		text-underline-position: from-font;
 
-		@media (prefers-reduced-motion: no-preference) {
-			transition-duration: var(--wp--custom--transition--duration, 0);
-			transition-property: color, background-color, border-color, text-decoration-color;
-		}
-
 		&:is(:hover, :focus-visible) {
 			color: var(--link-color-on-hover-focus, var(--link-color));
-			text-decoration-color: var(--link-color-underline-on-hover-focus, currentcolor);
+			text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 		}
 	}
 }

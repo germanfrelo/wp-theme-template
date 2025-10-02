@@ -122,17 +122,4 @@ Variants
 		--button-border-color-on-hover: currentcolor;
 		--button-border-color-on-active: currentcolor;
 	}
-
-	&[data-button-appearance="plain"] {
-		--button-line: underline;
-		--button-color: var(--link-color);
-		--button-color-on-hover: var(--link-color-on-hover-focus);
-		--button-color-on-active: var(--link-color-on-hover-focus);
-		--button-color-bg: transparent;
-		--button-color-bg-on-hover: transparent;
-		--button-color-bg-on-active: transparent;
-		--button-border-color: transparent;
-		--button-border-color-on-hover: transparent;
-		--button-border-color-on-active: transparent;
-	}
 }

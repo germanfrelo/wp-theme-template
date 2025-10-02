@@ -14,6 +14,7 @@ Site Header
 	padding-block-start: var(--site-header-padding-top, var(--gutter, 2rem));
 	padding-block-end: var(--site-header-padding-bottom, var(--gutter, 2rem));
 	container: site-header-container / inline-size;
+	font-size: var(--wp--preset--font-size--s);
 	background-color: var(--wp--preset--color--surface-1, Canvas);
 	box-shadow: 0 var(--wp--custom--border-width--thin) var(--separator-color);
 

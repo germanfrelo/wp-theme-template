@@ -3,8 +3,7 @@ List variation: Ordered Custom
 ====================================================================== */
 
 ol.is-style-ordered-custom {
-	--list-indentation: 0;
-	list-style: none;
+	list-style-type: "";
 	counter-reset: ol-custom-counter;
 
 	> li {
