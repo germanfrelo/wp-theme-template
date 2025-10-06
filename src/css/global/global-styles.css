@@ -122,7 +122,6 @@ Thematic Break (Horizontal Rule)
 
 hr {
 	color: var(--separator-color, currentcolor);
-	border: none;
 	border-block-start-style: var(--separator-style, solid);
 	border-block-start-width: var(--separator-thickness, 2px);
 }
@@ -290,7 +289,7 @@ mark {
 }
 
 del {
-	/* TODO */
+	/* NOTE: Customize per project */
 }
 
 ins {
@@ -305,21 +304,31 @@ ins {
 	inline-size: 100%;
 }
 
+/* Don't shrink 'svg' elements in flex contexts */
 svg {
 	flex-shrink: 0;
+}
 
-	/* TODO: Test this. */
-	/* &[role="img"][width][height] {
-		inline-size: revert;
-		block-size: revert;
-	} */
+/*
+Give 'svg' elements with no class an auto width and a limited height.
+It means if a 'svg' doesn’t have a width and height attribute, it won’t be massive.
+*/
+svg:not([class]) {
+	inline-size: auto;
+	block-size: 1lh;
+}
 
-	:is(a:where([href]), button) & path {
-		@media (prefers-reduced-motion: no-preference) {
-			transition-duration: var(--wp--custom--transition--duration, 0);
-			transition-property: fill;
-		}
-	}
+/*
+If an 'svg' has a role of 'img', we treat it as an image of sorts.
+We know there is a width and height because we also target [width][height], so we can safely allow those to take over.
+A light background is a safety mechanism because we have a dark background on this site. If the SVG is predominantly dark, it’ll effectively vanish.
+Finally, we add some padding to frame the 'svg' nicely.
+*/
+svg[role="img"][width][height] {
+	inline-size: revert;
+	block-size: revert;
+	padding: var(--space-xs);
+	background-color: var(--wp--preset--color--surface-1);
 }
 
 /* ======================================================================
@@ -353,13 +362,23 @@ th {
 	font-weight: var(--table-cell-header-font-weight, inherit);
 }
 
+caption {
+	margin-block-start: var(--flow-space);
+	caption-side: bottom;
+}
+
 /* ======================================================================
 07. Form Controls
 ====================================================================== */
 
+/* There's a '.flow' composition, but this prevents forms from having to have that applied where markup is harder to control in certain systems. It still uses the '--flow-space' variables though to make managing space easier. */
+form > * + * {
+	margin-block-start: var(--flow-space, 1rem);
+}
+
 legend {
-	font-size: var(--legend-font-size, inherit);
-	font-weight: var(--legend-font-weight, inherit);
+	font-size: var(--legend-font-size);
+	font-weight: var(--legend-font-weight);
 }
 
 button,
@@ -519,45 +538,21 @@ details {
 09. Focus Indicators
 ====================================================================== */
 
+/* TODO: Test this carefully */
 /*
 Refs.:
 - https://medienbaecker.com/articles/focus-outlines
 - https://www.sarasoueidan.com/blog/focus-indicators/
+- https://piccalil.li/blog/taking-a-shot-at-the-double-focus-ring-problem-using-modern-css/
 ---------------------------------------------------------------------- */
 
-/* TODO */
+:focus {
+	outline: none;
+}
 
-/* :focus-visible {
-	outline-width: var(--focus-ring-width, revert);
-	outline-style: var(--focus-ring-style, revert);
-	outline-color: var(--focus-ring-color, revert);
-	outline-offset: var(--focus-ring-offset, revert);
-} */
-
-/* *:focus-visible {
-	outline: 0.375rem double #000;
-	box-shadow: 0 0 0 0.25rem #fff;
-} */
-
-/* :where(.wp-site-blocks *:focus-visible) {
-	outline-width: 2px;
-	outline-style: solid;
-} */
-
-/* Increases the bottom margin on submenus, so that the outline is visible. */
-
-/* .wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child) {
-	margin-bottom: 3px;
-} */
-
-/* Increases the outline offset on the parent menu items, so that the outline does not touch the text. */
-
-/* .wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content {
-	outline-offset: 4px;
-} */
-
-/* Removes outline offset from the submenus, otherwise the outline is visible outside the submenu container. */
-
-/* .wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-	outline-offset: 0;
-} */
+:focus-visible {
+	outline-width: var(--focus-width, 2px);
+	outline-style: var(--focus-style, solid);
+	outline-color: var(--focus-color, currentcolor);
+	outline-offset: var(--focus-offset, 0.2lh);
+}
