@@ -91,27 +91,83 @@ add_filter('wp_theme_json_data_default', 'themeslug_remove_wp_theme_json_default
 
 
 /**
- * Remove WordPress default block styles.
+ * Force WordPress to load separate assets for each core block.
+ * This is a necessary first step to allow for dequeuing specific block styles
+ * in both the editor and the front end. Without this, they are bundled into
+ * a single stylesheet ('wp-block-library').
  *
- * @link https://developer.wordpress.org/reference/functions/wp_dequeue_style/
- * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ * @return bool
+ */
+add_filter('should_load_separate_core_block_assets', '__return_true');
+
+/**
+ * Get the list of core block style handles to remove.
+ * This centralizes the list for easier maintenance.
+ *
+ * @return array The list of style handles.
+ */
+function themeslug_get_block_styles_to_remove() {
+	return [
+		// Main block library stylesheets.
+		'wp-block-library',
+		'wp-block-library-theme',
+
+		// Specific block styles.
+		'wp-block-categories',
+		'wp-block-code',
+		'wp-block-details',
+		'wp-block-list',
+		'wp-block-post-template',
+		'wp-block-post-title',
+		'wp-block-quote',
+		'wp-block-read-more',
+		'wp-block-search',
+		'wp-block-site-logo',
+		'wp-block-site-title',
+	];
+}
+
+
+/**
+ * Remove specific default block styles from the front end.
  *
  * @return void
  */
-function themeslug_remove_wp_block_styles() {
-	wp_dequeue_style('wp-block-categories');
-	wp_dequeue_style('wp-block-code');
-	wp_dequeue_style('wp-block-details');
-	wp_dequeue_style('wp-block-list');
-	wp_dequeue_style('wp-block-post-template');
-	wp_dequeue_style('wp-block-post-title');
-	wp_dequeue_style('wp-block-quote');
-	wp_dequeue_style('wp-block-read-more');
-	wp_dequeue_style('wp-block-search');
-	wp_dequeue_style('wp-block-site-logo');
-	wp_dequeue_style('wp-block-site-title');
+function themeslug_remove_core_block_styles_from_frontend() {
+	$handles = themeslug_get_block_styles_to_remove();
+
+	foreach ($handles as $handle) {
+		wp_dequeue_style($handle);
+	}
 }
-add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles', 10);
+// Using a later priority (100) ensures the styles are registered before we try to remove them.
+add_action('wp_enqueue_scripts', 'themeslug_remove_core_block_styles_from_frontend', 100);
+
+
+/**
+ * Remove default styles from the Block Editor and Site Editor.
+ * This uses a deregister/re-register method to forcefully remove styles
+ * and satisfy the editor's dependency management system.
+ *
+ * @return void
+ */
+function themeslug_remove_core_block_styles_from_editor() {
+	// Get the list of block library and specific block styles.
+	$handles = themeslug_get_block_styles_to_remove();
+
+	// Add the editor's foundational reset styles to the list.
+	$handles[] = 'wp-reset-editor-styles';
+
+	foreach ($handles as $handle) {
+		// Deregister the style completely.
+		wp_deregister_style($handle);
+		// Re-register the style handle with no source file to satisfy dependencies.
+		wp_register_style($handle, false);
+	}
+}
+// We use 'enqueue_block_editor_assets' and a very high priority to ensure this runs
+// after the editor has enqueued all of its own styles and dependencies.
+add_action('enqueue_block_editor_assets', 'themeslug_remove_core_block_styles_from_editor', PHP_INT_MAX);
 
 
 /**
@@ -183,7 +239,7 @@ function themeslug_get_layer_config() {
 		// Maps specific stylesheet 'handles' to a layer.
 		'map' => [
 			'themeslug-styles' => 'theme',
-			'gform_basic'      => 'plugins',
+			'gform_basic' => 'plugins',
 			// e.g. 'plugin_handle' => 'plugins',
 		],
 		// The default layer for any handle not found in the map.
