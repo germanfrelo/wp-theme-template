@@ -54,6 +54,6 @@ export default {
 		"node_modules/",
 		"**/*.min.*",
 		"build/**/*.css",
-		"src/css/global.css",
+		"src/css/theme.css",
 	],
 };

@@ -147,7 +147,7 @@ These are the theme's main CSS-related directories and files:
 │       ├── global/
 │       ├── regions/
 │       ├── utilities/
-│       └── global.css
+│       └── theme.css
 ├── postcss.config.js
 ├── style.css
 └── theme.json
@@ -211,12 +211,12 @@ src/css/
 │   ├── text-wrap.css
 │   ├── visually-hidden.css
 │   └── ...
-└── global.css
+└── theme.css
 ```
 
 The structure is based on the [CUBE CSS methodology](https://piccalil.li/blog/cube-css/) and [boilerplate](https://piccalil.li/blog/a-css-project-boilerplate/) previously mentioned.
 
-The primary entry point is the **`global.css`** file. It uses `@import` rules (processed by PostCSS) to pull in all stylesheets that are organized in directories.
+The primary entry point is the **`theme.css`** file. It uses `@import` rules (processed by PostCSS) to pull in all stylesheets that are organized in directories.
 
 > [!IMPORTANT]
 > **The specific import order is critical for correct CSS specificity.**
@@ -238,7 +238,7 @@ Some CSS files probably don't need to be changed, whereas other do:
 
 ### Automated compilation
 
-PostCSS processes the file **`src/css/global.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build/css/global.css`**.
+PostCSS processes the file **`src/css/theme.css`**. It resolves all imports and combines all the different CSS files into a single, optimized file: **`build/css/theme.css`**.
 
 This process happens automatically:
 
@@ -250,7 +250,7 @@ This means you **never need to compile CSS manually** (i.e., run `npm run build`
 ### Enqueuing
 
 > [!IMPORTANT]
-> **The theme only enqueues the `build/css/global.css` file.**
+> **The theme only enqueues the `build/css/theme.css` file.**
 > It's enqueued by `includes/styles.php`, **on the website and in the site editor**.
 
 ## Local Development Workflow

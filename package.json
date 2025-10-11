@@ -35,7 +35,7 @@
 	},
 	"scripts": {
 		"build": "npm run clean && npm run build:css && npm run format:svg",
-		"build:css": "rimraf build/css && postcss src/css/global.css --dir build/css",
+		"build:css": "rimraf build/css && postcss src/css/theme.css --dir build/css",
 		"clean": "rimraf build && mkdir build",
 		"format": "prettier --write . && npm run format:svg",
 		"format:check": "prettier --check .",
