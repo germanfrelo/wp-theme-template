@@ -36,23 +36,25 @@ nav.wp-block-navigation
 ---
 Table of contents:
 01. Configuration
-    01.1. Global
-    01.2. Overlay Menu
-02. Navigation (<nav>)
-03. Menu Buttons Open/Close (<button>)
-04. Menu Item (<li>)
-05. Menu Item - Link (<a>)
-06. Menu Item - Submenu Icon (<button>/<span>)
-07. Submenu Container (<ul>)
-08. Responsive Containers when Overlay Menu is Open
-    08.1. Responsive Container
-	08.2. Responsive Container Close + Dialog + Content
-    08.3. Responsive Container Content
-09. Keyframes
+	01.1. Global
+	01.2. Overlay Menu
+02. Navigation Breakpoint Override
+03. Navigation (<nav>)
+04. Menu Buttons Open/Close (<button>)
+05. Menu Item (<li>)
+06. Menu Item - Link (<a>)
+07. Menu Item - Submenu Icon (<button>/<span>)
+08. Submenu Container (<ul>)
+09. Responsive Containers when Overlay Menu is Open
+	09.1. Responsive Container
+	09.2. Responsive Container Close + Dialog + Content
+	09.3. Responsive Container Content
+10. Keyframes
 
 ====================================================================== */
 
-/* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors. */
+/* stylelint-disable selector-not-notation -- To keep the same specificity of default WP selectors */
+/* stylelint-disable no-unknown-custom-media -- Defined in variables.css */
 
 /* ======================================================================
 01. Configuration
@@ -166,10 +168,46 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 ⚠️ Don't modify the following styles unless you're sure.
 ---------------------------------------------------------------------- */
 
-/* stylelint-disable-next-line no-duplicate-selectors -- Intended. */
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
 nav.wp-block-navigation {
 	/* ======================================================================
-	02. Navigation (<nav>)
+	02. Navigation Breakpoint Override
+	====================================================================== */
+
+	/*
+	This two-step logic overrides WordPress's default 600px breakpoint.
+	It forces the navigation to stay collapsed until a custom, larger breakpoint is reached.
+	⚠️ TO CUSTOMIZE:
+	Edit the '--theme-nav-expanded' custom media query in 'variables.css'.
+	Its value MUST be larger than 600px for this logic to work. DO NOT EDIT THE RULES BELOW.
+	*/
+
+	/* 1. Prevent WP's default expansion at 600px. */
+	@media (--wp-nav-expanded) {
+		/* Keep the menu hidden */
+		.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+			display: none;
+		}
+		/* Keep the button that opens the menu visible */
+		.wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: flex;
+		}
+	}
+
+	/* 2. Apply the theme's expansion at the custom breakpoint. */
+	@media (--theme-nav-expanded) {
+		/* Show the menu */
+		.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+			display: block;
+		}
+		/* Hide the button that opens the menu */
+		.wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: none;
+		}
+	}
+
+	/* ======================================================================
+	03. Navigation (<nav>)
 	====================================================================== */
 	row-gap: var(--nav-global-gap-rows, var(--gutter));
 	column-gap: var(--nav-global-gap-columns, var(--gutter));
@@ -178,7 +216,7 @@ nav.wp-block-navigation {
 	color: var(--nav-global-color, currentcolor);
 
 	/* ======================================================================
-	03. Menu Buttons Open/Close (<button>)
+	04. Menu Buttons Open/Close (<button>)
 	====================================================================== */
 
 	/* Both Open and Close Buttons
@@ -201,7 +239,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	04. Menu Item (<li>)
+	05. Menu Item (<li>)
 	====================================================================== */
 
 	/* Menu Item */
@@ -245,7 +283,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	05. Menu Item - Link/Button
+	06. Menu Item - Link/Button
 	---
 	Link (<a>) on hover; Button (<button>) on click.
 	---
@@ -255,7 +293,7 @@ nav.wp-block-navigation {
 	/* Link/Button
 	---------------------------------------------------------------------- */
 
-	/* stylelint-disable-next-line no-duplicate-selectors -- Intended (temporary). */
+	/* stylelint-disable-next-line no-duplicate-selectors -- Intended (temporary) */
 	li.wp-block-navigation-item {
 		> .wp-block-navigation-item__content {
 			padding-block-start: var(--nav-link-padding-top, 0);
@@ -356,7 +394,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	06. Menu Item - Submenu Icon
+	07. Menu Item - Submenu Icon
 	---
 	<button> when submenu is open on hover; <span> when on click
 	====================================================================== */
@@ -400,7 +438,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	07. Submenu Container (<ul>)
+	08. Submenu Container (<ul>)
 	====================================================================== */
 
 	/* All Submenu Containers
@@ -463,7 +501,7 @@ nav.wp-block-navigation {
 	}
 
 	/* ======================================================================
-	08. Responsive Containers when Overlay Menu is Open
+	09. Responsive Containers when Overlay Menu is Open
 	====================================================================== */
 
 	.wp-block-navigation__responsive-container.is-menu-open {

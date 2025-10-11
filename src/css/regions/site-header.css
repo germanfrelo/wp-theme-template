@@ -36,48 +36,4 @@ Site Header
 	.repel > .wp-block-site-logo {
 		flex-shrink: 0;
 	}
-
-	/*
-	Navigation Overlay Menu - Breakpoint
-	Change the default viewport width at which navigation switches between expanded and collapsed.
-	⚠️ IMPORTANT: These styles are intended for a custom breakpoint that is larger than the default (600px).
-	*/
-
-	/* stylelint-disable no-unknown-custom-media -- Defined in custom-media-queries.css file. */
-	/* stylelint-disable selector-not-notation -- To match specificity of default WP styles. */
-
-	/* Override styles at WP's default breakpoint. */
-
-	@media (--nav-default-breakpoint) {
-		nav.wp-block-navigation {
-			/* Keep showing the button to open the menu */
-			.wp-block-navigation__responsive-container-open:not(.always-shown) {
-				display: flex;
-			}
-
-			/* Keep hiding the expanded menu */
-			.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
-				display: none;
-			}
-		}
-	}
-
-	/* Add styles at custom breakpoint larger than the default one. */
-
-	@media (--nav-custom-breakpoint) {
-		nav.wp-block-navigation {
-			/* Hide the button to open the menu */
-			.wp-block-navigation__responsive-container-open:not(.always-shown) {
-				display: none;
-			}
-
-			/* Show the expanded menu */
-			.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
-				display: block;
-			}
-		}
-	}
-
-	/* stylelint-enable selector-not-notation */
-	/* stylelint-enable no-unknown-custom-media */
 }
