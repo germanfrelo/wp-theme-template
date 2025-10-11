@@ -18,9 +18,9 @@ header.wp-block-template-part {
 	background-color: var(--wp--preset--color--surface-1, Canvas);
 	box-shadow: 0 var(--wp--custom--border-width--thin) var(--separator-color);
 
-	@media (width >= 80rem) and (height >= 70rem) {
+	&.is-position-sticky {
 		position: sticky;
-		inset-block-start: 0;
+		inset-block-start: var(--wp-admin--admin-bar--position-offset, 0);
 		z-index: 2;
 
 		@supports (animation-timeline: scroll()) {
