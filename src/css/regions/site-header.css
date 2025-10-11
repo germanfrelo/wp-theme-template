@@ -13,7 +13,6 @@ header.wp-block-template-part {
 	--wrapper-max-width: 90rem;
 	padding-block-start: var(--site-header-padding-top, var(--gutter, 2rem));
 	padding-block-end: var(--site-header-padding-bottom, var(--gutter, 2rem));
-	container: site-header-container / inline-size;
 	font-size: var(--wp--preset--font-size--s);
 	background-color: var(--wp--preset--color--surface-1, Canvas);
 	box-shadow: 0 var(--wp--custom--border-width--thin) var(--separator-color);
@@ -26,14 +25,14 @@ header.wp-block-template-part {
 		@supports (animation-timeline: scroll()) {
 			@media (prefers-reduced-motion: no-preference) {
 				animation: add-shadow-to-header linear forwards;
-				animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations to work */
+				animation-duration: 1ms; /* Firefox requires a duration for scroll-driven animations */
 				animation-timeline: scroll();
 				animation-range: 0 80px;
 			}
 		}
 	}
 
-	.repel > .wp-block-site-logo {
+	.wp-block-site-logo {
 		flex-shrink: 0;
 	}
 }
