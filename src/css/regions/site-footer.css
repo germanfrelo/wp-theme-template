@@ -2,7 +2,7 @@
 Site Footer
 ====================================================================== */
 
-.site-footer {
+footer.wp-block-template-part {
 	--site-logo-height: var(--wp--preset--spacing--xl);
 	padding-block: var(--wp--preset--spacing--l);
 	font-size: var(--wp--preset--font-size--s);

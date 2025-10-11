@@ -8,7 +8,7 @@ Site Header
 	}
 }
 
-.site-header {
+header.wp-block-template-part {
 	--site-logo-height: var(--wp--preset--spacing--l);
 	--wrapper-max-width: 90rem;
 	padding-block-start: var(--site-header-padding-top, var(--gutter, 2rem));
