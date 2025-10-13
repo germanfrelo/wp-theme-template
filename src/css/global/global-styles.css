@@ -303,15 +303,32 @@ ins {
 	inline-size: 100%;
 }
 
-/* Don't shrink 'svg' elements in flex contexts */
+/* Don't shrink 'svg' elements in flex contexts. */
 svg {
 	flex-shrink: 0;
 }
 
-/* Constrain SVG elements with no class, width, and height to prevent them from becoming excessively large */
+/* Constrain SVG elements with no class, width, and height to prevent them from becoming excessively large. */
 svg:where(:not([class], [width], [height])) {
 	inline-size: auto;
 	block-size: 1lh;
+}
+
+/*
+1. WP: Display inline images and SVGs that are inserted inside some text elements.
+2. WP: Constrain SVGs that are inserted inside some text elements to prevent them from becoming excessively large.
+*/
+:is(h1, h2, h3, h4, h5, h6, p) {
+	/* 1 */
+	:is(img, svg) {
+		display: inline;
+	}
+
+	/* 2 */
+	svg {
+		inline-size: auto;
+		block-size: 1em;
+	}
 }
 
 /*
