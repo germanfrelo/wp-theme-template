@@ -133,6 +133,7 @@ Preformatted Text
 pre {
 	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
+	font-variant-ligatures: none;
 }
 
 pre:has(code) {
@@ -248,6 +249,7 @@ code,
 samp {
 	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
+	font-variant-ligatures: none;
 }
 
 code {
@@ -256,12 +258,13 @@ code {
 	white-space: break-spaces;
 	background-color: var(--code-color-bg, transparent);
 	border-radius: var(--code-border-radius, 0);
+	box-decoration-break: clone;
 
+	/* Undo styles for 'code' inside 'pre', letting the parent element control the overall block styling. */
 	pre & {
 		padding: 0;
 		font-size: inherit;
-		text-align: start;
-		background-color: inherit;
+		background-color: transparent;
 		border: none;
 		border-radius: 0;
 	}
@@ -274,9 +277,7 @@ kbd {
 	font-family: ui-sans-serif, sans-serif;
 	font-size: 0.75em;
 	line-height: 1;
-	color: light-dark(hsl(240deg 2% 35%), hsl(240deg 2% 75%));
 	white-space: nowrap;
-	background-color: Canvas;
 	border: 1px solid;
 	border-radius: 0.25rem;
 	box-shadow: 0 1px currentcolor;
