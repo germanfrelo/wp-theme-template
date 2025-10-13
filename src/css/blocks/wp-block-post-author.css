@@ -1,11 +1,8 @@
-/* TODO: Refactor */
-
 /* ======================================================================
-WP Post Author
+WP BLOCK POST AUTHOR
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-author
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-author
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-author
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
@@ -14,54 +11,21 @@ Notes:
 .wp-block-post-author {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1em;
-	align-items: center;
-	padding-block: var(--post-author-padding-inline, 0.5rem);
-	padding-inline-start: var(--post-author-padding-inline-start, 0.5rem);
-	padding-inline-end: var(--post-author-padding-inline-end, 0.75rem);
+	gap: var(--post-author-gap, 1em);
 
-	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--wp--custom--transition--duration, 0);
-		transition-property: background-color;
+	p {
+		margin-block: 0;
 	}
 
-	.is-layout-flex > & {
-		margin-inline-start: calc(-1 * var(--post-author-padding-inline-start, 0.5rem));
+	.wp-block-post-author__byline {
+		font-size: var(--post-author-byline-font-size, var(--wp--preset--font-size--xs));
 	}
 
-	&:has(a:where([href]):hover) {
-		background-color: var(--wp--preset--color--surface-2, transparent);
+	.wp-block-post-author__name {
+		font-size: var(--post-author-name-font-size, var(--wp--preset--font-size--m));
 	}
 
-	.wp-block-post-author > * {
-		margin: 0;
-	}
-
-	> .wp-block-post-author__avatar {
-		flex-shrink: 0;
-		inline-size: 2.5rem;
-		border-radius: 50%;
-
-		:is(img, svg) {
-			border-radius: 50%;
-		}
-	}
-
-	> .wp-block-post-author__content {
-		flex-basis: auto;
-
-		> * {
-			margin-block: 0;
-			line-height: var(--wp--custom--line-height--slim, inherit);
-		}
-
-		> * + * {
-			margin-block-start: 0.5em;
-		}
-
-		> .wp-block-post-author__byline,
-		> .wp-block-post-author__bio {
-			font-size: max(12px, 0.875em);
-		}
+	.wp-block-post-author__bio {
+		font-size: var(--post-author-bio-font-size, var(--wp--preset--font-size--s));
 	}
 }
