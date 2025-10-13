@@ -133,16 +133,15 @@ Custom Properties
 	--legend-font-weight: var(--wp--custom--font-weight--bold);
 	--legend-line-height: var(--wp--custom--line-height--slim);
 
+	/* Link */
+	--link-color: var(--wp--preset--color--primary);
+	--link-color-on-hover-focus: currentcolor;
+
 	/* List */
 	--dd-indentation: 2ch;
 	--dl-gap: 0.5em;
 	--ul-indentation: 1.75ch;
 	--ul-item-indentation: 0.5ch;
-
-	/* Post Author */
-	--post-author-bio-font-size: var(--wp--preset--font-size--s);
-	--post-author-byline-font-size: var(--wp--preset--font-size--xs);
-	--post-author-name-font-size: var(--wp--preset--font-size--s);
 
 	/* Post Date */
 	--post-date-font-size: var(--wp--preset--font-size--s);

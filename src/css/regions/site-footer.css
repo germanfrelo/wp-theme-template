@@ -8,22 +8,20 @@ footer.wp-block-template-part {
 	font-size: var(--wp--preset--font-size--s);
 	border-block-start: var(--wp--custom--border-width--thin) solid var(--separator-color);
 
-	.wp-block-navigation {
-		a:where([href]) {
-			color: var(--link-color, revert);
-			text-decoration-line: underline;
-			text-decoration-thickness: from-font;
-			text-decoration-color: var(--link-underline-color, currentcolor);
+	.wp-block-navigation a {
+		color: var(--link-color, revert);
+		text-decoration-line: underline;
+		text-decoration-thickness: from-font;
+		text-decoration-color: var(--link-underline-color, currentcolor);
 
-			@media (prefers-reduced-motion: no-preference) {
-				transition-duration: var(--wp--custom--transition--duration, 0);
-				transition-property: color, background-color, border-color, text-decoration-color;
-			}
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--wp--custom--transition--duration, 0);
+			transition-property: color, background-color, border-color, text-decoration-color;
+		}
 
-			&:is(:hover, :focus-visible) {
-				color: var(--link-color-on-hover-focus, var(--link-color));
-				text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
-			}
+		&:is(:hover, :focus-visible) {
+			color: var(--link-color-on-hover-focus, var(--link-color));
+			text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 		}
 	}
 

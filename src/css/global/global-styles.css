@@ -222,21 +222,19 @@ Figure and Figure Caption
 ====================================================================== */
 
 a {
+	color: var(--link-color, revert);
+	text-decoration-thickness: from-font;
+	text-decoration-color: var(--link-underline-color, currentcolor);
+	text-underline-position: from-font;
+
+	&:is(:hover, :focus-visible) {
+		color: var(--link-color-on-hover-focus, var(--link-color));
+		text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
 		transition-duration: var(--wp--custom--transition--duration, 0);
 		transition-property: color, background-color, border-color, text-decoration-color;
-	}
-
-	&:where(:not([class])) {
-		color: var(--link-color, revert);
-		text-decoration-thickness: from-font;
-		text-decoration-color: var(--link-underline-color, currentcolor);
-		text-underline-position: from-font;
-
-		&:is(:hover, :focus-visible) {
-			color: var(--link-color-on-hover-focus, var(--link-color));
-			text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
-		}
 	}
 }
 
@@ -384,11 +382,6 @@ caption {
 /* ======================================================================
 07. Form Controls
 ====================================================================== */
-
-/* There's a '.flow' composition, but this prevents forms from having to have that applied where markup is harder to control in certain systems. It still uses the '--flow-space' variables though to make managing space easier. */
-form > * + * {
-	margin-block-start: var(--flow-space, 1rem);
-}
 
 legend {
 	font-size: var(--legend-font-size);

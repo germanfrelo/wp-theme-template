@@ -7,15 +7,25 @@ https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/pos
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
+
 .wp-block-post-template {
-	/* Remove default list styles. */
+	/* Remove some default list styles when the block renders as a list. */
 	&:is(ol, ul) {
 		padding-inline-start: 0;
 		list-style-type: "";
 	}
 
-	/* Stretches each post's container to create a uniform height for all items in a grid. */
+	/* Force all posts in a grid layout to have an equal height. */
 	&:is(.grid, .is-layout-grid) > li.wp-block-post > .wp-block-group {
 		min-block-size: 100%;
+	}
+
+	.wp-block-post-title {
+		font-size: var(--wp--preset--font-size--xl);
+
+		a:not(:hover, :focus-visible) {
+			color: inherit;
+			text-decoration-color: transparent;
+		}
 	}
 }

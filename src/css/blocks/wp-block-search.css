@@ -17,7 +17,6 @@ Notes:
 	---------------------------------------------------------------------- */
 
 	.wp-block-search__inside-wrapper {
-		--field-min-size-block: 48px;
 		display: flex;
 		flex-direction: var(--search-wrapper-direction, row);
 		flex-wrap: wrap;
