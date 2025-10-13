@@ -1,9 +1,8 @@
 /* ======================================================================
-WP Quote
+WP BLOCK QUOTE
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/quote
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/quote
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/quote
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
@@ -11,7 +10,6 @@ Notes:
 
 .wp-block-quote {
 	margin-inline: var(--quote-margin-inline, 0);
-	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
 
 	> :not(cite) {
 		padding-block: var(--quote-padding-block, 0);
@@ -19,9 +17,5 @@ Notes:
 		border-left-color: var(--quote-border-left-color, currentcolor);
 		border-left-style: var(--quote-border-left-style, solid);
 		border-left-width: var(--quote-border-left-width, 0);
-	}
-
-	> cite {
-		display: block;
 	}
 }

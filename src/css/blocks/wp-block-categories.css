@@ -1,15 +1,14 @@
-/* TODO: Refactor */
-
 /* ======================================================================
-WP Categories
+WP BLOCK CATEGORIES
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/categories
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/categories
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/categories
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
+
+/* TODO: Refactor */
 
 .wp-block-categories {
 	/* ----------------------------------------------------------------------
@@ -17,15 +16,6 @@ Notes:
 	---------------------------------------------------------------------- */
 
 	&.wp-block-categories-dropdown {
-		&.aligncenter {
-			justify-items: center;
-		}
-
-		label {
-			display: block;
-			inline-size: fit-content;
-		}
-
 		.select-wrapper {
 			display: flex;
 			column-gap: var(--select-gap, 1ch);
