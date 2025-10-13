@@ -9,5 +9,5 @@ Notes:
 ====================================================================== */
 
 .wp-block-post-title {
-	/* No styles */
+	overflow-wrap: anywhere;
 }

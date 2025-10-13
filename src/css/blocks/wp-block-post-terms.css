@@ -13,6 +13,7 @@ Notes:
 	flex-wrap: wrap;
 	gap: 1ch;
 
+	/* Each term link */
 	> :is(a[href]) {
 		display: inline-block;
 		align-content: center;
@@ -28,13 +29,13 @@ Notes:
 		border-radius: var(--wp--custom--border-radius--xs);
 		text-box: trim-both cap alphabetic;
 
-		/* States */
+		/* Interactivity */
 		&:is(:hover, :focus-visible) {
 			text-decoration-line: underline;
 		}
 	}
 
-	/* Separator */
+	/* Hide the text separator between terms. */
 	> .wp-block-post-terms__separator {
 		display: none;
 	}

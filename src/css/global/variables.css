@@ -139,6 +139,11 @@ Custom Properties
 	--ul-indentation: 1.75ch;
 	--ul-item-indentation: 0.5ch;
 
+	/* Post Author */
+	--post-author-bio-font-size: var(--wp--preset--font-size--s);
+	--post-author-byline-font-size: var(--wp--preset--font-size--xs);
+	--post-author-name-font-size: var(--wp--preset--font-size--s);
+
 	/* Post Date */
 	--post-date-font-size: var(--wp--preset--font-size--s);
 

@@ -1,18 +1,15 @@
-/* TODO: Refactor */
-
 /* ======================================================================
-WP Post Excerpt
+WP BLOCK POST EXCERPT
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-excerpt
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/post-excerpt
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-excerpt
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
 
-.wp-block-post-excerpt:has(> .wp-block-post-excerpt__more-text) {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+.wp-block-post-excerpt {
+	p {
+		margin-block: 0;
+	}
 }

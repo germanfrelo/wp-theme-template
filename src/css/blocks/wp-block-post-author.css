@@ -18,14 +18,14 @@ Notes:
 	}
 
 	.wp-block-post-author__byline {
-		font-size: var(--post-author-byline-font-size, var(--wp--preset--font-size--xs));
+		font-size: var(--post-author-byline-font-size);
 	}
 
 	.wp-block-post-author__name {
-		font-size: var(--post-author-name-font-size, var(--wp--preset--font-size--m));
+		font-size: var(--post-author-name-font-size);
 	}
 
 	.wp-block-post-author__bio {
-		font-size: var(--post-author-bio-font-size, var(--wp--preset--font-size--s));
+		font-size: var(--post-author-bio-font-size);
 	}
 }
