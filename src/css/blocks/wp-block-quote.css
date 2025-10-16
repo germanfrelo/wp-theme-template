@@ -10,6 +10,7 @@ Notes:
 
 .wp-block-quote {
 	margin-inline: var(--quote-margin-inline, 0);
+	overflow-wrap: break-word; /* Prevent long unbroken words from overflowing. */
 
 	> :not(cite) {
 		padding-block: var(--quote-padding-block, 0);
@@ -17,5 +18,9 @@ Notes:
 		border-left-color: var(--quote-border-left-color, currentcolor);
 		border-left-style: var(--quote-border-left-style, solid);
 		border-left-width: var(--quote-border-left-width, 0);
+	}
+
+	> cite {
+		display: block;
 	}
 }
