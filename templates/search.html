@@ -8,19 +8,63 @@
 
 		<!-- wp:search {"label":"Buscar","showLabel":false,"buttonText":"Buscar"} /-->
 
-		<!-- wp:query {"queryId":36,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true,"taxQuery":null,"parents":[],"format":[]},"align":"wide"} -->
+		<!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":true,"parents":[],"taxQuery":null,"format":[]},"enhancedPagination":true,"align":"wide","layout":{"type":"default"}} -->
 		<div class="wp-block-query alignwide">
-			<!-- wp:post-template -->
-			<!-- wp:post-featured-image /-->
+			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|m-l"}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group">
+				<!-- wp:post-template {"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"24rem"}} -->
+				<!-- wp:group {"className":"card","style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","flexWrap":"nowrap"}} -->
+				<div class="wp-block-group card">
+					<!-- wp:post-featured-image {"isLink":true} /-->
 
-			<!-- wp:post-title /-->
-			<!-- /wp:post-template -->
+					<!-- wp:post-terms {"term":"category","separator":""} /-->
 
-			<!-- wp:query-no-results -->
-			<!-- wp:paragraph -->
-			<p></p>
-			<!-- /wp:paragraph -->
-			<!-- /wp:query-no-results -->
+					<!-- wp:post-terms {"term":"post_tag","separator":""} /-->
+
+					<!-- wp:post-title {"isLink":true} /-->
+
+					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|s"}},"fontSize":"s","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+					<div class="wp-block-group has-s-font-size">
+						<!-- wp:post-author {"avatarSize":24,"isLink":true} /-->
+
+						<!-- wp:post-date /-->
+					</div>
+					<!-- /wp:group -->
+
+					<!-- wp:post-excerpt {"moreText":"","excerptLength":30,"style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
+
+					<!-- wp:read-more /-->
+				</div>
+				<!-- /wp:group -->
+				<!-- /wp:post-template -->
+
+				<!-- wp:query-no-results -->
+				<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
+				<p>Sin resultados.</p>
+				<!-- /wp:paragraph -->
+				<!-- /wp:query-no-results -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:query -->
+
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:query-pagination {"paginationArrow":"chevron","showLabel":false,"layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+
+			<!-- wp:query-pagination {"paginationArrow":"arrow","showLabel":false,"layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
 
 			<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
 			<!-- wp:query-pagination-previous /-->
@@ -29,8 +73,24 @@
 
 			<!-- wp:query-pagination-next /-->
 			<!-- /wp:query-pagination -->
+
+			<!-- wp:query-pagination {"paginationArrow":"chevron","layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+
+			<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
 		</div>
-		<!-- /wp:query -->
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </main>

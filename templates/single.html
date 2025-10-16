@@ -1,23 +1,129 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","lock":{"move":false,"remove":false},"className":"is-position-sticky"} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"className":"region","style":{"spacing":{"blockGap":"var:preset|spacing|xl"}},"layout":{"type":"default"}} -->
-<main class="wp-block-group region">
-	<!-- wp:group {"align":"wide","className":"wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|xl"}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide wrapper">
-		<!-- wp:post-title {"textAlign":"center","level":1,"align":"wide"} /-->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group">
+	<!-- wp:group {"tagName":"article","metadata":{"name":"Artículo"},"align":"wide","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+	<article class="wp-block-group alignwide">
+		<!-- wp:group {"tagName":"header","metadata":{"name":"Cabecera"},"align":"wide","className":"region","layout":{"type":"default"}} -->
+		<header class="wp-block-group alignwide region">
+			<!-- wp:group {"metadata":{"name":"Wrapper"},"align":"wide","className":"wrapper","layout":{"type":"default"}} -->
+			<div class="wp-block-group alignwide wrapper">
+				<!-- wp:post-featured-image {"aspectRatio":"16/9"} /-->
 
-		<!-- wp:post-terms {"term":"category"} /-->
+				<!-- wp:group {"tagName":"aside","metadata":{"name":"Aside"},"layout":{"type":"default"}} -->
+				<aside class="wp-block-group">
+					<!-- wp:post-terms {"term":"category","separator":""} /-->
 
-		<!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /-->
+					<!-- wp:post-terms {"term":"post_tag","separator":""} /-->
+				</aside>
+				<!-- /wp:group -->
 
-		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-		<div class="wp-block-group">
-			<!-- wp:post-navigation-link {"type":"previous","arrow":"chevron"} /-->
+				<!-- wp:post-title {"level":1,"align":"wide"} /-->
 
-			<!-- wp:post-navigation-link {"arrow":"chevron"} /-->
+				<!-- wp:group {"tagName":"aside","metadata":{"name":"Aside"},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+				<aside class="wp-block-group">
+					<!-- wp:post-author {"showBio":false,"byline":"","isLink":true} /-->
+
+					<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+					<div class="wp-block-group">
+						<!-- wp:post-date /-->
+
+						<!-- wp:group {"style":{"spacing":{"blockGap":"1ch"}},"layout":{"type":"flex","flexWrap":"wrap"}} -->
+						<div class="wp-block-group">
+							<!-- wp:paragraph -->
+							<p>Actualizado:</p>
+							<!-- /wp:paragraph -->
+
+							<!-- wp:post-date {"displayType":"modified"} /-->
+						</div>
+						<!-- /wp:group -->
+					</div>
+					<!-- /wp:group -->
+				</aside>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</header>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"metadata":{"name":"Contenido"},"align":"wide","className":"region","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide region">
+			<!-- wp:group {"metadata":{"name":"Wrapper"},"align":"wide","className":"wrapper","layout":{"type":"default"}} -->
+			<div class="wp-block-group alignwide wrapper"><!-- wp:post-content {"align":"wide","layout":{"type":"default"}} /--></div>
+			<!-- /wp:group -->
 		</div>
 		<!-- /wp:group -->
-	</div>
+
+		<!-- wp:group {"tagName":"aside","metadata":{"name":"Aside"},"className":"region","layout":{"type":"default"}} -->
+		<aside class="wp-block-group region">
+			<!-- wp:group {"metadata":{"name":"Wrapper"},"className":"wrapper","layout":{"type":"default"}} -->
+			<div class="wp-block-group wrapper">
+				<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center","verticalAlignment":"stretch"}} -->
+				<div class="wp-block-group">
+					<!-- wp:group {"layout":{"type":"default"}} -->
+					<div class="wp-block-group">
+						<!-- wp:post-navigation-link {"type":"previous"} /-->
+
+						<!-- wp:post-navigation-link {"type":"previous","arrow":"arrow"} /-->
+
+						<!-- wp:post-navigation-link {"type":"previous","arrow":"chevron"} /-->
+
+						<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true} /-->
+
+						<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+
+						<!-- wp:post-navigation-link {"type":"previous","showTitle":true,"linkLabel":true,"arrow":"chevron"} /-->
+					</div>
+					<!-- /wp:group -->
+
+					<!-- wp:group {"layout":{"type":"default"}} -->
+					<div class="wp-block-group">
+						<!-- wp:post-navigation-link /-->
+
+						<!-- wp:post-navigation-link {"arrow":"arrow"} /-->
+
+						<!-- wp:post-navigation-link {"arrow":"chevron"} /-->
+
+						<!-- wp:post-navigation-link {"showTitle":true,"linkLabel":true} /-->
+
+						<!-- wp:post-navigation-link {"showTitle":true,"linkLabel":true,"arrow":"arrow"} /-->
+
+						<!-- wp:post-navigation-link {"showTitle":true,"linkLabel":true,"arrow":"chevron"} /-->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
+			</div>
+			<!-- /wp:group -->
+		</aside>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"tagName":"aside","metadata":{"name":"Aside"},"className":"region","layout":{"type":"default"}} -->
+		<aside class="wp-block-group region">
+			<!-- wp:group {"metadata":{"name":"Wrapper"},"align":"wide","className":"wrapper","layout":{"type":"default"}} -->
+			<div class="wp-block-group alignwide wrapper">
+				<!-- wp:heading -->
+				<h2 class="wp-block-heading">Artículos relacionados</h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:query {"queryId":0,"query":{"perPage":3,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":false},"enhancedPagination":true,"align":"wide","layout":{"type":"default"}} -->
+				<div class="wp-block-query alignwide">
+					<!-- wp:post-template {"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"24rem"}} -->
+					<!-- wp:block {"ref":2478} /-->
+					<!-- /wp:post-template -->
+
+					<!-- wp:query-no-results -->
+					<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} -->
+					<p>Sin resulta/entradados.</p>
+					<!-- /wp:paragraph -->
+					<!-- /wp:query-no-results -->
+				</div>
+				<!-- /wp:query -->
+			</div>
+			<!-- /wp:group -->
+		</aside>
+		<!-- /wp:group -->
+	</article>
 	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
