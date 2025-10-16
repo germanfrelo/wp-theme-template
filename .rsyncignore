@@ -13,6 +13,8 @@
 /package-lock.json
 /postcss.config.js
 /prettier.config.js
+/README.md
+/README-DEV.md
 /src/
 /stylelint.config.js
 /svgo.config.js
