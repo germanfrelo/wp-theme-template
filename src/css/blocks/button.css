@@ -10,8 +10,8 @@ Notes:
 .wp-block-button__link {
 	display: var(--button-display, inline-block);
 	align-content: center;
-	min-inline-size: var(--field-min-size-inline, 24px);
-	min-block-size: var(--field-min-size-block, 24px);
+	min-inline-size: 24px;
+	min-block-size: 24px;
 	padding-block: var(--button-padding-block, 0.5em);
 	padding-inline: var(--button-padding-inline, 1em);
 	font-size: var(--button-font-size, inherit);

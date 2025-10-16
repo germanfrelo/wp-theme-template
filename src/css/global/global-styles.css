@@ -16,44 +16,38 @@ Selectors are grouped and sorted based on:
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
 - https://html.spec.whatwg.org/multipage/#toc-semantics
 
-Table of contents:
-01. Document/Global
-02. Sections
+Table of Contents:
+01. Document
+02. Content Sectioning
 03. Grouping Content
 04. Inline Text Semantics
 05. Embedded Content
 06. Tables
 07. Form Controls
 08. Interactive Elements
-08. Focus Indicators
+09. Focus Indicators
 ====================================================================== */
 
 /* ======================================================================
-01. Document/Global
+01. Document
 ====================================================================== */
+
+/* html {} */
 
 /* ======================================================================
-02. Sections
+02. Content Sectioning
 ====================================================================== */
-
-/* ----------------------------------------------------------------------
-Body
----------------------------------------------------------------------- */
 
 body {
 	font-family: var(--wp--preset--font-family--base, sans-serif);
-	font-size: var(--font-size-base, 1rem);
-	font-weight: var(--font-weight-base, normal);
-	line-height: var(--font-line-height-base, normal);
-	color: var(--wp--preset--color--text, CanvasText);
-	accent-color: var(--field-accent-color, auto);
-	background-color: var(--wp--preset--color--surface-1, Canvas);
-	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by default in the Figma design. */
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-base);
+	line-height: var(--font-line-height-base);
+	color: var(--wp--preset--color--text);
+	accent-color: var(--field-accent-color);
+	background-color: var(--wp--preset--color--surface-1);
+	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by design tools such as Figma. */
 }
-
-/* ----------------------------------------------------------------------
-Headings
----------------------------------------------------------------------- */
 
 h1,
 h2,
@@ -61,11 +55,12 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--wp--preset--font-family--headings, inherit);
+	font-family: var(--wp--preset--font-family--headings);
 	font-weight: var(--heading-font-weight, bold);
 	font-feature-settings:
 		"calt" 1,
 		"ss02" 1;
+	text-wrap: balance;
 }
 
 h1 {
@@ -103,10 +98,6 @@ h6 {
 	font-weight: var(--h6-font-weight, bold);
 	line-height: var(--h6-line-height, normal);
 }
-
-/* ----------------------------------------------------------------------
-Address
----------------------------------------------------------------------- */
 
 address {
 	font-style: inherit;
@@ -160,9 +151,8 @@ Ordered & Unordered Lists
 ---------------------------------------------------------------------- */
 
 /*
-Remove default styles on lists in specific contexts.
-Note: using an empty string instead of 'none' for the 'list-style-type' value preserves accessibility in Safari.
-See: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+Remove default styles of lists in specific contexts where they are expected to be out of the normal flow (flow layout).
+Note: Using an empty string instead of 'none' for 'list-style-type' preserves accessibility in Safari. Ref: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
 */
 :where(nav) ul,
 :is(ol, ul):where([role="tablist"]) {
@@ -171,6 +161,10 @@ See: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-sema
 	list-style-type: "";
 }
 
+/*
+Set indentation for default lists.
+This targets 'ul' elements that either have no class or have the default WordPress '.wp-block-list' class, as both use the default list styles.
+*/
 ul:where(:not([class]), .wp-block-list) {
 	padding-inline-start: var(--ul-indentation, revert);
 
@@ -179,12 +173,21 @@ ul:where(:not([class]), .wp-block-list) {
 	}
 }
 
+/*
+Set a customizable vertical gap between list items.
+This targets any element (*) that immediately follows a list item (li)
+inside a default list, applying a consistent margin. The wildcard is
+used because the next element could be another 'li', 'ol', or 'ul'.
+*/
 :is(ol, ul):where(:not([class]), .wp-block-list) {
 	li + * {
 		margin-block-start: var(--list-items-gap);
 	}
 }
 
+/*
+Style the list item marker (bullet or number).
+*/
 :is(ol, ul) ::marker {
 	color: var(--list-item-marker-color);
 }
@@ -193,19 +196,15 @@ ul:where(:not([class]), .wp-block-list) {
 Description List
 ---------------------------------------------------------------------- */
 
-dl {
-	margin-block: 0;
-}
-
 dt {
-	font-weight: var(--dt-font-weight);
+	font-weight: var(--wp--custom--font-weight--bold);
 }
 
 dd {
-	margin-inline-start: var(--dd-indentation);
+	margin-inline-start: 2ch;
 }
 
-dt ~ dd {
+dt + dd {
 	margin-block-start: var(--dt-dd-margin);
 }
 
@@ -216,6 +215,17 @@ dt ~ dd {
 /* ----------------------------------------------------------------------
 Figure and Figure Caption
 ---------------------------------------------------------------------- */
+
+/* WP: Override default values. */
+figure {
+	margin-block-start: revert;
+	margin-block-end: 0;
+}
+
+figcaption {
+	padding-block-start: 0.5em;
+	font-size: var(--wp--preset--font-size--s);
+}
 
 /* ======================================================================
 04. Inline Text Semantics
@@ -270,17 +280,24 @@ code {
 
 kbd {
 	display: inline-block;
-	padding-block: 0.25em;
-	padding-inline: 0.5em;
+	padding: 0.5em;
 	font-family: ui-sans-serif, sans-serif;
 	font-size: 0.75em;
+	font-weight: normal;
 	line-height: 1;
+	text-box: trim-both cap alphabetic;
 	white-space: nowrap;
 	border: 1px solid;
 	border-radius: 0.25rem;
 	box-shadow: 0 1px currentcolor;
 }
 
+/* Short Inline Quotation */
+q {
+	font-style: italic;
+}
+
+/* Marked/Highlighted Text */
 mark {
 	color: var(--mark-color, MarkText);
 	background-color: var(--mark-color-bg, Mark);
@@ -333,14 +350,10 @@ svg:where(:not([class], [width], [height])) {
 /*
 If an 'svg' has a role of 'img', we treat it as an image of sorts.
 We know there is a width and height because we also target [width][height], so we can safely allow those to take over.
-A light background is a safety mechanism because we have a dark background on this site. If the SVG is predominantly dark, it’ll effectively vanish.
-Finally, we add some padding to frame the 'svg' nicely.
 */
 svg[role="img"][width][height] {
 	inline-size: revert;
 	block-size: revert;
-	padding: var(--space-xs);
-	background-color: var(--wp--preset--color--surface-1);
 }
 
 /* ======================================================================
@@ -383,25 +396,49 @@ caption {
 07. Form Controls
 ====================================================================== */
 
+form > *:not(:where(.screen-reader-text, .visually-hidden)) + * {
+	margin-block-start: var(--flow-space, 1rem);
+}
+
+fieldset {
+	min-inline-size: auto;
+	padding-block: 0;
+	padding-inline: 0;
+	border: 0;
+
+	> * + * {
+		margin-block-start: var(--flow-space, 1em);
+	}
+}
+
 legend {
+	padding-inline: 0;
 	font-size: var(--legend-font-size);
 	font-weight: var(--legend-font-weight);
+	line-height: var(--wp--custom--line-height--slim);
 }
 
 button,
 input,
 select,
 textarea {
-	min-inline-size: var(--field-min-size-inline, 24px);
-	min-block-size: var(--field-min-size-block, 24px);
+	min-inline-size: 24px;
+	min-block-size: 24px;
+}
+
+button,
+input:where(:not([type="checkbox"], [type="radio"], [type="color"])),
+select,
+textarea {
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
 	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
+	line-height: var(--wp--custom--line-height--slim);
 	color: var(--field-color, currentcolor);
 	background-color: var(--field-color-bg);
 	border-color: var(--field-border-color);
-	border-style: solid;
+	border-style: var(--field-border-style, solid);
 	border-width: var(--field-border-width);
 	border-radius: var(--field-border-radius);
 
@@ -411,12 +448,24 @@ textarea {
 	}
 }
 
+input:where(:not([type="checkbox"], [type="radio"], [type="color"])),
+select,
+textarea {
+	inline-size: 100%;
+	min-inline-size: max(24px, 17ch);
+	field-sizing: content;
+}
+
+select {
+	min-inline-size: max(24px, 5ch);
+}
+
 textarea {
 	display: block;
 	min-block-size: 7.5em;
 	min-block-size: 5lh;
-	resize: vertical;
-	field-sizing: content;
+	max-block-size: 75svb;
+	resize: both;
 }
 
 [type="checkbox"] {
@@ -430,25 +479,43 @@ textarea {
 }
 
 label {
+	font-weight: var(--label-font-weight);
 	line-height: var(--wp--custom--line-height--slim);
+
+	/* Force a line break after the label while allowing it to remain an inline element. This provides a more robust and [defensive CSS](defensivecss.dev) */
+	&:has(+ input)::after {
+		white-space: pre;
+		content: "\A";
+	}
 }
 
 :is(input:not([type="checkbox"], [type="hidden"], [type="radio"]), select, textarea) {
 	label:has(+ &),
 	label:has(+ * > &) {
-		display: inline-block;
 		font-size: var(--label-font-size, inherit);
 		font-weight: var(--label-font-weight, inherit);
 		line-height: var(--label-line-height, inherit);
 	}
 }
 
-label:has(> :is([type="checkbox"], [type="radio"]):only-child),
+/* Usually label wraps checkbox and radio buttons, so we give more layout and text-flow control with flex. */
+label:has(> :is([type="checkbox"], [type="radio"])),
 *:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
+	--flow-space: 1rem;
 	--label-font-weight: var(--font-weight-base);
 	display: flex;
 	gap: var(--form-label-input-check-radio-gap, 1ch);
-	align-items: center;
+	align-items: start;
+	inline-size: fit-content;
+
+	& + & {
+		margin-block-start: var(--flow-space, 1rem);
+	}
+}
+
+input:disabled,
+label:has(input:disabled) {
+	cursor: not-allowed;
 }
 
 /* ======================================================================

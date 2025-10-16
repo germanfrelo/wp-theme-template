@@ -453,6 +453,16 @@
 				"left": "var:custom|root-padding-inline",
 				"right": "var:custom|root-padding-inline"
 			}
+		},
+		"elements": {
+			"caption": {
+				"spacing": {
+					"margin": {
+						"top": "0",
+						"bottom": "0"
+					}
+				}
+			}
 		}
 	},
 	"customTemplates": [

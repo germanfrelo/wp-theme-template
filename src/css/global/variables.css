@@ -89,12 +89,6 @@ Custom Properties
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;
 
-	/* Form Field - Checkbox */
-	--field-checkbox-size: 1.125em;
-
-	/* Form Field - Radio */
-	--field-radio-size: 1.125em;
-
 	/* Focus Rings */
 	--focus-ring-color: currentcolor;
 	--focus-ring-offset: 0.25lh;
@@ -138,9 +132,7 @@ Custom Properties
 	--link-color-on-hover-focus: currentcolor;
 
 	/* List */
-	--dd-indentation: 2ch;
 	--dl-gap: 0.5em;
-	--ul-indentation: 1.75ch;
 	--ul-item-indentation: 0.5ch;
 
 	/* Post Date */

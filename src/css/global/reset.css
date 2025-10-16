@@ -244,7 +244,7 @@ Add padding and border to table cells for a better readability (ref. https://git
 Remove the default 2px inline margin.
 */
 
-fieldset {
+:where(fieldset) {
 	margin-inline: 0;
 }
 

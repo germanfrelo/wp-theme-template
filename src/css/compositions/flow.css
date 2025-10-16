@@ -7,7 +7,7 @@ Variables:
 
 --flow-space
 	Description: The block space between elements.
-	Type:        A valid 'margin' value.
+	Type:        A valid 'margin-block-start' value.
 	Default:     1em
 ====================================================================== */
 
