@@ -141,7 +141,7 @@ blockquote:where(:not([class])) {
 	padding-block: var(--quote-padding-block, 0);
 	padding-inline: var(--quote-padding-inline, 0);
 	margin-inline: var(--quote-margin-inline, 0);
-	overflow-wrap: break-word; /* Break long strings of text without spaces so they don't overflow the block. */
+	overflow-wrap: break-word; /* Prevent long unbroken words from overflowing. */
 	border-left-color: var(--quote-border-left-color, currentcolor);
 	border-left-style: var(--quote-border-left-style, solid);
 	border-left-width: var(--quote-border-left-width, 0);
@@ -381,6 +381,7 @@ th,
 td {
 	padding-block: var(--table-cell-padding-block, 0.5em);
 	padding-inline: var(--table-cell-padding-inline, 0.5rem);
+	overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
 	border-width: var(--table-border, 1px);
 }
 

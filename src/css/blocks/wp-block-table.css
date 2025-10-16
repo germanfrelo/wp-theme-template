@@ -27,6 +27,15 @@ Notes:
 	}
 
 	/* ----------------------------------------------------------------------
+	Setting enabled: Fixed width table cells
+	---------------------------------------------------------------------- */
+
+	table.has-fixed-layout :is(th, td) {
+		word-break: revert; /* WP: Revert default 'word-break: break-word' for being deprecated. */
+		overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
+	}
+
+	/* ----------------------------------------------------------------------
 	Style Variation: Stripes
 	---------------------------------------------------------------------- */
 

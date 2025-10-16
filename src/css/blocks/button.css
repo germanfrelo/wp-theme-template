@@ -20,6 +20,8 @@ Notes:
 	color: var(--button-color, currentcolor);
 	text-transform: var(--button-text-transform, inherit);
 	letter-spacing: var(--button-letter-spacing, inherit);
+	word-break: revert; /* WP: Revert default 'word-break: break-word' for being deprecated. */
+	overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
 	text-decoration-line: var(--button-line, none);
 	background-color: var(--button-color-bg, transparent);
 	border-color: var(--button-border-color, currentcolor);
