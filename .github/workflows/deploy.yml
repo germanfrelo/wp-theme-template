@@ -1,9 +1,9 @@
-name: Build and Deploy to Server
+name: Build and Deploy to Staging Server
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
