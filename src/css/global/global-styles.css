@@ -61,6 +61,7 @@ h6 {
 		"calt" 1,
 		"ss02" 1;
 	text-wrap: balance;
+	overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
 }
 
 h1 {
