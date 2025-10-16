@@ -1,3 +1,7 @@
+# Ignore this file itself
+/.rsyncignore
+
+# Ignore these unnecessary files and folders
 /.editorconfig
 /.git/
 /.gitattributes

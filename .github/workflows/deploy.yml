@@ -37,7 +37,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          rsync -avz --exclude-from='.rsyncignore' --delete ./ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.USERNAME }}/${{ vars.DOMAIN_PATH }}/wp-content/themes/${{ vars.THEME_NAME }}/
+          rsync -avz --exclude-from='.rsyncignore' ./ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.USERNAME }}/${{ vars.DOMAIN_PATH }}/wp-content/themes/${{ vars.THEME_NAME }}/
 
       - name: Build and deployment completed
         run: echo "✅ Build and deployment completed successfully!"
