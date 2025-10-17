@@ -139,6 +139,7 @@ add_filter('wp_theme_json_data_default', 'themeslug_remove_wp_theme_json_default
  * @return void
  */
 function themeslug_remove_wp_block_styles() {
+	wp_dequeue_style('wp-block-details');
 	wp_dequeue_style('wp-block-post-author');
 	wp_dequeue_style('wp-block-post-excerpt');
 	wp_dequeue_style('wp-block-post-template');
