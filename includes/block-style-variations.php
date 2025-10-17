@@ -57,7 +57,7 @@ function themeslug_register_block_style_variations() {
 		],
 		[
 			'name'  => 'eyebrow',
-			'label' => __( 'Eyebrow', 'themeslug' )
+			'label' => __( 'Antetítulo', 'themeslug' )
 		]
 	);
 
@@ -67,7 +67,7 @@ function themeslug_register_block_style_variations() {
 		],
 		[
 			'name'  => 'unordered-checkmark',
-			'label' => __( 'Unordered Checkmark', 'themeslug' )
+			'label' => __( 'Sin ordenar con checkmarks', 'themeslug' )
 		]
 	);
 
@@ -77,7 +77,7 @@ function themeslug_register_block_style_variations() {
 		],
 		[
 			'name'  => 'ordered-custom',
-			'label' => __( 'Ordered Custom', 'themeslug' )
+			'label' => __( 'Ordenada personalizada', 'themeslug' )
 		]
 	);
 

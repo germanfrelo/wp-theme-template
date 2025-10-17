@@ -14,74 +14,74 @@
 			"duotone": [],
 			"gradients": [
 				{
-					"name": "Primary to Secondary Vertical",
+					"name": "Primario–Secundario (Vertical)",
 					"slug": "primary-to-secondary-vertical",
 					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
 				},
 				{
-					"name": "Primary to Secondary Diagonal",
+					"name": "Primario–Secundario (Diagonal)",
 					"slug": "primary-to-secondary-diagonal",
 					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
 				},
 				{
-					"name": "Primary to Secondary Horizontal",
+					"name": "Primario–Secundario (Horizontal)",
 					"slug": "primary-to-secondary-horizontal",
 					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
 				},
 				{
-					"name": "Secondary to Primary Vertical",
+					"name": "Secundario–Primario (Vertical)",
 					"slug": "secondary-to-primary-vertical",
 					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
 				},
 				{
-					"name": "Secondary to Primary Diagonal",
+					"name": "Secundario–Primario (Diagonal)",
 					"slug": "secondary-to-primary-diagonal",
 					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
 				},
 				{
-					"name": "Secondary to Primary Horizontal",
+					"name": "Secundario–Primario (Horizontal)",
 					"slug": "secondary-to-primary-horizontal",
 					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
 				}
 			],
 			"palette": [
 				{
-					"name": "Text",
+					"name": "Texto",
 					"slug": "text",
 					"color": "hsl(224deg 20% 1%)"
 				},
 				{
-					"name": "Surface-1",
+					"name": " Superficie 1",
 					"slug": "surface-1",
 					"color": "hsl(229deg 0% 100%)"
 				},
 				{
-					"name": "Surface-2",
+					"name": "Superficie 2",
 					"slug": "surface-2",
 					"color": "hsl(224deg 28% 97%)"
 				},
 				{
-					"name": "Surface-3",
+					"name": "Superficie 3",
 					"slug": "surface-3",
 					"color": "hsl(224deg 9% 90%)"
 				},
 				{
-					"name": "Surface-4",
+					"name": "Superficie 4",
 					"slug": "surface-4",
 					"color": "hsl(224deg 5% 84%)"
 				},
 				{
-					"name": "primary",
+					"name": "Primario",
 					"slug": "primary",
 					"color": "hsl(229deg 80% 56%)"
 				},
 				{
-					"name": "primary-darker",
+					"name": "Primario-Oscuro",
 					"slug": "primary-darker",
 					"color": "hsl(230deg 70% 52%)"
 				},
 				{
-					"name": "secondary",
+					"name": "Secundario",
 					"slug": "secondary",
 					"color": "hsl(174deg 100% 23%)"
 				}
@@ -143,17 +143,17 @@
 			},
 			"presets": [
 				{
-					"name": "elevation-1",
+					"name": "Elevación 1",
 					"slug": "elevation-1",
 					"shadow": "0 3px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 7px 14px -5px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%))"
 				},
 				{
-					"name": "elevation-2",
+					"name": "Elevación 2",
 					"slug": "elevation-2",
 					"shadow": "0 -2px 5px 0 hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 2%)), 0 1px 1px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 2px 2px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 5px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 4%)), 0 9px 9px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%)), 0 16px 16px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 6%))"
 				},
 				{
-					"name": "elevation-3",
+					"name": "Elevación 3",
 					"slug": "elevation-3",
 					"shadow": "0 -1px 2px 0 hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 2%)), 0 3px 2px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 7px 5px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 3%)), 0 12px 10px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 4%)), 0 22px 18px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 5%)), 0 41px 33px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 6%)), 0 100px 80px -2px hsl(var(--wp--custom--shadow--color) / calc(var(--wp--custom--shadow--strength) + 7%))"
 				}
