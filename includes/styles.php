@@ -48,6 +48,31 @@ function themeslug_remove_wp_theme_json_defaults($theme_json) {
 			],
 		],
 		"styles" => [
+			"blocks" => [
+				"core/button" => [
+					"variations" => [
+						"outline" => [
+							"border" => [
+								"width" => "",
+								"style" => "",
+								"color" => "",
+							],
+							"color" => [
+								"text" => "",
+								"gradient" => "",
+							],
+							"spacing" => [
+								"padding" => [
+									"top" => "",
+									"right" => "",
+									"bottom" => "",
+									"left" => "",
+								]
+							]
+						]
+					]
+				],
+			],
 			"elements" => [
 				"button" => [
 					"color" => [
@@ -57,14 +82,14 @@ function themeslug_remove_wp_theme_json_defaults($theme_json) {
 					"spacing" => [
 						"padding" => [
 							"top" => "",
+							"right" => "",
 							"bottom" => "",
 							"left" => "",
-							"right" => "",
 						],
 					],
 					"typography" => [
-						"fontFamily" => "",
 						"fontSize" => "",
+						"fontFamily" => "",
 						"lineHeight" => "",
 						"textDecoration" => "",
 					],
@@ -78,6 +103,15 @@ function themeslug_remove_wp_theme_json_defaults($theme_json) {
 					],
 				],
 			],
+			"spacing" => [
+				"blockGap" => "",
+				"padding" => [
+					"top" => "",
+					"right" => "",
+					"bottom" => "",
+					"left" => "",
+				]
+			]
 		],
 	];
 
