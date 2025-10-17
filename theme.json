@@ -124,8 +124,7 @@
 				"strength": "1%"
 			},
 			"transition": {
-				"duration": "0.15s",
-				"timing-function": "ease"
+				"duration": "0.15s"
 			}
 		},
 		"dimensions": {
