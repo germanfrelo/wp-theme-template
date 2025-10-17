@@ -51,8 +51,8 @@ Custom Properties
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--custom--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
-	--button-color-on-hover: var(--wp--preset--color--surface-1);
-	--button-color: var(--wp--preset--color--surface-1);
+	--button-text-color-on-hover: var(--wp--preset--color--surface-1);
+	--button-text-color: var(--wp--preset--color--surface-1);
 	--button-font-size: var(--wp--preset--font-size--s);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
 	--button-line-height: var(--wp--custom--line-height--slim);
@@ -85,7 +85,7 @@ Custom Properties
 	*/
 	--field-accent-color: var(--wp--preset--color--primary);
 	--field-border-width: var(--wp--custom--border-width--thin);
-	--field-error-color: var(--color-error, crimson);
+	--field-error-text-color: var(--color-error, crimson);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;
 
@@ -128,8 +128,8 @@ Custom Properties
 	--legend-line-height: var(--wp--custom--line-height--slim);
 
 	/* Link */
-	--link-color: var(--wp--preset--color--primary);
-	--link-color-on-hover-focus: currentcolor;
+	--link-text-color: var(--wp--preset--color--primary);
+	--link-text-color-on-hover-focus: currentcolor;
 
 	/* List */
 	--dl-gap: 0.5em;

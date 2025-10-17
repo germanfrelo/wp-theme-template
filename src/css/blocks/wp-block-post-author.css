@@ -26,7 +26,7 @@ Notes:
 	}
 
 	.wp-block-post-author__name {
-		--link-color: currentcolor;
+		--link-text-color: currentcolor;
 		font-size: var(--post-author-name-font-size);
 	}
 

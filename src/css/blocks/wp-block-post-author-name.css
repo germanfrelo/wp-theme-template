@@ -9,6 +9,6 @@ Notes:
 ====================================================================== */
 
 .wp-block-post-author-name {
-	--link-color: currentcolor;
+	--link-text-color: currentcolor;
 	font-size: var(--post-author-name-font-size);
 }
