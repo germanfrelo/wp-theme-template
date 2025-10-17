@@ -76,11 +76,6 @@
 					"color": "hsl(229deg 80% 56%)"
 				},
 				{
-					"name": "Primario-Oscuro",
-					"slug": "primary-darker",
-					"color": "hsl(230deg 70% 52%)"
-				},
-				{
 					"name": "Secundario",
 					"slug": "secondary",
 					"color": "hsl(174deg 100% 23%)"
