@@ -301,3 +301,36 @@ function themeslug_enqueue_layered_scripts() {
 	}
 }
 // add_action( 'wp_enqueue_scripts', 'themeslug_enqueue_layered_scripts', 9999999999 );
+
+
+/**
+ * Provides theme stylesheet content to the CSS Class Manager plugin for parsing.
+ *
+ * This function hooks into the 'css_class_manager_theme_classes_css' filter to
+ * feed the contents of the theme's main stylesheet into the plugin. The plugin
+ * then scans this CSS string, extracts all found class names (e.g., '.my-class'),
+ * and makes them available in the editor's "Class names" dropdown list.
+ *
+ * @since 1.0.0
+ * @link https://github.com/prtksxna/css-class-manager/wiki/PHP-filters-and-hooks Wiki for the CSS Class Manager plugin filters.
+ *
+ * @param string $css The initial CSS string from the plugin, which may be empty or contain CSS from other sources.
+ * @return string The combined CSS string for the plugin to parse.
+ */
+function themeslug_add_stylesheet_for_class_parsing( $css ) {
+	// Construct the absolute path to the theme's compiled stylesheet.
+	$stylesheet_path = get_template_directory() . '/build/css/theme.css';
+
+	// Before proceeding, verify the stylesheet file actually exists to prevent errors.
+	if ( file_exists( $stylesheet_path ) ) {
+		// Read the entire contents of the CSS file into a string.
+		$css_from_file = file_get_contents( $stylesheet_path );
+
+		// Append the theme's CSS to the string. The plugin will parse this entire string to find and list the available class names.
+		return "{$css}{$css_from_file}";
+	}
+
+	// If the stylesheet isn't found, return the original string to avoid issues.
+	return $css;
+}
+add_filter( 'css_class_manager_theme_classes_css', 'themeslug_add_stylesheet_for_class_parsing' );
