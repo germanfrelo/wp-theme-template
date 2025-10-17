@@ -3,6 +3,7 @@ List variation: Ordered Custom
 ====================================================================== */
 
 ol.is-style-ordered-custom {
+	padding-inline-start: 0;
 	list-style-type: "";
 	counter-reset: ol-custom-counter;
 
