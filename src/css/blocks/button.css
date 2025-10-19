@@ -57,6 +57,7 @@ Notes:
 		color: var(--button-color-on-active, var(--button-color-on-hover));
 		background-color: var(--button-color-bg-on-active, var(--button-color-bg-on-hover));
 		border-color: var(--button-border-color-on-active, var(--button-border-color-on-hover));
+		scale: 99%;
 	}
 
 	/* Has icon */
