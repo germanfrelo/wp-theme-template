@@ -355,7 +355,7 @@ svg {
 }
 
 /* Constrain SVG elements with no class, width, and height to prevent them from becoming excessively large. */
-svg:where(:not([class], [width], [height])) {
+svg:not(:where([class], [width], [height])) {
 	inline-size: auto;
 	block-size: 1lh;
 }
@@ -474,7 +474,7 @@ textarea {
 }
 
 button,
-input:where(:not([type="checkbox"], [type="radio"], [type="color"])),
+input:not(:where([type="checkbox"], [type="color"], [type="radio"])),
 select,
 textarea {
 	padding-block: var(--field-padding-block, revert);
@@ -495,7 +495,7 @@ textarea {
 	}
 }
 
-input:where(:not([type="checkbox"], [type="radio"], [type="color"])),
+input:not(:where([type="checkbox"], [type="color"], [type="radio"])),
 select,
 textarea {
 	inline-size: 100%;
