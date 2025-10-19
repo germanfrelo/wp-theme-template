@@ -8,9 +8,7 @@ Notes:
 - To customize most of this block and its parts, use the custom properties.
 ====================================================================== */
 
-/* stylelint-disable selector-not-notation -- To match GF selector specificity. */
-
-/* Selector is repeated to increase specificity to override GF styles */
+/* This selector is repeated to increase specificity to override GF styles */
 .gform_wrapper.gravity-theme {
 	/* ----------------------------------------------------------------------
 	Revert GF default styles
@@ -21,6 +19,7 @@ Notes:
 	}
 
 	@media only screen and (width <= 641px) {
+		/* stylelint-disable selector-not-notation -- To match GF selector specificity. */
 		input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
 			line-height: inherit;
 		}
