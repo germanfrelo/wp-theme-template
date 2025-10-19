@@ -5,6 +5,7 @@ See the README file for more info.
 */
 
 @import "global/reset.css";
+@import "global/breakpoints.css";
 @import "global/variables.css";
 @import "global/global-styles.css";
 @import-glob "compositions/*.css";

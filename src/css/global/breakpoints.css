@@ -1,0 +1,27 @@
+/* ======================================================================
+CUSTOM MEDIA QUERIES
+---
+Defines reusable breakpoints for the theme.
+---
+Notes:
+- Requires: PostCSS and PostCSS Custom Media plugin
+====================================================================== */
+
+/* ----------------------------------------------------------------------
+Navigation
+---------------------------------------------------------------------- */
+
+/* WordPress's default breakpoint where its navigation expands. — ⚠️ DO NOT MODIFY! */
+@custom-media --wp-nav-expanded (width >= 600px);
+
+/*
+ * Theme's Custom Navigation Breakpoint
+ *
+ * These two queries define the single custom breakpoint for the navigation
+ * and should always be modified together.
+ *
+ * ❗️ IMPORTANT: The width value MUST be identical in both queries and
+ * MUST be set to a width larger than WordPress's default of 600px.
+ */
+@custom-media --theme-nav-expanded (width > 48rem);
+@custom-media --theme-nav-collapsed (width <= 48rem);
