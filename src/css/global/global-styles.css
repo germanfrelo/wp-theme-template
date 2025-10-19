@@ -254,15 +254,6 @@ a {
 }
 
 /* ----------------------------------------------------------------------
-Target
----------------------------------------------------------------------- */
-
-/* When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar. */
-:target {
-	scroll-margin-block-start: var(--target-scroll-margin, 5em);
-}
-
-/* ----------------------------------------------------------------------
 Sample Output
 ---------------------------------------------------------------------- */
 
