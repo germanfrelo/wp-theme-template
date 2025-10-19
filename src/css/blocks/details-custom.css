@@ -8,30 +8,33 @@ Details - Custom style
 	--details-background-color: transparent;
 	--details-background-color-hover: var(--color-surface-2);
 	--details-padding-top: 1em;
+	--details-summary-font-weight: var(--font-weight-bold);
 	--details-padding-bottom: 1em;
 	--details-padding-left: 1em;
 	--details-padding-right: 1em;
 	--details-summary-cursor: pointer;
-	--details-summary-gap: 1ch;
 	--details-icon-color: var(--color-primary);
 	--details-icon-size: 2rem;
 	--details-icon-image: url("../../assets/svg/icon-plus.svg");
 	--details-open-icon-image: url("../../assets/svg/icon-line-solid.svg");
 	--details-content-padding-top: var(--details-padding-top);
 
-	& + & {
-		border-block-start: var(--separator-thickness, thin) solid;
-	}
-
-	.is-layout-flow > :where(& + &) {
-		margin-block-start: 0;
-	}
-
 	> summary {
 		display: flex;
-		gap: var(--details-summary-gap, 1rem);
+		flex-wrap: wrap;
+		gap: var(--details-summary-gap, 1ch);
 		align-items: center;
+		justify-content: space-between;
 		list-style: none;
+	}
+
+	/* TODO: Double check this */
+	&::details-content {
+		margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+
+		& > * {
+			margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */
+		}
 	}
 
 	/*
@@ -45,14 +48,13 @@ Details - Custom style
 	}
 
 	/*
-	Add a custom icon.
+	Add a custom marker.
 	*/
 	> summary::after {
 		display: inline-block;
 		flex-shrink: 0;
 		inline-size: var(--details-icon-size, 2.5rem);
 		block-size: var(--details-icon-size, 2.5rem);
-		margin-inline-start: auto;
 		content: "";
 		background-color: var(--details-icon-color, currentcolor);
 		mask-image: var(--details-icon-image, none);
@@ -60,9 +62,14 @@ Details - Custom style
 		mask-size: cover;
 	}
 
-	/* When Details is Open */
-	&[open] > summary::after {
-		background-color: var(--details-icon-color-hover, var(--details-icon-color, currentcolor));
-		mask-image: var(--details-open-icon-image, none);
+	/* Change marker when details is open */
+	&[open] {
+		border-start-start-radius: 0;
+		border-start-end-radius: 0;
+
+		> summary::after {
+			background-color: var(--details-icon-color-hover, var(--details-icon-color, currentcolor));
+			mask-image: var(--details-open-icon-image, none);
+		}
 	}
 }
