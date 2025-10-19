@@ -39,8 +39,7 @@ Notes:
 			flex-grow: 999;
 			flex-basis: var(--search-wrap-at, 66%);
 
-			/* States */
-			&:is(:hover, :focus-visible) {
+			&:hover {
 				background-color: var(--search-input-color-bg-on-hover, transparent);
 			}
 		}

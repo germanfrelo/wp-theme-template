@@ -29,8 +29,7 @@ Notes:
 		border-radius: var(--wp--custom--border-radius--xs);
 		text-box: trim-both cap alphabetic;
 
-		/* Interactivity */
-		&:is(:hover, :focus-visible) {
+		&:hover {
 			text-decoration-line: underline;
 		}
 	}

@@ -226,7 +226,7 @@ nav.wp-block-navigation {
 	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
 		color: var(--nav-button-color, currentcolor);
 
-		&:is(:hover, :focus-visible) {
+		&:hover {
 			color: var(--nav-button-color-hover, currentcolor);
 		}
 
@@ -259,8 +259,8 @@ nav.wp-block-navigation {
 
 	&:not(.has-text-color) {
 		li.wp-block-navigation-item {
-			/* Hover/Click/Focus */
-			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+			/* Hover/Click */
+			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 				color: var(--nav-item-color-on-hover, currentcolor);
 			}
 		}
@@ -270,8 +270,8 @@ nav.wp-block-navigation {
 		li.wp-block-navigation-item {
 			background-color: var(--nav-item-color-bg, inherit);
 
-			/* Hover/Click/Focus */
-			&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+			/* Hover/Click */
+			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 				background-color: var(--nav-item-color-bg-on-hover, inherit);
 			}
 		}
@@ -312,8 +312,8 @@ nav.wp-block-navigation {
 				transition-property: text-decoration-color;
 			}
 
-			/* Hover/Click/Focus */
-			& :is(:hover, :focus-visible) {
+			/* Hover/Click */
+			&:hover {
 				text-decoration-color: var(--nav-link-line-color-hover, currentcolor);
 			}
 
@@ -446,7 +446,7 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		/* The fallback '--nav-global-color' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked/focused, all its submenu items would inherit that hover/clic/focus color. */
+		/* The fallback '--nav-global-color' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked, all its submenu items would inherit that hover/clic color. */
 		color: var(--nav-submenu-color, var(--nav-global-color, inherit));
 	}
 
@@ -535,8 +535,8 @@ nav.wp-block-navigation {
 					color: var(--nav-item-color-current-page, inherit) !important;
 				}
 
-				/* Hover/Click/Focus */
-				&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+				/* Hover/Click */
+				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 					color: var(--nav-item-color-on-hover, inherit) !important;
 				}
 			}
@@ -556,8 +556,8 @@ nav.wp-block-navigation {
 			.wp-block-navigation-item {
 				background-color: var(--nav-item-color-bg, inherit) !important;
 
-				/* Hover/Click/Focus */
-				&:is(:hover, :focus-visible, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
+				/* Hover/Click */
+				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
 					background-color: var(--nav-item-color-bg-on-hover, inherit) !important;
 				}
 

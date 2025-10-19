@@ -23,7 +23,7 @@ Notes:
 	.wp-block-post-title {
 		font-size: var(--wp--preset--font-size--xl);
 
-		a:not(:hover, :focus-visible) {
+		a:not(:hover) {
 			color: inherit;
 			text-decoration-color: transparent;
 		}

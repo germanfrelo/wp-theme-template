@@ -247,7 +247,7 @@ a {
 		transition-property: color, background-color, border-color, text-decoration-color;
 	}
 
-	&:is(:hover, :focus-visible) {
+	&:hover {
 		color: var(--link-color-on-hover-focus, var(--link-color));
 		text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 	}
@@ -598,7 +598,7 @@ details {
 		cursor: var(--details-summary-cursor, default);
 	}
 
-	&:has(> summary:is(:hover, :focus-visible)) {
+	&:has(> summary:hover) {
 		background-color: var(--details-color-bg-on-hover-focus, var(--details-color-bg, transparent));
 	}
 
@@ -681,5 +681,5 @@ Refs.:
 	outline-width: var(--focus-width, 2px);
 	outline-style: var(--focus-style, solid);
 	outline-color: var(--focus-color, currentcolor);
-	outline-offset: var(--focus-offset, 0.2lh);
+	outline-offset: var(--focus-offset, 0.15lh);
 }

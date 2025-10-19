@@ -19,7 +19,7 @@ footer.wp-block-template-part {
 			transition-property: color, background-color, border-color, text-decoration-color;
 		}
 
-		&:is(:hover, :focus-visible) {
+		&:hover {
 			color: var(--link-color-on-hover-focus, var(--link-color));
 			text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 		}

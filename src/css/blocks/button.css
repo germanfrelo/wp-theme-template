@@ -8,6 +8,7 @@ Notes:
 .button,
 .wp-element-button,
 .wp-block-button__link {
+	--focus-color: var(--button-focus-color);
 	display: var(--button-display, inline-block);
 	align-content: center;
 	min-inline-size: 24px;
@@ -46,13 +47,13 @@ Notes:
 
 	/* States */
 
-	&:is(:hover, :focus-visible) {
+	&:hover {
 		color: var(--button-color-on-hover, var(--button-color));
 		background-color: var(--button-color-bg-on-hover, var(--button-color-bg));
 		border-color: var(--button-border-color-on-hover, var(--button-border-color));
 	}
 
-	&:is(:active) {
+	&:active {
 		color: var(--button-color-on-active, var(--button-color-on-hover));
 		background-color: var(--button-color-bg-on-active, var(--button-color-bg-on-hover));
 		border-color: var(--button-border-color-on-active, var(--button-border-color-on-hover));
@@ -80,12 +81,14 @@ Notes:
 	}
 }
 
-/* ----------------------------------------------------------------------
+/* ======================================================================
 Variants
----------------------------------------------------------------------- */
+====================================================================== */
 
-:is(.button, .wp-block-button) {
-	/* Appearance */
+:is(.button, .wp-element-button, .wp-block-button) {
+	/* ----------------------------------------------------------------------
+	Appearance
+	---------------------------------------------------------------------- */
 
 	&[data-button-appearance="inverse"] {
 		--button-color: var(--wp--preset--color--primary);

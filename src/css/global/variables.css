@@ -53,6 +53,7 @@ Custom Properties
 	--button-border-width: var(--wp--custom--border-width--thin);
 	--button-color-on-hover: var(--wp--preset--color--surface-1);
 	--button-color: var(--wp--preset--color--surface-1);
+	--button-focus-color: var(--wp--preset--color--primary);
 	--button-font-size: var(--wp--preset--font-size--s);
 	--button-font-weight: var(--wp--custom--font-weight--medium);
 	--button-line-height: var(--wp--custom--line-height--slim);
