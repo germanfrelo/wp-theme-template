@@ -16,14 +16,14 @@ Selectors are grouped and sorted based on:
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
 - https://html.spec.whatwg.org/multipage/#toc-semantics
 
-Table of Contents:
+Table of contents:
 01. Document
 02. Content Sectioning
 03. Grouping Content
 04. Inline Text Semantics
 05. Embedded Content
-06. Tables
-07. Form Controls
+06. Tabular Data
+07. Forms
 08. Interactive Elements
 09. Focus Indicators
 ====================================================================== */
@@ -232,6 +232,10 @@ figcaption {
 04. Inline Text Semantics
 ====================================================================== */
 
+/* ----------------------------------------------------------------------
+Link
+---------------------------------------------------------------------- */
+
 a {
 	color: var(--link-color, revert);
 	text-decoration-thickness: from-font;
@@ -249,21 +253,35 @@ a {
 	}
 }
 
+/* ----------------------------------------------------------------------
+Target
+---------------------------------------------------------------------- */
+
 /* When scrolling to target elements, a reasonable spacing is added above them to ensure they remain visible, especially with sticky headers or similar. */
 :target {
 	scroll-margin-block-start: var(--target-scroll-margin, 5em);
 }
 
-code,
+/* ----------------------------------------------------------------------
+Sample Output
+---------------------------------------------------------------------- */
+
 samp {
 	font-family: var(--wp--preset--font-family--mono, monospace);
 	font-size: 0.875em;
 	font-variant-ligatures: none;
 }
 
+/* ----------------------------------------------------------------------
+Inline Code
+---------------------------------------------------------------------- */
+
 code {
 	padding-block: var(--code-padding-block, 0);
 	padding-inline: var(--code-padding-inline, 0);
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: 0.875em;
+	font-variant-ligatures: none;
 	white-space: break-spaces;
 	background-color: var(--code-color-bg, transparent);
 	border-radius: var(--code-border-radius, 0);
@@ -279,6 +297,10 @@ code {
 	}
 }
 
+/* ----------------------------------------------------------------------
+Keyboard Input
+---------------------------------------------------------------------- */
+
 kbd {
 	display: inline-block;
 	padding: 0.5em;
@@ -293,20 +315,28 @@ kbd {
 	box-shadow: 0 1px currentcolor;
 }
 
-/* Short Inline Quotation */
+/* ----------------------------------------------------------------------
+Short Inline Quotation
+---------------------------------------------------------------------- */
+
 q {
 	font-style: italic;
 }
 
-/* Marked/Highlighted Text */
+/* ----------------------------------------------------------------------
+Marked/Highlighted Text
+---------------------------------------------------------------------- */
+
 mark {
 	color: var(--mark-color, MarkText);
 	background-color: var(--mark-color-bg, Mark);
 }
 
-del {
-	/* NOTE: Customize per project */
-}
+/* ----------------------------------------------------------------------
+Deleted and Inserted Text
+---------------------------------------------------------------------- */
+
+/* del {} */
 
 ins {
 	text-decoration-line: none;
@@ -316,9 +346,17 @@ ins {
 05. Embedded Content
 ====================================================================== */
 
+/* ----------------------------------------------------------------------
+Image
+---------------------------------------------------------------------- */
+
 :is(figure, picture) img {
 	inline-size: 100%;
 }
+
+/* ----------------------------------------------------------------------
+SVG
+---------------------------------------------------------------------- */
 
 /* Don't shrink 'svg' elements in flex contexts. */
 svg {
@@ -330,6 +368,19 @@ svg:where(:not([class], [width], [height])) {
 	inline-size: auto;
 	block-size: 1lh;
 }
+
+/*
+If an 'svg' has a role of 'img', we treat it as an image of sorts.
+We know there is a width and height because we also target [width][height], so we can safely allow those to take over.
+*/
+svg[role="img"][width][height] {
+	inline-size: revert;
+	block-size: revert;
+}
+
+/* ----------------------------------------------------------------------
+Images and SVGs
+---------------------------------------------------------------------- */
 
 /*
 1. WP: Display inline images and SVGs that are inserted inside some text elements.
@@ -348,21 +399,17 @@ svg:where(:not([class], [width], [height])) {
 	}
 }
 
-/*
-If an 'svg' has a role of 'img', we treat it as an image of sorts.
-We know there is a width and height because we also target [width][height], so we can safely allow those to take over.
-*/
-svg[role="img"][width][height] {
-	inline-size: revert;
-	block-size: revert;
-}
-
 /* ======================================================================
-06. Tables
+06. Tabular Data
 ====================================================================== */
 
 table {
 	inline-size: 100%;
+}
+
+caption {
+	margin-block-start: var(--flow-space);
+	caption-side: bottom;
 }
 
 thead {
@@ -377,8 +424,8 @@ tfoot {
 	border-block-start: var(--table-foot-border, 3px) solid;
 }
 
-th,
-td {
+td,
+th {
 	padding-block: var(--table-cell-padding-block, 0.5em);
 	padding-inline: var(--table-cell-padding-inline, 0.5rem);
 	overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
@@ -389,19 +436,19 @@ th {
 	font-weight: var(--table-cell-header-font-weight, inherit);
 }
 
-caption {
-	margin-block-start: var(--flow-space);
-	caption-side: bottom;
-}
-
 /* ======================================================================
-07. Form Controls
+07. Forms
 ====================================================================== */
 
 form > *:not(:where(.screen-reader-text, .visually-hidden)) + * {
 	margin-block-start: var(--flow-space, 1rem);
 }
 
+/* ----------------------------------------------------------------------
+Fieldset and Legend
+---------------------------------------------------------------------- */
+
+/* Reset default styles */
 fieldset {
 	min-inline-size: auto;
 	padding-block: 0;
@@ -419,6 +466,13 @@ legend {
 	font-weight: var(--legend-font-weight);
 	line-height: var(--wp--custom--line-height--slim);
 }
+
+/* ----------------------------------------------------------------------
+Form Controls
+---------------------------------------------------------------------- */
+
+/* Base styles
+---------------------------------------------------------------------- */
 
 button,
 input,
@@ -480,6 +534,10 @@ textarea {
 	block-size: var(--field-radio-size, auto);
 }
 
+/* ----------------------------------------------------------------------
+Label
+---------------------------------------------------------------------- */
+
 label {
 	font-weight: var(--label-font-weight);
 	line-height: var(--wp--custom--line-height--slim);
@@ -514,6 +572,8 @@ label:has(> :is([type="checkbox"], [type="radio"])),
 		margin-block-start: var(--flow-space, 1rem);
 	}
 }
+
+/* Form Controls: Disabled */
 
 input:disabled,
 label:has(input:disabled) {
@@ -610,6 +670,12 @@ details {
 	}
 }
 
+/* ----------------------------------------------------------------------
+Dialog
+---------------------------------------------------------------------- */
+
+/* dialog {} */
+
 /* ======================================================================
 09. Focus Indicators
 ====================================================================== */
@@ -622,10 +688,12 @@ Refs.:
 - https://piccalil.li/blog/taking-a-shot-at-the-double-focus-ring-problem-using-modern-css/
 ---------------------------------------------------------------------- */
 
+/* Remove default focus styles */
 :focus {
 	outline: none;
 }
 
+/* Add custom focus styles */
 :focus-visible {
 	outline-width: var(--focus-width, 2px);
 	outline-style: var(--focus-style, solid);

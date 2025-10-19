@@ -9,19 +9,19 @@ Selectors are grouped and sorted based on:
 - https://html.spec.whatwg.org/multipage/#toc-semantics
 
 Table of contents:
-01. Document/Global
-02. Sections
+01. Document and Global
+02. Content Sectioning
 03. Grouping Content
 04. Inline Text Semantics
 05. Embedded Content
-06. Tables
-07. Form Controls
+06. Tabular Data
+07. Forms
 08. Interactive Elements
 09. Hidden Elements
 ====================================================================== */
 
 /* ======================================================================
-01. Document/Global
+01. Document and Global
 ====================================================================== */
 
 /*
@@ -91,7 +91,7 @@ When scrolling to target elements, a reasonable spacing is added above them to e
 }
 
 /* ======================================================================
-02. Sections
+02. Content Sectioning
 ====================================================================== */
 
 /*
@@ -203,7 +203,7 @@ audio {
 }
 
 /* ======================================================================
-06. Tables
+06. Tabular Data
 ====================================================================== */
 
 /*
@@ -237,7 +237,7 @@ Add padding and border to table cells for a better readability (ref. https://git
 }
 
 /* ======================================================================
-07. Form Controls
+07. Forms
 ====================================================================== */
 
 /*
