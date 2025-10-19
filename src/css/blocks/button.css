@@ -111,4 +111,16 @@ Variants
 		--button-border-color-on-hover: currentcolor;
 		--button-border-color-on-active: currentcolor;
 	}
+
+	&[data-button-appearance="ghost"] {
+		--button-color: var(--wp--preset--color--primary);
+		--button-color-on-hover: var(--wp--preset--color--primary);
+		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-color-bg: transparent;
+		--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 95%);
+		--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 90%);
+		--button-border-color: transparent;
+		--button-border-color-on-hover: transparent;
+		--button-border-color-on-active: transparent;
+	}
 }
