@@ -135,6 +135,9 @@ Custom Properties
 	--dl-gap: 0.5em;
 	--ul-item-indentation: 0.5ch;
 
+	/* Nav */
+	--nav-global-line-height: var(--wp--custom--line-height--slim);
+
 	/* Post Date */
 	--post-date-font-size: var(--wp--preset--font-size--s);
 

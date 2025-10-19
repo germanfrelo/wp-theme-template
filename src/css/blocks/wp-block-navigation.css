@@ -211,8 +211,9 @@ nav.wp-block-navigation {
 	====================================================================== */
 	row-gap: var(--nav-global-gap-rows, var(--gutter));
 	column-gap: var(--nav-global-gap-columns, var(--gutter));
-	font-size: var(--nav-global-font-size, inherit);
-	font-weight: var(--nav-global-font-weight, inherit);
+	font-size: var(--nav-global-font-size);
+	font-weight: var(--nav-global-font-weight);
+	line-height: var(--nav-global-line-height);
 	color: var(--nav-global-color, currentcolor);
 
 	/* ======================================================================
