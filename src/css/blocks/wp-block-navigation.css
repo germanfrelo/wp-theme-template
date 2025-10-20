@@ -125,7 +125,7 @@ nav.wp-block-navigation {
 	--nav-submenu-padding-inline-end: 0;
 	--nav-submenu-separator-color: currentcolor;
 	--nav-submenu-separator-width: 0;
-	--nav-submenu-shadow: var(--wp--preset--shadow--elevation-1);
+	--nav-submenu-shadow: none;
 
 	/* Menu Responsive Container */
 
@@ -463,7 +463,7 @@ nav.wp-block-navigation {
 		overflow: hidden; /* Hidden (overflow is necessary to set, otherwise submenu items will take up space) */
 		border: var(--nav-submenu-border-width, 0) solid var(--nav-submenu-border-color, currentcolor);
 		border-block-start-width: var(--nav-submenu-border-top-width, var(--nav-submenu-border-width, 0));
-		box-shadow: var(--nav-submenu-shadow, inherit);
+		box-shadow: var(--nav-submenu-shadow);
 		opacity: 0; /* Hidden */
 
 		&:where(:not(.has-background)) {
