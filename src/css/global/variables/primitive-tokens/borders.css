@@ -1,7 +1,9 @@
 /* ======================================================================
-TRANSITION
+BORDERS
 ====================================================================== */
 
 :root {
-	--transition-duration: 0.15s;
+	--border-width-thin: 1px;
+	--border-width-medium: 2px;
+	--border-width-thick: 4px;
 }
