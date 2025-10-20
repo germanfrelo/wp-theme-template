@@ -77,17 +77,17 @@ Notes:
 	*/
 
 	&:has(.gform_validation_errors) {
-		--field-border-color: var(--field-error-color);
-		--field-color: var(--field-error-color);
+		--field-border-color: var(--field-error-text-color);
+		--field-text-color: var(--field-error-text-color);
 
 		.gfield_validation_message {
-			color: var(--field-error-color, currentcolor);
+			color: var(--field-error-text-color, currentcolor);
 		}
 	}
 
 	.gform_validation_errors {
 		padding: 1em;
-		color: var(--field-error-color, currentcolor);
+		color: var(--field-error-text-color, currentcolor);
 		border: 2px solid;
 	}
 

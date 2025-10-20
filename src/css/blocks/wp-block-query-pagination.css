@@ -36,7 +36,7 @@ Notes:
 			padding-block: var(--query-pag-number-padding-block, 0.25em);
 			padding-inline: var(--query-pag-number-padding-inline, 0.25em);
 			line-height: 1;
-			color: var(--query-pag-number-color);
+			color: var(--query-pag-number-text-color);
 			text-align: center;
 			background-color: var(--query-pag-number-color-bg);
 			border-color: var(--query-pag-number-border-color);
@@ -58,7 +58,7 @@ Notes:
 
 			/* Hover states for clickable page numbers */
 			&a:hover {
-				color: var(--query-pag-number-color-hover);
+				color: var(--query-pag-number-text-color-hover);
 				background-color: var(--query-pag-number-color-bg-hover);
 				border-color: var(--query-pag-number-border-color-hover);
 			}
@@ -82,7 +82,7 @@ Notes:
 		padding-block: var(--query-pag-prev-next-padding-block, 0.5em);
 		padding-inline: var(--query-pag-prev-next-padding-inline, 0.5em);
 		line-height: 1;
-		color: var(--query-pag-prev-next-color);
+		color: var(--query-pag-prev-next-text-color);
 		text-align: center;
 		background-color: var(--query-pag-prev-next-color-bg);
 		border-color: var(--query-pag-prev-next-border-color);
@@ -91,7 +91,7 @@ Notes:
 		border-radius: var(--query-pag-prev-next-border-radius);
 
 		&:hover {
-			color: var(--query-pag-prev-next-color-hover);
+			color: var(--query-pag-prev-next-text-color-hover);
 			background-color: var(--query-pag-prev-next-color-bg-hover);
 			border-color: var(--query-pag-prev-next-border-color-hover);
 		}

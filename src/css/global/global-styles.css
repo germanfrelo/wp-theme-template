@@ -237,7 +237,7 @@ Link
 ---------------------------------------------------------------------- */
 
 a {
-	color: var(--link-color, revert);
+	color: var(--link-text-color, revert);
 	text-decoration-thickness: from-font;
 	text-decoration-color: var(--link-underline-color, currentcolor);
 	text-underline-position: from-font;
@@ -248,7 +248,7 @@ a {
 	}
 
 	&:hover {
-		color: var(--link-color-on-hover-focus, var(--link-color));
+		color: var(--link-text-color-on-hover-focus, var(--link-text-color));
 		text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 	}
 }
@@ -319,7 +319,7 @@ Marked/Highlighted Text
 ---------------------------------------------------------------------- */
 
 mark {
-	color: var(--mark-color, MarkText);
+	color: var(--mark-text-color, MarkText);
 	background-color: var(--mark-color-bg, Mark);
 }
 
@@ -479,7 +479,7 @@ textarea {
 	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
 	line-height: var(--wp--custom--line-height--slim);
-	color: var(--field-color, currentcolor);
+	color: var(--field-text-color, currentcolor);
 	background-color: var(--field-color-bg);
 	border-color: var(--field-border-color);
 	border-style: var(--field-border-style, solid);
@@ -593,7 +593,7 @@ details {
 		font-size: var(--details-summary-font-size, inherit);
 		font-weight: var(--details-summary-font-weight, inherit);
 		line-height: var(--details-summary-line-height, inherit);
-		color: var(--details-summary-color, currentcolor);
+		color: var(--details-summary-text-color, currentcolor);
 		letter-spacing: var(--details-summary-letter-spacing, normal);
 		cursor: var(--details-summary-cursor, default);
 	}

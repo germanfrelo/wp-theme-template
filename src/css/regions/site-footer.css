@@ -9,7 +9,7 @@ footer.wp-block-template-part {
 	border-block-start: var(--wp--custom--border-width--thin) solid var(--separator-color);
 
 	.wp-block-navigation a {
-		color: var(--link-color, revert);
+		color: var(--link-text-color, revert);
 		text-decoration-line: underline;
 		text-decoration-thickness: from-font;
 		text-decoration-color: var(--link-underline-color, currentcolor);
@@ -20,7 +20,7 @@ footer.wp-block-template-part {
 		}
 
 		&:hover {
-			color: var(--link-color-on-hover-focus, var(--link-color));
+			color: var(--link-text-color-on-hover-focus, var(--link-text-color));
 			text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
 		}
 	}

@@ -65,21 +65,21 @@ Table of contents:
 
 nav.wp-block-navigation {
 	/* Global */
-	--nav-global-color: orange;
+	--nav-global-text-color: orange;
 
 	/* Menu Toggle Buttons */
 
 	/*
-	--nav-button-color-hover: ;
-	--nav-button-color: ;
+	--nav-button-text-color-hover: ;
+	--nav-button-text-color: ;
 	*/
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
 	--nav-item-color-bg-on-hover: var(--wp--preset--color--surface-3);
 	--nav-item-color-bg: var(--wp--preset--color--surface-2);
-	--nav-item-color-current-page: blue;
-	--nav-item-color-on-hover: tomato;
+	--nav-item-text-color-current-page: blue;
+	--nav-item-text-color-on-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
 	--nav-item-has-submenu-icon-size-min: 24px;
@@ -112,7 +112,7 @@ nav.wp-block-navigation {
 	--nav-submenu-border-width: 0;
 	--nav-submenu-color-bg: var(--wp--preset--color--surface-1);
 
-	/* --nav-submenu-color: inherit; */
+	/* --nav-submenu-text-color: inherit; */
 	--nav-submenu-gap-columns: 0;
 	--nav-submenu-gap-rows: 0;
 	--nav-submenu-inline-size-min: 100%;
@@ -152,13 +152,13 @@ nav.wp-block-navigation:has(:where(.wp-block-navigation__responsive-container.is
 	--navigation-layout-justification-setting: stretch;
 
 	/* Global */
-	--nav-global-color: purple;
+	--nav-global-text-color: purple;
 
 	/* Menu Items */
 	--nav-item-of-submenu-has-submenu-gap-columns: var(--nav-item-has-submenu-gap-columns, 0);
 
 	/* Submenu Container */
-	--nav-submenu-color: violet;
+	--nav-submenu-text-color: violet;
 	--nav-submenu-padding-block: 0;
 	--nav-submenu-padding-inline-start: 0;
 	--nav-submenu-shadow: none;
@@ -214,7 +214,7 @@ nav.wp-block-navigation {
 	font-size: var(--nav-global-font-size);
 	font-weight: var(--nav-global-font-weight);
 	line-height: var(--nav-global-line-height);
-	color: var(--nav-global-color, currentcolor);
+	color: var(--nav-global-text-color, currentcolor);
 
 	/* ======================================================================
 	04. Menu Buttons Open/Close (<button>)
@@ -224,10 +224,10 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	button:is(.wp-block-navigation__responsive-container-close, .wp-block-navigation__responsive-container-open) {
-		color: var(--nav-button-color, currentcolor);
+		color: var(--nav-button-text-color, currentcolor);
 
 		&:hover {
-			color: var(--nav-button-color-hover, currentcolor);
+			color: var(--nav-button-text-color-hover, currentcolor);
 		}
 
 		/* Icon of Button
@@ -253,7 +253,7 @@ nav.wp-block-navigation {
 
 		/* Current */
 		&.current-menu-item {
-			color: var(--nav-item-color-current-page, currentcolor);
+			color: var(--nav-item-text-color-current-page, currentcolor);
 		}
 	}
 
@@ -261,7 +261,7 @@ nav.wp-block-navigation {
 		li.wp-block-navigation-item {
 			/* Hover/Click */
 			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-color-on-hover, currentcolor);
+				color: var(--nav-item-text-color-on-hover, currentcolor);
 			}
 		}
 	}
@@ -446,8 +446,8 @@ nav.wp-block-navigation {
 	---------------------------------------------------------------------- */
 
 	&:not(.has-text-color) .wp-block-navigation__submenu-container {
-		/* The fallback '--nav-global-color' is necessary; otherwise, if '--nav-submenu-color' is not set and the color of the submenu parent item changes when hovered/clicked, all its submenu items would inherit that hover/clic color. */
-		color: var(--nav-submenu-color, var(--nav-global-color, inherit));
+		/* The fallback '--nav-global-text-color' is necessary; otherwise, if '--nav-submenu-text-color' is not set and the color of the submenu parent item changes when hovered/clicked, all its submenu items would inherit that hover/clic color. */
+		color: var(--nav-submenu-text-color, var(--nav-global-text-color, inherit));
 	}
 
 	/* ❗️ Specificity must be >= (0,5,0) */
@@ -527,22 +527,22 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-text-color) {
-			color: var(--nav-global-color, currentcolor);
+			color: var(--nav-global-text-color, currentcolor);
 
 			li.wp-block-navigation-item {
 				/* Current */
 				&.current-menu-item {
-					color: var(--nav-item-color-current-page, inherit) !important;
+					color: var(--nav-item-text-color-current-page, inherit) !important;
 				}
 
 				/* Hover/Click */
 				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					color: var(--nav-item-color-on-hover, inherit) !important;
+					color: var(--nav-item-text-color-on-hover, inherit) !important;
 				}
 			}
 
 			.wp-block-navigation__submenu-container {
-				color: var(--nav-submenu-color, inherit) !important;
+				color: var(--nav-submenu-text-color, inherit) !important;
 			}
 		}
 

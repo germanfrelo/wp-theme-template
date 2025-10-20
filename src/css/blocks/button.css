@@ -18,7 +18,7 @@ Notes:
 	font-size: var(--button-font-size, inherit);
 	font-weight: var(--button-font-weight, inherit);
 	line-height: var(--button-line-height, inherit);
-	color: var(--button-color, currentcolor);
+	color: var(--button-text-color, currentcolor);
 	text-transform: var(--button-text-transform, inherit);
 	letter-spacing: var(--button-letter-spacing, inherit);
 	word-break: revert; /* WP: Revert default 'word-break: break-word' for being deprecated. */
@@ -48,13 +48,13 @@ Notes:
 	/* States */
 
 	&:hover {
-		color: var(--button-color-on-hover, var(--button-color));
+		color: var(--button-text-color-on-hover, var(--button-text-color));
 		background-color: var(--button-color-bg-on-hover, var(--button-color-bg));
 		border-color: var(--button-border-color-on-hover, var(--button-border-color));
 	}
 
 	&:active {
-		color: var(--button-color-on-active, var(--button-color-on-hover));
+		color: var(--button-text-color-on-active, var(--button-text-color-on-hover));
 		background-color: var(--button-color-bg-on-active, var(--button-color-bg-on-hover));
 		border-color: var(--button-border-color-on-active, var(--button-border-color-on-hover));
 		scale: 99%;
@@ -92,30 +92,30 @@ Variants
 	---------------------------------------------------------------------- */
 
 	&[data-button-appearance="inverse"] {
-		--button-color: var(--wp--preset--color--primary);
-		--button-color-on-hover: var(--wp--preset--color--primary);
-		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-text-color: var(--wp--preset--color--primary);
+		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-on-active: var(--wp--preset--color--primary);
 		--button-color-bg: var(--wp--preset--color--surface);
 		--button-color-bg-on-hover: var(--wp--preset--color--surface);
 		--button-color-bg-on-active: var(--wp--preset--color--surface);
 	}
 
 	&[data-button-appearance="outlined"] {
-		--button-color: var(--wp--preset--color--primary);
-		--button-color-on-hover: var(--wp--preset--color--primary);
-		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-text-color: var(--wp--preset--color--primary);
+		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-on-active: var(--wp--preset--color--primary);
 		--button-color-bg: transparent;
-		--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 95%);
-		--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 90%);
+		--button-color-bg-on-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
+		--button-color-bg-on-active: color-mix(in srgb, var(--button-text-color), transparent 90%);
 		--button-border-color: currentcolor;
 		--button-border-color-on-hover: currentcolor;
 		--button-border-color-on-active: currentcolor;
 	}
 
 	&[data-button-appearance="ghost"] {
-		--button-color: var(--wp--preset--color--primary);
-		--button-color-on-hover: var(--wp--preset--color--primary);
-		--button-color-on-active: var(--wp--preset--color--primary);
+		--button-text-color: var(--wp--preset--color--primary);
+		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-on-active: var(--wp--preset--color--primary);
 		--button-color-bg: transparent;
 		--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 95%);
 		--button-color-bg-on-active: color-mix(in srgb, var(--button-color), transparent 90%);
