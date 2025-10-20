@@ -59,7 +59,7 @@ This file is organized into 2 main categories:
 
 	/* Spacing */
 	--flow-space: var(--wp--custom--block-gap);
-	--gutter: var(--wp--custom--root-padding-inline);
+	--gutter: var(--wp--custom--global-gutter);
 	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
 	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
 

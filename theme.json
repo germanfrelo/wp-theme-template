@@ -89,7 +89,7 @@
 		},
 		"custom": {
 			"block-gap": "1.5em",
-			"root-padding-inline": "var:preset|spacing|s-m"
+			"global-gutter": "var:preset|spacing|s-m"
 		},
 		"dimensions": {
 			"aspectRatios": []
@@ -394,8 +394,8 @@
 		"spacing": {
 			"blockGap": "var:custom|block-gap",
 			"padding": {
-				"left": "var:custom|root-padding-inline",
-				"right": "var:custom|root-padding-inline"
+				"left": "var:custom|global-gutter",
+				"right": "var:custom|global-gutter"
 			}
 		},
 		"elements": {
