@@ -31,7 +31,7 @@ Notes:
 			border-style: var(--select-border-style, solid);
 			border-width: var(--select-border-width, var(--field-border-width));
 			border-radius: var(--select-border-radius, var(--field-border-radius));
-			transition-duration: var(--wp--custom--transition--duration, 0);
+			transition-duration: var(--transition-duration, 0);
 			transition-property: color, background-color, border-color;
 
 			/* A reset of styles, including removing the default dropdown arrow */

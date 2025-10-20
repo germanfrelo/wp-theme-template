@@ -22,11 +22,11 @@ Notes:
 		padding-block: 0.75em;
 		padding-inline: 1em;
 		font-size: var(--wp--preset--font-size--s);
-		line-height: var(--wp--custom--line-height--slim);
+		line-height: var(--line-height-slim);
 		text-align: center;
 		text-decoration-line: none;
-		border: var(--wp--custom--border-width--thin, 1px) solid;
-		border-radius: var(--wp--custom--border-radius--xs);
+		border: var(--border-width-thin, 1px) solid;
+		border-radius: var(--border-radius-xs);
 		text-box: trim-both cap alphabetic;
 
 		&:hover {

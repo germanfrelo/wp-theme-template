@@ -246,7 +246,7 @@ nav.wp-block-navigation {
 
 	li.wp-block-navigation-item {
 		@media (prefers-reduced-motion: no-preference) {
-			transition-duration: var(--wp--custom--transition--duration, 0);
+			transition-duration: var(--transition-duration, 0);
 			transition-property: color, background-color;
 		}
 
@@ -517,7 +517,7 @@ nav.wp-block-navigation {
 
 		@media (prefers-reduced-motion: no-preference) {
 			/* animation-name: overlay-menu; */
-			animation-duration: var(--nav-responsive-container-animation-duration, var(--wp--custom--transition--duration, 0));
+			animation-duration: var(--nav-responsive-container-animation-duration, var(--transition-duration, 0));
 			animation-timing-function: var(--nav-responsive-container-animation-timing-function);
 		}
 

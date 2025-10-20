@@ -198,7 +198,7 @@ Description List
 ---------------------------------------------------------------------- */
 
 dt {
-	font-weight: var(--wp--custom--font-weight--bold);
+	font-weight: var(--font-weight-bold);
 }
 
 dd {
@@ -243,7 +243,7 @@ a {
 	text-underline-position: from-font;
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--wp--custom--transition--duration, 0);
+		transition-duration: var(--transition-duration, 0);
 		transition-property: color, background-color, border-color, text-decoration-color;
 	}
 
@@ -447,7 +447,7 @@ legend {
 	padding-inline: 0;
 	font-size: var(--legend-font-size);
 	font-weight: var(--legend-font-weight);
-	line-height: var(--wp--custom--line-height--slim);
+	line-height: var(--line-height-slim);
 }
 
 /* ----------------------------------------------------------------------
@@ -465,7 +465,7 @@ textarea {
 	min-block-size: 24px;
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-duration: var(--wp--custom--transition--duration, 0);
+		transition-duration: var(--transition-duration, 0);
 		transition-property: color, background-color, border-color;
 	}
 }
@@ -478,7 +478,7 @@ textarea {
 	padding-inline: var(--field-padding-inline, revert);
 	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
 	font-weight: var(--field-font-weight, inherit);
-	line-height: var(--wp--custom--line-height--slim);
+	line-height: var(--line-height-slim);
 	color: var(--field-text-color, currentcolor);
 	background-color: var(--field-background-color);
 	border-color: var(--field-border-color);
@@ -523,7 +523,7 @@ Label
 
 label {
 	font-weight: var(--label-font-weight);
-	line-height: var(--wp--custom--line-height--slim);
+	line-height: var(--line-height-slim);
 
 	/* Force a line break after the label while allowing it to remain an inline element. This provides a more robust and [defensive CSS](defensivecss.dev) */
 	&:has(+ input)::after {
@@ -620,8 +620,7 @@ details {
 	/* Transitions */
 
 	@media (prefers-reduced-motion: no-preference) {
-		transition-timing-function: var(--wp--custom--transition--timing-function);
-		transition-duration: var(--wp--custom--transition--duration, 0);
+		transition-duration: var(--transition-duration, 0);
 		transition-property: color, background-color, border-color;
 		interpolate-size: allow-keywords;
 	}
@@ -640,9 +639,9 @@ details {
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
-				content-visibility var(--wp--custom--transition--duration, 0),
-				opacity var(--wp--custom--transition--duration, 0),
-				block-size var(--wp--custom--transition--duration, 0);
+				content-visibility var(--transition-duration, 0),
+				opacity var(--transition-duration, 0),
+				block-size var(--transition-duration, 0);
 			transition-behavior: allow-discrete;
 		}
 	}

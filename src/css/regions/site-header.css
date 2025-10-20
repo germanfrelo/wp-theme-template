@@ -15,7 +15,7 @@ header.wp-block-template-part {
 	padding-block-end: var(--site-header-padding-bottom, var(--gutter, 2rem));
 	font-size: var(--wp--preset--font-size--s);
 	background-color: var(--wp--preset--color--surface-1, Canvas);
-	box-shadow: 0 var(--wp--custom--border-width--thin) var(--separator-color);
+	box-shadow: 0 var(--border-width-thin) var(--separator-color);
 
 	&.is-position-sticky {
 		position: sticky;
