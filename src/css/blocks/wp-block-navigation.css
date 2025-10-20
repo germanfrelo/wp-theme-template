@@ -76,10 +76,10 @@ nav.wp-block-navigation {
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
-	--nav-item-color-bg-on-hover: var(--wp--preset--color--surface-3);
+	--nav-item-color-bg-hover: var(--wp--preset--color--surface-3);
 	--nav-item-color-bg: var(--wp--preset--color--surface-2);
 	--nav-item-text-color-current-page: blue;
-	--nav-item-text-color-on-hover: tomato;
+	--nav-item-text-color-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
 	--nav-item-has-submenu-icon-display: grid;
 	--nav-item-has-submenu-icon-size-min: 24px;
@@ -261,7 +261,7 @@ nav.wp-block-navigation {
 		li.wp-block-navigation-item {
 			/* Hover/Click */
 			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				color: var(--nav-item-text-color-on-hover, currentcolor);
+				color: var(--nav-item-text-color-hover, currentcolor);
 			}
 		}
 	}
@@ -272,7 +272,7 @@ nav.wp-block-navigation {
 
 			/* Hover/Click */
 			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				background-color: var(--nav-item-color-bg-on-hover, inherit);
+				background-color: var(--nav-item-color-bg-hover, inherit);
 			}
 		}
 	}
@@ -537,7 +537,7 @@ nav.wp-block-navigation {
 
 				/* Hover/Click */
 				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					color: var(--nav-item-text-color-on-hover, inherit) !important;
+					color: var(--nav-item-text-color-hover, inherit) !important;
 				}
 			}
 
@@ -558,7 +558,7 @@ nav.wp-block-navigation {
 
 				/* Hover/Click */
 				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					background-color: var(--nav-item-color-bg-on-hover, inherit) !important;
+					background-color: var(--nav-item-color-bg-hover, inherit) !important;
 				}
 
 				.wp-block-navigation__submenu-container {

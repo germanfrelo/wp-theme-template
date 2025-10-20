@@ -53,7 +53,7 @@ Notes:
 			}
 
 			&:hover {
-				background-color: var(--select-color-bg-on-hover);
+				background-color: var(--select-color-bg-hover);
 			}
 		}
 	}

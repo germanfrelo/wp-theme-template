@@ -48,9 +48,9 @@ Notes:
 	/* States */
 
 	&:hover {
-		color: var(--button-text-color-on-hover, var(--button-text-color));
-		background-color: var(--button-color-bg-on-hover, var(--button-color-bg));
-		border-color: var(--button-border-color-on-hover, var(--button-border-color));
+		color: var(--button-text-color-hover, var(--button-text-color));
+		background-color: var(--button-color-bg-hover, var(--button-color-bg));
+		border-color: var(--button-border-color-hover, var(--button-border-color));
 	}
 
 	&:active {
@@ -90,26 +90,26 @@ Variants
 
 	&[data-button-appearance="inverse"] {
 		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-hover: var(--wp--preset--color--primary);
 		--button-color-bg: var(--wp--preset--color--surface);
-		--button-color-bg-on-hover: var(--wp--preset--color--surface);
+		--button-color-bg-hover: var(--wp--preset--color--surface);
 	}
 
 	&[data-button-appearance="outlined"] {
 		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-hover: var(--wp--preset--color--primary);
 		--button-color-bg: transparent;
-		--button-color-bg-on-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
+		--button-color-bg-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: currentcolor;
-		--button-border-color-on-hover: currentcolor;
+		--button-border-color-hover: currentcolor;
 	}
 
 	&[data-button-appearance="ghost"] {
 		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-on-hover: var(--wp--preset--color--primary);
+		--button-text-color-hover: var(--wp--preset--color--primary);
 		--button-color-bg: transparent;
-		--button-color-bg-on-hover: color-mix(in srgb, var(--button-color), transparent 95%);
+		--button-color-bg-hover: color-mix(in srgb, var(--button-color), transparent 95%);
 		--button-border-color: transparent;
-		--button-border-color-on-hover: transparent;
+		--button-border-color-hover: transparent;
 	}
 }

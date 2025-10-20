@@ -30,7 +30,7 @@ Custom Style: Custom
 .wp-block-cover.is-style-custom {
 	--cover-background-background: linear-gradient(45deg, hsl(0deg 0% 0% / 80%) 0%, hsl(0deg 0% 0% / 0%) 100%);
 	--cover-background-opacity-default: 0;
-	--cover-background-opacity-on-hover: 1;
+	--cover-background-opacity-hover: 1;
 	--cover-focus-shadow: 0 0 0 0.25rem var(--wp--preset--color--primary, currentcolor);
 
 	/* Cover background */
@@ -48,7 +48,7 @@ Custom Style: Custom
 	/* Cover background when is hovered or the Post Title link child is focused */
 
 	&:is(:hover, :focus-within) > .wp-block-cover__background {
-		opacity: var(--cover-background-opacity-on-hover, initial);
+		opacity: var(--cover-background-opacity-hover, initial);
 	}
 
 	/* Make the whole block interactive if it has a Post Title as link */

@@ -6,7 +6,7 @@ Details - Custom style
 	--details-border-color: var(--wp--preset--color--surface-4);
 	--details-border-width: var(--wp--custom--border-width--thin);
 	--details-color-bg: transparent;
-	--details-color-bg-on-hover: var(--wp--preset--color--surface-2);
+	--details-color-bg-hover: var(--wp--preset--color--surface-2);
 	--details-padding-top: 1em;
 	--details-padding-bottom: 1em;
 	--details-padding-left: 1em;
@@ -62,7 +62,7 @@ Details - Custom style
 
 	/* When Details is Open */
 	&[open] > summary::after {
-		background-color: var(--details-icon-color-on-hover, var(--details-icon-color, currentcolor));
+		background-color: var(--details-icon-color-hover, var(--details-icon-color, currentcolor));
 		mask-image: var(--details-open-icon-image, none);
 	}
 }

@@ -68,13 +68,13 @@ This file is organized into 2 main categories:
 	--measure-wide: var(--wp--style--global--wide-size);
 
 	/* Button */
-	--button-color-bg-on-hover: var(--wp--preset--color--primary);
+	--button-color-bg-hover: var(--wp--preset--color--primary);
 	--button-color-bg: var(--wp--preset--color--primary);
-	--button-border-color-on-hover: var(--button-color-bg);
+	--button-border-color-hover: var(--button-color-bg);
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--custom--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
-	--button-text-color-on-hover: var(--wp--preset--color--surface-1);
+	--button-text-color-hover: var(--wp--preset--color--surface-1);
 	--button-text-color: var(--wp--preset--color--surface-1);
 	--button-focus-color: var(--wp--preset--color--primary);
 	--button-font-size: var(--wp--preset--font-size--s);
@@ -150,7 +150,7 @@ This file is organized into 2 main categories:
 
 	/* Link */
 	--link-text-color: var(--wp--preset--color--primary);
-	--link-text-color-on-hover: currentcolor;
+	--link-text-color-hover: currentcolor;
 
 	/* List */
 	--dl-gap: 0.5em;

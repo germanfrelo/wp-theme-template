@@ -20,8 +20,8 @@ footer.wp-block-template-part {
 		}
 
 		&:hover {
-			color: var(--link-text-color-on-hover, var(--link-text-color));
-			text-decoration-color: var(--link-underline-color-on-hover, currentcolor);
+			color: var(--link-text-color-hover, var(--link-text-color));
+			text-decoration-color: var(--link-underline-color-hover, currentcolor);
 		}
 	}
 

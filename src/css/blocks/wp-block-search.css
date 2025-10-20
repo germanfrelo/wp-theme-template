@@ -40,7 +40,7 @@ Notes:
 			flex-basis: var(--search-wrap-at, 66%);
 
 			&:hover {
-				background-color: var(--search-input-color-bg-on-hover, transparent);
+				background-color: var(--search-input-color-bg-hover, transparent);
 			}
 		}
 
