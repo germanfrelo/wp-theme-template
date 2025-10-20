@@ -343,34 +343,9 @@
 			},
 			"fontSizes": [
 				{
-					"name": "4XL",
-					"slug": "xxxxl",
-					"size": "clamp(2.7994rem, 2.4418rem + 1.5254vw, 3.8147rem)"
-				},
-				{
-					"name": "3XL",
-					"slug": "xxxl",
-					"size": "clamp(2.3328rem, 2.0796rem + 1.0801vw, 3.0518rem)"
-				},
-				{
-					"name": "2XL",
-					"slug": "xxl",
-					"size": "clamp(1.944rem, 1.7689rem + 0.7473vw, 2.4414rem)"
-				},
-				{
-					"name": "XL",
-					"slug": "xl",
-					"size": "clamp(1.62rem, 1.5027rem + 0.5005vw, 1.9531rem)"
-				},
-				{
-					"name": "L",
-					"slug": "l",
-					"size": "clamp(1.35rem, 1.2752rem + 0.3192vw, 1.5625rem)"
-				},
-				{
-					"name": "M",
-					"slug": "m",
-					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
+					"name": "XS",
+					"slug": "xs",
+					"size": "clamp(0.7813rem, 0.7746rem + 0.0282vw, 0.8rem)"
 				},
 				{
 					"name": "S",
@@ -378,9 +353,34 @@
 					"size": "clamp(0.9375rem, 0.9155rem + 0.0939vw, 1rem)"
 				},
 				{
-					"name": "XS",
-					"slug": "xs",
-					"size": "clamp(0.7813rem, 0.7746rem + 0.0282vw, 0.8rem)"
+					"name": "M",
+					"slug": "m",
+					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
+				},
+				{
+					"name": "L",
+					"slug": "l",
+					"size": "clamp(1.35rem, 1.2752rem + 0.3192vw, 1.5625rem)"
+				},
+				{
+					"name": "XL",
+					"slug": "xl",
+					"size": "clamp(1.62rem, 1.5027rem + 0.5005vw, 1.9531rem)"
+				},
+				{
+					"name": "2XL",
+					"slug": "xxl",
+					"size": "clamp(1.944rem, 1.7689rem + 0.7473vw, 2.4414rem)"
+				},
+				{
+					"name": "3XL",
+					"slug": "xxxl",
+					"size": "clamp(2.3328rem, 2.0796rem + 1.0801vw, 3.0518rem)"
+				},
+				{
+					"name": "4XL",
+					"slug": "xxxxl",
+					"size": "clamp(2.7994rem, 2.4418rem + 1.5254vw, 3.8147rem)"
 				}
 			]
 		}
