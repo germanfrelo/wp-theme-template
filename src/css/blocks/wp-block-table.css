@@ -1,9 +1,8 @@
 /* ======================================================================
-WP Table
+WP BLOCK TABLE
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/table
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.

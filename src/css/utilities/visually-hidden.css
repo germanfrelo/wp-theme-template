@@ -1,7 +1,9 @@
-/*
-Hide elements visually.
-Info: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
-*/
+/* ======================================================================
+Visually Hidden
+---
+Info:
+- https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+====================================================================== */
 
 .visually-hidden:not(:focus, :active) {
 	position: absolute !important;

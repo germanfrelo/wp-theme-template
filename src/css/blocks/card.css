@@ -1,3 +1,10 @@
+/* ======================================================================
+CARD
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+====================================================================== */
+
 .card {
 	padding: var(--card-padding, 1.5em);
 	background-color: var(--card-background-color);

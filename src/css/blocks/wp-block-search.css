@@ -1,11 +1,10 @@
 /* TODO: Refactor */
 
 /* ======================================================================
-WP Block: Search
+WP BLOCK SEARCH
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/search
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/search
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/search
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.

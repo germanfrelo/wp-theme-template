@@ -1,11 +1,10 @@
 /* TODO: Refactor */
 
 /* ======================================================================
-WP Cover
+WP BLOCK COVER
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/cover
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/cover
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/cover
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.

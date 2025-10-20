@@ -1,9 +1,10 @@
+/* TODO: Refactor */
+
 /* ======================================================================
-WP Social Links
+WP BLOCK SOCIAL LINKS
 ---
 Source:
-- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-links
-- https://github.com/WordPress/WordPress/tree/master/wp-includes/blocks/social-links
+https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-links
 ---
 Notes:
 - To customize most of this block and its parts, use the custom properties.

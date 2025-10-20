@@ -1,21 +1,21 @@
 /* ======================================================================
 GLOBAL STYLES
-
+---
 Low-specificity, global styles that apply to the whole project.
-
+---
 More info:
 - https://cube.fyi/css.html
 - https://piccalil.li/blog/cube-css/#css
-
+---
 Almost all custom properties used are defined in
 'theme.json' and 'variables.css',
 allowing us to customize globals with design tokens,
 rather than writing the same styles for *every* project.
-
+---
 Selectors are grouped and sorted based on:
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
 - https://html.spec.whatwg.org/multipage/#toc-semantics
-
+---
 Table of contents:
 01. Document
 02. Content Sectioning

@@ -1,7 +1,9 @@
 /* ======================================================================
-WP Site Blocks
+WP SITE BLOCKS
 ---
-https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+Source:
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/block-template.php
+- https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
 ====================================================================== */
 
 /* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
