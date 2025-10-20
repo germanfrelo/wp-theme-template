@@ -5,7 +5,7 @@ Info:
 - https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
 ====================================================================== */
 
-.visually-hidden:not(:focus, :active) {
+.visually-hidden:not(:is(:active, :focus)) {
 	position: absolute !important;
 	width: 1px !important;
 	height: 1px !important;
