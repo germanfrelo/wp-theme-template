@@ -1,22 +1,71 @@
 /* ======================================================================
-VARIABLES (CUSTOM PROPERTIES)
+ALL GLOBAL CSS CUSTOM PROPERTIES
+---
+This file is organized into 2 main categories:
+1. Primitive Tokens: The foundational, raw, context-agnostic values.
+2. Semantic Tokens: Give theme-wide meaning and context to the primitives.
+====================================================================== */
+
+/* ======================================================================
+1. Primitive Tokens
 ====================================================================== */
 
 :root {
-	/* Typography */
+	/* Font Weight */
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+	--font-weight-black: 800;
+
+	/* Line Height */
+	--line-height-slim: 1.2;
+	--line-height-loose: 1.7;
+
+	/* Letter Spacing */
+	--letter-spacing-uppercase: 0.05ch;
+
+	/* Border */
+	--border-width-thin: 1px;
+	--border-width-medium: 2px;
+	--border-width-thick: 4px;
+
+	/* Border Radius */
+	--border-radius-2xs: 0.125rem;
+	--border-radius-xs: 0.25rem;
+	--border-radius-s: 0.5rem;
+	--border-radius-m: 0.75rem;
+	--border-radius-l: 1rem;
+	--border-radius-xl: 1.5rem;
+	--border-radius-2xl: 2rem;
+	--border-radius-3xl: 3rem;
+	--border-radius-round: 9999rem;
+
+	/* Transition */
+	--transition-duration: 0.15s;
+}
+
+/* ======================================================================
+2. Semantic Tokens
+====================================================================== */
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended. */
+:root {
+	/* Base */
 	--font-line-height-base: var(--wp--custom--line-height--loose);
 	--font-size-base: var(--wp--preset--font-size--m);
 	--font-size-lede: var(--wp--preset--font-size--l);
 	--font-size-meta: var(--wp--preset--font-size--s);
 	--font-weight-base: var(--wp--custom--font-weight--regular);
 
-	/* Dimensions/Layout/Spacing */
+	/* Spacing */
 	--flow-space: var(--wp--custom--block-gap);
 	--gutter: var(--wp--custom--root-padding-inline);
-	--measure-content: var(--wp--style--global--content-size);
-	--measure-wide: var(--wp--style--global--wide-size);
 	--region-space-start: var(--wp--preset--spacing--xl-2-xl);
 	--region-space-end: var(--wp--preset--spacing--xl-2-xl);
+
+	/* Layout */
+	--measure-content: var(--wp--style--global--content-size);
+	--measure-wide: var(--wp--style--global--wide-size);
 
 	/* Button */
 	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker);
@@ -51,24 +100,21 @@ VARIABLES (CUSTOM PROPERTIES)
 	/* Code (block) */
 	--code-block-color-bg: var(--wp--preset--color--surface-2);
 
+	/* Focus Indicator */
+	--focus-ring-color: currentcolor;
+	--focus-ring-offset: 0.25lh;
+	--focus-ring-style: solid;
+	--focus-ring-width: 2px;
+
 	/* Form */
 	--form-fields-gap-rows: var(--gutter);
 
-	/*
-	Form Field
-	(input, textarea, select, button...)
-	*/
+	/* Form Field */
 	--field-accent-color: var(--wp--preset--color--primary);
 	--field-border-width: var(--wp--custom--border-width--thin);
 	--field-error-color: var(--color-error, crimson);
 	--field-padding-block: 0.25em;
 	--field-padding-inline: 0.5rem;
-
-	/* Focus Rings */
-	--focus-ring-color: currentcolor;
-	--focus-ring-offset: 0.25lh;
-	--focus-ring-style: solid;
-	--focus-ring-width: 2px;
 
 	/* Headings */
 	--heading-font-weight: var(--wp--custom--font-weight--black);

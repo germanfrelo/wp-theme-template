@@ -88,44 +88,8 @@
 			]
 		},
 		"custom": {
-			"border-radius": {
-				"2-xs": "0.125rem",
-				"xs": "0.25rem",
-				"s": "0.5rem",
-				"m": "0.75rem",
-				"l": "1rem",
-				"xl": "1.5rem",
-				"2-xl": "2rem",
-				"3-xl": "3rem",
-				"round": "9999rem"
-			},
-			"border-width": {
-				"thin": "1px",
-				"medium": "2px",
-				"thick": "4px"
-			},
 			"block-gap": "1.5em",
-			"font-weight": {
-				"regular": "400",
-				"medium": "500",
-				"bold": "700",
-				"black": "800"
-			},
-			"letter-spacing": {
-				"uppercase": "0.05ch"
-			},
-			"line-height": {
-				"slim": "1.2",
-				"loose": "1.7"
-			},
-			"root-padding-inline": "var:preset|spacing|s-m",
-			"shadow": {
-				"color": "currentcolor",
-				"strength": "1%"
-			},
-			"transition": {
-				"duration": "0.15s"
-			}
+			"root-padding-inline": "var:preset|spacing|s-m"
 		},
 		"dimensions": {
 			"aspectRatios": []
