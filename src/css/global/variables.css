@@ -68,9 +68,9 @@ This file is organized into 2 main categories:
 	--measure-wide: var(--wp--style--global--wide-size);
 
 	/* Button */
-	--button-color-bg-on-hover: var(--wp--preset--color--primary-darker);
+	--button-color-bg-on-hover: var(--wp--preset--color--primary);
 	--button-color-bg: var(--wp--preset--color--primary);
-	--button-border-color-on-hover: var(--wp--preset--color--primary-darker);
+	--button-border-color-on-hover: var(--button-color-bg);
 	--button-border-color: var(--button-color-bg);
 	--button-border-radius: var(--wp--custom--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
