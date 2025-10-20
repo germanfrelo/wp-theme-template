@@ -130,7 +130,7 @@ pre {
 
 pre:has(code) {
 	padding: var(--code-block-padding, var(--gutter, 1em));
-	background-color: var(--code-block-color-bg, transparent);
+	background-color: var(--code-block-background-color, transparent);
 }
 
 /* ----------------------------------------------------------------------
@@ -274,7 +274,7 @@ code {
 	font-size: 0.875em;
 	font-variant-ligatures: none;
 	white-space: break-spaces;
-	background-color: var(--code-color-bg, transparent);
+	background-color: var(--code-background-color, transparent);
 	border-radius: var(--code-border-radius, 0);
 	box-decoration-break: clone;
 
@@ -320,7 +320,7 @@ Marked/Highlighted Text
 
 mark {
 	color: var(--mark-text-color, MarkText);
-	background-color: var(--mark-color-bg, Mark);
+	background-color: var(--mark-background-color, Mark);
 }
 
 /* ----------------------------------------------------------------------
@@ -405,13 +405,13 @@ caption {
 
 thead {
 	font-weight: var(--table-head-font-weight, inherit);
-	background-color: var(--table-head-color-bg, transparent);
+	background-color: var(--table-head-background-color, transparent);
 	border-block-end: var(--table-head-border, 3px) solid;
 }
 
 tfoot {
 	font-weight: var(--table-foot-font-weight, inherit);
-	background-color: var(--table-foot-color-bg, transparent);
+	background-color: var(--table-foot-background-color, transparent);
 	border-block-start: var(--table-foot-border, 3px) solid;
 }
 
@@ -480,7 +480,7 @@ textarea {
 	font-weight: var(--field-font-weight, inherit);
 	line-height: var(--wp--custom--line-height--slim);
 	color: var(--field-text-color, currentcolor);
-	background-color: var(--field-color-bg);
+	background-color: var(--field-background-color);
 	border-color: var(--field-border-color);
 	border-style: var(--field-border-style, solid);
 	border-width: var(--field-border-width);
@@ -582,7 +582,7 @@ details {
 	padding-block-end: var(--details-padding-bottom, 0);
 	padding-inline-start: var(--details-padding-left, 0);
 	padding-inline-end: var(--details-padding-right, 0);
-	background-color: var(--details-color-bg, transparent);
+	background-color: var(--details-background-color, transparent);
 	border-color: var(--details-border-color, currentcolor);
 	border-style: var(--details-border-style, solid);
 	border-width: var(--details-border-width, 0);
@@ -599,7 +599,7 @@ details {
 	}
 
 	&:has(> summary:hover) {
-		background-color: var(--details-color-bg-hover, var(--details-color-bg, transparent));
+		background-color: var(--details-background-color-hover, var(--details-background-color, transparent));
 	}
 
 	/*

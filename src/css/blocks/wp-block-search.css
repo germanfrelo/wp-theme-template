@@ -25,7 +25,7 @@ Notes:
 		justify-content: var(--search-wrapper-justify-content, start);
 		padding-block: var(--search-wrapper-padding-block, 0);
 		padding-inline: var(--search-wrapper-padding-inline, 0);
-		background-color: var(--search-wrapper-color-bg, transparent);
+		background-color: var(--search-wrapper-background-color, transparent);
 		border-color: var(--search-wrapper-border-color, currentcolor);
 		border-style: var(--search-wrapper-border-style, solid);
 		border-width: var(--search-wrapper-border-width, 0);
@@ -40,7 +40,7 @@ Notes:
 			flex-basis: var(--search-wrap-at, 66%);
 
 			&:hover {
-				background-color: var(--search-input-color-bg-hover, transparent);
+				background-color: var(--search-input-background-color-hover, transparent);
 			}
 		}
 

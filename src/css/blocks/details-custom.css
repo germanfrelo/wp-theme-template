@@ -5,8 +5,8 @@ Details - Custom style
 .wp-block-details.is-style-custom {
 	--details-border-color: var(--wp--preset--color--surface-4);
 	--details-border-width: var(--wp--custom--border-width--thin);
-	--details-color-bg: transparent;
-	--details-color-bg-hover: var(--wp--preset--color--surface-2);
+	--details-background-color: transparent;
+	--details-background-color-hover: var(--wp--preset--color--surface-2);
 	--details-padding-top: 1em;
 	--details-padding-bottom: 1em;
 	--details-padding-left: 1em;

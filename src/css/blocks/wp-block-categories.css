@@ -26,7 +26,7 @@ Notes:
 			padding-inline: var(--select-padding-inline, var(--field-padding-inline));
 			font-size: var(--select-font-size, initial);
 			font-weight: var(--select-font-weight, initial);
-			background-color: var(--select-color-bg, var(--field-color-bg));
+			background-color: var(--select-background-color, var(--field-background-color));
 			border-color: var(--select-border-color, var(--field-border-color));
 			border-style: var(--select-border-style, solid);
 			border-width: var(--select-border-width, var(--field-border-width));
@@ -53,7 +53,7 @@ Notes:
 			}
 
 			&:hover {
-				background-color: var(--select-color-bg-hover);
+				background-color: var(--select-background-color-hover);
 			}
 		}
 	}

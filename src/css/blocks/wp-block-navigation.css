@@ -76,8 +76,8 @@ nav.wp-block-navigation {
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
-	--nav-item-color-bg-hover: var(--wp--preset--color--surface-3);
-	--nav-item-color-bg: var(--wp--preset--color--surface-2);
+	--nav-item-background-color-hover: var(--wp--preset--color--surface-3);
+	--nav-item-background-color: var(--wp--preset--color--surface-2);
 	--nav-item-text-color-current-page: blue;
 	--nav-item-text-color-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
@@ -110,7 +110,7 @@ nav.wp-block-navigation {
 	--nav-submenu-border-color: currentcolor;
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
-	--nav-submenu-color-bg: var(--wp--preset--color--surface-1);
+	--nav-submenu-background-color: var(--wp--preset--color--surface-1);
 
 	/* --nav-submenu-text-color: inherit; */
 	--nav-submenu-gap-columns: 0;
@@ -131,7 +131,7 @@ nav.wp-block-navigation {
 
 	/* --nav-responsive-container-animation-duration: ;
 	--nav-responsive-container-animation-timing-function: ;
-	--nav-responsive-container-color-bg: ; */
+	--nav-responsive-container-background-color: ; */
 
 	/* --nav-responsive-container-padding-block-start ;
 	--nav-responsive-container-padding-block-end ;
@@ -268,11 +268,11 @@ nav.wp-block-navigation {
 
 	&:not(.has-background) {
 		li.wp-block-navigation-item {
-			background-color: var(--nav-item-color-bg, inherit);
+			background-color: var(--nav-item-background-color, inherit);
 
 			/* Hover/Click */
 			&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-				background-color: var(--nav-item-color-bg-hover, inherit);
+				background-color: var(--nav-item-background-color-hover, inherit);
 			}
 		}
 	}
@@ -467,7 +467,7 @@ nav.wp-block-navigation {
 		opacity: 0; /* Hidden */
 
 		&:where(:not(.has-background)) {
-			background-color: var(--nav-submenu-color-bg, transparent);
+			background-color: var(--nav-submenu-background-color, transparent);
 		}
 	}
 
@@ -551,18 +551,18 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-background) {
-			background-color: var(--nav-responsive-container-color-bg, var(--wp--preset--color--surface-1, inherit));
+			background-color: var(--nav-responsive-container-background-color, var(--wp--preset--color--surface-1, inherit));
 
 			.wp-block-navigation-item {
-				background-color: var(--nav-item-color-bg, inherit) !important;
+				background-color: var(--nav-item-background-color, inherit) !important;
 
 				/* Hover/Click */
 				&:is(:hover, :has(> .wp-block-navigation-submenu__toggle[aria-expanded="true"])) {
-					background-color: var(--nav-item-color-bg-hover, inherit) !important;
+					background-color: var(--nav-item-background-color-hover, inherit) !important;
 				}
 
 				.wp-block-navigation__submenu-container {
-					background-color: var(--nav-submenu-color-bg, transparent) !important;
+					background-color: var(--nav-submenu-background-color, transparent) !important;
 				}
 			}
 		}

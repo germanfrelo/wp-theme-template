@@ -68,10 +68,10 @@ This file is organized into 2 main categories:
 	--measure-wide: var(--wp--style--global--wide-size);
 
 	/* Button */
-	--button-color-bg-hover: var(--wp--preset--color--primary);
-	--button-color-bg: var(--wp--preset--color--primary);
-	--button-border-color-hover: var(--button-color-bg);
-	--button-border-color: var(--button-color-bg);
+	--button-background-color-hover: var(--wp--preset--color--primary);
+	--button-background-color: var(--wp--preset--color--primary);
+	--button-border-color-hover: var(--button-background-color);
+	--button-border-color: var(--button-background-color);
 	--button-border-radius: var(--wp--custom--border-radius--s);
 	--button-border-width: var(--wp--custom--border-width--thin);
 	--button-text-color-hover: var(--wp--preset--color--surface-1);
@@ -93,12 +93,12 @@ This file is organized into 2 main categories:
 
 	/* Code (inline) */
 	--code-border-radius: 0.1875rem;
-	--code-color-bg: color-mix(in srgb, currentcolor, transparent 95%);
+	--code-background-color: color-mix(in srgb, currentcolor, transparent 95%);
 	--code-padding-block: 0.125em;
 	--code-padding-inline: 0.25em;
 
 	/* Code (block) */
-	--code-block-color-bg: var(--wp--preset--color--surface-2);
+	--code-block-background-color: var(--wp--preset--color--surface-2);
 
 	/* Focus Indicator */
 	--focus-ring-color: currentcolor;

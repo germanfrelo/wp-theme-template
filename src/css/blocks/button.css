@@ -24,7 +24,7 @@ Notes:
 	word-break: revert; /* WP: Revert default 'word-break: break-word' for being deprecated. */
 	overflow-wrap: anywhere; /* Prevent long unbroken words from overflowing. */
 	text-decoration-line: var(--button-line, none);
-	background-color: var(--button-color-bg, transparent);
+	background-color: var(--button-background-color, transparent);
 	border-color: var(--button-border-color, currentcolor);
 	border-style: solid;
 	border-width: var(--button-border-width, 0);
@@ -49,7 +49,7 @@ Notes:
 
 	&:hover {
 		color: var(--button-text-color-hover, var(--button-text-color));
-		background-color: var(--button-color-bg-hover, var(--button-color-bg));
+		background-color: var(--button-background-color-hover, var(--button-background-color));
 		border-color: var(--button-border-color-hover, var(--button-border-color));
 	}
 
@@ -91,15 +91,15 @@ Variants
 	&[data-button-appearance="inverse"] {
 		--button-text-color: var(--wp--preset--color--primary);
 		--button-text-color-hover: var(--wp--preset--color--primary);
-		--button-color-bg: var(--wp--preset--color--surface);
-		--button-color-bg-hover: var(--wp--preset--color--surface);
+		--button-background-color: var(--wp--preset--color--surface);
+		--button-background-color-hover: var(--wp--preset--color--surface);
 	}
 
 	&[data-button-appearance="outlined"] {
 		--button-text-color: var(--wp--preset--color--primary);
 		--button-text-color-hover: var(--wp--preset--color--primary);
-		--button-color-bg: transparent;
-		--button-color-bg-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
+		--button-background-color: transparent;
+		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: currentcolor;
 		--button-border-color-hover: currentcolor;
 	}
@@ -107,8 +107,8 @@ Variants
 	&[data-button-appearance="ghost"] {
 		--button-text-color: var(--wp--preset--color--primary);
 		--button-text-color-hover: var(--wp--preset--color--primary);
-		--button-color-bg: transparent;
-		--button-color-bg-hover: color-mix(in srgb, var(--button-color), transparent 95%);
+		--button-background-color: transparent;
+		--button-background-color-hover: color-mix(in srgb, var(--button-color), transparent 95%);
 		--button-border-color: transparent;
 		--button-border-color-hover: transparent;
 	}

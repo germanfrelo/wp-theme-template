@@ -38,7 +38,7 @@ Notes:
 			line-height: 1;
 			color: var(--query-pag-number-text-color);
 			text-align: center;
-			background-color: var(--query-pag-number-color-bg);
+			background-color: var(--query-pag-number-background-color);
 			border-color: var(--query-pag-number-border-color);
 			border-style: var(--query-pag-number-border-style, solid);
 			border-width: var(--query-pag-number-border-width, thin);
@@ -59,7 +59,7 @@ Notes:
 			/* Hover states for clickable page numbers */
 			&a:hover {
 				color: var(--query-pag-number-text-color-hover);
-				background-color: var(--query-pag-number-color-bg-hover);
+				background-color: var(--query-pag-number-background-color-hover);
 				border-color: var(--query-pag-number-border-color-hover);
 			}
 		}
@@ -84,7 +84,7 @@ Notes:
 		line-height: 1;
 		color: var(--query-pag-prev-next-text-color);
 		text-align: center;
-		background-color: var(--query-pag-prev-next-color-bg);
+		background-color: var(--query-pag-prev-next-background-color);
 		border-color: var(--query-pag-prev-next-border-color);
 		border-style: var(--query-pag-prev-next-border-style, solid);
 		border-width: var(--query-pag-prev-next-border-width, thin);
@@ -92,7 +92,7 @@ Notes:
 
 		&:hover {
 			color: var(--query-pag-prev-next-text-color-hover);
-			background-color: var(--query-pag-prev-next-color-bg-hover);
+			background-color: var(--query-pag-prev-next-background-color-hover);
 			border-color: var(--query-pag-prev-next-border-color-hover);
 		}
 	}

@@ -1,6 +1,6 @@
 .card {
 	padding: var(--card-padding, 1.5em);
-	background-color: var(--card-color-bg);
+	background-color: var(--card-background-color);
 	border-color: var(--card-border-color);
 	border-style: solid;
 	border-width: var(--card-border-width, thin);
