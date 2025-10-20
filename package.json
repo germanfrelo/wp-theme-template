@@ -35,16 +35,19 @@
 	},
 	"scripts": {
 		"build": "npm run clean:build && npm run build:css && npm run format:svg",
-		"build:css": "rimraf build/css && postcss src/css/theme.css --dir build/css",
+		"build:css": "npm run clean:build:css && npm run postcss:run",
 		"clean:build": "rimraf build && mkdir build",
+		"clean:build:css": "rimraf build/css",
 		"format": "prettier --write . && npm run format:svg",
 		"format:check": "prettier --check .",
 		"format:svg": "svgo --folder assets/svg",
 		"lint": "npm run lint:css",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
 		"lint:css:fix": "npm run lint:css -- --fix",
+		"postcss:run": "postcss src/css/theme.css --dir build/css",
 		"prepare": "husky",
-		"start": "npm run build:css -- --watch"
+		"start": "npm run build:css && concurrently \"npm:watch:*\"",
+		"watch:css": "npm run postcss:run -- --watch"
 	},
 	"lint-staged": {
 		"*.css": [
