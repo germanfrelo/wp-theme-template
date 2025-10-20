@@ -2,14 +2,10 @@
 Text Align
 ====================================================================== */
 
-.text-center {
-	text-align: center !important;
-}
-
-.text-end {
+.has-text-align-end {
 	text-align: end !important;
 }
 
-.text-start {
+.has-text-align-start {
 	text-align: start !important;
 }

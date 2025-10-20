@@ -2,10 +2,10 @@
 Text Wrap
 ====================================================================== */
 
-.text-balance {
+.text-wrap-balance {
 	text-wrap: balance !important;
 }
 
-.text-pretty {
+.text-wrap-pretty {
 	text-wrap: pretty !important;
 }
