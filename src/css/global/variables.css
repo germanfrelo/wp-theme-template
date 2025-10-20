@@ -150,7 +150,7 @@ This file is organized into 2 main categories:
 
 	/* Link */
 	--link-text-color: var(--wp--preset--color--primary);
-	--link-text-color-on-hover-focus: currentcolor;
+	--link-text-color-on-hover: currentcolor;
 
 	/* List */
 	--dl-gap: 0.5em;

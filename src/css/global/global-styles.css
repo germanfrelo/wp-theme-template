@@ -248,8 +248,8 @@ a {
 	}
 
 	&:hover {
-		color: var(--link-text-color-on-hover-focus, var(--link-text-color));
-		text-decoration-color: var(--link-underline-color-on-hover-focus, currentcolor);
+		color: var(--link-text-color-on-hover, var(--link-text-color));
+		text-decoration-color: var(--link-underline-color-on-hover, currentcolor);
 	}
 }
 
@@ -599,7 +599,7 @@ details {
 	}
 
 	&:has(> summary:hover) {
-		background-color: var(--details-color-bg-on-hover-focus, var(--details-color-bg, transparent));
+		background-color: var(--details-color-bg-on-hover, var(--details-color-bg, transparent));
 	}
 
 	/*
