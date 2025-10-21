@@ -1,0 +1,13 @@
+/* ======================================================================
+COLORS
+====================================================================== */
+
+:root {
+	--color-text: var(--wp--preset--color--text);
+	--color-surface-1: var(--wp--preset--color--surface-1);
+	--color-surface-2: var(--wp--preset--color--surface-2);
+	--color-surface-3: var(--wp--preset--color--surface-3);
+	--color-surface-4: var(--wp--preset--color--surface-4);
+	--color-primary: var(--wp--preset--color--primary);
+	--color-secondary: var(--wp--preset--color--secondary);
+}
