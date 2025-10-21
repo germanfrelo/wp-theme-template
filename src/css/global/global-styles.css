@@ -584,7 +584,10 @@ label:has(input:disabled) {
 Details
 ---------------------------------------------------------------------- */
 
-/* Default 'details' elements are not styled; instead, style the WP block in 'wp-block-details.css' */
+/*
+The base <details> element is intentionally unstyled.
+Instead, style the WP block '.wp-block-details' in the 'blocks/wp-block-details.css' file.
+*/
 
 /* ----------------------------------------------------------------------
 Dialog

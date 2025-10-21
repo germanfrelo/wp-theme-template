@@ -15,19 +15,13 @@ Resources:
 ====================================================================== */
 
 .wp-block-details {
-	padding-block-start: var(--details-padding-top);
-	padding-block-end: var(--details-padding-bottom);
-	padding-inline-start: var(--details-padding-left);
-	padding-inline-end: var(--details-padding-right);
-	background-color: var(--details-background-color);
-	border-color: var(--details-border-color);
-	border-style: var(--details-border-style);
-	border-width: var(--details-border-width);
-	border-radius: var(--details-border-radius);
-
 	@media (prefers-reduced-motion: no-preference) {
 		interpolate-size: allow-keywords;
 	}
+
+	/* ----------------------------------------------------------------------
+	Summary
+	---------------------------------------------------------------------- */
 
 	> summary {
 		display: flex;
@@ -35,14 +29,22 @@ Resources:
 		gap: var(--details-summary-gap, 1ch);
 		align-items: center;
 		justify-content: space-between;
+		padding-block: var(--details-summary-padding-block, 1em);
+		padding-inline: var(--details-summary-padding-inline, 1em);
 		font-family: var(--details-summary-font-family);
 		font-size: var(--details-summary-font-size);
 		font-weight: var(--details-summary-font-weight);
-		line-height: var(--details-summary-line-height);
+		line-height: var(--details-summary-line-height, var(--line-height-slim));
 		color: var(--details-summary-text-color);
 		letter-spacing: var(--details-summary-letter-spacing);
-		cursor: var(--details-summary-cursor, default);
+		cursor: var(--details-summary-cursor, pointer);
 		list-style: none;
+		background-color: var(--details-summary-background-color);
+		border-color: var(--details-border-color);
+		border-style: var(--details-border-style, solid);
+		border-width: var(--details-border-width, var(--border-width-thin));
+		border-radius: var(--details-border-radius);
+		text-box: cap alphabetic;
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition-duration: var(--transition-duration);
@@ -50,71 +52,95 @@ Resources:
 		}
 
 		&:hover {
-			background-color: var(--details-summary-background-color-hover, var(--details-background-color));
+			background-color: var(--details-summary-background-color-hover, var(--details-summary-background-color));
+		}
+
+		&:active {
+			background-color: var(--details-summary-background-color-active, var(--details-summary-background-color-hover));
 		}
 	}
 
-	/*
-	Custom Icon.
-	It's rendered after the summary by default. To render it before, just change '::after' to '::before'.
+	/* ----------------------------------------------------------------------
+	Content elements
 	---------------------------------------------------------------------- */
 
-	/* Remove the default icon in WebKit-based browsers. */
+	summary ~ *,
+	p {
+		margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */ /* TODO: Double check this */
+	}
+
+	/* ----------------------------------------------------------------------
+	Custom Marker
+	---------------------------------------------------------------------- */
+
+	/* Remove the default marker in WebKit-based browsers. */
 	> summary::-webkit-details-marker {
 		display: none;
 	}
 
-	/*
-	Add a custom marker.
-	*/
+	/* Add a custom marker. */
 	> summary::after {
 		display: inline-block;
 		flex-shrink: 0;
-		inline-size: var(--details-icon-size, 2.5rem);
-		block-size: var(--details-icon-size, 2.5rem);
+		inline-size: var(--details-summary-marker-size, 1.5cap);
+		block-size: var(--details-summary-marker-size, 1.5cap);
 		content: "";
-		background-color: var(--details-icon-color, currentcolor);
-		mask-image: var(--details-icon-image, none);
+		background-color: var(--details-summary-marker-color, currentcolor);
+		mask-image: var(--details-summary-marker-image, url("../../assets/svg/icon-plus.svg"));
 		mask-position: center;
 		mask-size: cover;
 	}
 
-	/* ⚠️ Do NOT add any margin here; add it to the element(s) inside the details content. */
+	/* ----------------------------------------------------------------------
+	Details Content
+	---------------------------------------------------------------------- */
+
 	&::details-content {
+		display: grid;
+		gap: var(--details-content-gap, var(--flow-space, 1em));
 		block-size: 0;
-		padding-block-start: var(--details-content-padding-top, 0);
-		padding-block-end: var(--details-content-padding-bottom, 0);
-		/* display: grid; */
 		margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */ /* TODO: Double check this */
 		overflow-block: clip;
 		font-size: var(--details-content-font-size);
+		border-color: var(--details-border-color);
+		border-style: var(--details-summary-border-style, solid);
+		border-width: var(--details-border-width, var(--border-width-thin));
+		border-block-start: none;
+		border-radius: var(--details-border-radius);
 		opacity: 0;
 
 		@media (prefers-reduced-motion: no-preference) {
 			transition:
+				block-size var(--transition-duration, 0),
+				border-radius var(--transition-duration, 0),
 				content-visibility var(--transition-duration, 0) allow-discrete,
 				opacity var(--transition-duration, 0),
-				block-size var(--transition-duration, 0),
-				border-radius var(--transition-duration, 0);
-		}
-
-		& > * {
-			margin-block: 0 !important; /* If there is some margin, the open/close transition is a bit clumsy */ /* TODO: Double check this */
+				padding 0;
 		}
 	}
 
-	&[open] {
-		border-start-start-radius: 0;
-		border-start-end-radius: 0;
+	/* ----------------------------------------------------------------------
+	Details is OPEN
+	---------------------------------------------------------------------- */
 
-		/* Change marker when details is open */
+	&[open] {
+		> summary {
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+		}
+
+		/* Custom marker */
 		> summary::after {
-			background-color: var(--details-icon-color-hover, var(--details-icon-color, currentcolor));
-			mask-image: var(--details-open-icon-image, none);
+			background-color: var(--details-summary-marker-color-hover, var(--details-summary-marker-color, currentcolor));
+			mask-image: var(--details-summary-marker-image-open, url("../../assets/svg/icon-line-solid.svg"));
 		}
 
 		&::details-content {
 			block-size: auto;
+			padding-block: var(--details-content-padding-block, 1em);
+			padding-inline: var(--details-content-padding-inline, 1em);
+			border-start-start-radius: 0;
+			border-start-end-radius: 0;
 			opacity: 1;
 		}
 	}
