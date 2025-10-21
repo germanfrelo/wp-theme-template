@@ -23,7 +23,10 @@ Variables:
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(var(--grid-placement, auto-fill), minmax(min(100%, var(--grid-item-min-size, 16rem)), 1fr));
+	grid-template-columns: repeat(
+		var(--grid-placement, auto-fill),
+		minmax(min(100%, var(--grid-item-min-size, 16rem)), 1fr)
+	);
 	gap: var(--grid-gap, var(--gutter, 1em));
 
 	/* A split 50/50 layout */
