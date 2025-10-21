@@ -470,13 +470,16 @@ textarea {
 	}
 }
 
+/*
+1. Prevent iOS from zooming into form fields with a 'font-size' smaller than '16px'. Ref. https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/
+*/
 button,
 input:not(:where([type="checkbox"], [type="color"], [type="image"], [type="radio"])),
 select,
 textarea {
 	padding-block: var(--field-padding-block, revert);
 	padding-inline: var(--field-padding-inline, revert);
-	font-size: max(16px, var(--field-font-size, inherit)); /* See https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/ */
+	font-size: max(16px, var(--field-font-size, inherit)); /* 1 */
 	font-weight: var(--field-font-weight, inherit);
 	line-height: var(--line-height-slim);
 	color: var(--field-text-color, currentcolor);
@@ -487,7 +490,17 @@ textarea {
 	border-radius: var(--field-border-radius);
 }
 
-input:not(:where([type="button"], [type="checkbox"], [type="color"], [type="image"], [type="radio"], [type="reset"], [type="submit"])),
+input:not(
+	:where(
+		[type="button"],
+		[type="checkbox"],
+		[type="color"],
+		[type="image"],
+		[type="radio"],
+		[type="reset"],
+		[type="submit"]
+	)
+),
 select,
 textarea {
 	inline-size: 100%;
