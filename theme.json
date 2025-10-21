@@ -12,38 +12,7 @@
 			"defaultGradients": false,
 			"defaultPalette": false,
 			"duotone": [],
-			"gradients": [
-				{
-					"name": "Primario–Secundario (Vertical)",
-					"slug": "primary-to-secondary-vertical",
-					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
-				},
-				{
-					"name": "Primario–Secundario (Diagonal)",
-					"slug": "primary-to-secondary-diagonal",
-					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
-				},
-				{
-					"name": "Primario–Secundario (Horizontal)",
-					"slug": "primary-to-secondary-horizontal",
-					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--secondary) 100%)"
-				},
-				{
-					"name": "Secundario–Primario (Vertical)",
-					"slug": "secondary-to-primary-vertical",
-					"gradient": "linear-gradient(180deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
-				},
-				{
-					"name": "Secundario–Primario (Diagonal)",
-					"slug": "secondary-to-primary-diagonal",
-					"gradient": "linear-gradient(135deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
-				},
-				{
-					"name": "Secundario–Primario (Horizontal)",
-					"slug": "secondary-to-primary-horizontal",
-					"gradient": "linear-gradient(90deg in oklab, var(--wp--preset--color--secondary) 0%, var(--wp--preset--color--primary) 100%)"
-				}
-			],
+			"gradients": [],
 			"palette": [
 				{
 					"name": "Texto",

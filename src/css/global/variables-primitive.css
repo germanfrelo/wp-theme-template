@@ -40,6 +40,17 @@ The foundational, raw, context-agnostic values.
 	--color-secondary: var(--wp--preset--color--secondary);
 
 	/* ----------------------------------------------------------------------
+	Color Gradients
+	---------------------------------------------------------------------- */
+
+	--gradient-primary-to-secondary-vertical: linear-gradient(180deg in oklab, var(--color-primary) 0%, var(--color-secondary) 100%);
+	--gradient-primary-to-secondary-diagonal: linear-gradient(135deg in oklab, var(--color-primary) 0%, var(--color-secondary) 100%);
+	--gradient-primary-to-secondary-horizontal: linear-gradient(90deg in oklab, var(--color-primary) 0%, var(--color-secondary) 100%);
+	--gradient-secondary-to-primary-vertical: linear-gradient(180deg in oklab, var(--color-secondary) 0%, var(--color-primary) 100%);
+	--gradient-secondary-to-primary-diagonal: linear-gradient(135deg in oklab, var(--color-secondary) 0%, var(--color-primary) 100%);
+	--gradient-secondary-to-primary-horizontal: linear-gradient(90deg in oklab, var(--color-secondary) 0%, var(--color-primary) 100%);
+
+	/* ----------------------------------------------------------------------
 	Font Weights
 	---------------------------------------------------------------------- */
 
