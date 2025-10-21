@@ -16,8 +16,6 @@
 	"main": "",
 	"devDependencies": {
 		"concurrently": "9.2.1",
-		"husky": "9.1.7",
-		"lint-staged": "16.2.4",
 		"postcss": "8.5.6",
 		"postcss-cli": "11.0.1",
 		"postcss-custom-media": "11.0.6",
@@ -45,17 +43,7 @@
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
 		"lint:css:fix": "npm run lint:css -- --fix",
 		"postcss:run": "postcss src/css/theme.css --dir build/css",
-		"prepare": "husky",
 		"start": "npm run build:css && concurrently \"npm:watch:*\"",
 		"watch:css": "npm run postcss:run -- --watch"
-	},
-	"lint-staged": {
-		"*.css": [
-			"stylelint",
-			"prettier --write"
-		],
-		"!(*.css)": [
-			"prettier --write --ignore-unknown"
-		]
 	}
 }

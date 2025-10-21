@@ -6,7 +6,3 @@ if [ -z "$branch" ]; then # Check for empty branch name (detached HEAD)
 	echo "🚫 You are in a detached HEAD state. Checkout a branch before committing."
 	exit 1
 fi
-
-# Runs lint-staged on staged files before commit.
-echo "Running lint-staged on staged files..."
-lint-staged

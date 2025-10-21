@@ -7,7 +7,6 @@
 /.gitattributes
 /.github/
 /.gitignore
-/.husky/
 /.npmrc
 /.nvmrc
 /.prettierignore
@@ -20,6 +19,7 @@
 /prettier.config.js
 /README.md
 /README-DEV.md
+/scripts/
 /src/
 /stylelint.config.js
 /svgo.config.js
