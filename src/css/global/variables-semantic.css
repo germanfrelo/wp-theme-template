@@ -55,6 +55,25 @@ Give theme-wide meaning and context to the primitives.
 	/* Code (block) */
 	--code-block-background-color: var(--color-surface-2);
 
+	/* Details (WP block) */
+	--details-border-color: var(--color-surface-4);
+	--details-border-radius: var(--border-radius-s);
+	--details-border-width: var(--border-width-thin);
+	--details-content-gap: 1em;
+	--details-content-padding-block: 1em 1lh;
+	--details-content-padding-inline: 1em;
+	--details-summary-background-color-active: var(--color-surface-3);
+	--details-summary-background-color-hover: var(--color-surface-2);
+	--details-summary-cursor: pointer;
+	--details-summary-font-weight: var(--font-weight-bold);
+	--details-summary-gap: 1ch;
+	--details-summary-marker-color: var(--color-primary);
+	--details-summary-marker-image-open: url("../../assets/svg/icon-line-solid.svg");
+	--details-summary-marker-image: url("../../assets/svg/icon-plus.svg");
+	--details-summary-marker-size: 2rem;
+	--details-summary-padding-block: 1rem;
+	--details-summary-padding-inline: 1rem;
+
 	/* Focus Indicator */
 	--focus-ring-color: currentcolor;
 	--focus-ring-offset: 0.25lh;
