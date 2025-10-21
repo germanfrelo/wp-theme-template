@@ -42,16 +42,6 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_vari
 function themeslug_register_block_style_variations() {
 	register_block_style(
 		[
-			'core/details'
-		],
-		[
-			'name'  => 'custom',
-			'label' => __( 'Personalizado', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
 			'core/heading',
 			'core/post-title'
 		],
