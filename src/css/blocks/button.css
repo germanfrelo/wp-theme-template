@@ -108,7 +108,7 @@ Variants
 		--button-text-color: var(--color-primary);
 		--button-text-color-hover: var(--color-primary);
 		--button-background-color: transparent;
-		--button-background-color-hover: color-mix(in srgb, var(--button-color), transparent 95%);
+		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: transparent;
 		--button-border-color-hover: transparent;
 	}
