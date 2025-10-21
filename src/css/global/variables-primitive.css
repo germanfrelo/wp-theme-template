@@ -43,6 +43,8 @@ The foundational, raw, context-agnostic values.
 	Color Gradients
 	---------------------------------------------------------------------- */
 
+	/* TODO: Refactor (ref: https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) */
+
 	--gradient-primary-to-secondary-vertical: linear-gradient(
 		180deg in oklab,
 		var(--color-primary) 0%,
