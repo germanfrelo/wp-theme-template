@@ -39,10 +39,10 @@ Table of contents:
 ====================================================================== */
 
 body {
-	font-family: var(--wp--preset--font-family--base, sans-serif);
+	font-family: var(--font-family-base, sans-serif);
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-base);
-	line-height: var(--font-line-height-base);
+	line-height: var(--line-height-base);
 	color: var(--color-text);
 	accent-color: var(--field-accent-color);
 	background-color: var(--color-surface-1);
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--wp--preset--font-family--headings);
+	font-family: var(--font-family-headings);
 	font-weight: var(--heading-font-weight, bold);
 	font-feature-settings:
 		"calt" 1,
@@ -123,7 +123,7 @@ Preformatted Text
 ---------------------------------------------------------------------- */
 
 pre {
-	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 	font-variant-ligatures: none;
 }
@@ -258,7 +258,7 @@ Sample Output
 ---------------------------------------------------------------------- */
 
 samp {
-	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 	font-variant-ligatures: none;
 }
@@ -270,7 +270,7 @@ Inline Code
 code {
 	padding-block: var(--code-padding-block, 0);
 	padding-inline: var(--code-padding-inline, 0);
-	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-family: var(--font-family-mono, monospace);
 	font-size: 0.875em;
 	font-variant-ligatures: none;
 	white-space: break-spaces;
@@ -483,7 +483,7 @@ textarea {
 	background-color: var(--field-background-color);
 	border-color: var(--field-border-color);
 	border-style: var(--field-border-style, solid);
-	border-width: var(--field-border-width);
+	border-width: var(--field-border-width, var(--border-width-thin, thin));
 	border-radius: var(--field-border-radius);
 }
 
@@ -523,7 +523,7 @@ Label
 
 label {
 	font-weight: var(--label-font-weight);
-	line-height: var(--line-height-slim);
+	line-height: var(--label-line-height);
 
 	/* Force a line break after the label while allowing it to remain an inline element. This provides a more robust and [defensive CSS](defensivecss.dev) */
 	&:has(+ input)::after {

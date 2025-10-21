@@ -53,15 +53,19 @@
 		},
 		"custom": {
 			"block-gap": "1.5em",
-			"global-gutter": "var:preset|spacing|s-m"
+			"global-gutter": "var:preset|spacing|s-m",
+			"layout": {
+				"content-size": "50rem",
+				"wide-size": "80rem"
+			}
 		},
 		"dimensions": {
 			"aspectRatios": []
 		},
 		"layout": {
 			"allowCustomContentAndWideSize": true,
-			"contentSize": "50rem",
-			"wideSize": "80rem"
+			"contentSize": "var:custom|layout|content-size",
+			"wideSize": "var:custom|layout|wide-size"
 		},
 		"shadow": {
 			"defaultPresets": false,
@@ -258,7 +262,7 @@
 			"fontFamilies": [
 				{
 					"name": "Atkinson Hyperlegible Next",
-					"slug": "base",
+					"slug": "atkinson-hyperlegible-next",
 					"fontFamily": "'Atkinson Hyperlegible Next', sans-serif",
 					"fontFace": [
 						{
@@ -273,8 +277,23 @@
 					]
 				},
 				{
+					"name": "Inter",
+					"slug": "inter",
+					"fontFamily": "'Inter', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "'Inter'",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"fontDisplay": "swap",
+							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
+							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
+						}
+					]
+				},
+				{
 					"name": "JetBrains Mono",
-					"slug": "mono",
+					"slug": "jetbrains-mono",
 					"fontFamily": "'JetBrains Mono', monospace",
 					"fontFace": [
 						{
@@ -285,21 +304,6 @@
 							"src": [
 								"file:./assets/fonts/jetbrains-mono/jetbrains-mono-400-normal.woff2"
 							]
-						}
-					]
-				},
-				{
-					"name": "Inter",
-					"slug": "headings",
-					"fontFamily": "'Inter', sans-serif",
-					"fontFace": [
-						{
-							"fontFamily": "'Inter'",
-							"fontStyle": "normal",
-							"fontWeight": "800",
-							"fontDisplay": "swap",
-							"src": ["file:./assets/fonts/inter/Inter-ExtraBold.woff2"],
-							"fontFeatureSettings": "'calt' 1, 'ss02' 1"
 						}
 					]
 				}

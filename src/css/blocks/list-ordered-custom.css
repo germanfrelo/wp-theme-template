@@ -19,7 +19,7 @@ ol.is-style-ordered-custom {
 			place-content: center;
 			aspect-ratio: 1;
 			padding: 0.5em;
-			font-family: var(--wp--preset--font-family--mono, monospace);
+			font-family: var(--font-family-mono, monospace);
 			font-size: var(--font-size-s, inherit);
 			font-weight: bolder;
 			line-height: 0;
