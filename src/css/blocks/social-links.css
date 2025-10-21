@@ -20,7 +20,7 @@ Notes:
 	}
 
 	:is(img, svg) {
-		inline-size: var(--wp--preset--spacing--l, auto);
+		inline-size: var(--space-l, auto);
 		block-size: auto;
 	}
 }

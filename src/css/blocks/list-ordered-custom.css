@@ -20,12 +20,12 @@ ol.is-style-ordered-custom {
 			aspect-ratio: 1;
 			padding: 0.5em;
 			font-family: var(--wp--preset--font-family--mono, monospace);
-			font-size: var(--wp--preset--font-size--s, inherit);
+			font-size: var(--font-size-s, inherit);
 			font-weight: bolder;
 			line-height: 0;
-			color: var(--wp--preset--color--primary, currentcolor);
+			color: var(--color-primary, currentcolor);
 			content: counter(ol-custom-counter);
-			background-color: var(--wp--preset--color--surface-2, transparent);
+			background-color: var(--color-surface-2, transparent);
 			border-style: solid;
 			border-width: var(--border-width-thin, thin);
 			border-radius: 50%;

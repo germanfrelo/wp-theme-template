@@ -21,7 +21,7 @@ Notes:
 	}
 
 	.wp-block-post-title {
-		font-size: var(--wp--preset--font-size--xl);
+		font-size: var(--font-size-xl);
 
 		a:not(:hover) {
 			color: inherit;

@@ -43,9 +43,9 @@ body {
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-base);
 	line-height: var(--font-line-height-base);
-	color: var(--wp--preset--color--text);
+	color: var(--color-text);
 	accent-color: var(--field-accent-color);
-	background-color: var(--wp--preset--color--surface-1);
+	background-color: var(--color-surface-1);
 	-webkit-font-smoothing: antialiased; /* To match the font smoothing used by design tools such as Figma. */
 }
 
@@ -225,7 +225,7 @@ figure {
 
 figcaption {
 	padding-block-start: 0.5em;
-	font-size: var(--wp--preset--font-size--s);
+	font-size: var(--font-size-s);
 }
 
 /* ======================================================================

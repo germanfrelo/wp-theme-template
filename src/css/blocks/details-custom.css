@@ -3,17 +3,17 @@ Details - Custom style
 ====================================================================== */
 
 .wp-block-details.is-style-custom {
-	--details-border-color: var(--wp--preset--color--surface-4);
+	--details-border-color: var(--color-surface-4);
 	--details-border-width: var(--border-width-thin);
 	--details-background-color: transparent;
-	--details-background-color-hover: var(--wp--preset--color--surface-2);
+	--details-background-color-hover: var(--color-surface-2);
 	--details-padding-top: 1em;
 	--details-padding-bottom: 1em;
 	--details-padding-left: 1em;
 	--details-padding-right: 1em;
 	--details-summary-cursor: pointer;
 	--details-summary-gap: 1ch;
-	--details-icon-color: var(--wp--preset--color--primary);
+	--details-icon-color: var(--color-primary);
 	--details-icon-size: 2rem;
 	--details-icon-image: url("../../assets/svg/icon-plus.svg");
 	--details-open-icon-image: url("../../assets/svg/icon-line-solid.svg");

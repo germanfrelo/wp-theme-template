@@ -75,8 +75,8 @@ nav.wp-block-navigation {
 	--nav-button-icon-size: 2.75rem; /* 44px */
 
 	/* Menu Items */
-	--nav-item-background-color-hover: var(--wp--preset--color--surface-3);
-	--nav-item-background-color: var(--wp--preset--color--surface-2);
+	--nav-item-background-color-hover: var(--color-surface-3);
+	--nav-item-background-color: var(--color-surface-2);
 	--nav-item-text-color-current-page: blue;
 	--nav-item-text-color-hover: tomato;
 	--nav-item-has-submenu-gap-columns: 0.25ch;
@@ -109,7 +109,7 @@ nav.wp-block-navigation {
 	--nav-submenu-border-color: currentcolor;
 	--nav-submenu-border-top-width: 0;
 	--nav-submenu-border-width: 0;
-	--nav-submenu-background-color: var(--wp--preset--color--surface-1);
+	--nav-submenu-background-color: var(--color-surface-1);
 
 	/* --nav-submenu-text-color: inherit; */
 	--nav-submenu-gap-columns: 0;
@@ -550,7 +550,7 @@ nav.wp-block-navigation {
 		All the !important's are needed to override WP's !important's.
 		*/
 		&:not(.has-background) {
-			background-color: var(--nav-responsive-container-background-color, var(--wp--preset--color--surface-1, inherit));
+			background-color: var(--nav-responsive-container-background-color, var(--color-surface-1, inherit));
 
 			.wp-block-navigation-item {
 				background-color: var(--nav-item-background-color, inherit) !important;

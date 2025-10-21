@@ -89,15 +89,15 @@ Variants
 	---------------------------------------------------------------------- */
 
 	&[data-button-appearance="inverse"] {
-		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-hover: var(--wp--preset--color--primary);
-		--button-background-color: var(--wp--preset--color--surface);
-		--button-background-color-hover: var(--wp--preset--color--surface);
+		--button-text-color: var(--color-primary);
+		--button-text-color-hover: var(--color-primary);
+		--button-background-color: var(--color-surface);
+		--button-background-color-hover: var(--color-surface);
 	}
 
 	&[data-button-appearance="outlined"] {
-		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-hover: var(--wp--preset--color--primary);
+		--button-text-color: var(--color-primary);
+		--button-text-color-hover: var(--color-primary);
 		--button-background-color: transparent;
 		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: currentcolor;
@@ -105,8 +105,8 @@ Variants
 	}
 
 	&[data-button-appearance="ghost"] {
-		--button-text-color: var(--wp--preset--color--primary);
-		--button-text-color-hover: var(--wp--preset--color--primary);
+		--button-text-color: var(--color-primary);
+		--button-text-color-hover: var(--color-primary);
 		--button-background-color: transparent;
 		--button-background-color-hover: color-mix(in srgb, var(--button-color), transparent 95%);
 		--button-border-color: transparent;

@@ -21,7 +21,7 @@ Notes:
 		min-block-size: 24px;
 		padding-block: 0.75em;
 		padding-inline: 1em;
-		font-size: var(--wp--preset--font-size--s);
+		font-size: var(--font-size-s);
 		line-height: var(--line-height-slim);
 		text-align: center;
 		text-decoration-line: none;
