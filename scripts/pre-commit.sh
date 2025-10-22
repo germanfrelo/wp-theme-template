@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# Prevents commits in detached HEAD state.
-branch="$(git branch --show-current)"
-if [ -z "$branch" ]; then # Check for empty branch name (detached HEAD)
-	echo "🚫 You are in a detached HEAD state. Checkout a branch before committing."
-	exit 1
-fi
