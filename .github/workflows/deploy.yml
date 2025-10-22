@@ -13,19 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
+          cache: "pnpm"
 
       - name: Install dependencies and build
         run: |
           # Install project dependencies quickly and reliably using the lock file
-          npm ci
+          pnpm install --frozen-lockfile
           # Run the script that compiles theme assets
-          npm run build
+          pnpm run build
         working-directory: ./
 
       - name: Setup SSH Key

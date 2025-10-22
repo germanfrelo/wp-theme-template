@@ -109,26 +109,27 @@ Some CSS files probably don't need to be changed, whereas other do:
 ## Local development workflow
 
 The project includes `npm` scripts to automate the build, development, and code quality process.
+The project uses `pnpm` as its package manager.
 
 ### Primary commands
 
 | Command         | Description                                                                                                                                          |
 | :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm start`     | **For development.** Builds your CSS once, then starts a **watcher** to automatically recompile and rebuild assets in real-time as you make changes. |
-| `npm run build` | **For production.** Performs a full, clean build of all theme assets, ready for deployment.                                                          |
+| `pnpm start`    | **For development.** Builds your CSS once, then starts a **watcher** to automatically recompile and rebuild assets in real-time as you make changes. |
+| `pnpm run build` | **For production.** Performs a full, clean build of all theme assets, ready for deployment.                                                          |
 
 > [!TIP]
-> **Automatic asset rebuild:** Once `npm start` is running, you **never need to manually compile CSS** (i.e., run `npm run build`).
+> **Automatic asset rebuild:** Once `pnpm start` is running, you **never need to manually compile CSS** (i.e., run `pnpm run build`).
 
 > [!IMPORTANT]
-> **Asset reloading:** While `npm start` automatically rebuilds assets, whether these changes appear immediately on your local site depends on your environment. Tools like Local with its **"[Instant Reload](https://localwp.com/help-docs/local-features/instant-reload/)"** feature provide immediate **CSS updates**. For JavaScript changes in blocks, a browser refresh might still be necessary in some setups.
+> **Asset reloading:** While `pnpm start` automatically rebuilds assets, whether these changes appear immediately on your local site depends on your environment. Tools like Local with its **"[Instant Reload](https://localwp.com/help-docs/local-features/instant-reload/)"** feature provide immediate **CSS updates**. For JavaScript changes in blocks, a browser refresh might still be necessary in some setups.
 
 ### Code quality: formatting and linting
 
 Code quality checks run automatically on staged files before each commit. You can also run them manually:
 
-- **`npm run format`**: Formats all code.
-- **`npm run lint`**: Lints all CSS (and other) files.
+- **`pnpm run format`**: Formats all code.
+- **`pnpm run lint`**: Lints all CSS (and other) files.
 
 It's also recommended to install the extensions for these tools in your code editor (e.g., [VS Code extensions](../.vscode/extensions.json)).
 
