@@ -42,9 +42,9 @@
 		"format:svg": "svgo --folder assets/svg",
 		"lint": "pnpm run lint:css",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
-		"lint:css:fix": "pnpm run lint:css -- --fix",
+		"lint:css:fix": "pnpm run lint:css --fix",
 		"postcss:run": "postcss src/css/theme.css --dir build/css",
 		"start": "pnpm run build:css && concurrently \"pnpm:watch:*\"",
-		"watch:css": "pnpm run postcss:run -- --watch"
+		"watch:css": "pnpm run postcss:run --watch"
 	}
 }
