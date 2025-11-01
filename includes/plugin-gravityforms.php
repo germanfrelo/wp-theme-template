@@ -21,6 +21,36 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
 
 
 /**
+ * Create and return a WP_HTML_Processor fragment from HTML string.
+ *
+ * Helper function to reduce duplication when working with HTML fragments.
+ *
+ * @param string $html The HTML string to create a fragment from.
+ * @param bool   $use_next_tag Whether to use next_tag() instead of next_token(). Default false.
+ * @return WP_HTML_Processor|null The processor instance, or null on failure.
+ */
+function themeslug_create_html_fragment( $html, $use_next_tag = false ) {
+	if ( empty( $html ) ) {
+		return null;
+	}
+	
+	$fragment = WP_HTML_Processor::create_fragment( $html );
+	
+	if ( ! $fragment ) {
+		return null;
+	}
+	
+	$positioned = $use_next_tag ? $fragment->next_tag() : $fragment->next_token();
+	
+	if ( $positioned ) {
+		return $fragment;
+	}
+	
+	return null;
+}
+
+
+/**
  * Filter the next, previous and submit buttons.
  *
  * Replace the form's input buttons with button elements, while maintaining attributes from original input.
@@ -36,8 +66,11 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
  * @return string The filtered button.
  */
 function themeslug_gform_input_to_button($button, $form) {
-	$fragment = \WP_HTML_Processor::create_fragment($button);
-	$fragment->next_token();
+	$fragment = themeslug_create_html_fragment( $button );
+	
+	if ( ! $fragment ) {
+		return $button;
+	}
 
 	$attributes = array('id', 'type', 'class', 'onclick');
 	$new_attributes = array();
@@ -65,8 +98,12 @@ add_filter('gform_submit_button', 'themeslug_gform_input_to_button', 10, 2);
  * @return string
  */
 function themeslug_gform_add_custom_css_classes($button, $form) {
-	$fragment = WP_HTML_Processor::create_fragment($button);
-	$fragment->next_token();
+	$fragment = themeslug_create_html_fragment( $button );
+	
+	if ( ! $fragment ) {
+		return $button;
+	}
+	
 	$fragment->add_class('button');
 
 	return $fragment->get_updated_html();
@@ -126,12 +163,14 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 		return $button;
 	}
 
-	$fragment = WP_HTML_Processor::create_fragment( $button );
+	$fragment = themeslug_create_html_fragment( $button, true );
 
-	if ( $fragment->next_tag() ) {
-		foreach ( $attributes_to_set as $name => $value ) {
-			$fragment->set_attribute( $name, $value );
-		}
+	if ( ! $fragment ) {
+		return $button;
+	}
+
+	foreach ( $attributes_to_set as $name => $value ) {
+		$fragment->set_attribute( $name, $value );
 	}
 
 	return $fragment->get_updated_html();
