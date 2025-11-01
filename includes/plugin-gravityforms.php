@@ -26,16 +26,23 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
  * Helper function to reduce duplication when working with HTML fragments.
  *
  * @param string $html The HTML string to create a fragment from.
+ * @param bool   $use_next_tag Whether to use next_tag() instead of next_token(). Default false.
  * @return WP_HTML_Processor|null The processor instance, or null on failure.
  */
-function themeslug_create_html_fragment( $html ) {
+function themeslug_create_html_fragment( $html, $use_next_tag = false ) {
 	if ( empty( $html ) ) {
 		return null;
 	}
 	
 	$fragment = WP_HTML_Processor::create_fragment( $html );
 	
-	if ( $fragment && $fragment->next_token() ) {
+	if ( ! $fragment ) {
+		return null;
+	}
+	
+	$positioned = $use_next_tag ? $fragment->next_tag() : $fragment->next_token();
+	
+	if ( $positioned ) {
 		return $fragment;
 	}
 	
@@ -156,7 +163,7 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 		return $button;
 	}
 
-	$fragment = themeslug_create_html_fragment( $button );
+	$fragment = themeslug_create_html_fragment( $button, true );
 
 	if ( ! $fragment ) {
 		return $button;
