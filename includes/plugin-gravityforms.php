@@ -21,6 +21,29 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
 
 
 /**
+ * Create and return a WP_HTML_Processor fragment from HTML string.
+ *
+ * Helper function to reduce duplication when working with HTML fragments.
+ *
+ * @param string $html The HTML string to create a fragment from.
+ * @return WP_HTML_Processor|null The processor instance, or null on failure.
+ */
+function themeslug_create_html_fragment( $html ) {
+	if ( empty( $html ) ) {
+		return null;
+	}
+
+	$fragment = WP_HTML_Processor::create_fragment( $html );
+
+	if ( $fragment && $fragment->next_token() ) {
+		return $fragment;
+	}
+
+	return null;
+}
+
+
+/**
  * Filter the next, previous and submit buttons.
  *
  * Replace the form's input buttons with button elements, while maintaining all attributes from the original input for better compatibility.
@@ -154,12 +177,14 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 		return $button;
 	}
 
-	$fragment = WP_HTML_Processor::create_fragment( $button );
+	$fragment = themeslug_create_html_fragment( $button );
 
-	if ( $fragment->next_tag() ) {
-		foreach ( $attributes_to_set as $name => $value ) {
-			$fragment->set_attribute( $name, $value );
-		}
+	if ( ! $fragment ) {
+		return $button;
+	}
+
+	foreach ( $attributes_to_set as $name => $value ) {
+		$fragment->set_attribute( $name, $value );
 	}
 
 	return $fragment->get_updated_html();
