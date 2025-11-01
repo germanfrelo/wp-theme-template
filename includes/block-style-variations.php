@@ -21,14 +21,12 @@
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
 function themeslug_unregister_block_style_variations() {
-	// Reuse the helper function from block-variations.php
-	if ( function_exists( 'themeslug_enqueue_block_editor_script' ) ) {
-		themeslug_enqueue_block_editor_script(
-			'themeslug-unregister-block-style-variations',
-			'unregister-block-style-variations.js',
-			[ 'wp-blocks', 'wp-dom-ready' ]
-		);
-	}
+	// Use the helper function from block-variations.php (loaded before this file in functions.php)
+	themeslug_enqueue_block_editor_script(
+		'themeslug-unregister-block-style-variations',
+		'unregister-block-style-variations.js',
+		[ 'wp-blocks', 'wp-dom-ready' ]
+	);
 }
 add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_variations');
 
