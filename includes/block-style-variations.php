@@ -21,13 +21,14 @@
  * @link https://developer.wordpress.org/reference/functions/wp_enqueue_script/
  */
 function themeslug_unregister_block_style_variations() {
-	wp_enqueue_script(
-		'themeslug-unregister-block-style-variations',
-		get_theme_file_uri('assets/js/unregister-block-style-variations.js'),
-		['wp-blocks', 'wp-dom-ready'],
-		filemtime(get_theme_file_path('assets/js/unregister-block-style-variations.js')),
-		true // Print scripts in the footer. This is required for scripts to work correctly in the Site Editor.
-	);
+	// Reuse the helper function from block-variations.php
+	if ( function_exists( 'themeslug_enqueue_block_editor_script' ) ) {
+		themeslug_enqueue_block_editor_script(
+			'themeslug-unregister-block-style-variations',
+			'unregister-block-style-variations.js',
+			[ 'wp-blocks', 'wp-dom-ready' ]
+		);
+	}
 }
 add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_variations');
 
@@ -40,55 +41,44 @@ add_action('enqueue_block_editor_assets', 'themeslug_unregister_block_style_vari
  * @return void
  */
 function themeslug_register_block_style_variations() {
-	register_block_style(
+	// Configuration array to reduce duplication
+	$block_styles = [
 		[
-			'core/heading',
-			'core/post-title'
+			'blocks' => [ 'core/heading', 'core/post-title' ],
+			'name'   => 'eyebrow',
+			'label'  => __( 'Antetítulo', 'themeslug' ),
 		],
 		[
-			'name'  => 'eyebrow',
-			'label' => __( 'Antetítulo', 'themeslug' )
-		]
-	);
+			'blocks' => [ 'core/list' ],
+			'name'   => 'unordered-checkmark',
+			'label'  => __( 'Sin ordenar con checkmarks', 'themeslug' ),
+		],
+		[
+			'blocks' => [ 'core/list' ],
+			'name'   => 'ordered-custom',
+			'label'  => __( 'Ordenada personalizada', 'themeslug' ),
+		],
+		[
+			'blocks' => [ 'core/navigation-link' ],
+			'name'   => 'external',
+			'label'  => __( 'Enlace externo', 'themeslug' ),
+		],
+		[
+			'blocks' => [ 'core/search' ],
+			'name'   => 'direction-reversed',
+			'label'  => __( 'Dirección inversa', 'themeslug' ),
+		],
+	];
 
-	register_block_style(
-		[
-			'core/list'
-		],
-		[
-			'name'  => 'unordered-checkmark',
-			'label' => __( 'Sin ordenar con checkmarks', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
-			'core/list'
-		],
-		[
-			'name'  => 'ordered-custom',
-			'label' => __( 'Ordenada personalizada', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
-			'core/navigation-link'
-		],
-		[
-			'name'  => 'external',
-			'label' => __( 'Enlace externo', 'themeslug' )
-		]
-	);
-
-	register_block_style(
-		[
-			'core/search'
-		],
-		[
-			'name'  => 'direction-reversed',
-			'label' => __( 'Dirección inversa', 'themeslug' )
-		]
-	);
+	// Register each block style
+	foreach ( $block_styles as $style ) {
+		register_block_style(
+			$style['blocks'],
+			[
+				'name'  => $style['name'],
+				'label' => $style['label'],
+			]
+		);
+	}
 }
 add_action( 'init', 'themeslug_register_block_style_variations' );
