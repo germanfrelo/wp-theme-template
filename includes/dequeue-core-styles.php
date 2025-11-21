@@ -126,7 +126,7 @@ add_filter(
 );
 
 /**
- * Remove core block styles from the front end of the website.
+ * Remove core block styles from the FRONT END of the website.
  *
  * These stylesheets contain opinionated rules that conflict with or
  * override the theme's more consistent design system. Removing them
@@ -135,13 +135,13 @@ add_filter(
  *
  * @link https://developer.wordpress.org/reference/functions/wp_dequeue_style/
  * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
- * @link https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src
+ * @link https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/style.scss
  *
  * @return void
  */
 function themeslug_remove_wp_block_styles() {
-	// Central list of core block styles we intentionally remove to avoid
-	// WordPress opinionated defaults interfering with the theme's design system.
+	// Specific core block styles.
+
 	$handles = [
 		'wp-block-archives',
 		'wp-block-audio',
@@ -234,5 +234,72 @@ function themeslug_remove_wp_block_styles() {
 			wp_dequeue_style($handle);
 		}
 	}
+
+	// TODO: Revisit and test this later, carefully.
+	// All core block styles.
+
+	// global $wp_styles;
+
+	// foreach ( $wp_styles->queue as $key => $handle ) {
+	// 	if ( strpos( $handle, 'wp-block-' ) === 0 ) {
+	// 		wp_dequeue_style( $handle );
+	// 	}
+	// }
 }
-add_action('wp_enqueue_scripts', 'themeslug_remove_wp_block_styles');
+// Keep priority 20: Runs after core/plugin default enqueues (10) but avoids extreme late hooks.
+// This matches other theme enqueues (e.g. themeslug_enqueue_theme_styles at priority 20) and
+// is conservative while still allowing most registered/enqueued core styles to be removed.
+add_action(
+	'wp_enqueue_scripts',
+	'themeslug_remove_wp_block_styles_frontend',
+	20,
+);
+
+// Optional fallback: Run right before styles are printed to catch any handles
+// that were registered/enqueued after the 'wp_enqueue_scripts' hooks ran.
+// Uncomment to enable if you encounter stubborn styles that still appear.
+// Prefer front-end-only guarding when enabling (e.g. wrap in `if ( ! is_admin() )`).
+// add_action( 'wp_print_styles', 'themeslug_remove_wp_block_styles_frontend', 1 );
+
+// TODO: Revisit and test this later, carefully.
+/**
+ * Remove ALL core block styles from the BLOCK EDITOR and SITE EDITOR.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wp_default_styles/
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/
+ * @link https://github.com/leph83/wtp-phuctenberg/blob/master/inc/wtp_disable_gutenberg.php
+ *
+ * @return void
+ */
+function themeslug_remove_wp_block_styles_editor($styles) {
+	// Create an array with the two handles 'wp-block-library' and 'wp-block-library-theme'.
+	$handles = ['wp-block-library', 'wp-block-library-theme'];
+
+	foreach ($handles as $handle) {
+		// Search and compare with the list of registered style handles.
+		$style = $styles->query($handle, 'registered');
+		if (!$style) {
+			continue;
+		}
+
+		// Remove the style.
+		$styles->remove($handle);
+
+		// Remove path and dependencies.
+		$styles->add($handle, false, []);
+	}
+}
+// add_action( 'wp_default_styles', 'themeslug_remove_wp_block_styles_editor', PHP_INT_MAX );
+
+// TODO: Revisit and test this later, carefully.
+/**
+ * Remove global styles on the FRONT END.
+ *
+ * @link https://fullsiteediting.com/lessons/how-to-remove-default-block-styles/#h-how-to-remove-global-styles-on-the-front
+ *
+ * @return void
+ */
+function themeslug_remove_global_styles_frontend() {
+	wp_dequeue_style('global-styles');
+}
+// add_action( 'wp_enqueue_scripts', 'themeslug_remove_global_styles_frontend', 100 );
