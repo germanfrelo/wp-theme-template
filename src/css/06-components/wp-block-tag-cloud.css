@@ -1,0 +1,57 @@
+/* ===================================================================
+WP BLOCK TAG CLOUD
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/tag-cloud
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/tag-cloud
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-tag-cloud {
+	display: flex;
+	flex-direction: var(--cluster-direction);
+	flex-wrap: wrap;
+	row-gap: var(--cluster-gap-rows, 1ch);
+	column-gap: var(--cluster-gap-columns, 1ch);
+	align-items: var(--cluster-align-items, start);
+	justify-content: var(--cluster-justify-content, start);
+
+	> * {
+		margin: 0;
+	}
+
+	&.aligncenter {
+		justify-content: center;
+		text-align: center;
+	}
+
+	a {
+		display: inline-block;
+	}
+
+	span {
+		display: inline-block;
+		margin-inline-start: 0.5ch;
+		text-decoration: none;
+	}
+
+	/* -----------------------------------------------
+	Variant: Outline
+	----------------------------------------------- */
+
+	&.is-style-outline {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1ch;
+
+		a {
+			padding: 1ch 2ch;
+			margin-right: 0;
+			font-size: unset !important; /* !important Needed to override the inline styles. */
+			text-decoration: none !important; /* !important needed to override generic post content link decoration. */
+			border: 1px solid currentcolor;
+		}
+	}
+}
