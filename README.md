@@ -4,7 +4,7 @@
 
 ---
 
-![""](screenshot.png)
+![](screenshot.png)
 
 ## Features
 
