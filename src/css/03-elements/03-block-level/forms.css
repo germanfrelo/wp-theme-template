@@ -94,16 +94,10 @@ textarea {
 	resize: both;
 }
 
-[type="checkbox"] {
-	flex-shrink: 0;
-	inline-size: var(--input-checkbox-size, 1em);
-	block-size: var(--input-checkbox-size, 1em);
-}
-
+/* TODO: Style them, see https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+[type="checkbox"],
 [type="radio"] {
 	flex-shrink: 0;
-	inline-size: var(--input-radio-size, 1em);
-	block-size: var(--input-radio-size, 1em);
 }
 
 /* TODO: WIP */
