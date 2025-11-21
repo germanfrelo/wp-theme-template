@@ -8,13 +8,49 @@
  * @package themeslug
  */
 
-// Theme Constants
-define('THEMESLUG_ASSETS_DIR', 'assets');
-define('THEMESLUG_DIST_DIR', 'dist'); // Distribution directory (build output)
-define('THEMESLUG_EDITOR_CSS_PATH', THEMESLUG_DIST_DIR . '/css/editor.css');
-define('THEMESLUG_EDITOR_JS_DIR', THEMESLUG_ASSETS_DIR . '/js/editor/');
-define('THEMESLUG_FRONTEND_JS_DIR', THEMESLUG_ASSETS_DIR . '/js/frontend/');
-define('THEMESLUG_THEME_CSS_PATH', THEMESLUG_DIST_DIR . '/css/theme.css');
+// --- Base Theme Paths ---
+// Use get_template_directory() for server-side file includes (e.g., require, filemtime)
+define('THEMESLUG_THEME_PATH', get_template_directory());
+// Use get_template_directory_uri() for browser-side assets (CSS, JS, images)
+define('THEMESLUG_THEME_URL', get_template_directory_uri());
+
+// --- Directory Names ---
+define('THEMESLUG_ASSETS_DIR_NAME', 'assets');
+define('THEMESLUG_DIST_DIR_NAME', 'dist');
+
+// --- Full URLs (for enqueuing scripts and styles) ---
+define(
+	'THEMESLUG_ASSETS_URL',
+	THEMESLUG_THEME_URL . '/' . THEMESLUG_ASSETS_DIR_NAME,
+);
+define(
+	'THEMESLUG_DIST_URL',
+	THEMESLUG_THEME_URL . '/' . THEMESLUG_DIST_DIR_NAME,
+);
+
+// --- Full Server Paths (for including files) ---
+define(
+	'THEMESLUG_DIST_PATH',
+	THEMESLUG_THEME_PATH . '/' . THEMESLUG_DIST_DIR_NAME,
+);
+
+// --- Specific Asset URLs (Built from the constants above) ---
+define('THEMESLUG_EDITOR_JS_URL', THEMESLUG_ASSETS_URL . '/js/editor/');
+define('THEMESLUG_FRONTEND_JS_URL', THEMESLUG_ASSETS_URL . '/js/frontend/');
+define('THEMESLUG_THEME_SVG_URL', THEMESLUG_DIST_URL . '/svg/');
+// Theme stylesheet: The URL for enqueuing in the browser
+define('THEMESLUG_THEME_STYLESHEET_URL', THEMESLUG_DIST_URL . '/css/theme.css');
+define(
+	'THEMESLUG_EDITOR_STYLESHEET_URL',
+	THEMESLUG_DIST_URL . '/css/editor.css',
+);
+// Theme stylesheet: The Server Path for cache-busting (filemtime)
+define(
+	'THEMESLUG_THEME_STYLESHEET_PATH',
+	THEMESLUG_DIST_PATH . '/css/theme.css',
+);
+
+// --- Handle ---
 define('THEMESLUG_THEME_HANDLE', 'themeslug-styles');
 
 // Helper Functions

@@ -23,7 +23,7 @@
  */
 function themeslug_add_theme_css_for_plugin_css_class_manager($css) {
 	// Construct the absolute path to the theme's compiled stylesheet.
-	$stylesheet_path = get_theme_file_path(THEMESLUG_THEME_CSS_PATH);
+	$stylesheet_path = get_theme_file_path(THEMESLUG_THEME_STYLESHEET_PATH);
 
 	// Before proceeding, verify the stylesheet file actually exists to prevent errors.
 	if (file_exists($stylesheet_path)) {

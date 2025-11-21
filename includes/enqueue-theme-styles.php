@@ -15,8 +15,8 @@
  */
 function themeslug_enqueue_theme_styles() {
 	$handle = THEMESLUG_THEME_HANDLE;
-	$src = get_theme_file_uri(THEMESLUG_THEME_CSS_PATH);
-	$version = themeslug_asset_version(THEMESLUG_THEME_CSS_PATH);
+	$src = get_theme_file_uri(THEMESLUG_THEME_STYLESHEET_URL);
+	$version = themeslug_asset_version(THEMESLUG_THEME_STYLESHEET_PATH);
 	$deps = [];
 
 	/**
@@ -45,8 +45,8 @@ add_action('wp_enqueue_scripts', 'themeslug_enqueue_theme_styles', 20);
  */
 function themeslug_add_editor_styles() {
 	add_editor_style([
-		get_theme_file_uri(THEMESLUG_THEME_CSS_PATH),
-		get_theme_file_uri(THEMESLUG_EDITOR_CSS_PATH),
+		get_theme_file_uri(THEMESLUG_THEME_STYLESHEET_URL),
+		get_theme_file_uri(THEMESLUG_EDITOR_STYLESHEET_URL),
 	]);
 }
 add_action('after_setup_theme', 'themeslug_add_editor_styles');

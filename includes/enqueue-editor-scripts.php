@@ -9,7 +9,7 @@
  * @package themeslug
  */
 function themeslug_enqueue_editor_scripts() {
-	$editor_scripts_dir = THEMESLUG_EDITOR_JS_DIR;
+	$editor_scripts_dir = THEMESLUG_EDITOR_JS_URL;
 
 	// List of the JS files (filenames only, located under $editor_scripts_dir).
 	$files = ['block-variations.js', 'block-style-variations.js'];
