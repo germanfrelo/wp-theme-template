@@ -1,6 +1,9 @@
 /* ===================================================================
 CARD
 ---
+Resources:
+- https://inclusive-components.design/cards/
+---
 Notes:
 - To customize most of this block and its parts, use the custom properties.
 =================================================================== */
@@ -15,5 +18,50 @@ Notes:
 
 	:is(h1, h2, h3, h4, h5, h6) {
 		text-wrap: pretty;
+	}
+}
+
+.card.is-clickable {
+	--cover-background-background: linear-gradient(45deg, hsl(0deg 0% 0% / 80%) 0%, hsl(0deg 0% 0% / 0%) 100%);
+	--cover-background-opacity: 0;
+	--cover-focus-shadow: 0 0 0 0.25rem var(--color-accent, currentcolor);
+
+	/* Cover background */
+
+	> .wp-block-cover__background {
+		background: var(--cover-background-background, initial);
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition-duration: var(--transition-duration);
+			transition-property: opacity;
+		}
+	}
+
+	/* Cover background when is hovered or the Post Title link child is focused */
+
+	&:is(:hover, :focus-within) {
+		--cover-background-opacity: 1;
+	}
+
+	/* Make the whole block interactive if it has a Post Title as link */
+
+	&:has(.wp-block-post-title > a:where([href])) {
+		position: relative;
+	}
+
+	/* Cover when the Post Title link child is focused */
+
+	&:has(.wp-block-post-title > a:where([href])):focus-within {
+		box-shadow: var(--cover-focus-shadow, initial);
+	}
+
+	.wp-block-post-title > a:where([href]) {
+		/* text-decoration: none; */
+	}
+
+	.wp-block-post-title > a:where([href])::after {
+		position: absolute;
+		inset: 0;
+		content: "";
 	}
 }
