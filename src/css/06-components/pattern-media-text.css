@@ -1,9 +1,9 @@
 /* ===================================================================
-PATTERN IMAGE-CONTENT
+PATTERN MEDIA-TEXT
 =================================================================== */
 
-.pattern-image-content-container {
-	container: pattern-image-content / inline-size;
+.media-text-container {
+	container: media-text / inline-size;
 	overflow: hidden;
 	resize: horizontal;
 
@@ -14,27 +14,27 @@ PATTERN IMAGE-CONTENT
 		object-fit: cover;
 	}
 
-	@container pattern-image-content (width > 50rem) {
+	@container media-text (width > 50rem) {
 		.wp-block-image img {
 			aspect-ratio: auto;
 		}
 	}
 
 	&:nth-of-type(1) {
-		@container pattern-image-content (width > 50rem) {
-			.pattern-image-content {
+		@container media-text (width > 50rem) {
+			.media-text {
 				display: flex;
 			}
 		}
 	}
 
 	&:nth-of-type(2) {
-		.pattern-image-content {
+		.media-text {
 			display: grid;
 		}
 
-		@container pattern-image-content (width > 50rem) {
-			.pattern-image-content {
+		@container media-text (width > 50rem) {
+			.media-text {
 				grid-template-columns: auto auto;
 			}
 		}
