@@ -1,0 +1,34 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","flexWrap":"nowrap"}} -->
+<main class="wp-block-group">
+	<!-- wp:group {"align":"wide","className":"region","style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide region">
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignwide">
+			<!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"text-box-trim-start"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group">
+			<!-- wp:details {"className":"is-style-browser-default"} -->
+			<details class="wp-block-details is-style-browser-default">
+				<summary>Design System Pages</summary>
+				<!-- wp:page-list /-->
+			</details>
+			<!-- /wp:details -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:separator -->
+		<hr class="wp-block-separator has-alpha-channel-opacity" />
+		<!-- /wp:separator -->
+
+		<!-- wp:post-content {"align":"full","className":"prose","layout":{"type":"constrained"}} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

@@ -1,0 +1,84 @@
+/* ===================================================================
+Component Design Tokens
+=================================================================== */
+
+html {
+	/* Button */
+	--button-background-color: var(--color-accent);
+	--button-font-weight: var(--type-body-weight-medium);
+	--button-icon-image: url("../../svg/icon-arrow-right.svg");
+	--button-letter-spacing: var(--kerning-caps);
+	--button-text-color: var(--color-on-accent);
+	--button-text-transform: uppercase;
+	--button-border-radius: var(--corner-radius-2xs);
+
+	/* Details (WP block) */
+	--details-border-radius: var(--corner-radius-s);
+	--details-summary-marker-color: var(--color-accent);
+	--details-summary-marker-image-closed: url("../../svg/icon-plus.svg");
+	--details-summary-marker-image-open: url("../../svg/icon-line-solid.svg");
+	--details-summary-marker-size: 2cap;
+
+	/* Form Field */
+	--field-accent-color: var(--color-accent);
+	--field-error-text-color: var(--color-error);
+
+	/* Headings (Fonts) */
+	--heading-font-family: var(--type-display-family);
+	--heading-font-weight: var(--type-display-weight);
+	--heading-line-height: var(--leading-slim);
+
+	/* Headings (Text Sizes) */
+	--h1-font-size: var(--text-size-4xl);
+	--h1-line-height: normal;
+	--h2-font-size: var(--text-size-3xl);
+	--h2-line-height: normal;
+	--h3-font-size: var(--text-size-2xl);
+	--h3-line-height: normal;
+	--h4-font-size: var(--text-size-xl);
+	--h4-line-height: normal;
+	--h5-font-size: var(--text-size-l);
+	--h5-line-height: normal;
+	--h6-font-size: var(--text-size-m);
+	--h6-line-height: normal;
+
+	/* Lede */
+	--lede-font-size: var(--text-size-l);
+
+	/* Link */
+	--link-text-color: var(--color-accent);
+	--link-decoration-color-focus: transparent;
+
+	/* Lists: Description */
+	--dl-gap: calc(var(--block-gap, 1em) / 2);
+
+	/* Lists: Ordered & Unordered */
+	--list-gap: calc(var(--block-gap, 1em) / 3);
+	--ul-item-indentation: 0.5ch;
+
+	/* Nav */
+
+	/* Nav Link */
+	--nav-link-external-icon-image: url("../../svg/icon-arrow-up-right.svg");
+	--nav-link-external-icon-size: 2cap;
+
+	/* Post */
+
+	/* Post Date */
+
+	/* Post Terms */
+	--post-term-border-radius: var(--corner-radius-2xs);
+
+	/* Query Pagination */
+
+	/* Quote */
+	--quote-max-inline-size: var(--measure);
+	--quote-text-wrap: balance;
+
+	/* Separator */
+	--separator-border: var(--border);
+
+	/* Site Header */
+
+	/* Social Link */
+}

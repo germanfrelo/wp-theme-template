@@ -1,0 +1,15 @@
+/* ===================================================================
+FIGURE AND OPTIONAL CAPTION
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figure
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/figcaption
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+figcaption {
+	font-size: var(--figcaption-font-size, var(--text-size-s));
+	text-wrap: pretty;
+}

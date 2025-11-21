@@ -1,0 +1,50 @@
+/* ===================================================================
+WP BLOCK POST AUTHOR
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-author
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-author
+---
+Variables:
+--post-author-avatar-border-radius
+--post-author-avatar-size
+--post-author-bio-font-size
+--post-author-byline-font-size
+--post-author-gap
+--post-author-name-font-size
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-post-author {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--post-author-gap, 1ch);
+
+	&:has(.wp-block-post-author__content > :only-child) {
+		align-items: center;
+	}
+
+	/* Bio */
+	.wp-block-post-author__bio {
+		font-size: var(--post-author-bio-font-size, var(--text-size-xs));
+	}
+
+	/* Byline */
+	.wp-block-post-author__byline {
+		font-size: var(--post-author-byline-font-size, var(--text-size-xs));
+	}
+
+	/* Name */
+	.wp-block-post-author__name {
+		--link-text-color: currentcolor;
+		font-size: var(--post-author-name-font-size, var(--text-size-s));
+	}
+
+	/* Avatar */
+	.wp-block-post-author__avatar img {
+		inline-size: var(--post-author-avatar-size);
+		border-radius: var(--post-author-avatar-border-radius);
+	}
+}

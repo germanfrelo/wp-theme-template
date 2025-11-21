@@ -1,7 +1,7 @@
 # Ignore these commits when running `git blame`.
 #
 # This file lists commit hashes that should be ignored by `git blame`.
-# These revisions consist of large, often automated, code formatting changes.
+# These revisions usually consist of code formatting changes.
 #
 # To enable this locally, run this command once in your terminal:
 # git config blame.ignoreRevsFile .git-blame-ignore-revs

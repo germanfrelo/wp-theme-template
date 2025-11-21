@@ -1,0 +1,35 @@
+/* ===================================================================
+WP BLOCK NAVIGATION LINK
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation-link
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/navigation-link
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* ===================================================================
+Variant: External
+=================================================================== */
+
+.wp-block-navigation-link.is-style-navigation-link-external {
+	.wp-block-navigation-item__label {
+		display: inline-flex;
+		gap: var(--nav-link-external-icon-margin, 1ch);
+		align-items: center;
+
+		/* Add an icon after the text. To render it before, change '::after' to '::before'. */
+		&::after {
+			display: inline-block;
+			flex-shrink: 0;
+			inline-size: var(--nav-link-external-icon-size, 1em);
+			block-size: var(--nav-link-external-icon-size, 1em);
+			content: "";
+			background-color: var(--nav-link-external-icon-color, currentcolor);
+			mask-image: var(--nav-link-external-icon-image);
+			mask-position: center;
+			mask-size: contain;
+		}
+	}
+}

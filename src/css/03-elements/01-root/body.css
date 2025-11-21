@@ -1,0 +1,20 @@
+/* ===================================================================
+BODY
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/body
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+body {
+	font-family: var(--body-font-family, sans-serif);
+	font-size: var(--body-font-size);
+	font-weight: var(--body-font-weight);
+	line-height: var(--body-line-height);
+	color: var(--body-text-color);
+	accent-color: var(--field-accent-color);
+	background-color: var(--body-background-color);
+	-webkit-font-smoothing: antialiased;
+}

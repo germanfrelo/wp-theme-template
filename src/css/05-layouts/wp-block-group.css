@@ -1,0 +1,15 @@
+/* ===================================================================
+WP BLOCK GROUP
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/group
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/group
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* Needed so groups with negative margins overlap as expected. */
+:where(.wp-block-group.wp-block-group-is-layout-constrained) {
+	position: relative;
+}

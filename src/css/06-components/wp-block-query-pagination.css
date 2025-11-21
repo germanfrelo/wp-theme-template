@@ -1,0 +1,147 @@
+/* ===================================================================
+WP BLOCK QUERY PAGINATION
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination-next
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination-numbers
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query-pagination-previous
+
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/query-pagination
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/query-pagination-next
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/query-pagination-numbers
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/query-pagination-previous
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+---
+DOM structure:
+
+nav.wp-block-query-pagination
+- a.wp-block-query-pagination-previous
+- div.wp-block-query-pagination-numbers
+  - span.page-numbers.current[aria-current="page"]
+  - a.page-numbers
+- a.wp-block-query-pagination-next
+---
+Variables:
+
+--pagination-font-size
+--pagination-font-weight
+--pagination-gap-columns
+--pagination-gap-rows
+--pagination-item-background-color
+--pagination-item-border-color
+--pagination-item-border-radius
+--pagination-item-border-style
+--pagination-item-border-width
+--pagination-item-gap-columns
+--pagination-item-gap-rows
+--pagination-item-min-size
+--pagination-item-padding-block
+--pagination-item-padding-inline
+--pagination-number-background-color
+--pagination-number-border-color
+--pagination-number-border-radius
+--pagination-number-border-style
+--pagination-number-border-width
+--pagination-number-padding-block
+--pagination-number-padding-inline
+--pagination-numbers-align-items
+--pagination-numbers-flex-wrap
+--pagination-numbers-gap-columns
+--pagination-numbers-gap-rows
+--pagination-numbers-justify-content
+--pagination-prev-next-background-color
+--pagination-prev-next-border-color
+--pagination-prev-next-border-radius
+--pagination-prev-next-border-style
+--pagination-prev-next-border-width
+--pagination-prev-next-gap-columns
+--pagination-prev-next-gap-rows
+--pagination-prev-next-padding-block
+--pagination-prev-next-padding-inline
+=================================================================== */
+
+.wp-block-query-pagination {
+	--link-decoration-color: transparent;
+	row-gap: var(--pagination-gap-rows, 0.5em);
+	column-gap: var(--pagination-gap-columns, 1ch);
+	font-size: var(--pagination-font-size);
+	font-weight: var(--pagination-font-weight);
+
+	/* -----------------------------------------------
+	Numbers, Previous, and Next
+	----------------------------------------------- */
+
+	.wp-block-query-pagination-numbers > .page-numbers,
+	.wp-block-query-pagination-previous,
+	.wp-block-query-pagination-next {
+		display: inline-flex;
+		flex-wrap: wrap;
+		place-content: center;
+		min-inline-size: var(--pagination-item-min-size, 24px);
+		min-block-size: var(--pagination-item-min-size, 24px);
+		line-height: 1;
+		text-align: center;
+	}
+
+	/* -----------------------------------------------
+	Numbers
+	----------------------------------------------- */
+
+	.wp-block-query-pagination-numbers {
+		display: flex;
+		flex-wrap: var(--pagination-numbers-flex-wrap, wrap);
+		row-gap: var(--pagination-numbers-gap-rows, inherit);
+		column-gap: var(--pagination-numbers-gap-columns, inherit);
+		align-items: var(--pagination-numbers-align-items, inherit);
+		justify-content: var(--pagination-numbers-justify-content, inherit);
+
+		/* Each Page Number including the dots/ellipsis */
+		> .page-numbers {
+			padding-block: var(--pagination-number-padding-block, var(--pagination-item-padding-block, 0.25em));
+			padding-inline: var(--pagination-number-padding-inline, var(--pagination-item-padding-inline, 0.5ch));
+			background-color: var(--pagination-number-background-color, var(--pagination-item-background-color));
+			border-color: var(--pagination-number-border-color, var(--pagination-item-border-color));
+			border-style: var(--pagination-number-border-style, var(--pagination-item-border-style, solid));
+			border-width: var(--pagination-number-border-width, var(--pagination-item-border-width, 0));
+			border-radius: var(--pagination-number-border-radius, var(--pagination-item-border-radius));
+
+			/* Current (Active) Page Number */
+			/* &[aria-current="page"] {} */
+
+			/* Dots/Ellipsis ("...") */
+			/* &.dots {} */
+
+			/* Hover states for clickable page numbers */
+			/* a&:hover {} */
+		}
+	}
+
+	/* -----------------------------------------------
+	Previous and Next
+	----------------------------------------------- */
+
+	:is(.wp-block-query-pagination-previous, .wp-block-query-pagination-next) {
+		row-gap: var(--pagination-prev-next-gap-rows, var(--pagination-item-gap-rows, 0.5em));
+		column-gap: var(--pagination-prev-next-gap-columns, var(--pagination-item-gap-columns, 1ch));
+		padding-block: var(--pagination-prev-next-padding-block, var(--pagination-item-padding-block, 0.25em));
+		padding-inline: var(--pagination-prev-next-padding-inline, var(--pagination-item-padding-inline, 0.5ch));
+		background-color: var(--pagination-prev-next-background-color, var(--pagination-item-background-color));
+		border-color: var(--pagination-prev-next-border-color, var(--pagination-item-border-color));
+		border-style: var(--pagination-prev-next-border-style, var(--pagination-item-border-style, solid));
+		border-width: var(--pagination-prev-next-border-width, var(--pagination-item-border-width, 0));
+		border-radius: var(--pagination-prev-next-border-radius, var(--pagination-item-border-radius));
+
+		/* &a:hover {} */
+	}
+
+	/* -----------------------------------------------
+	Next
+	----------------------------------------------- */
+
+	.wp-block-query-pagination-next {
+		flex-wrap: wrap-reverse; /* On wrap, stack text above the arrow icon */
+	}
+}

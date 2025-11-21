@@ -1,0 +1,70 @@
+/* ===================================================================
+Line Clamp
+---
+Limits text to a specified number of lines, adding an ellipsis (…) by default.
+---
+Configuration:
+--line-clamp-number: Defines the maximum number of lines of the block.
+---
+Usage:
+- Use only the classes (e.g., '.line-clamp-3', '.line-clamp-none', etc.).
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp
+=================================================================== */
+
+/* --- Base Styles — DO NOT USE --- */
+
+[class*="line-clamp"] {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--line-clamp-number);
+	line-clamp: var(--line-clamp-number);
+}
+
+/* --- Line Limits — USE THESE --- */
+
+.line-clamp-1 {
+	--line-clamp-number: 1;
+}
+
+.line-clamp-2 {
+	--line-clamp-number: 2;
+}
+
+.line-clamp-3 {
+	--line-clamp-number: 3;
+}
+
+.line-clamp-4 {
+	--line-clamp-number: 4;
+}
+
+.line-clamp-5 {
+	--line-clamp-number: 5;
+}
+
+.line-clamp-6 {
+	--line-clamp-number: 6;
+}
+
+.line-clamp-7 {
+	--line-clamp-number: 7;
+}
+
+.line-clamp-8 {
+	--line-clamp-number: 8;
+}
+
+.line-clamp-9 {
+	--line-clamp-number: 9;
+}
+
+.line-clamp-none {
+	/* Reverting '-webkit-box-orient' is not necessary because of 'display:revert' */
+	display: revert;
+	overflow: revert;
+	-webkit-line-clamp: revert;
+	line-clamp: revert;
+}

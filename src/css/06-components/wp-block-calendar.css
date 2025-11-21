@@ -1,0 +1,22 @@
+/* ===================================================================
+WP BLOCK CALENDAR
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/calendar
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/calendar
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-calendar {
+	table {
+		--table-cell-padding-block: 0.25em;
+		--table-cell-padding-inline: 0.25rem;
+		text-align: center;
+
+		&.has-background caption {
+			background-color: inherit;
+		}
+	}
+}

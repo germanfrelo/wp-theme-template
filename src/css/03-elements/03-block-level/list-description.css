@@ -1,0 +1,26 @@
+/* ===================================================================
+DESCRIPTION LIST
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dl
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+dt {
+	font-weight: var(--dt-font-weight, bolder);
+}
+
+dd {
+	margin-inline-start: var(--dd-indentation, 2ch);
+}
+
+dt + dd {
+	margin-block-start: var(--dt-dd-gap);
+}
+
+dd + dt,
+dl > div:has(> dt ~ dd) + div:has(> dt ~ dd) {
+	margin-block-start: var(--dl-gap, var(--block-gap, 1em));
+}

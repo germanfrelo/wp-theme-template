@@ -1,0 +1,47 @@
+/* ===================================================================
+BREAKPOINTS
+---
+Reusable custom media queries[^1] that define layout breakpoints at useful viewport widths.
+---
+Notes:
+- IMPORTANT: Custom Media Queries are not yet implemented by any browser. These work because 'postcss' and 'postcss-custom-media'[^2] are installed and configured in the theme.
+- The range syntax is used to avoid issues with fractional-scaling gaps and overlapping values.[^3]
+- The 'rem' unit is used instead of 'px' for accessibility and usability.[^4]
+---
+References:
+[^1]: https://drafts.csswg.org/mediaqueries-5/#custom-mq
+[^2]: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-media
+[^3]: https://cssence.com/2024/superior-range-syntax/
+[^4]: https://joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
+=================================================================== */
+
+/* -----------------------------------------------
+Global Breakpoints
+----------------------------------------------- */
+
+/* 384px */
+@custom-media --xs-max (width < 24rem);
+@custom-media --xs-min (width >= 24rem);
+
+/* 576px */
+@custom-media --sm-max (width < 36rem);
+@custom-media --sm-min (width >= 36rem);
+
+/* 768px */
+@custom-media --md-max (width < 48rem);
+@custom-media --md-min (width >= 48rem);
+
+/* 1024px */
+@custom-media --lg-max (width < 64rem);
+@custom-media --lg-min (width >= 64rem);
+
+/* 1280px */
+@custom-media --xl-max (width < 80rem);
+@custom-media --xl-min (width >= 80rem);
+
+/* -----------------------------------------------
+Navigation Breakpoints
+----------------------------------------------- */
+
+@custom-media --nav-collapsed (width < 55rem);
+@custom-media --nav-expanded (width >= 55rem);

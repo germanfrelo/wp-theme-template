@@ -1,0 +1,39 @@
+/* ===================================================================
+Has Background Color
+---
+Accessible Text Color Overrides for WP Background Utilities.
+Provide small, targeted accessibility and UI overrides for WordPress-
+generated background utility classes (for example: `.has-accent-background-color`,
+`.has-surface-background-color`, and `.has-on-surface-background-color`). When
+the site editor applies a background preset, these rules ensure readable
+foreground text and sensible UI token values for buttons and link
+decorations so editors do not need to manually correct contrast for each
+background choice.
+---
+References:
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast
+- https://developer.wordpress.org/themes/global-settings-and-styles/settings/color/#registering-custom-color-presets
+=================================================================== */
+
+.has-surface-background-color {
+	color: var(--color-on-surface) !important;
+}
+
+.has-on-surface-background-color {
+	--button-background-color: var(--color-black);
+	--button-text-color: var(--color-white);
+	--button-text-color-hover: var(--color-accent);
+	color: var(--color-surface) !important;
+}
+
+.has-accent-background-color {
+	--button-background-color: var(--color-black);
+	--button-text-color: var(--color-white);
+	--button-text-color-hover: var(--color-accent);
+	--link-decoration-color: currentcolor;
+	color: var(--color-on-accent) !important;
+
+	&span {
+		padding-inline: 0.5ch;
+	}
+}

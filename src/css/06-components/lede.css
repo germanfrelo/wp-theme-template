@@ -1,0 +1,25 @@
+/* ===================================================================
+LEDE
+---
+An introductory paragraph that summarizes the main ideas of the content on a page.
+@link https://www.google.com/search?q=lead+lede+paragraph
+---
+Variables:
+--lede-measure
+--lede-font-size
+--lede-font-style
+--lede-line-height
+--lede-block-gap
+=================================================================== */
+
+.lede {
+	max-inline-size: var(--lede-measure);
+	font-size: var(--lede-font-size);
+	font-style: var(--lede-font-style);
+	line-height: var(--lede-line-height);
+	text-wrap: pretty;
+}
+
+.lede > * {
+	--block-gap: var(--lede-block-gap, 1lh);
+}

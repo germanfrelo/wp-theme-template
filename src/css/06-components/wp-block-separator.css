@@ -1,0 +1,16 @@
+/* ===================================================================
+WP BLOCK SEPARATOR
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/separator
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/separator
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+- The WP block Separator can be rendered as <hr> or as <div>.
+=================================================================== */
+
+.wp-block-separator {
+	border: none;
+	border-block-start: var(--separator-border, 2px solid);
+}

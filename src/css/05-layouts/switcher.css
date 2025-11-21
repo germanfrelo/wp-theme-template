@@ -1,0 +1,88 @@
+/* ===================================================================
+Title:       Switcher
+Description: A layout that switches a Flexbox context directly between a horizontal (one row) and a vertical (one column) layout, at a given container-based breakpoint, bypassing the intermediary states. That is, if the breakpoint is 30rem, the layout will switch to a vertical configuration when the parent element is less than 30rem wide.
+Reference:   https://every-layout.dev/layouts/switcher/
+---
+Variables:
+
+--switcher-wrap
+	Description: A 'flex-wrap' value. Use 'wrap' or 'wrap-reverse'.
+	             IMPORTANT: Don't use 'nowrap' because that would make using this layout useless.
+	Type:        'wrap' | 'wrap-reverse'.
+	Default:     wrap
+
+--switcher-gap-columns
+	Description: The gap between columns.
+	Type:        A valid 'column-gap' value.
+	Default:     var(--block-gap, 0)
+
+--switcher-gap-rows
+	Description: The gap between rows.
+	Type:        A valid 'row-gap' value.
+	Default:     var(--block-gap, 0)
+
+--switcher-align-content
+	Description: Sets the distribution of space between and around content items along the cross axis,
+	Type:        A valid 'align-content' value.
+	Default:     start
+
+--switcher-align-items
+	Description: Controls the alignment of items on the cross axis (sets the 'align-self' value on all direct children as a group).
+	Type:        A valid 'align-items' value.
+	Default:     stretch
+
+--switcher-justify-content
+	Description: Sets the distribution of space between and around content items along the main axis.
+	Type:        A valid 'justify-content' value.
+	Default:     start
+
+--switcher-target-container-width
+	Description: How large the container needs to be to allow items to sit inline with each other.
+	Type:        A valid '<length>' value.
+	Default:     var(--_switcher-target-container-width-default, 40rem)
+=================================================================== */
+
+.switcher {
+	--_switcher-target-container-width-default: 40rem;
+	display: flex;
+	flex-wrap: var(--switcher-wrap, wrap);
+	row-gap: var(--switcher-gap-rows, var(--block-gap, 0));
+	column-gap: var(--switcher-gap-columns, var(--block-gap, 0));
+	align-content: var(--switcher-align-content, start);
+	align-items: var(--switcher-align-items, stretch);
+	justify-content: var(--switcher-justify-content, start);
+
+	> * {
+		flex-grow: 1;
+		flex-basis: calc(
+			(var(--switcher-target-container-width, var(--_switcher-target-container-width-default, 40rem)) - 100%) * 999
+		);
+		max-inline-size: 100%;
+		margin: 0;
+	}
+
+	/* Max 2 items, so anything greater than 2 is full width */
+	&:is(:not([data-switcher-limit]), [data-switcher-limit="2"]) {
+		& > :is(:nth-last-child(n + 3), :nth-last-child(n + 3) ~ *) {
+			flex-basis: 100%;
+		}
+	}
+
+	/* Max 3 items, so anything greater than 3 is full width */
+	&[data-switcher-limit="3"] {
+		--_switcher-target-container-width-default: 45rem;
+
+		& > :is(:nth-last-child(n + 4), :nth-last-child(n + 4) ~ *) {
+			flex-basis: 100%;
+		}
+	}
+
+	/* Max 4 items, so anything greater than 4 is full width */
+	&[data-switcher-limit="4"] {
+		--_switcher-target-container-width-default: 50rem;
+
+		& > :is(:nth-last-child(n + 5), :nth-last-child(n + 5) ~ *) {
+			flex-basis: 100%;
+		}
+	}
+}

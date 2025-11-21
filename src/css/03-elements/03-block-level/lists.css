@@ -1,0 +1,165 @@
+/* ===================================================================
+LISTS (ORDERED & UNORDERED)
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ol
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ul
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/list
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/list
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* ===================================================================
+ORDERED LIST
+=================================================================== */
+
+ol {
+	&:where(:not([class])),
+	&:where([class*="wp-block-"][class*="-list"]) {
+		padding-inline-start: var(--ol-indentation, revert);
+		line-height: var(--ol-leading, var(--list-leading));
+		list-style-type: var(--ol-marker, revert);
+
+		li + li,
+		li > ol {
+			margin-block-start: var(--ol-items-gap, var(--list-gap));
+		}
+
+		::marker {
+			color: var(--ol-item-marker-color, var(--list-item-marker-color));
+		}
+	}
+}
+
+/* -----------------------------------------------
+Variant: Custom Marker
+----------------------------------------------- */
+
+ol.wp-block-list.is-style-list-custom-marker {
+	--ol-indentation: 0;
+	--ol-marker: "";
+	counter-reset: ol-custom-counter;
+
+	> li {
+		display: flex;
+		row-gap: 1.5ch;
+		column-gap: 1.5ch;
+		align-items: baseline;
+		counter-increment: ol-custom-counter;
+
+		&::before {
+			display: inline-grid;
+			place-content: center;
+			aspect-ratio: 1;
+			padding: 0.5em;
+			font-size: var(--text-size-s, inherit);
+			font-weight: bolder;
+			line-height: 0;
+			color: var(--color-accent, currentcolor);
+			content: counter(ol-custom-counter);
+			background-color: transparent;
+			border-style: solid;
+			border-width: var(--border-width-thin, thin);
+			border-radius: 50%;
+		}
+	}
+}
+
+/* ===================================================================
+UNORDERED LIST
+=================================================================== */
+
+ul {
+	&:where(:not([class])),
+	&:where([class*="wp-block-"][class*="-list"]) {
+		padding-inline-start: var(--ul-indentation, revert);
+		line-height: var(--ul-leading, var(--list-leading));
+		list-style-type: var(--ul-marker, revert);
+
+		li {
+			padding-inline-start: var(--ul-item-indentation);
+		}
+
+		li + li,
+		li > ul {
+			margin-block-start: var(--ul-items-gap, var(--list-gap));
+		}
+
+		::marker {
+			color: var(--ul-item-marker-color, var(--list-item-marker-color));
+		}
+	}
+}
+
+/* -----------------------------------------------
+Variant: Custom Marker
+----------------------------------------------- */
+
+ul.wp-block-list.is-style-list-custom-marker {
+	--_list-item-custom-marker-image: url("../../svg/icon-check.svg");
+	--_list-item-custom-marker-size: 2cap;
+	--list-gap: 1em;
+	--list-leading: var(--leading-base);
+	--ul-indentation: 0;
+	--ul-item-indentation: calc(var(--_list-item-custom-marker-size, 1em) + var(--_list-item-custom-marker-margin, 1em));
+	--ul-marker: "";
+
+	/* The custom marker */
+	> li {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			inset-block-start: 0.25lh;
+			inset-inline-start: 0;
+			display: inline-block;
+			flex-shrink: 0;
+			inline-size: var(--_list-item-custom-marker-size, 1em);
+			block-size: var(--_list-item-custom-marker-size, 1em);
+			content: "";
+			background-color: var(--_list-item-marker-color, currentcolor);
+			mask-image: var(--_list-item-custom-marker-image);
+			mask-position: center;
+			mask-size: contain;
+		}
+	}
+
+	/* Add an horizontal line between items */
+	> li:not(:last-child)::after {
+		display: block;
+		margin-block-start: var(--list-gap);
+		content: "";
+		border-block-end: var(--border, thin solid);
+	}
+}
+
+/* ===================================================================
+UNSTYLED LISTS
+=================================================================== */
+
+/*
+Remove default styles of lists in specific contexts where they are expected to be out of the normal flow (flow layout).
+Note: Using an empty string instead of 'none' for 'list-style-type' preserves accessibility in Safari. Ref: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+*/
+nav:not(.wp-block-table-of-contents) :is(ol, ul),
+:is(ol, ul):is(
+	[role="list"],
+	[role="tablist"],
+	.reel,
+	.wp-block-latest-comments,
+	.wp-block-latest-posts,
+	.wp-block-navigation,
+	.wp-block-post-template,
+	.wp-block-social-links,
+
+) {
+	--list-gap: 0;
+	--list-leading: inherit;
+	--ul-item-indentation: 0;
+	padding-inline-start: 0;
+	list-style-type: "";
+}

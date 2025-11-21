@@ -1,0 +1,45 @@
+/* ===================================================================
+Title:       Repel
+Description: A layout that pushes items away from each other where there is space in the viewport and stacks on small viewports.
+Reference:   https://piccalil.li/blog/reality-check-1-building-out-a-furniture-site-from-dribbble/#repel
+---
+Variables:
+
+--repel-gap-columns
+	Description: The gap between columns.
+	Type:        A valid 'column-gap' value.
+	Default:     var(--block-gap, 1em)
+
+--repel-gap-rows
+	Description: The gap between rows.
+	Type:        A valid 'row-gap' value.
+	Default:     var(--block-gap, 1em)
+
+--repel-horizontal-alignment
+	Description: How items should align horizontally.
+	Type:        A valid 'justify-content' value.
+	Default:     space-between
+
+--repel-vertical-alignment
+	Description: How items should align vertically.
+	Type:        A valid 'align-items' value.
+	Default:     center
+
+--repel-wrap
+	Description: A 'flex-wrap' value.
+	Type:        A valid 'flex-wrap' value.
+	Default:     wrap
+=================================================================== */
+
+.repel {
+	display: flex;
+	flex-wrap: var(--repel-wrap, wrap);
+	row-gap: var(--repel-gap-rows, var(--block-gap, 1em));
+	column-gap: var(--repel-gap-columns, var(--block-gap, 1em));
+	align-items: var(--repel-vertical-alignment, stretch);
+	justify-content: var(--repel-horizontal-alignment, space-between);
+
+	> * {
+		margin: 0;
+	}
+}

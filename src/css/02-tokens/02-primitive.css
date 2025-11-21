@@ -1,0 +1,201 @@
+/* ===================================================================
+Primitive Design Tokens
+=================================================================== */
+
+html {
+	/* -----------------------------------------------
+	Border Widths
+	----------------------------------------------- */
+
+	--border-width-thin: 1px;
+	--border-width-medium: 2px;
+	--border-width-thick: 4px;
+
+	/* -----------------------------------------------
+	Colors
+	----------------------------------------------- */
+
+	--color-black: hsl(224deg 20% 10%);
+	--color-white: hsl(229deg 0% 100%);
+	--color-gray-50: hsl(224deg 28% 97%);
+	--color-gray-200: hsl(224deg 9% 90%);
+	--color-gray-300: hsl(224deg 5% 84%);
+	--color-blue: hsl(229deg 80% 56%);
+	--color-green: hsl(174deg 100% 23%);
+
+	/* -----------------------------------------------
+	Color Gradients
+	----------------------------------------------- */
+
+	/* TODO: Refactor (ref: https://tailwindcss.com/docs/background-image#adding-a-linear-gradient) */
+
+	--gradient-blue-to-green-vertical: linear-gradient(180deg in oklab, var(--color-blue) 0%, var(--color-green) 100%);
+	--gradient-blue-to-green-diagonal: linear-gradient(135deg in oklab, var(--color-blue) 0%, var(--color-green) 100%);
+	--gradient-blue-to-green-horizontal: linear-gradient(90deg in oklab, var(--color-blue) 0%, var(--color-green) 100%);
+	--gradient-green-to-blue-vertical: linear-gradient(180deg in oklab, var(--color-green) 0%, var(--color-blue) 100%);
+	--gradient-green-to-blue-diagonal: linear-gradient(135deg in oklab, var(--color-green) 0%, var(--color-blue) 100%);
+	--gradient-green-to-blue-horizontal: linear-gradient(90deg in oklab, var(--color-green) 0%, var(--color-blue) 100%);
+
+	/* -----------------------------------------------
+	Corner Radiuses
+	----------------------------------------------- */
+
+	--corner-radius-2xs: 0.125rem;
+	--corner-radius-xs: 0.25rem;
+	--corner-radius-s: 0.5rem;
+	--corner-radius-m: 0.75rem;
+	--corner-radius-l: 1rem;
+	--corner-radius-xl: 1.5rem;
+	--corner-radius-2xl: 2rem;
+	--corner-radius-3xl: 3rem;
+	--corner-radius-round: 9999rem;
+
+	/* -----------------------------------------------
+	Fonts
+	----------------------------------------------- */
+
+	--type-body-family: "Atkinson Hyperlegible Next", sans-serif;
+	--type-body-weight-light: 300;
+	--type-body-weight-normal: 400;
+	--type-body-weight-medium: 500;
+	--type-body-weight-bold: 700;
+	--type-display-family: "Inter", sans-serif;
+	--type-display-weight: 800;
+	--type-mono-family: "JetBrains Mono", monospace;
+	--type-mono-weight: 400;
+	--type-mono-size: var(--type-mono-size, 0.8125em);
+
+	/* -----------------------------------------------
+	Kerning (letter spacing)
+	----------------------------------------------- */
+
+	--kerning-caps: 0.025em;
+
+	/* -----------------------------------------------
+	Leading (line height)
+	----------------------------------------------- */
+
+	--leading-slim: 1.2;
+	--leading-base: 1.5;
+	--leading-loose: 1.8;
+
+	/* -----------------------------------------------
+	Spacing Sizes
+	----------------------------------------------- */
+
+	/* Static Sizes */
+	--space-8: 0.5rem;
+	--space-16: 1rem;
+	--space-24: 1.5rem;
+	--space-32: 2rem;
+	--space-40: 2.5rem;
+	--space-48: 3rem;
+	--space-56: 3.5rem;
+	--space-64: 4rem;
+	--space-72: 4.5rem;
+	--space-80: 5rem;
+	--space-88: 5.5rem;
+	--space-96: 6rem;
+	--space-104: 6.5rem;
+	--space-112: 7rem;
+
+	/* Fluid Sizes */
+	/* @link https://utopia.fyi/clamp/calculator?a=428,1512,0—8|0—16|0—24|0—32|0—40|8—16|8—24|8—32|8—40|8—48|16—24|16—32|16—40|16—48|16—56|24—32|24—40|24—48|24—56|24—64|32—40|32—48|32—56|32—64|32—72|40—48|40—56|40—64|40—72|40—80|40—112|48—56|48—64|48—72|48—80|48—88|56—64|56—72|56—80|56—88|56—96|64—72|64—80|64—88|64—96|64—104|72—80|72—88|72—96|72—104|72—112|80—88|80—96|80—104|80—112|88—96|88—104|88—112|96—104|96—112|104—112&p=space */
+	--space-0-8: clamp(0rem, -0.1974rem + 0.738vw, 0.5rem);
+	--space-0-16: clamp(0rem, -0.3948rem + 1.476vw, 1rem);
+	--space-0-24: clamp(0rem, -0.5923rem + 2.214vw, 1.5rem);
+	--space-0-32: clamp(0rem, -0.7897rem + 2.952vw, 2rem);
+	--space-0-40: clamp(0rem, -0.9871rem + 3.69vw, 2.5rem);
+	--space-8-16: clamp(0.5rem, 0.3026rem + 0.738vw, 1rem);
+	--space-8-24: clamp(0.5rem, 0.1052rem + 1.476vw, 1.5rem);
+	--space-8-32: clamp(0.5rem, -0.0923rem + 2.214vw, 2rem);
+	--space-8-40: clamp(0.5rem, -0.2897rem + 2.952vw, 2.5rem);
+	--space-8-48: clamp(0.5rem, -0.4871rem + 3.69vw, 3rem);
+	--space-16-24: clamp(1rem, 0.8026rem + 0.738vw, 1.5rem);
+	--space-16-32: clamp(1rem, 0.6052rem + 1.476vw, 2rem);
+	--space-16-40: clamp(1rem, 0.4077rem + 2.214vw, 2.5rem);
+	--space-16-48: clamp(1rem, 0.2103rem + 2.952vw, 3rem);
+	--space-16-56: clamp(1rem, 0.0129rem + 3.69vw, 3.5rem);
+	--space-24-32: clamp(1.5rem, 1.3026rem + 0.738vw, 2rem);
+	--space-24-40: clamp(1.5rem, 1.1052rem + 1.476vw, 2.5rem);
+	--space-24-48: clamp(1.5rem, 0.9077rem + 2.214vw, 3rem);
+	--space-24-56: clamp(1.5rem, 0.7103rem + 2.952vw, 3.5rem);
+	--space-24-64: clamp(1.5rem, 0.5129rem + 3.69vw, 4rem);
+	--space-32-40: clamp(2rem, 1.8026rem + 0.738vw, 2.5rem);
+	--space-32-48: clamp(2rem, 1.6052rem + 1.476vw, 3rem);
+	--space-32-56: clamp(2rem, 1.4077rem + 2.214vw, 3.5rem);
+	--space-32-64: clamp(2rem, 1.2103rem + 2.952vw, 4rem);
+	--space-32-72: clamp(2rem, 1.0129rem + 3.69vw, 4.5rem);
+	--space-40-48: clamp(2.5rem, 2.3026rem + 0.738vw, 3rem);
+	--space-40-56: clamp(2.5rem, 2.1052rem + 1.476vw, 3.5rem);
+	--space-40-64: clamp(2.5rem, 1.9077rem + 2.214vw, 4rem);
+	--space-40-72: clamp(2.5rem, 1.7103rem + 2.952vw, 4.5rem);
+	--space-40-80: clamp(2.5rem, 1.5129rem + 3.69vw, 5rem);
+	--space-40-112: clamp(2.5rem, 0.7232rem + 6.6421vw, 7rem);
+	--space-48-56: clamp(3rem, 2.8026rem + 0.738vw, 3.5rem);
+	--space-48-64: clamp(3rem, 2.6052rem + 1.476vw, 4rem);
+	--space-48-72: clamp(3rem, 2.4077rem + 2.214vw, 4.5rem);
+	--space-48-80: clamp(3rem, 2.2103rem + 2.952vw, 5rem);
+	--space-48-88: clamp(3rem, 2.0129rem + 3.69vw, 5.5rem);
+	--space-56-64: clamp(3.5rem, 3.3026rem + 0.738vw, 4rem);
+	--space-56-72: clamp(3.5rem, 3.1052rem + 1.476vw, 4.5rem);
+	--space-56-80: clamp(3.5rem, 2.9077rem + 2.214vw, 5rem);
+	--space-56-88: clamp(3.5rem, 2.7103rem + 2.952vw, 5.5rem);
+	--space-56-96: clamp(3.5rem, 2.5129rem + 3.69vw, 6rem);
+	--space-64-72: clamp(4rem, 3.8026rem + 0.738vw, 4.5rem);
+	--space-64-80: clamp(4rem, 3.6052rem + 1.476vw, 5rem);
+	--space-64-88: clamp(4rem, 3.4077rem + 2.214vw, 5.5rem);
+	--space-64-96: clamp(4rem, 3.2103rem + 2.952vw, 6rem);
+	--space-64-104: clamp(4rem, 3.0129rem + 3.69vw, 6.5rem);
+	--space-72-80: clamp(4.5rem, 4.3026rem + 0.738vw, 5rem);
+	--space-72-88: clamp(4.5rem, 4.1052rem + 1.476vw, 5.5rem);
+	--space-72-96: clamp(4.5rem, 3.9077rem + 2.214vw, 6rem);
+	--space-72-104: clamp(4.5rem, 3.7103rem + 2.952vw, 6.5rem);
+	--space-72-112: clamp(4.5rem, 3.5129rem + 3.69vw, 7rem);
+	--space-80-88: clamp(5rem, 4.8026rem + 0.738vw, 5.5rem);
+	--space-80-96: clamp(5rem, 4.6052rem + 1.476vw, 6rem);
+	--space-80-104: clamp(5rem, 4.4077rem + 2.214vw, 6.5rem);
+	--space-80-112: clamp(5rem, 4.2103rem + 2.952vw, 7rem);
+	--space-88-96: clamp(5.5rem, 5.3026rem + 0.738vw, 6rem);
+	--space-88-104: clamp(5.5rem, 5.1052rem + 1.476vw, 6.5rem);
+	--space-88-112: clamp(5.5rem, 4.9077rem + 2.214vw, 7rem);
+	--space-96-104: clamp(6rem, 5.8026rem + 0.738vw, 6.5rem);
+	--space-96-112: clamp(6rem, 5.6052rem + 1.476vw, 7rem);
+	--space-104-112: clamp(6.5rem, 6.3026rem + 0.738vw, 7rem);
+
+	/* -----------------------------------------------
+	Text Sizes
+	---
+	@link https://utopia.fyi/type/calculator?c=375,18,1.2,1440,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+	----------------------------------------------- */
+
+	/* Step -2: 12.5px → 12.8px */
+	--text-size-xs: clamp(0.7813rem, 0.7746rem + 0.0282vw, 0.8rem);
+	/* Step -1: 15px → 16px */
+	--text-size-s: clamp(0.9375rem, 0.9155rem + 0.0939vw, 1rem);
+	/* Step 0: 18px → 20px */
+	--text-size-m: clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem);
+	/* Step 1: 21.6px → 25px */
+	--text-size-l: clamp(1.35rem, 1.2752rem + 0.3192vw, 1.5625rem);
+	/* Step 2: 25.92px → 31.25px */
+	--text-size-xl: clamp(1.62rem, 1.5027rem + 0.5005vw, 1.9531rem);
+	/* Step 3: 31.104px → 39.0625px */
+	--text-size-2xl: clamp(1.944rem, 1.7689rem + 0.7473vw, 2.4414rem);
+	/* Step 4: 37.3248px → 48.8281px */
+	--text-size-3xl: clamp(2.3328rem, 2.0796rem + 1.0801vw, 3.0518rem);
+	/* Step 5: 44.7898px → 61.0352px */
+	--text-size-4xl: clamp(2.7994rem, 2.4418rem + 1.5254vw, 3.8147rem);
+
+	/* -----------------------------------------------
+	Transitions
+	----------------------------------------------- */
+
+	--transition-duration: 0.15s;
+
+	/* -----------------------------------------------
+	WordPress
+	----------------------------------------------- */
+
+	--wp-admin-bar-height: 32px;
+	--wp-admin-bar-height-big: 46px;
+}

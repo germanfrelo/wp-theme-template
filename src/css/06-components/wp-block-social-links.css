@@ -1,0 +1,77 @@
+/* ===================================================================
+WP BLOCK SOCIAL LINKS
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/social-links
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/social-links
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+---
+Variables:
+--social-link-gap-columns
+--social-link-gap-rows
+--social-link-icon-background-color
+--social-link-icon-border-color
+--social-link-icon-border-radius
+--social-link-icon-border-style
+--social-link-icon-border-width
+--social-link-icon-color
+--social-link-icon-padding-block
+--social-link-icon-padding-inline
+--social-link-icon-size
+--social-link-icon-text-color
+--social-link-label-font-size
+--social-link-label-font-weight
+--social-link-label-line-height
+=================================================================== */
+
+/* -----------------------------------------------
+Social Links (<ul>)
+----------------------------------------------- */
+
+.wp-block-social-links {
+	/* WP-generated class in case it's needed */
+	/* &.has-visible-labels {} */
+
+	/* -----------------------------------------------
+	Social Link (<li>)
+	----------------------------------------------- */
+
+	/* .wp-block-social-link {} */
+
+	/* -----------------------------------------------
+	Social Link Anchor (<a>)
+	----------------------------------------------- */
+
+	.wp-block-social-link-anchor {
+		display: grid;
+		row-gap: var(--social-link-gap-rows, 0.5ch);
+		column-gap: var(--social-link-gap-columns, 1ch);
+		place-items: center;
+		color: var(--social-link-anchor-text-color, currentcolor);
+
+		/* Icon (<svg>) */
+		svg {
+			inline-size: var(--social-link-icon-size, 1.5rem);
+			block-size: auto;
+			padding-block: var(--social-link-icon-padding-block);
+			padding-inline: var(--social-link-icon-padding-inline);
+			color: var(--social-link-icon-text-color, currentcolor);
+			background-color: var(--social-link-icon-background-color);
+			border-color: var(--social-link-icon-border-color);
+			border-style: var(--social-link-icon-border-style, solid);
+			border-width: var(--social-link-icon-border-width, 0);
+			border-radius: var(--social-link-icon-border-radius, 9999px);
+			fill: var(--social-link-icon-color, currentcolor);
+		}
+
+		/* Label (<span>) */
+		.wp-block-social-link-label {
+			font-size: var(--social-link-label-font-size);
+			font-weight: var(--social-link-label-font-weight);
+			line-height: var(--social-link-label-line-height);
+			color: var(--social-link-label-text-color, currentcolor);
+		}
+	}
+}

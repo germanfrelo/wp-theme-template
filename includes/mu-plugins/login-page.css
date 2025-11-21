@@ -1,0 +1,23 @@
+/**
+ * Login page styles
+ *
+ * Usage:
+ * - Copy this CSS file together with `login-page.php` into the target site's
+ *   `wp-content/mu-plugins/` directory. Keep these files colocated.
+ * - To provide a custom logo for the login page, add `login-logo.svg` next to
+ *   these files in `wp-content/mu-plugins/`. The CSS uses a relative URL so the
+ *   asset is resolved from the same folder as this stylesheet.
+ *
+ * Notes:
+ * - Sanitize the SVG logo before deploying (remove scripts,
+ *   `<foreignObject>`, or `on*` handlers). Consider using `svgo` or a PHP SVG
+ *   sanitizer as part of your intake process.
+ */
+
+#login h1 a {
+	inline-size: auto;
+	block-size: 6rem;
+	background-image: url("login-logo.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+}

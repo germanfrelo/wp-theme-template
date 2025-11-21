@@ -1,0 +1,43 @@
+/* ===================================================================
+WP BLOCK TABLE
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/table
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/table
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-table {
+	overflow-inline: auto;
+	overflow-x: auto;
+
+	td,
+	th {
+		overflow-wrap: normal;
+	}
+
+	/* -----------------------------------------------
+	Variant: Fixed width table cells
+	----------------------------------------------- */
+
+	table.has-fixed-layout {
+		inline-size: 100%;
+		table-layout: fixed;
+
+		:is(td, th) {
+			overflow-wrap: anywhere;
+		}
+	}
+
+	/* -----------------------------------------------
+	Variant: Stripes
+	----------------------------------------------- */
+
+	&.is-style-stripes {
+		tbody tr:nth-child(odd) {
+			background-color: var(--table-stripes-row-background-color, color-mix(in oklab, currentcolor 7.5%, transparent));
+		}
+	}
+}

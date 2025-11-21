@@ -1,0 +1,25 @@
+/* ===================================================================
+Text Align
+---
+Classes:
+- text-align-start
+- text-align-center
+- text-align-end
+---
+Notes:
+- The classes 'has-text-align-left' and 'has-text-align-left' are included too, because when you set the text alignment of a block in the WordPress editor, it adds physical values ('left' and 'right'). This forces using their corresponding logical values.
+=================================================================== */
+
+.text-align-start,
+.has-text-align-left {
+	text-align: start;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-end,
+.has-text-align-right {
+	text-align: end;
+}

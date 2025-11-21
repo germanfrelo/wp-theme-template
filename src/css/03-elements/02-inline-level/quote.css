@@ -1,0 +1,14 @@
+/* ===================================================================
+SHORT INLINE QUOTATION
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/q
+- https://heydonworks.com/article/the-cite-element/
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+q {
+	font-style: var(--inline-quote-font-style);
+}

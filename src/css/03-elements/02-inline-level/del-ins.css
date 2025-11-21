@@ -1,0 +1,16 @@
+/* ===================================================================
+DELETED AND INSERTED TEXT
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/del-ins
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/ins
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* del {} */
+
+ins {
+	text-decoration-line: none;
+}

@@ -1,0 +1,14 @@
+/* ===================================================================
+MARKED OR HIGHLIGHTED TEXT
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/mark
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+mark {
+	color: var(--mark-text-color, MarkText);
+	background-color: var(--mark-background-color, Mark);
+}

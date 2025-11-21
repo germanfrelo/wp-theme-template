@@ -1,0 +1,17 @@
+/* ===================================================================
+List Unstyled
+---
+Removes main default styles of lists.
+---
+Notes:
+- Using an empty string instead of 'none' for 'list-style-type' preserves accessibility in Safari. Ref: https://www.matuzo.at/blog/2023/removing-list-styles-without-affecting-semantics
+=================================================================== */
+
+.list-unstyled {
+	--list-gap: 0;
+	--list-leading: inherit;
+	--ul-item-indentation: 0;
+	padding-inline-start: 0;
+	line-height: inherit;
+	list-style-type: "";
+}

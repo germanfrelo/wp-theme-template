@@ -1,0 +1,16 @@
+/* ===================================================================
+IMPORTANT!
+- This specific import order is critical for correct CSS specificity.
+- All imports are relative to this file's location.
+See the README file for more info.
+=================================================================== */
+
+@import-glob "01-reset/**/*.css";
+@import-glob "02-tokens/**/*.css";
+@import-glob "03-elements/**/*.css";
+@import-glob "04-wp-overrides/**/*.css";
+@import-glob "05-layouts/**/*.css";
+@import-glob "06-components/**/*.css";
+@import-glob "07-parts/**/*.css";
+@import-glob "08-pages/**/*.css";
+@import-glob "09-utilities/**/*.css";

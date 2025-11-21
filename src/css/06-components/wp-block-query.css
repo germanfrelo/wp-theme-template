@@ -1,0 +1,16 @@
+/* ===================================================================
+WP BLOCK QUERY
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/query
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/query
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-query {
+	> * + * {
+		margin-block-start: calc(var(--block-gap) * 1.75);
+	}
+}

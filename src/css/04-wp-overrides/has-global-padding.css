@@ -1,0 +1,25 @@
+/* ===================================================================
+Has Global Padding
+---
+WordPress adds the class 'has-global-padding' when:
+- 'settings.useRootPaddingAwareAlignments' is set to 'true' in 'theme.json', and
+- A block has a constrained layout in the block editor.
+But they use physical properties ('padding-left/right').
+This file overrides them with the corresponding logical property 'padding-inline'.
+=================================================================== */
+
+.has-global-padding {
+	padding-inline: var(--global-padding-inline, 1rem);
+
+	> .alignfull {
+		margin-inline: calc(var(--global-padding-inline, 1rem) * -1);
+	}
+
+	:where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) {
+		padding-inline: 0;
+	}
+
+	:where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull {
+		padding-inline: 0;
+	}
+}

@@ -1,0 +1,451 @@
+/* ===================================================================
+WP BLOCK NAVIGATION
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/navigation
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/navigation
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+---
+DOM Structure:
+
+nav.wp-block-navigation
+├── button.wp-block-navigation__responsive-container-open
+└── div.wp-block-navigation__responsive-container(.is-menu-open.has-modal-open)
+    └── div.wp-block-navigation__responsive-close
+        └── div.wp-block-navigation__responsive-dialog
+            ├── button.wp-block-navigation__responsive-container-close
+            └── div.wp-block-navigation__responsive-container-content
+                └── ul.wp-block-navigation__container.wp-block-navigation
+                    ├── li.wp-block-navigation-item
+                    │   └── a.wp-block-navigation-item__content
+                    │       └── span.wp-block-navigation-item__label
+                    ├── li.wp-block-navigation-item.has-child.wp-block-navigation-submenu.open-on-hover-click
+                    │   ├── a.wp-block-navigation-item__content
+                    │   ├── button.wp-block-navigation__submenu-icon.wp-block-navigation-submenu__toggle
+                    │   └── ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
+                    │       └── li.wp-block-navigation-item
+                    ├── li.wp-block-navigation-item.has-child.wp-block-navigation-submenu.open-on-click
+                    │   ├── button.wp-block-navigation-item__content.wp-block-navigation-submenu__toggle
+                    │   │   └── span.wp-block-navigation-item__label
+                    │   ├── span.wp-block-navigation__submenu-icon
+                    │   └── ul.wp-block-navigation__submenu-container.wp-block-navigation-submenu
+                    │       └── li.wp-block-navigation-item
+                    └── (other blocks than Page/Custom Link)
+---
+Table of Contents:
+
+- Keyframes
+- Navigation (nav)
+  - Elements
+  - Menu Buttons Open/Close (button)
+  - Outermost Menu Items (li)
+  - Submenu Icon/Toggle (span/button)
+  - Submenus (li > ul)
+- Has Overlay Menu
+  - Responsive Container when Overlay Menu is Open
+	- Responsive Dialog
+	- Responsive Container Content
+- Nav is Expanded
+- Variants
+=================================================================== */
+
+/* ===================================================================
+Keyframes
+=================================================================== */
+
+@keyframes overlay-menu-fade-in-animation {
+	0% {
+		opacity: 0;
+		transform: translateY(0.5em);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ===================================================================
+Navigation
+=================================================================== */
+
+nav.wp-block-navigation {
+	--link-decoration-color: transparent;
+	--link-decoration-color-active: var(--color-accent);
+	font-size: var(--nav-global-font-size);
+	font-weight: var(--nav-global-font-weight);
+	line-height: var(--nav-global-line-height);
+	color: var(--nav-global-text-color);
+	text-transform: var(--nav-global-text-transform);
+	letter-spacing: var(--nav-global-letter-spacing);
+
+	/* ===================================================================
+	Elements
+	=================================================================== */
+
+	/*
+	Flex Container:
+	The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
+	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
+	*/
+	.wp-block-navigation__responsive-container-content,
+	ul.wp-block-navigation__container {
+		display: flex;
+		flex-direction: var(--nav-layout-direction, row);
+		flex-wrap: var(--nav-layout-wrap, wrap);
+		row-gap: var(--nav-layout-gap-rows, var(--flex-gap, var(--block-gap, 1em)));
+		column-gap: var(--nav-layout-gap-columns, var(--flex-gap, var(--block-gap, 1em)));
+		align-items: var(--nav-layout-align-items, center);
+		justify-content: var(--nav-layout-justify-content, start);
+	}
+
+	/* Nav Item Link */
+	a.wp-block-navigation-item__content {
+		display: inline-grid;
+		place-items: center;
+		align-content: center;
+		min-inline-size: var(--nav-link-min-size, 24px);
+		min-block-size: var(--nav-link-min-size, 24px);
+		text-align: center;
+
+		&:is(:active, [aria-current="page"]) {
+			--link-decoration-color: var(--color-accent);
+		}
+	}
+
+	body.page-template-page-areas-de-trabajo
+		:is(header.wp-block-template-part, .site-header)
+		&
+		a[href*="areas-de-trabajo"] {
+		--link-decoration-color: var(--color-accent);
+	}
+
+	/* Nav Item Description */
+	.wp-block-navigation-item__description {
+		display: none; /* Hidden by default */
+	}
+
+	/* ===================================================================
+	Menu Buttons Open/Close
+	=================================================================== */
+
+	/* Both Open & Close Buttons */
+	button:is(.wp-block-navigation__responsive-container-open, .wp-block-navigation__responsive-container-close) {
+		--field-border-width: 0;
+		--field-padding-block: 0;
+		--field-padding-inline: 0;
+		flex-shrink: 0;
+		cursor: pointer;
+
+		> svg {
+			min-inline-size: 24px;
+			min-block-size: 24px;
+			pointer-events: none;
+			fill: currentcolor;
+		}
+	}
+
+	/* Button to Open the Menu */
+	button.wp-block-navigation__responsive-container-open {
+		> svg {
+			inline-size: auto;
+			block-size: var(--nav-button-open-menu-icon-size, var(--nav-button-menu-icon-size, auto));
+		}
+	}
+
+	/* Button to Close the Menu */
+	button.wp-block-navigation__responsive-container-close {
+		> svg {
+			inline-size: auto;
+			block-size: var(--nav-button-close-menu-icon-size, var(--nav-button-menu-icon-size, auto));
+		}
+	}
+
+	/* ===================================================================
+	Outermost Menu Items
+	(li)
+	=================================================================== */
+
+	/* -----------------------------------------------
+	Outermost Menu Items that have Submenu (li)
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Link/Button
+	---
+	<a> when "Open on click" is disabled; <button> when "Open on click" is enabled.
+	----------------------------------------------- */
+
+	/* ===================================================================
+	Submenu Icon/Toggle
+	(span/button)
+	=================================================================== */
+
+	/* Toggle */
+	.wp-block-navigation__submenu-icon {
+		--field-border-width: 0;
+		--field-padding-block: 0;
+		--field-padding-inline: 0;
+		display: inline-grid;
+		place-items: center;
+		inline-size: 1cap;
+		block-size: 1cap;
+		line-height: 0;
+	}
+
+	/* Icon */
+	.wp-block-navigation__submenu-icon > svg {
+		stroke: currentcolor;
+	}
+
+	/* ===================================================================
+	Submenus
+	(li > ul)
+	=================================================================== */
+
+	/* -----------------------------------------------
+	All Submenu Containers
+	(li ul)
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Submenu Container - Outermost (1st level)
+	(li > ul)
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Submenu Containers - Nested (2nd level & beyond)
+	(li > ul > li > ul)
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Menu Item of Submenu
+	(li > ul > li)
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Link/Button of Menu Item of Submenu
+	----------------------------------------------- */
+
+	/* -----------------------------------------------
+	Menu Item of Submenu has Submenu
+	(li > ul > li:has(> ul)
+	----------------------------------------------- */
+}
+
+/* ===================================================================
+Has Overlay Menu
+=================================================================== */
+
+html.has-modal-open {
+	overflow: hidden;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors -- Intended */
+nav.wp-block-navigation {
+	position: relative; /* TODO: Why? */
+
+	/* -----------------------------------------------
+	Responsive Container
+	----------------------------------------------- */
+
+	.wp-block-navigation__responsive-container {
+		display: none;
+
+		/* -----------------------------------------------
+		Responsive Container when Overlay Menu is Open
+		----------------------------------------------- */
+
+		&.is-menu-open {
+			position: fixed;
+			inset: 0;
+			z-index: 100000;
+			display: block; /* To revert 'display: none' */
+			padding-block: var(--nav-overlay-menu-padding-block, var(--block-gap, 1em));
+			overflow: auto;
+			background-color: var(--nav-overlay-menu-background-color, var(--color-surface, Canvas));
+
+			@media (prefers-reduced-motion: no-preference) {
+				animation: overlay-menu-fade-in-animation 0.1s ease-out;
+				animation-fill-mode: forwards;
+			}
+
+			/* -----------------------------------------------
+			Responsive Dialog
+			---
+			Has > button.wp-block-navigation__responsive-container-close + div.wp-block-navigation__responsive-container-content
+			----------------------------------------------- */
+
+			.wp-block-navigation__responsive-dialog {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				gap: var(--block-gap, 1em);
+				align-items: end;
+				inline-size: 90%;
+				max-inline-size: var(--nav-overlay-menu-max-width, var(--layout-content-size));
+				padding-inline: var(--nav-overlay-menu-padding-inline, var(--global-padding-inline, 1rem));
+				margin-inline: auto;
+
+				a.wp-block-navigation-item__content {
+					text-align: end;
+				}
+
+				.admin-bar & {
+					margin-block-start: var(--wp-admin-bar-height-big, 46px);
+				}
+
+				@media (width >= 782px) {
+					.admin-bar & {
+						margin-block-start: var(--wp-admin-bar-height, 32px);
+					}
+				}
+			}
+
+			/* -----------------------------------------------
+			Button that closes the Overlay Menu
+			----------------------------------------------- */
+
+			/* .wp-block-navigation__responsive-container-close {} */
+
+			/* -----------------------------------------------
+			Responsive Container Content
+			---
+			The Navigation block can have Page/Custom Link blocks inside of it, but also other type of blocks.
+			The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
+			----------------------------------------------- */
+
+			.wp-block-navigation__responsive-container-content {
+				overflow: visible; /* TODO: Why? */
+			}
+
+			.wp-block-navigation__responsive-container-content,
+			.wp-block-navigation__container,
+			.wp-block-navigation-item,
+			.wp-block-page-list {
+				flex-direction: column;
+				align-items: flex-end;
+			}
+		}
+	}
+}
+
+/* ===================================================================
+Nav is Expanded
+=================================================================== */
+
+/* stylelint-disable-next-line no-unknown-custom-media -- Defined in 01-breakpoints.css */
+@media (--nav-expanded) {
+	nav.wp-block-navigation {
+		/* Hide the button that opens the menu */
+		.wp-block-navigation__responsive-container-open:not(.always-shown) {
+			display: none;
+		}
+
+		/*
+		Show the menu container only if:
+		- it's not hidden by default, or
+		- overlay menu is not open
+		*/
+		.wp-block-navigation__responsive-container:not(.hidden-by-default, .is-menu-open) {
+			display: block;
+
+			/* ...and hide the button that closes the menu under the previous conditions */
+			.wp-block-navigation__responsive-container-close {
+				display: none;
+			}
+		}
+	}
+}
+
+/* ===================================================================
+Variant: Tabs
+=================================================================== */
+
+nav.wp-block-navigation.is-style-navigation-tabs {
+	--link-decoration-color-active: transparent;
+	--link-decoration-color-hover: transparent;
+	--link-decoration-color: transparent;
+	--link-text-color-hover: var(--color-accent);
+	--nav-global-font-size: var(--text-size-l);
+	--nav-link-min-size: 24px;
+	display: block;
+	padding-inline: var(--global-padding-inline, 1rem);
+
+	> ul.wp-block-navigation__container {
+		display: block;
+		border-inline: var(--border);
+	}
+
+	ul.wp-block-page-list {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		gap: 1em;
+		align-items: start;
+		justify-content: start;
+
+		> li {
+			display: grid;
+			flex: 1;
+			counter-increment: list-custom-counter;
+		}
+
+		a {
+			display: flex;
+			flex-direction: column;
+			row-gap: var(--space-8-16);
+			align-items: start;
+			padding-block: 0.25em;
+			padding-inline: var(--global-padding-inline, var(--block-gap, 1rem));
+			text-align: inherit;
+			text-wrap: balance;
+			border-inline-start: var(--border-width-thick, thick) solid transparent;
+
+			&::before {
+				display: inline-grid;
+				font-size: 1.25em;
+				font-weight: var(--type-body-weight-normal);
+				content: counter(list-custom-counter, decimal-leading-zero);
+			}
+
+			&:is(:active, [aria-current="page"]) {
+				--link-decoration-color: transparent;
+				--link-text-color: var(--color-accent);
+			}
+
+			&[aria-current="page"] {
+				border-inline-start-color: currentcolor;
+			}
+		}
+	}
+
+	/* stylelint-disable-next-line no-unknown-custom-media -- Defined in 01-breakpoints.css */
+	@media (--md-min) {
+		> ul.wp-block-navigation__container {
+			border-block: var(--border);
+			border-inline: 0;
+		}
+
+		ul.wp-block-page-list {
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-items: stretch;
+			max-inline-size: var(--layout-content-size);
+			margin-inline: auto;
+
+			a {
+				padding-block: 1em;
+				padding-inline: 0;
+				border-block-end: var(--border-width-thick, thick) solid transparent;
+				border-inline-start: 0;
+
+				&[aria-current="page"] {
+					border-block-end-color: currentcolor;
+				}
+			}
+		}
+	}
+}

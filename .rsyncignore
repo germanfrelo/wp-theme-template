@@ -3,6 +3,7 @@
 
 # Ignore these unnecessary files and folders
 /.editorconfig
+/.git-blame-ignore-revs
 /.git/
 /.gitattributes
 /.github/
@@ -11,14 +12,18 @@
 /.nvmrc
 /.prettierignore
 /.vscode/
+/composer.json
+/composer.lock
 /docs/
 /node_modules/
-/package.json
 /package-lock.json
+/package.json
+/phpcs.xml
+/phpcs.xml.dist
+/pnpm-lock.yaml
 /postcss.config.js
 /prettier.config.js
 /README.md
-/README-DEV.md
 /scripts/
 /src/
 /stylelint.config.js

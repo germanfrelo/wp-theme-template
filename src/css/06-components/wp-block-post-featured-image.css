@@ -1,0 +1,106 @@
+/* ===================================================================
+WP BLOCK POST FEATURED IMAGE
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-featured-image
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-featured-image
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+---
+DOM structure:
+- figure.wp-block-post-featured-image
+  - a
+    - img
+	- span.wp-block-post-featured-image__overlay
+=================================================================== */
+
+.wp-block-post-featured-image {
+	&:is(.alignleft, .alignright) {
+		inline-size: 100%;
+		margin-inline: 0;
+	}
+
+	/* -----------------------------------------------
+	Link
+	----------------------------------------------- */
+
+	a {
+		display: block;
+		block-size: 100%;
+	}
+
+	/* -----------------------------------------------
+	Image
+	----------------------------------------------- */
+
+	img {
+		inline-size: 100%;
+		block-size: 100%;
+		object-fit: cover;
+	}
+
+	/* -----------------------------------------------
+	Color Overlay
+	----------------------------------------------- */
+
+	&:has(.wp-block-post-featured-image__overlay.has-background-dim) {
+		position: relative;
+	}
+
+	.wp-block-post-featured-image__overlay {
+		&.has-background-gradient {
+			background-color: transparent;
+		}
+
+		&.has-background-dim {
+			position: absolute;
+			inset: 0;
+			background-color: #000;
+		}
+
+		&.has-background-dim-0 {
+			opacity: 0;
+		}
+
+		&.has-background-dim-10 {
+			opacity: 0.1;
+		}
+
+		&.has-background-dim-20 {
+			opacity: 0.2;
+		}
+
+		&.has-background-dim-30 {
+			opacity: 0.3;
+		}
+
+		&.has-background-dim-40 {
+			opacity: 0.4;
+		}
+
+		&.has-background-dim-50 {
+			opacity: 0.5;
+		}
+
+		&.has-background-dim-60 {
+			opacity: 0.6;
+		}
+
+		&.has-background-dim-70 {
+			opacity: 0.7;
+		}
+
+		&.has-background-dim-80 {
+			opacity: 0.8;
+		}
+
+		&.has-background-dim-90 {
+			opacity: 0.9;
+		}
+
+		&.has-background-dim-100 {
+			opacity: 1;
+		}
+	}
+}

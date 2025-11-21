@@ -1,0 +1,205 @@
+/* ===================================================================
+WP BLOCK COVER
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/cover
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/cover
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+---
+Variables:
+--cover-min-height
+--cover-opacity
+--cover-padding-block
+--cover-padding-inline
+=================================================================== */
+
+.wp-block-cover {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-block-size: var(--cover-min-height, 25rem);
+	padding-block: var(--cover-padding-block, var(--block-gap, 1em));
+	padding-inline: var(--cover-padding-inline, var(--global-padding-inline, var(--block-gap, 1em)));
+	overflow: clip; /* Prevent the 'wp-block-cover__background' '<span>' from overflowing the container when 'border-radius' is applied. */
+	background-position: center;
+
+	/* If Cover block's text color has not been set, adjust the default color based on if overlay is light or not.
+	The following styles leverage ':where' to allow for generic global styles that have a low specificity to still take precedence. */
+
+	:where(&:not(.has-text-color)) {
+		color: white;
+	}
+
+	:where(&.is-light:not(.has-text-color)) {
+		color: black;
+	}
+
+	/* Image/Video Background
+	------------------------------------- */
+
+	/* Extra specificity for in edit mode where other styles would override it otherwise. */
+	.wp-block-cover__image-background,
+	video.wp-block-cover__video-background {
+		position: absolute;
+		inset: 0;
+		inline-size: 100%;
+		max-inline-size: none;
+		block-size: 100%;
+		max-block-size: none;
+		padding: 0;
+		margin: 0;
+		outline: none;
+		object-fit: cover;
+		border: none;
+		box-shadow: none;
+	}
+
+	&,
+	.wp-block-cover__image-background,
+	video.wp-block-cover__video-background {
+		&.has-parallax {
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+
+			/* Remove the appearance of scrolling based on OS-level animation preferences. */
+			@media (prefers-reduced-motion: reduce) {
+				background-attachment: scroll;
+			}
+		}
+
+		&.is-repeated {
+			background-repeat: repeat;
+			background-size: auto;
+		}
+	}
+
+	/* Background
+	------------------------------------- */
+
+	.wp-block-cover__background {
+		position: absolute;
+		inset: 0;
+		opacity: var(--cover-opacity, 0.5);
+
+		/**
+		* Set a default background color for 'has-background-dim' _unless_ it includes another
+		* background color class (e.g. 'has-surface-background-color'). The presence of another
+		* background color class implies that another style will provide the background color
+		* for the overlay.
+		* See: https://github.com/WordPress/gutenberg/issues/26545
+		*/
+
+		&:where(.has-background-dim:not([class*="-background-color"])) {
+			background-color: black;
+		}
+
+		&:where(.has-background-dim.has-background-gradient) {
+			background-color: transparent;
+		}
+
+		&.has-background-dim-0 {
+			opacity: 0;
+		}
+
+		&.has-background-dim-10 {
+			opacity: 0.1;
+		}
+
+		&.has-background-dim-20 {
+			opacity: 0.2;
+		}
+
+		&.has-background-dim-30 {
+			opacity: 0.3;
+		}
+
+		&.has-background-dim-40 {
+			opacity: 0.4;
+		}
+
+		&.has-background-dim-50 {
+			opacity: 0.5;
+		}
+
+		&.has-background-dim-60 {
+			opacity: 0.6;
+		}
+
+		&.has-background-dim-70 {
+			opacity: 0.7;
+		}
+
+		&.has-background-dim-80 {
+			opacity: 0.8;
+		}
+
+		&.has-background-dim-90 {
+			opacity: 0.9;
+		}
+
+		&.has-background-dim-100 {
+			opacity: 1;
+		}
+	}
+
+	/* Inner Container
+	------------------------------------- */
+
+	.wp-block-cover__inner-container {
+		/* Needed for the inner container to be positioned above other elements with absolute positioning. */
+		position: relative;
+	}
+
+	/* -----------------------------------------------
+	Cover: Has Custom Content Position
+	----------------------------------------------- */
+
+	&.is-position-top-left {
+		align-items: start;
+		justify-content: start;
+	}
+
+	&.is-position-top-center {
+		align-items: start;
+		justify-content: center;
+	}
+
+	&.is-position-top-right {
+		align-items: start;
+		justify-content: end;
+	}
+
+	&.is-position-center-left {
+		align-items: center;
+		justify-content: start;
+	}
+
+	&.is-position-center-center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.is-position-center-right {
+		align-items: center;
+		justify-content: end;
+	}
+
+	&.is-position-bottom-left {
+		align-items: end;
+		justify-content: start;
+	}
+
+	&.is-position-bottom-center {
+		align-items: end;
+		justify-content: center;
+	}
+
+	&.is-position-bottom-right {
+		align-items: end;
+		justify-content: end;
+	}
+}

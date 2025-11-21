@@ -1,0 +1,61 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","lock":{"move":false,"remove":false}} /-->
+
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"className":"region","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group region">
+	<!-- wp:query-title {"type":"archive","textAlign":"center","align":"wide"} /-->
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"ignore","inherit":false,"parents":[],"taxQuery":null,"format":[]},"enhancedPagination":true,"align":"wide","layout":{"type":"default"}} -->
+	<div class="wp-block-query alignwide">
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:post-template {"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"24rem"}} -->
+			<!-- wp:group {"metadata":{"name":"Entrada"},"className":"post","layout":{"type":"default"}} -->
+			<div class="wp-block-group post">
+				<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+				<div class="wp-block-group">
+					<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"written_by"}}}},"className":"wp-block-post-author-name"} -->
+					<p class="wp-block-post-author-name"></p>
+					<!-- /wp:paragraph -->
+
+					<!-- wp:post-date /-->
+				</div>
+				<!-- /wp:group -->
+
+				<!-- wp:post-featured-image {"isLink":true,"rel":" "} /-->
+
+				<!-- wp:post-terms {"term":"category","separator":""} /-->
+
+				<!-- wp:post-title {"isLink":true} /-->
+
+				<!-- wp:post-excerpt {"moreText":"","excerptLength":30,"style":{"layout":{"selfStretch":"fill","flexSize":null}}} /-->
+
+				<!-- wp:read-more {"content":""} /-->
+			</div>
+			<!-- /wp:group -->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:query-no-results -->
+		<!-- wp:paragraph {"align":"center","placeholder":"Añade texto o bloques que se mostrarán cuando la consulta no devuelva ningún resultado."} -->
+		<p class="has-text-align-center">Sin resultados.</p>
+		<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"center"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","lock":{"move":false,"remove":false}} /-->

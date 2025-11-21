@@ -1,0 +1,90 @@
+/* ===================================================================
+WP BLOCK ARCHIVES
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/archives
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/archives
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* TODO: Refactor. */
+
+.wp-block-archives {
+	/* -----------------------------------------------
+	As a list (<ul>)
+	----------------------------------------------- */
+
+	/* &.wp-block-archives-list {} */
+
+	/* -----------------------------------------------
+	As a dropdown (<select>)
+	----------------------------------------------- */
+
+	&.wp-block-archives-dropdown {
+		/* Revert global value of '100%' */
+		select {
+			inline-size: auto;
+		}
+
+		/*
+		Custom container added via PHP filter (see 'includes/block-output-customizations.php').
+		Wraps the '<select>' to allow custom styling and prepend an optional SVG icon (<svg> + <select>).
+		*/
+		.select-wrapper {
+			display: flex;
+			column-gap: var(--select-gap, 1ch);
+			align-items: center;
+			inline-size: fit-content; /* Allow wrapper to size to its content (icon + select) */
+			max-inline-size: 100%;
+			padding-block: var(--select-padding-block, var(--field-padding-block));
+			padding-inline: var(--select-padding-inline, var(--field-padding-inline));
+			font-size: var(--select-font-size, initial);
+			font-weight: var(--select-font-weight, initial);
+			background-color: var(--select-background-color, var(--field-background-color));
+			border-color: var(--select-border-color, var(--field-border-color));
+			border-style: var(--select-border-style, solid);
+			border-width: var(--select-border-width, var(--field-border-width));
+			border-radius: var(--select-border-radius, var(--field-border-radius));
+			transition-duration: var(--transition-duration);
+			transition-property: color, background-color, border-color;
+
+			/* A reset of styles, including removing the default dropdown arrow */
+			> select {
+				padding-block: 0;
+				padding-inline: 0;
+				margin: 0;
+				font: inherit;
+				appearance: none;
+				background-color: transparent;
+				border: none;
+				border-radius: 0;
+			}
+
+			&:hover {
+				background-color: var(
+					--select-background-color-hover,
+					var(--select-background-color, var(--field-background-color-hover))
+				);
+			}
+
+			/* The focusable element is the '<select>' element inside this wrapper, so this is needed to style the wrapper when '<select>' receives (keyboard-visible) focus. */
+			&:has(> select:focus-visible) {
+				--_outline-offset: calc(var(--focus-ring-offset) + var(--focus-ring-inner-width));
+				outline-width: var(--focus-ring-outer-width, revert);
+				outline-style: var(--focus-ring-style, revert);
+				outline-color: var(--focus-ring-outer-color, revert);
+				outline-offset: var(--_outline-offset, revert);
+				box-shadow:
+					0 0 0 var(--focus-ring-offset) var(--color-surface),
+					0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-inner-width)) var(--focus-ring-inner-color);
+
+				@media (prefers-reduced-motion: no-preference) {
+					transition-duration: var(--transition-duration);
+					transition-property: box-shadow, outline-offset;
+				}
+			}
+		}
+	}
+}

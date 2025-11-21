@@ -1,0 +1,33 @@
+/* ===================================================================
+FOCUS INDICATORS
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible#focus_vs_focus-visible
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/outline#browser_compatibility
+- https://allyjs.io/tests/focus-outline-styles/index.html#style=focus
+- https://medienbaecker.com/articles/focus-outlines
+- https://daverupert.com/2024/01/focus-visible-love/
+- https://piccalil.li/blog/taking-a-shot-at-the-double-focus-ring-problem-using-modern-css/
+---
+Notes:
+- Using ':focus { outline: none; }' is no longer necessary, as modern browsers use ':focus-visible' by default.
+- The 'outline' property correctly follows the shape of an element's 'border-radius'.
+- If variables are undefined or invalid, the styles safely revert to the browser's default.
+=================================================================== */
+
+/* Replace browser's default focus styles with a custom, themeable version. */
+:focus-visible {
+	--_outline-offset: calc(var(--focus-ring-offset) + var(--focus-ring-inner-width));
+	outline-width: var(--focus-ring-outer-width, revert);
+	outline-style: var(--focus-ring-style, revert);
+	outline-color: var(--focus-ring-outer-color, revert);
+	outline-offset: var(--_outline-offset, revert);
+	box-shadow:
+		0 0 0 var(--focus-ring-offset) var(--color-surface),
+		0 0 0 calc(var(--focus-ring-offset) + var(--focus-ring-inner-width)) var(--focus-ring-inner-color);
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration);
+		transition-property: box-shadow, outline-offset;
+	}
+}

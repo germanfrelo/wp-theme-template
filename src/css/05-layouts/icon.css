@@ -1,0 +1,22 @@
+/* ===================================================================
+Title:       Icon
+Description: A layout for inline icons.
+Reference:   https://every-layout.dev/layouts/icon/
+---
+Variables:
+
+--icon-size
+	Description: The 'height' of the icon.
+	Values:      A valid 'height' value.
+	Default:     auto
+=================================================================== */
+
+.icon {
+	flex-shrink: 0;
+
+	&:is(img, svg),
+	& > :is(img, svg) {
+		inline-size: auto;
+		block-size: var(--icon-size, 1em);
+	}
+}

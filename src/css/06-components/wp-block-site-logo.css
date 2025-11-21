@@ -1,0 +1,38 @@
+/* ===================================================================
+WP BLOCK SITE LOGO
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/site-logo
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/site-logo
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-site-logo {
+	/* Remove the unwanted extra block space of the block element ('div') caused by its 'line-height'. */
+	line-height: 0;
+
+	/* Center the logo when the block has the 'aligncenter' class. */
+	&.aligncenter {
+		display: grid;
+		justify-content: center;
+	}
+
+	/* Ensure the link wrapper behaves correctly and also remove extra space from 'line-height'. */
+	a {
+		display: inline-block;
+		line-height: 0;
+	}
+
+	/* Set the dimensions of the logo using custom properties for easy control. */
+	:is(img, svg) {
+		inline-size: var(--site-logo-width, auto);
+		block-size: var(--site-logo-height, auto);
+	}
+
+	/* Ensure that any 'border-radius' applied to the block is inherited by the inner elements. */
+	:is(a, img, svg) {
+		border-radius: inherit;
+	}
+}

@@ -1,0 +1,86 @@
+/* ===================================================================
+WP BLOCK POST TERMS
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-terms
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-terms
+---
+Notes:
+- This single block handles all taxonomies (Categories, Tags, etc.).
+- Taxonomy is determined by a class: '.taxonomy-category', '.taxonomy-post_tag', etc.
+---
+Variables:
+--post-term-background-color
+--post-term-background-color-hover
+--post-term-border-color
+--post-term-border-radius
+--post-term-border-width
+--post-term-font-size
+--post-term-font-weight
+--post-term-line-height
+--post-term-padding-block
+--post-term-padding-inline
+--post-term-text-color
+--post-term-text-color-hover
+--post-term-text-transform
+--post-terms-gap
+=================================================================== */
+
+/* -----------------------------------------------
+Both Categories and Tags
+----------------------------------------------- */
+
+.wp-block-post-terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--post-terms-gap, 1ch);
+	align-items: center;
+
+	/* Each individual term link */
+	> :is(a[href]) {
+		--link-decoration-color: transparent;
+		--link-decoration-color-hover: transparent;
+		display: inline-block;
+		align-content: center;
+		min-inline-size: 24px;
+		min-block-size: 24px;
+		padding-block: var(--post-term-padding-block, 0.75em);
+		padding-inline: var(--post-term-padding-inline, 1.5ch);
+		font-size: var(--post-term-font-size, var(--text-size-s));
+		font-weight: var(--post-term-font-weight);
+		line-height: var(--post-term-line-height, var(--leading-slim));
+		color: var(--post-term-text-color, var(--color-on-accent));
+		text-align: center;
+		text-transform: var(--post-term-text-transform);
+		background-color: var(--post-term-background-color, var(--color-accent));
+		border-color: var(--post-term-border-color);
+		border-style: solid;
+		border-width: var(--post-term-border-width, 0);
+		border-radius: var(--post-term-border-radius);
+		text-box: cap alphabetic;
+
+		&:hover {
+			color: var(--post-term-text-color-hover, var(--post-term-text-color, var(--color-on-accent)));
+			background-color: var(--post-term-background-color-hover, var(--post-term-background-color, var(--color-accent)));
+		}
+
+		&:active {
+			scale: 99%;
+		}
+	}
+
+	/* Hide the text separator; use 'gap' for spacing */
+	> .wp-block-post-terms__separator {
+		display: none;
+	}
+}
+
+/* -----------------------------------------------
+Categories
+----------------------------------------------- */
+/* .wp-block-post-terms.taxonomy-category {} */
+
+/* -----------------------------------------------
+Tags
+----------------------------------------------- */
+/* .wp-block-post-terms.taxonomy-post_tag {} */

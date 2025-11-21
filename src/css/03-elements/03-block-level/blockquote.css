@@ -1,0 +1,60 @@
+/* ===================================================================
+BLOCK QUOTATION
+---
+Resources:
+- https://www.google.com/search?q=html+accessibility+pull-quote+pullquote+pull+quote+same+source
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/blockquote
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/cite
+- https://heydonworks.com/article/the-blockquote-element/
+- https://heydonworks.com/article/the-cite-element/
+- https://jerryjones.dev/2015/06/30/accessible-web-design-pull-quotes/
+- https://www.openaccess.nz/blog/accessible-blockquotes-in-html/
+- https://adrianroselli.com/2023/07/blockquotes-in-screen-readers.html
+- https://css-irl.info/ive-been-doing-blockquotes-wrong/
+- https://www.stefanjudis.com/today-i-learned/how-to-use-language-dependent-quotes-in-css/
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+figure:where(:has(> blockquote)),
+blockquote:where(:not(figure > blockquote)) {
+	max-inline-size: var(--quote-max-inline-size);
+	margin-inline: var(--quote-margin-inline, 0);
+	text-align: var(--quote-text-align);
+	text-wrap: var(--quote-text-wrap);
+	overflow-wrap: break-word;
+
+	:is(cite, figcaption) {
+		font-size: var(--quote-cite-figcaption-font-size);
+	}
+}
+
+blockquote {
+	> * + * {
+		margin-block-start: var(--block-gap, 1em);
+	}
+
+	> cite {
+		display: block;
+	}
+
+	> :not(cite) {
+		padding-block: var(--quote-padding-block);
+		padding-inline: var(--quote-padding-inline);
+		font-size: var(--quote-font-size);
+		font-style: var(--quote-font-style);
+		color: var(--quote-text-color);
+		border-left-color: var(--quote-border-left-color, currentcolor);
+		border-left-style: var(--quote-border-left-style, solid);
+		border-left-width: var(--quote-border-left-width, 0);
+
+		&::before {
+			content: open-quote;
+		}
+
+		&::after {
+			content: close-quote;
+		}
+	}
+}

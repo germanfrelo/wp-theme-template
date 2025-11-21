@@ -1,0 +1,42 @@
+/* ===================================================================
+CODE
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/code
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+code {
+	padding-block: var(--code-inline-padding-block, 0.125em);
+	padding-inline: var(--code-inline-padding-inline, 0.25em);
+	font-family: var(--type-mono-family, monospace);
+	font-size: var(--type-mono-size, 0.8125em);
+	font-variant-ligatures: none;
+	color: var(--code-inline-text-color);
+	white-space: break-spaces;
+	background-color: var(--code-inline-background-color, color-mix(in oklab, currentcolor, transparent 95%));
+	border-radius: var(--code-inline-border-radius, 2px);
+	box-decoration-break: clone;
+}
+
+:is(h1, h2, h3, h4, h5, h6) code {
+	text-transform: none;
+}
+
+/* Undo inline 'code' element styles, letting the 'pre' parent element control the overall block styling. */
+pre > code:only-child {
+	display: block;
+	padding-block: 0;
+	padding-inline: 0;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	text-align: initial;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+}

@@ -1,0 +1,42 @@
+/* ===================================================================
+Semantic Design Tokens
+=================================================================== */
+
+html {
+	/* Border */
+	--border: var(--border-width-thin) solid var(--border-color, currentcolor);
+
+	/* Colors */
+	--color-surface: var(--color-white);
+	--color-on-surface: var(--color-black);
+	--color-on-surface-accent: var(--color-blue);
+	--color-accent: var(--color-blue);
+	--color-on-accent: var(--color-white);
+	--color-error: crimson;
+
+	/* Focus Ring */
+	--focus-ring-style: solid;
+	--focus-ring-offset: 2px;
+	--focus-ring-inner-width: 2px;
+	--focus-ring-inner-color: black;
+	--focus-ring-outer-width: 2px;
+	--focus-ring-outer-color: white;
+
+	/* Spacing */
+	--block-gap-default: var(--space-24-32);
+	--block-gap: var(--block-gap-default);
+	--global-padding-inline: var(--space-24-40);
+	--layout-content-size: 60rem;
+	--layout-wide-size: 90rem;
+	--measure: 70ch;
+	--region-gap: calc(var(--block-gap) * 1.5);
+	--region-space: calc(var(--block-gap) * 2);
+
+	/* Body */
+	--body-background-color: var(--color-surface);
+	--body-font-family: var(--type-body-family);
+	--body-font-size: var(--text-size-m);
+	--body-font-weight: var(--type-body-weight-normal);
+	--body-line-height: var(--leading-base);
+	--body-text-color: var(--color-on-surface);
+}

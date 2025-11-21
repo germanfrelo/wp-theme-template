@@ -23,8 +23,8 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
 /**
  * Filter the next, previous and submit buttons.
  *
- * Replace the form's input buttons with button elements, while maintaining attributes from original input.
- * Reason: "button elements are much easier to style than input elements" (see
+ * Replace the form's input buttons with button elements, while maintaining all attributes from the original input for better compatibility.
+ * Reason for the change: "button elements are much easier to style than input elements" (see
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#notes).
  *
  * @since WordPress 6.6
@@ -35,24 +35,52 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
  * @param array  $form   Contains all the properties of the current form.
  * @return string The filtered button.
  */
-function themeslug_gform_input_to_button($button, $form) {
-	$fragment = \WP_HTML_Processor::create_fragment($button);
-	$fragment->next_token();
+function themeslug_gform_input_to_button( $button, $form ) {
+	$fragment = \WP_HTML_Processor::create_fragment( $button );
+	if ( ! $fragment->next_tag( 'input' ) ) {
+		return $button; // Not a valid input, return original.
+	}
 
-	$attributes = array('id', 'type', 'class', 'onclick');
-	$new_attributes = array();
-	foreach ($attributes as $attribute) {
-		$value = $fragment->get_attribute($attribute);
-		if (! empty($value)) {
-			$new_attributes[] = sprintf('%s="%s"', $attribute, esc_attr($value));
+	// Get the text for the button from the input's 'value' attribute.
+	$button_text = $fragment->get_attribute( 'value' );
+
+	// Start building the new button tag.
+	$new_button_html = '<button';
+
+	// Loop over ALL attributes from the original input using the correct method.
+	foreach ( $fragment->get_attribute_names_with_prefix( '' ) as $attribute_name ) {
+		// Skip 'value', as it becomes the button's text content.
+		// Attribute names from the processor are already lowercase.
+		if ( 'value' === $attribute_name ) {
+			continue;
+		}
+
+		// Get the attribute value.
+		$value = $fragment->get_attribute( $attribute_name );
+
+		// Re-add the attribute to our new button string.
+		// This correctly handles boolean attributes (like 'disabled').
+		if ( true === $value ) {
+			$new_button_html .= ' ' . esc_attr( $attribute_name );
+		} else {
+			$new_button_html .= sprintf( ' %s="%s"', esc_attr( $attribute_name ), esc_attr( $value ) );
 		}
 	}
 
-	return sprintf('<button %s>%s</button>', implode(' ', $new_attributes), esc_html($fragment->get_attribute('value')));
+	// Ensure the button has type="submit" if the original was a submit
+	// (This might be redundant if 'type' is copied, but it's a good safeguard).
+	if ( 'submit' === strtolower( $fragment->get_attribute( 'type' ) ) && false === strpos( $new_button_html, 'type=' ) ) {
+		$new_button_html .= ' type="submit"';
+	}
+
+	// Close the tag and add the text inside a 'span' element.
+	$new_button_html .= '><span>' . esc_html( $button_text ) . '</span></button>';
+
+	return $new_button_html;
 }
-add_filter('gform_next_button', 'themeslug_gform_input_to_button', 10, 2);
-add_filter('gform_previous_button', 'themeslug_gform_input_to_button', 10, 2);
-add_filter('gform_submit_button', 'themeslug_gform_input_to_button', 10, 2);
+add_filter( 'gform_next_button', 'themeslug_gform_input_to_button', 10, 2 );
+add_filter( 'gform_previous_button', 'themeslug_gform_input_to_button', 10, 2 );
+add_filter( 'gform_submit_button', 'themeslug_gform_input_to_button', 10, 2 );
 
 
 /**
@@ -64,10 +92,10 @@ add_filter('gform_submit_button', 'themeslug_gform_input_to_button', 10, 2);
  *
  * @return string
  */
-function themeslug_gform_add_custom_css_classes($button, $form) {
-	$fragment = WP_HTML_Processor::create_fragment($button);
+function themeslug_gform_add_custom_css_classes( $button, $form ) {
+	$fragment = WP_HTML_Processor::create_fragment( $button );
 	$fragment->next_token();
-	$fragment->add_class('button');
+	$fragment->add_class( 'button' );
 
 	return $fragment->get_updated_html();
 }
@@ -104,9 +132,9 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 	 * ],
 	 */
 	$config = [
-		'data-appearance' => [
-			'inverse' => [  ],
-			'outlined' => [  ],
+		'data-___' => [
+			'___' => [],
+			'___' => [],
 		],
 	];
 

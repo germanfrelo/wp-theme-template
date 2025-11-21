@@ -1,0 +1,57 @@
+/* ===================================================================
+Title:       Grid
+Description: A layout for creating a responsive grid with configurable grid item sizes.
+Reference:   https://piccalil.li/blog/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/
+---
+Variables:
+
+--grid-gap-columns
+	Description: The gap between columns.
+	Type:        A valid 'column-gap' value.
+	Default:     var(--block-gap, 1em)
+
+--grid-gap-rows
+	Description: The gap between rows.
+	Type:        A valid 'row-gap' value.
+	Default:     var(--block-gap, 1em)
+
+--grid-item-min-size
+	Description: How large each item should be ideally, as a minimum.
+	Type:        A valid '<length>' value.
+	Default:     16rem
+
+--grid-placement
+	Description: Set either 'auto-fit' or 'auto-fill' to change how empty grid tracks are handled.
+	Type:        A 'grid-template-columns' keyword ('auto-fit' or 'auto-fill').
+	Default:     auto-fill
+=================================================================== */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(
+		var(--grid-placement, auto-fill),
+		minmax(min(100%, var(--grid-item-min-size, 16rem)), 1fr)
+	);
+	row-gap: var(--grid-gap-rows, var(--block-gap, 1em));
+	column-gap: var(--grid-gap-columns, var(--block-gap, 1em));
+
+	> * {
+		margin: 0;
+	}
+}
+
+/* -----------------------------------------------
+Variants
+----------------------------------------------- */
+
+/* A split 50/50 layout */
+.grid[data-grid-layout="halves"] {
+	--grid-placement: auto-fit;
+	--grid-item-min-size: clamp(16rem, 50vi, 20rem);
+}
+
+/* Three column grid layout */
+.grid[data-grid-layout="thirds"] {
+	--grid-placement: auto-fit;
+	--grid-item-min-size: clamp(16rem, 33%, 20rem);
+}

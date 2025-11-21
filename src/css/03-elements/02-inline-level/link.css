@@ -1,0 +1,48 @@
+/* ===================================================================
+ANCHOR
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* Interactive anchors (with href) */
+a:where([href]) {
+	color: var(--link-text-color, revert);
+	text-decoration-thickness: var(--link-decoration-thickness, from-font);
+	text-decoration-color: var(--link-decoration-color, var(--color-accent, currentcolor));
+	text-underline-position: from-font;
+	text-underline-offset: var(--link-underline-offset);
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration);
+		transition-property:
+			color, background-color, border-color, text-decoration-color, text-decoration-thickness, text-underline-offset;
+	}
+
+	/* Prevent long links from overflowing in some context. */
+	&[href^="mailto:"],
+	nav & {
+		overflow-wrap: anywhere;
+	}
+
+	&:hover {
+		color: var(--link-text-color-hover, var(--link-text-color, revert));
+		text-decoration-color: var(--link-decoration-color-hover, var(--link-decoration-color, currentcolor));
+	}
+
+	&:focus-visible {
+		text-decoration-color: var(--link-decoration-color-focus, var(--link-decoration-color, currentcolor));
+	}
+
+	&:active {
+		text-decoration-color: var(--link-decoration-color-active, var(--link-decoration-color-hover, currentcolor));
+	}
+}
+
+/* Non-interactive anchors (no href) should use the default cursor to avoid suggesting interactivity */
+a:not([href]) {
+	cursor: auto;
+}

@@ -1,0 +1,15 @@
+/* ===================================================================
+THEMATIC BREAK (HORIZONTAL RULE)
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+- The WP block Separator can be rendered as <hr> or as <div>.
+=================================================================== */
+
+hr {
+	border: none;
+	border-block-start: var(--separator-border, 2px solid);
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards">
+	<description>WordPress Coding Standards for HTML and PHP files in the project.</description>
+
+	<!-- Force short arrays: convert array() to [] and ignore sniff that prefers long syntax -->
+	<rule ref="Universal.Arrays.DisallowShortArraySyntax">
+		<severity>0</severity>
+	</rule>
+
+	<rule ref="WordPress"/>
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra"/>
+
+	<!-- speed and report ergonomics -->
+	<arg name="cache" value=".phpcs-cache"/>
+	<arg value="s"/>
+
+	<!-- project; adaptation: allow non-yoda conditions -->
+	<exclude name="WordPress.PHP.YodaConditions"/>
+
+	<!-- enforce conversion from array() to [] -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+	<!-- only consider php files -->
+	<arg name="extensions" value="php"/>
+
+	<!-- paths to exclude from the scan -->
+	<exclude-pattern>vendor/* </exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>assets/*</exclude-pattern>
+	<exclude-pattern>styles/*</exclude-pattern>
+
+	<!-- Paths to scan -->
+	<file>.</file>
+
+	<!-- Theme-specific adjustments -->
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="is_theme" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- Enforce correct text domain usage -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="themeslug"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>
+*/

@@ -1,0 +1,35 @@
+/* ===================================================================
+WP SITE BLOCKS
+---
+WP block source:
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/block-template.php
+- https://fullsiteediting.com/lessons/creating-block-based-themes/#h-templates-are-loaded-in-the-body-element
+=================================================================== */
+
+/* Let 'main' fill the available vertical space so that if the content is shorter than the viewport height, the footer will "stick" to the bottom. */
+.wp-site-blocks:has(> main),
+.wp-site-blocks > div:only-child:has(> main) {
+	display: flex;
+	flex-direction: column;
+	min-block-size: 100vh;
+
+	> * {
+		flex-shrink: 0;
+	}
+
+	> main {
+		flex-grow: 1;
+	}
+}
+
+/*
+WP: Editor: Override default block gap for '.wp-site-blocks'.
+When 'styles.spacing.blockGap' is set to an empty string in 'theme.json', WordPress prevents outputting its default block gap CSS rules on the frontend. However, in the Site Editor, a fallback '0.5em' block gap is still applied to '.wp-site-blocks' by default. This rule explicitly removes that editor-only block gap to ensure consistent spacing behavior across both frontend and editor.
+Some references:
+- 'https://github.com/WordPress/gutenberg/blob/trunk/lib/block-supports/layout.php'
+- 'https://github.com/WordPress/gutenberg/blob/trunk/lib/class-wp-theme-json-gutenberg.php'
+- 'https://github.com/WordPress/gutenberg/blob/trunk/packages/global-styles-engine/src/core/render.tsx'
+*/
+:root .wp-site-blocks > :is(* + *, div:only-child > * + *) {
+	margin-block-start: 0;
+}

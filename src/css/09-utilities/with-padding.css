@@ -1,0 +1,30 @@
+/* ===================================================================
+Applies a visually balanced padding,
+preventing text from touching the container's edges.
+
+This rule carefully calculates vertical padding to compensate for line-height,
+ensuring the perceived vertical and horizontal spacing are visually identical.
+---
+Configuration:
+
+--block-bg-padding
+    Description: Overrides the base padding value used in the calculation.
+    Type:        A valid CSS <length> or <percentage> value.
+    Default:     var(--block-gap, 1.25rem) for padding-inline, var(--block-gap, 1.25em) for padding-block.
+=================================================================== */
+
+/*
+These selectors are intentionally different to match the specificity of WordPress's default styles.
+@see https://github.com/search?q=repo%3AWordPress%2Fgutenberg+%22block-bg-padding%22&type=code
+*/
+.is-style-with-padding {
+	&:where(p),
+	/* &:where(.wp-block-columns), */
+	&:where(.wp-block-group)
+	/* ,&:where(.wp-block-list) */
+	/* ,&:where(.wp-block-preformatted) */
+	/* ,&:is(h1, h2, h3, h4, h5, h6) */ {
+		padding: var(--block-bg-padding, var(--block-gap, 1.25rem));
+		padding-block: calc(var(--block-bg-padding, var(--block-gap, 1.25em)) - ((1lh - 1em) / 2));
+	}
+}

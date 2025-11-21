@@ -1,0 +1,92 @@
+/* ===================================================================
+gravityforms/form
+---
+Resources:
+- https://docs.gravityforms.com/
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* This selector is repeated to increase specificity to override GF styles */
+.gform_wrapper.gravity-theme {
+	/* -----------------------------------------------
+	Revert GF default styles
+	----------------------------------------------- */
+
+	.gfield textarea.large {
+		height: revert;
+	}
+
+	@media only screen and (width <= 641px) {
+		/* stylelint-disable selector-not-notation -- To match GF selector specificity. */
+		input:not([type="radio"]):not([type="checkbox"]):not([type="image"]):not([type="file"]) {
+			line-height: inherit;
+		}
+
+		textarea {
+			line-height: inherit;
+		}
+	}
+
+	/* -----------------------------------------------
+	Custom styles
+	----------------------------------------------- */
+
+	/* Hide the required field legend */
+	.gform_required_legend {
+		display: none;
+	}
+
+	/* Hide the required asterisk */
+	.gfield_required_asterisk {
+		display: none;
+	}
+
+	.gform_fields {
+		row-gap: var(--form-fields-gap-rows, var(--block-gap, 1em));
+		column-gap: 0; /* This avoid overflowing issues with GF default grid-template-columns */
+	}
+
+	.gfield > :is(label, legend):has(+ .ginput_container) {
+		display: inline-block;
+		padding-block-end: calc(var(--block-gap, 1em) / 2);
+	}
+
+	:is(.gfield_checkbox, .gfield_radio) > * + * {
+		margin-block-start: calc(var(--block-gap, 1em) / 2);
+	}
+
+	.gform_drop_area {
+		text-align: revert;
+	}
+
+	/*
+	Errors
+	*/
+
+	&:has(.gform_validation_errors) {
+		--field-border-color: var(--field-error-text-color);
+		--field-text-color: var(--field-error-text-color);
+
+		.gfield_validation_message {
+			color: var(--field-error-text-color, currentcolor);
+		}
+	}
+
+	.gform_validation_errors {
+		padding: 1em;
+		color: var(--field-error-text-color, currentcolor);
+		border: 2px solid;
+	}
+
+	.gform_submission_error {
+		font: inherit;
+
+		.gform-icon {
+			float: left;
+			margin-inline-end: 1ch;
+			line-height: inherit;
+		}
+	}
+}

@@ -1,0 +1,98 @@
+/* ===================================================================
+ * has-icon
+ *
+ * Attach an icon with CSS masks or use a real <img>/<svg>/.icon child.
+ *
+ * Available classes:
+ * .has-icon-before    Adds an icon before the element's content
+ * .has-icon-after     Adds an icon after the element's content
+ *
+ * Configuration:
+ * --icon-image        REQUIRED: url(…) mask for pseudo elements
+ * --icon-size         Size for pseudo icon and real image/SVG children
+ * --icon-color        Color for mask
+ * --has-icon-gap      Gap between icon and content
+ * --has-icon-display  Container display
+ *
+ * Notes:
+ * - You MUST set '--icon-image' when using pseudo icons.
+ * - '--icon-size' controls both pseudo and real child sizing.
+ *
+ * Examples:
+ *
+ * - Mask-based decorative icon (pseudo):
+ *   <button class="has-icon-after" style="--icon-image:url('/dist/svg/icon.svg');>Text</button>
+ *
+ * - Real SVG child (decorative):
+ *   <button class="has-icon-after">
+ *     <span>Text</span>
+ *     <svg aria-hidden="true"></svg>
+ *   </button>
+ *
+ * - Real SVG child (meaningful):
+ *   <button class="has-icon-after" aria-label="Open the menu">
+ *     <svg></svg>
+ *   </button>
+ *
+ * - Variants (CSS):
+ *   .has-icon-download { --icon-image: url('/dist/svg/icon-download.svg'); }
+ * =================================================================== */
+
+[class*="has-icon-"] {
+	/* Layout: flexible inline container to align icon + content */
+	display: var(--has-icon-display, inline-flex);
+	flex-direction: var(--has-icon-direction, row);
+	flex-wrap: var(--has-icon-wrap, nowrap);
+	gap: var(--has-icon-gap, 1.5ch);
+	align-content: var(--has-icon-align-content, center);
+	align-items: var(--has-icon-align-items, center);
+	justify-content: var(--has-icon-justify-content, center);
+
+	/* Pseudo-element based icon (before/after) */
+	/* Common pseudo-icon properties: this rule contains the shared
+	   CSS used by both ::before and ::after pseudo-elements so they
+	   behave identically (size, mask, color, etc). */
+	&::before,
+	&::after {
+		display: inline-block;
+		flex-shrink: 0;
+		inline-size: var(--icon-size, 1em);
+		block-size: var(--icon-size, 1em);
+		background-color: var(--icon-color, currentcolor);
+		mask-image: var(--icon-image);
+		mask-position: center;
+		mask-size: contain;
+	}
+}
+
+/* Public API selectors — use these classes to add icons.
+   These are the actual selectors developers should use when
+   attaching a pseudo icon before or after an element's content. */
+
+.has-icon-before::before {
+	content: "";
+}
+
+.has-icon-after::after {
+	content: "";
+}
+
+/*
+ * If a real image/inline SVG/.icon child exists, prefer that instead of
+ * rendering the CSS mask. This makes the utility flexible for both
+ * author-authoring (explicit <img>/<svg>) and quick class-based icons.
+ */
+[class*="has-icon-"]:has(> :is(img, svg, .icon)) {
+	/* Remove pseudo-element content when an actual child exists */
+	&::before,
+	&::after {
+		content: none;
+	}
+
+	/* Size the real image/SVG child consistently */
+	> :is(img, svg, .icon) {
+		flex-shrink: 0;
+		inline-size: auto;
+		block-size: var(--icon-size, 1em);
+	}
+}

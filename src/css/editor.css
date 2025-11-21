@@ -1,0 +1,6 @@
+/* Editor-only styles */
+
+/* Ensure images inside the resizable control use 100% of the container width while editing. */
+.wp-block-image .components-resizable-box__container img {
+	inline-size: 100%;
+}

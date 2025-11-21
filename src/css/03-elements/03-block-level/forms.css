@@ -1,0 +1,172 @@
+/* ===================================================================
+FORMS
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* ===================================================================
+Fieldset and Legend
+=================================================================== */
+
+/* Reset default styles */
+fieldset {
+	/* min-inline-size: auto;
+	padding-block: 0;
+	padding-inline: 0;
+	border: 0; */
+	border: var(--border);
+}
+
+legend {
+	/* padding-inline: 0; */
+	font-size: var(--legend-font-size);
+	font-weight: var(--legend-font-weight);
+	line-height: var(--legend-line-height);
+}
+
+/* ===================================================================
+Form Controls
+=================================================================== */
+
+button,
+input,
+select,
+textarea {
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration);
+		transition-property: accent-color, background-color, border-color, color;
+	}
+}
+
+/*
+1. Prevent iOS from zooming into form fields with a 'font-size' smaller than '16px'. Ref. https://css-tricks.com/16px-or-larger-text-prevents-ios-form-zoom/
+*/
+button,
+input:not(:where([type="checkbox"], [type="color"], [type="image"], [type="radio"])),
+select,
+textarea {
+	min-inline-size: var(--field-min-size, 24px);
+	min-block-size: var(--field-min-size, 24px);
+	padding-block: var(--field-padding-block, 0.25em);
+	padding-inline: var(--field-padding-inline, 1ch);
+	font-size: max(16px, var(--field-font-size)); /* 1 */
+	font-weight: var(--field-font-weight);
+	line-height: var(--field-line-height);
+	color: var(--field-text-color, currentcolor);
+	background-color: var(--field-background-color);
+	border-color: var(--field-border-color);
+	border-style: var(--field-border-style, solid);
+	border-width: var(--field-border-width, var(--border-width-thin, thin));
+	border-radius: var(--field-border-radius);
+}
+
+input:not(
+	:where(
+		[type="button"],
+		[type="checkbox"],
+		[type="color"],
+		[type="image"],
+		[type="radio"],
+		[type="reset"],
+		[type="submit"]
+	)
+),
+select,
+textarea {
+	inline-size: 100%;
+	min-inline-size: max(24px, 17ch);
+	field-sizing: content;
+}
+
+select {
+	min-inline-size: max(24px, 5ch);
+}
+
+textarea {
+	display: block;
+	min-block-size: 7.5em;
+	min-block-size: 5lh;
+	max-block-size: 75svb;
+	resize: both;
+}
+
+[type="checkbox"] {
+	flex-shrink: 0;
+	inline-size: var(--input-checkbox-size, 1em);
+	block-size: var(--input-checkbox-size, 1em);
+}
+
+[type="radio"] {
+	flex-shrink: 0;
+	inline-size: var(--input-radio-size, 1em);
+	block-size: var(--input-radio-size, 1em);
+}
+
+/* TODO: WIP */
+
+/* button,
+input:where([type="button"], [type="reset"], [type="submit"]) {
+	border-radius: var(--button-border-radius, 0.25em);
+} */
+
+/* TODO: WIP */
+
+/* button,
+input:where([type="button"], [type="reset"], [type="submit"]) {
+	border-radius: var(--button-border-radius, 0.25em);
+} */
+
+/* ===================================================================
+Label
+=================================================================== */
+
+label {
+	font-size: var(--label-font-size);
+	font-weight: var(--label-font-weight);
+	line-height: var(--label-line-height);
+	color: var(--label-text-color);
+}
+
+/* Force a line break after the label (except when it's for input type hidden, checkbox, or radio) while allowing it to remain an inline element. This provides a more robust and [defensive CSS](defensivecss.dev) */
+label:has(+ :is(input:not(:where([type="checkbox"], [type="hidden"], [type="radio"])), select, textarea))::after {
+	white-space: pre;
+	content: "\A";
+}
+
+/* Labels that wrap inputs of type checkbox and radio have different styles */
+label:has(> :is([type="checkbox"], [type="radio"])) {
+	font-size: var(--form-font-size);
+	font-weight: var(--form-font-weight);
+	line-height: var(--form-line-height);
+	color: var(--form-text-color, currentcolor);
+}
+
+/* Usually label wraps checkbox and radio buttons, so we give more layout and text-flow control with flex. */
+label:has(> :is([type="checkbox"], [type="radio"])),
+*:has(> label:only-of-type):has(> :is([type="checkbox"], [type="radio"])) {
+	display: flex;
+	gap: var(--label-input-check-radio-gap, 1ch);
+	align-items: baseline;
+	inline-size: fit-content;
+}
+
+/* ===================================================================
+Placeholder
+=================================================================== */
+
+::placeholder {
+	color: color-mix(in oklab, currentcolor 60%, transparent);
+}
+
+/* ===================================================================
+Disabled Fields
+=================================================================== */
+
+input:disabled,
+label:has(input:disabled) {
+	cursor: not-allowed;
+}

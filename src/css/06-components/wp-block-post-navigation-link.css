@@ -1,0 +1,23 @@
+/* ===================================================================
+WP BLOCK POST NAVIGATION LINK
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-navigation-link
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-navigation-link
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-post-navigation-link {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1ch;
+	align-items: center;
+	justify-content: center;
+
+	/* Show arrow before link text when wrapped */
+	&:has(> a + .wp-block-post-navigation-link__arrow-next) {
+		flex-wrap: wrap-reverse;
+	}
+}

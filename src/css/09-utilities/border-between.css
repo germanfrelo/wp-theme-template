@@ -1,0 +1,12 @@
+/*
+Reference:
+https://tailwindcss.com/docs/border-width#between-children
+*/
+
+.divide-x > * + * {
+	border-inline-start: var(--border, thin solid);
+}
+
+.divide-y > * + * {
+	border-block-start: var(--border, thin solid);
+}

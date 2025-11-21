@@ -1,31 +1,31 @@
-<!-- wp:group {"className":"wrapper","style":{"spacing":{"blockGap":"var:preset|spacing|l"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center","flexWrap":"nowrap"}} -->
-<div class="wp-block-group wrapper">
-	<!-- wp:site-logo /-->
+<!-- wp:group {"className":"site-footer","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group site-footer">
+	<!-- wp:group {"align":"wide","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center","flexWrap":"nowrap"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:site-logo /-->
 
-	<!-- wp:navigation {"overlayMenu":"never","className":"site-footer__legal-navigation","layout":{"type":"flex","justifyContent":"center"}} /-->
+		<!-- wp:navigation {"ref":981,"overlayMenu":"never","className":"site-footer__legal-navigation","layout":{"type":"flex","justifyContent":"center"}} /-->
 
-	<!-- wp:social-links {"openInNewTab":true,"className":"is-style-logos-only","layout":{"type":"flex"}} -->
-	<ul class="wp-block-social-links is-style-logos-only">
-		<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+		<!-- wp:social-links {"openInNewTab":true,"layout":{"type":"flex"}} -->
+		<ul class="wp-block-social-links">
+			<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
 
-		<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+			<!-- wp:social-link {"url":"#","service":"mail"} /-->
+		</ul>
+		<!-- /wp:social-links -->
 
-		<!-- wp:social-link {"url":"#","service":"bluesky"} /-->
+		<!-- wp:site-tagline /-->
 
-		<!-- wp:social-link {"url":"#","service":"youtube"} /-->
-	</ul>
-	<!-- /wp:social-links -->
+		<!-- wp:group {"style":{"spacing":{"blockGap":"1ch"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group">
+			<!-- wp:mtdev/copyright-date {"fallbackCurrentYear":"2025"} -->
+			<p class="wp-block-mtdev-copyright-date">© 2025</p>
+			<!-- /wp:mtdev/copyright-date -->
 
-	<!-- wp:group {"style":{"spacing":{"blockGap":"1.5ch"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group">
-		<!-- wp:mtdev/copyright-date {"fallbackCurrentYear":"2025"} -->
-		<p class="wp-block-mtdev-copyright-date">© 2025</p>
-		<!-- /wp:mtdev/copyright-date -->
-
-		<!-- wp:site-title {"level":0,"isLink":false} /-->
+			<!-- wp:site-title {"level":0,"isLink":false} /-->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:site-tagline /-->
 </div>
 <!-- /wp:group -->

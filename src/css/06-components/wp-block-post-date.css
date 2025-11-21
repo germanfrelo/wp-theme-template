@@ -1,0 +1,17 @@
+/* ===================================================================
+WP BLOCK POST DATE
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-date
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-date
+---
+Variables:
+--post-date-font-size
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-post-date {
+	font-size: var(--post-date-font-size, var(--text-size-s));
+}

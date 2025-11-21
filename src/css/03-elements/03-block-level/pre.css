@@ -1,0 +1,24 @@
+/* ===================================================================
+PREFORMATTED TEXT
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/pre
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+pre {
+	font-family: var(--type-mono-family, monospace);
+	font-size: var(--type-mono-size, 0.8125em);
+	font-variant-ligatures: none;
+}
+
+pre:has(> code:only-child) {
+	padding-block: var(--code-block-padding-block);
+	padding-inline: var(--code-block-padding-inline);
+	color: var(--code-block-text-color);
+	background-color: var(--code-block-background-color);
+	border: var(--code-block-border);
+	border-radius: var(--code-block-border-radius);
+}

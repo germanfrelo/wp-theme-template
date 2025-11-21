@@ -7,8 +7,14 @@
 # Minified files
 **/*.min.*
 
-# Ignore pnpm's generated lock file
-pnpm-lock.yaml
-
-# Build output
+# Build output directories
 build/
+dist/
+
+# Third-party directories
+vendor/
+
+# XML and PHPCS ruleset files
+phpcs.xml
+phpcs.xml.dist
+**/*.xml

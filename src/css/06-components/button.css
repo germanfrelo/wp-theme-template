@@ -1,0 +1,143 @@
+/* ===================================================================
+BUTTON
+---
+Resources:
+- https://heydonworks.com/article/the-anchor-element/
+- https://heydonworks.com/article/the-button-element/
+- https://piccalil.li/blog/how-i-build-a-button-component/
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/button
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/button
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+.wp-block-button,
+.wp-block-button__link {
+	inline-size: var(--button-inline-size);
+	max-inline-size: var(--button-max-inline-size);
+}
+
+/*
+Use a block-level display type value as a fallback so buttons can stretch when placed
+inside a vertical '.wp-block-buttons' container with 'align-items: stretch' enabled.
+Valid fallbacks: 'block', 'flex', 'grid'.
+Avoid inline-level values such as 'inline-block', 'inline-flex', or 'inline-grid'.
+*/
+.button,
+.wp-block-button__link,
+.wp-block-read-more {
+	display: var(--button-display, flex);
+	flex-direction: var(--button-direction, row);
+	flex-wrap: var(--button-wrap, nowrap);
+	gap: var(--button-gap, 1.5ch);
+	align-content: center;
+	align-items: center;
+	justify-content: var(--button-justify-content, center);
+	min-inline-size: 24px;
+	min-block-size: 24px;
+	padding-block: var(--button-padding-block, 0.5em);
+	padding-inline: var(--button-padding-inline, 2ch);
+	font-size: var(--button-font-size, var(--text-size-s));
+	font-weight: var(--button-font-weight);
+	line-height: var(--button-line-height);
+	color: var(--button-text-color, currentcolor);
+	text-align: var(--button-text-align, center);
+	text-transform: var(--button-text-transform);
+	letter-spacing: var(--button-letter-spacing);
+	overflow-wrap: anywhere;
+	text-decoration-line: var(--button-line, none);
+	cursor: pointer;
+	background-color: var(--button-background-color);
+	border-color: var(--button-border-color, var(--button-background-color));
+	border-style: solid;
+	border-width: var(--button-border-width, var(--border-width-thin));
+	border-radius: var(--button-border-radius);
+	text-box: var(--button-text-box);
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: var(--transition-duration);
+		transition-property: color, background-color, border-color;
+	}
+
+	/* -----------------------------------------------
+	States
+	----------------------------------------------- */
+
+	&:hover {
+		color: var(--button-text-color-hover, var(--button-text-color));
+		background-color: var(--button-background-color-hover, var(--button-background-color));
+	}
+
+	&:active {
+		scale: 99%;
+	}
+
+	/* -----------------------------------------------
+	Icon
+	----------------------------------------------- */
+
+	/* Pseudo-element based icon */
+	&::after {
+		display: inline-block;
+		flex-shrink: 0;
+		inline-size: var(--button-icon-size, 1em);
+		block-size: var(--button-icon-size, 1em);
+		content: "";
+		background-color: var(--button-icon-color, currentcolor);
+		mask-image: var(--button-icon-image);
+		mask-position: center;
+		mask-size: contain;
+	}
+
+	/* If a real image/inline SVG child exists, prefer that instead of rendering the icon using a pseudo-element */
+	&:has(> :is(img, svg, .icon)) {
+		&::after {
+			content: none;
+		}
+	}
+
+	/* Image/SVG child icon */
+	> :is(img, svg, .icon) {
+		flex-shrink: 0;
+		inline-size: auto;
+		block-size: var(--button-icon-size, 1em);
+	}
+}
+
+/* ===================================================================
+Variants
+=================================================================== */
+
+:is(.button, .wp-element-button, .wp-block-button) {
+	/* -----------------------------------------------
+	Appearance
+	----------------------------------------------- */
+
+	&[data-button-appearance="inverse"] {
+		--button-text-color: var(--color-accent);
+		--button-text-color-hover: var(--color-accent);
+		--button-background-color: var(--color-surface);
+		--button-background-color-hover: var(--color-surface);
+	}
+
+	&[data-button-appearance="outlined"] {
+		--button-text-color: var(--color-accent);
+		--button-text-color-hover: var(--color-accent);
+		--button-background-color: transparent;
+		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
+		--button-border-color: currentcolor;
+		--button-border-color-hover: currentcolor;
+	}
+
+	&[data-button-appearance="ghost"] {
+		--button-text-color: var(--color-accent);
+		--button-text-color-hover: var(--color-accent);
+		--button-background-color: transparent;
+		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
+		--button-border-color: transparent;
+		--button-border-color-hover: transparent;
+	}
+}

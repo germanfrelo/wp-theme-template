@@ -1,0 +1,56 @@
+/* ===================================================================
+SVG
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/svg
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* Don't shrink 'svg' elements in case they are in flex contexts. */
+svg {
+	flex-shrink: 0;
+}
+
+/* Constrain SVG elements with no class, width, and height to prevent them from becoming excessively large. */
+svg:not(:where([class], [width], [height])) {
+	inline-size: auto;
+	block-size: 1lh;
+}
+
+/*
+If an 'svg' has a role of 'img', we treat it as an image of sorts.
+We know there is a width and height because we also target [width][height], so we can safely allow those to take over.
+*/
+svg:where([role="img"][width][height]) {
+	inline-size: revert;
+	block-size: revert;
+}
+
+:is(figure, picture) svg {
+	inline-size: var(--image-width, 100%);
+	block-size: var(--image-height, auto);
+	border-radius: var(--image-border-radius);
+}
+
+/* Constrain SVGs that are inserted inside some text elements to prevent them from becoming excessively large. */
+:is(h1, h2, h3, h4, h5, h6, p) svg:only-child {
+	display: inline;
+	inline-size: auto;
+	block-size: 1em;
+}
+
+/* -----------------------------------------------
+Linked SVGs
+----------------------------------------------- */
+
+/* Ensure linked SVGs fill container. The WP default 'inline-block' on the parent <a> prevents them from spanning full width. Setting 'display: block' solves this. */
+a:has(> svg:only-child) {
+	display: block;
+}
+
+/* Constrain link for custom sizes. The previous 'display: block' allows full width. If the image has a custom smaller width (via WP editor inline style), this constrains the link to the image's specific width, eliminating the unwanted clickable empty space. */
+a:has(> svg:only-child[style*="width:"]) {
+	inline-size: fit-content;
+}

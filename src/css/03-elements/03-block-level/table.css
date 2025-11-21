@@ -1,0 +1,41 @@
+/* ===================================================================
+TABLE
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+table {
+	inline-size: 100%;
+
+	caption {
+		padding-block: var(--caption-padding-block);
+	}
+}
+
+thead {
+	font-weight: var(--table-head-font-weight, bolder);
+	background-color: var(--table-head-background-color);
+	border-block-end: var(--table-head-border, var(--border-width-medium)) solid;
+}
+
+tfoot {
+	font-weight: var(--table-foot-font-weight, bolder);
+	background-color: var(--table-foot-background-color);
+	border-block-start: var(--table-foot-border, var(--border-width-medium, medium)) solid;
+}
+
+td,
+th {
+	padding-block: var(--table-cell-padding-block, 0.5em);
+	padding-inline: var(--table-cell-padding-inline, 0.5rem);
+	overflow-wrap: anywhere;
+	border-width: var(--table-border, var(--border-width-thin, thin));
+}
+
+th {
+	font-weight: var(--table-cell-header-font-weight, bolder);
+}

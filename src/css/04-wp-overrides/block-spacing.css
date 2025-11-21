@@ -1,0 +1,55 @@
+/* =========================================================
+Block spacing (blockGap) override for WP layouts.
+---
+Applies theme-controlled spacing for WordPress's flow, constrained, flex, and grid layouts.
+For rationale and details, see: docs/3-theme-structure.md
+---
+Notes:
+IMPORTANT! The use of the pseudo-class function ':where()' in these selectors is intentional. It lowers the specificity of these rules to '0-0-0'. This ensures that any 'blockGap' values set via the Site Editor's controls (which have a specificity of '0-1-0') can correctly override these theme's default values, as expected. If these rules had higher specificity, they would always win, preventing editor customizations from taking effect.
+========================================================= */
+
+/* -----------------------------------------------
+Flow Layout (Default)
+----------------------------------------------- */
+
+:where(.is-layout-flow) {
+	> * {
+		margin-block: 0;
+	}
+
+	> * + * {
+		margin-block-start: var(--block-gap, 1em);
+	}
+}
+
+/* -----------------------------------------------
+Constrained Layout
+----------------------------------------------- */
+
+:where(.is-layout-constrained) {
+	> * {
+		margin-block: 0;
+	}
+
+	> * + * {
+		margin-block-start: var(--block-gap, 1em);
+	}
+}
+
+/* -----------------------------------------------
+Flex Layout
+----------------------------------------------- */
+
+:where(.is-layout-flex) {
+	row-gap: var(--row-gap, var(--block-gap, 1em));
+	column-gap: var(--column-gap, var(--block-gap, 1em));
+}
+
+/* -----------------------------------------------
+Grid Layout
+----------------------------------------------- */
+
+:where(.is-layout-grid) {
+	row-gap: var(--row-gap, var(--block-gap, 1em));
+	column-gap: var(--column-gap, var(--block-gap, 1em));
+}

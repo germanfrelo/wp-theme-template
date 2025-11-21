@@ -1,0 +1,156 @@
+/* ===================================================================
+WP BLOCK POST TEMPLATE
+---
+WP block source:
+- https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/post-template
+- https://github.com/WordPress/WordPress/blob/master/wp-includes/blocks/post-template
+---
+Variables:
+--post-border
+--post-gap
+--post-image-aspect-ratio
+--post-image-min-block-size
+--post-padding
+--post-padding-block
+--post-padding-inline
+--post-template-gap-columns
+--post-template-gap-rows
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+/* ===================================================================
+Post Template
+=================================================================== */
+
+.wp-block-post-template {
+	--post-gap: calc(var(--block-gap, 1rem) / 2);
+	display: grid;
+	row-gap: var(--post-template-gap-rows, calc(var(--block-gap, 1em) * 2));
+	column-gap: var(--post-template-gap-columns, var(--block-gap, 1em));
+
+	&.is-layout-flow {
+		--post-image-aspect-ratio: 2 / 1;
+	}
+
+	/* -----------------------------------------------
+	Post
+	---
+	Note: this stylesheet targets the inner post container (`.post`) rather than the
+	outer `li.wp-block-post` wrapper. When authoring patterns, include an inner
+	container between the block wrapper and the post elements so styles apply
+	consistently in the editor and on the front end.
+	----------------------------------------------- */
+
+	.post:where(:not(.wp-block-post)) {
+		display: flex;
+		flex-direction: column;
+		gap: var(--post-gap, var(--block-gap, 1rem));
+		min-block-size: 100%;
+		padding-block: var(--post-padding-block, var(--post-padding));
+		padding-inline: var(--post-padding-inline, var(--post-padding));
+		border: var(--post-border);
+
+		> * {
+			margin: 0;
+		}
+
+		/* Post Featured Image */
+		.wp-block-post-featured-image {
+			min-block-size: var(--post-image-min-block-size, 15rem);
+			aspect-ratio: var(--post-image-aspect-ratio, 16 / 10);
+			background-color: color-mix(in oklab, currentcolor 15%, transparent);
+		}
+
+		/* Post Title */
+		.wp-block-post-title {
+			--link-text-color: currentcolor;
+			--link-decoration-color: transparent;
+			--link-decoration-color-hover: currentcolor;
+			--link-decoration-thickness: from-font;
+			font-family: var(--type-display-family);
+			font-size: var(--text-size-2xl, revert);
+		}
+
+		/* Post Author & Post Date */
+		.wp-block-post-author,
+		.wp-block-post-author-name,
+		.wp-block-post-date {
+			font-size: var(--text-size-s);
+			font-weight: var(--type-body-weight-normal);
+		}
+
+		/* Post Excerpt */
+		> .wp-block-excerpt {
+			flex-grow: 1;
+		}
+
+		/* Read More */
+		> .wp-block-read-more:last-child {
+			margin-block-start: auto;
+		}
+	}
+}
+
+/* ===================================================================
+Post Template - Variant: Sticky Posts
+=================================================================== */
+
+.wp-block-post-template.is-style-post-template-sticky-posts {
+	--post-image-aspect-ratio: 16 / 10;
+
+	.post:where(:not(.wp-block-post)) {
+		display: grid;
+		row-gap: var(--space-24);
+
+		> * {
+			margin-block: 0;
+		}
+
+		.wp-block-post-author,
+		.wp-block-post-author-name,
+		.wp-block-post-date {
+			text-transform: uppercase;
+		}
+	}
+
+	/* stylelint-disable-next-line no-unknown-custom-media -- Defined in 01-breakpoints.css */
+	@media (--md-min) {
+		display: block;
+
+		> * + * {
+			margin-block-start: 0;
+		}
+
+		.post:where(:not(.wp-block-post)) {
+			grid-template-areas: "image content";
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			gap: 0;
+
+			> .wp-block-post-featured-image {
+				grid-area: image;
+			}
+
+			> .post__content {
+				grid-area: content;
+				padding-block: var(--space-40);
+				padding-inline: var(--space-40) 0;
+			}
+
+			.wp-block-post-featured-image img {
+				aspect-ratio: 4 / 3;
+			}
+		}
+
+		> li.wp-block-post:nth-child(even) {
+			.post:where(:not(.wp-block-post)) {
+				grid-template-areas: "content image";
+
+				> .post__content {
+					padding-inline: 0 var(--space-40);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+/* ===================================================================
+Region
+---
+Consistent block padding for page sections.
+---
+Variables:
+--region-gap (--block-gap)
+--region-space-start (--region-space)
+--region-space-end (--region-space)
+=================================================================== */
+
+.region {
+	padding-block-start: var(--region-space-start, var(--region-space));
+	padding-block-end: var(--region-space-end, var(--region-space));
+
+	> * + * {
+		margin-block-start: var(--region-gap, var(--block-gap, 1em));
+	}
+}
+
+main.region {
+	padding-block: calc(2.5 * var(--block-gap));
+
+	> * + *,
+	> .entry-content > * + * {
+		margin-block-start: calc(2.5 * var(--block-gap));
+	}
+}
+
+body.page-template-default {
+	main.region > .entry-content > * + * {
+		margin-block-start: var(--block-gap, 1em);
+	}
+}

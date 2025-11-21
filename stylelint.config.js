@@ -51,9 +51,13 @@ export default {
 	},
 	ignoreFiles: [
 		// See https://stylelint.io/user-guide/configure#ignorefiles
-		"node_modules/",
 		"**/*.min.*",
+		"**/*.xml",
 		"build/**/*.css",
-		"src/css/theme.css",
+		"dist/**/*.css",
+		"node_modules/",
+		"phpcs.xml.dist",
+		"phpcs.xml",
+		"src/css/index.css",
 	],
 };

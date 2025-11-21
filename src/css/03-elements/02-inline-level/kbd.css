@@ -1,0 +1,23 @@
+/* ===================================================================
+KEYBOARD INPUT
+---
+Resources:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/kbd
+---
+Notes:
+- To customize most of this block and its parts, use the custom properties.
+=================================================================== */
+
+kbd {
+	display: inline-block;
+	padding: 0.5em;
+	font-family: ui-sans-serif, sans-serif;
+	font-size: var(--type-mono-size, 0.8125em);
+	font-weight: normal;
+	line-height: 1;
+	text-box: cap alphabetic;
+	white-space: nowrap;
+	border: 1px solid;
+	border-radius: 0.25rem;
+	box-shadow: 0 1px currentcolor;
+}

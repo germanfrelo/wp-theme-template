@@ -1,0 +1,32 @@
+/* ===================================================================
+Site Header
+---
+Notes:
+- When editing a Template Part in the block editor the outer wrapper
+	element (for example `header.wp-block-template-part`) may not be present
+	in the editor DOM. Targeting that wrapper directly makes the editor
+	preview appear unstyled.
+
+- For reliable editor previewing and predictable runtime output, wrap the
+	template part content with an inner container and target that class here
+	(for example `.site-header`). This keeps styles scoped and visible in
+	both the editor and the front end.
+
+Example markup:
+
+	<header class="wp-block-template-part">
+		<div class="site-header">
+			<!-- header content -->
+		</div>
+	</header>
+=================================================================== */
+
+.site-header {
+	--link-decoration-color: transparent;
+	--link-text-color: currentcolor;
+	padding-block-start: var(--site-header-padding-top, var(--site-header-padding, var(--block-gap, 1em)));
+	padding-block-end: var(--site-header-padding-bottom, var(--site-header-padding, var(--block-gap, 1em)));
+	font-size: var(--site-header-font-size, var(--text-size-s));
+	background-color: var(--site-header-background-color, var(--color-surface, Canvas));
+	border-block-end: var(--border);
+}

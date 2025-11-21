@@ -1,18 +1,26 @@
 <!-- wp:template-part {"slug":"header","tagName":"header","lock":{"move":false,"remove":false}} /-->
 
-<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"className":"region","layout":{"type":"default"}} -->
-<main class="wp-block-group region">
-	<!-- wp:group {"className":"wrapper text-center","style":{"spacing":{"blockGap":"var:preset|spacing|l"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group wrapper text-center">
-		<!-- wp:heading {"level":1,"className":"text-center"} -->
-		<h1 class="wp-block-heading text-center">404: No se ha encontrado la página</h1>
-		<!-- /wp:heading -->
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+<main class="wp-block-group">
+	<!-- wp:group {"className":"region","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group region">
+		<!-- wp:group {"layout":{"type":"default"}} -->
+		<div class="wp-block-group">
+			<!-- wp:heading {"level":1,"className":"is-style-heading-eyebrow"} -->
+			<h1 class="wp-block-heading is-style-heading-eyebrow">ERROR 404</h1>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"className":"font-4xl"} -->
+			<p class="font-4xl">No se ha encontrado la página</p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
 
 		<!-- wp:paragraph -->
 		<p>Parece que has seguido un enlace roto o introducido una URL que no existe en este sitio.</p>
 		<!-- /wp:paragraph -->
 
-		<!-- wp:buttons {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|m","left":"var:preset|spacing|m"}}},"layout":{"type":"flex","justifyContent":"center"}} -->
+		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
 			<!-- wp:button -->
 			<div class="wp-block-button">
