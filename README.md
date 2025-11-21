@@ -4,7 +4,7 @@
 
 ---
 
-![](screenshot.png)
+![Theme screenshot](screenshot.png)
 
 ## Features
 
