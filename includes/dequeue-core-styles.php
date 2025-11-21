@@ -218,7 +218,7 @@ function themeslug_remove_wp_block_styles() {
 		'wp-block-social-links',
 		'wp-block-spacer',
 		'wp-block-table',
-		// 'wp-block-tag-cloud',
+		'wp-block-tag-cloud',
 		'wp-block-term-description',
 		// 'wp-block-text-columns',
 		'wp-block-verse',
