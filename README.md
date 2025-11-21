@@ -2,6 +2,10 @@
 
 [![Build and Deploy to Staging Server](themerepourl/actions/workflows/deploy.yml/badge.svg)](themerepourl/actions/workflows/deploy.yml)
 
+---
+
+![""](screenshot.png)
+
 ## Features
 
 ### Custom Post Types (CPT)
