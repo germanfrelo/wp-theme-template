@@ -28,9 +28,9 @@
 
 ## Project development
 
-0. [**Configuración del sitio web en producción**](./docs/0-production-site-setup.md)
-1. [**Configuración del sitio web en local**](./docs/1-local-site-setup.md)
-2. [**Configuración del tema**](./docs/2-theme-setup.md)
-3. [**Estructura del tema**](./docs/3-theme-structure.md)
-4. [**Desarrollo y despliegue del tema**](./docs/4-theme-development-and-deployment.md)
-5. [**Asset URL rewritting**](./docs/5-asset-url-rewriting.md)
+0. [**Production site setup**](./docs/0-production-site-setup.md)
+1. [**Local site setup**](./docs/1-local-site-setup.md)
+2. [**Theme setup**](./docs/2-theme-setup.md)
+3. [**Theme structure**](./docs/3-theme-structure.md)
+4. [**Theme development and deployment**](./docs/4-theme-development-and-deployment.md)
+5. [**Asset URL rewriting**](./docs/5-asset-url-rewriting.md)
