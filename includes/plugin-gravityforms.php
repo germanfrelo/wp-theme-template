@@ -36,7 +36,13 @@ function themeslug_create_html_fragment( $html, $use_next_tag = false ) {
 
 	$fragment = WP_HTML_Processor::create_fragment( $html );
 
-	if ( $fragment && $fragment->next_token() ) {
+	if ( ! $fragment ) {
+		return null;
+	}
+
+	$positioned = $use_next_tag ? $fragment->next_tag() : $fragment->next_token();
+
+	if ( $positioned ) {
 		return $fragment;
 	}
 
@@ -117,8 +123,12 @@ add_filter( 'gform_submit_button', 'themeslug_gform_input_to_button', 10, 2 );
  * @return string
  */
 function themeslug_gform_add_custom_css_classes( $button, $form ) {
-	$fragment = WP_HTML_Processor::create_fragment( $button );
-	$fragment->next_token();
+	$fragment = themeslug_create_html_fragment( $button );
+
+	if ( ! $fragment ) {
+		return $button;
+	}
+
 	$fragment->add_class( 'button' );
 
 	return $fragment->get_updated_html();
