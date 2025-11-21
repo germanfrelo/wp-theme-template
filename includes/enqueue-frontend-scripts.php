@@ -8,7 +8,7 @@
  * @package themeslug
  */
 function themeslug_enqueue_frontend_scripts() {
-	$frontend_scripts_dir = THEMESLUG_FRONTEND_JS_DIR;
+	$frontend_scripts_dir = THEMESLUG_FRONTEND_JS_URL;
 
 	// List of the JS files (filenames only, located under $frontend_scripts_dir).
 	$files = [
