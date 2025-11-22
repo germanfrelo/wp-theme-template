@@ -5,6 +5,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
+	plugins: ["@prettier/plugin-php"],
 	quoteProps: "consistent",
 	overrides: [
 		{
@@ -29,6 +30,14 @@ const config = {
 			files: ["*.jsonc"],
 			options: {
 				trailingComma: "none",
+			},
+		},
+		{
+			files: ["*.php"],
+			options: {
+				parser: "php",
+				useTabs: true,
+				braceStyle: "1tbs",
 			},
 		},
 	],

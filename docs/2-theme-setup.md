@@ -11,10 +11,27 @@ From your terminal, navigate to the `/wp-content/themes/` directory of your loca
 
 ## Step 2: Install dependencies
 
-Navigate into the theme directory and run:
+Navigate into the theme directory and install the necessary Node and PHP dependencies:
+
+### Node dependencies (npm)
 
 ```sh
 npm install
+```
+
+### PHP dependencies (Composer)
+
+```sh
+composer install
+```
+
+### Verify installations (quick sanity check)
+
+```sh
+node -v
+npm -v
+php -v
+composer --version
 ```
 
 ## Step 3: Replace theme template placeholders

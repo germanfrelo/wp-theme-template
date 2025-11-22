@@ -7,6 +7,8 @@ This guide will walk you through setting up the WordPress site for local develop
 - [**Git**](https://docs.github.com/en/get-started/git-basics)
 - [**Code editor**](https://developer.wordpress.org/block-editor/getting-started/devenv/#code-editor) (recommended: [VS Code](https://code.visualstudio.com/))
 - [**Node.js and npm**](https://developer.wordpress.org/block-editor/getting-started/devenv/#node-js-development-tools)
+- [**PHP**](https://www.php.net/downloads.php)
+- [**Composer**](https://getcomposer.org/) (also available [via Homebrew](https://formulae.brew.sh/formula/composer))
 
 ## Step 1: Install and configure WP Migrate and Local
 
