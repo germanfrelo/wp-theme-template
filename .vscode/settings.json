@@ -6,17 +6,6 @@
 	},
 	"editor.formatOnSave": true,
 
-	// PHP (PHPSAB) — when opening the theme folder directly
-	"[php]": {
-		"editor.defaultFormatter": "valeryanm.vscode-phpsab"
-	},
-	"phpsab.autoRulesetSearch": false,
-	"phpsab.executablePathCBF": "vendor/bin/phpcbf",
-	"phpsab.executablePathCS": "vendor/bin/phpcs",
-	"phpsab.fixerEnable": true,
-	"phpsab.snifferEnable": true,
-	"phpsab.standard": "phpcs.xml.dist",
-
 	// Lint CSS with Stylelint
 	// Disable VS Code's built-in linters to prevent them from reporting the same errors as Stylelint
 	"stylelint.enable": true, // default

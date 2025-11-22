@@ -26,8 +26,6 @@ Code quality checks for formatting and linting can be run manually at any time.
 
 - **`npm run format`**: Formats all code.
 - **`npm run lint`**: Lints all CSS (and other) files.
-- **`composer run lint`**: Checks PHP files for syntax and standards errors according to WordPress Coding Standards.
-- **`composer run format`**: Attempts to automatically fix PHP issues using PHPCBF.
 
 It's also recommended to install the extensions for these tools in your code editor (e.g., VS Code extensions).
 

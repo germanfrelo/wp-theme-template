@@ -8,8 +8,6 @@
 		"esbenp.prettier-vscode",
 		// JS
 		"dbaeumer.vscode-eslint",
-		// PHP
-		"valeryanm.vscode-phpsab",
 		// WordPress
 		"johnbillion.vscode-wordpress-hooks",
 		"wordpresstoolbox.wordpress-toolbox"

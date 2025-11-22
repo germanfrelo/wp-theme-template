@@ -13,8 +13,3 @@ dist/
 
 # Third-party directories
 vendor/
-
-# XML and PHPCS ruleset files
-phpcs.xml
-phpcs.xml.dist
-**/*.xml
