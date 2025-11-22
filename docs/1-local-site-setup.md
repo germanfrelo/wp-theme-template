@@ -78,14 +78,14 @@ to
  * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/#why-does-it-take-so-long-to-update-the-styles-in-the-browser
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/#wp_debug
  */
-if ( ! defined( 'WP_DEBUG' ) ) {
-  define( 'WP_DEBUG', true );
+if (!defined("WP_DEBUG")) {
+  define("WP_DEBUG", true);
 }
 
 /**
  * Set the environment type to 'local'.
  */
-define( 'WP_ENVIRONMENT_TYPE', 'local' );
+define("WP_ENVIRONMENT_TYPE", "local");
 
 /**
  * Set the development mode for the site to 'all'.
@@ -94,14 +94,14 @@ define( 'WP_ENVIRONMENT_TYPE', 'local' );
  *
  * @link https://make.wordpress.org/core/2023/07/14/configuring-development-mode-in-6-3/
  */
-define( 'WP_DEVELOPMENT_MODE', 'all' );
+define("WP_DEVELOPMENT_MODE", "all");
 
 /**
  * Enable "Debug logging" to the '/wp-content/debug.log' file.
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/#wp_debug_log
  */
-define( 'WP_DEBUG_LOG', true );
+define("WP_DEBUG_LOG", true);
 
 /**
  * Disable display of errors and warnings on the front end.
@@ -110,22 +110,22 @@ define( 'WP_DEBUG_LOG', true );
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/#wp_debug_display
  */
-define( 'WP_DEBUG_DISPLAY', false );
-@ini_set( 'display_errors', 0 );
+define("WP_DEBUG_DISPLAY", false);
+@ini_set("display_errors", 0);
 
 /**
  * Use dev versions of core JS and CSS files (only needed if you are modifying these core files).
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/#script_debug
  */
-define( 'SCRIPT_DEBUG', true );
+define("SCRIPT_DEBUG", true);
 
 /**
  * Enable the use of the 'Trash' for media items.
  *
  * @link https://wordpress.org/plugins/media-trash-button/
  */
-define( 'MEDIA_TRASH' , true );
+define("MEDIA_TRASH", true);
 
 /* That's all, stop editing! Happy publishing. */
 ```

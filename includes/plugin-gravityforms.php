@@ -7,7 +7,6 @@
  * @package themeslug
  */
 
-
 /**
  * Disable the CSS of the default theme used by forms created with Gravity Forms 2.5 and greater.
  *
@@ -17,8 +16,7 @@
  *
  * @param bool $disabled Whether to disable the theme CSS.
  */
-add_filter( 'gform_disable_form_theme_css', '__return_true' );
-
+add_filter("gform_disable_form_theme_css", "__return_true");
 
 /**
  * Filter the next, previous and submit buttons.
@@ -35,53 +33,62 @@ add_filter( 'gform_disable_form_theme_css', '__return_true' );
  * @param array  $form   Contains all the properties of the current form.
  * @return string The filtered button.
  */
-function themeslug_gform_input_to_button( $button, $form ) {
-	$fragment = \WP_HTML_Processor::create_fragment( $button );
-	if ( ! $fragment->next_tag( 'input' ) ) {
+function themeslug_gform_input_to_button($button, $form) {
+	$fragment = \WP_HTML_Processor::create_fragment($button);
+	if (!$fragment->next_tag("input")) {
 		return $button; // Not a valid input, return original.
 	}
 
 	// Get the text for the button from the input's 'value' attribute.
-	$button_text = $fragment->get_attribute( 'value' );
+	$button_text = $fragment->get_attribute("value");
 
 	// Start building the new button tag.
-	$new_button_html = '<button';
+	$new_button_html = "<button";
 
 	// Loop over ALL attributes from the original input using the correct method.
-	foreach ( $fragment->get_attribute_names_with_prefix( '' ) as $attribute_name ) {
+	foreach (
+		$fragment->get_attribute_names_with_prefix("")
+		as $attribute_name
+	) {
 		// Skip 'value', as it becomes the button's text content.
 		// Attribute names from the processor are already lowercase.
-		if ( 'value' === $attribute_name ) {
+		if ("value" === $attribute_name) {
 			continue;
 		}
 
 		// Get the attribute value.
-		$value = $fragment->get_attribute( $attribute_name );
+		$value = $fragment->get_attribute($attribute_name);
 
 		// Re-add the attribute to our new button string.
 		// This correctly handles boolean attributes (like 'disabled').
-		if ( true === $value ) {
-			$new_button_html .= ' ' . esc_attr( $attribute_name );
+		if (true === $value) {
+			$new_button_html .= " " . esc_attr($attribute_name);
 		} else {
-			$new_button_html .= sprintf( ' %s="%s"', esc_attr( $attribute_name ), esc_attr( $value ) );
+			$new_button_html .= sprintf(
+				' %s="%s"',
+				esc_attr($attribute_name),
+				esc_attr($value),
+			);
 		}
 	}
 
 	// Ensure the button has type="submit" if the original was a submit
 	// (This might be redundant if 'type' is copied, but it's a good safeguard).
-	if ( 'submit' === strtolower( $fragment->get_attribute( 'type' ) ) && false === strpos( $new_button_html, 'type=' ) ) {
+	if (
+		"submit" === strtolower($fragment->get_attribute("type")) &&
+		false === strpos($new_button_html, "type=")
+	) {
 		$new_button_html .= ' type="submit"';
 	}
 
 	// Close the tag and add the text inside a 'span' element.
-	$new_button_html .= '><span>' . esc_html( $button_text ) . '</span></button>';
+	$new_button_html .= "><span>" . esc_html($button_text) . "</span></button>";
 
 	return $new_button_html;
 }
-add_filter( 'gform_next_button', 'themeslug_gform_input_to_button', 10, 2 );
-add_filter( 'gform_previous_button', 'themeslug_gform_input_to_button', 10, 2 );
-add_filter( 'gform_submit_button', 'themeslug_gform_input_to_button', 10, 2 );
-
+add_filter("gform_next_button", "themeslug_gform_input_to_button", 10, 2);
+add_filter("gform_previous_button", "themeslug_gform_input_to_button", 10, 2);
+add_filter("gform_submit_button", "themeslug_gform_input_to_button", 10, 2);
 
 /**
  * Add custom CSS classes to the submit button.
@@ -92,15 +99,19 @@ add_filter( 'gform_submit_button', 'themeslug_gform_input_to_button', 10, 2 );
  *
  * @return string
  */
-function themeslug_gform_add_custom_css_classes( $button, $form ) {
-	$fragment = WP_HTML_Processor::create_fragment( $button );
+function themeslug_gform_add_custom_css_classes($button, $form) {
+	$fragment = WP_HTML_Processor::create_fragment($button);
 	$fragment->next_token();
-	$fragment->add_class( 'button' );
+	$fragment->add_class("button");
 
 	return $fragment->get_updated_html();
 }
-add_filter( 'gform_submit_button', 'themeslug_gform_add_custom_css_classes', 15, 2 );
-
+add_filter(
+	"gform_submit_button",
+	"themeslug_gform_add_custom_css_classes",
+	15,
+	2,
+);
 
 /**
  * Adds custom data- attributes to the submit button for specific forms.
@@ -114,13 +125,13 @@ add_filter( 'gform_submit_button', 'themeslug_gform_add_custom_css_classes', 15,
  * @param array  $form   The current form object.
  * @return string The modified button HTML with data attributes.
  */
-function themeslug_gform_add_data_attributes( $button, $form ) {
+function themeslug_gform_add_data_attributes($button, $form) {
 	// Early return if there's no button HTML to process.
-	if ( empty( $button ) ) {
+	if (empty($button)) {
 		return $button;
 	}
 
-	$form_id = $form['id'];
+	$form_id = $form["id"];
 
 	/**
 	 * Configuration for data attributes.
@@ -132,36 +143,36 @@ function themeslug_gform_add_data_attributes( $button, $form ) {
 	 * ],
 	 */
 	$config = [
-		'data-___' => [
-			'___' => [],
-			'___' => [],
+		"data-___" => [
+			"___" => [],
+			"___" => [],
 		],
 	];
 
 	// Find all attributes that should be applied to the current form.
 	$attributes_to_set = [];
-	foreach ( $config as $attribute_name => $value_map ) {
-		foreach ( $value_map as $attribute_value => $form_ids ) {
-			if ( in_array( $form_id, $form_ids, true ) ) {
-				$attributes_to_set[ $attribute_name ] = $attribute_value;
+	foreach ($config as $attribute_name => $value_map) {
+		foreach ($value_map as $attribute_value => $form_ids) {
+			if (in_array($form_id, $form_ids, true)) {
+				$attributes_to_set[$attribute_name] = $attribute_value;
 				break; // Found the value for this attribute, move to the next one.
 			}
 		}
 	}
 
 	// If no attributes were found for this form, return the button without changes.
-	if ( empty( $attributes_to_set ) ) {
+	if (empty($attributes_to_set)) {
 		return $button;
 	}
 
-	$fragment = WP_HTML_Processor::create_fragment( $button );
+	$fragment = WP_HTML_Processor::create_fragment($button);
 
-	if ( $fragment->next_tag() ) {
-		foreach ( $attributes_to_set as $name => $value ) {
-			$fragment->set_attribute( $name, $value );
+	if ($fragment->next_tag()) {
+		foreach ($attributes_to_set as $name => $value) {
+			$fragment->set_attribute($name, $value);
 		}
 	}
 
 	return $fragment->get_updated_html();
 }
-add_filter( 'gform_submit_button', 'themeslug_gform_add_data_attributes', 20, 2 );
+add_filter("gform_submit_button", "themeslug_gform_add_data_attributes", 20, 2);

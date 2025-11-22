@@ -7,7 +7,6 @@
  * @package themeslug
  */
 
-
 /**
  * Generate class names from this theme's main stylesheet.
  *
@@ -22,14 +21,14 @@
  * @param string $css The initial CSS string from the plugin, which may be empty or contain CSS from other sources.
  * @return string The combined CSS string for the plugin to parse.
  */
-function themeslug_add_theme_css_for_plugin_css_class_manager( $css ) {
+function themeslug_add_theme_css_for_plugin_css_class_manager($css) {
 	// Construct the absolute path to the theme's compiled stylesheet.
-	$stylesheet_path = get_theme_file_path( THEMESLUG_THEME_CSS_PATH );
+	$stylesheet_path = get_theme_file_path(THEMESLUG_THEME_CSS_PATH);
 
 	// Before proceeding, verify the stylesheet file actually exists to prevent errors.
-	if ( file_exists( $stylesheet_path ) ) {
+	if (file_exists($stylesheet_path)) {
 		// Read the entire contents of the CSS file into a string.
-		$css_from_file = file_get_contents( $stylesheet_path );
+		$css_from_file = file_get_contents($stylesheet_path);
 
 		// Append the theme's CSS to the string. The plugin will parse this entire string to find and list the available class names.
 		return "{$css}{$css_from_file}";
@@ -38,4 +37,7 @@ function themeslug_add_theme_css_for_plugin_css_class_manager( $css ) {
 	// If the stylesheet isn't found, return the original string to avoid issues.
 	return $css;
 }
-add_filter( 'css_class_manager_theme_classes_css', 'themeslug_add_theme_css_for_plugin_css_class_manager' );
+add_filter(
+	"css_class_manager_theme_classes_css",
+	"themeslug_add_theme_css_for_plugin_css_class_manager",
+);
