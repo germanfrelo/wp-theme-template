@@ -30,6 +30,10 @@ Post Template
 	row-gap: var(--post-template-gap-rows, calc(var(--block-gap, 1em) * 2));
 	column-gap: var(--post-template-gap-columns, var(--block-gap, 1em));
 
+	> * {
+		margin: 0;
+	}
+
 	&.is-layout-flow {
 		--post-image-aspect-ratio: 2 / 1;
 	}
@@ -58,9 +62,11 @@ Post Template
 
 		/* Post Featured Image */
 		.wp-block-post-featured-image {
-			min-block-size: var(--post-image-min-block-size, 15rem);
-			aspect-ratio: var(--post-image-aspect-ratio, 16 / 10);
 			background-color: color-mix(in oklab, currentcolor 15%, transparent);
+
+			img {
+				aspect-ratio: var(--post-image-aspect-ratio, 16 / 10);
+			}
 		}
 
 		/* Post Title */
