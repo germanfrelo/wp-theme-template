@@ -2,30 +2,29 @@
 
 <!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","flexWrap":"nowrap"}} -->
 <main class="wp-block-group">
-	<!-- wp:group {"align":"wide","className":"region","style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide region">
-		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
-		<div class="wp-block-group alignwide">
-			<!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"text-box-trim-start"} /-->
+	<!-- wp:group {"align":"wide","style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|m","bottom":"var:preset|spacing|m"}}},"layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide" style="padding-top: var(--wp--preset--spacing--m); padding-bottom: var(--wp--preset--spacing--m)">
+			<!-- wp:paragraph {"align":"center","className":"font-l"} -->
+			<p class="has-text-align-center font-l"><strong>Design System</strong></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:navigation {"ref":4780,"overlayMenu":"never","layout":{"type":"flex","justifyContent":"center"}} /-->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"layout":{"type":"constrained"}} -->
-		<div class="wp-block-group">
-			<!-- wp:details {"className":"is-style-browser-default"} -->
-			<details class="wp-block-details is-style-browser-default">
-				<summary>Design System Pages</summary>
-				<!-- wp:page-list /-->
-			</details>
-			<!-- /wp:details -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:separator -->
-		<hr class="wp-block-separator has-alpha-channel-opacity" />
+		<!-- wp:separator {"align":"full"} -->
+		<hr class="wp-block-separator alignfull has-alpha-channel-opacity" />
 		<!-- /wp:separator -->
 
-		<!-- wp:post-content {"align":"full","className":"prose","layout":{"type":"constrained"}} /-->
+		<!-- wp:group {"align":"full","className":"region","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignfull region">
+			<!-- wp:post-title {"textAlign":"center","level":1,"align":"wide","className":"text-box-trim-start"} /-->
+
+			<!-- wp:post-content {"align":"full","className":"prose","layout":{"type":"constrained"}} /-->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </main>
