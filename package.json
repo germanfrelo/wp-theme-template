@@ -17,6 +17,7 @@
 	"devDependencies": {
 		"@prettier/plugin-php": "0.24.0",
 		"concurrently": "9.2.1",
+		"markdownlint-cli2": "0.19.1",
 		"postcss": "8.5.6",
 		"postcss-cli": "11.0.1",
 		"postcss-custom-media": "11.0.6",
@@ -44,6 +45,8 @@
 		"lint": "npm run lint:css",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
 		"lint:css:fix": "npm run lint:css -- --fix",
+		"lint:md": "markdownlint-cli2",
+		"lint:md:fix": "npm run lint:md -- --fix",
 		"postcss:editor": "postcss src/css/editor.css -o dist/css/editor.css",
 		"postcss:theme": "postcss src/css/index.css -o dist/css/theme.css",
 		"start": "npm run build:css && npm run build:svg && npm run watch:css",

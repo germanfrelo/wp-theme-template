@@ -6,6 +6,8 @@
 		// Formatting
 		"EditorConfig.EditorConfig",
 		"esbenp.prettier-vscode",
+		// Markdown
+		"DavidAnson.vscode-markdownlint",
 		// JS
 		"dbaeumer.vscode-eslint",
 		// WordPress

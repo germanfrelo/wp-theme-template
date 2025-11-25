@@ -1,0 +1,51 @@
+// Markdown configuration.
+// Note: Using the JSONC file format enables auto-completion in VS Code when using the extension.
+// Reference: https://github.com/DavidAnson/markdownlint/
+{
+	"globs": ["**/*.md"], // Lint all .md files in the current directory and its subdirectories
+	"gitignore": true,
+	"ignores": ["LICENCE*", "LICENSE*"],
+	"config": {
+		"default": true,
+		"code-block-style": {
+			"style": "fenced"
+		},
+		"code-fence-style": {
+			"style": "backtick"
+		},
+		"emphasis-style": {
+			"style": "underscore"
+		},
+		"heading-style": {
+			"style": "atx"
+		},
+		"hr-style": {
+			"style": "---"
+		},
+		"line-length": false,
+		"no-blanks-blockquote": false, // Allow consecutive blockquotes/alerts/callouts
+		"no-duplicate-heading": {
+			"siblings_only": true
+		},
+		"no-inline-html": false,
+		"no-trailing-punctuation": {
+			"punctuation": ".,;:。，；：" // Allow '!' and '！' (default is ".,;:!。，；：！")
+		},
+		"no-trailing-spaces": {
+			"strict": true
+		},
+		"ol-prefix": {
+			"style": "ordered"
+		},
+		"strong-style": {
+			"style": "asterisk"
+		},
+		"table-pipe-style": {
+			"style": "leading_and_trailing"
+		},
+		"table-column-style": false,
+		"ul-style": {
+			"style": "dash"
+		}
+	}
+}

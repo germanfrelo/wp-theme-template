@@ -2,6 +2,7 @@
 	// Formatting
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
 		"editor.renderWhitespace": "boundary"
 	},
 	"editor.formatOnSave": true,
@@ -19,6 +20,7 @@
 		https://github.com/microsoft/vscode/blob/1.90.0/src/vs/workbench/contrib/codeEditor/browser/saveParticipants.ts#L300-L332 */
 		"source.addMissingImports": "explicit",
 		"source.fixAll.eslint": "explicit",
+		"source.fixAll.markdownlint": "explicit",
 		"source.fixAll.stylelint": "explicit",
 		"source.sortImports": "explicit"
 	}

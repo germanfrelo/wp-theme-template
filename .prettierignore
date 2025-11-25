@@ -4,6 +4,9 @@
 # Prettier will also follow rules specified in the ".gitignore" file if it exists in the same directory from which it is run.
 # Reference: https://prettier.io/docs/en/ignore.html
 
+# Markdown files (use markdownlint-cli2 instead)
+**/*.md
+
 # Minified files
 **/*.min.*
 
