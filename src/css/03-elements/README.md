@@ -5,7 +5,7 @@
 
 Global custom properties are defined in files in [`02-tokens/`](./../02-tokens/),
 allowing us to customize globals with design tokens, rather than
-writing the same styles for *every* project.
+writing the same styles for _every_ project.
 
 ## Organization
 

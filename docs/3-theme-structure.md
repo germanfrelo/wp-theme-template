@@ -54,7 +54,7 @@ The `functions.php` file requiere each one in a specific order.
 WordPress requires this file solely for theme registration metadata, such as the theme's name, author, and version.
 
 > [!IMPORTANT]
-> This file is for metadata only. **It is *not* enqueued by the theme. Do *not* add any CSS here.**
+> This file is for metadata only. **It is _not_ enqueued by the theme. Do _not_ add any CSS here.**
 
 ### `theme.json`
 
@@ -64,7 +64,7 @@ This file is primarily used to:
 - Register custom templates, template parts, and patterns.
 
 > [!IMPORTANT]
-> **It is *not* used for applying styles.** All theme styles are managed in the `src/css/` directory for a more maintainable and powerful development experience.
+> **It is _not_ used for applying styles.** All theme styles are managed in the `src/css/` directory for a more maintainable and powerful development experience.
 
 ### `src/`
 
