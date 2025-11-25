@@ -19,7 +19,7 @@ Notes:
 
 figure:where(:has(> blockquote)),
 blockquote:where(:not(figure > blockquote)) {
-	max-inline-size: var(--quote-max-inline-size);
+	max-inline-size: var(--quote-max-inline-size, var(--measure));
 	margin-inline: var(--quote-margin-inline, 0);
 	text-align: var(--quote-text-align);
 	text-wrap: var(--quote-text-wrap);

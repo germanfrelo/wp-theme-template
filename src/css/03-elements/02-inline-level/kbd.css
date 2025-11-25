@@ -12,7 +12,7 @@ kbd {
 	display: inline-block;
 	padding: 0.5em;
 	font-family: ui-sans-serif, sans-serif;
-	font-size: var(--type-mono-size, 0.8125em);
+	font-size: var(--text-size-monospace, 0.8125em);
 	font-weight: normal;
 	line-height: 1;
 	text-box: cap alphabetic;

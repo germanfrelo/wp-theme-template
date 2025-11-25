@@ -43,14 +43,14 @@ Avoid inline-level values such as 'inline-block', 'inline-flex', or 'inline-grid
 	font-size: var(--button-font-size, var(--text-size-s));
 	font-weight: var(--button-font-weight);
 	line-height: var(--button-line-height);
-	color: var(--button-text-color, currentcolor);
+	color: var(--button-text-color, var(--color-on-accent));
 	text-align: var(--button-text-align, center);
 	text-transform: var(--button-text-transform);
 	letter-spacing: var(--button-letter-spacing);
 	overflow-wrap: anywhere;
 	text-decoration-line: var(--button-line, none);
 	cursor: pointer;
-	background-color: var(--button-background-color);
+	background-color: var(--button-background-color, var(--color-accent-primary));
 	border-color: var(--button-border-color, var(--button-background-color));
 	border-style: solid;
 	border-width: var(--button-border-width, var(--border-width-thin));
@@ -87,7 +87,7 @@ Avoid inline-level values such as 'inline-block', 'inline-flex', or 'inline-grid
 		block-size: var(--button-icon-size, 1em);
 		content: "";
 		background-color: var(--button-icon-color, currentcolor);
-		mask-image: var(--button-icon-image);
+		mask-image: url("../../svg/icon-arrow-right.svg");
 		mask-position: center;
 		mask-size: contain;
 	}
@@ -117,15 +117,15 @@ Variants
 	----------------------------------------------- */
 
 	&[data-button-appearance="inverse"] {
-		--button-text-color: var(--color-accent);
-		--button-text-color-hover: var(--color-accent);
+		--button-text-color: var(--color-accent-primary);
+		--button-text-color-hover: var(--color-accent-primary);
 		--button-background-color: var(--color-surface);
 		--button-background-color-hover: var(--color-surface);
 	}
 
 	&[data-button-appearance="outlined"] {
-		--button-text-color: var(--color-accent);
-		--button-text-color-hover: var(--color-accent);
+		--button-text-color: var(--color-accent-primary);
+		--button-text-color-hover: var(--color-accent-primary);
 		--button-background-color: transparent;
 		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: currentcolor;
@@ -133,8 +133,8 @@ Variants
 	}
 
 	&[data-button-appearance="ghost"] {
-		--button-text-color: var(--color-accent);
-		--button-text-color-hover: var(--color-accent);
+		--button-text-color: var(--color-accent-primary);
+		--button-text-color-hover: var(--color-accent-primary);
 		--button-background-color: transparent;
 		--button-background-color-hover: color-mix(in srgb, var(--button-text-color), transparent 95%);
 		--button-border-color: transparent;

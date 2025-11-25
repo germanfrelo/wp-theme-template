@@ -9,8 +9,8 @@ Notes:
 =================================================================== */
 
 pre {
-	font-family: var(--type-mono-family, monospace);
-	font-size: var(--type-mono-size, 0.8125em);
+	font-family: var(--font-monospace-family, monospace);
+	font-size: var(--text-size-monospace, 0.8125em);
 	font-variant-ligatures: none;
 }
 

@@ -25,9 +25,11 @@ Post Template
 =================================================================== */
 
 .wp-block-post-template {
-	--post-gap: calc(var(--block-gap, 1rem) / 2);
+	--post-gap: var(--space-s);
+	--post-template-gap-rows: var(--space-2xl);
+	--post-template-gap-columns: var(--space-m);
 	display: grid;
-	row-gap: var(--post-template-gap-rows, calc(var(--block-gap, 1em) * 2));
+	row-gap: var(--post-template-gap-rows, var(--block-gap, 1em));
 	column-gap: var(--post-template-gap-columns, var(--block-gap, 1em));
 
 	> * {
@@ -75,7 +77,7 @@ Post Template
 			--link-decoration-color: transparent;
 			--link-decoration-color-hover: currentcolor;
 			--link-decoration-thickness: from-font;
-			font-family: var(--type-display-family);
+			font-family: var(--font-display-family);
 			font-size: var(--text-size-2xl, revert);
 		}
 
@@ -84,7 +86,7 @@ Post Template
 		.wp-block-post-author-name,
 		.wp-block-post-date {
 			font-size: var(--text-size-s);
-			font-weight: var(--type-body-weight-normal);
+			font-weight: var(--font-body-weight-normal);
 		}
 
 		/* Post Excerpt */
@@ -95,68 +97,6 @@ Post Template
 		/* Read More */
 		> .wp-block-read-more:last-child {
 			margin-block-start: auto;
-		}
-	}
-}
-
-/* ===================================================================
-Post Template - Variant: Sticky Posts
-=================================================================== */
-
-.wp-block-post-template.is-style-post-template-sticky-posts {
-	--post-image-aspect-ratio: 16 / 10;
-
-	.post:where(:not(.wp-block-post)) {
-		display: grid;
-		row-gap: var(--space-24);
-
-		> * {
-			margin-block: 0;
-		}
-
-		.wp-block-post-author,
-		.wp-block-post-author-name,
-		.wp-block-post-date {
-			text-transform: uppercase;
-		}
-	}
-
-	/* stylelint-disable-next-line no-unknown-custom-media -- Defined in 01-breakpoints.css */
-	@media (--md-min) {
-		display: block;
-
-		> * + * {
-			margin-block-start: 0;
-		}
-
-		.post:where(:not(.wp-block-post)) {
-			grid-template-areas: "image content";
-			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-			gap: 0;
-
-			> .wp-block-post-featured-image {
-				grid-area: image;
-			}
-
-			> .post__content {
-				grid-area: content;
-				padding-block: var(--space-40);
-				padding-inline: var(--space-40) 0;
-			}
-
-			.wp-block-post-featured-image img {
-				aspect-ratio: 4 / 3;
-			}
-		}
-
-		> li.wp-block-post:nth-child(even) {
-			.post:where(:not(.wp-block-post)) {
-				grid-template-areas: "content image";
-
-				> .post__content {
-					padding-inline: 0 var(--space-40);
-				}
-			}
 		}
 	}
 }

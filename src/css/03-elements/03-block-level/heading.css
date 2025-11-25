@@ -14,62 +14,67 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--heading-font-family);
-	font-weight: var(--heading-font-weight, bold);
-	font-feature-settings:
-		"calt" 1,
-		"ss02" 1;
-	text-transform: var(--heading-text-transform);
-	letter-spacing: var(--heading-letter-spacing);
 	overflow-wrap: anywhere;
 }
 
 h1 {
-	font-family: var(--h1-font-family, var(--heading-font-family));
-	font-size: var(--h1-font-size, 2rem);
-	font-weight: var(--h1-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h1-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h1-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-4xl-family);
+	font-size: var(--text-4xl-size, 2rem);
+	font-weight: var(--text-4xl-weight, bold);
+	font-feature-settings: var(--text-4xl-features);
+	line-height: var(--text-4xl-leading, normal);
+	text-transform: var(--text-4xl-transform, none);
+	letter-spacing: var(--text-4xl-kerning, normal);
 }
 
 h2 {
-	font-family: var(--h2-font-family, var(--heading-font-family));
-	font-size: var(--h2-font-size, 1.5rem);
-	font-weight: var(--h2-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h2-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h2-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-3xl-family);
+	font-size: var(--text-3xl-size, 2rem);
+	font-weight: var(--text-3xl-weight, bold);
+	font-feature-settings: var(--text-3xl-features);
+	line-height: var(--text-3xl-leading, normal);
+	text-transform: var(--text-3xl-transform, none);
+	letter-spacing: var(--text-3xl-kerning, normal);
 }
 
 h3 {
-	font-family: var(--h3-font-family, var(--heading-font-family));
-	font-size: var(--h3-font-size, 1.17rem);
-	font-weight: var(--h3-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h3-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h3-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-2xl-family);
+	font-size: var(--text-2xl-size, 2rem);
+	font-weight: var(--text-2xl-weight, bold);
+	font-feature-settings: var(--text-2xl-features);
+	line-height: var(--text-2xl-leading, normal);
+	text-transform: var(--text-2xl-transform, none);
+	letter-spacing: var(--text-2xl-kerning, normal);
 }
 
 h4 {
-	font-family: var(--h4-font-family, var(--heading-font-family));
-	font-size: var(--h4-font-size, 1rem);
-	font-weight: var(--h4-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h4-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h4-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-xl-family);
+	font-size: var(--text-xl-size, 2rem);
+	font-weight: var(--text-xl-weight, bold);
+	font-feature-settings: var(--text-xl-features);
+	line-height: var(--text-xl-leading, normal);
+	text-transform: var(--text-xl-transform, none);
+	letter-spacing: var(--text-xl-kerning, normal);
 }
 
 h5 {
-	font-family: var(--h5-font-family, var(--heading-font-family));
-	font-size: var(--h5-font-size, 0.83rem);
-	font-weight: var(--h5-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h5-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h5-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-l-family);
+	font-size: var(--text-l-size, 2rem);
+	font-weight: var(--text-l-weight, bold);
+	font-feature-settings: var(--text-l-features);
+	line-height: var(--text-l-leading, normal);
+	text-transform: var(--text-l-transform, none);
+	letter-spacing: var(--text-l-kerning, normal);
 }
 
 h6 {
-	font-family: var(--h6-font-family, var(--heading-font-family));
-	font-size: var(--h6-font-size, 0.67rem);
-	font-weight: var(--h6-font-weight, var(--heading-font-weight, bold));
-	line-height: var(--h6-line-height, var(--heading-line-height, normal));
-	letter-spacing: var(--h6-letter-spacing, var(--heading-letter-spacing, normal));
+	font-family: var(--text-m-family);
+	font-size: var(--text-m-size, 2rem);
+	font-weight: var(--text-m-weight, bold);
+	font-feature-settings: var(--text-m-features);
+	line-height: var(--text-m-leading, normal);
+	text-transform: var(--text-m-transform, none);
+	letter-spacing: var(--text-m-kerning, normal);
 }
 
 /* -----------------------------------------------
@@ -80,9 +85,9 @@ Resources:
 ----------------------------------------------- */
 
 :is(h1, h2, h3, h4, h5, h6).is-style-heading-eyebrow {
-	font-family: var(--body-font-family);
-	font-size: var(--body-font-size);
-	font-weight: var(--body-font-weight);
+	font-family: var(--text-base-family);
+	font-size: var(--text-base-size);
+	font-weight: var(--text-base-weight);
 	line-height: var(--leading-slim);
 	text-transform: uppercase;
 

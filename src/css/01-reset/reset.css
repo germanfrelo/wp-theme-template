@@ -269,7 +269,7 @@ Add padding and border to table cells for a better readability (ref. https://git
 Replace the default inline padding of '2px' with a sensible, font-relative value.
 */
 legend {
-	padding-inline: 1ch;
+	padding-inline: 0.5ch;
 }
 
 /*

@@ -27,7 +27,7 @@ Variant: External
 			block-size: var(--nav-link-external-icon-size, 1em);
 			content: "";
 			background-color: var(--nav-link-external-icon-color, currentcolor);
-			mask-image: var(--nav-link-external-icon-image);
+			mask-image: url("../../svg/icon-arrow-up-right.svg");
 			mask-position: center;
 			mask-size: contain;
 		}

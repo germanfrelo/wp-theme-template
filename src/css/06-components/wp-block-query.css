@@ -10,7 +10,5 @@ Notes:
 =================================================================== */
 
 .wp-block-query {
-	> * + * {
-		margin-block-start: calc(var(--block-gap) * 1.75);
-	}
+	--block-gap: var(--space-2xl);
 }

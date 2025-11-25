@@ -9,12 +9,14 @@ Notes:
 =================================================================== */
 
 body {
-	font-family: var(--body-font-family, sans-serif);
-	font-size: var(--body-font-size);
-	font-weight: var(--body-font-weight);
-	line-height: var(--body-line-height);
-	color: var(--body-text-color);
-	accent-color: var(--field-accent-color);
-	background-color: var(--body-background-color);
+	font-family: var(--text-base-family, sans-serif);
+	font-size: var(--text-base-size);
+	font-weight: var(--text-base-weight);
+	font-feature-settings: var(--text-base-features);
+	line-height: var(--text-base-leading);
+	color: var(--color-on-surface, CanvasText);
+	letter-spacing: var(--text-base-kerning);
+	accent-color: var(--color-field-accent);
+	background-color: var(--color-surface, Canvas);
 	-webkit-font-smoothing: antialiased;
 }

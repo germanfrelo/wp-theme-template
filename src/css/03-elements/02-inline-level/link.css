@@ -10,9 +10,9 @@ Notes:
 
 /* Interactive anchors (with href) */
 a:where([href]) {
-	color: var(--link-text-color, revert);
+	color: var(--link-text-color, var(--color-accent-primary));
 	text-decoration-thickness: var(--link-decoration-thickness, from-font);
-	text-decoration-color: var(--link-decoration-color, var(--color-accent, currentcolor));
+	text-decoration-color: var(--link-decoration-color, var(--color-accent-primary, currentcolor));
 	text-underline-position: from-font;
 	text-underline-offset: var(--link-underline-offset);
 
@@ -29,16 +29,12 @@ a:where([href]) {
 	}
 
 	&:hover {
-		color: var(--link-text-color-hover, var(--link-text-color, revert));
-		text-decoration-color: var(--link-decoration-color-hover, var(--link-decoration-color, currentcolor));
-	}
-
-	&:focus-visible {
-		text-decoration-color: var(--link-decoration-color-focus, var(--link-decoration-color, currentcolor));
+		color: var(--link-text-color-hover);
+		text-decoration-color: var(--link-decoration-color-hover);
 	}
 
 	&:active {
-		text-decoration-color: var(--link-decoration-color-active, var(--link-decoration-color-hover, currentcolor));
+		text-decoration-color: var(--link-decoration-color-active);
 	}
 }
 

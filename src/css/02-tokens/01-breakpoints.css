@@ -39,9 +39,13 @@ Global Breakpoints
 @custom-media --xl-max (width < 80rem);
 @custom-media --xl-min (width >= 80rem);
 
+/* 1536px */
+@custom-media --xxl-max (width < 96rem);
+@custom-media --xxl-min (width >= 96rem);
+
 /* -----------------------------------------------
 Navigation Breakpoints
 ----------------------------------------------- */
 
-@custom-media --nav-collapsed (width < 55rem);
-@custom-media --nav-expanded (width >= 55rem);
+@custom-media --nav-collapsed (width < 56rem);
+@custom-media --nav-expanded (width >= 56rem);

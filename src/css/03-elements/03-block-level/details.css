@@ -89,7 +89,7 @@ details:not(:where(.is-style-browser-default)) {
 		block-size: var(--details-summary-marker-size, 1em);
 		content: "";
 		background-color: var(--details-summary-marker-color, currentcolor);
-		mask-image: var(--details-summary-marker-image-closed);
+		mask-image: url("../../svg/icon-plus.svg");
 		mask-position: center;
 		mask-size: contain;
 	}
@@ -136,7 +136,7 @@ details:not(:where(.is-style-browser-default)) {
 		/* Custom marker */
 		> summary::after {
 			background-color: var(--details-summary-marker-color-hover, var(--details-summary-marker-color, currentcolor));
-			mask-image: var(--details-summary-marker-image-open);
+			mask-image: url("../../svg/icon-line-solid.svg");
 		}
 
 		/* Content */

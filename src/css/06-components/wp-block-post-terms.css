@@ -33,7 +33,8 @@ Both Categories and Tags
 .wp-block-post-terms {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--post-terms-gap, 1ch);
+	row-gap: var(--post-terms-gap-rows, 0.5em);
+	column-gap: var(--post-terms-gap-columns, 1ch);
 	align-items: center;
 
 	/* Each individual term link */
@@ -52,7 +53,7 @@ Both Categories and Tags
 		color: var(--post-term-text-color, var(--color-on-accent));
 		text-align: center;
 		text-transform: var(--post-term-text-transform);
-		background-color: var(--post-term-background-color, var(--color-accent));
+		background-color: var(--post-term-background-color, var(--color-accent-primary));
 		border-color: var(--post-term-border-color);
 		border-style: solid;
 		border-width: var(--post-term-border-width, 0);
@@ -61,7 +62,10 @@ Both Categories and Tags
 
 		&:hover {
 			color: var(--post-term-text-color-hover, var(--post-term-text-color, var(--color-on-accent)));
-			background-color: var(--post-term-background-color-hover, var(--post-term-background-color, var(--color-accent)));
+			background-color: var(
+				--post-term-background-color-hover,
+				var(--post-term-background-color, var(--color-accent-primary))
+			);
 		}
 
 		&:active {

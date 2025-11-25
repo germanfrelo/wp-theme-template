@@ -111,7 +111,6 @@ The CSS file organization is based on the [CUBE CSS methodology](https://piccali
         │   ├── 01-breakpoints.css
         │   ├── 02-primitive.css
         │   ├── 03-semantic.css
-        │   └── 04-component.css
         ├── 03-elements/
         │   ├── 01-root/
         │   ├── 02-inline-level/
@@ -159,7 +158,6 @@ The primary entry point is **`src/css/index.css`**. It uses `@import` rules (pro
   - `01-breakpoints.css` — Custom media queries defining layout breakpoints.
   - `02-primitive.css` — Primitive/raw values (color, spacing, typography, etc.).
   - `03-semantic.css` — Semantic tokens mapping primitives to meaning.
-  - `04-component.css` — Component-scoped tokens.
 - `03-elements/` — HTML element styles grouped by cascade sensitivity:
   - `01-root/` — Global root/pseudo contexts (`html`, `body`, `:focus-visible`, etc.).
   - `02-inline-level/` — Inline semantics (`a`, `code`, `mark`, `kbd`, `q`, etc.).

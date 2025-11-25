@@ -1,0 +1,50 @@
+/* ===================================================================
+Color Gradients
+---
+Variables:
+--gradient-from
+--gradient-to
+---
+Resources:
+- https://tailwindcss.com/docs/background-image#adding-a-linear-gradient
+=================================================================== */
+
+.gradient-to-top {
+	background-image: linear-gradient(
+		0deg in oklab,
+		var(--gradient-from, var(--color-accent-primary)) 0%,
+		var(--gradient-to, var(--color-accent-secondary)) 100%
+	);
+}
+
+.gradient-to-top-right {
+	background-image: linear-gradient(
+		45deg in oklab,
+		var(--gradient-from, var(--color-accent-primary)) 0%,
+		var(--gradient-to, var(--color-accent-secondary)) 100%
+	);
+}
+
+.gradient-to-right {
+	background-image: linear-gradient(
+		90deg in oklab,
+		var(--gradient-from, var(--color-accent-primary)) 0%,
+		var(--gradient-to, var(--color-accent-secondary)) 100%
+	);
+}
+
+.gradient-to-right-bottom {
+	background-image: linear-gradient(
+		135deg in oklab,
+		var(--gradient-from, var(--color-accent-primary)) 0%,
+		var(--gradient-to, var(--color-accent-secondary)) 100%
+	);
+}
+
+.gradient-to-bottom {
+	background-image: linear-gradient(
+		180deg in oklab,
+		var(--gradient-from, var(--color-accent-primary)) 0%,
+		var(--gradient-to, var(--color-accent-secondary)) 100%
+	);
+}

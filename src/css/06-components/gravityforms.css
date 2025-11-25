@@ -50,11 +50,11 @@ Notes:
 
 	.gfield > :is(label, legend):has(+ .ginput_container) {
 		display: inline-block;
-		padding-block-end: calc(var(--block-gap, 1em) / 2);
+		padding-block-end: var(--space-xs);
 	}
 
 	:is(.gfield_checkbox, .gfield_radio) > * + * {
-		margin-block-start: calc(var(--block-gap, 1em) / 2);
+		margin-block-start: var(--space-xs);
 	}
 
 	.gform_drop_area {
@@ -66,17 +66,17 @@ Notes:
 	*/
 
 	&:has(.gform_validation_errors) {
-		--field-border-color: var(--field-error-text-color);
-		--field-text-color: var(--field-error-text-color);
+		--field-border-color: var(--color-error);
+		--field-text-color: var(--color-error);
 
 		.gfield_validation_message {
-			color: var(--field-error-text-color, currentcolor);
+			color: var(--color-error, currentcolor);
 		}
 	}
 
 	.gform_validation_errors {
 		padding: 1em;
-		color: var(--field-error-text-color, currentcolor);
+		color: var(--color-error, currentcolor);
 		border: 2px solid;
 	}
 

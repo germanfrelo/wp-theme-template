@@ -73,7 +73,7 @@ Navigation
 
 nav.wp-block-navigation {
 	--link-decoration-color: transparent;
-	--link-decoration-color-active: var(--color-accent);
+	--link-decoration-color-active: var(--color-accent-primary);
 	font-size: var(--nav-global-font-size);
 	font-weight: var(--nav-global-font-weight);
 	line-height: var(--nav-global-line-height);
@@ -91,14 +91,16 @@ nav.wp-block-navigation {
 	The selector '.wp-block-navigation__responsive-container-content' targets the element that wraps all of them.
 	*/
 	.wp-block-navigation__responsive-container-content,
-	ul.wp-block-navigation__container {
+	ul.wp-block-navigation__container,
+	.wp-block-page-list {
 		display: flex;
 		flex-direction: var(--nav-layout-direction, row);
 		flex-wrap: var(--nav-layout-wrap, wrap);
 		row-gap: var(--nav-layout-gap-rows, var(--flex-gap, var(--block-gap, 1em)));
 		column-gap: var(--nav-layout-gap-columns, var(--flex-gap, var(--block-gap, 1em)));
 		align-items: var(--nav-layout-align-items, center);
-		justify-content: var(--nav-layout-justify-content, start);
+		justify-content: var(--nav-layout-justify-content, center);
+		background-color: inherit;
 	}
 
 	/* Nav Item Link */
@@ -111,7 +113,7 @@ nav.wp-block-navigation {
 		text-align: center;
 
 		&:is(:active, [aria-current="page"]) {
-			--link-decoration-color: var(--color-accent);
+			--link-decoration-color: var(--color-accent-primary);
 		}
 	}
 
@@ -119,7 +121,7 @@ nav.wp-block-navigation {
 		:is(header.wp-block-template-part, .site-header)
 		&
 		a[href*="areas-de-trabajo"] {
-		--link-decoration-color: var(--color-accent);
+		--link-decoration-color: var(--color-accent-primary);
 	}
 
 	/* Nav Item Description */
@@ -368,7 +370,7 @@ nav.wp-block-navigation.is-style-navigation-tabs {
 	--link-decoration-color-active: transparent;
 	--link-decoration-color-hover: transparent;
 	--link-decoration-color: transparent;
-	--link-text-color-hover: var(--color-accent);
+	--link-text-color-hover: var(--color-accent-primary);
 	--nav-global-font-size: var(--text-size-l);
 	--nav-link-min-size: 24px;
 	display: block;
@@ -396,7 +398,7 @@ nav.wp-block-navigation.is-style-navigation-tabs {
 		a {
 			display: flex;
 			flex-direction: column;
-			row-gap: var(--space-8-16);
+			row-gap: 0.5em;
 			align-items: start;
 			padding-block: 0.25em;
 			padding-inline: var(--global-padding-inline, var(--block-gap, 1rem));
@@ -407,13 +409,13 @@ nav.wp-block-navigation.is-style-navigation-tabs {
 			&::before {
 				display: inline-grid;
 				font-size: 1.25em;
-				font-weight: var(--type-body-weight-normal);
+				font-weight: var(--font-body-weight-normal);
 				content: counter(list-custom-counter, decimal-leading-zero);
 			}
 
 			&:is(:active, [aria-current="page"]) {
 				--link-decoration-color: transparent;
-				--link-text-color: var(--color-accent);
+				--link-text-color: var(--color-accent-primary);
 			}
 
 			&[aria-current="page"] {

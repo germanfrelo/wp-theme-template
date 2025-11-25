@@ -20,20 +20,13 @@ References:
 }
 
 .has-on-surface-background-color {
-	--button-background-color: var(--color-black);
-	--button-text-color: var(--color-white);
-	--button-text-color-hover: var(--color-accent);
 	color: var(--color-surface) !important;
 }
 
-.has-accent-background-color {
-	--button-background-color: var(--color-black);
-	--button-text-color: var(--color-white);
-	--button-text-color-hover: var(--color-accent);
-	--link-decoration-color: currentcolor;
+.has-accent-primary-background-color {
 	color: var(--color-on-accent) !important;
+}
 
-	&span {
-		padding-inline: 0.5ch;
-	}
+.has-accent-secondary-background-color {
+	color: var(--color-on-accent) !important;
 }

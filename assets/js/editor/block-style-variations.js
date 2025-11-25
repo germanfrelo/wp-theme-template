@@ -73,11 +73,6 @@ wp.domReady(() => {
 		label: __("Sencillo", "themeslug"),
 	});
 
-	wp.blocks.registerBlockStyle("core/group", {
-		name: "with-padding",
-		label: __("Con relleno", "themeslug"),
-	});
-
 	wp.blocks.registerBlockStyle("core/heading", {
 		name: "heading-eyebrow",
 		label: __("Antetítulo", "themeslug"),
@@ -101,16 +96,6 @@ wp.domReady(() => {
 	wp.blocks.registerBlockStyle("core/page-list", {
 		name: "navigation-tabs",
 		label: __("Subcategorías", "themeslug"),
-	});
-
-	wp.blocks.registerBlockStyle("core/paragraph", {
-		name: "with-padding",
-		label: __(" Con relleno", "themeslug"),
-	});
-
-	wp.blocks.registerBlockStyle("core/post-template", {
-		name: "post-template-sticky-posts",
-		label: __("Destacados", "themeslug"),
 	});
 
 	wp.blocks.registerBlockStyle("core/search", {

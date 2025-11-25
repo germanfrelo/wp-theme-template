@@ -6,11 +6,11 @@ Notes:
 =================================================================== */
 
 .card {
-	padding: var(--card-padding, 1.5em);
+	padding: var(--card-padding, var(--space-m));
 	background-color: var(--card-background-color);
 	border-color: var(--card-border-color);
 	border-style: solid;
-	border-width: var(--card-border-width, thin);
+	border-width: var(--card-border-width, var(--border-width-thin, thin));
 	border-radius: var(--card-border-radius);
 
 	:is(h1, h2, h3, h4, h5, h6) {

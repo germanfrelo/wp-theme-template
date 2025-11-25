@@ -22,12 +22,17 @@
 				{
 					"name": "Texto",
 					"slug": "on-surface",
-					"color": "hsl(224deg 20% 1%)"
+					"color": "hsl(224deg 20% 10%)"
 				},
 				{
-					"name": "Énfasis",
-					"slug": "accent",
+					"name": "Énfasis primario",
+					"slug": "accent-primary",
 					"color": "hsl(229deg 80% 56%)"
+				},
+				{
+					"name": "Énfasis secundario",
+					"slug": "accent-secondary",
+					"color": "hsl(167deg 61% 32%)"
 				}
 			]
 		},
@@ -60,379 +65,194 @@
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
-					"name": "8",
-					"slug": "8",
-					"size": "0.5rem"
+					"name": "2XS",
+					"slug": "2xs",
+					"size": "clamp(0.5rem, 0.4792rem + 0.0868vw, 0.5625rem)"
 				},
 				{
-					"name": "16",
-					"slug": "16",
-					"size": "1rem"
+					"name": "XS",
+					"slug": "xs",
+					"size": "clamp(0.75rem, 0.7083rem + 0.1736vw, 0.875rem)"
 				},
 				{
-					"name": "24",
-					"slug": "24",
-					"size": "1.5rem"
+					"name": "S (Global Padding Inline)",
+					"slug": "s",
+					"size": "clamp(1rem, 0.9583rem + 0.1736vw, 1.125rem)"
 				},
 				{
-					"name": "32",
-					"slug": "32",
-					"size": "2rem"
+					"name": "M (Block Gap)",
+					"slug": "m",
+					"size": "clamp(1.5rem, 1.4375rem + 0.2604vw, 1.6875rem)"
 				},
 				{
-					"name": "40",
-					"slug": "40",
-					"size": "2.5rem"
+					"name": "L",
+					"slug": "l",
+					"size": "clamp(2rem, 1.9167rem + 0.3472vw, 2.25rem)"
 				},
 				{
-					"name": "48",
-					"slug": "48",
-					"size": "3rem"
+					"name": "XL",
+					"slug": "xl",
+					"size": "clamp(3rem, 2.875rem + 0.5208vw, 3.375rem)"
 				},
 				{
-					"name": "56",
-					"slug": "56",
-					"size": "3.5rem"
+					"name": "2XL",
+					"slug": "2xl",
+					"size": "clamp(4rem, 3.8333rem + 0.6944vw, 4.5rem)"
 				},
 				{
-					"name": "64",
-					"slug": "64",
-					"size": "4rem"
+					"name": "3XL",
+					"slug": "3xl",
+					"size": "clamp(5rem, 4.7917rem + 0.8681vw, 5.625rem)"
 				},
 				{
-					"name": "72",
-					"slug": "72",
-					"size": "4.5rem"
+					"name": "4XL",
+					"slug": "4xl",
+					"size": "clamp(6rem, 5.75rem + 1.0417vw, 6.75rem)"
 				},
 				{
-					"name": "80",
-					"slug": "80",
-					"size": "5rem"
+					"name": "5XL",
+					"slug": "5xl",
+					"size": "clamp(7rem, 6.7083rem + 1.2153vw, 7.875rem)"
 				},
 				{
-					"name": "88",
-					"slug": "88",
-					"size": "5.5rem"
+					"name": "6XL",
+					"slug": "6xl",
+					"size": "clamp(8rem, 7.6667rem + 1.3889vw, 9rem)"
 				},
 				{
-					"name": "96",
-					"slug": "96",
-					"size": "6rem"
+					"name": "2XS-XS",
+					"slug": "2xs-xs",
+					"size": "clamp(0.5rem, 0.375rem + 0.5208vw, 0.875rem)"
 				},
 				{
-					"name": "104",
-					"slug": "104",
-					"size": "6.5rem"
+					"name": "XS-S",
+					"slug": "xs-s",
+					"size": "clamp(0.75rem, 0.625rem + 0.5208vw, 1.125rem)"
 				},
 				{
-					"name": "112",
-					"slug": "112",
-					"size": "7rem"
+					"name": "S-M",
+					"slug": "s-m",
+					"size": "clamp(1rem, 0.7708rem + 0.9549vw, 1.6875rem)"
 				},
 				{
-					"name": "0-8",
-					"slug": "0-8",
-					"size": "clamp(0rem, -0.1974rem + 0.738vw, 0.5rem)"
+					"name": "M-L",
+					"slug": "m-l",
+					"size": "clamp(1.5rem, 1.25rem + 1.0417vw, 2.25rem)"
 				},
 				{
-					"name": "0-16",
-					"slug": "0-16",
-					"size": "clamp(0rem, -0.3948rem + 1.476vw, 1rem)"
+					"name": "L-XL",
+					"slug": "l-xl",
+					"size": "clamp(2rem, 1.5417rem + 1.9097vw, 3.375rem)"
 				},
 				{
-					"name": "0-24",
-					"slug": "0-24",
-					"size": "clamp(0rem, -0.5923rem + 2.214vw, 1.5rem)"
+					"name": "XL-2XL",
+					"slug": "xl-2xl",
+					"size": "clamp(3rem, 2.5rem + 2.0833vw, 4.5rem)"
 				},
 				{
-					"name": "0-32",
-					"slug": "0-32",
-					"size": "clamp(0rem, -0.7897rem + 2.952vw, 2rem)"
+					"name": "2XL-3XL",
+					"slug": "2xl-3xl",
+					"size": "clamp(4rem, 3.4583rem + 2.2569vw, 5.625rem)"
 				},
 				{
-					"name": "0-40",
-					"slug": "0-40",
-					"size": "clamp(0rem, -0.9871rem + 3.69vw, 2.5rem)"
+					"name": "3XL-4XL",
+					"slug": "3xl-4xl",
+					"size": "clamp(5rem, 4.4167rem + 2.4306vw, 6.75rem)"
 				},
 				{
-					"name": "8-16",
-					"slug": "8-16",
-					"size": "clamp(0.5rem, 0.3026rem + 0.738vw, 1rem)"
+					"name": "4XL-5XL",
+					"slug": "4xl-5xl",
+					"size": "clamp(6rem, 5.375rem + 2.6042vw, 7.875rem)"
 				},
 				{
-					"name": "8-24",
-					"slug": "8-24",
-					"size": "clamp(0.5rem, 0.1052rem + 1.476vw, 1.5rem)"
+					"name": "5XL-6XL",
+					"slug": "5xl-6xl",
+					"size": "clamp(7rem, 6.3333rem + 2.7778vw, 9rem)"
 				},
 				{
-					"name": "8-32",
-					"slug": "8-32",
-					"size": "clamp(0.5rem, -0.0923rem + 2.214vw, 2rem)"
+					"name": "2XS-S",
+					"slug": "2xs-s",
+					"size": "clamp(0.5rem, 0.2917rem + 0.8681vw, 1.125rem)"
 				},
 				{
-					"name": "8-40",
-					"slug": "8-40",
-					"size": "clamp(0.5rem, -0.2897rem + 2.952vw, 2.5rem)"
+					"name": "2XS-M",
+					"slug": "2xs-m",
+					"size": "clamp(0.5rem, 0.1042rem + 1.6493vw, 1.6875rem)"
 				},
 				{
-					"name": "8-48",
-					"slug": "8-48",
-					"size": "clamp(0.5rem, -0.4871rem + 3.69vw, 3rem)"
+					"name": "XS-M",
+					"slug": "xs-m",
+					"size": "clamp(0.75rem, 0.4375rem + 1.3021vw, 1.6875rem)"
 				},
 				{
-					"name": "16-24",
-					"slug": "16-24",
-					"size": "clamp(1rem, 0.8026rem + 0.738vw, 1.5rem)"
+					"name": "XS-L",
+					"slug": "xs-l",
+					"size": "clamp(0.75rem, 0.25rem + 2.0833vw, 2.25rem)"
 				},
 				{
-					"name": "16-32",
-					"slug": "16-32",
-					"size": "clamp(1rem, 0.6052rem + 1.476vw, 2rem)"
+					"name": "S-L",
+					"slug": "s-l",
+					"size": "clamp(1rem, 0.5833rem + 1.7361vw, 2.25rem)"
 				},
 				{
-					"name": "16-40",
-					"slug": "16-40",
-					"size": "clamp(1rem, 0.4077rem + 2.214vw, 2.5rem)"
+					"name": "S-XL",
+					"slug": "s-xl",
+					"size": "clamp(1rem, 0.2083rem + 3.2986vw, 3.375rem)"
 				},
 				{
-					"name": "16-48",
-					"slug": "16-48",
-					"size": "clamp(1rem, 0.2103rem + 2.952vw, 3rem)"
+					"name": "M-XL",
+					"slug": "m-xl",
+					"size": "clamp(1.5rem, 0.875rem + 2.6042vw, 3.375rem)"
 				},
 				{
-					"name": "16-56",
-					"slug": "16-56",
-					"size": "clamp(1rem, 0.0129rem + 3.69vw, 3.5rem)"
+					"name": "M-2XL",
+					"slug": "m-2xl",
+					"size": "clamp(1.5rem, 0.5rem + 4.1667vw, 4.5rem)"
 				},
 				{
-					"name": "24-32",
-					"slug": "24-32",
-					"size": "clamp(1.5rem, 1.3026rem + 0.738vw, 2rem)"
+					"name": "L-2XL",
+					"slug": "l-2xl",
+					"size": "clamp(2rem, 1.1667rem + 3.4722vw, 4.5rem)"
 				},
 				{
-					"name": "24-40",
-					"slug": "24-40",
-					"size": "clamp(1.5rem, 1.1052rem + 1.476vw, 2.5rem)"
+					"name": "L-3XL",
+					"slug": "l-3xl",
+					"size": "clamp(2rem, 0.7917rem + 5.0347vw, 5.625rem)"
 				},
 				{
-					"name": "24-48",
-					"slug": "24-48",
-					"size": "clamp(1.5rem, 0.9077rem + 2.214vw, 3rem)"
+					"name": "XL-3XL",
+					"slug": "xl-3xl",
+					"size": "clamp(3rem, 2.125rem + 3.6458vw, 5.625rem)"
 				},
 				{
-					"name": "24-56",
-					"slug": "24-56",
-					"size": "clamp(1.5rem, 0.7103rem + 2.952vw, 3.5rem)"
+					"name": "XL-4XL",
+					"slug": "xl-4xl",
+					"size": "clamp(3rem, 1.75rem + 5.2083vw, 6.75rem)"
 				},
 				{
-					"name": "24-64",
-					"slug": "24-64",
-					"size": "clamp(1.5rem, 0.5129rem + 3.69vw, 4rem)"
+					"name": "2XL-4XL",
+					"slug": "2xl-4xl",
+					"size": "clamp(4rem, 3.0833rem + 3.8194vw, 6.75rem)"
 				},
 				{
-					"name": "32-40",
-					"slug": "32-40",
-					"size": "clamp(2rem, 1.8026rem + 0.738vw, 2.5rem)"
+					"name": "2XL-5XL (Region Space)",
+					"slug": "2xl-5xl",
+					"size": "clamp(4rem, 2.7083rem + 5.3819vw, 7.875rem)"
 				},
 				{
-					"name": "32-48",
-					"slug": "32-48",
-					"size": "clamp(2rem, 1.6052rem + 1.476vw, 3rem)"
+					"name": "3XL-5XL",
+					"slug": "3xl-5xl",
+					"size": "clamp(5rem, 4.0417rem + 3.9931vw, 7.875rem)"
 				},
 				{
-					"name": "32-56",
-					"slug": "32-56",
-					"size": "clamp(2rem, 1.4077rem + 2.214vw, 3.5rem)"
+					"name": "3XL-6XL",
+					"slug": "3xl-6xl",
+					"size": "clamp(5rem, 3.6667rem + 5.5556vw, 9rem)"
 				},
 				{
-					"name": "32-64",
-					"slug": "32-64",
-					"size": "clamp(2rem, 1.2103rem + 2.952vw, 4rem)"
-				},
-				{
-					"name": "32-72",
-					"slug": "32-72",
-					"size": "clamp(2rem, 1.0129rem + 3.69vw, 4.5rem)"
-				},
-				{
-					"name": "40-48",
-					"slug": "40-48",
-					"size": "clamp(2.5rem, 2.3026rem + 0.738vw, 3rem)"
-				},
-				{
-					"name": "40-56",
-					"slug": "40-56",
-					"size": "clamp(2.5rem, 2.1052rem + 1.476vw, 3.5rem)"
-				},
-				{
-					"name": "40-64",
-					"slug": "40-64",
-					"size": "clamp(2.5rem, 1.9077rem + 2.214vw, 4rem)"
-				},
-				{
-					"name": "40-72",
-					"slug": "40-72",
-					"size": "clamp(2.5rem, 1.7103rem + 2.952vw, 4.5rem)"
-				},
-				{
-					"name": "40-80",
-					"slug": "40-80",
-					"size": "clamp(2.5rem, 1.5129rem + 3.69vw, 5rem)"
-				},
-				{
-					"name": "40-112",
-					"slug": "40-112",
-					"size": "clamp(2.5rem, 0.7232rem + 6.6421vw, 7rem)"
-				},
-				{
-					"name": "48-56",
-					"slug": "48-56",
-					"size": "clamp(3rem, 2.8026rem + 0.738vw, 3.5rem)"
-				},
-				{
-					"name": "48-64",
-					"slug": "48-64",
-					"size": "clamp(3rem, 2.6052rem + 1.476vw, 4rem)"
-				},
-				{
-					"name": "48-72",
-					"slug": "48-72",
-					"size": "clamp(3rem, 2.4077rem + 2.214vw, 4.5rem)"
-				},
-				{
-					"name": "48-80",
-					"slug": "48-80",
-					"size": "clamp(3rem, 2.2103rem + 2.952vw, 5rem)"
-				},
-				{
-					"name": "48-88",
-					"slug": "48-88",
-					"size": "clamp(3rem, 2.0129rem + 3.69vw, 5.5rem)"
-				},
-				{
-					"name": "56-64",
-					"slug": "56-64",
-					"size": "clamp(3.5rem, 3.3026rem + 0.738vw, 4rem)"
-				},
-				{
-					"name": "56-72",
-					"slug": "56-72",
-					"size": "clamp(3.5rem, 3.1052rem + 1.476vw, 4.5rem)"
-				},
-				{
-					"name": "56-80",
-					"slug": "56-80",
-					"size": "clamp(3.5rem, 2.9077rem + 2.214vw, 5rem)"
-				},
-				{
-					"name": "56-88",
-					"slug": "56-88",
-					"size": "clamp(3.5rem, 2.7103rem + 2.952vw, 5.5rem)"
-				},
-				{
-					"name": "56-96",
-					"slug": "56-96",
-					"size": "clamp(3.5rem, 2.5129rem + 3.69vw, 6rem)"
-				},
-				{
-					"name": "64-72",
-					"slug": "64-72",
-					"size": "clamp(4rem, 3.8026rem + 0.738vw, 4.5rem)"
-				},
-				{
-					"name": "64-80",
-					"slug": "64-80",
-					"size": "clamp(4rem, 3.6052rem + 1.476vw, 5rem)"
-				},
-				{
-					"name": "64-88",
-					"slug": "64-88",
-					"size": "clamp(4rem, 3.4077rem + 2.214vw, 5.5rem)"
-				},
-				{
-					"name": "64-96",
-					"slug": "64-96",
-					"size": "clamp(4rem, 3.2103rem + 2.952vw, 6rem)"
-				},
-				{
-					"name": "64-104",
-					"slug": "64-104",
-					"size": "clamp(4rem, 3.0129rem + 3.69vw, 6.5rem)"
-				},
-				{
-					"name": "72-80",
-					"slug": "72-80",
-					"size": "clamp(4.5rem, 4.3026rem + 0.738vw, 5rem)"
-				},
-				{
-					"name": "72-88",
-					"slug": "72-88",
-					"size": "clamp(4.5rem, 4.1052rem + 1.476vw, 5.5rem)"
-				},
-				{
-					"name": "72-96",
-					"slug": "72-96",
-					"size": "clamp(4.5rem, 3.9077rem + 2.214vw, 6rem)"
-				},
-				{
-					"name": "72-104",
-					"slug": "72-104",
-					"size": "clamp(4.5rem, 3.7103rem + 2.952vw, 6.5rem)"
-				},
-				{
-					"name": "72-112",
-					"slug": "72-112",
-					"size": "clamp(4.5rem, 3.5129rem + 3.69vw, 7rem)"
-				},
-				{
-					"name": "80-88",
-					"slug": "80-88",
-					"size": "clamp(5rem, 4.8026rem + 0.738vw, 5.5rem)"
-				},
-				{
-					"name": "80-96",
-					"slug": "80-96",
-					"size": "clamp(5rem, 4.6052rem + 1.476vw, 6rem)"
-				},
-				{
-					"name": "80-104",
-					"slug": "80-104",
-					"size": "clamp(5rem, 4.4077rem + 2.214vw, 6.5rem)"
-				},
-				{
-					"name": "80-112",
-					"slug": "80-112",
-					"size": "clamp(5rem, 4.2103rem + 2.952vw, 7rem)"
-				},
-				{
-					"name": "88-96",
-					"slug": "88-96",
-					"size": "clamp(5.5rem, 5.3026rem + 0.738vw, 6rem)"
-				},
-				{
-					"name": "88-104",
-					"slug": "88-104",
-					"size": "clamp(5.5rem, 5.1052rem + 1.476vw, 6.5rem)"
-				},
-				{
-					"name": "88-112",
-					"slug": "88-112",
-					"size": "clamp(5.5rem, 4.9077rem + 2.214vw, 7rem)"
-				},
-				{
-					"name": "96-104",
-					"slug": "96-104",
-					"size": "clamp(6rem, 5.8026rem + 0.738vw, 6.5rem)"
-				},
-				{
-					"name": "96-112",
-					"slug": "96-112",
-					"size": "clamp(6rem, 5.6052rem + 1.476vw, 7rem)"
-				},
-				{
-					"name": "104-112",
-					"slug": "104-112",
-					"size": "clamp(6.5rem, 6.3026rem + 0.738vw, 7rem)"
+					"name": "4XL-6XL",
+					"slug": "4xl-6xl",
+					"size": "clamp(6rem, 5rem + 4.1667vw, 9rem)"
 				}
 			],
 			"units": [
@@ -471,7 +291,7 @@
 			"fontFamilies": [
 				{
 					"name": "Atkinson Hyperlegible Next",
-					"slug": "atkinson-hyperlegible-next",
+					"slug": "body",
 					"fontFamily": "'Atkinson Hyperlegible Next', sans-serif",
 					"fontFace": [
 						{
@@ -487,7 +307,7 @@
 				},
 				{
 					"name": "Inter",
-					"slug": "inter",
+					"slug": "display",
 					"fontFamily": "'Inter', sans-serif",
 					"fontFace": [
 						{
@@ -502,7 +322,7 @@
 				},
 				{
 					"name": "JetBrains Mono",
-					"slug": "jetbrains-mono",
+					"slug": "monospace",
 					"fontFamily": "'JetBrains Mono', monospace",
 					"fontFace": [
 						{
@@ -519,44 +339,39 @@
 			],
 			"fontSizes": [
 				{
-					"name": "XS",
-					"slug": "xs",
-					"size": "clamp(0.7813rem, 0.7746rem + 0.0282vw, 0.8rem)"
-				},
-				{
 					"name": "S",
 					"slug": "s",
-					"size": "clamp(0.9375rem, 0.9155rem + 0.0939vw, 1rem)"
+					"size": "clamp(0.8696rem, 0.8469rem + 0.0944vi, 0.9375rem)"
 				},
 				{
-					"name": "M",
+					"name": "M (Base)",
 					"slug": "m",
-					"size": "clamp(1.125rem, 1.081rem + 0.1878vw, 1.25rem)"
+					"size": "clamp(1rem, 0.9583rem + 0.1736vi, 1.125rem)"
 				},
 				{
 					"name": "L",
 					"slug": "l",
-					"size": "clamp(1.35rem, 1.2752rem + 0.3192vw, 1.5625rem)"
+					"size": "clamp(1.15rem, 1.0833rem + 0.2778vi, 1.35rem)"
 				},
 				{
 					"name": "XL",
 					"slug": "xl",
-					"size": "clamp(1.62rem, 1.5027rem + 0.5005vw, 1.9531rem)"
+					"size": "clamp(1.3225rem, 1.2233rem + 0.4132vi, 1.62rem)"
 				},
 				{
 					"name": "2XL",
-					"slug": "xxl",
-					"size": "clamp(1.944rem, 1.7689rem + 0.7473vw, 2.4414rem)"
+					"slug": "2xl",
+					"size": "clamp(1.5209rem, 1.3798rem + 0.5877vi, 1.944rem)"
 				},
 				{
 					"name": "3XL",
-					"slug": "xxxl",
-					"size": "clamp(2.3328rem, 2.0796rem + 1.0801vw, 3.0518rem)"
+					"slug": "3xl",
+					"size": "clamp(1.749rem, 1.5544rem + 0.8108vi, 2.3328rem)"
 				},
 				{
 					"name": "4XL",
-					"slug": "xxxxl",
-					"size": "clamp(2.7994rem, 2.4418rem + 1.5254vw, 3.8147rem)"
+					"slug": "4xl",
+					"size": "clamp(2.0114rem, 1.7487rem + 1.0944vi, 2.7994rem)"
 				}
 			]
 		}

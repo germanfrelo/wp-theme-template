@@ -1,0 +1,73 @@
+/* ===================================================================
+Text Styles
+=================================================================== */
+
+.text-4xl {
+	font-family: var(--text-4xl-family);
+	font-size: var(--text-4xl-size);
+	font-weight: var(--text-4xl-weight);
+	font-feature-settings: var(--text-4xl-features);
+	line-height: var(--text-4xl-leading);
+	text-transform: var(--text-4xl-transform);
+	letter-spacing: var(--text-4xl-kerning);
+}
+
+.text-3xl {
+	font-family: var(--text-3xl-family);
+	font-size: var(--text-3xl-size);
+	font-weight: var(--text-3xl-weight);
+	font-feature-settings: var(--text-3xl-features);
+	line-height: var(--text-3xl-leading);
+	text-transform: var(--text-3xl-transform);
+	letter-spacing: var(--text-3xl-kerning);
+}
+
+.text-2xl {
+	font-family: var(--text-2xl-family);
+	font-size: var(--text-2xl-size);
+	font-weight: var(--text-2xl-weight);
+	font-feature-settings: var(--text-2xl-features);
+	line-height: var(--text-2xl-leading);
+	text-transform: var(--text-2xl-transform);
+	letter-spacing: var(--text-2xl-kerning);
+}
+
+.text-xl {
+	font-family: var(--text-xl-family);
+	font-size: var(--text-xl-size);
+	font-weight: var(--text-xl-weight);
+	font-feature-settings: var(--text-xl-features);
+	line-height: var(--text-xl-leading);
+	text-transform: var(--text-xl-transform);
+	letter-spacing: var(--text-xl-kerning);
+}
+
+.text-l {
+	font-family: var(--text-l-family);
+	font-size: var(--text-l-size);
+	font-weight: var(--text-l-weight);
+	font-feature-settings: var(--text-l-features);
+	line-height: var(--text-l-leading);
+	text-transform: var(--text-l-transform);
+	letter-spacing: var(--text-l-kerning);
+}
+
+.text-m {
+	font-family: var(--text-m-family);
+	font-size: var(--text-m-size);
+	font-weight: var(--text-m-weight);
+	font-feature-settings: var(--text-m-features);
+	line-height: var(--text-m-leading);
+	text-transform: var(--text-m-transform);
+	letter-spacing: var(--text-m-kerning);
+}
+
+.text-s {
+	font-family: var(--text-s-family);
+	font-size: var(--text-s-size);
+	font-weight: var(--text-s-weight);
+	font-feature-settings: var(--text-s-features);
+	line-height: var(--text-s-leading);
+	text-transform: var(--text-s-transform);
+	letter-spacing: var(--text-s-kerning);
+}

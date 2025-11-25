@@ -28,18 +28,18 @@ Notes:
 
 	/* Bio */
 	.wp-block-post-author__bio {
-		font-size: var(--post-author-bio-font-size, var(--text-size-xs));
+		font-size: var(--post-author-bio-font-size);
 	}
 
 	/* Byline */
 	.wp-block-post-author__byline {
-		font-size: var(--post-author-byline-font-size, var(--text-size-xs));
+		font-size: var(--post-author-byline-font-size);
 	}
 
 	/* Name */
 	.wp-block-post-author__name {
 		--link-text-color: currentcolor;
-		font-size: var(--post-author-name-font-size, var(--text-size-s));
+		font-size: var(--post-author-name-font-size);
 	}
 
 	/* Avatar */

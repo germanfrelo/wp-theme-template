@@ -11,5 +11,5 @@ Notes:
 
 hr {
 	border: none;
-	border-block-start: var(--separator-border, 2px solid);
+	border-block-start: var(--separator-border, var(--border, 2px solid));
 }

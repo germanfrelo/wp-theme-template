@@ -26,7 +26,7 @@ ol {
 
 		li + li,
 		li > ol {
-			margin-block-start: var(--ol-items-gap, var(--list-gap));
+			margin-block-start: var(--ol-items-gap, var(--list-gap, var(--space-2xs)));
 		}
 
 		::marker {
@@ -40,6 +40,7 @@ Variant: Custom Marker
 ----------------------------------------------- */
 
 ol.wp-block-list.is-style-list-custom-marker {
+	--list-gap: var(--space-xs);
 	--ol-indentation: 0;
 	--ol-marker: "";
 	counter-reset: ol-custom-counter;
@@ -59,7 +60,7 @@ ol.wp-block-list.is-style-list-custom-marker {
 			font-size: var(--text-size-s, inherit);
 			font-weight: bolder;
 			line-height: 0;
-			color: var(--color-accent, currentcolor);
+			color: var(--color-accent-primary, currentcolor);
 			content: counter(ol-custom-counter);
 			background-color: transparent;
 			border-style: solid;
@@ -81,12 +82,12 @@ ul {
 		list-style-type: var(--ul-marker, revert);
 
 		li {
-			padding-inline-start: var(--ul-item-indentation);
+			padding-inline-start: var(--ul-item-indentation, 0.5ch);
 		}
 
 		li + li,
 		li > ul {
-			margin-block-start: var(--ul-items-gap, var(--list-gap));
+			margin-block-start: var(--ul-items-gap, var(--list-gap, var(--space-2xs)));
 		}
 
 		::marker {
@@ -102,8 +103,8 @@ Variant: Custom Marker
 ul.wp-block-list.is-style-list-custom-marker {
 	--_list-item-custom-marker-image: url("../../svg/icon-check.svg");
 	--_list-item-custom-marker-size: 2cap;
-	--list-gap: 1em;
 	--list-leading: var(--leading-base);
+	--list-gap: var(--space-s);
 	--ul-indentation: 0;
 	--ul-item-indentation: calc(var(--_list-item-custom-marker-size, 1em) + var(--_list-item-custom-marker-margin, 1em));
 	--ul-marker: "";
@@ -131,7 +132,7 @@ ul.wp-block-list.is-style-list-custom-marker {
 	/* Add an horizontal line between items */
 	> li:not(:last-child)::after {
 		display: block;
-		margin-block-start: var(--list-gap);
+		margin-block-start: var(--list-gap, var(--space-2xs));
 		content: "";
 		border-block-end: var(--border, thin solid);
 	}
