@@ -69,6 +69,7 @@ Avoid inline-level values such as 'inline-block', 'inline-flex', or 'inline-grid
 	&:hover {
 		color: var(--button-text-color-hover, var(--button-text-color));
 		background-color: var(--button-background-color-hover, var(--button-background-color));
+		border-color: var(--button-border-color-hover, var(--button-border-color));
 	}
 
 	&:active {
@@ -111,11 +112,12 @@ Avoid inline-level values such as 'inline-block', 'inline-flex', or 'inline-grid
 Variants
 =================================================================== */
 
-:is(.button, .wp-element-button, .wp-block-button) {
+:is(.button, .wp-block-button, .wp-block-read-more) {
 	/* -----------------------------------------------
 	Appearance
 	----------------------------------------------- */
 
+	&.is-style-button-inverse,
 	&[data-button-appearance="inverse"] {
 		--button-text-color: var(--color-accent-primary);
 		--button-text-color-hover: var(--color-accent-primary);
@@ -123,6 +125,7 @@ Variants
 		--button-background-color-hover: var(--color-surface);
 	}
 
+	&.is-style-button-outlined,
 	&[data-button-appearance="outlined"] {
 		--button-text-color: var(--color-accent-primary);
 		--button-text-color-hover: var(--color-accent-primary);
@@ -132,6 +135,7 @@ Variants
 		--button-border-color-hover: currentcolor;
 	}
 
+	&.is-style-button-ghost,
 	&[data-button-appearance="ghost"] {
 		--button-text-color: var(--color-accent-primary);
 		--button-text-color-hover: var(--color-accent-primary);

@@ -54,13 +54,18 @@ wp.domReady(() => {
 	});
 
 	wp.blocks.registerBlockStyle("core/button", {
-		name: "button-link-internal",
-		label: __("Link interno", "themeslug"),
+		name: "button-inverse",
+		label: __("Inverso", "themeslug"),
 	});
 
 	wp.blocks.registerBlockStyle("core/button", {
-		name: "button-link-external",
-		label: __("Link externo", "themeslug"),
+		name: "button-outlined",
+		label: __("Contorno", "themeslug"),
+	});
+
+	wp.blocks.registerBlockStyle("core/button", {
+		name: "button-ghost",
+		label: __("Sin relleno", "themeslug"),
 	});
 
 	wp.blocks.registerBlockStyle("core/details", {
