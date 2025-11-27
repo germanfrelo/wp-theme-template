@@ -15,12 +15,12 @@
 function themeslug_register_block_categories($categories) {
 	return array_merge($categories, [
 		[
-			"slug" => "themeslug-blocks",
-			"title" => __("themename", "themeslug"),
+			'slug' => 'themeslug-blocks',
+			'title' => __('themename', 'themeslug'),
 		],
 	]);
 }
-add_filter("block_categories_all", "themeslug_register_block_categories");
+add_filter('block_categories_all', 'themeslug_register_block_categories');
 
 /**
  * Enqueue custom block types.
@@ -28,4 +28,4 @@ add_filter("block_categories_all", "themeslug_register_block_categories");
 function themeslug_enqueue_blocks() {
 	// register_block_type(get_template_directory() . '/dist/blocks/______');
 }
-add_action("init", "themeslug_enqueue_blocks");
+add_action('init', 'themeslug_enqueue_blocks');

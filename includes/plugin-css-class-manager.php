@@ -38,6 +38,6 @@ function themeslug_add_theme_css_for_plugin_css_class_manager($css) {
 	return $css;
 }
 add_filter(
-	"css_class_manager_theme_classes_css",
-	"themeslug_add_theme_css_for_plugin_css_class_manager",
+	'css_class_manager_theme_classes_css',
+	'themeslug_add_theme_css_for_plugin_css_class_manager',
 );

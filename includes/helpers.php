@@ -9,7 +9,7 @@
  * @package themeslug
  */
 
-if (!function_exists("themeslug_asset_version")) {
+if (!function_exists('themeslug_asset_version')) {
 	/**
 	 * Return an asset version: when the referenced file exists this returns its filemtime
 	 * (so the version changes whenever the file is modified). If the file doesn't exist
@@ -24,7 +24,7 @@ if (!function_exists("themeslug_asset_version")) {
 			return filemtime($absolute);
 		}
 
-		return wp_get_theme()->get("Version");
+		return wp_get_theme()->get('Version');
 	}
 }
 
@@ -48,27 +48,27 @@ function themeslug_enqueue_scripts(array $config) {
 	// e.g. 'assets/js/editor/' or 'assets/js'. Normalize it so it always ends with
 	// a single trailing slash when present, or is an empty string when omitted.
 	// This makes concatenation later predictable: $src = $files_dir . $file;
-	$files_dir_base = $config["files_dir"] ?? "";
+	$files_dir_base = $config['files_dir'] ?? '';
 	// Remove any trailing slashes and add one back if non-empty.
 	$files_dir =
-		$files_dir_base !== "" ? rtrim($files_dir_base, "/") . "/" : "";
-	$files = $config["files"] ?? [];
-	$deps = $config["deps"] ?? [];
+		$files_dir_base !== '' ? rtrim($files_dir_base, '/') . '/' : '';
+	$files = $config['files'] ?? [];
+	$deps = $config['deps'] ?? [];
 	$handle_prefix =
-		$config["handle_prefix"] ??
+		$config['handle_prefix'] ??
 		sanitize_key(wp_get_theme()->get_stylesheet());
-	$in_footer = $config["in_footer"] ?? true;
-	$add_defer = $config["add_defer"] ?? false;
+	$in_footer = $config['in_footer'] ?? true;
+	$add_defer = $config['add_defer'] ?? false;
 
 	$registered = [];
 
 	foreach ($files as $file) {
-		if (!is_string($file) || "" === $file) {
+		if (!is_string($file) || '' === $file) {
 			continue;
 		}
 
-		$name = basename($file, ".js");
-		$handle = sanitize_key($handle_prefix . "-" . $name);
+		$name = basename($file, '.js');
+		$handle = sanitize_key($handle_prefix . '-' . $name);
 		$src = $files_dir . $file;
 		$absolute = get_theme_file_path($src);
 
@@ -91,7 +91,7 @@ function themeslug_enqueue_scripts(array $config) {
 
 		// Add defer/async attributes if requested.
 		if ($add_defer) {
-			wp_script_add_data($handle, "defer", true);
+			wp_script_add_data($handle, 'defer', true);
 		}
 
 		$registered[] = $handle;

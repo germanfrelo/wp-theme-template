@@ -6,8 +6,8 @@
  */
 
 // File-local handle constant. Keep it here so the functionality is self-contained
-if (!defined("THEMESLUG_LAYER_DEFINITION_HANDLE")) {
-	define("THEMESLUG_LAYER_DEFINITION_HANDLE", "themeslug-layer-definition");
+if (!defined('THEMESLUG_LAYER_DEFINITION_HANDLE')) {
+	define('THEMESLUG_LAYER_DEFINITION_HANDLE', 'themeslug-layer-definition');
 }
 
 /**
@@ -18,15 +18,15 @@ if (!defined("THEMESLUG_LAYER_DEFINITION_HANDLE")) {
 function themeslug_get_layer_config() {
 	return [
 		// Defines the final order of all top-level layers.
-		"order" => ["wordpress", "plugins", "theme"],
+		'order' => ['wordpress', 'plugins', 'theme'],
 		// Maps specific stylesheet 'handles' to a layer.
-		"map" => [
-			THEMESLUG_THEME_HANDLE => "theme",
-			"gform_basic" => "plugins",
+		'map' => [
+			THEMESLUG_THEME_HANDLE => 'theme',
+			'gform_basic' => 'plugins',
 			// e.g. 'plugin_handle' => 'plugins',
 		],
 		// The default layer for any handle not found in the map.
-		"default" => "wordpress",
+		'default' => 'wordpress',
 	];
 }
 
@@ -38,17 +38,17 @@ function themeslug_get_layer_config() {
 function themeslug_define_cascade_layers() {
 	// Dynamically build the @layer rule from the config array.
 	$config = themeslug_get_layer_config();
-	$layer_css = sprintf("@layer %s;", implode(", ", $config["order"]));
+	$layer_css = sprintf('@layer %s;', implode(', ', $config['order']));
 
 	// Register a dummy, empty style handle.
 	wp_register_style(THEMESLUG_LAYER_DEFINITION_HANDLE, false);
 	wp_enqueue_style(THEMESLUG_LAYER_DEFINITION_HANDLE);
 
 	// Add the layer definition as an inline style. This will be the first style block.
-	wp_add_inline_style("themeslug-layer-definition", $layer_css);
+	wp_add_inline_style('themeslug-layer-definition', $layer_css);
 }
 // Priority is 5 to define top-level CSS `@layer` rules early so later enqueued styles can import them.
-add_action("wp_enqueue_scripts", "themeslug_define_cascade_layers", 5);
+add_action('wp_enqueue_scripts', 'themeslug_define_cascade_layers', 5);
 
 /**
  * Re-formats enqueued stylesheets to use CSS Cascade Layers.
@@ -75,16 +75,16 @@ function themeslug_enqueue_layered_scripts() {
 
 		// Skip if the style has no src and no inline code.
 		$src_exists = $style->src && is_string($style->src);
-		$after_data = $wp_styles->get_data($handle, "after");
+		$after_data = $wp_styles->get_data($handle, 'after');
 		if (!$src_exists && empty($after_data)) {
 			continue;
 		}
 
 		// The main @layer definition is already handled, so we just build the import/wrapper.
-		$code = "";
+		$code = '';
 
 		// Dynamically determine layer name.
-		$layer_name = $config["map"][$handle] ?? $config["default"];
+		$layer_name = $config['map'][$handle] ?? $config['default'];
 
 		if ($src_exists) {
 			$code .= sprintf(
@@ -93,20 +93,20 @@ function themeslug_enqueue_layered_scripts() {
 				$layer_name,
 			);
 		}
-		$code .= sprintf("@layer %s {", $layer_name);
+		$code .= sprintf('@layer %s {', $layer_name);
 
 		$after = $after_data ?: [];
 		array_unshift($after, $code);
-		$wp_styles->add_data($handle, "after", $after);
+		$wp_styles->add_data($handle, 'after', $after);
 
 		if ($src_exists) {
-			$wp_styles->registered[$handle]->src = "";
+			$wp_styles->registered[$handle]->src = '';
 		}
 	}
 }
 // Runs last: Rewrite enqueued styles into `@import ... layer()` wrappers (final processing pass).
 add_action(
-	"wp_enqueue_scripts",
-	"themeslug_enqueue_layered_scripts",
+	'wp_enqueue_scripts',
+	'themeslug_enqueue_layered_scripts',
 	9999999999,
 );

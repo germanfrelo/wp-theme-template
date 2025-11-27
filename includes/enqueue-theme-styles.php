@@ -26,16 +26,16 @@ function themeslug_enqueue_theme_styles() {
 	 * The `wp_style_is()` check prevents errors if Gravity Forms is not active.
 	 */
 	if (
-		function_exists("wp_style_is") &&
-		wp_style_is("gform_basic-css", "registered")
+		function_exists('wp_style_is') &&
+		wp_style_is('gform_basic-css', 'registered')
 	) {
-		$deps[] = "gform_basic-css";
+		$deps[] = 'gform_basic-css';
 	}
 
 	wp_enqueue_style($handle, $src, $deps, $version);
 }
 // Priority is 20 to ensure the theme CSS is enqueued after common plugin/core styles (registered at the default priority 10). This lets the theme declare plugin styles as dependencies (e.g. Gravity Forms) and provide overrides without using !important.
-add_action("wp_enqueue_scripts", "themeslug_enqueue_theme_styles", 20);
+add_action('wp_enqueue_scripts', 'themeslug_enqueue_theme_styles', 20);
 
 /**
  * Enqueue the theme stylesheet in the Editor.
@@ -49,4 +49,4 @@ function themeslug_add_editor_styles() {
 		get_theme_file_uri(THEMESLUG_EDITOR_CSS_PATH),
 	]);
 }
-add_action("after_setup_theme", "themeslug_add_editor_styles");
+add_action('after_setup_theme', 'themeslug_add_editor_styles');
