@@ -19,3 +19,6 @@ d8eaca11cce6ca879ca755b4e208c7aeaaa75745
 
 # style: Apply automatic markdownlint fixes
 a8af7e738dc8f5d4f421478aee15d9d5c5993f53
+
+# style: Format PHP files with single quotes
+f4a45a8654e1ce35007af73dcb4b090feeb67f6c
