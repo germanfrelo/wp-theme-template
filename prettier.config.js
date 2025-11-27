@@ -37,6 +37,7 @@ const config = {
 			options: {
 				parser: "php",
 				useTabs: true,
+				singleQuote: true,
 				braceStyle: "1tbs",
 			},
 		},
