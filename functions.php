@@ -26,7 +26,7 @@ require_once get_theme_file_path('includes/template-part-areas.php');
 // Styles
 require_once get_theme_file_path('includes/dequeue-core-styles.php');
 require_once get_theme_file_path('includes/enqueue-theme-styles.php');
-// require_once get_theme_file_path( 'includes/styles-cascade-layers.php' ); // TODO: WIP
+require_once get_theme_file_path('includes/styles-cascade-layers.php');
 
 // Custom Blocks
 require_once get_theme_file_path('includes/custom-blocks.php');
