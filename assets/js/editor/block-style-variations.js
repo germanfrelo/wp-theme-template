@@ -68,11 +68,6 @@ wp.domReady(() => {
 		label: __("Sin estilos", "themeslug"),
 	});
 
-	wp.blocks.registerBlockStyle("core/details", {
-		name: "details-simple",
-		label: __("Sencillo", "themeslug"),
-	});
-
 	wp.blocks.registerBlockStyle("core/heading", {
 		name: "heading-eyebrow",
 		label: __("Antetítulo", "themeslug"),
