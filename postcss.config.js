@@ -7,7 +7,6 @@ import postcssDiscardComments from "postcss-discard-comments";
 import postcssImport from "postcss-import";
 import postcssImportExtGlob from "postcss-import-ext-glob";
 import postcssNesting from "postcss-nesting";
-import postcssUrl from "postcss-url";
 
 // Detect theme folder name from cwd (same as previous behaviour)
 const THEME_DIR = path.basename(process.cwd());
@@ -53,14 +52,23 @@ export default {
 		postcssImport(),
 		// 3. Handle url() assets by rewriting relative paths to root-relative
 		// theme paths (no copying).
-		postcssUrl([
-			{
-				filter: new RegExp(String.raw`\.(${EXTS_PATTERN})$`, "i"),
-				url: (asset) => rewriteAssetUrl(asset.url || ""),
+		{
+			postcssPlugin: "postcss-rewrite-asset-urls",
+			Declaration(decl) {
+				if (!decl.value.includes("url(")) return;
+				// Match both quoted and unquoted url() syntax robustly.
+				decl.value = decl.value.replace(
+					/url\(\s*(?:"([^"]*)"|'([^']*)'|([^\s)]+))\s*\)/g,
+					(match, dq, sq, unquoted) => {
+						const url = dq ?? sq ?? unquoted ?? "";
+						const rewritten = rewriteAssetUrl(url);
+						return rewritten !== url ? `url("${rewritten}")` : match;
+					},
+				);
 			},
-			// Option: inline SVGs instead (disabled by default)
-			// { filter: /\.svg$/i, url: 'inline', encodeType: 'base64', maxSize: 0 },
-		]),
+		},
+		// Option: inline SVGs as data URIs instead — implement a custom plugin
+		// with url: 'inline' logic or use a dedicated package if needed.
 		// 4. Other PostCSS processing.
 		postcssNesting() /* TODO: Uninstall when Baseline is widely available → caniuse.com/css-nesting */,
 		postcssCustomMedia(),

@@ -80,7 +80,7 @@ const REWRITE_CONFIG = {
 - “My URL didn’t change in the built CSS”: The pattern only rewrites relative URLs that include one or more `../` segments and match one of the configured extensions. Ensure your URL looks like `../svg/...` (or `../../svg/...`, etc.).
 - “Editor still can’t find the icon”: Confirm the built file exists in `dist/<subfolder>/<filename>` and that the final CSS points to `/wp-content/themes/<theme>/dist/<subfolder>/<filename>`.
 - “Different theme folder name”: The theme folder is auto-detected from the current working directory. If you’re running builds from elsewhere, run them from the theme directory root.
-- “I’d rather inline SVGs as data URIs”: You can switch to the alternative `postcss-url` option (commented in `postcss.config.js`) to inline assets instead of rewriting to root‑relative URLs.
+- “I’d rather inline SVGs as data URIs”: URL rewriting is now handled by a small custom inline PostCSS plugin in `postcss.config.js`. To inline SVGs as data URIs instead, implement a custom PostCSS plugin with base64-encoding logic, or use a dedicated package such as `postcss-inline-svg`.
 
 ## Related scripts
 
