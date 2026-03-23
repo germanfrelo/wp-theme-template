@@ -14,7 +14,7 @@ full dependency replacement would be invasive and untested, low-risk pipeline pa
 |---|---|
 | **Affected package** | `minimatch < 3.1.3` (npm) |
 | **Introduced via** | `postcss-url@10.1.3` → `minimatch@3.0.8` |
-| **Patched version** | `minimatch >= 3.1.3` |
+| **Patched version** | `minimatch >= 3.1.3` (override resolves to `10.2.4` as of this writing) |
 | **Dependabot alert** | [#27](https://github.com/germanfrelo/wp-theme-template/security/dependabot/27) |
 | **Fix PR** | [#200](https://github.com/germanfrelo/wp-theme-template/pull/200) |
 
