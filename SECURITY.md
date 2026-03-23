@@ -4,8 +4,6 @@ This repository is lightly maintained. Security fixes are prioritized for active
 full dependency replacement would be invasive and untested, low-risk pipeline patches (such as
 `npm overrides`) are preferred to keep the build stable.
 
----
-
 ## Known advisories
 
 ### minimatch ReDoS — CVE-2026-27903 / CVE-2026-27904 / CVE-2026-26996
