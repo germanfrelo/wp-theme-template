@@ -1,14 +1,13 @@
 {
 	// Formatting
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"[markdown]": {
 		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
 		"editor.renderWhitespace": "boundary"
 	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.formatOnSave": true,
 
 	// Lint CSS with Stylelint
-	// Disable VS Code's built-in linters to prevent them from reporting the same errors as Stylelint
 	"stylelint.enable": true, // default
 	"css.validate": false,
 	"less.validate": false,
