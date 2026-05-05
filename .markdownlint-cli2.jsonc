@@ -1,10 +1,10 @@
-// Markdown configuration.
-// Note: Using the JSONC file format enables auto-completion in VS Code when using the extension.
-// Reference: https://github.com/DavidAnson/markdownlint/
+// Configuration for markdownlint-cli2.
+// Note: Using JSONC as the file format allows auto-completion and comments.
+// Ref.: https://github.com/DavidAnson/markdownlint-cli2
 {
 	"globs": ["**/*.md"], // Lint all .md files in the current directory and its subdirectories
 	"gitignore": true,
-	"ignores": ["LICENCE*", "LICENSE*"],
+	"ignores": ["LICEN[CS]E*"],
 	"config": {
 		"default": true,
 		"code-block-style": {
@@ -13,9 +13,6 @@
 		"code-fence-style": {
 			"style": "backtick"
 		},
-		"emphasis-style": {
-			"style": "underscore"
-		},
 		"heading-style": {
 			"style": "atx"
 		},
@@ -23,13 +20,14 @@
 			"style": "---"
 		},
 		"line-length": false,
+		"no-bare-urls": false,
 		"no-blanks-blockquote": false, // Allow consecutive blockquotes/alerts/callouts
 		"no-duplicate-heading": {
 			"siblings_only": true
 		},
 		"no-inline-html": false,
 		"no-trailing-punctuation": {
-			"punctuation": ".,;:。，；：" // Allow '!' and '！' (default is ".,;:!。，；：！")
+			"punctuation": ".,;:。，；：！" // Allow '!' (default is ".,;:!。，；：！")
 		},
 		"no-trailing-spaces": {
 			"strict": true
@@ -43,7 +41,6 @@
 		"table-pipe-style": {
 			"style": "leading_and_trailing"
 		},
-		"table-column-style": false,
 		"ul-style": {
 			"style": "dash"
 		}
