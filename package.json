@@ -15,7 +15,7 @@
 	"private": true,
 	"main": "",
 	"devDependencies": {
-		"@prettier/plugin-php": "0.24.0",
+		"@prettier/plugin-php": "0.25.0",
 		"concurrently": "9.2.1",
 		"markdownlint-cli2": "0.20.0",
 		"postcss": "8.5.13",
