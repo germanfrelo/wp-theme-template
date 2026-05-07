@@ -41,7 +41,7 @@
 		"clean:build:css": "rimraf dist/css",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"lint": "npm run lint:css",
+		"lint": "npm run lint:css && npm run lint:md",
 		"lint:css": "stylelint --formatter verbose \"**/*.css\"",
 		"lint:css:fix": "npm run lint:css -- --fix",
 		"lint:md": "markdownlint-cli2",
